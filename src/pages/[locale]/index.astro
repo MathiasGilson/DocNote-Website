@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import Stats from '../../components/Stats.astro';
+import Features from '../../components/Features.astro';
+import Specialties from '../../components/Specialties.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CTA from '../../components/CTA.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en');
+}
+
+const t = await getEntry('pages', locale as Locale);
+---
+
+<Layout title="AI Medical Documentation">
+  <Hero translations={t.data} />
+  <Stats translations={t.data} />
+  <Features translations={t.data} />
+  <Specialties translations={t.data} />
+  <Testimonials translations={t.data} />
+  <CTA translations={t.data} />
+</Layout>

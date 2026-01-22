@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en/pricing');
+}
+
+const entry = await getEntry('pages', locale as Locale);
+const t = entry.data;
+---
+
+<Layout title={t.nav.pricing}>
+  <section class="pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          {t.pricing.title}
+        </h1>
+        <p class="text-xl text-gray-600">
+          {t.pricing.subtitle}
+        </p>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <span class="text-sm font-medium text-gray-900">{t.pricing.monthly}</span>
+        <button class="relative w-14 h-7 bg-primary-500 rounded-full transition-colors" id="billing-toggle">
+          <span class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full transition-transform" id="toggle-dot"></span>
+        </button>
+        <span class="text-sm font-medium text-gray-500">{t.pricing.yearly}</span>
+        <span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">{t.pricing.save}</span>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary-300 transition-colors">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.starter.name}</h3>
+          <p class="text-gray-600 mb-6">{t.pricing.starter.description}</p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-gray-900">CHF {t.pricing.starter.price}</span>
+            <span class="text-gray-500">{t.pricing.perMonth}</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            {t.pricing.starter.features.map((feature: string) => (
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href="#" class="block w-full py-3 text-center font-medium text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
+            {t.pricing.getStarted}
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 border-2 border-primary-500 relative shadow-xl">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-white text-sm font-medium rounded-full">
+            {t.pricing.professional.popular}
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
+          <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-gray-900">CHF {t.pricing.professional.price}</span>
+            <span class="text-gray-500">{t.pricing.perMonth}</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            {t.pricing.professional.features.map((feature: string) => (
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href="#" class="block w-full py-3 text-center font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-600 transition-colors">
+            {t.pricing.getStarted}
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary-300 transition-colors">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.enterprise.name}</h3>
+          <p class="text-gray-600 mb-6">{t.pricing.enterprise.description}</p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-gray-900">{t.pricing.enterprise.price}</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            {t.pricing.enterprise.features.map((feature: string) => (
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href="#" class="block w-full py-3 text-center font-medium text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
+            {t.pricing.enterprise.contact}
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-24 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">{t.pricing.faq.title}</h2>
+        <div class="space-y-6">
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{t.pricing.faq.q1}</h3>
+            <p class="text-gray-600">{t.pricing.faq.a1}</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{t.pricing.faq.q2}</h3>
+            <p class="text-gray-600">{t.pricing.faq.a2}</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{t.pricing.faq.q3}</h3>
+            <p class="text-gray-600">{t.pricing.faq.a3}</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{t.pricing.faq.q4}</h3>
+            <p class="text-gray-600">{t.pricing.faq.a4}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const toggle = document.getElementById('billing-toggle');
+  const dot = document.getElementById('toggle-dot');
+  let isYearly = false;
+
+  toggle?.addEventListener('click', () => {
+    isYearly = !isYearly;
+    if (isYearly) {
+      dot?.classList.add('translate-x-7');
+    } else {
+      dot?.classList.remove('translate-x-7');
+    }
+  });
+</script>
