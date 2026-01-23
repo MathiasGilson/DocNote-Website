@@ -243,10 +243,10 @@ const { translations: t } = Astro.props;
   });
 
   const soapLines = [
-    { id: 'soap-s', text: 'Patient reports persistent headache for 3 days, worsening in the evening. Rates pain 6/10, describes as bilateral pressure. Associated with neck stiffness. Denies nausea, photophobia, or visual changes. Sleep has been poor due to work stress.' },
-    { id: 'soap-o', text: 'BP 120/80, HR 72, Temp 36.8C, SpO2 99%. Alert and oriented. HEENT: No papilledema, pupils equal and reactive. Neck: Mild trapezius tenderness bilaterally. Neuro: CN II-XII intact, strength 5/5 all extremities.' },
-    { id: 'soap-a', text: 'Tension-type headache, likely stress-related. Differential includes cervicogenic headache given neck involvement. No red flags for secondary headache. Contributing factors: poor sleep hygiene, increased work demands.' },
-    { id: 'soap-p', text: 'OTC analgesics PRN (ibuprofen 400mg q6h). Sleep hygiene counseling provided. Ergonomic workstation assessment recommended. Follow-up in 2 weeks if no improvement. Return precautions discussed for worsening symptoms.' },
+    { id: 'soap-s', text: 'Patient reports persistent headache for 3 days, worsening in the evening. Rates pain 6/10, bilateral pressure. Denies nausea or photophobia.' },
+    { id: 'soap-o', text: 'BP 120/80, HR 72, Temp 36.8C. Alert and oriented. Mild trapezius tenderness bilaterally. CN II-XII intact.' },
+    { id: 'soap-a', text: 'Tension-type headache, likely stress-related. No red flags for secondary headache.' },
+    { id: 'soap-p', text: 'Ibuprofen 400mg PRN. Sleep hygiene counseling. Follow-up in 2 weeks if no improvement.' },
   ];
 
   function typeText(element: HTMLElement, text: string, speed: number = 30): Promise<void> {
@@ -315,7 +315,7 @@ const { translations: t } = Astro.props;
     for (const line of soapLines) {
       const el = document.getElementById(line.id);
       if (el) {
-        await typeText(el, line.text, 25);
+        await typeText(el, line.text, 8);
         await new Promise(r => setTimeout(r, 300));
       }
     }
