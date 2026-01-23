@@ -66,8 +66,8 @@ const { translations: t } = Astro.props;
               <div class="text-white/80 text-xs">9:41</div>
             </div>
 
-            <div class="p-4 space-y-4">
-              <div id="recording-section" class="flex items-center gap-3 bg-gray-50 rounded-2xl p-3">
+            <div class="p-4 flex flex-col gap-4 h-[calc(100%-52px)]">
+              <div id="recording-section" class="flex items-center gap-3 bg-gray-50 rounded-2xl p-3 flex-shrink-0">
                 <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 relative">
                   <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
@@ -89,9 +89,9 @@ const { translations: t } = Astro.props;
                 </div>
               </div>
 
-              <div id="soap-note-container" class="bg-gray-50 rounded-2xl p-4">
+              <div id="soap-note-container" class="bg-gray-50 rounded-2xl p-4 flex-1 overflow-y-auto">
                 <div id="soap-title" class="text-xs font-semibold text-gray-500 mb-3 opacity-0">SOAP Note Generated</div>
-                <div class="space-y-2">
+                <div class="space-y-3">
                   <div id="soap-s" class="flex gap-2 opacity-0">
                     <span class="text-xs font-bold text-primary-600 flex-shrink-0">S:</span>
                     <span class="text-xs text-gray-600 soap-text"></span>
@@ -111,7 +111,7 @@ const { translations: t } = Astro.props;
                 </div>
               </div>
 
-              <div id="saved-status" class="flex items-center justify-between text-sm opacity-0">
+              <div id="saved-status" class="flex items-center justify-between text-sm opacity-0 flex-shrink-0">
                 <span class="text-green-600 font-medium flex items-center gap-1 text-xs">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -124,11 +124,6 @@ const { translations: t } = Astro.props;
           </div>
         </div>
 
-        <div id="success-badge" class="absolute -top-6 right-[calc(50%-150px)] sm:right-[calc(50%-158px)] w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center shadow-lg opacity-0 scale-0 transition-all duration-300">
-          <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
       </div>
     </div>
   </div>
@@ -248,10 +243,10 @@ const { translations: t } = Astro.props;
   });
 
   const soapLines = [
-    { id: 'soap-s', text: 'Patient reports persistent headache for 3 days...' },
-    { id: 'soap-o', text: 'BP 120/80, HR 72, Temp 36.8C...' },
-    { id: 'soap-a', text: 'Tension-type headache, likely stress-related...' },
-    { id: 'soap-p', text: 'OTC analgesics, stress management, follow-up PRN...' },
+    { id: 'soap-s', text: 'Patient reports persistent headache for 3 days, worsening in the evening. Rates pain 6/10, describes as bilateral pressure. Associated with neck stiffness. Denies nausea, photophobia, or visual changes. Sleep has been poor due to work stress.' },
+    { id: 'soap-o', text: 'BP 120/80, HR 72, Temp 36.8C, SpO2 99%. Alert and oriented. HEENT: No papilledema, pupils equal and reactive. Neck: Mild trapezius tenderness bilaterally. Neuro: CN II-XII intact, strength 5/5 all extremities.' },
+    { id: 'soap-a', text: 'Tension-type headache, likely stress-related. Differential includes cervicogenic headache given neck involvement. No red flags for secondary headache. Contributing factors: poor sleep hygiene, increased work demands.' },
+    { id: 'soap-p', text: 'OTC analgesics PRN (ibuprofen 400mg q6h). Sleep hygiene counseling provided. Ergonomic workstation assessment recommended. Follow-up in 2 weeks if no improvement. Return precautions discussed for worsening symptoms.' },
   ];
 
   function typeText(element: HTMLElement, text: string, speed: number = 30): Promise<void> {
@@ -329,12 +324,6 @@ const { translations: t } = Astro.props;
     if (savedEl) {
       savedEl.classList.remove('opacity-0');
       savedEl.classList.add('fade-in-up');
-    }
-
-    const successBadge = document.getElementById('success-badge');
-    if (successBadge) {
-      successBadge.classList.remove('opacity-0', 'scale-0');
-      successBadge.classList.add('opacity-100', 'scale-100', 'animate-float');
     }
   }
 
