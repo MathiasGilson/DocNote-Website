@@ -1,6 +1,6 @@
 ---
 title: "Less Time Documenting Thanks to AI, More Time for Care: What Does the Science Say?"
-excerpt: "A JAMA Network Open study demonstrates that AI-assisted medical transcription tools reduce documentation time by 20% and significantly improve physician well-being."
+excerpt: "A recent study published in JAMA Network Open shows how AI-powered ambient scribe tools can reduce documentation time by 20% and significantly improve physician well-being."
 category: "ai"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
@@ -10,44 +10,42 @@ date: "2026-01-29"
 readTime: 5
 ---
 
-Artificial intelligence is transforming medical practice, and scientific evidence continues to mount demonstrating its positive impact on healthcare professionals' daily work.
+As a physician, I believe we still underestimate the real impact of clinical documentation on our fatigue, working hours, and relationship with patients.
 
-## Significant Reduction in Documentation Time
+A recent study published in JAMA Network Open evaluated the impact of AI-based ambient scribe tools in outpatient practice. The results are clear and quantified.
 
-A recent study published in **JAMA Network Open** examined the use of AI-assisted ambient scribe tools in outpatient settings. The results are compelling:
+## The Evidence
 
-- **20% reduction** in documentation time per consultation
-- **Significant increase** in same-day chart completion rates
-- **30% decrease** in administrative work performed outside clinical hours
-- **Reduced cognitive burden** from administrative tasks for healthcare professionals
+The use of these tools is associated with:
 
-## Beyond Efficiency: Data Sovereignty
+- approximately 20% reduction in time spent on documentation per consultation
+- significant increase in the rate of charts closed on the same day
+- approximately 30% decrease in administrative work performed outside clinical hours
+- clear reduction in cognitive burden related to administrative tasks
 
-While documentation automation offers undeniable efficiency gains, a crucial question remains for Swiss healthcare professionals: **where is our data hosted?**
+Over the course of a clinical day, this represents real time savings, but more importantly, less work in the evening and better availability during consultations.
 
-In Switzerland, health data protection is not just a legal obligation—it's a commitment to our patients. Foreign solutions, however performant, raise legitimate questions about:
+## But One Question Remains Central: Where Does the Data Go?
 
-- Data hosting outside Switzerland
-- Potential secondary exploitation of medical information
-- Compliance with the new Swiss Data Protection Act (nLPD)
+Particularly in Switzerland, this question is critical.
 
-## DocNote: A Solution Designed for Switzerland
+It is precisely to answer this requirement that we created DocNote.
 
-**DocNote** stands out as a sovereign alternative, specifically designed for the Swiss context:
+DocNote is a 100% Swiss sovereign medical documentation assistance solution:
 
-- **Exclusive Swiss hosting** of all data
-- **No secondary exploitation** of medical information
-- **Full compliance** with Swiss regulations (nLPD)
-- **Design adapted** to Swiss healthcare system specifics (hospital and ambulatory settings)
+- Data hosted in Switzerland
+- No secondary exploitation of data
+- Strict compliance with the Swiss nFADP and institutional requirements
+- Designed from the start for real clinical use, both hospital and outpatient
 
-Our approach isn't about adapting foreign technology, but designing a solution that meets the specific needs of Swiss healthcare professionals while preserving their patients' trust.
+DocNote is not an opportunistic adaptation of foreign solutions. It is a solution designed in Switzerland, for the Swiss healthcare system, with a level of data protection compatible with the trust we owe to our patients.
 
-## The Future of Medical Documentation
+## The Goal is Simple
 
-Scientific data confirms it: AI significantly improves medical practice by freeing up time for what truly matters—patient care. But this transformation must occur while respecting our values and legal framework.
+Reduce the documentation burden without compromising medical quality or data security.
 
-Technology in service of medicine, yes. Technology that compromises our patients' data protection, no.
+If you are a physician, department head, or institutional leader, and documentation and data sovereignty are concrete issues in your practice or establishment, I would be delighted to discuss with you and present DocNote, or discover our solution directly on our website: [www.docnote.ch](https://www.docnote.ch)
 
 ---
 
-**Want to learn more?** Visit [www.docnote.ch](https://www.docnote.ch) or contact us to discuss implementing DocNote in your institution.
+**Source:** [JAMA Network Open Study](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383#:~:text=Clinical%20documentation%20in%20electronic%20health,tools%20also%20may%20help%20reduce)

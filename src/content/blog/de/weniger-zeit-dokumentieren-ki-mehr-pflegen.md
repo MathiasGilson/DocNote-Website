@@ -1,6 +1,6 @@
 ---
 title: "Weniger Zeit für Dokumentation dank KI, mehr Zeit für Patienten: Was sagt die Wissenschaft?"
-excerpt: "Eine Studie des JAMA Network Open zeigt, dass KI-gestützte medizinische Transkriptionstools die Dokumentationszeit um 20% reduzieren und das Wohlbefinden von Ärzten deutlich verbessern."
+excerpt: "Eine kürzlich veröffentlichte Studie im JAMA Network Open zeigt, wie KI-gestützte Ambient-Scribe-Tools die Dokumentationszeit um 20% reduzieren und das Wohlbefinden von Ärzten deutlich verbessern können."
 category: "ai"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
@@ -10,44 +10,42 @@ date: "2026-01-29"
 readTime: 5
 ---
 
-Künstliche Intelligenz verändert die medizinische Praxis, und wissenschaftliche Belege häufen sich, die ihre positiven Auswirkungen auf den Arbeitsalltag von Gesundheitsfachleuten belegen.
+Als Arzt glaube ich, dass wir die tatsächlichen Auswirkungen der klinischen Dokumentation auf unsere Müdigkeit, unsere Arbeitszeit und unsere Beziehung zu den Patienten noch unterschätzen.
 
-## Signifikante Reduktion der Dokumentationszeit
+Eine kürzlich veröffentlichte Studie im JAMA Network Open hat die Auswirkungen von KI-basierten Ambient-Scribe-Tools in der ambulanten Praxis untersucht. Die Ergebnisse sind klar und quantifiziert.
 
-Eine kürzlich im **JAMA Network Open** veröffentlichte Studie untersuchte die Verwendung KI-gestützter Ambient-Transkriptionstools in ambulanten Einrichtungen. Die Ergebnisse sind überzeugend:
+## Die Fakten
 
-- **Reduktion um 20%** der Dokumentationszeit pro Konsultation
-- **Signifikante Erhöhung** der Raten für die Fertigstellung von Akten am selben Tag
-- **Verringerung um 30%** der administrativen Arbeit außerhalb der klinischen Arbeitszeit
-- **Reduzierte kognitive Belastung** durch administrative Aufgaben für Gesundheitsfachkräfte
+Die Verwendung dieser Tools ist verbunden mit:
 
-## Über Effizienz hinaus: Datensouveränität
+- einer Reduktion von etwa 20% der für die Dokumentation pro Konsultation aufgewendeten Zeit
+- einer signifikanten Erhöhung der Rate der am selben Tag abgeschlossenen Akten
+- einer Verringerung von etwa 30% der außerhalb der klinischen Arbeitszeit durchgeführten Verwaltungsarbeit
+- einer deutlichen Reduzierung der kognitiven Belastung durch administrative Aufgaben
 
-Während die Automatisierung der Dokumentation unbestreitbare Effizienzgewinne bietet, bleibt eine entscheidende Frage für Schweizer Gesundheitsfachleute bestehen: **Wo werden unsere Daten gespeichert?**
+Im Laufe eines klinischen Tages bedeutet dies echte Zeitersparnis, aber vor allem weniger Arbeit am Abend und bessere Verfügbarkeit während der Konsultation.
 
-In der Schweiz ist der Schutz von Gesundheitsdaten nicht nur eine gesetzliche Verpflichtung – es ist ein Versprechen an unsere Patienten. Ausländische Lösungen, so leistungsfähig sie auch sein mögen, werfen berechtigte Fragen auf:
+## Aber eine Frage bleibt zentral: Wohin gehen die Daten?
 
-- Datenspeicherung außerhalb der Schweiz
-- Potenzielle sekundäre Nutzung medizinischer Informationen
-- Einhaltung des neuen Schweizer Datenschutzgesetzes (nDSG)
+Besonders in der Schweiz ist diese Frage entscheidend.
 
-## DocNote: Eine Lösung für die Schweiz konzipiert
+Genau um diese Anforderung zu erfüllen, haben wir DocNote geschaffen.
 
-**DocNote** zeichnet sich als souveräne Alternative aus, die speziell für den Schweizer Kontext entwickelt wurde:
+DocNote ist eine 100% souveräne Schweizer Lösung zur Unterstützung der medizinischen Dokumentation:
 
-- **Ausschließliches Hosting in der Schweiz** aller Daten
-- **Keine sekundäre Nutzung** medizinischer Informationen
-- **Vollständige Compliance** mit Schweizer Vorschriften (nDSG)
-- **Angepasstes Design** an die Besonderheiten des Schweizer Gesundheitssystems (Krankenhaus und ambulant)
+- Daten werden in der Schweiz gehostet
+- Keine sekundäre Nutzung der Daten
+- Strikte Einhaltung des Schweizer nDSG und institutioneller Anforderungen
+- Von Anfang an für den realen klinischen Einsatz konzipiert, sowohl im Krankenhaus als auch ambulant
 
-Unser Ansatz besteht nicht darin, ausländische Technologie anzupassen, sondern eine Lösung zu entwickeln, die den spezifischen Bedürfnissen der Schweizer Gesundheitsfachleute entspricht und gleichzeitig das Vertrauen ihrer Patienten bewahrt.
+DocNote ist keine opportunistische Anpassung ausländischer Lösungen. Es ist eine in der Schweiz konzipierte Lösung für das Schweizer Gesundheitssystem mit einem Datenschutzniveau, das mit dem Vertrauen vereinbar ist, das wir unseren Patienten schulden.
 
-## Die Zukunft der medizinischen Dokumentation
+## Das Ziel ist einfach
 
-Wissenschaftliche Daten bestätigen es: KI verbessert die medizinische Praxis erheblich, indem sie Zeit für das Wesentliche freisetzt – die Patientenversorgung. Aber diese Transformation muss unter Wahrung unserer Werte und unseres rechtlichen Rahmens erfolgen.
+Die Dokumentationslast reduzieren, ohne Kompromisse bei der medizinischen Qualität oder der Datensicherheit einzugehen.
 
-Technologie im Dienste der Medizin, ja. Technologie, die den Datenschutz unserer Patienten gefährdet, nein.
+Wenn Sie Arzt, Abteilungsleiter oder institutioneller Verantwortlicher sind und Dokumentation und Datensouveränität konkrete Themen in Ihrer Praxis oder Einrichtung sind, würde ich mich freuen, mit Ihnen zu sprechen und Ihnen DocNote vorzustellen, oder entdecken Sie unsere Lösung direkt auf unserer Website: [www.docnote.ch](https://www.docnote.ch)
 
 ---
 
-**Möchten Sie mehr erfahren?** Besuchen Sie [www.docnote.ch](https://www.docnote.ch) oder kontaktieren Sie uns, um die Implementierung von DocNote in Ihrer Einrichtung zu besprechen.
+**Quelle:** [JAMA Network Open Studie](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383#:~:text=Clinical%20documentation%20in%20electronic%20health,tools%20also%20may%20help%20reduce)
