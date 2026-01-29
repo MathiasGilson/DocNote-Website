@@ -1,6 +1,6 @@
 ---
 title: "Dr. Alice Gilson Speaks on AI in Surgery at ECC St. Gallen"
-excerpt: "DocNote co-founder Dr. Alice Gilson delivered a compelling talk on AI applications inside and outside the operating room at the European Congress of Cardiology in St. Gallen."
+excerpt: "DocNote co-founder Dr. Alice Gilson delivered a compelling talk on AI applications inside and outside the operating room at a medical conference in St. Gallen."
 category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
@@ -10,49 +10,60 @@ date: "2025-12-10"
 readTime: 4
 ---
 
-# Dr. Alice Gilson Speaks on AI in Surgery at ECC St. Gallen
+# Dr. Alice Gilson Speaks on AI in Surgery at Medical Conference in St. Gallen
 
-In December 2025, Dr. Alice Gilson, co-founder and Managing Director of DocNote, was invited to speak at a prestigious medical conference in St. Gallen, Switzerland. Her presentation, "AI in Surgery: Inside and Outside the Operating Room," explored the expanding role of artificial intelligence across the full spectrum of surgical care.
+**ST. GALLEN** — A medical conference in St. Gallen, Switzerland, featured a presentation in December 2025 exploring how artificial intelligence is reshaping surgical practice, not just in operating rooms but throughout the entire surgical care pathway. Dr. Alice Gilson, a surgical specialist and co-founder of DocNote, delivered the talk to an audience of surgeons and surgical residents.
 
-## Beyond the Operating Room
+The presentation offered a practitioner's perspective on AI in surgery—a viewpoint often missing from technology-focused discussions dominated by engineers and data scientists. Dr. Gilson's dual role as both surgeon and healthcare technology entrepreneur provided an unusual lens on where AI tools might genuinely improve surgical workflows versus where they risk creating more problems than they solve.
 
-While much attention in surgical AI focuses on robotic assistance and intraoperative navigation, Dr. Gilson's talk highlighted the equally important role of AI in the broader surgical workflow. Drawing on her experience as a surgical specialist at the University Hospital of Geneva (HUG), she addressed how AI can support surgeons throughout the entire patient care journey.
+## Beyond Robotic Surgery
 
-## Key Topics Addressed
+While robotic surgical systems like da Vinci have captured public imagination and substantial investment, Dr. Gilson's presentation focused on less glamorous but potentially more impactful AI applications in the perioperative period—the before and after surrounding surgery itself.
 
-### Preoperative Planning and Documentation
-Dr. Gilson discussed how AI can streamline preoperative assessments, helping surgeons review complex patient histories more efficiently and ensure all necessary evaluations are completed before surgery.
+"The operating room represents maybe two hours of a patient's surgical journey," Dr. Gilson noted during her presentation. "But the documentation, planning, and follow-up work can consume four or five times that amount of surgeon time. That's where AI might create the most value."
 
-### Intraoperative Applications
-The presentation covered current and emerging AI applications in the operating room, from image recognition systems to real-time decision support tools, while emphasizing the continued primacy of surgeon judgment and expertise.
+This reframing resonated with several attending surgeons who expressed frustration with administrative burdens that extend well beyond the technical aspects of performing operations.
 
-### Postoperative Care and Follow-up
-Perhaps most relevant to DocNote's mission, Dr. Gilson highlighted how AI-powered documentation tools can help surgeons manage postoperative care more effectively, ensuring detailed operative notes are completed efficiently and follow-up appointments are thoroughly documented.
+## The Documentation Bottleneck
 
-## Real-World Surgical Experience
+A significant portion of the presentation addressed surgical documentation—operative notes, discharge summaries, and follow-up care instructions. Dr. Gilson described how detailed documentation requirements, while medically and legally necessary, often force surgeons to spend evenings and weekends completing paperwork.
 
-What distinguished Dr. Gilson's presentation was her ability to speak not just as a technology entrepreneur but as a practicing surgeon who understands the daily realities of surgical practice. Her insights into workflow challenges, time pressures, and the critical importance of accurate documentation resonated strongly with the surgical audience.
+The presentation naturally highlighted DocNote's approach to this problem, using AI transcription to capture surgical consultations and generate structured notes. However, Dr. Gilson also acknowledged limitations: AI tools currently work best for routine cases, while complex or unusual procedures still require substantial human intervention and editing.
 
-## The DocNote Connection
+"We're not replacing surgical judgment," she emphasized. "We're trying to eliminate the time surgeons spend typing what they've already said verbally."
 
-Throughout her talk, Dr. Gilson drew on her experience developing DocNote as an example of how AI can be designed with deep input from practicing physicians. She emphasized that effective medical AI requires more than technical excellence—it demands genuine understanding of clinical workflows and physician needs.
+## Audience Skepticism and Interest
 
-## Audience Engagement
+The Q&A session revealed a mix of cautious interest and pointed skepticism from the surgical audience. Several surgeons questioned whether AI-generated notes would meet the detailed standards required for surgical documentation, particularly for complex procedures.
 
-The presentation generated substantial discussion among attending surgeons and surgical residents. Questions ranged from technical implementation details to broader considerations about the evolving role of AI in surgical training and practice.
+Others raised concerns about liability: if an AI system misses or misinterprets something a surgeon says, and that leads to poor patient outcomes, who bears responsibility?
 
-Several attendees noted particular interest in:
-- Balancing AI assistance with surgical autonomy
-- Training the next generation of surgeons in an AI-enhanced environment
-- Managing the transition from traditional to AI-assisted documentation
-- Ensuring AI tools enhance rather than interrupt surgical workflows
+Dr. Gilson's responses acknowledged these concerns directly, suggesting that current AI documentation tools should be viewed as assistants requiring physician review rather than autonomous systems. This framing appeared more realistic to attendees than claims of perfect accuracy.
 
-## A Surgeon's Perspective on Healthcare AI
+## The Physician-Technologist Gap
 
-Dr. Gilson concluded her presentation by emphasizing that AI should be viewed as a tool to enhance surgical practice, not replace surgical expertise. The goal of technologies like DocNote is to handle administrative tasks that take surgeons away from patient care, allowing them to focus on what they do best: providing excellent surgical care.
+What distinguished the presentation was Dr. Gilson's ability to speak credibly about both clinical medicine and technology development—a relatively rare combination. She described frustrations with non-physician-developed healthcare software that often reflects misunderstandings of clinical workflows.
 
-## Continuing the Conversation
+"Engineers see inefficiencies and want to optimize them," she observed. "But sometimes what looks inefficient serves an important clinical purpose that isn't obvious from the outside."
 
-The St. Gallen conference strengthened connections between DocNote and the surgical community. The discussions initiated during Dr. Gilson's presentation continue to inform DocNote's development, ensuring the platform remains closely aligned with the real needs of surgical practitioners.
+This resonated particularly with older surgeons in the audience, many of whom have witnessed multiple waves of healthcare IT systems imposed by hospital administrators with varying degrees of clinical input.
 
-We thank the conference organizers for providing this platform to discuss the important intersection of artificial intelligence and surgical practice, and we look forward to ongoing collaboration with the surgical community as AI continues to evolve in healthcare.
+## Business and Medicine
+
+The presentation also highlighted tensions inherent in physician-founded healthcare technology companies. Dr. Gilson divides her time between clinical practice at the University Hospital of Geneva and building DocNote, raising questions about sustainability and competing priorities.
+
+Some attendees questioned whether physicians can realistically manage both clinical practice and company building, or whether one inevitably suffers. Dr. Gilson acknowledged the challenges but argued that maintaining clinical practice keeps the company grounded in real physician needs.
+
+## Market Position
+
+For DocNote, Dr. Gilson's speaking engagement served multiple purposes: building brand awareness within Swiss surgical communities, gathering feedback on product development, and establishing thought leadership in AI-assisted medical documentation.
+
+The Swiss medical market's relatively small size means that presentations at conferences like St. Gallen can reach significant portions of potential users. Several department heads from Swiss hospitals attended, representing possible future customers or pilot program partners.
+
+## Broader Context
+
+The St. Gallen presentation reflects growing medical community engagement with AI, moving from abstract discussions about future possibilities toward practical conversations about current implementation. Swiss surgeons, like their peers across Europe, are beginning to grapple with whether and how to incorporate AI tools into daily practice.
+
+Dr. Gilson's message—that AI should augment rather than replace surgical expertise—aligned with what most surgeons want to hear. Whether this vision matches the reality of how AI will actually reshape surgical practice remains an open question that will likely take years to answer.
+
+The presentation concluded with Dr. Gilson inviting interested surgeons to participate in pilot programs, though specific details about timing and participation requirements remained vague. For a relatively young company still establishing product-market fit, such exploratory conversations represent important steps toward potential broader adoption.

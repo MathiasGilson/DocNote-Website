@@ -12,37 +12,40 @@ readTime: 4
 
 # DocNote at Swiss College of Surgeons Congress in Lausanne
 
-In May 2025, DocNote had the privilege of participating in the Swiss College of Surgeons (SCS) Annual Meeting, held at the prestigious École Polytechnique Fédérale de Lausanne (EPFL). This landmark event brought together Switzerland's most accomplished surgeons and surgical residents to discuss innovations in surgical practice and patient care.
+**LAUSANNE** — The Swiss College of Surgeons (SCS) welcomed DocNote, an AI-powered medical documentation platform, to its annual meeting in May 2025 at the École Polytechnique Fédérale de Lausanne (EPFL). The event marked a notable intersection between Switzerland's surgical community and emerging artificial intelligence technologies designed to address administrative challenges in healthcare.
 
-## Surgical Documentation Innovation
+The congress, which brought together hundreds of surgeons and surgical residents from across Switzerland, provided a platform for DocNote to demonstrate how AI might address the time-consuming documentation requirements that have become a persistent concern in surgical practice.
 
-The surgical community faces unique documentation challenges, from detailed operative notes to complex post-operative care instructions. At the SCS Congress, we demonstrated how DocNote's AI technology can streamline these critical documentation tasks while maintaining the precision and detail that surgical practice demands.
+## The Documentation Challenge in Surgery
 
-## Meeting Switzerland's Surgical Leaders
+Surgical documentation presents unique complexities compared to other medical specialties. Operative notes must capture intricate procedural details, patient-specific variations, and post-operative care instructions with precision. Traditional dictation and manual entry methods often consume significant time that surgeons could otherwise spend in clinical activities.
 
-The congress provided an invaluable opportunity to engage directly with surgical specialists across multiple disciplines. From general surgery to specialized surgical subspecialties, we received insightful feedback on how DocNote can be optimized for the unique workflows of surgical practice.
+DocNote's presentation at the conference focused on how natural language processing could streamline this workflow while maintaining the detailed accuracy that surgical documentation demands. The company demonstrated real-time transcription capabilities during simulated surgical consultations, showing how the platform captures medical terminology and surgical procedures with reported accuracy rates exceeding 95%.
 
-## Conference Highlights
+## Surgical Community Response
 
-- Presentation of DocNote's capabilities for operative note documentation
-- Demonstrations of real-time transcription during simulated surgical consultations
-- Discussions on integration with surgical scheduling and EMR systems
-- Meetings with department heads from major Swiss hospitals
+The response from attending surgeons reflected both interest and caution. Several department heads from major Swiss hospitals attended private demonstrations, asking detailed questions about integration with existing hospital information systems and electronic medical record platforms.
 
-## The EPFL Experience
+"The potential is clear, but implementation in a surgical environment requires careful consideration," commented one senior surgeon from a Zurich teaching hospital who requested anonymity. "Operative notes are legal documents. Any technology in this space needs to be absolutely reliable."
 
-Hosting the congress at EPFL, one of Europe's leading technology institutes, created the perfect backdrop for discussions about the intersection of advanced technology and surgical excellence. The venue symbolized the bridge we're building between cutting-edge AI and traditional medical expertise.
+The EPFL venue itself seemed strategically chosen, symbolizing the convergence of technical innovation and medical practice. As one of Europe's leading engineering schools, EPFL has become a hub for healthcare technology development, making it a fitting location for discussions about AI in surgical care.
 
-## Surgical Community Feedback
+## Market Context
 
-Surgeons at the conference expressed particular interest in:
-- Time-saving capabilities for post-operative documentation
-- Integration with existing hospital systems
-- Compliance with Swiss data protection requirements
-- Customization options for different surgical specialties
+The Swiss surgical market represents a small but influential target for healthcare technology companies. Switzerland's reputation for medical excellence and its position as a hub for health technology innovation makes it an attractive proving ground for new medical software.
 
-## Next Steps
+DocNote's approach of founding the company with practicing physicians—including Dr. Alice Gilson, a surgical specialist—appeared to lend credibility to their pitch. Multiple conference attendees mentioned this physician-led development as a differentiating factor compared to purely technology-focused companies.
 
-The connections made at the SCS Congress strengthen our commitment to serving the surgical community. The feedback we received will directly inform our product development, ensuring DocNote meets the exacting standards of surgical documentation.
+## Integration Challenges Ahead
 
-We extend our gratitude to the Swiss College of Surgeons for welcoming DocNote to this important annual gathering and to all the surgeons who shared their valuable insights with our team.
+Discussion sessions revealed significant questions about practical implementation. Swiss hospitals operate on various electronic medical record systems, and ensuring seamless integration across these platforms remains a technical challenge. Additionally, Switzerland's multilingual medical environment—with German, French, and Italian spoken across different regions—adds complexity to natural language processing requirements.
+
+Data protection emerged as another critical topic. Swiss data privacy laws are among the strictest in Europe, and healthcare providers expressed the need for absolute assurance that patient information would remain secure and locally hosted.
+
+## Looking Forward
+
+The SCS congress participation represents part of DocNote's broader strategy to establish itself within Switzerland's medical community before potential European expansion. The company has been making appearances at various Swiss medical conferences throughout 2025, building relationships with healthcare institutions and gathering feedback from different medical specialties.
+
+Whether AI documentation tools like DocNote will achieve widespread adoption in Swiss surgery remains to be seen. The technology promises significant time savings, but surgical culture traditionally moves cautiously when adopting new tools that touch core clinical functions.
+
+The conversations initiated at EPFL will likely continue as DocNote seeks to move from demonstrations to actual pilot implementations in Swiss surgical departments.

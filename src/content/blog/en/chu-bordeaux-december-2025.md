@@ -12,60 +12,70 @@ readTime: 4
 
 # DocNote Exhibits at CHU HealthTech ConnexionDay in Bordeaux
 
-In December 2025, DocNote participated in the CHU HealthTech ConnexionDay in Bordeaux, France, a premier event connecting healthcare technology innovators with hospital administrators, clinicians, and digital health decision-makers. This strategic conference brings together university hospitals (CHUs) from across France to explore cutting-edge health technologies and foster innovation partnerships.
+**BORDEAUX** — The CHU HealthTech ConnexionDay in December 2025 brought healthcare technology vendors face-to-face with decision-makers from France's university hospital centers. Among the exhibitors was DocNote, a Swiss AI medical documentation platform making its first significant push into the French healthcare market.
 
-## The CHU HealthTech ConnexionDay
+The one-day event in Bordeaux illustrated both the opportunities and complexities facing healthcare technology companies attempting to cross borders within Europe. While medical challenges may be universal, healthcare systems remain stubbornly national—with distinct procurement processes, reimbursement structures, and regulatory requirements that can frustrate companies seeking regional expansion.
 
-The CHU HealthTech ConnexionDay has become an essential gathering for French healthcare innovation. Organized to facilitate direct connections between technology providers and major teaching hospitals, the event provides a unique opportunity for meaningful discussions about real-world healthcare challenges and technological solutions.
+## The French Hospital Market
 
-## DocNote's Exhibition Stand
+France's CHU system—centres hospitaliers universitaires or university hospital centers—represents some of the most influential healthcare institutions in French medicine. These large teaching hospitals shape medical practice standards, train future physicians, and often serve as early adopters of healthcare innovations.
 
-Our team operated a dedicated exhibition stand throughout the day-long event, providing personalized demonstrations of DocNote's AI-powered medical documentation platform. The stand attracted steady interest from hospital administrators, department heads, and physicians curious about how AI can address the documentation burden facing French healthcare.
+However, French public hospitals operate under budget constraints and bureaucratic procurement processes quite different from Switzerland's more decentralized, insurance-based healthcare system. What DocNote has learned selling to Swiss private practices may not directly transfer to navigating French hospital administration.
 
-## Cross-Border Healthcare Innovation
+Several CHU representatives who visited DocNote's exhibition stand expressed interest in the platform's capabilities while noting the lengthy evaluation and approval processes required for new software systems in French public hospitals.
 
-While DocNote is based in Switzerland, the Bordeaux conference highlighted the shared challenges facing healthcare systems throughout Europe. French physicians and their Swiss counterparts face remarkably similar documentation burdens, regulatory requirements, and workflow pressures.
+## Language and Technology
 
-## Key Discussions
+DocNote's multilingual capabilities emerged as a selling point but also highlighted technical challenges. The platform supports French, but French medical terminology includes regional variations and specialty-specific jargon that AI systems can struggle to capture accurately.
 
-Throughout the day, our conversations with CHU representatives centered on several important themes:
+"The technology works quite well for straightforward consultations," commented a physician from CHU de Bordeaux who tested the system. "But medical French can be quite particular, especially in specialized departments. The AI sometimes misses nuances."
 
-### Hospital-Wide Implementation
-Several teaching hospitals expressed interest in institution-wide deployment of AI documentation tools. Discussions addressed integration with existing EMR systems, training protocols, and change management strategies.
+These observations reflect broader challenges in natural language processing: what works well in one linguistic context may require substantial refinement for another, even within the same language.
 
-### Department-Specific Needs
-Different medical departments have unique documentation requirements. We explored how DocNote can be customized for various specialties, from emergency medicine's rapid documentation needs to surgery's detailed operative notes.
+## Data Sovereignty Concerns
 
-### French Language Support
-French healthcare professionals emphasized the importance of AI systems that work seamlessly in French. DocNote's multilingual capabilities, including strong French language support, generated significant interest.
+French healthcare institutions, like their European counterparts, place significant emphasis on data protection and sovereignty. Multiple conversations at the DocNote booth focused on where patient data would be processed and stored.
 
-### Data Sovereignty and Security
-French healthcare institutions place particular emphasis on data sovereignty and GDPR compliance. Our detailed discussions of DocNote's security architecture and Swiss data hosting reassured hospital leaders about data protection.
+The company's Swiss hosting—positioned as an advantage given Switzerland's strong data protection reputation—also raised questions. Some French administrators wondered whether hosting patient data outside France might conflict with national data sovereignty preferences, even as they acknowledged Switzerland's robust privacy framework.
 
-## Strategic Partnerships
+These discussions reflected broader European tensions around data flows and digital sovereignty that extend well beyond healthcare into areas like cloud computing and digital services.
 
-The ConnexionDay format, which emphasizes meaningful conversations over brief interactions, allowed us to develop several promising relationships with French healthcare institutions. These connections may lead to pilot programs and collaborative development initiatives in the coming months.
+## Competitive Landscape
 
-## Regional Healthcare Ecosystem
+The Bordeaux event revealed that DocNote faces competition not just from other AI documentation startups but from established electronic health record vendors adding AI capabilities to existing systems. Several French hospitals already use comprehensive EHR platforms, and adding AI documentation features to these familiar systems might prove easier than adopting standalone tools.
 
-Bordeaux, home to one of France's leading university hospital centers, has developed a vibrant healthcare innovation ecosystem. The conference provided valuable insights into the French approach to healthcare digitalization and the specific challenges facing French teaching hospitals as they navigate digital transformation.
+One hospital IT director noted: "Integration is always our biggest challenge. If we can get 80% of what a specialized tool offers but within our existing system, that's often more practical than implementing something new."
 
-## Feedback and Insights
+This perspective suggests DocNote's path in France may depend significantly on developing partnerships with existing hospital IT infrastructure providers rather than pursuing direct sales.
 
-The direct feedback from French healthcare professionals proved invaluable:
-- Strong interest in reducing administrative time to allow more patient contact
-- Emphasis on ease of use and minimal learning curve for new technologies
-- Desire for solutions that integrate with existing workflows rather than requiring workflow redesign
-- Appreciation for technology developed by practicing physicians who understand clinical realities
+## Market Development Strategy
 
-## Looking Ahead
+For DocNote, the Bordeaux exhibition represented an exploratory step rather than an imminent market entry. The company remains primarily focused on Switzerland, with French expansion more aspirational than immediate.
 
-The CHU HealthTech ConnexionDay in Bordeaux marks an important step in DocNote's engagement with the broader European healthcare community. While we remain firmly rooted in Swiss healthcare, the universal challenges of medical documentation create opportunities to support physicians beyond Switzerland's borders.
+Company representatives described conversations at the event as "relationship building" and "market research"—learning about French healthcare needs and procurement processes rather than actively selling. This cautious approach reflects practical constraints: a small company with limited resources must prioritize markets carefully.
 
-## Acknowledgments
+## Cultural Differences
 
-We extend our sincere thanks to the organizers of the CHU HealthTech ConnexionDay for creating such a valuable forum for healthcare innovation. We are grateful to all the CHU representatives, physicians, and administrators who visited our stand and shared their experiences and needs.
+Beyond technical and regulatory considerations, cultural differences in medical practice emerged as a factor. French physicians often have different documentation norms than their Swiss counterparts, shaped by distinct medical education systems and practice patterns.
 
-The conversations in Bordeaux remind us that healthcare professionals everywhere share the same dedication to patient care and the same frustration with administrative burdens. DocNote is committed to supporting this community across borders, languages, and healthcare systems.
+Several French physicians noted that their documentation style tends toward more narrative notes compared to the structured formats common in Swiss practice. Whether DocNote's AI, trained primarily on Swiss medical consultations, would adapt well to French documentation preferences remained an open question.
 
-As we close out 2025, we are energized by these connections and excited about the opportunities to serve more healthcare professionals in the year ahead.
+## Practical Next Steps
+
+Despite challenges, the Bordeaux event generated leads that DocNote will presumably pursue in 2026. Several CHUs expressed interest in pilot programs, though converting interest into actual implementations typically requires months of additional conversations, demonstrations, and negotiations.
+
+For French hospitals, implementing new documentation systems involves coordination across multiple departments: IT, medical staff, administration, and legal. Each constituency has distinct concerns that must be addressed before procurement decisions are made.
+
+## Broader European Ambitions
+
+DocNote's presence in Bordeaux signals ambitions beyond its Swiss home market, but expanding across Europe remains challenging for healthcare technology companies. The European Union may function as a single market for many goods and services, but healthcare largely remains organized at national levels.
+
+Companies like DocNote must decide whether to pursue gradual, country-by-country expansion—adapting their products to each market's specific requirements—or wait until they achieve sufficient scale and resources to tackle multiple markets simultaneously.
+
+## Market Reality
+
+The CHU HealthTech ConnexionDay provided DocNote with valuable exposure to French healthcare decision-makers and insights into market requirements. However, converting conference conversations into actual French hospital customers will likely prove considerably more difficult than simply exhibiting at an event.
+
+Healthcare technology sales cycles are notoriously long, particularly in public hospital systems. Even if everything proceeds smoothly, DocNote might not see actual French implementations until late 2026 or beyond.
+
+For now, the Bordeaux exhibition represents a signal of ambition—DocNote positioning itself for potential European expansion while the hard work of actually achieving it remains ahead.
