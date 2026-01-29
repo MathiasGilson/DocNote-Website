@@ -7,6 +7,7 @@ const pagesCollection = defineCollection({
       home: z.string(),
       pricing: z.string(),
       blog: z.string(),
+      team: z.string(),
       signIn: z.string(),
       getStarted: z.string(),
     }),
@@ -124,6 +125,42 @@ const pagesCollection = defineCollection({
         ai: z.string(),
         documentation: z.string(),
         practice: z.string(),
+      }),
+    }),
+    team: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      members: z.object({
+        vincentTan: z.object({
+          name: z.string(),
+          role: z.string(),
+          bio: z.string(),
+        }),
+        aliceGilson: z.object({
+          name: z.string(),
+          role: z.string(),
+          bio: z.string(),
+        }),
+        mathiasGilson: z.object({
+          name: z.string(),
+          role: z.string(),
+          bio: z.string(),
+        }),
+        jeremyYvinec: z.object({
+          name: z.string(),
+          role: z.string(),
+          bio: z.string(),
+        }),
+        hugoRoussel: z.object({
+          name: z.string(),
+          role: z.string(),
+          bio: z.string(),
+        }),
+        ericWei: z.object({
+          name: z.string(),
+          role: z.string(),
+          bio: z.string(),
+        }),
       }),
     }),
   }),

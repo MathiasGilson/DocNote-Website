@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en/team');
+}
+
+const entry = await getEntry('pages', locale as Locale);
+const t = entry.data;
+---
+
+<Layout title={t?.nav?.team || 'Team'}>
+  <section class="pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          {t.team.title}
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          {t.team.subtitle}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-primary-100">
+              <img src="/dr_vincent_tan.jpg" alt={t.team.members.vincentTan.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">{t.team.members.vincentTan.name}</h3>
+            <p class="text-primary-600 font-semibold mb-4">{t.team.members.vincentTan.role}</p>
+            <p class="text-gray-600 leading-relaxed">{t.team.members.vincentTan.bio}</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-primary-100">
+              <img src="/dre_alice_gilson.jpg" alt={t.team.members.aliceGilson.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">{t.team.members.aliceGilson.name}</h3>
+            <p class="text-primary-600 font-semibold mb-4">{t.team.members.aliceGilson.role}</p>
+            <p class="text-gray-600 leading-relaxed">{t.team.members.aliceGilson.bio}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-primary-100">
+              <img src="/mathias_gilson.jpg" alt={t.team.members.mathiasGilson.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{t.team.members.mathiasGilson.name}</h3>
+            <p class="text-primary-600 font-semibold text-sm mb-3">{t.team.members.mathiasGilson.role}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{t.team.members.mathiasGilson.bio}</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-primary-100">
+              <img src="/jeremy_yvinec.jpg" alt={t.team.members.jeremyYvinec.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{t.team.members.jeremyYvinec.name}</h3>
+            <p class="text-primary-600 font-semibold text-sm mb-3">{t.team.members.jeremyYvinec.role}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{t.team.members.jeremyYvinec.bio}</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-primary-100">
+              <img src="/hugo_roussel.jpg" alt={t.team.members.hugoRoussel.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{t.team.members.hugoRoussel.name}</h3>
+            <p class="text-primary-600 font-semibold text-sm mb-3">{t.team.members.hugoRoussel.role}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{t.team.members.hugoRoussel.bio}</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-primary-100">
+              <img src="/eric_wei.jpg" alt={t.team.members.ericWei.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{t.team.members.ericWei.name}</h3>
+            <p class="text-primary-600 font-semibold text-sm mb-3">{t.team.members.ericWei.role}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{t.team.members.ericWei.bio}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

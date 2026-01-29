@@ -3,8 +3,9 @@
     "home": "Home",
     "pricing": "Pricing",
     "blog": "Blog",
+    "team": "Team",
     "signIn": "Sign In",
-    "getStarted": "Get Started" 
+    "getStarted": "Get Started"
   },
   "hero": {
     "badge": "AI-Powered Medical Documentation",
@@ -158,6 +159,42 @@
       "ai": "AI & Technology",
       "documentation": "Documentation",
       "practice": "Practice Management"
+    }
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "subtitle": "Healthcare professionals and engineers working together to transform medical documentation",
+    "members": {
+      "vincentTan": {
+        "name": "Dr. Vincent Tan",
+        "role": "Doctor & Managing Director",
+        "bio": "Experienced physician with extensive background at Hôpital de la Tour in Geneva, bringing deep healthcare insights to DocNote."
+      },
+      "aliceGilson": {
+        "name": "Dr. Alice Gilson",
+        "role": "Doctor & Managing Director",
+        "bio": "Surgical specialist with comprehensive experience at the University Hospital of Geneva (HUG), dedicated to improving clinical workflows."
+      },
+      "mathiasGilson": {
+        "name": "Mathias Gilson",
+        "role": "Chief Technical Officer",
+        "bio": "Leading the technical vision and innovation behind DocNote's AI-powered platform."
+      },
+      "jeremyYvinec": {
+        "name": "Jeremy Yvinec",
+        "role": "Senior Fullstack Engineer",
+        "bio": "Graduated from IUT Aix-Marseille with extensive experience in React Native and modern web technologies."
+      },
+      "hugoRoussel": {
+        "name": "Hugo Roussel",
+        "role": "Team Lead Engineer",
+        "bio": "EPFZ graduate leading the engineering team with expertise in scalable systems and architecture."
+      },
+      "ericWei": {
+        "name": "Eric Wei",
+        "role": "Senior Frontend Engineer",
+        "bio": "EPFL graduate specializing in creating exceptional user experiences and modern frontend architectures."
+      }
     }
   }
 }

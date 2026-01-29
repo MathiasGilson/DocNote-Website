@@ -29,6 +29,9 @@ const { locale, translations: t } = Astro.props;
           <a href={getLocalizedPath('/blog', locale)} class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
             {t.nav.blog}
           </a>
+          <a href={getLocalizedPath('/team', locale)} class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+            {t.nav.team}
+          </a>
         </div>
       </div>
 
@@ -62,6 +65,9 @@ const { locale, translations: t } = Astro.props;
         </a>
         <a href={getLocalizedPath('/blog', locale)} class="text-sm font-medium text-gray-600 hover:text-gray-900">
           {t.nav.blog}
+        </a>
+        <a href={getLocalizedPath('/team', locale)} class="text-sm font-medium text-gray-600 hover:text-gray-900">
+          {t.nav.team}
         </a>
         <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-900">
           {t.nav.signIn}
