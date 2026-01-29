@@ -171,7 +171,7 @@ const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     excerpt: z.string(),
-    category: z.enum(['ai', 'documentation', 'practice']),
+    category: z.enum(['ai', 'documentation', 'practice', 'news']),
     author: z.string(),
     authorRole: z.string(),
     authorImage: z.string(),
