@@ -14,20 +14,16 @@ En tant que médecin, je pense qu'on sous-estime encore l'impact réel de la doc
 
 Une étude récente publiée dans JAMA Network Open a évalué l'impact des outils d'ambient scribe basés sur l'IA en pratique ambulatoire. Les résultats sont clairs et quantifiés.
 
-## Les Faits
-
 L'utilisation de ces outils est associée à:
 
 - une réduction d'environ 20 % du temps consacré à la documentation par consultation
 - une augmentation significative du taux de dossiers clôturés le jour même
 - une diminution d'environ 30 % du temps de travail administratif effectué en dehors des heures cliniques
-- et une baisse nette de la charge cognitive liée à l'administratif
+- et une baisse nette de la charge cognitive liée à l'administratif.
 
 À l'échelle d'une journée clinique, cela représente un gain de temps réel, mais surtout moins de travail le soir et une meilleure disponibilité pendant la consultation.
 
-## Mais une question reste centrale : où vont les données ?
-
-En particulier en Suisse, cette question est essentielle.
+Mais une question reste centrale, en particulier en Suisse : où vont les données ?
 
 C'est précisément pour répondre à cette exigence que nous avons créé DocNote.
 
@@ -40,9 +36,7 @@ DocNote est une solution d'assistance à la documentation médicale 100 % souver
 
 DocNote n'est pas une adaptation opportuniste de solutions étrangères. C'est une solution conçue en Suisse, pour le système de santé suisse, avec un niveau de protection des données compatible avec la confiance que nous devons à nos patients.
 
-## L'objectif est simple
-
-Réduire la charge documentaire sans compromis sur la qualité médicale ni sur la sécurité des données.
+L'objectif est simple : réduire la charge documentaire sans compromis sur la qualité médicale ni sur la sécurité des données.
 
 Si vous êtes médecin, chef de service ou responsable institutionnel et que la documentation et la souveraineté des données sont des sujets concrets dans votre pratique ou votre établissement, je serais ravi d'échanger avec vous et de vous présenter DocNote ou découvrez notre solution directement sur notre site : [www.docnote.ch](https://www.docnote.ch)
 

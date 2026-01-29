@@ -14,20 +14,16 @@ Als Arzt glaube ich, dass wir die tatsächlichen Auswirkungen der klinischen Dok
 
 Eine kürzlich veröffentlichte Studie im JAMA Network Open hat die Auswirkungen von KI-basierten Ambient-Scribe-Tools in der ambulanten Praxis untersucht. Die Ergebnisse sind klar und quantifiziert.
 
-## Die Fakten
-
 Die Verwendung dieser Tools ist verbunden mit:
 
 - einer Reduktion von etwa 20% der für die Dokumentation pro Konsultation aufgewendeten Zeit
 - einer signifikanten Erhöhung der Rate der am selben Tag abgeschlossenen Akten
 - einer Verringerung von etwa 30% der außerhalb der klinischen Arbeitszeit durchgeführten Verwaltungsarbeit
-- einer deutlichen Reduzierung der kognitiven Belastung durch administrative Aufgaben
+- und einer deutlichen Reduzierung der kognitiven Belastung durch administrative Aufgaben.
 
 Im Laufe eines klinischen Tages bedeutet dies echte Zeitersparnis, aber vor allem weniger Arbeit am Abend und bessere Verfügbarkeit während der Konsultation.
 
-## Aber eine Frage bleibt zentral: Wohin gehen die Daten?
-
-Besonders in der Schweiz ist diese Frage entscheidend.
+Aber eine Frage bleibt zentral, besonders in der Schweiz: Wohin gehen die Daten?
 
 Genau um diese Anforderung zu erfüllen, haben wir DocNote geschaffen.
 
@@ -40,9 +36,7 @@ DocNote ist eine 100% souveräne Schweizer Lösung zur Unterstützung der medizi
 
 DocNote ist keine opportunistische Anpassung ausländischer Lösungen. Es ist eine in der Schweiz konzipierte Lösung für das Schweizer Gesundheitssystem mit einem Datenschutzniveau, das mit dem Vertrauen vereinbar ist, das wir unseren Patienten schulden.
 
-## Das Ziel ist einfach
-
-Die Dokumentationslast reduzieren, ohne Kompromisse bei der medizinischen Qualität oder der Datensicherheit einzugehen.
+Das Ziel ist einfach: Die Dokumentationslast reduzieren, ohne Kompromisse bei der medizinischen Qualität oder der Datensicherheit einzugehen.
 
 Wenn Sie Arzt, Abteilungsleiter oder institutioneller Verantwortlicher sind und Dokumentation und Datensouveränität konkrete Themen in Ihrer Praxis oder Einrichtung sind, würde ich mich freuen, mit Ihnen zu sprechen und Ihnen DocNote vorzustellen, oder entdecken Sie unsere Lösung direkt auf unserer Website: [www.docnote.ch](https://www.docnote.ch)
 

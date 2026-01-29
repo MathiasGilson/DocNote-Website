@@ -14,20 +14,16 @@ As a physician, I believe we still underestimate the real impact of clinical doc
 
 A recent study published in JAMA Network Open evaluated the impact of AI-based ambient scribe tools in outpatient practice. The results are clear and quantified.
 
-## The Evidence
-
 The use of these tools is associated with:
 
 - approximately 20% reduction in time spent on documentation per consultation
 - significant increase in the rate of charts closed on the same day
 - approximately 30% decrease in administrative work performed outside clinical hours
-- clear reduction in cognitive burden related to administrative tasks
+- and a clear reduction in cognitive burden related to administrative tasks.
 
 Over the course of a clinical day, this represents real time savings, but more importantly, less work in the evening and better availability during consultations.
 
-## But One Question Remains Central: Where Does the Data Go?
-
-Particularly in Switzerland, this question is critical.
+But one question remains central, particularly in Switzerland: where does the data go?
 
 It is precisely to answer this requirement that we created DocNote.
 
@@ -40,9 +36,7 @@ DocNote is a 100% Swiss sovereign medical documentation assistance solution:
 
 DocNote is not an opportunistic adaptation of foreign solutions. It is a solution designed in Switzerland, for the Swiss healthcare system, with a level of data protection compatible with the trust we owe to our patients.
 
-## The Goal is Simple
-
-Reduce the documentation burden without compromising medical quality or data security.
+The goal is simple: reduce the documentation burden without compromising medical quality or data security.
 
 If you are a physician, department head, or institutional leader, and documentation and data sovereignty are concrete issues in your practice or establishment, I would be delighted to discuss with you and present DocNote, or discover our solution directly on our website: [www.docnote.ch](https://www.docnote.ch)
 
