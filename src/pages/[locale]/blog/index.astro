@@ -119,20 +119,9 @@ const categoryColors: Record<string, string> = {
                       <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                         {post.data.title}
                       </h2>
-                      <p class="text-gray-600 mb-4 line-clamp-2">
+                      <p class="text-gray-600 line-clamp-3">
                         {post.data.excerpt}
                       </p>
-                      <div class="flex items-center gap-3">
-                        <img
-                          src={post.data.authorImage}
-                          alt={post.data.author}
-                          class="w-10 h-10 rounded-full object-cover"
-                        />
-                        <div>
-                          <p class="text-sm font-medium text-gray-900">{post.data.author}</p>
-                          <p class="text-xs text-gray-500">{post.data.authorRole}</p>
-                        </div>
-                      </div>
                     </div>
                   </a>
                 </article>
