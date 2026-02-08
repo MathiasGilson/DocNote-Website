@@ -1,0 +1,215 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { locales, isValidLocale, getLocalizedPath, formatDate, type Locale } from '../../../utils/i18n';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en/blog2');
+}
+
+const entry = await getEntry('pages', locale as Locale);
+const t = entry.data;
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+---
+
+<Layout title={t.blog2?.title || 'LinkedIn Updates'}>
+  <section class="pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          {t.blog2?.title || 'Latest Updates'}
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          {t.blog2?.subtitle || 'Stay informed with our latest news and insights from LinkedIn'}
+        </p>
+      </div>
+
+      <div id="loading" class="flex justify-center items-center min-h-[400px]">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      </div>
+
+      <div id="error" class="hidden text-center py-12">
+        <div class="max-w-md mx-auto bg-red-50 border border-red-200 rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-red-900 mb-2">Unable to load updates</h3>
+          <p class="text-red-700">
+            {t.blog2?.errorMessage || 'Please try again later or visit our LinkedIn page directly.'}
+          </p>
+          <a
+            href="https://www.linkedin.com/company/107244351"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          >
+            {t.blog2?.visitLinkedIn || 'Visit our LinkedIn'}
+          </a>
+        </div>
+      </div>
+
+      <div id="posts-grid" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      </div>
+
+      <div id="pagination" class="hidden mt-12 flex justify-center gap-4">
+        <button
+          id="prev-btn"
+          class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled
+        >
+          {t.blog2?.previous || 'Previous'}
+        </button>
+        <span id="page-info" class="px-6 py-3 text-gray-700 font-medium"></span>
+        <button
+          id="next-btn"
+          class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled
+        >
+          {t.blog2?.next || 'Next'}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ supabaseUrl, locale }}>
+    let currentPage = 1;
+    let totalPosts = 0;
+    let hasMore = false;
+    const limit = 9;
+
+    async function fetchPosts(page) {
+      try {
+        const response = await fetch(`${supabaseUrl}/functions/v1/linkedin-posts?page=${page}&limit=${limit}`);
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts');
+        }
+
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        throw error;
+      }
+    }
+
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+
+      const localeMap = {
+        'de': 'de-DE',
+        'fr': 'fr-FR',
+        'en': 'en-US'
+      };
+
+      return date.toLocaleDateString(localeMap[locale] || 'en-US', options);
+    }
+
+    function renderPosts(posts) {
+      const grid = document.getElementById('posts-grid');
+      grid.innerHTML = '';
+
+      posts.forEach(post => {
+        const article = document.createElement('article');
+        article.className = 'bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group';
+
+        const excerpt = post.content.split('\n').slice(0, 3).join('\n').substring(0, 150) + '...';
+
+        article.innerHTML = `
+          <a href="/${locale}/blog2/${post.slug}">
+            <div class="p-6 min-h-[280px] flex flex-col">
+              <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                <span>${formatDate(post.publishedAt)}</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors line-clamp-2">
+                ${post.title}
+              </h2>
+              <p class="text-gray-600 line-clamp-4 flex-grow">
+                ${excerpt}
+              </p>
+              <div class="mt-4 flex items-center text-primary-600 font-medium">
+                <span>${locale === 'fr' ? 'Lire plus' : locale === 'de' ? 'Mehr lesen' : 'Read more'}</span>
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        `;
+
+        grid.appendChild(article);
+      });
+
+      grid.classList.remove('hidden');
+    }
+
+    function updatePagination() {
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const pageInfo = document.getElementById('page-info');
+      const pagination = document.getElementById('pagination');
+
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = !hasMore;
+
+      const totalPages = Math.ceil(totalPosts / limit);
+      pageInfo.textContent = `${locale === 'fr' ? 'Page' : locale === 'de' ? 'Seite' : 'Page'} ${currentPage} ${locale === 'fr' ? 'sur' : locale === 'de' ? 'von' : 'of'} ${totalPages}`;
+
+      pagination.classList.remove('hidden');
+    }
+
+    async function loadPage(page) {
+      const loading = document.getElementById('loading');
+      const error = document.getElementById('error');
+      const grid = document.getElementById('posts-grid');
+
+      loading.classList.remove('hidden');
+      error.classList.add('hidden');
+      grid.classList.add('hidden');
+
+      try {
+        const data = await fetchPosts(page);
+
+        if (data.posts && data.posts.length > 0) {
+          currentPage = page;
+          totalPosts = data.total;
+          hasMore = data.hasMore;
+
+          renderPosts(data.posts);
+          updatePagination();
+        } else {
+          throw new Error('No posts available');
+        }
+      } catch (err) {
+        error.classList.remove('hidden');
+      } finally {
+        loading.classList.add('hidden');
+      }
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      if (currentPage > 1) {
+        loadPage(currentPage - 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      if (hasMore) {
+        loadPage(currentPage + 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    loadPage(1);
+  </script>
+</Layout>
