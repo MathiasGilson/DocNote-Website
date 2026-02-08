@@ -5,15 +5,17 @@ category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/logo.png"
-image: "/ca99315f-ce49-4ae5-9338-3f2071c2b4ce.png"
+image: "/ef92a5c3-2e60-42cf-bbb0-c5ec4b7b1117.png"
 date: "2025-04-15"
 readTime: 3
 ---
 
-# DocNote Presents at SSMIG Annual Conference
+**DocNote Presents AI Medical Documentation at SSMIG Annual Conference**
 
-On the occasion of the annual congress of the Swiss Society of General Internal Medicine (SGAIM), we had the pleasure of presenting DocNote as part of the Lumière Prize, dedicated to innovative projects in medicine.
+At the Swiss Society of General Internal Medicine (SSMIG) annual conference in April 2025, DocNote showcased its AI-powered medical documentation platform to an audience of general practitioners and internal medicine specialists from across Switzerland.
 
-Our goal is simple: reduce the administrative burden on physicians while ensuring clear, reliable medical documentation that complies with clinical standards with a 100% Swiss solution. Designed and hosted in Switzerland in a closed loop.
+The presentation addressed a major challenge in primary care: the growing administrative burden on physicians. DocNote demonstrated how its technology converts doctor-patient conversations into structured medical reports, with the potential to significantly reduce time spent on documentation.
 
-A big thank you to Celi Julien and Majd Ramlawi for their trust and valuable feedback from the emergency department of Hôpital de la Tour, which helped evolve the tool closer to field needs.
+Particular attention was given to data privacy and regulatory compliance. DocNote processes all data on servers located in Switzerland, in line with Swiss medical data protection requirements—an essential criterion for healthcare professionals.
+
+The session sparked strong interest, with numerous questions around integration into existing electronic health record systems and real-world clinical use. Several practices expressed interest in pilot projects, reflecting cautious but genuine engagement from the Swiss medical community.

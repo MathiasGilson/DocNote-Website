@@ -5,15 +5,17 @@ category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/logo.png"
-image: "/ca99315f-ce49-4ae5-9338-3f2071c2b4ce.png"
+image: "/ef92a5c3-2e60-42cf-bbb0-c5ec4b7b1117.png"
 date: "2025-04-15"
 readTime: 3
 ---
 
-# DocNote présente à la conférence annuelle de la SSMIG
+**DocNote présente la documentation médicale par IA au congrès annuel de la SSMIG**
 
-À l'occasion du congrès annuel de la Société Suisse de Médecine Interne Générale (SGAIM), nous avons eu le plaisir de présenter DocNote dans le cadre du prix Lumière, dédié aux projets innovants en médecine.
+Lors du congrès annuel de la Société Suisse de Médecine Interne Générale (SSMIG) en avril 2025, DocNote a présenté sa plateforme de documentation médicale assistée par IA à un public de médecins généralistes et de spécialistes en médecine interne de toute la Suisse.
 
-Notre objectif est simple : réduire la charge administrative des médecins tout en garantissant une documentation médicale claire, fiable et conforme aux standards cliniques avec une solution 100% Suisse. Conçue et hébergé en Suisse dans une boucle fermée.
+La présentation a abordé un défi majeur dans les soins primaires : la charge administrative croissante des médecins. DocNote a démontré comment sa technologie convertit les conversations médecin-patient en rapports médicaux structurés, avec le potentiel de réduire considérablement le temps consacré à la documentation.
 
-Un grand merci à Celi Julien et Majd Ramlawi pour leur confiance et leurs retours précieux aux urgences de l'Hôpital de la Tour, qui ont contribué à faire évoluer l'outil au plus proche des besoins du terrain.
+Une attention particulière a été accordée à la protection des données et à la conformité réglementaire. DocNote traite toutes les données sur des serveurs situés en Suisse, conformément aux exigences suisses en matière de protection des données médicales—un critère essentiel pour les professionnels de la santé.
+
+La session a suscité un vif intérêt, avec de nombreuses questions sur l'intégration dans les systèmes de dossiers de santé électroniques existants et l'utilisation clinique réelle. Plusieurs cabinets ont exprimé leur intérêt pour des projets pilotes, reflétant un engagement prudent mais réel de la communauté médicale suisse.

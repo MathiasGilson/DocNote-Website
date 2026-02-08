@@ -5,15 +5,17 @@ category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/logo.png"
-image: "/ca99315f-ce49-4ae5-9338-3f2071c2b4ce.png"
+image: "/ef92a5c3-2e60-42cf-bbb0-c5ec4b7b1117.png"
 date: "2025-04-15"
 readTime: 3
 ---
 
-# DocNote präsentiert an der SGAIM-Jahreskonferenz
+**DocNote präsentiert KI-gestützte medizinische Dokumentation am SSMIG-Jahreskongress**
 
-Anlässlich des Jahreskongresses der Schweizerischen Gesellschaft für Allgemeine Innere Medizin (SGAIM) hatten wir die Freude, DocNote im Rahmen des Lumière-Preises vorzustellen, der innovativen Projekten in der Medizin gewidmet ist.
+Am Jahreskongress der Schweizerischen Gesellschaft für Allgemeine Innere Medizin (SSMIG) im April 2025 stellte DocNote seine KI-gestützte medizinische Dokumentationsplattform einem Publikum von Allgemeinärzten und Internisten aus der ganzen Schweiz vor.
 
-Unser Ziel ist einfach: die administrative Belastung für Ärzte zu reduzieren und gleichzeitig eine klare, zuverlässige medizinische Dokumentation zu gewährleisten, die den klinischen Standards entspricht – mit einer 100% Schweizer Lösung. Entwickelt und gehostet in der Schweiz in einem geschlossenen Kreislauf.
+Die Präsentation befasste sich mit einer großen Herausforderung in der Primärversorgung: der wachsenden administrativen Belastung für Ärzte. DocNote demonstrierte, wie seine Technologie Arzt-Patienten-Gespräche in strukturierte medizinische Berichte umwandelt, mit dem Potenzial, den Zeitaufwand für die Dokumentation erheblich zu reduzieren.
 
-Ein großes Dankeschön an Celi Julien und Majd Ramlawi für ihr Vertrauen und ihre wertvollen Rückmeldungen aus der Notaufnahme des Hôpital de la Tour, die dazu beigetragen haben, das Tool den Bedürfnissen vor Ort näher zu bringen.
+Besondere Aufmerksamkeit wurde dem Datenschutz und der regulatorischen Compliance gewidmet. DocNote verarbeitet alle Daten auf Servern in der Schweiz, im Einklang mit den schweizerischen Anforderungen an den medizinischen Datenschutz—ein wesentliches Kriterium für medizinische Fachkräfte.
+
+Die Session weckte großes Interesse, mit zahlreichen Fragen zur Integration in bestehende elektronische Gesundheitsdatensysteme und zur klinischen Anwendung in der Praxis. Mehrere Praxen bekundeten Interesse an Pilotprojekten, was das vorsichtige, aber echte Engagement der Schweizer Ärzteschaft widerspiegelt.
