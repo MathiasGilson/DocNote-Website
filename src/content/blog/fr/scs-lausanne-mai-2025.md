@@ -4,8 +4,8 @@ excerpt: "DocNote a participé au prestigieux congrès annuel du SCS à l'EPFL d
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
-authorImage: "/logo.png"
-image: "/scs_lausanne_05.25.jpg"
+authorImage: "/images/logo.png"
+image: "/images/scs_lausanne_05.25.jpg"
 date: "2025-05-20"
 readTime: 4
 ---

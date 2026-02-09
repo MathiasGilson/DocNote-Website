@@ -4,8 +4,8 @@ excerpt: "DocNote wurde der Schweizerischen Gesellschaft für Allgemeine Innere 
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
-authorImage: "/logo.png"
-image: "/ssmig.jpg"
+authorImage: "/images/logo.png"
+image: "/images/ssmig.jpg"
 date: "2025-04-15"
 readTime: 3
 ---

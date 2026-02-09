@@ -4,8 +4,8 @@ excerpt: "DocNote showcased its AI-powered medical documentation platform at Ado
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
-authorImage: "/logo.png"
-image: "/adopt_ai_11.25.jpg"
+authorImage: "/images/logo.png"
+image: "/images/adopt_ai_11.25.jpg"
 date: "2025-11-25"
 readTime: 4
 ---

@@ -1,266 +1,624 @@
 ---
 interface Props {
-  translations: any;
+    translations: any
 }
 
-const { translations: t } = Astro.props;
+const { translations: t } = Astro.props
 ---
 
-<section class="pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div class="animate-fade-in">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-700 rounded-full text-sm font-medium mb-6">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-          {t.hero.badge}
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-          {t.hero.title}
-          <span class="text-primary-500"> {t.hero.titleHighlight}</span>
+<section class="relative pt-28 pb-24 lg:pt-36 lg:pb-32 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="/images/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 bg-white/80"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+            <span class="text-gradient font-bold">{t.hero.title}</span>
+            <br />
+            <span class="font-semibold text-gray-700">{t.hero.titleHighlight}</span>
         </h1>
 
-        <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
-          {t.hero.subtitle}
+        <p class="text-base sm:text-lg text-gray-500 mb-8 max-w-xl mx-auto leading-relaxed">
+            {t.hero.subtitle}
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
+        <a
             href="#"
-            class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30"
-          >
+            class="inline-flex items-center justify-center px-7 py-3 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/30"
+        >
             {t.hero.cta}
-            <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-          <button
-            id="watch-demo-btn"
-            type="button"
-            class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-          >
-            <svg class="mr-2 w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {t.hero.ctaSecondary}
-          </button>
-        </div>
-      </div>
-
-      <div class="relative lg:pl-8 animate-fade-in flex justify-center" style="animation-delay: 0.2s;">
-        <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl transform rotate-3"></div>
-          <div class="relative bg-white rounded-3xl shadow-2xl w-[280px] sm:w-[300px] h-[498px] sm:h-[533px] border border-gray-200 overflow-hidden">
-            <div class="bg-primary-500 px-4 py-3 flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                  </svg>
-                </div>
-                <span class="text-white font-semibold text-sm">DocNote</span>
-              </div>
-              <div class="text-white/80 text-xs">9:41</div>
-            </div>
-
-            <div class="p-4 flex flex-col gap-4 h-[calc(100%-52px)]">
-              <div id="soap-note-container" class="bg-gray-50 rounded-2xl p-4 flex-1 overflow-y-auto">
-                <div id="soap-title" class="text-xs font-semibold text-gray-500 mb-3 opacity-0">SOAP Note Generated</div>
-                <div class="space-y-3">
-                  <div id="soap-s" class="flex gap-2 opacity-0">
-                    <span class="text-xs font-bold text-primary-600 flex-shrink-0">S:</span>
-                    <span class="text-xs text-gray-600 soap-text"></span>
-                  </div>
-                  <div id="soap-o" class="flex gap-2 opacity-0">
-                    <span class="text-xs font-bold text-primary-600 flex-shrink-0">O:</span>
-                    <span class="text-xs text-gray-600 soap-text"></span>
-                  </div>
-                  <div id="soap-a" class="flex gap-2 opacity-0">
-                    <span class="text-xs font-bold text-primary-600 flex-shrink-0">A:</span>
-                    <span class="text-xs text-gray-600 soap-text"></span>
-                  </div>
-                  <div id="soap-p" class="flex gap-2 opacity-0">
-                    <span class="text-xs font-bold text-primary-600 flex-shrink-0">P:</span>
-                    <span class="text-xs text-gray-600 soap-text"></span>
-                  </div>
-                </div>
-              </div>
-
-              <div id="saved-status" class="flex items-center justify-between text-sm opacity-0 flex-shrink-0">
-                <span class="text-green-600 font-medium flex items-center gap-1 text-xs">
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  Saved to EHR
-                </span>
-                <span class="text-gray-400 text-xs">Just now</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+        </a>
     </div>
-  </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 lg:mt-16">
+        <div class="relative">
+            <!-- Desktop web app mockup -->
+            <div
+                class="relative bg-white rounded-xl shadow-2xl shadow-indigo-200/40 border border-gray-200/80 overflow-hidden"
+            >
+                <div class="bg-gray-50 border-b border-gray-200 px-3 py-2 flex items-center gap-2">
+                    <div class="flex gap-1.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                        <div
+                            class="bg-white rounded-md px-3 py-0.5 text-[10px] text-gray-400 border border-gray-200 max-w-[180px] w-full text-center"
+                        >
+                            docnote.care
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex min-h-[260px] sm:min-h-[320px]">
+                    <div class="hidden sm:block w-36 bg-gray-50 border-r border-gray-200 p-3 flex-shrink-0">
+                        <div class="flex items-center gap-1.5 mb-4">
+                            <img src="/images/logo.png" alt="DocNote" class="w-5 h-5" />
+                            <span class="text-[10px] font-semibold text-gray-900">DocNote</span>
+                        </div>
+                        <nav class="space-y-0.5">
+                            <div
+                                class="flex items-center gap-1.5 px-1.5 py-1 bg-gray-200 text-gray-700 rounded text-[10px]"
+                            >
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                    ></path></svg
+                                >
+                                Consultations
+                            </div>
+                            <div class="flex items-center gap-1.5 px-1.5 py-1 text-gray-500 rounded text-[10px]">
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                                    ></path></svg
+                                >
+                                Patients
+                            </div>
+                            <div class="flex items-center gap-1.5 px-1.5 py-1 text-gray-500 rounded text-[10px]">
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"
+                                    ></path></svg
+                                >
+                                Templates
+                            </div>
+                            <div class="flex items-center gap-1.5 px-1.5 py-1 text-gray-500 rounded text-[10px]">
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                                    ></path><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg
+                                >
+                                Settings
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="flex-1 p-3 sm:p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <h3 class="text-xs font-semibold text-gray-900">Consultation — Patient #1247</h3>
+                                <p class="text-[10px] text-gray-400 mt-0.5">Today, 14:30 · General Practice</p>
+                            </div>
+                            <div
+                                id="recording-indicator"
+                                class="flex items-center gap-1 px-2 py-0.5 bg-red-50 text-red-600 rounded-full text-[10px] font-medium opacity-0"
+                            >
+                                <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
+                                Recording
+                            </div>
+                        </div>
+
+                        <div id="soap-note-container" class="bg-gray-50 rounded-md p-3 border border-gray-100">
+                            <div
+                                id="soap-title"
+                                class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2 opacity-0"
+                            >
+                                SOAP Note Generated
+                            </div>
+                            <div class="space-y-2">
+                                <div id="soap-s" class="flex gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">S:</span>
+                                    <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
+                                </div>
+                                <div id="soap-o" class="flex gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">O:</span>
+                                    <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
+                                </div>
+                                <div id="soap-a" class="flex gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">A:</span>
+                                    <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
+                                </div>
+                                <div id="soap-p" class="flex gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">P:</span>
+                                    <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="saved-status" class="flex items-center justify-between mt-2 opacity-0">
+                            <span class="text-green-600 font-medium flex items-center gap-1 text-[10px]">
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Saved to EHR
+                            </span>
+                            <span class="text-gray-400 text-[10px]">Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile app window -->
+            <div
+                id="phone-mockup"
+                class="hidden sm:block absolute -bottom-12 -right-6 lg:-right-12 z-10 opacity-0"
+                style="width:240px;aspect-ratio:9/16;"
+            >
+                <div
+                    class="bg-white rounded-[30px] border border-gray-200/80 shadow-2xl shadow-indigo-200/40 overflow-hidden w-full h-full flex flex-col"
+                >
+                    <!-- App header -->
+                    <div class="px-4 py-3 border-b border-gray-100 flex items-center gap-2 flex-shrink-0">
+                        <img src="/images/logo.png" alt="DocNote" class="w-6 h-6" />
+                        <span class="text-xs font-semibold text-gray-900">DocNote</span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-1 px-4 py-3 flex flex-col">
+                        <p class="text-[10px] text-gray-500 mb-0.5">Patient #1247</p>
+                        <p class="text-xs font-semibold text-gray-900 mb-3">General Practice</p>
+
+                        <!-- Recording status -->
+                        <div id="phone-recording-status" class="opacity-0">
+                            <div class="bg-red-50 rounded-lg p-2.5 mb-2.5">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                                        <span class="text-[11px] text-red-600 font-medium">Recording</span>
+                                    </div>
+                                    <span id="phone-timer" class="text-[11px] text-red-500 font-mono">0:00</span>
+                                </div>
+                                <div class="flex items-center justify-center gap-[3px] h-6">
+                                    <div
+                                        class="w-[2px] bg-red-300 rounded-full animate-waveform"
+                                        style="height:8px;animation-delay:0s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:12px;animation-delay:0.1s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-500 rounded-full animate-waveform"
+                                        style="height:16px;animation-delay:0.2s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:10px;animation-delay:0.3s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-500 rounded-full animate-waveform"
+                                        style="height:18px;animation-delay:0.15s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:12px;animation-delay:0.25s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-300 rounded-full animate-waveform"
+                                        style="height:8px;animation-delay:0.35s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:14px;animation-delay:0.05s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-500 rounded-full animate-waveform"
+                                        style="height:18px;animation-delay:0.2s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:10px;animation-delay:0.3s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-300 rounded-full animate-waveform"
+                                        style="height:8px;animation-delay:0.4s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:12px;animation-delay:0.1s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-500 rounded-full animate-waveform"
+                                        style="height:16px;animation-delay:0.25s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:10px;animation-delay:0.35s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-300 rounded-full animate-waveform"
+                                        style="height:8px;animation-delay:0.45s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-400 rounded-full animate-waveform"
+                                        style="height:14px;animation-delay:0.15s"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-[2px] bg-red-500 rounded-full animate-waveform"
+                                        style="height:12px;animation-delay:0.05s"
+                                    >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="phone-transcript" class="opacity-0">
+                                <p class="text-[9px] text-gray-400 uppercase tracking-wider mb-1">Live transcript</p>
+                                <div class="space-y-1">
+                                    <div class="h-1.5 bg-gray-100 rounded-full w-full"></div>
+                                    <div class="h-1.5 bg-gray-100 rounded-full w-4/5"></div>
+                                    <div class="h-1.5 bg-gray-100 rounded-full w-3/5"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SOAP report on phone -->
+                        <div id="phone-done" class="opacity-0 hidden">
+                            <div class="text-[9px] font-semibold text-gray-400 uppercase tracking-wider mb-1.5">
+                                SOAP Note
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1.5">
+                                <div id="phone-soap-s" class="flex gap-1 opacity-0">
+                                    <span class="text-[9px] font-bold text-gray-900 flex-shrink-0">S:</span>
+                                    <span class="text-[9px] text-gray-600 leading-relaxed phone-soap-text"></span>
+                                </div>
+                                <div id="phone-soap-o" class="flex gap-1 opacity-0">
+                                    <span class="text-[9px] font-bold text-gray-900 flex-shrink-0">O:</span>
+                                    <span class="text-[9px] text-gray-600 leading-relaxed phone-soap-text"></span>
+                                </div>
+                                <div id="phone-soap-a" class="flex gap-1 opacity-0">
+                                    <span class="text-[9px] font-bold text-gray-900 flex-shrink-0">A:</span>
+                                    <span class="text-[9px] text-gray-600 leading-relaxed phone-soap-text"></span>
+                                </div>
+                                <div id="phone-soap-p" class="flex gap-1 opacity-0">
+                                    <span class="text-[9px] font-bold text-gray-900 flex-shrink-0">P:</span>
+                                    <span class="text-[9px] text-gray-600 leading-relaxed phone-soap-text"></span>
+                                </div>
+                            </div>
+                            <div id="phone-saved" class="flex items-center gap-1 mt-1.5 opacity-0">
+                                <svg
+                                    class="w-2.5 h-2.5 text-green-500"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-[9px] text-green-600 font-medium">Saved to EHR</span>
+                            </div>
+                        </div>
+
+                        <div class="flex-1"></div>
+                    </div>
+
+                    <!-- Mic button -->
+                    <div class="px-4 pb-4 pt-1 flex-shrink-0">
+                        <div
+                            id="phone-mic-btn"
+                            class="w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-indigo-500/30 opacity-0"
+                        >
+                            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                                ></path></svg
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <div id="video-modal" class="fixed inset-0 z-50 hidden">
-  <div id="modal-overlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div id="modal-content" class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
-      <button
-        id="close-modal-btn"
-        type="button"
-        class="absolute -top-12 right-0 text-white/80 hover:text-white transition-colors"
-        aria-label="Close modal"
-      >
-        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-      <div class="aspect-video">
-        <iframe
-          id="youtube-iframe"
-          class="w-full h-full"
-          src=""
-          title="Demo Video"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
+    <div id="modal-overlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div id="modal-content" class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
+            <button
+                id="close-modal-btn"
+                type="button"
+                class="absolute -top-12 right-0 text-white/80 hover:text-white transition-colors"
+                aria-label="Close modal"
+            >
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                </svg>
+            </button>
+            <div class="aspect-video">
+                <iframe
+                    id="youtube-iframe"
+                    class="w-full h-full"
+                    src=""
+                    title="Demo Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <style>
-  .soap-text {
-    overflow: hidden;
-    border-right: 2px solid transparent;
-  }
-
-  .soap-text.typing {
-    border-right-color: currentColor;
-    animation: blink 0.7s step-end infinite;
-  }
-
-  @keyframes blink {
-    50% { border-right-color: transparent; }
-  }
-
-  .fade-in-up {
-    animation: fadeInUp 0.4s ease-out forwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
+    .soap-text {
+        overflow: hidden;
+        border-right: 2px solid transparent;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    .soap-text.typing {
+        border-right-color: currentColor;
+        animation: blink 0.7s step-end infinite;
     }
-  }
+    @keyframes blink {
+        50% {
+            border-right-color: transparent;
+        }
+    }
 </style>
 
 <script>
-  const watchDemoBtn = document.getElementById('watch-demo-btn');
-  const videoModal = document.getElementById('video-modal');
-  const modalOverlay = document.getElementById('modal-overlay');
-  const modalContent = document.getElementById('modal-content');
-  const closeModalBtn = document.getElementById('close-modal-btn');
-  const youtubeIframe = document.getElementById('youtube-iframe') as HTMLIFrameElement;
-  const videoUrl = 'https://www.youtube.com/embed/AJCoJ9kOKrU?autoplay=1';
+    const videoModal = document.getElementById("video-modal")
+    const modalOverlay = document.getElementById("modal-overlay")
+    const modalContent = document.getElementById("modal-content")
+    const closeModalBtn = document.getElementById("close-modal-btn")
+    const youtubeIframe = document.getElementById("youtube-iframe") as HTMLIFrameElement
+    const videoUrl = "https://www.youtube.com/embed/AJCoJ9kOKrU?autoplay=1"
 
-  function openModal() {
-    videoModal?.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    if (youtubeIframe) {
-      youtubeIframe.src = videoUrl;
+    const closeModal = () => {
+        videoModal?.classList.add("hidden")
+        document.body.style.overflow = ""
+        if (youtubeIframe) youtubeIframe.src = ""
     }
-  }
 
-  function closeModal() {
-    videoModal?.classList.add('hidden');
-    document.body.style.overflow = '';
-    if (youtubeIframe) {
-      youtubeIframe.src = '';
+    closeModalBtn?.addEventListener("click", closeModal)
+    modalOverlay?.addEventListener("click", closeModal)
+    modalContent?.addEventListener("click", (e) => e.stopPropagation())
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !videoModal?.classList.contains("hidden")) closeModal()
+    })
+
+    const soapLines = [
+        {
+            id: "soap-s",
+            text: "Patient reports persistent headache for 3 days, worsening in the evening. Rates pain 6/10, bilateral pressure. Denies nausea or photophobia."
+        },
+        {
+            id: "soap-o",
+            text: "BP 120/80, HR 72, Temp 36.8C. Alert and oriented. Mild trapezius tenderness bilaterally. CN II-XII intact."
+        },
+        { id: "soap-a", text: "Tension-type headache, likely stress-related. No red flags for secondary headache." },
+        { id: "soap-p", text: "Ibuprofen 400mg PRN. Sleep hygiene counseling. Follow-up in 2 weeks if no improvement." }
+    ]
+
+    const typeText = (
+        element: HTMLElement,
+        text: string,
+        speed: number = 30,
+        mirrorEl?: HTMLElement | null,
+        mirrorText?: string
+    ): Promise<void> => {
+        return new Promise((resolve) => {
+            const textEl = element.querySelector(".soap-text") as HTMLElement
+            const mirrorTextEl = mirrorEl?.querySelector(".phone-soap-text") as HTMLElement | null
+            const phoneText = mirrorText || text
+            if (!textEl) {
+                resolve()
+                return
+            }
+            element.classList.remove("opacity-0")
+            element.classList.add("fade-in-up")
+            textEl.classList.add("typing")
+            textEl.textContent = ""
+            if (mirrorEl) {
+                mirrorEl.classList.remove("opacity-0")
+                mirrorEl.classList.add("fade-in-up")
+                if (mirrorTextEl) mirrorTextEl.textContent = ""
+            }
+            let i = 0
+            let j = 0
+            const phoneRatio = phoneText.length / text.length
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    textEl.textContent += text[i]
+                    const targetJ = Math.min(Math.floor((i + 1) * phoneRatio), phoneText.length)
+                    if (mirrorTextEl) {
+                        while (j < targetJ) {
+                            mirrorTextEl.textContent += phoneText[j]
+                            j++
+                        }
+                    }
+                    i++
+                } else {
+                    if (mirrorTextEl && j < phoneText.length) {
+                        mirrorTextEl.textContent = phoneText
+                    }
+                    clearInterval(interval)
+                    textEl.classList.remove("typing")
+                    resolve()
+                }
+            }, speed)
+        })
     }
-  }
 
-  watchDemoBtn?.addEventListener('click', openModal);
-  closeModalBtn?.addEventListener('click', closeModal);
-  modalOverlay?.addEventListener('click', closeModal);
-  modalContent?.addEventListener('click', (e) => e.stopPropagation());
+    let timerInterval: number
+    let seconds = 0
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !videoModal?.classList.contains('hidden')) {
-      closeModal();
+    const startPhoneTimer = () => {
+        const timerEl = document.getElementById("phone-timer")
+        seconds = 0
+        timerInterval = window.setInterval(() => {
+            seconds++
+            const m = Math.floor(seconds / 60)
+            const s = seconds % 60
+            if (timerEl) timerEl.textContent = `${m}:${s.toString().padStart(2, "0")}`
+        }, 1000)
     }
-  });
 
-  const soapLines = [
-    { id: 'soap-s', text: 'Patient reports persistent headache for 3 days, worsening in the evening. Rates pain 6/10, bilateral pressure. Denies nausea or photophobia.' },
-    { id: 'soap-o', text: 'BP 120/80, HR 72, Temp 36.8C. Alert and oriented. Mild trapezius tenderness bilaterally. CN II-XII intact.' },
-    { id: 'soap-a', text: 'Tension-type headache, likely stress-related. No red flags for secondary headache.' },
-    { id: 'soap-p', text: 'Ibuprofen 400mg PRN. Sleep hygiene counseling. Follow-up in 2 weeks if no improvement.' },
-  ];
+    const stopPhoneTimer = () => {
+        clearInterval(timerInterval)
+    }
 
-  function typeText(element: HTMLElement, text: string, speed: number = 30): Promise<void> {
-    return new Promise((resolve) => {
-      const textEl = element.querySelector('.soap-text') as HTMLElement;
-      if (!textEl) {
-        resolve();
-        return;
-      }
-
-      element.classList.remove('opacity-0');
-      element.classList.add('fade-in-up');
-      textEl.classList.add('typing');
-      textEl.textContent = '';
-
-      let i = 0;
-      const interval = setInterval(() => {
-        if (i < text.length) {
-          textEl.textContent += text[i];
-          i++;
-        } else {
-          clearInterval(interval);
-          textEl.classList.remove('typing');
-          resolve();
+    const animateSOAPNotes = async () => {
+        // Phase 1: Show phone sliding up
+        const phoneMockup = document.getElementById("phone-mockup")
+        if (phoneMockup) {
+            phoneMockup.classList.remove("opacity-0")
+            phoneMockup.style.transition = "transform 0.6s ease-out, opacity 0.6s ease-out"
+            phoneMockup.style.transform = "translateY(0)"
         }
-      }, speed);
-    });
-  }
 
-  async function animateSOAPNotes() {
-    await new Promise(r => setTimeout(r, 500));
+        await new Promise((r) => setTimeout(r, 400))
 
-    const titleEl = document.getElementById('soap-title');
-    if (titleEl) {
-      titleEl.classList.remove('opacity-0');
-      titleEl.classList.add('fade-in-up');
+        // Phase 2: Show mic button on phone
+        const micBtn = document.getElementById("phone-mic-btn")
+        if (micBtn) {
+            micBtn.classList.remove("opacity-0")
+            micBtn.classList.add("fade-in-up")
+        }
+
+        await new Promise((r) => setTimeout(r, 600))
+
+        // Phase 3: Start recording on both phone and web
+        const phoneRecording = document.getElementById("phone-recording-status")
+        if (phoneRecording) {
+            phoneRecording.classList.remove("opacity-0")
+            phoneRecording.classList.add("fade-in-up")
+        }
+        startPhoneTimer()
+
+        // Mic button pulses
+        if (micBtn) micBtn.classList.add("animate-pulse")
+
+        const recordingEl = document.getElementById("recording-indicator")
+        if (recordingEl) {
+            recordingEl.classList.remove("opacity-0")
+            recordingEl.classList.add("fade-in-up")
+        }
+
+        await new Promise((r) => setTimeout(r, 600))
+
+        // Show transcript lines on phone
+        const phoneTranscript = document.getElementById("phone-transcript")
+        if (phoneTranscript) {
+            phoneTranscript.classList.remove("opacity-0")
+            phoneTranscript.classList.add("fade-in-up")
+        }
+
+        await new Promise((r) => setTimeout(r, 1500))
+
+        // Phase 4: Stop recording, switch to generating
+        stopPhoneTimer()
+        if (micBtn) micBtn.classList.remove("animate-pulse")
+        if (recordingEl) {
+            recordingEl.classList.add("opacity-0")
+            recordingEl.classList.remove("fade-in-up")
+        }
+
+        // Phone shows "done" state
+        if (phoneRecording) {
+            phoneRecording.classList.add("hidden")
+        }
+        const phoneDone = document.getElementById("phone-done")
+        if (phoneDone) {
+            phoneDone.classList.remove("hidden", "opacity-0")
+            phoneDone.classList.add("fade-in-up")
+        }
+
+        // Phase 5: Generate SOAP notes on web app
+        const titleEl = document.getElementById("soap-title")
+        if (titleEl) {
+            titleEl.classList.remove("opacity-0")
+            titleEl.classList.add("fade-in-up")
+        }
+        await new Promise((r) => setTimeout(r, 400))
+
+        const phoneSoapLines: Record<string, string> = {
+            "soap-s": "Persistent headache 3 days, 6/10, bilateral pressure.",
+            "soap-o": "BP 120/80, HR 72. Trapezius tenderness. CN intact.",
+            "soap-a": "Tension-type headache, stress-related.",
+            "soap-p": "Ibuprofen 400mg PRN. Follow-up 2 wks."
+        }
+
+        for (const line of soapLines) {
+            const el = document.getElementById(line.id)
+            const phoneEl = document.getElementById(`phone-${line.id}`)
+            if (el) {
+                await typeText(el, line.text, 8, phoneEl, phoneSoapLines[line.id])
+                await new Promise((r) => setTimeout(r, 300))
+            }
+        }
+
+        const savedEl = document.getElementById("saved-status")
+        if (savedEl) {
+            savedEl.classList.remove("opacity-0")
+            savedEl.classList.add("fade-in-up")
+        }
+        const phoneSaved = document.getElementById("phone-saved")
+        if (phoneSaved) {
+            phoneSaved.classList.remove("opacity-0")
+            phoneSaved.classList.add("fade-in-up")
+        }
     }
 
-    await new Promise(r => setTimeout(r, 400));
-
-    for (const line of soapLines) {
-      const el = document.getElementById(line.id);
-      if (el) {
-        await typeText(el, line.text, 8);
-        await new Promise(r => setTimeout(r, 300));
-      }
+    // Initial state: phone starts translated down
+    const phoneMockup = document.getElementById("phone-mockup")
+    if (phoneMockup) {
+        phoneMockup.style.transform = "translateY(30px)"
     }
 
-    const savedEl = document.getElementById('saved-status');
-    if (savedEl) {
-      savedEl.classList.remove('opacity-0');
-      savedEl.classList.add('fade-in-up');
-    }
-  }
-
-  animateSOAPNotes();
+    animateSOAPNotes()
 </script>

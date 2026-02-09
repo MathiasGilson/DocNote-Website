@@ -4,7 +4,7 @@ excerpt: "A recent study published in JAMA Network Open shows how AI-powered amb
 category: "ai"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
-authorImage: "/dr_vincent_tan.jpg"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "https://images.pexels.com/photos/8376277/pexels-photo-8376277.jpeg?auto=compress&cs=tinysrgb&w=800"
 date: "2026-01-29"
 readTime: 5

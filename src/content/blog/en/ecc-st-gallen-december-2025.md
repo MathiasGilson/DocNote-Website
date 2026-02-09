@@ -4,8 +4,8 @@ excerpt: "DocNote co-founder Dr. Alice Gilson delivered a compelling talk on AI 
 category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
-authorImage: "/dre_alice_gilson.jpg"
-image: "/st_gallen_12.25.jpg"
+authorImage: "/images/dre_alice_gilson.jpg"
+image: "/images/st_gallen_12.25.jpg"
 date: "2025-12-10"
 readTime: 4
 ---

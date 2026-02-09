@@ -4,8 +4,8 @@ excerpt: "DocNote a présenté sa plateforme de documentation IA au CHU HealthTe
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
-authorImage: "/logo.png"
-image: "/bordeaux_12.25.jpg"
+authorImage: "/images/logo.png"
+image: "/images/bordeaux_12.25.jpg"
 date: "2025-12-18"
 readTime: 4
 ---
