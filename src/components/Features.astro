@@ -9,62 +9,1235 @@ const features = [
   {
     title: t.features.recording.title,
     description: t.features.recording.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />`,
+    color: 'from-blue-50 to-indigo-50',
   },
   {
     title: t.features.transcription.title,
     description: t.features.transcription.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
+    color: 'from-emerald-50 to-teal-50',
   },
   {
     title: t.features.summaries.title,
     description: t.features.summaries.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />`,
+    color: 'from-violet-50 to-purple-50',
   },
   {
     title: t.features.integration.title,
     description: t.features.integration.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />`,
+    color: 'from-amber-50 to-yellow-50',
   },
   {
     title: t.features.security.title,
     description: t.features.security.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+    color: 'from-rose-50 to-pink-50',
   },
   {
     title: t.features.languages.title,
     description: t.features.languages.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />`,
+    color: 'from-cyan-50 to-sky-50',
   },
 ];
 ---
 
 <section class="py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-4">
+      <span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Features & Benefits</span>
+    </div>
+    <div class="text-center mb-6">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 max-w-2xl mx-auto leading-snug">
         {t.features.title}
       </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+    </div>
+    <div class="text-center mb-14">
+      <p class="text-gray-500 max-w-xl mx-auto">
         {t.features.subtitle}
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {features.map((feature, index) => (
-        <div
-          class="group p-6 rounded-2xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50/50 transition-all duration-300"
-          style={`animation-delay: ${index * 0.1}s`}
-        >
-          <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
-            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <Fragment set:html={feature.icon} />
-            </svg>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature, i) => (
+        <div class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300">
+          {i === 0 ? (
+            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+              <div class="record-demo">
+                <div class="record-btn">
+                  <div class="record-btn-ring">
+                    <div class="record-btn-dot bg-gradient-to-br from-violet-500 to-indigo-500 shadow-lg shadow-indigo-500/30">
+                      <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="transcript-ui">
+                  <div class="transcript-header">
+                    <div class="transcript-dot recording"></div>
+                    <span class="transcript-status">Recording</span>
+                    <span class="transcript-timer">0:12</span>
+                  </div>
+                  <div class="transcript-words">
+                    <span class="tw">So</span> <span class="tw">the</span> <span class="tw">pain</span> <span class="tw">started</span> <span class="tw">about</span> <span class="tw">two</span> <span class="tw">weeks</span> <span class="tw">ago,</span> <span class="tw">mostly</span> <span class="tw">in</span> <span class="tw">the</span> <span class="tw">morning.</span> <span class="tw">I</span> <span class="tw">haven't</span> <span class="tw">had</span> <span class="tw">migraines</span> <span class="tw">before...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : i === 1 ? (
+            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="transcribe-card">
+              <div class="transcribe-demo">
+                <div class="transcribe-ui animate-correct">
+                  <div class="transcribe-line">Patient presents with</div>
+                  <div class="transcribe-line">recurring <span class="tw-correct"><span class="tw-wrong">diyabetis</span><span class="tw-right">diabetes</span></span> symptoms,</div>
+                  <div class="transcribe-line">elevated <span class="tw-correct"><span class="tw-wrong">glikemia</span><span class="tw-right">glycemia</span></span> levels noted.</div>
+                </div>
+              </div>
+            </div>
+          ) : i === 2 ? (
+            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="summary-card">
+              <div class="summary-demo">
+                <div class="summary-skeleton">
+                  <div class="skel-header">
+                    <div class="skel-icon"></div>
+                    <div class="skel-title-bar"></div>
+                  </div>
+                  <div class="skel-sections">
+                    <div class="skel-block">
+                      <div class="skel-label-bar"></div>
+                      <div class="skel-line"></div>
+                      <div class="skel-line w-3/5"></div>
+                    </div>
+                    <div class="skel-block">
+                      <div class="skel-label-bar w-16"></div>
+                      <div class="skel-line"></div>
+                    </div>
+                    <div class="skel-block">
+                      <div class="skel-label-bar w-14"></div>
+                      <div class="skel-line w-3/4"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="summary-doc">
+                  <div class="summary-doc-header">
+                    <div class="summary-doc-icon">
+                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#8B5CF6" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <span class="summary-doc-title">Consultation Summary</span>
+                  </div>
+                  <div class="summary-sections">
+                    <div class="summary-section s-1">
+                      <div class="summary-section-label">Diagnosis</div>
+                      <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
+                      <div class="summary-section-bar short"><div class="summary-bar-fill"></div></div>
+                    </div>
+                    <div class="summary-section s-2">
+                      <div class="summary-section-label">Treatment</div>
+                      <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
+                    </div>
+                    <div class="summary-section s-3">
+                      <div class="summary-section-label">Follow-up</div>
+                      <div class="summary-section-bar med"><div class="summary-bar-fill"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="summary-badge">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ) : i === 3 ? (
+            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="ehr-card">
+              <div class="ehr-demo">
+                <div class="ehr-system">
+                  <div class="ehr-header">
+                    <div class="ehr-header-dots">
+                      <span class="ehr-dot-r"></span><span class="ehr-dot-y"></span><span class="ehr-dot-g"></span>
+                    </div>
+                    <span class="ehr-header-title">EHR — Patient Record</span>
+                  </div>
+                  <div class="ehr-body">
+                    <div class="ehr-row">
+                      <div class="ehr-label">Patient</div>
+                      <div class="ehr-value"><div class="ehr-bar w-20"></div></div>
+                    </div>
+                    <div class="ehr-row">
+                      <div class="ehr-label">DOB</div>
+                      <div class="ehr-value"><div class="ehr-bar w-14"></div></div>
+                    </div>
+                    <div class="ehr-divider"></div>
+                    <div class="ehr-row">
+                      <div class="ehr-label">Notes</div>
+                      <div class="ehr-value ehr-empty-slot">
+                        <span class="ehr-empty-text">No report</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ehr-report-card">
+                  <div class="ehr-report-icon">
+                    <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="#8B5CF6" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div class="ehr-report-lines">
+                    <div class="ehr-report-line"></div>
+                    <div class="ehr-report-line short"></div>
+                  </div>
+                </div>
+                <div class="ehr-success-badge">
+                  <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ) : i === 4 ? (
+            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="security-card">
+              <div class="encrypt-demo">
+                <div class="encrypt-lines">
+                  <div class="encrypt-row r-1">
+                    <span class="encrypt-label">Patient</span>
+                    <span class="encrypt-plain">Marie Dupont</span>
+                    <span class="encrypt-cipher">••••• •••••••</span>
+                  </div>
+                  <div class="encrypt-row r-2">
+                    <span class="encrypt-label">DOB</span>
+                    <span class="encrypt-plain">12.03.1987</span>
+                    <span class="encrypt-cipher">••.••.••••</span>
+                  </div>
+                  <div class="encrypt-row r-3">
+                    <span class="encrypt-label">Diagnosis</span>
+                    <span class="encrypt-plain">Type 2 diabetes</span>
+                    <span class="encrypt-cipher">•••• • ••••••••</span>
+                  </div>
+                  <div class="encrypt-row r-4">
+                    <span class="encrypt-label">Notes</span>
+                    <span class="encrypt-plain">HbA1c elevated</span>
+                    <span class="encrypt-cipher">••••• ••••••••</span>
+                  </div>
+                </div>
+                <div class="encrypt-lock">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path class="lock-shackle" d="M7 11V7a5 5 0 0110 0v4" />
+                  </svg>
+                </div>
+                <div class="encrypt-shield-badge">
+                  <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="lang-card">
+              <div class="lang-demo">
+                <div class="lang-tabs">
+                  <span class="lang-tab active">FR</span>
+                  <span class="lang-tab t-2">DE</span>
+                  <span class="lang-tab t-3">ZH</span>
+                </div>
+                <div class="lang-doc">
+                  <div class="lang-doc-header">
+                    <div class="lang-doc-icon">
+                      <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="#8B5CF6" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <span class="lang-doc-title">
+                      <span class="lang-title-text t-fr">Rapport médical</span>
+                      <span class="lang-title-text t-de">Arztbericht</span>
+                      <span class="lang-title-text t-en">医疗报告</span>
+                    </span>
+                  </div>
+                  <div class="lang-lines">
+                    <div class="lang-line l-1"><div class="lang-bar"></div></div>
+                    <div class="lang-line l-2"><div class="lang-bar w-4/5"></div></div>
+                    <div class="lang-line l-3"><div class="lang-bar w-3/5"></div></div>
+                    <div class="lang-line l-4"><div class="lang-bar w-11/12"></div></div>
+                    <div class="lang-line l-5"><div class="lang-bar w-2/3"></div></div>
+                    <div class="lang-line l-6"><div class="lang-bar w-4/5"></div></div>
+                    <div class="lang-line l-7"><div class="lang-bar w-1/2"></div></div>
+                  </div>
+                </div>
+                <div class="lang-badge">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          )}
+          <div class="p-5">
+            <h3 class="text-sm font-semibold text-gray-900 mb-1.5">{feature.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{feature.description}</p>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-          <p class="text-gray-600">{feature.description}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+  .record-demo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .record-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .record-btn-ring {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid rgba(139, 92, 246, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse-ring 2.5s ease-in-out infinite;
+  }
+
+  .record-btn-dot {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% { transform: scale(1); border-color: rgba(139, 92, 246, 0.12); }
+    50% { transform: scale(1.1); border-color: rgba(139, 92, 246, 0.3); }
+  }
+
+  .transcript-ui {
+    position: absolute;
+    inset: 16px 20px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .transcript-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .transcript-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #8B5CF6;
+  }
+
+  .transcript-status {
+    font-size: 12px;
+    font-weight: 500;
+    color: #8B5CF6;
+  }
+
+  .transcript-timer {
+    font-size: 12px;
+    color: #9ca3af;
+    font-family: ui-monospace, monospace;
+    margin-left: auto;
+  }
+
+  .transcript-words {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .tw {
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    position: relative;
+  }
+
+  .tw.visible {
+    opacity: 1;
+  }
+
+  .tw.active::after {
+    content: '';
+    display: inline-block;
+    width: 1.5px;
+    height: 12px;
+    background: #8B5CF6;
+    vertical-align: middle;
+    margin-left: 1px;
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .group:hover .record-btn {
+    opacity: 0;
+    transform: scale(0.7);
+    pointer-events: none;
+  }
+
+  .group:hover .transcript-ui {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .group:hover .transcript-dot.recording {
+    animation: pulse-dot 1s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+
+  /* Card 2: Transcription with autocorrect */
+  .transcribe-demo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .transcribe-ui {
+    position: absolute;
+    inset: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .transcribe-line {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.7;
+  }
+
+  .tw-correct {
+    display: inline-block;
+    position: relative;
+  }
+
+  .tw-wrong {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+  }
+
+  .tw-right {
+    color: #8B5CF6;
+    font-weight: 600;
+    opacity: 0;
+  }
+
+  .animate-correct .tw-wrong {
+    animation: wrong-hide 0.5s ease 1s forwards;
+  }
+
+  .animate-correct .tw-right {
+    animation: right-show 0.5s ease 1.15s forwards;
+  }
+
+  .animate-correct .transcribe-line:nth-child(3) .tw-wrong {
+    animation-delay: 1.5s;
+  }
+
+  .animate-correct .transcribe-line:nth-child(3) .tw-right {
+    animation-delay: 1.65s;
+  }
+
+  @keyframes wrong-hide {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes right-show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Card 3: Structured report summary */
+  .summary-demo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .summary-skeleton {
+    position: absolute;
+    inset: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  .skel-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .skel-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: #f3f4f6;
+  }
+
+  .skel-title-bar {
+    width: 100px;
+    height: 8px;
+    border-radius: 4px;
+    background: #f3f4f6;
+  }
+
+  .skel-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .skel-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .skel-label-bar {
+    width: 48px;
+    height: 5px;
+    border-radius: 2.5px;
+    background: #e5e7eb;
+  }
+
+  .skel-line {
+    height: 4px;
+    border-radius: 2px;
+    background: #f3f4f6;
+    width: 100%;
+  }
+
+  .group:hover .summary-skeleton {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .summary-doc {
+    position: absolute;
+    inset: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.25s ease 0.05s;
+  }
+
+  .group:hover .summary-doc {
+    opacity: 1;
+  }
+
+  .summary-doc-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .summary-doc-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: rgba(139, 92, 246, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .summary-doc-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.01em;
+  }
+
+  .summary-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .summary-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  .summary-section-label {
+    font-size: 8px;
+    font-weight: 600;
+    color: #8B5CF6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .summary-section-bar {
+    height: 4px;
+    background: #f3f4f6;
+    border-radius: 2px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .summary-section-bar.short {
+    width: 60%;
+  }
+
+  .summary-section-bar.med {
+    width: 75%;
+  }
+
+  .summary-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: rgba(139, 92, 246, 0.12);
+    border-radius: 2px;
+  }
+
+  .summary-badge {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .group:hover .summary-section.s-1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease 0.1s, transform 0.25s ease 0.1s;
+  }
+
+  .group:hover .summary-section.s-2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease 0.25s, transform 0.25s ease 0.25s;
+  }
+
+  .group:hover .summary-section.s-3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease 0.4s, transform 0.25s ease 0.4s;
+  }
+
+  .group:hover .summary-bar-fill {
+    width: 100%;
+    transition: width 0.4s ease 0.5s;
+  }
+
+  .group:hover .summary-badge {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.2s ease 0.7s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s;
+  }
+
+  /* Card 4: EHR Integration */
+  .ehr-demo {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ehr-system {
+    width: 180px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .ehr-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    background: #fafafa;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .ehr-header-dots {
+    display: flex;
+    gap: 3px;
+  }
+
+  .ehr-dot-r, .ehr-dot-y, .ehr-dot-g {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+
+  .ehr-dot-r { background: #fca5a5; }
+  .ehr-dot-y { background: #fcd34d; }
+  .ehr-dot-g { background: #86efac; }
+
+  .ehr-header-title {
+    font-size: 7px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.02em;
+  }
+
+  .ehr-body {
+    padding: 7px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ehr-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .ehr-label {
+    font-size: 7px;
+    font-weight: 600;
+    color: #9ca3af;
+    width: 28px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .ehr-bar {
+    height: 4px;
+    background: #f3f4f6;
+    border-radius: 2px;
+  }
+
+  .ehr-divider {
+    height: 1px;
+    background: #f3f4f6;
+    margin: 2px 0;
+  }
+
+  .ehr-empty-slot {
+    flex: 1;
+    height: 18px;
+    border: 1px dashed #d1d5db;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+
+  .ehr-empty-text {
+    font-size: 6px;
+    color: #d1d5db;
+    transition: opacity 0.2s ease;
+  }
+
+  .ehr-report-card {
+    position: absolute;
+    right: calc(50% - 115px);
+    top: 50%;
+    transform: translate(-20px, -10px);
+    width: 60px;
+    padding: 5px 6px;
+    background: white;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .ehr-report-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background: rgba(139, 92, 246, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ehr-report-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+
+  .ehr-report-line {
+    height: 3px;
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 1.5px;
+    width: 100%;
+  }
+
+  .ehr-report-line.short {
+    width: 65%;
+  }
+
+  .ehr-success-badge {
+    position: absolute;
+    left: calc(50% + 68px);
+    top: 14px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .group:hover .ehr-report-card {
+    opacity: 1;
+    transform: translate(49px, -10px);
+    transition: opacity 0.2s ease 0.05s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
+  }
+
+  .group:hover .ehr-empty-slot {
+    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.03);
+    transition: border-color 0.3s ease 0.3s, background 0.3s ease 0.3s;
+  }
+
+  .group:hover .ehr-empty-text {
+    opacity: 0;
+    transition: opacity 0.15s ease 0.2s;
+  }
+
+  .group:hover .ehr-success-badge {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.2s ease 0.55s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.55s;
+  }
+
+  /* Card 5: Security / Encryption */
+  .encrypt-demo {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .encrypt-lines {
+    position: absolute;
+    inset: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .encrypt-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+
+  .encrypt-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    width: 60px;
+    flex-shrink: 0;
+  }
+
+  .encrypt-plain {
+    font-size: 13px;
+    color: #374151;
+    font-weight: 500;
+    transition: opacity 0.25s ease, transform 0.2s ease;
+  }
+
+  .encrypt-cipher {
+    font-size: 13px;
+    color: #8B5CF6;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    position: absolute;
+    left: 68px;
+    opacity: 0;
+    transform: translateY(2px);
+    transition: opacity 0.25s ease, transform 0.2s ease;
+  }
+
+  .encrypt-lock {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d1d5db;
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .lock-shackle {
+    transition: d 0.3s ease;
+  }
+
+  .encrypt-shield-badge {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .group:hover .encrypt-plain {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+
+  .group:hover .encrypt-row.r-1 .encrypt-plain { transition-delay: 0.05s; }
+  .group:hover .encrypt-row.r-2 .encrypt-plain { transition-delay: 0.12s; }
+  .group:hover .encrypt-row.r-3 .encrypt-plain { transition-delay: 0.19s; }
+  .group:hover .encrypt-row.r-4 .encrypt-plain { transition-delay: 0.26s; }
+
+  .group:hover .encrypt-cipher {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .group:hover .encrypt-row.r-1 .encrypt-cipher { transition-delay: 0.15s; }
+  .group:hover .encrypt-row.r-2 .encrypt-cipher { transition-delay: 0.22s; }
+  .group:hover .encrypt-row.r-3 .encrypt-cipher { transition-delay: 0.29s; }
+  .group:hover .encrypt-row.r-4 .encrypt-cipher { transition-delay: 0.36s; }
+
+  .group:hover .encrypt-lock {
+    color: #8B5CF6;
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.15);
+    transition-delay: 0.3s;
+  }
+
+  .group:hover .encrypt-shield-badge {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.55s;
+  }
+
+  /* Card 6: Multilingual report generation */
+  .lang-demo {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lang-tabs {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    display: flex;
+    gap: 4px;
+  }
+
+  .lang-tab {
+    font-size: 7px;
+    font-weight: 700;
+    color: #d1d5db;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: transparent;
+    transition: color 0.3s ease, background 0.3s ease;
+  }
+
+  .lang-tab.active {
+    color: #8B5CF6;
+    background: rgba(139, 92, 246, 0.08);
+  }
+
+  .lang-doc {
+    position: absolute;
+    inset: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lang-doc-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .lang-doc-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: rgba(139, 92, 246, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .lang-doc-title {
+    position: relative;
+    height: 18px;
+    display: flex;
+    align-items: center;
+  }
+
+  .lang-title-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.01em;
+    position: absolute;
+    left: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .lang-title-text.t-fr {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lang-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 40px;
+  }
+
+  .lang-line {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .lang-bar {
+    height: 5px;
+    background: #f3f4f6;
+    border-radius: 2.5px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lang-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(139, 92, 246, 0.1);
+    width: 0%;
+    border-radius: 2.5px;
+    transition: width 0.4s ease;
+  }
+
+  .lang-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .group:hover .lang-line.l-1 .lang-bar::after {
+    width: 100%;
+    transition: width 0.3s ease 0.05s;
+  }
+
+  .group:hover .lang-line.l-2 .lang-bar::after {
+    width: 100%;
+    transition: width 0.3s ease 0.15s;
+  }
+
+  .group:hover .lang-line.l-3 .lang-bar::after {
+    width: 100%;
+    transition: width 0.3s ease 0.25s;
+  }
+
+  .group:hover .lang-line.l-4 .lang-bar::after {
+    width: 100%;
+    transition: width 0.3s ease 0.35s;
+  }
+
+  .group:hover .lang-line.l-5 .lang-bar::after {
+    width: 100%;
+    transition: width 0.3s ease 0.45s;
+  }
+
+  .group:hover .lang-line.l-6 .lang-bar::after {
+    width: 100%;
+    transition: width 0.3s ease 0.55s;
+  }
+
+  .group:hover .lang-line.l-7 .lang-bar::after {
+    width: 100%;
+    transition: width 0.3s ease 0.65s;
+  }
+
+  .group:hover .lang-badge {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.2s ease 0.9s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s;
+  }
+
+  .group:hover .lang-tab.active {
+    color: #d1d5db;
+    background: transparent;
+    transition-delay: 0.5s;
+  }
+
+  .group:hover .lang-tab.t-2 {
+    color: #d1d5db;
+    background: transparent;
+  }
+
+  .group:hover .lang-tab.t-3 {
+    color: #8B5CF6;
+    background: rgba(139, 92, 246, 0.08);
+    transition-delay: 0.5s;
+  }
+
+  .group:hover .lang-title-text.t-fr {
+    opacity: 0;
+    transform: translateY(-3px);
+    transition-delay: 0.4s;
+  }
+
+  .group:hover .lang-title-text.t-en {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.55s;
+  }
+</style>
+
+<script>
+  const card = document.getElementById('transcribe-card');
+  if (card) {
+    card.addEventListener('mouseenter', () => {
+      const ui = card.querySelector('.transcribe-ui');
+      ui.classList.remove('animate-correct');
+      void ui.offsetWidth;
+      ui.classList.add('animate-correct');
+    });
+  }
+
+  const wordsContainer = document.querySelector('.transcript-words');
+  if (wordsContainer) {
+    const recordCard = wordsContainer.closest('.group');
+    const words = wordsContainer.querySelectorAll('.tw');
+    let timers = [];
+
+    recordCard.addEventListener('mouseenter', () => {
+      timers.forEach(clearTimeout);
+      timers = [];
+      words.forEach((w, i) => {
+        timers.push(setTimeout(() => {
+          w.classList.add('visible');
+          words.forEach(w2 => w2.classList.remove('active'));
+          w.classList.add('active');
+        }, 200 + i * 70));
+      });
+    });
+
+    recordCard.addEventListener('mouseleave', () => {
+      timers.forEach(clearTimeout);
+      timers = [];
+      words.forEach(w => {
+        w.classList.remove('visible', 'active');
+      });
+    });
+  }
+</script>

@@ -4,8 +4,8 @@ excerpt: "DocNote showcased its AI documentation platform at the CHU HealthTech 
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
-authorImage: "/logo.png"
-image: "/bordeaux_12.25.jpg"
+authorImage: "/images/logo.png"
+image: "/images/bordeaux_12.25.jpg"
 date: "2025-12-18"
 readTime: 4
 ---

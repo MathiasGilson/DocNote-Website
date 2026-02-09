@@ -1,103 +1,139 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { locales, isValidLocale, type Locale } from '../../utils/i18n';
-import { getEntry } from 'astro:content';
+import Layout from "../../layouts/Layout.astro"
+import { locales, isValidLocale, type Locale } from "../../utils/i18n"
+import { getEntry } from "astro:content"
 
 export function getStaticPaths() {
-  return locales.map((locale) => ({ params: { locale } }));
+    return locales.map((locale) => ({ params: { locale } }))
 }
 
-const { locale } = Astro.params;
+const { locale } = Astro.params
 
 if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/team');
+    return Astro.redirect("/en/team")
 }
 
-const entry = await getEntry('pages', locale as Locale);
-const t = entry.data;
+const entry = await getEntry("pages", locale as Locale)
+const t = entry.data
 ---
 
-<Layout title={t?.nav?.team || 'Team'}>
-  <section class="pt-32 pb-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-          {t.team.title}
-        </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          {t.team.subtitle}
-        </p>
-      </div>
+<Layout title={t?.nav?.team || "Team"}>
+    <section class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+                    {t.team.title}
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t.team.subtitle}
+                </p>
+            </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/dr_vincent_tan.jpg" alt={t.team.members.vincentTan.name} class="w-full h-full object-cover object-center" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.vincentTan.name}</h3>
-            <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.vincentTan.role}</p>
-            <p class="text-gray-600 text-base leading-relaxed">{t.team.members.vincentTan.bio}</p>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg"
+                >
+                    <div class="w-full aspect-square overflow-hidden">
+                        <img
+                            src="/images/dr_vincent_tan.jpg"
+                            alt={t.team.members.vincentTan.name}
+                            class="w-full h-full object-cover object-center"
+                        />
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.vincentTan.name}</h3>
+                        <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.vincentTan.role}</p>
+                        <p class="text-gray-600 text-base leading-relaxed">{t.team.members.vincentTan.bio}</p>
+                    </div>
+                </div>
 
-        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/dre_alice_gilson.jpg" alt={t.team.members.aliceGilson.name} class="w-full h-full object-cover object-center" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.aliceGilson.name}</h3>
-            <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.aliceGilson.role}</p>
-            <p class="text-gray-600 text-base leading-relaxed">{t.team.members.aliceGilson.bio}</p>
-          </div>
-        </div>
-      </div>
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg"
+                >
+                    <div class="w-full aspect-square overflow-hidden">
+                        <img
+                            src="/images/dre_alice_gilson.jpg"
+                            alt={t.team.members.aliceGilson.name}
+                            class="w-full h-full object-cover object-center"
+                        />
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.aliceGilson.name}</h3>
+                        <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.aliceGilson.role}</p>
+                        <p class="text-gray-600 text-base leading-relaxed">{t.team.members.aliceGilson.bio}</p>
+                    </div>
+                </div>
+            </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/mathias_gilson.jpg" alt={t.team.members.mathiasGilson.name} class="w-full h-full object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.mathiasGilson.name}</h3>
-            <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.mathiasGilson.role}</p>
-            <p class="text-gray-600 text-base leading-relaxed">{t.team.members.mathiasGilson.bio}</p>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg"
+                >
+                    <div class="w-full aspect-square overflow-hidden">
+                        <img
+                            src="/images/mathias_gilson.png"
+                            alt={t.team.members.mathiasGilson.name}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.mathiasGilson.name}</h3>
+                        <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.mathiasGilson.role}</p>
+                        <p class="text-gray-600 text-base leading-relaxed">{t.team.members.mathiasGilson.bio}</p>
+                    </div>
+                </div>
 
-        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/jeremy_yvinec.jpg" alt={t.team.members.jeremyYvinec.name} class="w-full h-full object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.jeremyYvinec.name}</h3>
-            <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.jeremyYvinec.role}</p>
-            <p class="text-gray-600 text-base leading-relaxed">{t.team.members.jeremyYvinec.bio}</p>
-          </div>
-        </div>
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg"
+                >
+                    <div class="w-full aspect-square overflow-hidden">
+                        <img
+                            src="/images/jeremy_yvinec.jpg"
+                            alt={t.team.members.jeremyYvinec.name}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.jeremyYvinec.name}</h3>
+                        <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.jeremyYvinec.role}</p>
+                        <p class="text-gray-600 text-base leading-relaxed">{t.team.members.jeremyYvinec.bio}</p>
+                    </div>
+                </div>
 
-        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/hugo_roussel.jpg" alt={t.team.members.hugoRoussel.name} class="w-full h-full object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.hugoRoussel.name}</h3>
-            <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.hugoRoussel.role}</p>
-            <p class="text-gray-600 text-base leading-relaxed">{t.team.members.hugoRoussel.bio}</p>
-          </div>
-        </div>
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg"
+                >
+                    <div class="w-full aspect-square overflow-hidden">
+                        <img
+                            src="/images/hugo_roussel.jpg"
+                            alt={t.team.members.hugoRoussel.name}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.hugoRoussel.name}</h3>
+                        <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.hugoRoussel.role}</p>
+                        <p class="text-gray-600 text-base leading-relaxed">{t.team.members.hugoRoussel.bio}</p>
+                    </div>
+                </div>
 
-        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/eric_wei.jpg" alt={t.team.members.ericWei.name} class="w-full h-full object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.ericWei.name}</h3>
-            <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.ericWei.role}</p>
-            <p class="text-gray-600 text-base leading-relaxed">{t.team.members.ericWei.bio}</p>
-          </div>
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all hover:shadow-lg"
+                >
+                    <div class="w-full aspect-square overflow-hidden">
+                        <img
+                            src="/images/eric_wei.jpg"
+                            alt={t.team.members.ericWei.name}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">{t.team.members.ericWei.name}</h3>
+                        <p class="text-primary-600 font-semibold text-base mb-3">{t.team.members.ericWei.role}</p>
+                        <p class="text-gray-600 text-base leading-relaxed">{t.team.members.ericWei.bio}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </Layout>

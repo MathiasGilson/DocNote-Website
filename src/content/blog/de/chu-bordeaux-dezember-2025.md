@@ -4,8 +4,8 @@ excerpt: "DocNote präsentierte seine KI-Dokumentationsplattform am CHU HealthTe
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
-authorImage: "/logo.png"
-image: "/bordeaux_12.25.jpg"
+authorImage: "/images/logo.png"
+image: "/images/bordeaux_12.25.jpg"
 date: "2025-12-18"
 readTime: 4
 ---

@@ -4,8 +4,8 @@ excerpt: "La cofondatrice de DocNote, Dre Alice Gilson, a présenté une confér
 category: "news"
 author: "Dre Alice Gilson"
 authorRole: "Médecin & Directrice générale"
-authorImage: "/dre_alice_gilson.jpg"
-image: "/st_gallen_12.25.jpg"
+authorImage: "/images/dre_alice_gilson.jpg"
+image: "/images/st_gallen_12.25.jpg"
 date: "2025-12-10"
 readTime: 4
 ---

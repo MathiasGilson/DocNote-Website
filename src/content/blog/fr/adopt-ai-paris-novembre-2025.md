@@ -4,8 +4,8 @@ excerpt: "DocNote a présenté sa plateforme de documentation médicale aliment�
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
-authorImage: "/logo.png"
-image: "/adopt_ai_11.25.jpg"
+authorImage: "/images/logo.png"
+image: "/images/adopt_ai_11.25.jpg"
 date: "2025-11-25"
 readTime: 4
 ---

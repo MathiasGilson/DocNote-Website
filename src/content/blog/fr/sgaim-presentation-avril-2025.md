@@ -4,8 +4,8 @@ excerpt: "DocNote a été présenté à la Société Suisse de Médecine Interne
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
-authorImage: "/logo.png"
-image: "/ef92a5c3-2e60-42cf-bbb0-c5ec4b7b1117.png"
+authorImage: "/images/logo.png"
+image: "/images/ssmig.jpg"
 date: "2025-04-15"
 readTime: 3
 ---

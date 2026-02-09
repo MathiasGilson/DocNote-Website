@@ -4,8 +4,8 @@ excerpt: "DocNote-Mitgründerin Dr. Alice Gilson hielt einen überzeugenden Vort
 category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Ärztin & Geschäftsführerin"
-authorImage: "/dre_alice_gilson.jpg"
-image: "/st_gallen_12.25.jpg"
+authorImage: "/images/dre_alice_gilson.jpg"
+image: "/images/st_gallen_12.25.jpg"
 date: "2025-12-10"
 readTime: 4
 ---
