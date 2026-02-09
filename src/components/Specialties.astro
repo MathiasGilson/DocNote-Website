@@ -1,47 +1,49 @@
 ---
 interface Props {
-  translations: any;
+    translations: any
 }
 
-const { translations: t } = Astro.props;
+const { translations: t } = Astro.props
 
 const specialties = [
-  'General Practice',
-  'Internal Medicine',
-  'Cardiology',
-  'Dermatology',
-  'Endocrinology',
-  'Gastroenterology',
-  'Neurology',
-  'Oncology',
-  'Orthopedics',
-  'Pediatrics',
-  'Psychiatry',
-  'Pulmonology',
-  'Rheumatology',
-  'Surgery',
-  'Urology',
-  'Emergency Medicine',
-];
+    "General Practice",
+    "Internal Medicine",
+    "Cardiology",
+    "Dermatology",
+    "Endocrinology",
+    "Gastroenterology",
+    "Neurology",
+    "Oncology",
+    "Orthopedics",
+    "Pediatrics",
+    "Psychiatry",
+    "Pulmonology",
+    "Rheumatology",
+    "Surgery",
+    "Urology",
+    "Emergency Medicine"
+]
 ---
 
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">
-        {t.specialties.title}
-      </h2>
-      <p class="text-lg text-gray-600">
-        {t.specialties.subtitle}
-      </p>
-    </div>
+<section class="py-16 bg-gradient-to-b from-[#fafcff] to-[#f5f6ff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                {t.specialties.title}
+            </h2>
+            <p class="text-lg text-gray-600">
+                {t.specialties.subtitle}
+            </p>
+        </div>
 
-    <div class="flex flex-wrap justify-center gap-3">
-      {specialties.map((specialty) => (
-        <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-colors cursor-default">
-          {specialty}
-        </span>
-      ))}
+        <div class="flex flex-wrap justify-center gap-3">
+            {
+                specialties.map((specialty) => (
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-colors cursor-default">
+                        {specialty}
+                    </span>
+                ))
+            }
+        </div>
     </div>
-  </div>
 </section>

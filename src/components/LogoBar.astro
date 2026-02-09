@@ -1,28 +1,21 @@
 ---
 interface Props {
-  translations: any;
+    translations: any
 }
 
-const { translations: t } = Astro.props;
-
-const logos = [
-  'Hôpital de la Tour',
-  'HUG',
-  'CHUV',
-  'Hirslanden',
-  'Inselspital',
-  'USZ',
-];
+const logos = ["Hôpital de la Tour", "HUG", "CHUV", "Hirslanden", "Inselspital", "USZ"]
 ---
 
 <section class="py-10 border-b border-gray-100 overflow-hidden">
-  <div class="relative">
-    <div class="flex animate-scroll-left" style="width: max-content;">
-      {[...logos, ...logos].map((logo) => (
-        <span class="text-xs sm:text-sm font-semibold text-gray-300 whitespace-nowrap px-8 sm:px-12 select-none tracking-tight">
-          {logo}
-        </span>
-      ))}
+    <div class="relative">
+        <div class="flex animate-scroll-left" style="width: max-content;">
+            {
+                [...logos, ...logos, ...logos].map((logo) => (
+                    <span class="text-xs sm:text-lg font-semibold text-gray-300 whitespace-nowrap px-8 sm:px-12 select-none tracking-tight">
+                        {logo}
+                    </span>
+                ))
+            }
+        </div>
     </div>
-  </div>
 </section>
