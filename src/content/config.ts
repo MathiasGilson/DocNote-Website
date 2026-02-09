@@ -111,15 +111,10 @@ const pagesCollection = defineCollection({
       save: z.string(),
       perMonth: z.string(),
       getStarted: z.string(),
-      starter: z.object({
-        name: z.string(),
-        price: z.string(),
-        description: z.string(),
-        features: z.array(z.string()),
-      }),
       professional: z.object({
         name: z.string(),
         price: z.string(),
+        monthlyPrice: z.string(),
         description: z.string(),
         features: z.array(z.string()),
         popular: z.string(),

@@ -29,38 +29,20 @@ const t = entry.data;
         </p>
       </div>
 
-      <div class="flex items-center justify-center gap-4 mb-12">
-        <span class="text-sm font-medium text-gray-900">{t.pricing.monthly}</span>
-        <button class="relative w-14 h-7 bg-primary-500 rounded-full transition-colors" id="billing-toggle">
-          <span class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full transition-transform" id="toggle-dot"></span>
-        </button>
-        <span class="text-sm font-medium text-gray-500">{t.pricing.yearly}</span>
-        <span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">{t.pricing.save}</span>
+      <div class="flex items-center justify-center mb-12">
+        <div class="relative inline-flex items-center border border-gray-200 rounded-xl p-1 bg-gray-50" id="toggle-wrapper">
+          <div class="absolute top-1 bottom-1 rounded-lg bg-white shadow-sm border border-gray-200 transition-all duration-300 ease-out" id="toggle-bg"></div>
+          <button class="relative z-10 px-6 py-2.5 text-sm font-medium rounded-lg transition-colors duration-300 text-gray-400" id="monthly-btn">
+            {t.pricing.monthly}
+          </button>
+          <button class="relative z-10 px-6 py-2.5 text-sm font-medium rounded-lg transition-colors duration-300 text-gray-900 flex items-center gap-2" id="yearly-btn">
+            {t.pricing.yearly}
+            <span class="text-[10px] font-semibold text-green-700 bg-green-100 px-1.5 py-0.5 rounded leading-none">{t.pricing.save}</span>
+          </button>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary-300 transition-colors">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.starter.name}</h3>
-          <p class="text-gray-600 mb-6">{t.pricing.starter.description}</p>
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-gray-900">CHF {t.pricing.starter.price}</span>
-            <span class="text-gray-500">{t.pricing.perMonth}</span>
-          </div>
-          <ul class="space-y-3 mb-8">
-            {t.pricing.starter.features.map((feature: string) => (
-              <li class="flex items-center gap-3 text-gray-600">
-                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                {feature}
-              </li>
-            ))}
-          </ul>
-          <a href="#" class="block w-full py-3 text-center font-medium text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
-            {t.pricing.getStarted}
-          </a>
-        </div>
-
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div class="bg-white rounded-2xl p-8 border-2 border-primary-500 relative shadow-xl">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-white text-sm font-medium rounded-full">
             {t.pricing.professional.popular}
@@ -68,13 +50,13 @@ const t = entry.data;
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
           <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
           <div class="mb-6">
-            <span class="text-4xl font-bold text-gray-900">CHF {t.pricing.professional.price}</span>
+            <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly={t.pricing.professional.monthlyPrice} data-yearly={t.pricing.professional.price}>${t.pricing.professional.price}</span>
             <span class="text-gray-500">{t.pricing.perMonth}</span>
           </div>
           <ul class="space-y-3 mb-8">
             {t.pricing.professional.features.map((feature: string) => (
               <li class="flex items-center gap-3 text-gray-600">
-                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 {feature}
@@ -95,7 +77,7 @@ const t = entry.data;
           <ul class="space-y-3 mb-8">
             {t.pricing.enterprise.features.map((feature: string) => (
               <li class="flex items-center gap-3 text-gray-600">
-                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 {feature}
@@ -134,16 +116,35 @@ const t = entry.data;
 </Layout>
 
 <script>
-  const toggle = document.getElementById('billing-toggle');
-  const dot = document.getElementById('toggle-dot');
-  let isYearly = false;
+  const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
+  const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
+  const toggleBg = document.getElementById('toggle-bg') as HTMLElement;
+  const wrapper = document.getElementById('toggle-wrapper') as HTMLElement;
+  const proPrice = document.getElementById('pro-price');
 
-  toggle?.addEventListener('click', () => {
-    isYearly = !isYearly;
-    if (isYearly) {
-      dot?.classList.add('translate-x-7');
-    } else {
-      dot?.classList.remove('translate-x-7');
-    }
-  });
+  const yearlyPrice = `$${proPrice?.dataset.yearly || '59'}`;
+  const monthlyPrice = `$${proPrice?.dataset.monthly || '79'}`;
+
+  const moveBgTo = (btn: HTMLElement) => {
+    toggleBg.style.left = `${btn.offsetLeft}px`;
+    toggleBg.style.width = `${btn.offsetWidth}px`;
+  };
+
+  const selectYearly = () => {
+    moveBgTo(yearlyBtn);
+    yearlyBtn.classList.replace('text-gray-400', 'text-gray-900');
+    monthlyBtn.classList.replace('text-gray-900', 'text-gray-400');
+    if (proPrice) proPrice.textContent = yearlyPrice;
+  };
+
+  const selectMonthly = () => {
+    moveBgTo(monthlyBtn);
+    monthlyBtn.classList.replace('text-gray-400', 'text-gray-900');
+    yearlyBtn.classList.replace('text-gray-900', 'text-gray-400');
+    if (proPrice) proPrice.textContent = monthlyPrice;
+  };
+
+  moveBgTo(yearlyBtn);
+  yearlyBtn.addEventListener('click', selectYearly);
+  monthlyBtn.addEventListener('click', selectMonthly);
 </script>
