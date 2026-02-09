@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import Stats from '../components/Stats.astro';
 import Features from '../components/Features.astro';
 import Specialties from '../components/Specialties.astro';
 import Testimonials from '../components/Testimonials.astro';
 import CTA from '../components/CTA.astro';
+import LogoBar from '../components/LogoBar.astro';
 import { getEntry } from 'astro:content';
 
 const t = await getEntry('pages', 'en');
@@ -13,7 +13,7 @@ const t = await getEntry('pages', 'en');
 
 <Layout title="AI Medical Documentation">
   <Hero translations={t.data} />
-  <Stats translations={t.data} />
+  <LogoBar translations={t.data} />
   <Features translations={t.data} />
   <Specialties translations={t.data} />
   <Testimonials translations={t.data} />
