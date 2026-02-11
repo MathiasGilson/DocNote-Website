@@ -198,16 +198,38 @@ const stats = [
                 style="width:300px;aspect-ratio:9/16;"
             >
                 <div
-                    class="bg-white rounded-[30px] border border-gray-200/80 shadow-2xl shadow-indigo-200/40 overflow-hidden w-full h-full flex flex-col"
+                    class="bg-white rounded-[40px] py-4 px-2 border border-gray-200/80 shadow-2xl shadow-indigo-200/40 overflow-hidden w-full h-full flex flex-col"
                 >
-                    <!-- App header -->
-                    <div class="px-4 py-3 border-b border-gray-100 flex items-center gap-2 flex-shrink-0">
-                        <img src="/images/logo.png" alt="DocNote" class="w-6 h-6" />
-                        <span class="text-sm font-semibold text-gray-900">DocNote</span>
+                    <!-- Status bar -->
+                    <div class="flex items-center justify-between px-4 pt-1 pb-1">
+                        <span class="text-[11px] font-semibold text-gray-600">14:30</span>
+                        <div class="flex items-center">
+                            <!-- Cellular -->
+                            <svg class="w-4 h-2 text-gray-600" viewBox="0 0 18 12" fill="currentColor">
+                                <rect x="0" y="9" width="3" height="3" rx="0.5"></rect>
+                                <rect x="4" y="6" width="3" height="6" rx="0.5"></rect>
+                                <rect x="8" y="3" width="3" height="9" rx="0.5"></rect>
+                                <rect x="12" y="0" width="3" height="12" rx="0.5"></rect>
+                            </svg>
+                            <!-- Battery -->
+                            <svg class="w-6 h-2 text-gray-600" viewBox="0 0 27 13" fill="currentColor">
+                                <rect
+                                    x="0"
+                                    y="0.5"
+                                    width="22"
+                                    height="12"
+                                    rx="2.5"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    fill="none"></rect>
+                                <rect x="1.5" y="2" width="19" height="9" rx="1.5"></rect>
+                                <path d="M23.5 4.5v4a2 2 0 000-4z"></path>
+                            </svg>
+                        </div>
                     </div>
 
                     <!-- Content -->
-                    <div class="flex-1 px-4 py-3 flex flex-col">
+                    <div class="flex-1 p-4 flex flex-col">
                         <p class="text-[12px] text-gray-500 mb-0.5">Patient #1247</p>
                         <p class="text-sm font-semibold text-gray-900 mb-3">General Practice</p>
 

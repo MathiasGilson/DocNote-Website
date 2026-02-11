@@ -24,11 +24,24 @@ const t = await getEntry('pages', locale);
     <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
     <title>{title} | DocNote</title>
   </head>
-  <body class="min-h-screen bg-white text-gray-900 antialiased">
+  <body class="min-h-screen bg-gray-900 text-gray-900 antialiased">
     <Header locale={locale} translations={t.data} />
-    <main>
+    <main class="relative z-10 bg-white">
       <slot />
     </main>
     <Footer locale={locale} translations={t.data} />
+    <script>
+      const footer = document.getElementById("site-footer")
+      if (footer) {
+        const updateMargin = () => {
+          const main = document.querySelector("main")
+          if (main) {
+            main.style.marginBottom = `${footer.offsetHeight}px`
+          }
+        }
+        updateMargin()
+        window.addEventListener("resize", updateMargin)
+      }
+    </script>
   </body>
 </html>

@@ -10,95 +10,107 @@ const { locale, translations: t } = Astro.props
 const currentYear = new Date().getFullYear()
 ---
 
-<footer class="bg-gray-900 text-gray-400">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+<footer
+    id="site-footer"
+    class="fixed bottom-0 left-0 right-0 z-0 bg-gradient-to-b from-gray-900 via-indigo-950 to-indigo-900 text-gray-400 overflow-hidden"
+>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-72">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
             <div class="col-span-2 md:col-span-1">
                 <a href={getLocalizedPath("/", locale)} class="flex items-center gap-2 mb-4">
                     <img src="/images/logo.png" alt="DocNote" class="h-6 w-auto" />
                     <span class="text-base font-semibold text-white">DocNote</span>
                 </a>
-                <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
+                <p class="text-sm text-white/60 leading-relaxed max-w-xs mb-4">
                     {t.footer.description}
+                </p>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs text-white">HIPAA Compliant</span>
+                    <span class="text-xs text-white">ISO 27001</span>
+                </div>
+                <p class="text-xs text-white/40 mt-4">
+                    &copy; {currentYear} DocNote. {t.footer.rights}
                 </p>
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-4">Navigations</h4>
+                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">Navigations</h4>
                 <ul class="space-y-2.5">
                     <li>
                         <a
                             href={getLocalizedPath("/", locale)}
-                            class="text-sm text-gray-500 hover:text-white transition-colors">{t.footer.features}</a>
+                            class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.features}</a
+                        >
                     </li>
                     <li>
                         <a
                             href={getLocalizedPath("/pricing", locale)}
-                            class="text-sm text-gray-500 hover:text-white transition-colors">{t.footer.pricing}</a>
+                            class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.pricing}</a
+                        >
                     </li>
                     <li>
                         <a
                             href={getLocalizedPath("/blog", locale)}
-                            class="text-sm text-gray-500 hover:text-white transition-colors">{t.footer.blog}</a>
+                            class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.blog}</a
+                        >
                     </li>
                     <li>
                         <a
                             href={getLocalizedPath("/team", locale)}
-                            class="text-sm text-gray-500 hover:text-white transition-colors">{t.footer.about}</a>
+                            class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.about}</a
+                        >
                     </li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-4">{t.footer.company}</h4>
+                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.company}</h4>
                 <ul class="space-y-2.5">
                     <li>
-                        <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors"
-                            >{t.footer.about}</a>
+                        <a href="#" class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.about}</a
+                        >
                     </li>
                     <li>
-                        <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors"
-                            >{t.footer.careers}</a>
+                        <a href="#" class="text-sm text-white hover:text-white/70 transition-colors"
+                            >{t.footer.careers}</a
+                        >
                     </li>
                     <li>
-                        <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors"
-                            >{t.footer.contact}</a>
+                        <a href="#" class="text-sm text-white hover:text-white/70 transition-colors"
+                            >{t.footer.contact}</a
+                        >
                     </li>
                     <li>
-                        <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors"
-                            >{t.footer.integrations}</a>
+                        <a href="#" class="text-sm text-white hover:text-white/70 transition-colors"
+                            >{t.footer.integrations}</a
+                        >
                     </li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-4">{t.footer.legal}</h4>
+                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.legal}</h4>
                 <ul class="space-y-2.5">
                     <li>
-                        <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors"
-                            >{t.footer.privacy}</a>
+                        <a href="#" class="text-sm text-white hover:text-white/70 transition-colors"
+                            >{t.footer.privacy}</a
+                        >
                     </li>
                     <li>
-                        <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors"
-                            >{t.footer.terms}</a>
+                        <a href="#" class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.terms}</a
+                        >
                     </li>
                     <li>
-                        <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">{t.footer.gdpr}</a>
+                        <a href="#" class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.gdpr}</a>
                     </li>
                 </ul>
             </div>
         </div>
-
-        <div class="mt-12 pt-8 border-t border-gray-800">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-xs text-gray-600">
-                    &copy; {currentYear} DocNote. {t.footer.rights}
-                </p>
-                <div class="flex items-center gap-4">
-                    <span class="text-xs text-gray-600">HIPAA Compliant</span>
-                    <span class="text-xs text-gray-600">ISO 27001</span>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none select-none overflow-hidden">
+        <span
+            class="text-[12rem] sm:text-[16rem] lg:text-[18rem] font-bold leading-none text-white/[0.03] translate-y-1/4"
+            >DocNote</span
+        >
     </div>
 </footer>
