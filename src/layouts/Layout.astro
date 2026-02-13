@@ -26,17 +26,18 @@ const t = await getEntry('pages', locale);
   </head>
   <body class="min-h-screen bg-gray-900 text-gray-900 antialiased">
     <Header locale={locale} translations={t.data} />
-    <main class="relative z-10 bg-white">
+    <main class="relative z-10 bg-white lg:rounded-b-3xl lg:shadow-2xl">
       <slot />
     </main>
     <Footer locale={locale} translations={t.data} />
     <script>
       const footer = document.getElementById("site-footer")
       if (footer) {
+        const isLg = () => window.matchMedia("(min-width: 1024px)").matches
         const updateMargin = () => {
           const main = document.querySelector("main")
           if (main) {
-            main.style.marginBottom = `${footer.offsetHeight}px`
+            main.style.marginBottom = isLg() ? `${footer.offsetHeight}px` : "0px"
           }
         }
         updateMargin()
