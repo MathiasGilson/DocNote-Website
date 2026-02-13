@@ -1,9 +1,12 @@
 ---
+import { getLocaleFromUrl, getLocalizedPath } from '../utils/i18n';
+
 interface Props {
     translations: any
 }
 
 const { translations: t } = Astro.props
+const locale = getLocaleFromUrl(Astro.url);
 ---
 
 <section class="bg-gradient-to-b from-white to-indigo-50 py-20">
@@ -17,7 +20,7 @@ const { translations: t } = Astro.props
                     {t.cta.subtitle}
                 </p>
                 <a
-                    href="#"
+                    href={getLocalizedPath('/tutorial', locale)}
                     class="inline-flex items-center justify-center px-7 py-3 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/20"
                 >
                     {t.cta.button}

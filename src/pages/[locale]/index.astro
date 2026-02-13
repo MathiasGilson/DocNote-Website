@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import LogoBar from '../../components/LogoBar.astro';
-import ValueProp from '../../components/ValueProp.astro';
+
 import Features from '../../components/Features.astro';
 import Compliance from '../../components/Compliance.astro';
 import Testimonials from '../../components/Testimonials.astro';
@@ -27,7 +27,7 @@ const t = await getEntry('pages', locale as Locale);
 <Layout title="AI Medical Documentation">
   <Hero translations={t.data} />
   <LogoBar translations={t.data} />
-  <ValueProp translations={t.data} />
+
   <Features translations={t.data} />
   <Compliance translations={t.data} />
   <Testimonials translations={t.data} />

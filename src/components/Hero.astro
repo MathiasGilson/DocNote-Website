@@ -1,9 +1,12 @@
 ---
+import { getLocaleFromUrl, getLocalizedPath } from '../utils/i18n';
+
 interface Props {
     translations: any
 }
 
 const { translations: t } = Astro.props
+const locale = getLocaleFromUrl(Astro.url);
 
 const stats = [
     {
@@ -48,7 +51,7 @@ const stats = [
         </p>
 
         <a
-            href="#"
+            href={getLocalizedPath('/tutorial', locale)}
             class="inline-flex items-center justify-center px-7 py-3 text-lg font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/30"
         >
             {t.hero.cta}
