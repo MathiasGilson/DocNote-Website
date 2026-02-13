@@ -50,7 +50,7 @@ const t = entry.data;
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
           <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
           <div class="mb-6">
-            <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly={t.pricing.professional.monthlyPrice} data-yearly={t.pricing.professional.price}>${t.pricing.professional.price}</span>
+            <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price}>${t.pricing.professional.price}</span>
             <span class="text-gray-500">{t.pricing.perMonth}</span>
           </div>
           <ul class="space-y-3 mb-8">
@@ -116,14 +116,33 @@ const t = entry.data;
 </Layout>
 
 <script>
+  import { detectUserCurrency, convertPrice, formatPrice, type Currency } from '../../utils/currency';
+
   const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
   const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
   const toggleBg = document.getElementById('toggle-bg') as HTMLElement;
   const wrapper = document.getElementById('toggle-wrapper') as HTMLElement;
   const proPrice = document.getElementById('pro-price');
 
-  const yearlyPrice = `$${proPrice?.dataset.yearly || '59'}`;
-  const monthlyPrice = `$${proPrice?.dataset.monthly || '79'}`;
+  let currentCurrency: Currency = 'USD';
+  let yearlyPriceUSD = parseInt(proPrice?.dataset.yearlyUsd || '59');
+  let monthlyPriceUSD = parseInt(proPrice?.dataset.monthlyUsd || '79');
+  let yearlyPrice = '';
+  let monthlyPrice = '';
+
+  async function initializePricing() {
+    currentCurrency = await detectUserCurrency();
+
+    const yearlyConverted = convertPrice(yearlyPriceUSD, currentCurrency);
+    const monthlyConverted = convertPrice(monthlyPriceUSD, currentCurrency);
+
+    yearlyPrice = formatPrice(yearlyConverted, currentCurrency);
+    monthlyPrice = formatPrice(monthlyConverted, currentCurrency);
+
+    if (proPrice) {
+      proPrice.textContent = yearlyPrice;
+    }
+  }
 
   const moveBgTo = (btn: HTMLElement) => {
     toggleBg.style.left = `${btn.offsetLeft}px`;
@@ -147,4 +166,6 @@ const t = entry.data;
   moveBgTo(yearlyBtn);
   yearlyBtn.addEventListener('click', selectYearly);
   monthlyBtn.addEventListener('click', selectMonthly);
+
+  initializePricing();
 </script>
