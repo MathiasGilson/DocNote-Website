@@ -209,11 +209,11 @@ const pagesCollection = defineCollection({
         description: z.string(),
         chooseModel: z.string(),
         models: z.object({
-          operative: z.object({
+          dictation: z.object({
             title: z.string(),
             description: z.string(),
           }),
-          generalDetailed: z.object({
+          general: z.object({
             title: z.string(),
             description: z.string(),
           }),
@@ -221,11 +221,15 @@ const pagesCollection = defineCollection({
             title: z.string(),
             description: z.string(),
           }),
-          generalConcise: z.object({
+          operative: z.object({
             title: z.string(),
             description: z.string(),
           }),
-          dictation: z.object({
+          followUp: z.object({
+            title: z.string(),
+            description: z.string(),
+          }),
+          discharge: z.object({
             title: z.string(),
             description: z.string(),
           }),

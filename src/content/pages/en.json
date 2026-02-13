@@ -254,25 +254,29 @@
             "description": "Start using our solution to improve your administrative burden and begin to enjoy your work again. You can watch the tutorial below to help you understand our main features.",
             "chooseModel": "Choose a report model appropriate for your use:",
             "models": {
-                "operative": {
-                    "title": "Compte rendu opératoire",
-                    "description": "Operative report format"
+                "dictation": {
+                    "title": "Dictation",
+                    "description": "Free dictation for referral letter or insurance"
                 },
-                "generalDetailed": {
-                    "title": "Consultation généraliste (détaillée)",
-                    "description": "Anamnesis by system"
+                "general": {
+                    "title": "General Practitioner Consultation",
+                    "description": "Comprehensive general consultation documentation"
                 },
                 "specialist": {
-                    "title": "Consultation de spécialiste",
+                    "title": "Specialist Consultation",
                     "description": "Formal specialist letter format"
                 },
-                "generalConcise": {
-                    "title": "Consultation de généraliste (Concis)",
-                    "description": "Only the essential information"
+                "operative": {
+                    "title": "Operative Report",
+                    "description": "Operative report format"
                 },
-                "dictation": {
-                    "title": "Dictée",
-                    "description": "Free dictation for referral letter or insurance"
+                "followUp": {
+                    "title": "Medical Visit Follow-up Notes",
+                    "description": "Follow-up notes for medical ward rounds"
+                },
+                "discharge": {
+                    "title": "Discharge Letter",
+                    "description": "Patient discharge summary letter"
                 }
             }
         }

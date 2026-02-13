@@ -256,25 +256,29 @@
       "description": "Beginnen Sie mit unserer Lösung, um Ihre Verwaltungslast zu verringern und Ihre Arbeit wieder zu genießen. Sie können sich das Tutorial unten ansehen, um unsere Hauptfunktionen zu verstehen.",
       "chooseModel": "Wählen Sie ein für Ihren Zweck geeignetes Berichtsmodell:",
       "models": {
-        "operative": {
-          "title": "Operationsbericht",
-          "description": "Operationsberichtsformat"
+        "dictation": {
+          "title": "Diktat",
+          "description": "Freies Diktat für Überweisungsschreiben oder Versicherung"
         },
-        "generalDetailed": {
-          "title": "Allgemeine Konsultation (detailliert)",
-          "description": "Anamnese nach System"
+        "general": {
+          "title": "Allgemeinarztkonsultation",
+          "description": "Umfassende allgemeine Konsultationsdokumentation"
         },
         "specialist": {
           "title": "Facharztkonsultation",
           "description": "Formelles Facharztbriefformat"
         },
-        "generalConcise": {
-          "title": "Allgemeine Konsultation (Prägnant)",
-          "description": "Nur die wesentlichen Informationen"
+        "operative": {
+          "title": "Operationsbericht",
+          "description": "Operationsberichtsformat"
         },
-        "dictation": {
-          "title": "Diktat",
-          "description": "Freies Diktat für Überweisungsschreiben oder Versicherung"
+        "followUp": {
+          "title": "Visitennotizen",
+          "description": "Folgenotizen für medizinische Visiten"
+        },
+        "discharge": {
+          "title": "Austrittsbrief",
+          "description": "Zusammenfassender Austrittsbrief des Patienten"
         }
       }
     }

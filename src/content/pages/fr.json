@@ -256,25 +256,29 @@
       "description": "Commencez à utiliser notre solution pour améliorer votre charge administrative et recommencez à apprécier votre travail. Vous pouvez regarder le tutoriel ci-dessous pour comprendre nos principales fonctionnalités.",
       "chooseModel": "Choisissez un modèle de rapport adapté à votre usage :",
       "models": {
-        "operative": {
-          "title": "Compte rendu opératoire",
-          "description": "Format de rapport opératoire"
+        "dictation": {
+          "title": "Dictée",
+          "description": "Dictée libre pour lettre de référence ou assurance"
         },
-        "generalDetailed": {
-          "title": "Consultation généraliste (détaillée)",
-          "description": "Anamnèse par système"
+        "general": {
+          "title": "Consultation de généraliste",
+          "description": "Documentation complète de consultation générale"
         },
         "specialist": {
           "title": "Consultation de spécialiste",
           "description": "Format de lettre spécialisée formelle"
         },
-        "generalConcise": {
-          "title": "Consultation de généraliste (Concis)",
-          "description": "Seulement les informations essentielles"
+        "operative": {
+          "title": "Compte-rendu opératoire",
+          "description": "Format de rapport opératoire"
         },
-        "dictation": {
-          "title": "Dictée",
-          "description": "Dictée libre pour lettre de référence ou assurance"
+        "followUp": {
+          "title": "Note de suite des visites médicales",
+          "description": "Notes de suivi pour les visites médicales"
+        },
+        "discharge": {
+          "title": "Lettre de sortie",
+          "description": "Lettre de résumé de sortie du patient"
         }
       }
     }
