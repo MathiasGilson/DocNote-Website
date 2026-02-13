@@ -111,6 +111,7 @@ const pagesCollection = defineCollection({
       save: z.string(),
       perMonth: z.string(),
       getStarted: z.string(),
+      subscription: z.string(),
       professional: z.object({
         name: z.string(),
         price: z.string(),
