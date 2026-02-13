@@ -29,6 +29,9 @@ function isActive(path: string) {
           <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-base transition-colors", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.tutorial}
           </a>
+          <a href={getLocalizedPath('/demo', locale)} class:list={["text-base transition-colors", isActive('/demo') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+            {t.nav.demo}
+          </a>
           <a href={getLocalizedPath('/pricing', locale)} class:list={["text-base transition-colors", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.pricing}
           </a>
@@ -41,16 +44,25 @@ function isActive(path: string) {
         </div>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
         <LanguageSwitcher locale={locale} />
-        <a href="#" class="hidden sm:block text-base text-gray-600 hover:text-gray-900 transition-colors">
-          {t.nav.signIn}
+        <a
+          href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR"
+          class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+        >
+          {t.nav.appStore}
         </a>
         <a
-          href="#"
-          class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
+          href="https://play.google.com/store/apps/details?id=app.docnote&pli=1"
+          class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
         >
-          {t.nav.getStarted}
+          {t.nav.googlePlay}
+        </a>
+        <a
+          href="https://app-consult-ai.web.app/"
+          class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
+        >
+          {t.nav.webApp}
         </a>
 
         <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Toggle menu">
@@ -64,10 +76,15 @@ function isActive(path: string) {
     <div id="mobile-menu" class="hidden md:hidden py-6 border-t border-gray-100">
       <div class="flex flex-col gap-6">
         <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-lg", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.tutorial}</a>
+        <a href={getLocalizedPath('/demo', locale)} class:list={["text-lg", isActive('/demo') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.demo}</a>
         <a href={getLocalizedPath('/pricing', locale)} class:list={["text-lg", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.pricing}</a>
         <a href={getLocalizedPath('/blog', locale)} class:list={["text-lg", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.blog}</a>
         <a href={getLocalizedPath('/team', locale)} class:list={["text-lg", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.team}</a>
-        <a href="#" class="text-lg text-gray-600 hover:text-gray-900">{t.nav.signIn}</a>
+        <div class="flex flex-col gap-3 mt-2">
+          <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" class="text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 text-center hover:bg-gray-200 transition-all">{t.nav.appStore}</a>
+          <a href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" class="text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 text-center hover:bg-gray-200 transition-all">{t.nav.googlePlay}</a>
+          <a href="https://app-consult-ai.web.app/" class="text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full px-6 py-2.5 text-center">{t.nav.webApp}</a>
+        </div>
       </div>
     </div>
   </nav>

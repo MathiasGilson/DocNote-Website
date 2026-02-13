@@ -4,8 +4,10 @@
     "pricing": "Preise",
     "blog": "Blog",
     "team": "Team",
-    "signIn": "Anmelden",
-    "getStarted": "Loslegen"
+    "demo": "Demo anfordern",
+    "webApp": "Web-App",
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
   },
   "hero": {
     "badge": "KI-gestutzte medizinische Dokumentation",
@@ -281,6 +283,31 @@
           "description": "Zusammenfassender Austrittsbrief des Patienten"
         }
       }
+    },
+    "cta": {
+      "title": "Bereit loszulegen?",
+      "subtitle": "Laden Sie die App herunter und starten Sie noch heute Ihre 30-Konsultationen-Testversion.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "webApp": "Web-App",
+      "getDemo": "Demo anfordern"
+    }
+  },
+  "demo": {
+    "title": "Demo anfordern",
+    "subtitle": "Erfahren Sie, wie DocNote Ihren klinischen Dokumentationsworkflow transformieren kann",
+    "form": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "jobTitle": "Berufsbezeichnung",
+      "phone": "Telefonnummer",
+      "countryCode": "Vorwahl",
+      "country": "Ihr Land",
+      "organization": "Ihre medizinische Organisation",
+      "message": "Nachricht",
+      "submit": "Demo anfordern",
+      "success": "Vielen Dank! Wir melden uns in Kürze bei Ihnen."
     }
   }
 }

@@ -4,8 +4,10 @@
         "pricing": "Pricing",
         "blog": "Blog",
         "team": "Team",
-        "signIn": "Sign In",
-        "getStarted": "Get Started"
+        "demo": "Get a Demo",
+        "webApp": "Web App",
+        "appStore": "App Store",
+        "googlePlay": "Google Play"
     },
     "hero": {
         "badge": "AI-Powered Medical Documentation",
@@ -279,6 +281,31 @@
                     "description": "Consolidated discharge summary integrating all documents created during hospitalization"
                 }
             }
+        },
+        "cta": {
+            "title": "Ready to get started?",
+            "subtitle": "Download the app and start your 30-consultation trial today.",
+            "appStore": "App Store",
+            "googlePlay": "Google Play",
+            "webApp": "Web App",
+            "getDemo": "Get a Demo"
+        }
+    },
+    "demo": {
+        "title": "Get a Demo",
+        "subtitle": "See how DocNote can transform your clinical documentation workflow",
+        "form": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "jobTitle": "Job Title",
+            "phone": "Phone Number",
+            "countryCode": "Code",
+            "country": "Your Country",
+            "organization": "Your Medical Organization",
+            "message": "Message",
+            "submit": "Request Demo",
+            "success": "Thank you! We'll be in touch shortly."
         }
     }
 }

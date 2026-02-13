@@ -4,8 +4,10 @@
     "pricing": "Tarifs",
     "blog": "Blog",
     "team": "Équipe",
-    "signIn": "Connexion",
-    "getStarted": "Commencer"
+    "demo": "Demander une démo",
+    "webApp": "Application Web",
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
   },
   "hero": {
     "badge": "Documentation medicale assistee par IA",
@@ -281,6 +283,31 @@
           "description": "Lettre de résumé de sortie du patient"
         }
       }
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "subtitle": "Téléchargez l'application et commencez votre essai de 30 consultations dès aujourd'hui.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "webApp": "Application Web",
+      "getDemo": "Demander une démo"
+    }
+  },
+  "demo": {
+    "title": "Demander une démo",
+    "subtitle": "Découvrez comment DocNote peut transformer votre flux de documentation clinique",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "jobTitle": "Fonction",
+      "phone": "Numéro de téléphone",
+      "countryCode": "Indicatif",
+      "country": "Votre pays",
+      "organization": "Votre organisation médicale",
+      "message": "Message",
+      "submit": "Demander une démo",
+      "success": "Merci ! Nous vous contacterons sous peu."
     }
   }
 }
