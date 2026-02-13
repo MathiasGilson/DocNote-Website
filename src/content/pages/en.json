@@ -252,31 +252,31 @@
         "step3": {
             "title": "Main Screen",
             "description": "Start using our solution to improve your administrative burden and begin to enjoy your work again. You can watch the tutorial below to help you understand our main features.",
-            "chooseModel": "Choose a report model appropriate for your use:",
+            "chooseModel": "From the landing page, you can select the report model that best suits your needs:",
             "models": {
                 "dictation": {
                     "title": "Dictation",
-                    "description": "Free dictation for referral letter or insurance"
+                    "description": "Free-text dictation with automatic structuring"
                 },
                 "general": {
                     "title": "General Practitioner Consultation",
-                    "description": "Comprehensive general consultation documentation"
+                    "description": "Concise, clinically structured notes designed for primary care"
                 },
                 "specialist": {
                     "title": "Specialist Consultation",
-                    "description": "Formal specialist letter format"
+                    "description": "Detailed specialist consultation structured as a formal letter to the referring doctor"
                 },
                 "operative": {
                     "title": "Operative Report",
-                    "description": "Operative report format"
+                    "description": "Structured surgical procedure report"
                 },
                 "followUp": {
                     "title": "Medical Visit Follow-up Notes",
-                    "description": "Follow-up notes for medical ward rounds"
+                    "description": "Standardized daily progress notes for hospitalized patients"
                 },
                 "discharge": {
                     "title": "Discharge Letter",
-                    "description": "Patient discharge summary letter"
+                    "description": "Consolidated discharge summary integrating all documents created during hospitalization"
                 }
             }
         }
