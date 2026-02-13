@@ -35,8 +35,12 @@ const stats = [
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
             <span class="text-gradient font-bold">{t.hero.title}</span>
-            <br />
-            <span class="font-semibold text-gray-700">{t.hero.titleHighlight}</span>
+            {t.hero.titleHighlight && (
+                <>
+                    <br />
+                    <span class="font-semibold text-gray-700">{t.hero.titleHighlight}</span>
+                </>
+            )}
         </h1>
 
         <p class="text-base sm:text-lg text-gray-500 mb-8 max-w-xl mx-auto leading-relaxed">
