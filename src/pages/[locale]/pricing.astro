@@ -43,7 +43,7 @@ const t = entry.data;
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl p-8 border-2 border-primary-500 relative shadow-xl">
+        <div class="bg-white rounded-2xl p-8 border-2 border-primary-500 relative shadow-xl flex flex-col">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-white text-sm font-medium rounded-full">
             {t.pricing.professional.popular}
           </div>
@@ -53,7 +53,7 @@ const t = entry.data;
             <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price}>${t.pricing.professional.price}</span>
             <span class="text-gray-500">{t.pricing.perMonth}</span>
           </div>
-          <ul class="space-y-3 mb-8">
+          <ul class="space-y-3 mb-8 flex-grow">
             {t.pricing.professional.features.map((feature: string) => (
               <li class="flex items-center gap-3 text-gray-600">
                 <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,13 +68,13 @@ const t = entry.data;
           </a>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary-300 transition-colors">
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary-300 transition-colors flex flex-col">
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.enterprise.name}</h3>
           <p class="text-gray-600 mb-6">{t.pricing.enterprise.description}</p>
           <div class="mb-6">
             <span class="text-4xl font-bold text-gray-900">{t.pricing.enterprise.price}</span>
           </div>
-          <ul class="space-y-3 mb-8">
+          <ul class="space-y-3 mb-8 flex-grow">
             {t.pricing.enterprise.features.map((feature: string) => (
               <li class="flex items-center gap-3 text-gray-600">
                 <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
