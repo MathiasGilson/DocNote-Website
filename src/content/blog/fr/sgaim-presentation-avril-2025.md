@@ -5,7 +5,7 @@ category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
-image: "/images/ssmig.jpg"
+image: "/images/remise-prix-lumiere-2023.png"
 date: "2025-04-15"
 readTime: 3
 ---
