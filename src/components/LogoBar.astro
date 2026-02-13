@@ -3,17 +3,35 @@ interface Props {
     translations: any
 }
 
-const logos = ["Hôpital de la Tour", "HUG", "CHUV", "Hirslanden", "Inselspital", "USZ"]
+const logos = [
+    { src: "/images/partner_aphp.png", alt: "APHP" },
+    { src: "/images/partner_vesenaz.png", alt: "Centre Medical Vesenaz" },
+    { src: "/images/partner_bouchard.png", alt: "Clinique Bouchard" },
+    { src: "/images/partner_chantecler.png", alt: "Clinique Chantecler" },
+    { src: "/images/partner_argonay.webp", alt: "Clinique d'Argonay" },
+    { src: "/images/partner_annecy.png", alt: "Clinique Générale d'Annecy" },
+    { src: "/images/partner_st_anne.svg", alt: "Clinique Générale St Anne" },
+    { src: "/images/partner_cva.png", alt: "CVA" },
+    { src: "/images/partner_epic.png", alt: "Epic" },
+    { src: "/images/partner_geneclic.webp", alt: "Geneclic" },
+    { src: "/images/partner_mediway.png", alt: "Mediway" },
+    { src: "/images/partner_sokle.webp", alt: "Sokle" }
+]
 ---
 
 <section class="py-10 border-b border-gray-100 overflow-hidden">
     <div class="relative">
-        <div class="flex animate-scroll-left" style="width: max-content;">
+        <div class="flex items-center animate-scroll-left" style="width: max-content;">
             {
-                [...logos, ...logos, ...logos].map((logo) => (
-                    <span class="text-xs sm:text-lg font-semibold text-gray-300 whitespace-nowrap px-8 sm:px-12 select-none tracking-tight">
-                        {logo}
-                    </span>
+                [...logos, ...logos, ...logos].map((logo, index) => (
+                    <div class="px-8 sm:px-12 flex items-center justify-center" key={index}>
+                        <img
+                            src={logo.src}
+                            alt={logo.alt}
+                            class="h-8 sm:h-12 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            loading="lazy"
+                        />
+                    </div>
                 ))
             }
         </div>
