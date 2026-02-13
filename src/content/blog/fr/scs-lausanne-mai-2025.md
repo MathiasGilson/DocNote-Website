@@ -1,48 +1,27 @@
 ---
-title: "DocNote au Congrès du Swiss College of Surgeons à Lausanne"
+title: "Dre Alice Gilson parle de l'IA en documentation au Congrès du Swiss College of Surgeons à Lausanne"
 excerpt: "DocNote a participé au prestigieux congrès annuel du SCS à l'EPFL de Lausanne, rencontrant les principaux spécialistes en chirurgie de Suisse."
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
 image: "/images/scs_lausanne_05.25.jpg"
-date: "2025-05-20"
+date: "2025-05-21"
 readTime: 4
 ---
 
-# DocNote au Congrès du Swiss College of Surgeons à Lausanne
+Au congrès du SCS à Lausanne, Dre Alice Gilson, du département de chirurgie viscérale des HUG à Genève, a abordé la charge administrative croissante en médecine et le rôle que l'intelligence artificielle pourrait jouer dans la transformation de la documentation médicale.
 
-En mai 2025, DocNote a eu le privilège de participer au congrès annuel du Swiss College of Surgeons (SCS), organisé à la prestigieuse École Polytechnique Fédérale de Lausanne (EPFL). Cet événement majeur a réuni les chirurgiens et résidents en chirurgie les plus accomplis de Suisse pour discuter des innovations en pratique chirurgicale et en soins aux patients.
+![DocNote au Congrès SCS à Lausanne](/images/SCS%20Lausanne.jpeg)
 
-## Innovation en documentation chirurgicale
+<br>
 
-La communauté chirurgicale fait face à des défis de documentation uniques, des notes opératoires détaillées aux instructions complexes de soins post-opératoires. Au congrès du SCS, nous avons démontré comment la technologie IA de DocNote peut rationaliser ces tâches de documentation critiques tout en maintenant la précision et les détails qu'exige la pratique chirurgicale.
+S'appuyant sur des données suisses récentes, elle a souligné que les médecins consacrent jusqu'à cinq heures par jour aux tâches administratives. Elle a identifié les causes principales : des systèmes de DME mal conçus, des exigences réglementaires croissantes, la traçabilité médico-légale et les obligations complexes de codification clinique.
 
-## Rencontre avec les leaders chirurgicaux suisses
+<br>
 
-Le congrès a fourni une opportunité inestimable d'échanger directement avec des spécialistes chirurgicaux de multiples disciplines. De la chirurgie générale aux sous-spécialités chirurgicales spécialisées, nous avons reçu des retours précieux sur la façon dont DocNote peut être optimisé pour les flux de travail uniques de la pratique chirurgicale.
+Si les premières études montrent que les outils de documentation alimentés par l'IA peuvent réduire le temps de rédaction d'environ 20 % et améliorer la qualité, Dre Gilson a insisté sur les risques associés, notamment les hallucinations, la responsabilité clinique et les préoccupations en matière de protection des données selon le droit suisse et européen.
 
-## Points forts du congrès
+<br>
 
-- Présentation des capacités de DocNote pour la documentation des notes opératoires
-- Démonstrations de transcription en temps réel lors de consultations chirurgicales simulées
-- Discussions sur l'intégration avec les systèmes de planification chirurgicale et de DME
-- Rencontres avec les chefs de département des principaux hôpitaux suisses
-
-## L'expérience EPFL
-
-L'organisation du congrès à l'EPFL, l'un des instituts technologiques leaders en Europe, a créé le cadre parfait pour des discussions sur l'intersection entre technologie avancée et excellence chirurgicale. Le lieu symbolisait le pont que nous construisons entre l'IA de pointe et l'expertise médicale traditionnelle.
-
-## Retours de la communauté chirurgicale
-
-Les chirurgiens lors du congrès ont exprimé un intérêt particulier pour :
-- Les capacités de gain de temps pour la documentation post-opératoire
-- L'intégration avec les systèmes hospitaliers existants
-- La conformité avec les exigences suisses de protection des données
-- Les options de personnalisation pour différentes spécialités chirurgicales
-
-## Prochaines étapes
-
-Les connexions établies au congrès du SCS renforcent notre engagement à servir la communauté chirurgicale. Le feedback que nous avons reçu informera directement notre développement produit, garantissant que DocNote réponde aux standards exigeants de la documentation chirurgicale.
-
-Nous exprimons notre gratitude au Swiss College of Surgeons pour avoir accueilli DocNote à ce rassemblement annuel important et à tous les chirurgiens qui ont partagé leurs précieux insights avec notre équipe.
+Elle a conclu en présentant DocNote, une solution développée en Suisse conçue pour générer des comptes rendus de consultation anonymisés tout en garantissant un stockage local strict des données et la suppression automatique des enregistrements, visant à réduire la charge administrative sans compromettre la confidentialité.

@@ -1,6 +1,6 @@
 ---
-title: "Moins de temps à documenter grâce à l'IA, plus pour soigner : que dit la science ?"
-excerpt: "Une étude récente publiée dans JAMA Network Open montre comment les outils d'ambient scribe basés sur l'IA peuvent réduire le temps de documentation de 20% et améliorer significativement le bien-être des médecins."
+title: "Moins de temps consacré à la documentation grâce à l'IA, plus de temps pour les soins : que disent les preuves scientifiques ?"
+excerpt: "Une étude récente publiée dans JAMA Network Open a évalué l'impact d'un scribe IA ambiant sur la charge documentaire des cliniciens dans un grand système de santé universitaire."
 category: "ai"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
@@ -10,36 +10,23 @@ date: "2026-01-29"
 readTime: 5
 ---
 
-En tant que médecin, je pense qu'on sous-estime encore l'impact réel de la documentation clinique sur notre fatigue, notre temps de travail et notre relation au patient.
+Une étude récente publiée dans JAMA Network Open a évalué l'impact d'un scribe IA ambiant sur la charge documentaire des cliniciens dans un grand système de santé universitaire. Au cours d'un pilote de 7 semaines impliquant 46 cliniciens ambulatoires de 17 spécialités, les chercheurs ont comparé les métriques du dossier de santé électronique (DSE) avant et pendant l'utilisation de l'outil.
 
-Une étude récente publiée dans JAMA Network Open a évalué l'impact des outils d'ambient scribe basés sur l'IA en pratique ambulatoire. Les résultats sont clairs et quantifiés.
+<br>
 
-L'utilisation de ces outils est associée à:
+Les résultats suggèrent des gains d'efficacité mesurables. Le temps consacré à la rédaction des notes par consultation a diminué d'environ 15 %, les taux de clôture des visites le jour même ont augmenté, et le temps passé dans le DSE en dehors des heures de travail a chuté de près de 17 %. Les cliniciens ont également moins tapé, reflétant l'automatisation des tâches de documentation.
 
-- une réduction d'environ 20 % du temps consacré à la documentation par consultation
-- une augmentation significative du taux de dossiers clôturés le jour même
-- une diminution d'environ 30 % du temps de travail administratif effectué en dehors des heures cliniques
-- et une baisse nette de la charge cognitive liée à l'administratif.
+<br>
 
-À l'échelle d'une journée clinique, cela représente un gain de temps réel, mais surtout moins de travail le soir et une meilleure disponibilité pendant la consultation.
+Les réponses aux enquêtes ont indiqué une réduction de la charge cognitive et une meilleure concentration lors des consultations, de nombreux cliniciens rapportant un meilleur engagement et moins de distractions. Cependant, certains participants ont noté que les notes générées par l'IA nécessitaient encore des modifications pour la précision et le style.
 
-Mais une question reste centrale, en particulier en Suisse : où vont les données ?
+<br>
 
-C'est précisément pour répondre à cette exigence que nous avons créé DocNote.
+Dans l'ensemble, l'étude soutient les scribes IA ambiants comme une stratégie prometteuse pour réduire la charge documentaire et améliorer l'efficacité des flux de travail, tout en soulignant la nécessité d'un perfectionnement continu pour optimiser la fiabilité et l'intégration clinique.
 
-DocNote est une solution d'assistance à la documentation médicale 100 % souveraine suisse:
-
-- Données hébergées en Suisse
-- Aucune exploitation secondaire des données
-- Conformité stricte avec la nLPD suisse et les exigences institutionnelles
-- Pensée dès le départ pour un usage clinique réel, hospitalier comme ambulatoire
-
-DocNote n'est pas une adaptation opportuniste de solutions étrangères. C'est une solution conçue en Suisse, pour le système de santé suisse, avec un niveau de protection des données compatible avec la confiance que nous devons à nos patients.
-
-L'objectif est simple : réduire la charge documentaire sans compromis sur la qualité médicale ni sur la sécurité des données.
-
-Si vous êtes médecin, chef de service ou responsable institutionnel et que la documentation et la souveraineté des données sont des sujets concrets dans votre pratique ou votre établissement, je serais ravi d'échanger avec vous et de vous présenter DocNote ou découvrez notre solution directement sur notre site : [www.docnote.ch](https://www.docnote.ch)
+<br>
+<br>
 
 ---
 
-**Source :** [Étude JAMA Network Open](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383#:~:text=Clinical%20documentation%20in%20electronic%20health,tools%20also%20may%20help%20reduce)
+**Source :** [JAMA Network Open](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383#:~:text=Clinical%20documentation%20in%20electronic%20health,tools%20also%20may%20help%20reduce)

@@ -1,5 +1,5 @@
 ---
-title: "HIPAA Compliance in AI Medical Tools: What You Need to Know"
+title: "HIPAA compliance in AI medical tools: what you need to know"
 excerpt: "Understanding the regulatory requirements for AI-powered healthcare documentation and how to ensure compliance."
 category: "ai"
 author: "Thomas Weber"

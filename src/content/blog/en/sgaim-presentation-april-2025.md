@@ -1,21 +1,27 @@
 ---
-title: "DocNote Presents at SSMIG Annual Conference"
+title: "DocNote presents at SSMIG annual conference"
 excerpt: "DocNote was presented to the Swiss Society of General Internal Medicine (SSMIG/SGAIM), showcasing how AI can transform medical documentation in primary care."
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/images/logo.png"
 image: "/images/remise-prix-lumiere-2023.png"
-date: "2025-04-15"
+date: "2025-05-20"
 readTime: 3
 ---
 
-**DocNote Presents AI Medical Documentation at SSMIG Annual Conference**
+At the annual SSMIG Congress (Swiss Society of General Internal Medicine), one of Switzerland's leading medical gatherings, DocNote was presented as an innovative solution designed to reduce administrative burden in clinical practice.
 
-At the Swiss Society of General Internal Medicine (SSMIG) annual conference in April 2025, DocNote showcased its AI-powered medical documentation platform to an audience of general practitioners and internal medicine specialists from across Switzerland.
+![DocNote at SSMIG annual conference](/images/ssmig_-_2.jpg)
 
-The presentation addressed a major challenge in primary care: the growing administrative burden on physicians. DocNote demonstrated how its technology converts doctor-patient conversations into structured medical reports, with the potential to significantly reduce time spent on documentation.
+<br>
 
-Particular attention was given to data privacy and regulatory compliance. DocNote processes all data on servers located in Switzerland, in line with Swiss medical data protection requirements—an essential criterion for healthcare professionals.
+As part of the congress program, the project was highlighted during the Prix Lumière, an award recognizing forward-thinking initiatives that aim to improve quality of care and physicians' working conditions. This distinction placed DocNote among a select group of projects addressing structural challenges in internal medicine.
 
-The session sparked strong interest, with numerous questions around integration into existing electronic health record systems and real-world clinical use. Several practices expressed interest in pilot projects, reflecting cautious but genuine engagement from the Swiss medical community.
+<br>
+
+The presentation emphasized both the measurable benefits of AI-assisted documentation, including reduced time spent on notes, improved report quality and improved relationship with the patient, and the importance of addressing limitations such as hallucinations, medico-legal responsibility and data protection.
+
+<br>
+
+DocNote's presence at SSMIG reflected a broader shift within Swiss internal medicine: a growing interest in AI tools that are not only technologically advanced, but clinically relevant, secure and seamlessly integrated into everyday workflows.

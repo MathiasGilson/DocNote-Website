@@ -1,5 +1,5 @@
 ---
-title: "SOAP Notes Best Practices: A Complete Guide"
+title: "SOAP notes best practices: a complete guide"
 excerpt: "Master the art of writing effective SOAP notes with these proven strategies and tips from experienced clinicians."
 category: "documentation"
 author: "Dr. Julia Berger"

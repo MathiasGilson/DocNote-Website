@@ -6,16 +6,22 @@ author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
 image: "/images/remise-prix-lumiere-2023.png"
-date: "2025-04-15"
+date: "2025-05-20"
 readTime: 3
 ---
 
-**DocNote présente la documentation médicale par IA au congrès annuel de la SSMIG**
+Lors du congrès annuel de la SSMIG (Société Suisse de Médecine Interne Générale), l'un des plus grands rassemblements médicaux de Suisse, DocNote a été présenté comme une solution innovante conçue pour réduire la charge administrative en pratique clinique.
 
-Lors du congrès annuel de la Société Suisse de Médecine Interne Générale (SSMIG) en avril 2025, DocNote a présenté sa plateforme de documentation médicale assistée par IA à un public de médecins généralistes et de spécialistes en médecine interne de toute la Suisse.
+![DocNote à la conférence annuelle de la SSMIG](/images/ssmig_-_2.jpg)
 
-La présentation a abordé un défi majeur dans les soins primaires : la charge administrative croissante des médecins. DocNote a démontré comment sa technologie convertit les conversations médecin-patient en rapports médicaux structurés, avec le potentiel de réduire considérablement le temps consacré à la documentation.
+<br>
 
-Une attention particulière a été accordée à la protection des données et à la conformité réglementaire. DocNote traite toutes les données sur des serveurs situés en Suisse, conformément aux exigences suisses en matière de protection des données médicales—un critère essentiel pour les professionnels de la santé.
+Dans le cadre du programme du congrès, le projet a été mis en avant lors du Prix Lumière, une distinction récompensant les initiatives visionnaires visant à améliorer la qualité des soins et les conditions de travail des médecins. Cette reconnaissance a placé DocNote parmi un groupe restreint de projets répondant aux défis structurels de la médecine interne.
 
-La session a suscité un vif intérêt, avec de nombreuses questions sur l'intégration dans les systèmes de dossiers de santé électroniques existants et l'utilisation clinique réelle. Plusieurs cabinets ont exprimé leur intérêt pour des projets pilotes, reflétant un engagement prudent mais réel de la communauté médicale suisse.
+<br>
+
+La présentation a souligné à la fois les bénéfices mesurables de la documentation assistée par IA, notamment la réduction du temps consacré à la rédaction, l'amélioration de la qualité des rapports et l'amélioration de la relation avec le patient, ainsi que l'importance de prendre en compte les limites telles que les hallucinations, la responsabilité médico-légale et la protection des données.
+
+<br>
+
+La présence de DocNote à la SSMIG reflétait un changement plus large au sein de la médecine interne suisse : un intérêt croissant pour les outils d'IA qui ne sont pas seulement technologiquement avancés, mais cliniquement pertinents, sécurisés et intégrés de manière fluide dans les flux de travail quotidiens.

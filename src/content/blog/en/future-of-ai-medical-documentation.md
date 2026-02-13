@@ -1,5 +1,5 @@
 ---
-title: "The Future of AI in Medical Documentation"
+title: "The future of AI in medical documentation"
 excerpt: "How artificial intelligence is transforming the way doctors handle patient records and clinical notes."
 category: "ai"
 author: "Dr. Elena Fischer"

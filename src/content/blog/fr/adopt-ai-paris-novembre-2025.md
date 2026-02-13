@@ -6,53 +6,22 @@ author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
 image: "/images/adopt_ai_11.25.jpg"
-date: "2025-11-25"
+date: "2025-11-26"
 readTime: 4
 ---
 
-# DocNote à Adopt AI Paris : Le sommet européen de l'IA en santé
+Lors du congrès ADOPT AI, un événement consacré à l'implémentation concrète de l'intelligence artificielle dans tous les secteurs, DocNote a rejoint des dirigeants hospitaliers, des chercheurs et des innovateurs en santé numérique pour discuter de la transition de l'IA des projets pilotes vers une adoption à grande échelle.
 
-En novembre 2025, DocNote a participé à Adopt AI, l'une des conférences européennes les plus importantes dédiées à l'intelligence artificielle en santé. Organisé à Paris, cet événement majeur a réuni des milliers de professionnels de santé, d'innovateurs en IA, de décideurs politiques et de leaders technologiques pour explorer l'avenir de l'IA en médecine.
+![DocNote au salon Adopt AI Paris](/images/adopt_ai_11.25_-_2.jpg)
 
-## Une scène mondiale pour l'IA en santé
+<br>
 
-Adopt AI s'est établi comme le forum européen premier pour discuter de l'implémentation pratique de l'IA dans les environnements de soins de santé. La conférence a présenté plus de 100 intervenants, incluant des médecins leaders, des data scientists, des administrateurs hospitaliers et des chercheurs en IA de toute l'Europe et au-delà.
+Le congrès s'est concentré sur les défis pratiques : gouvernance des données, conformité réglementaire, cybersécurité, interopérabilité et impact clinique mesurable. Au-delà de la performance technologique, les discussions ont souligné l'importance de l'intégration dans les flux de travail hospitaliers existants et de l'acceptation par les cliniciens.
 
-## La présence de DocNote
+<br>
 
-Notre équipe a opéré un stand d'exposition dédié tout au long de la conférence de trois jours, fournissant des démonstrations en direct des capacités de transcription et de documentation IA de DocNote. La réponse des participants a été remarquable, avec des professionnels de santé de France, Suisse, Belgique et de toute l'Europe s'arrêtant pour découvrir comment DocNote transforme la documentation médicale.
+Lors de l'événement, DocNote a présenté son assistant IA conçu pour automatiser les flux de documentation hospitalière. La solution génère des documents cliniques structurés, incluant les comptes rendus de consultations ambulatoires, les notes d'hospitalisation, les comptes rendus opératoires et les lettres de sortie, à partir de conversations cliniques enregistrées et de documents médicaux téléchargés, avec une intégration directe dans les systèmes de dossiers médicaux électroniques (DME).
 
-## Thèmes clés de la conférence
+<br>
 
-La conférence a abordé plusieurs sujets critiques qui s'alignent étroitement avec la mission de DocNote :
-
-### Implémentation de l'IA en pratique clinique
-Les discussions se sont concentrées sur le passage de l'IA de la théorie à l'utilisation pratique quotidienne dans les hôpitaux et cliniques. Le déploiement réel de DocNote dans les établissements de santé suisses a servi d'exemple concret d'implémentation réussie de l'IA.
-
-### Conformité réglementaire et protection des données
-L'IA en santé européenne fait face à des exigences réglementaires strictes, particulièrement sous le RGPD et les réglementations sur les dispositifs médicaux. Nos présentations ont mis l'accent sur l'engagement de DocNote envers les standards suisses et européens de protection des données.
-
-### Épuisement professionnel des médecins et solutions IA
-Plusieurs panels ont abordé comment le fardeau administratif contribue à l'épuisement professionnel des médecins. La capacité de DocNote à réduire le temps de documentation a fortement résonné avec les participants préoccupés par le bien-être des médecins.
-
-## Connexions notables
-
-La conférence a facilité des connexions précieuses avec :
-- Des responsables de l'innovation hospitalière explorant des stratégies d'adoption de l'IA
-- Des associations médicales intéressées à soutenir leurs membres avec des outils IA
-- Des partenaires technologiques en santé pour des intégrations potentielles
-- Des instituts de recherche étudiant l'impact de l'IA sur les flux de travail cliniques
-
-## Intérêt international
-
-Bien que DocNote soit ancré dans les soins de santé suisses, la conférence Adopt AI a révélé un intérêt international significatif pour notre plateforme. Des professionnels de santé de plusieurs pays européens se sont renseignés sur la disponibilité de DocNote dans leurs régions, soulignant la nature universelle des défis de documentation en médecine moderne.
-
-## Regard vers l'avenir
-
-Adopt AI Paris a renforcé notre compréhension que les défis auxquels DocNote répond ne sont pas uniques à la Suisse mais sont ressentis dans toute la santé européenne. La conférence a dynamisé notre équipe et fourni des insights précieux sur la façon dont nous pouvons continuer à faire évoluer notre plateforme pour servir la communauté médicale européenne plus large.
-
-## Remerciements
-
-Nous remercions le comité d'organisation d'Adopt AI pour avoir créé un forum si précieux pour l'innovation en IA en santé et tous les participants à la conférence qui ont visité notre stand et partagé leurs expériences et besoins. Ces conversations informent directement nos efforts de développement continus.
-
-L'avenir de l'IA en santé est prometteur, et DocNote est fier de faire partie de cette transformation aux côtés de tant de professionnels de santé et d'innovateurs dévoués.
+Les échanges ont mis en lumière une priorité partagée entre les institutions : réduire la charge administrative tout en maintenant des standards stricts de protection des données de santé.

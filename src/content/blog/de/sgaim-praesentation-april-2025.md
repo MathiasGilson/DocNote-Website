@@ -6,16 +6,22 @@ author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"
 image: "/images/remise-prix-lumiere-2023.png"
-date: "2025-04-15"
+date: "2025-05-20"
 readTime: 3
 ---
 
-**DocNote präsentiert KI-gestützte medizinische Dokumentation am SSMIG-Jahreskongress**
+Am Jahreskongress der SSMIG (Schweizerische Gesellschaft für Allgemeine Innere Medizin), einem der wichtigsten medizinischen Treffen der Schweiz, wurde DocNote als innovative Lösung zur Reduktion der administrativen Belastung in der klinischen Praxis vorgestellt.
 
-Am Jahreskongress der Schweizerischen Gesellschaft für Allgemeine Innere Medizin (SSMIG) im April 2025 stellte DocNote seine KI-gestützte medizinische Dokumentationsplattform einem Publikum von Allgemeinärzten und Internisten aus der ganzen Schweiz vor.
+![DocNote an der SGAIM-Jahreskonferenz](/images/ssmig_-_2.jpg)
 
-Die Präsentation befasste sich mit einer großen Herausforderung in der Primärversorgung: der wachsenden administrativen Belastung für Ärzte. DocNote demonstrierte, wie seine Technologie Arzt-Patienten-Gespräche in strukturierte medizinische Berichte umwandelt, mit dem Potenzial, den Zeitaufwand für die Dokumentation erheblich zu reduzieren.
+<br>
 
-Besondere Aufmerksamkeit wurde dem Datenschutz und der regulatorischen Compliance gewidmet. DocNote verarbeitet alle Daten auf Servern in der Schweiz, im Einklang mit den schweizerischen Anforderungen an den medizinischen Datenschutz—ein wesentliches Kriterium für medizinische Fachkräfte.
+Im Rahmen des Kongressprogramms wurde das Projekt beim Prix Lumière hervorgehoben, einer Auszeichnung für zukunftsweisende Initiativen zur Verbesserung der Versorgungsqualität und der Arbeitsbedingungen von Ärzten. Diese Anerkennung stellte DocNote in eine ausgewählte Gruppe von Projekten, die strukturelle Herausforderungen der Inneren Medizin adressieren.
 
-Die Session weckte großes Interesse, mit zahlreichen Fragen zur Integration in bestehende elektronische Gesundheitsdatensysteme und zur klinischen Anwendung in der Praxis. Mehrere Praxen bekundeten Interesse an Pilotprojekten, was das vorsichtige, aber echte Engagement der Schweizer Ärzteschaft widerspiegelt.
+<br>
+
+Die Präsentation betonte sowohl die messbaren Vorteile der KI-gestützten Dokumentation, darunter reduzierter Zeitaufwand für die Berichterstellung, verbesserte Berichtsqualität und verbesserte Beziehung zum Patienten, als auch die Bedeutung der Auseinandersetzung mit Limitationen wie Halluzinationen, medizinisch-rechtlicher Verantwortung und Datenschutz.
+
+<br>
+
+DocNotes Präsenz an der SSMIG spiegelte einen breiteren Wandel in der Schweizer Inneren Medizin wider: ein wachsendes Interesse an KI-Tools, die nicht nur technologisch fortschrittlich, sondern klinisch relevant, sicher und nahtlos in die täglichen Arbeitsabläufe integriert sind.

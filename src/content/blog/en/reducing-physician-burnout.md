@@ -1,5 +1,5 @@
 ---
-title: "Reducing Physician Burnout Through Better Documentation Tools"
+title: "Reducing physician burnout through better documentation tools"
 excerpt: "Exploring how modern documentation solutions can help combat the growing epidemic of physician burnout."
 category: "practice"
 author: "Dr. Marc Schneider"
