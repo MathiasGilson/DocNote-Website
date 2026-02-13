@@ -63,8 +63,8 @@ const t = entry.data;
               </li>
             ))}
           </ul>
-          <a href="#" class="block w-full py-3 text-center font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-600 transition-colors">
-            {t.pricing.getStarted}
+          <a href="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" id="subscription-btn" data-yearly-url="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" data-monthly-url="https://buy.stripe.com/14AbJ2811cVa9Z68JK8g00a" class="block w-full py-3 text-center font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-600 transition-colors">
+            {t.pricing.subscription}
           </a>
         </div>
 
@@ -123,6 +123,7 @@ const t = entry.data;
   const toggleBg = document.getElementById('toggle-bg') as HTMLElement;
   const wrapper = document.getElementById('toggle-wrapper') as HTMLElement;
   const proPrice = document.getElementById('pro-price');
+  const subscriptionBtn = document.getElementById('subscription-btn') as HTMLAnchorElement;
 
   let currentCurrency: Currency = 'USD';
   let yearlyPriceValue = parseInt(proPrice?.dataset.yearlyUsd || '59');
@@ -151,6 +152,7 @@ const t = entry.data;
     yearlyBtn.classList.replace('text-gray-400', 'text-gray-900');
     monthlyBtn.classList.replace('text-gray-900', 'text-gray-400');
     if (proPrice) proPrice.textContent = yearlyPrice;
+    if (subscriptionBtn) subscriptionBtn.href = subscriptionBtn.dataset.yearlyUrl || '';
   };
 
   const selectMonthly = () => {
@@ -158,6 +160,7 @@ const t = entry.data;
     monthlyBtn.classList.replace('text-gray-400', 'text-gray-900');
     yearlyBtn.classList.replace('text-gray-900', 'text-gray-400');
     if (proPrice) proPrice.textContent = monthlyPrice;
+    if (subscriptionBtn) subscriptionBtn.href = subscriptionBtn.dataset.monthlyUrl || '';
   };
 
   moveBgTo(yearlyBtn);
