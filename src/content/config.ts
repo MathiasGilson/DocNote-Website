@@ -4,7 +4,7 @@ const pagesCollection = defineCollection({
   type: 'data',
   schema: z.object({
     nav: z.object({
-      home: z.string(),
+      tutorial: z.string(),
       pricing: z.string(),
       blog: z.string(),
       team: z.string(),
@@ -149,6 +149,7 @@ const pagesCollection = defineCollection({
       shareArticle: z.string(),
       categories: z.object({
         all: z.string(),
+        news: z.string(),
         ai: z.string(),
         documentation: z.string(),
         practice: z.string(),
@@ -187,6 +188,47 @@ const pagesCollection = defineCollection({
           name: z.string(),
           role: z.string(),
           bio: z.string(),
+        }),
+      }),
+    }),
+    tutorial: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      step1: z.object({
+        title: z.string(),
+        description: z.string(),
+        ios: z.string(),
+        android: z.string(),
+      }),
+      step2: z.object({
+        title: z.string(),
+        description: z.string(),
+      }),
+      step3: z.object({
+        title: z.string(),
+        description: z.string(),
+        chooseModel: z.string(),
+        models: z.object({
+          operative: z.object({
+            title: z.string(),
+            description: z.string(),
+          }),
+          generalDetailed: z.object({
+            title: z.string(),
+            description: z.string(),
+          }),
+          specialist: z.object({
+            title: z.string(),
+            description: z.string(),
+          }),
+          generalConcise: z.object({
+            title: z.string(),
+            description: z.string(),
+          }),
+          dictation: z.object({
+            title: z.string(),
+            description: z.string(),
+          }),
         }),
       }),
     }),

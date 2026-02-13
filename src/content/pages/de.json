@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Startseite",
+    "tutorial": "Anleitung",
     "pricing": "Preise",
     "blog": "Blog",
     "team": "Team",
@@ -235,6 +235,47 @@
         "name": "Eric Wei",
         "role": "Senior Frontend Engineer",
         "bio": "EPFL-Absolvent, spezialisiert auf die Schaffung außergewöhnlicher Benutzererfahrungen und moderner Frontend-Architekturen."
+      }
+    }
+  },
+  "tutorial": {
+    "title": "Erste Schritte mit DocNote",
+    "subtitle": "Folgen Sie diesen einfachen Schritten, um Ihren Dokumentationsworkflow zu transformieren",
+    "step1": {
+      "title": "Mobile Anwendung herunterladen",
+      "description": "Laden Sie die DocNote Mobile App aus dem App Store Ihres Telefons herunter:",
+      "ios": "Verfügbar im App Store",
+      "android": "Verfügbar bei Google Play"
+    },
+    "step2": {
+      "title": "Erstellen Sie Ihr Konto",
+      "description": "Erstellen Sie Ihr Konto, indem Sie Ihre professionelle E-Mail direkt in der mobilen Anwendung eingeben. Wir senden Ihnen in Kürze einen Aktivierungscode. Ihre 30-tägige Testversion beginnt, sobald Sie den Code erhalten."
+    },
+    "step3": {
+      "title": "Hauptbildschirm",
+      "description": "Beginnen Sie mit unserer Lösung, um Ihre Verwaltungslast zu verringern und Ihre Arbeit wieder zu genießen. Sie können sich das Tutorial unten ansehen, um unsere Hauptfunktionen zu verstehen.",
+      "chooseModel": "Wählen Sie ein für Ihren Zweck geeignetes Berichtsmodell:",
+      "models": {
+        "operative": {
+          "title": "Operationsbericht",
+          "description": "Operationsberichtsformat"
+        },
+        "generalDetailed": {
+          "title": "Allgemeine Konsultation (detailliert)",
+          "description": "Anamnese nach System"
+        },
+        "specialist": {
+          "title": "Facharztkonsultation",
+          "description": "Formelles Facharztbriefformat"
+        },
+        "generalConcise": {
+          "title": "Allgemeine Konsultation (Prägnant)",
+          "description": "Nur die wesentlichen Informationen"
+        },
+        "dictation": {
+          "title": "Diktat",
+          "description": "Freies Diktat für Überweisungsschreiben oder Versicherung"
+        }
       }
     }
   }

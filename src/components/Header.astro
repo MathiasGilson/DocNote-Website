@@ -20,8 +20,8 @@ const { locale, translations: t } = Astro.props;
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href={getLocalizedPath('/', locale)} class="text-base text-gray-600 hover:text-gray-900 transition-colors">
-            {t.nav.home}
+          <a href={getLocalizedPath('/tutorial', locale)} class="text-base text-gray-600 hover:text-gray-900 transition-colors">
+            {t.nav.tutorial}
           </a>
           <a href={getLocalizedPath('/pricing', locale)} class="text-base text-gray-600 hover:text-gray-900 transition-colors">
             {t.nav.pricing}
@@ -57,7 +57,7 @@ const { locale, translations: t } = Astro.props;
 
     <div id="mobile-menu" class="hidden md:hidden py-6 border-t border-gray-100">
       <div class="flex flex-col gap-6">
-        <a href={getLocalizedPath('/', locale)} class="text-lg text-gray-600 hover:text-gray-900">{t.nav.home}</a>
+        <a href={getLocalizedPath('/tutorial', locale)} class="text-lg text-gray-600 hover:text-gray-900">{t.nav.tutorial}</a>
         <a href={getLocalizedPath('/pricing', locale)} class="text-lg text-gray-600 hover:text-gray-900">{t.nav.pricing}</a>
         <a href={getLocalizedPath('/blog', locale)} class="text-lg text-gray-600 hover:text-gray-900">{t.nav.blog}</a>
         <a href={getLocalizedPath('/team', locale)} class="text-lg text-gray-600 hover:text-gray-900">{t.nav.team}</a>

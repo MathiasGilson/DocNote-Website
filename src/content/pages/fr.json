@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Accueil",
+    "tutorial": "Tutoriel",
     "pricing": "Tarifs",
     "blog": "Blog",
     "team": "Équipe",
@@ -235,6 +235,47 @@
         "name": "Eric Wei",
         "role": "Ingénieur Frontend Senior",
         "bio": "Diplômé de l'EPFL spécialisé dans la création d'expériences utilisateur exceptionnelles et d'architectures frontend modernes."
+      }
+    }
+  },
+  "tutorial": {
+    "title": "Débuter avec DocNote",
+    "subtitle": "Suivez ces étapes simples pour transformer votre flux de documentation médicale",
+    "step1": {
+      "title": "Téléchargez l'application mobile",
+      "description": "Téléchargez l'application mobile DocNote depuis la boutique d'applications de votre téléphone :",
+      "ios": "Disponible sur l'App Store",
+      "android": "Disponible sur Google Play"
+    },
+    "step2": {
+      "title": "Créez votre compte",
+      "description": "Créez votre compte en entrant votre email professionnel directement depuis l'application mobile. Nous vous enverrons un code d'activation sous peu. Votre essai de 30 jours débutera dès réception du code."
+    },
+    "step3": {
+      "title": "Écran principal",
+      "description": "Commencez à utiliser notre solution pour améliorer votre charge administrative et recommencez à apprécier votre travail. Vous pouvez regarder le tutoriel ci-dessous pour comprendre nos principales fonctionnalités.",
+      "chooseModel": "Choisissez un modèle de rapport adapté à votre usage :",
+      "models": {
+        "operative": {
+          "title": "Compte rendu opératoire",
+          "description": "Format de rapport opératoire"
+        },
+        "generalDetailed": {
+          "title": "Consultation généraliste (détaillée)",
+          "description": "Anamnèse par système"
+        },
+        "specialist": {
+          "title": "Consultation de spécialiste",
+          "description": "Format de lettre spécialisée formelle"
+        },
+        "generalConcise": {
+          "title": "Consultation de généraliste (Concis)",
+          "description": "Seulement les informations essentielles"
+        },
+        "dictation": {
+          "title": "Dictée",
+          "description": "Dictée libre pour lettre de référence ou assurance"
+        }
       }
     }
   }

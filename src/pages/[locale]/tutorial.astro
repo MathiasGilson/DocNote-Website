@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en/tutorial');
+}
+
+const entry = await getEntry('pages', locale as Locale);
+const t = entry.data;
+---
+
+<Layout title={`${t.tutorial.title} - DocNote`} description={t.tutorial.subtitle} locale={locale}>
+  <Header locale={locale} translations={t} />
+
+  <main class="pt-32 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          {t.tutorial.title}
+        </h1>
+        <p class="text-xl text-gray-600">
+          {t.tutorial.subtitle}
+        </p>
+      </div>
+
+      <div class="space-y-16">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-indigo-500/30">
+              1
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                {t.tutorial.step1.title}
+              </h2>
+              <p class="text-lg text-gray-600 mb-6">
+                {t.tutorial.step1.description}
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                  </svg>
+                  <div class="text-left">
+                    <div class="text-xs">Download on the</div>
+                    <div class="text-sm font-semibold">App Store</div>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                  </svg>
+                  <div class="text-left">
+                    <div class="text-xs">GET IT ON</div>
+                    <div class="text-sm font-semibold">Google Play</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-indigo-500/30">
+              2
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                {t.tutorial.step2.title}
+              </h2>
+              <p class="text-lg text-gray-600 mb-6">
+                {t.tutorial.step2.description}
+              </p>
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p class="text-sm text-blue-800">
+                    Your 30-day trial will start once you receive and enter your activation code.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-indigo-500/30">
+              3
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                {t.tutorial.step3.title}
+              </h2>
+              <p class="text-lg text-gray-600 mb-6">
+                {t.tutorial.step3.description}
+              </p>
+
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                {t.tutorial.step3.chooseModel}
+              </h3>
+
+              <div class="space-y-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-violet-300 hover:shadow-md transition-all">
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    {t.tutorial.step3.models.operative.title}
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    {t.tutorial.step3.models.operative.description}
+                  </p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-violet-300 hover:shadow-md transition-all">
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    {t.tutorial.step3.models.generalDetailed.title}
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    {t.tutorial.step3.models.generalDetailed.description}
+                  </p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-violet-300 hover:shadow-md transition-all">
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    {t.tutorial.step3.models.specialist.title}
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    {t.tutorial.step3.models.specialist.description}
+                  </p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-violet-300 hover:shadow-md transition-all">
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    {t.tutorial.step3.models.generalConcise.title}
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    {t.tutorial.step3.models.generalConcise.description}
+                  </p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-4 hover:border-violet-300 hover:shadow-md transition-all">
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    {t.tutorial.step3.models.dictation.title}
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    {t.tutorial.step3.models.dictation.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-16 text-center">
+        <div class="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-8 border border-violet-100">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Ready to get started?
+          </h3>
+          <p class="text-lg text-gray-600 mb-6">
+            Download the app and start your 30-day trial today.
+          </p>
+          <a
+            href="#"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/30"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer locale={locale} translations={t} />
+</Layout>
