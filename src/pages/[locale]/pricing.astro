@@ -116,7 +116,7 @@ const t = entry.data;
 </Layout>
 
 <script>
-  import { detectUserCurrency, convertPrice, formatPrice, type Currency } from '../../utils/currency';
+  import { detectUserCurrency, formatPrice, type Currency } from '../../utils/currency';
 
   const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
   const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
@@ -125,19 +125,16 @@ const t = entry.data;
   const proPrice = document.getElementById('pro-price');
 
   let currentCurrency: Currency = 'USD';
-  let yearlyPriceUSD = parseInt(proPrice?.dataset.yearlyUsd || '59');
-  let monthlyPriceUSD = parseInt(proPrice?.dataset.monthlyUsd || '79');
+  let yearlyPriceValue = parseInt(proPrice?.dataset.yearlyUsd || '59');
+  let monthlyPriceValue = parseInt(proPrice?.dataset.monthlyUsd || '79');
   let yearlyPrice = '';
   let monthlyPrice = '';
 
   async function initializePricing() {
     currentCurrency = await detectUserCurrency();
 
-    const yearlyConverted = convertPrice(yearlyPriceUSD, currentCurrency);
-    const monthlyConverted = convertPrice(monthlyPriceUSD, currentCurrency);
-
-    yearlyPrice = formatPrice(yearlyConverted, currentCurrency);
-    monthlyPrice = formatPrice(monthlyConverted, currentCurrency);
+    yearlyPrice = formatPrice(yearlyPriceValue, currentCurrency);
+    monthlyPrice = formatPrice(monthlyPriceValue, currentCurrency);
 
     if (proPrice) {
       proPrice.textContent = yearlyPrice;

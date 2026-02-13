@@ -3,13 +3,12 @@ export type Currency = 'USD' | 'EUR' | 'CHF';
 export interface CurrencyInfo {
   code: Currency;
   symbol: string;
-  rate: number;
 }
 
-const CURRENCY_RATES: Record<Currency, CurrencyInfo> = {
-  USD: { code: 'USD', symbol: '$', rate: 1 },
-  EUR: { code: 'EUR', symbol: '€', rate: 0.92 },
-  CHF: { code: 'CHF', symbol: 'CHF', rate: 0.88 }
+const CURRENCY_INFO: Record<Currency, CurrencyInfo> = {
+  USD: { code: 'USD', symbol: '$' },
+  EUR: { code: 'EUR', symbol: '€' },
+  CHF: { code: 'CHF', symbol: 'CHF' }
 };
 
 const EU_COUNTRIES = [
@@ -28,13 +27,8 @@ export function getCurrencyByCountry(countryCode: string): Currency {
   return 'USD';
 }
 
-export function convertPrice(usdPrice: number, currency: Currency): number {
-  const rate = CURRENCY_RATES[currency].rate;
-  return Math.round(usdPrice * rate);
-}
-
 export function formatPrice(price: number, currency: Currency): string {
-  const info = CURRENCY_RATES[currency];
+  const info = CURRENCY_INFO[currency];
   if (currency === 'CHF') {
     return `${info.symbol} ${price}`;
   }
