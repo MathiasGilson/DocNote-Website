@@ -2,7 +2,7 @@
     "nav": {
         "tutorial": "Tutorial",
         "pricing": "Pricing",
-        "blog": "Blog",
+        "blog": "News",
         "team": "Team",
         "demo": "Get a Demo",
         "webApp": "Web App",
@@ -146,11 +146,12 @@
         "perMonth": "/month",
         "getStarted": "Get Started",
         "subscription": "Subscription",
+        "freeTrial": "30 free consultations, then",
         "professional": {
-            "name": "Professional",
+            "name": "Cabinets and individual physicians",
+            "description": "For individual doctors and small practices",
             "price": "59",
             "monthlyPrice": "69",
-            "description": "For sole practitioners and small practices",
             "features": [
                 "Unlimited consultations",
                 "Priority support",
@@ -161,9 +162,9 @@
             "popular": "Most Popular"
         },
         "enterprise": {
-            "name": "Enterprise",
+            "name": "Hospitals and clinics",
+            "description": "For hospitals and large clinics",
             "price": "Custom",
-            "description": "For large clinics and hospitals",
             "features": [
                 "Everything in Professional",
                 "Dedicated account manager",
@@ -203,7 +204,7 @@
         }
     },
     "team": {
-        "title": "Meet Our Team",
+        "title": "Built by clinicians,<br>with tech engineers",
         "subtitle": "Healthcare professionals and engineers working together to transform medical documentation",
         "members": {
             "vincentTan": {
