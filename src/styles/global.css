@@ -116,4 +116,10 @@
   .animate-waveform {
     animation: waveform 0.8s ease-in-out infinite;
   }
+
+  .pricing-card-gradient-border {
+    background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #7951fb 0%, #ab66ff 50%, #5456de 100%) border-box;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+  }
 }

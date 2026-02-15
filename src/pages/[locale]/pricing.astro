@@ -43,28 +43,28 @@ const t = entry.data;
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl p-8 border-2 border-primary-500 relative shadow-xl flex flex-col">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-white text-sm font-medium rounded-full">
+        <div class="pricing-card-gradient-border p-8 flex flex-col relative shadow-xl">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-[#7951fb] text-white text-sm font-medium rounded-full shadow-md">
             {t.pricing.professional.popular}
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
-          <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price}>${t.pricing.professional.price}</span>
-            <span class="text-gray-500">{t.pricing.perMonth}</span>
-          </div>
-          <ul class="space-y-3 mb-8 flex-grow">
-            {t.pricing.professional.features.map((feature: string) => (
-              <li class="flex items-center gap-3 text-gray-600">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                {feature}
-              </li>
-            ))}
-          </ul>
-          <a href="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" id="subscription-btn" data-yearly-url="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" data-monthly-url="https://buy.stripe.com/14AbJ2811cVa9Z68JK8g00a" class="block w-full py-3 text-center font-medium text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
-            {t.pricing.subscription}
+            <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price}>${t.pricing.professional.price}</span>
+              <span class="text-gray-500">{t.pricing.perMonth}</span>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              {t.pricing.professional.features.map((feature: string) => (
+                <li class="flex items-center gap-3 text-gray-600">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          <a href="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" id="subscription-btn" data-yearly-url="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" data-monthly-url="https://buy.stripe.com/14AbJ2811cVa9Z68JK8g00a" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
+            {t.pricing.getStarted}
           </a>
         </div>
 
