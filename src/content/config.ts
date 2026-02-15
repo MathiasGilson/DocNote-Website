@@ -246,22 +246,14 @@ const pagesCollection = defineCollection({
         getDemo: z.string(),
       }),
     }),
-    demo: z.object({
+    contact: z.object({
       title: z.string(),
       subtitle: z.string(),
-      form: z.object({
-        firstName: z.string(),
-        lastName: z.string(),
-        email: z.string(),
-        jobTitle: z.string(),
-        phone: z.string(),
-        countryCode: z.string(),
-        country: z.string(),
-        organization: z.string(),
-        message: z.string(),
-        submit: z.string(),
-        success: z.string(),
-      }),
+      emailLabel: z.string(),
+      phoneLabel: z.string(),
+      locationLabel: z.string(),
+      switzerland: z.string(),
+      france: z.string(),
     }),
   }),
 });

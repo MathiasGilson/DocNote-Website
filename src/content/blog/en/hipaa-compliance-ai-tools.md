@@ -1,41 +1,35 @@
 ---
-title: "HIPAA compliance in AI medical tools: what you need to know"
-excerpt: "Understanding the regulatory requirements for AI-powered healthcare documentation and how to ensure compliance."
+title: "Only 10% of emergency physicians' time spent with patients"
+excerpt: "In the controlled chaos of a hospital emergency department, one might assume that physicians spend most of their time at the bedside. But a study at Bordeaux University Hospital paints a very different picture."
 category: "ai"
 author: "Thomas Weber"
 authorRole: "Compliance Officer"
 authorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800"
-date: "2025-11-28"
+image: "/images/CHU Bordeaux.jpg"
+date: "2025-05-15"
 readTime: 9
 ---
 
-As AI tools become integral to healthcare workflows, understanding HIPAA compliance requirements is crucial for both vendors and healthcare organizations. This guide covers the essential considerations for implementing AI documentation tools while maintaining regulatory compliance.
+In the controlled chaos of a hospital emergency department, one might assume that physicians spend most of their time at the bedside, examining patients, making decisions, delivering urgent care. But a new observational study conducted at Bordeaux University Hospital paints a very different picture.
 
-## Protected Health Information (PHI) Considerations
+According to research completed in 2023, emergency physicians at the CHU de Bordeaux devote, on average, just 10 percent of their working day to direct patient care. Over the course of an observed shift lasting nearly 11 and a half hours (692 minutes) that translates to roughly 72 minutes spent face-to-face with patients.
 
-Any AI system that processes clinical encounters will inevitably handle PHI. This includes patient identifiers, medical history, diagnosis information, and treatment details. Under HIPAA, this data requires the highest level of protection.
+The rest of the day is consumed by a complex web of indirect clinical tasks.
 
-## Technical Safeguards
+The study, carried out over several weeks in the Pellegrin emergency department, followed five physicians across different sectors. Each task performed was timed and classified into predefined categories, offering a minute-by-minute reconstruction of a typical shift.
 
-AI vendors must implement robust technical controls including:
+What emerged is a portrait of a profession dominated less by bedside medicine than by communication and computer work. Across all sectors combined, 27 percent of physicians' time was spent in direct communication with other healthcare professionals. Another 23 percent was devoted to computer-based documentation, and 16 percent to telephone calls. In total, 73 percent of working time was allocated to indirect care activities such as documentation, coordination, and medical handovers.
 
-- End-to-end encryption for data in transit and at rest
-- Access controls and authentication mechanisms
-- Audit logging and monitoring
-- Automatic session timeouts
-- Secure API connections
+The distribution varied by department, but the pattern remained consistent: direct care rarely occupied more than a fraction of the shift. In certain roles, such as the physician responsible for triage and orientation, bedside time dropped to as little as 4 percent.
 
-## Business Associate Agreements
+Beyond the raw numbers, the study highlights another defining feature of emergency medicine: constant interruption. Phone calls, requests for specialist opinions, discussions about patient flow, and searches for inpatient beds repeatedly disrupt ongoing tasks. In one documented example, more than an hour elapsed between the decision to discharge a patient and the patient's actual departure, largely due to interruptions and administrative delays.
 
-Healthcare organizations must ensure they have proper Business Associate Agreements (BAAs) in place with AI vendors. These agreements outline the vendor's responsibilities for protecting PHI and responding to security incidents.
+Such fragmentation does more than slow workflow. It increases cognitive load, contributes to mental fatigue, and may affect both safety and quality of care. In a healthcare system already strained by rising demand and limited staffing, the findings raise uncomfortable questions about how medical expertise is being deployed.
 
-## Data Minimization
+The research suggests that some of the tasks currently performed by emergency physicians do not strictly require medical training and could potentially be delegated. Technical tools and human support, including medical assistants, are proposed as possible avenues to free up clinical time.
 
-AI systems should only collect and retain the minimum necessary PHI to perform their intended function. Many modern AI tools process audio locally and only transmit de-identified data for analysis.
+At a moment when emergency departments across France face overcrowding and workforce pressures, the data offer a stark reminder: modern emergency medicine is as much about managing systems as it is about treating patients. The challenge ahead lies in redesigning those systems so that physicians can spend more time where they are most needed — at the bedside.
 
-## Swiss and European Considerations
+---
 
-For practices in Switzerland and the EU, additional requirements under GDPR and local data protection laws apply. These often include data residency requirements and enhanced patient consent obligations.
-
-DocNote maintains compliance with HIPAA, GDPR, and Swiss FADP regulations, storing all data within Switzerland and undergoing regular third-party security audits.
+**Source:** [Sciences du Vivant](https://dumas.ccsd.cnrs.fr/dumas-04390777v1)

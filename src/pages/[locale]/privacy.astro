@@ -1,0 +1,317 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en/privacy');
+}
+
+const entry = await getEntry('pages', locale as Locale);
+const t = entry.data;
+---
+
+<Layout title="Privacy Policy">
+  <section class="pt-32 pb-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
+        DOCNOTE GENERAL PRIVACY AND COOKIES POLICY
+      </h1>
+      <p class="text-center text-gray-500 mb-12">Date of policy: July 22nd 2025</p>
+
+      <div class="privacy-content">
+        <h2>PART A DOCNOTE GENERAL PRIVACY POLICY</h2>
+
+        <h3>Purpose of this privacy policy.</h3>
+        <p>DocNote respects your privacy and is committed to protecting your personal data and to respecting data privacy legislation. This privacy policy will inform you as to how we look after your personal data when you subscribe to the products or services we offer (the "Services") and tell you about your privacy rights and how the law protects you. This policy (together with our Terms of service) applies to the personal data collected to manage the Agreement you signed to use the Services. This privacy policy does not apply to the personal data we process on your behalf during our delivering the Services to you. This policy sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our practices regarding your personal data and how we will treat it.</p>
+
+        <h3>Data controller</h3>
+        <p>DocNote is a company being incorporated in Switzerland. The company registration number will be registered shortly along the registered office.</p>
+        <p>DocNote is the Data controller and is referred to in this privacy policy as "DocNote", "we", "us" or "ours". We are committed to protecting your personal data and respecting your privacy. If you have any questions about this privacy policy, please contact us using the details set out below.</p>
+
+        <h3>Changes to the privacy policy and your duty to inform us of changes</h3>
+        <p>We keep our privacy policy under regular review. It may change and if it does, these changes will be posted on this page and, where appropriate, notified to you by email and/or when you next log into the Website. The new policy may be displayed on-screen and you may be required to read and accept the changes to continue your use of the Services. It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during our relationship with you.</p>
+
+        <h3>Third party links</h3>
+        <p>Our Website may, from time to time, contain links to and from the websites of our partner networks, and affiliates. Please note that these websites and any services that may be accessible through them have their own privacy policies and that we do not accept any responsibility or liability for these policies or for any personal data that may be collected through these websites or services. Please check these policies before you submit any personal data to these websites or use these services.</p>
+
+        <h3>The data we collect about you</h3>
+        <p>Depending on the level of your engagement with our website or the Services, we may collect, use, store and transfer different kinds of personal data about you as follows:</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full border-collapse border border-gray-200 text-sm">
+            <tbody>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 p-3 font-semibold align-top w-1/4">Identity Data</td>
+                <td class="border border-gray-200 p-3">Includes first name, last name, username or similar identifier, position. This is information you provide to us when you subscribe to our Services</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 p-3 font-semibold align-top">Contact Data</td>
+                <td class="border border-gray-200 p-3">Includes email address. It also includes some contact data within your organisation when you are about to enter or have entered a Contract with us. We require this information to manage the Contract we have entered or we are about to enter with you and to enable you to communicate with us. We also collect these data for our regulatory and legal compliance obligations</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 p-3 font-semibold align-top">Technical Data</td>
+                <td class="border border-gray-200 p-3">In relation to the use of the Services, this includes: internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access the Services. Please see our cookies policy at Part B below for more details about why and how we use cookies and other tracking technologies</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 p-3 font-semibold align-top">Usage Data</td>
+                <td class="border border-gray-200 p-3">Includes details of your use of the Services including but not limited to, traffic data and other communication data, and the resources that you access, the number of active users of our Services. We collect this data to monitor and measure the performance of the Services and to manage the Contract</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>We also collect, use and share Aggregated Data such as statistical or demographic data for any purpose. Aggregated Data could be derived from your personal data but is not considered personal data in law as this data will not directly or indirectly reveal your identity. For example, we may aggregate your Usage Data to calculate the percentage of users accessing a specific Services feature. However, if we combine or connect Aggregated Data with your personal data so that it can directly or indirectly identify you, we treat the combined data as personal data which will be used in accordance with this privacy policy.</p>
+
+        <h3>How is your personal data collected?</h3>
+        <p>Most of the personal data that we process about you will be provided by you, for example when entering a Contract for the use of our Services. The provision of such information is voluntary, but if you cannot provide it to us, you may not be able to work with DocNote. Each time you use the Services we will automatically collect personal data including Technical Data and Usage Data. We collect this data using cookies and other similar technologies. Please see our cookie policy at Part B below for further details.</p>
+
+        <h3>Cookies</h3>
+        <p>We use cookies and/or other tracking technologies to distinguish you from other users of the Services and to remember your preferences. This helps us to provide you with a good experience when you use the Services and also allows us to improve the Services. For detailed information on the cookies we use, the purposes for which we use them and how you can exercise your choices regarding our use of your cookies, see our cookie policy at Part B below.</p>
+
+        <h3>How we use your personal data</h3>
+        <p>We will only use your personal data when the law allows us to do so. Most commonly we will use your personal data in the following circumstances:</p>
+        <ul>
+          <li><strong>Where you have consented before the processing.</strong> Consent means processing your personal data where you have signified your agreement by a statement or clear opt-in to processing for a specific purpose. Consent will only be valid if it is a freely given, specific, informed and unambiguous indication of what you want. You can withdraw your consent at any time by contacting us.</li>
+          <li><strong>Where we need to perform a contract</strong> we are about to enter or have entered with you. Performance of contract means processing your data where it is necessary for the performance of a contract to which you are a party or to take steps at your request before entering into such a contract.</li>
+          <li><strong>Where it is necessary for our legitimate interests</strong> (or those of a third party) and your interests and fundamental rights do not override those interests. Legitimate Interest means the interest of our business in conducting and managing our business to enable us to give you the best service/product and the best and most secure experience. We make sure we consider and balance any potential impact on you (both positive and negative) and your rights before we process your personal data for our legitimate interests. We do not use your personal data for activities where our interests are overridden by the impact on you (unless we have your consent or are otherwise required or permitted to by law). You can obtain further information about how we assess our legitimate interests against any potential impact on you in respect of specific activities by contacting us.</li>
+          <li><strong>Where we need to comply with a legal or regulatory obligation.</strong> Comply with a legal obligation means processing your personal data where it is necessary for compliance with a legal obligation that we are subject to.</li>
+        </ul>
+
+        <p>The table below explains what we use (process) your personal information for (other than the special category of data) and our reasons for doing so.</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full border-collapse border border-gray-200 text-sm">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 p-3 text-left font-semibold">Purpose/Activity</th>
+                <th class="border border-gray-200 p-3 text-left font-semibold">Type of Data</th>
+                <th class="border border-gray-200 p-3 text-left font-semibold">Lawful basis for processing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 p-3 align-top">To manage our relationship with you including responding to your queries and requests, notifying you of changes to the Website and/or to the Services and/or our Terms of Service or Terms of Use of the Services or this privacy policy</td>
+                <td class="border border-gray-200 p-3 align-top">Identity Contact</td>
+                <td class="border border-gray-200 p-3 align-top">Necessary to comply with legal obligations (to inform you of any changes to our terms and conditions) Necessary to perform a contract</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 p-3 align-top">To administer and protect our business and the Services, including troubleshooting, data analysis and system testing</td>
+                <td class="border border-gray-200 p-3 align-top">Identity (optional) Contact Technical</td>
+                <td class="border border-gray-200 p-3 align-top">Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 p-3 align-top">To ensure that you are able to meet your regulatory obligations</td>
+                <td class="border border-gray-200 p-3 align-top">Identity (optional) Contact</td>
+                <td class="border border-gray-200 p-3 align-top">Performance of a contract with you to comply with a legal or regulatory obligation or expectations</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Disclosures of your personal data</h3>
+        <p>The above purposes and activities may require us to pass on some of our personal data to the following third parties:</p>
+        <ul>
+          <li>Our service providers acting as our processors, including:
+            <ul>
+              <li>Suppliers such as Infomaniak for our infrastructure.</li>
+              <li>Other supplies which we may appoint from time to time to provide various services to us, such as IT and system administration services.</li>
+            </ul>
+          </li>
+          <li>Professional advisers acting as processors or joint controllers including lawyers, bankers, auditors and insurers who provide consultancy, banking, legal, insurance and accounting services; and</li>
+          <li>Regulators, local authorities and other public or regulatory authorities acting as processors or joint controllers who require reporting of processing activities in certain circumstances.</li>
+        </ul>
+        <p>We only allow our service providers to handle your personal information if we are satisfied, they take appropriate measures to protect your personal information. We also impose contractual obligations on service providers to ensure they can only use your personal information to provide services to us and to you and for no other reasons. We may disclose and exchange information with law enforcement agencies and regulatory bodies to comply with our legal and regulatory obligations.</p>
+
+        <h3>Data security</h3>
+        <p>All information you provide to us is stored on our secure servers in Switzerland. Once we have received your information, we will use strict procedures and security features to try to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way. We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator when we are legally required to do so.</p>
+        <p>By contracting with us or using our Services, you consent to the collection, storage, processing and transfer of your information in and to Switzerland.</p>
+
+        <h3>Data retention</h3>
+        <p>We retain your personal data for as long as we need it for the purposes, we have collected it for, such as contracting with you for your use of our Services. We may retain your personal data for a longer period if you make a complaint under this privacy policy or our Terms of service, or if we have a reasonable belief that litigation may arise in relation to our relationship with you. We may also be required to retain certain personal data from you to comply with our legal and regulatory requirements. In some circumstances you can ask us to delete your data: see your legal rights section below for further information. In some circumstances, we will anonymize your personal data (so that it can no longer be associated with you) for research or statistical purposes, in which case we may use this information indefinitely without further notice to you.</p>
+
+        <h3>Your legal rights</h3>
+        <p>Under certain circumstances, you have the following rights under data protection laws in relation to your personal data.</p>
+        <ul>
+          <li><strong>Request access to your personal data</strong> (commonly known as a "data subject access request"). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.</li>
+          <li><strong>Right to be informed.</strong> You have the right to be informed how your personal data will be used. This privacy policy as well as any additional information or notice that is provided to you either at the time you provided your details, or otherwise, is intended to provide you with this information.</li>
+          <li><strong>Request correction</strong> of the personal data that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us.</li>
+          <li><strong>Request erasure</strong> of your personal data. This enables you to ask us to delete or remove personal data where there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your personal data where you have successfully exercised your right to object to processing (see below), where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Note, however, that we may not always be able to comply with your request of erasure for specific legal reasons which will be notified to you, if applicable, at the time of your request.</li>
+          <li><strong>Object to processing</strong> of your personal data where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground as you feel it impacts on your fundamental rights and freedoms. You also have the right to object where we are processing your personal data for direct marketing purposes. In some cases, we may demonstrate that we have compelling legitimate grounds to process your information which override your rights and freedoms.</li>
+          <li><strong>Request restriction of processing</strong> of your personal data. This enables you to ask us to suspend the processing of your personal data in the following scenarios:
+            <ul>
+              <li>if you want us to establish the data's accuracy;</li>
+              <li>where our use of the data is unlawful but you do not want us to erase it;</li>
+              <li>where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims; or</li>
+              <li>you have objected to our use of your data but we need to verify whether we have overriding legitimate grounds to use it.</li>
+            </ul>
+          </li>
+          <li><strong>Request the transfer</strong> of your personal data to you or to a third party. We will provide to you, or a third party you have chosen, your personal data in a structured, commonly used, machine-readable format. Note that this right only applies to automated information which you initially provided consent for us to use or where we used the information to perform a contract with you.</li>
+          <li><strong>Withdraw consent at any time</strong> where we are relying on consent to process your personal data. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. If you withdraw your consent, we may not be able to provide certain products or services to you. We will advise you if this is the case at the time you withdraw your consent.</li>
+        </ul>
+        <p>If you would like to exercise any of those rights, please contact us (<a href="mailto:contact@docnote.ch">contact@docnote.ch</a>) and:</p>
+        <ul>
+          <li>let us have enough information to identify you;</li>
+          <li>let us have proof of your identity and address (a copy of your driving licence or passport and a recent utility or credit card bill); and</li>
+          <li>let us know what right you want to exercise and the information to which your request relates.</li>
+        </ul>
+        <p>We try to respond to all legitimate requests within one month. Occasionally it could take us longer than a month if your request is particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.</p>
+
+        <h3>How to complain</h3>
+        <p>If you are unhappy with the way in which we have handled your personal data, please get in touch with us by sending an email to <a href="mailto:contact@docnote.ch">contact@docnote.ch</a>. You are also entitled to make a complaint to the respective judicial and executive body which may have jurisdiction over the case.</p>
+
+        <h3>Changes to this privacy policy</h3>
+        <p>We keep this privacy policy under regular review and may update it from time to time without notice to you, so please check it regularly. We will however aim to bring any significant changes to your attention.</p>
+
+        <hr />
+
+        <h2>PART B - DOCNOTE COOKIES POLICY</h2>
+        <p class="text-gray-500 mb-6">Date of policy: 22nd of July 2025</p>
+
+        <p>This cookies policy explains how DocNote uses cookies and other tracking technologies on the Services. This cookies policy is to be read alongside our privacy policy above which explains how we use personal information.</p>
+
+        <h3>What are web cookies?</h3>
+        <p>Web cookies are small files that are placed on your computer or mobile device by a website when you visit it. They contain details of your browsing history on that website and distinguish you from other users. Cookies send data back to the originating website on each subsequent visit or allow another website or app to recognize the cookie. Cookies are useful because they allow a website or app to recognize a user's device and, for instance, remember your preferences and generally improve your online user experience. Like most websites and apps, we use cookies.</p>
+        <p>Although this cookies policy refers to the general term "cookie", which is the main method used by the Services to store information, the browser's local storage space is also used for the same purpose, and we may use other tracking technologies through the Services. As a result, the information included in this cookie policy is likewise applicable to all such tracking technologies that we use.</p>
+
+        <h3>Why do we use cookies?</h3>
+        <ul>
+          <li>To let you do things on the Services - for example, cookies enable you to log in to secure areas of our Services.</li>
+          <li>To collect anonymous statistics - the information collected by cookies enables us to improve the Services through usage figures and patterns.</li>
+          <li>To improve your experience of the Services - for example, to prevent you having to re-enter details when you have already done so, or by ensuring that users can find what they are looking for easily.</li>
+        </ul>
+
+        <h3>What cookies do we use?</h3>
+        <p>We use the following cookies:</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full border-collapse border border-gray-200 text-sm">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 p-3 text-left font-semibold">Cookie</th>
+                <th class="border border-gray-200 p-3 text-left font-semibold">Lifespan</th>
+                <th class="border border-gray-200 p-3 text-left font-semibold">Category</th>
+                <th class="border border-gray-200 p-3 text-left font-semibold">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 p-3">u_sp</td>
+                <td class="border border-gray-200 p-3">365 days</td>
+                <td class="border border-gray-200 p-3">Essential</td>
+                <td class="border border-gray-200 p-3">Authentication/session token</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 p-3">lang</td>
+                <td class="border border-gray-200 p-3">365 days</td>
+                <td class="border border-gray-200 p-3">Essential</td>
+                <td class="border border-gray-200 p-3">Stores visitor's language preference</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 p-3">cookie_consent</td>
+                <td class="border border-gray-200 p-3">365 days</td>
+                <td class="border border-gray-200 p-3">Essential</td>
+                <td class="border border-gray-200 p-3">Records advanced cookie-banner consent</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 p-3">trackingPreferences</td>
+                <td class="border border-gray-200 p-3">365 days</td>
+                <td class="border border-gray-200 p-3">Essential</td>
+                <td class="border border-gray-200 p-3">Records basic banner consent (accept/reject)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 p-3">usr</td>
+                <td class="border border-gray-200 p-3">365 days</td>
+                <td class="border border-gray-200 p-3">Performance & Analytics</td>
+                <td class="border border-gray-200 p-3">First-party analytics for Umso's built-in stats</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Cookie acceptance</h3>
+        <p>By using the Services you have consented to our use of cookies as updated from time to time. In particular, you consent to cookies being stored on your computer and/or mobile device (unless rejected or disabled by your browser). You can accept or refuse cookies through your internet browser or through the Services. The option to do this is usually found in the options, settings or preferences menu of your browser or mobile device. If you access the Services through different devices, computer profile or browser you will have to tell us your cookies preferences again.</p>
+
+        <h3>Updating our cookies policy</h3>
+        <p>We may update our use of cookies from time to time and consequently, we may update this policy. We, therefore, recommend that you check this cookies policy regularly.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .privacy-content {
+    font-family: 'Open Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #374151;
+  }
+
+  .privacy-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .privacy-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .privacy-content p {
+    margin-bottom: 1rem;
+    color: #374151;
+  }
+
+  .privacy-content strong {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .privacy-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    color: #374151;
+  }
+
+  .privacy-content ul ul {
+    list-style-type: circle;
+    margin: 0.5rem 0;
+  }
+
+  .privacy-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.75;
+  }
+
+  .privacy-content a {
+    color: #7951fb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .privacy-content a:hover {
+    color: #5a34d4;
+  }
+
+  .privacy-content hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 2.5rem 0;
+  }
+</style>

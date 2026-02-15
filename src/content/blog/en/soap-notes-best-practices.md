@@ -1,39 +1,44 @@
 ---
-title: "SOAP notes best practices: a complete guide"
-excerpt: "Master the art of writing effective SOAP notes with these proven strategies and tips from experienced clinicians."
-category: "documentation"
+title: "Physician perspectives on ambient AI scribes"
+excerpt: "A new qualitative study published in JAMA Network Open explored how frontline physicians perceive the use of ambient artificial intelligence (AI) scribes."
+category: "ai"
 author: "Dr. Julia Berger"
 authorRole: "Internal Medicine Specialist"
 authorImage: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=800"
-date: "2025-12-05"
-readTime: 8
+image: "/images/visite-medicale.jpg"
+date: "2025-08-20"
+readTime: 6
 ---
 
-SOAP notes remain the gold standard for clinical documentation across medical specialties. Understanding how to write effective SOAP notes is essential for clear communication and quality patient care.
+A new qualitative study published in JAMA Network Open explored how frontline physicians perceive the use of ambient artificial intelligence (AI) scribes.
 
-## Subjective (S)
+Researchers conducted semistructured interviews with **22 physicians** participating in a three-month pilot of an ambient AI scribe across primary care and ambulatory specialties within a health system in California. Interviews were guided by established implementation frameworks to assess usability, impact on workflow, and opportunities for improvement.
 
-This section captures the patient's perspective. Document chief complaints, history of present illness, and relevant patient statements. Use direct quotes when appropriate and note the duration, severity, and characteristics of symptoms.
+### **Positive impacts on workload and patient engagement**
 
-## Objective (O)
+Overall, physicians **reported favorable effects** on several fronts:
 
-Record measurable, observable data. Include vital signs, physical examination findings, laboratory results, and imaging reports. Be specific and avoid subjective interpretations in this section.
+- **Reduced cognitive and temporal demand:** Many clinicians felt the tool eased the mental load and time pressure associated with documentation.
+- **Improvements in work-life integration:** Several participants noted subjective benefits in balancing clinical duties and after-hours work.
+- **Enhanced patient engagement:** A substantial proportion of comments suggested that clinicians could focus more on patients rather than taking notes.
 
-## Assessment (A)
+These perceptions align with broader findings on ambient documentation tools showing potential to reduce administrative burden and support clinician well-being.
 
-Synthesize the subjective and objective information into clinical impressions. List diagnoses in order of priority, including differential diagnoses when applicable. Reference the supporting evidence for each assessment.
+### **Barriers and areas for improvement**
 
-## Plan (P)
+Despite overall optimism, the study also identified several barriers:
 
-Detail the treatment approach, including medications, procedures, referrals, and follow-up instructions. Document patient education provided and any shared decision-making discussions.
+- **Accuracy and editing needs:** Physicians frequently mentioned that AI-generated notes often required substantial editing, particularly around note style and length.
+- **Workflow challenges:** Issues such as limited support for non-English consultations and device access were cited as practical obstacles to widespread adoption.
 
-## Common Pitfalls to Avoid
+Clinicians offered concrete suggestions for enhancing tool functionality and usability, underscoring that user-centered refinement will be critical for long-term adoption.
 
-- Copying forward without updating
-- Including irrelevant information
-- Using ambiguous language
-- Missing critical safety information
-- Incomplete medication reconciliation
+### **A nuanced view of AI in documentation**
 
-Modern AI tools can help streamline SOAP note creation while maintaining high documentation standards. These systems learn clinical workflows and can pre-populate sections based on the encounter, allowing physicians to review and refine rather than create from scratch.
+The study's findings suggest ambient AI scribes can meaningfully influence physicians' documentation experiences, potentially reducing burden while encouraging more patient-centered interactions. At the same time, clinicians emphasize the importance of improving accuracy, workflow integration, and inclusivity of these tools as they evolve.
+
+As healthcare systems explore AI-based documentation solutions more broadly, qualitative insights such as these provide valuable perspective on real-world usability, challenges, and clinician priorities, complementary to quantitative research on time savings and efficiency.
+
+---
+
+**Source:** [JAMA Network Open](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2831866)

@@ -29,9 +29,6 @@ function isActive(path: string) {
           <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-base transition-colors", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.tutorial}
           </a>
-          <a href={getLocalizedPath('/demo', locale)} class:list={["text-base transition-colors", isActive('/demo') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
-            {t.nav.demo}
-          </a>
           <a href={getLocalizedPath('/pricing', locale)} class:list={["text-base transition-colors", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.pricing}
           </a>
@@ -76,7 +73,6 @@ function isActive(path: string) {
     <div id="mobile-menu" class="hidden md:hidden py-6 border-t border-gray-100">
       <div class="flex flex-col gap-6">
         <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-lg", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.tutorial}</a>
-        <a href={getLocalizedPath('/demo', locale)} class:list={["text-lg", isActive('/demo') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.demo}</a>
         <a href={getLocalizedPath('/pricing', locale)} class:list={["text-lg", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.pricing}</a>
         <a href={getLocalizedPath('/blog', locale)} class:list={["text-lg", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.blog}</a>
         <a href={getLocalizedPath('/team', locale)} class:list={["text-lg", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.team}</a>

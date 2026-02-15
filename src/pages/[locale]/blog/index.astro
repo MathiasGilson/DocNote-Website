@@ -123,11 +123,6 @@ const categoryColors: Record<string, string> = {
                       alt={post.data.title}
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div class="absolute top-4 left-4">
-                      <span class={`px-3 py-1 rounded-full text-xs font-medium ${categoryColors[post.data.category]}`}>
-                        {t.blog.categories[post.data.category as keyof typeof t.blog.categories]}
-                      </span>
-                    </div>
                   </div>
                   <div class="p-6">
                     <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">

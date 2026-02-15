@@ -1,32 +1,40 @@
 ---
 title: "Less time spent on documentation thanks to AI, more time for patient care: what does the scientific evidence say?"
-excerpt: "A recent study published in JAMA Network Open evaluated the impact of an ambient AI scribe on clinician documentation burden in a large academic health system."
+excerpt: "In February 2025, a study published in JAMA Network Open added compelling evidence to the growing role of artificial intelligence in addressing clinician burnout and documentation overload."
 category: "ai"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
 authorImage: "/images/dr_vincent_tan.jpg"
-image: "https://images.pexels.com/photos/8376277/pexels-photo-8376277.jpeg?auto=compress&cs=tinysrgb&w=800"
-date: "2026-01-29"
+image: "/images/University of Pennsylvania.avif"
+date: "2026-02-01"
 readTime: 5
 ---
 
-A recent study published in JAMA Network Open evaluated the impact of an ambient AI scribe on clinician documentation burden in a large academic health system. Over a 7-week pilot involving 46 outpatient clinicians across 17 specialties, researchers compared electronic health record (EHR) metrics before and during use of the tool.
+In February 2025, a study published in **JAMA Network Open** added compelling evidence to the growing role of artificial intelligence in addressing clinician burnout and documentation overload.
+Researchers at the **University of Pennsylvania** evaluated an ambient AI scribe tool in a 7-week pilot across 46 outpatient clinicians representing 17 specialties within a large academic health system. By comparing electronic health record (EHR) metrics before and during implementation, the team was able to quantify the tool's real-world impact on clinical workflow.
 
-<br>
+### Measurable efficiency gains
 
-The findings suggest measurable efficiency gains. Time spent writing notes per appointment decreased by approximately 15%, same-day visit closure rates increased, and after-hours "pajama time" in the EHR fell by nearly 17%. Clinicians also typed less, reflecting automation of documentation tasks.
+The results demonstrated consistent improvements:
+- Around **15–20% less time spent per note**
+- A **17–30% reduction in after-hours documentation ("pajama time")**
+- Higher same-day visit closure rates
+- Reduced typing volume, reflecting automation of documentation tasks
 
-<br>
+These objective EHR metrics were reinforced by clinician feedback. Many participants reported a **lower cognitive burden**, describing less mental fragmentation during consultations and improved ability to maintain eye contact and active listening.
 
-Survey responses indicated reduced cognitive load and improved focus during patient encounters, with many clinicians reporting better engagement and less distraction. However, some participants noted that AI-generated notes still required editing for accuracy and style.
+### Beyond productivity: restoring attention to patients
 
-<br>
+Importantly, the benefits extended beyond time savings. Clinicians described improved engagement during encounters, with less need to divide attention between the patient and the computer screen. In a healthcare environment where documentation demands continue to expand, this shift is not trivial, it directly affects care quality, physician satisfaction, and potentially patient trust.
 
-Overall, the study supports ambient AI scribes as a promising strategy to reduce documentation burden and improve workflow efficiency, while highlighting the need for continued refinement to optimize reliability and clinical integration.
+That said, the study also highlighted current limitations. AI-generated notes still required review and occasional editing for accuracy, completeness, and stylistic alignment with individual practice patterns. Reliability and seamless integration remain critical areas for refinement.
 
-<br>
-<br>
+### From innovation to infrastructure
+
+Taken together, the findings suggest that ambient AI scribes are moving from experimental tools to foundational clinical infrastructure. By reducing administrative friction and reclaiming cognitive bandwidth, these systems may play a meaningful role in mitigating burnout while preserving clinical focus.
+
+As documentation pressures grow worldwide, the question may no longer be whether AI belongs in clinical documentation, but how to deploy it responsibly, securely, and at scale to maximize both efficiency and human presence in care.
 
 ---
 
-**Source:** [JAMA Network Open](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383#:~:text=Clinical%20documentation%20in%20electronic%20health,tools%20also%20may%20help%20reduce)
+**Source:** [JAMA Network Open](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383)

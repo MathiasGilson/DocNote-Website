@@ -1,25 +1,39 @@
 ---
-title: "The future of AI in medical documentation"
-excerpt: "How artificial intelligence is transforming the way doctors handle patient records and clinical notes."
+title: "Three hours on paperwork for every hour with patients"
+excerpt: "How much time do hospital residents actually spend with patients? A time-and-motion study published in Annals of Internal Medicine sought to answer that question with objective observation rather than perception."
 category: "ai"
 author: "Dr. Elena Fischer"
 authorRole: "Chief Medical Officer"
 authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=800"
-date: "2025-12-15"
-readTime: 6
+image: "/images/CHUV.webp"
+date: "2025-12-05"
+readTime: 4
 ---
 
-The healthcare industry is experiencing a significant transformation with the integration of artificial intelligence into medical documentation workflows. This shift is not just about automation; it's about fundamentally reimagining how clinicians interact with patient data.
+How much time do hospital residents actually spend with patients?
 
-Traditional documentation methods have long been a burden on healthcare providers. Studies show that physicians spend up to two hours on administrative tasks for every hour of direct patient care. This imbalance has contributed to burnout rates exceeding 50% among medical professionals.
+A time-and-motion study published in Annals of Internal Medicine sought to answer that question with objective observation rather than perception. Conducted in a Swiss teaching hospital by Nathalie Wenger, Marie Méan, Julien Castioni and colleagues, the researchers directly followed internal medicine residents during both day and evening shifts to quantify precisely how their time was allocated.
 
-## How AI is Changing Documentation
+The findings were striking: residents spent an average of 5.2 hours per day on administrative tasks, including documentation, electronic health record management, discharge summaries, and other indirect patient care activities.
 
-AI-powered documentation tools are changing this landscape. By leveraging natural language processing and machine learning, these systems can accurately transcribe clinical encounters, identify key medical terminology, and structure information according to established formats like SOAP notes.
+By contrast, they spent only 1.7 hours per day in direct contact with patients.
 
-The benefits extend beyond time savings. AI documentation ensures consistency in record-keeping, reduces transcription errors, and enables better data extraction for research and quality improvement initiatives.
+In practical terms, this means residents devoted roughly three times more time to paperwork than to bedside care.
 
-## Looking Ahead
+### A reflection of modern hospital medicine
 
-As we look to the future, we can expect AI to become even more sophisticated, offering predictive insights during patient encounters and seamlessly integrating with electronic health record systems. The goal is clear: let doctors be doctors, not data entry clerks.
+This was not based on self-reporting or estimates. Observers recorded activities in real time, providing a detailed and reliable picture of daily workflow. The imbalance was consistent across shifts, suggesting that administrative load is not an occasional burden but a structural feature of contemporary hospital practice.
+
+While documentation and coordination are essential to safe care, the magnitude of time devoted to these tasks raises important questions about medical training. Residency is intended to be a formative period of clinical exposure, decision-making, and patient interaction. Yet the majority of the working day is absorbed by computer-based tasks.
+
+### Implications for training and well-being
+
+The study has broader implications. Limited bedside time may affect not only clinical learning but also the quality of doctor-patient relationships. In parallel, the sustained administrative pressure contributes to fatigue and dissatisfaction, factors closely linked to burnout.
+
+Nearly a decade after its publication, the data remain highly relevant. As healthcare systems continue to expand regulatory requirements and digital documentation, the gap between administrative work and direct care remains a defining tension in hospital medicine.
+
+This Swiss study quantified what many residents experience daily: modern training is increasingly shaped not just by patients, but by paperwork.
+
+---
+
+**Source:** [Annals of Internal Medicine](https://pubmed.ncbi.nlm.nih.gov/28135724/)
