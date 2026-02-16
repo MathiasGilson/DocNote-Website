@@ -1,0 +1,29 @@
+---
+import Hero from "./Hero.astro"
+import LogoBar from "./LogoBar.astro"
+import Features from "./Features.astro"
+import Specialties from "./Specialties.astro"
+import Compliance from "./Compliance.astro"
+import Testimonials from "./Testimonials.astro"
+import FAQ from "./FAQ.astro"
+import CTA from "./CTA.astro"
+import { getEntry } from "astro:content"
+
+interface Props {
+    locale?: string
+    variant?: "default" | "locale"
+}
+
+const { locale = "en", variant = "default" } = Astro.props
+const entry = (await getEntry("pages", locale as "en" | "de" | "fr")) ?? (await getEntry("pages", "en"))
+const t = entry!
+---
+
+<Hero translations={t.data} />
+<LogoBar translations={t.data} />
+<Features translations={t.data} />
+{variant === "default" && <Specialties translations={t.data} />}
+{variant === "locale" && <Compliance translations={t.data} />}
+<Testimonials translations={t.data} />
+<FAQ translations={t.data} />
+<CTA translations={t.data} />

@@ -1,15 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/Hero.astro';
-import LogoBar from '../../components/LogoBar.astro';
-
-import Features from '../../components/Features.astro';
-import Compliance from '../../components/Compliance.astro';
-import Testimonials from '../../components/Testimonials.astro';
-import FAQ from '../../components/FAQ.astro';
-import CTA from '../../components/CTA.astro';
+import Main from '../../components/Main.astro';
 import { locales, isValidLocale, type Locale } from '../../utils/i18n';
-import { getEntry } from 'astro:content';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { locale } }));
@@ -20,17 +12,8 @@ const { locale } = Astro.params;
 if (!isValidLocale(locale)) {
   return Astro.redirect('/en');
 }
-
-const t = await getEntry('pages', locale as Locale);
 ---
 
 <Layout title="AI Medical Documentation">
-  <Hero translations={t.data} />
-  <LogoBar translations={t.data} />
-
-  <Features translations={t.data} />
-  <Compliance translations={t.data} />
-  <Testimonials translations={t.data} />
-  <FAQ translations={t.data} />
-  <CTA translations={t.data} />
+  <Main locale={locale as Locale} variant="locale" />
 </Layout>
