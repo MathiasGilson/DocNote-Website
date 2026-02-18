@@ -34,7 +34,7 @@ const categoryColors: Record<string, string> = {
   {newsPosts.length > 0 && (
     <section class="pt-32 pb-16 bg-gradient-to-br from-violet-50 to-indigo-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-10">{t.blog.categories.news}</h2>
+        <h2 id="news-heading" class="text-3xl font-bold text-gray-900 mb-10">{t.blog.categories.news}</h2>
       </div>
 
       <div class="relative">
@@ -42,7 +42,7 @@ const categoryColors: Record<string, string> = {
         <div id="news-timeline" class="overflow-x-auto pb-4 scrollbar-thin">
           <div style="min-width: max-content;">
             <!-- Cards row -->
-            <div class="flex gap-6 px-8">
+            <div class="flex gap-6" id="news-cards-row">
               {newsPosts.map((post) => {
                 const slug = post.slug.replace(`${locale}/`, '');
                 return (
@@ -72,9 +72,9 @@ const categoryColors: Record<string, string> = {
             </div>
 
             <!-- Timeline: black line with date ovals -->
-            <div class="relative mt-8 mx-8">
+            <div class="relative mt-8">
               <div class="absolute top-1/2 left-0 right-0 h-px bg-gray-900"></div>
-              <div class="relative flex">
+              <div class="relative flex" id="news-dates-row">
                 {newsPosts.map((post, index) => {
                   const postDate = new Date(post.data.date);
                   const monthLabel = postDate.toLocaleDateString(locale === 'de' ? 'de-DE' : locale === 'fr' ? 'fr-FR' : 'en-US', { month: 'short' });
@@ -169,6 +169,21 @@ const categoryColors: Record<string, string> = {
   const timeline = document.getElementById('news-timeline');
   const scrollLeftBtn = document.getElementById('scroll-left');
   const scrollRightBtn = document.getElementById('scroll-right');
+
+  // Align news cards with the max-w-7xl heading container
+  const newsHeading = document.getElementById('news-heading');
+  const cardsRow = document.getElementById('news-cards-row');
+  const datesRow = document.getElementById('news-dates-row');
+
+  function alignNewsSection() {
+    if (!newsHeading || !cardsRow) return;
+    const left = newsHeading.getBoundingClientRect().left;
+    cardsRow.style.paddingLeft = left + 'px';
+    if (datesRow) datesRow.style.paddingLeft = left + 'px';
+  }
+
+  alignNewsSection();
+  window.addEventListener('resize', alignNewsSection);
 
   function updateArrows() {
     if (!timeline || !scrollLeftBtn || !scrollRightBtn) return;

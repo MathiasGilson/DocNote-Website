@@ -11,46 +11,94 @@
   },
   "hero": {
     "badge": "KI-gestützte medizinische Dokumentation",
-    "title": "Der erste KI-Assistent für",
-    "titleHighlight": "Klinikabläufe",
-    "subtitle": "DocNote erfasst, transkribiert und strukturiert automatisch Ihre gesamte klinische Arbeit, von Patientenkonsultationen und Visiten bis hin zu Operationsberichten und Austrittsbriefen, und spart Ihnen Stunden an Dokumentation.",
+    "title": "Medizinische Dokumentation",
+    "titleHighlight": "vereinfacht durch KI",
+    "subtitle": "Entwickelt für die Komplexität der Krankenhausversorgung.",
     "cta": "Kostenlos testen",
     "ctaSecondary": "Demo ansehen",
     "trustedBy": "Vertraut von führenden Gesundheitsdienstleistern"
   },
+  "soapDemo": {
+    "consultations": "Konsultationen",
+    "patients": "Patienten",
+    "templates": "Vorlagen",
+    "settings": "Einstellungen",
+    "consultationTitle": "Konsultation — Patient #1247",
+    "consultationDate": "Heute, 14:30 · Allgemeinmedizin",
+    "recording": "Aufnahme",
+    "soapNoteGenerated": "SOAP-Notiz erstellt",
+    "soapNote": "SOAP-Notiz",
+    "savedToEHR": "Im KIS gespeichert",
+    "justNow": "Gerade eben",
+    "patientId": "Patient #1247",
+    "generalPractice": "Allgemeinmedizin",
+    "liveTranscript": "Live-Transkription",
+    "soapS": "Patient berichtet über anhaltende Kopfschmerzen seit 3 Tagen, abends zunehmend. Schmerzstärke 6/10, bilateraler Druck. Verneint Übelkeit oder Photophobie.",
+    "soapO": "BD 120/80, HF 72, Temp 36,8°C. Wach und orientiert. Leichte bilaterale Trapeziusdruckempfindlichkeit. HN II-XII intakt.",
+    "soapA": "Spannungskopfschmerz, wahrscheinlich stressbedingt. Keine Warnsignale für sekundären Kopfschmerz.",
+    "soapP": "Ibuprofen 400mg bei Bedarf. Schlafhygiene-Beratung. Kontrolle in 2 Wochen bei ausbleibender Besserung.",
+    "phoneSoapS": "Anhaltende Kopfschmerzen 3 Tage, 6/10, bilateraler Druck.",
+    "phoneSoapO": "BD 120/80, HF 72. Trapezius druckempfindlich. HN intakt.",
+    "phoneSoapA": "Spannungskopfschmerz, stressbedingt.",
+    "phoneSoapP": "Ibuprofen 400mg b. Bed. Kontrolle in 2 Wo."
+  },
   "stats": {
     "timeSaved": "Gesparte Dokumentationszeit",
     "timeSavedValue": "2+ Stunden",
+    "timeSavedSuffix": "+ Stunden",
     "timeSavedDesc": "pro Tag im Durchschnitt",
     "accuracy": "Transkriptionsgenauigkeit",
     "accuracyValue": "99%",
     "accuracyDesc": "medizinische Terminologie",
     "doctors": "Aktive Ärzte",
-    "doctorsValue": "5.000+",
-    "doctorsDesc": "in der Schweiz"
+    "doctorsValue": "1.000+",
+    "doctorsDesc": "in Europa"
   },
   "features": {
-    "title": "Für modernes Gesundheitswesen",
-    "subtitle": "Alles, was Sie brauchen, um Ihren Dokumentationsworkflow zu optimieren",
+    "badge": "Funktionen & Vorteile",
+    "title": "Anpassbar an alle administrativen Aufgaben",
+    "subtitle": "Alle Werkzeuge, die Sie brauchen, um Ihre Dokumentation zu beschleunigen",
     "recording": {
       "title": "Intelligente Aufnahme",
       "description": "Konsultationen mit einem Fingertipp aufnehmen. Unsere KI versteht medizinischen Kontext und filtert Hintergrundgeräusche."
     },
     "transcription": {
       "title": "Präzise Transkription",
-      "description": "Echtzeit-Transkription mit 99% Genauigkeit für medizinische Terminologie in mehreren Sprachen."
+      "description": "Echtzeit-Transkription mit 99% Genauigkeit für medizinische Terminologie in mehreren Sprachen.",
+      "animLine1": "Patient stellt sich vor mit",
+      "animLine2Pre": "wiederkehrendem ",
+      "animWrong1": "Diabetis",
+      "animRight1": "Diabetes",
+      "animLine2Post": ",",
+      "animLine3Pre": "erhöhte ",
+      "animWrong2": "Glikämie",
+      "animRight2": "Glykämie",
+      "animLine3Post": " festgestellt."
     },
     "summaries": {
       "title": "Strukturierte Zusammenfassungen",
-      "description": "Automatische Generierung von SOAP-Notizen, Überweisungsschreiben und strukturierter klinischer Dokumentation."
+      "description": "Automatische Generierung von Konsultationsnotizen, Austrittsbriefen und Konsultationsberichten.",
+      "animTitle": "Konsultationszusammenfassung",
+      "animSection1": "Diagnose",
+      "animSection2": "Behandlung",
+      "animSection3": "Nachsorge"
     },
     "integration": {
       "title": "KIS-Integration",
       "description": "Nahtlose Integration mit Ihrem bestehenden Klinikinformationssystem."
     },
     "security": {
-      "title": "Schweizer Datensicherheit",
-      "description": "Ihre Daten bleiben in der Schweiz. HIPAA-konform, ISO 27001 zertifiziert."
+      "title": "Datensicherheit",
+      "description": "Ihre Daten bleiben in der Schweiz. HIPAA-konform, ISO 27001 zertifiziert.",
+      "animLabel1": "Patient",
+      "animLabel2": "Geb.",
+      "animLabel3": "Diagnose",
+      "animLabel4": "Notizen",
+      "animValue1": "Marie Dupont",
+      "animValue2": "12.03.1987",
+      "animValue3": "Diabetes Typ 2",
+      "animValue4": "HbA1c erhöht",
+      "animNoReport": "Kein Bericht"
     },
     "languages": {
       "title": "Mehrsprachige Unterstützung",
@@ -62,12 +110,22 @@
     "subtitle": "Von der Allgemeinmedizin bis zur Spezialversorgung"
   },
   "testimonials": {
+    "badge": "Erfahrungsbericht",
     "title": "Von Ärzten geliebt",
-    "subtitle": "Was Gesundheitsfachleute über DocNote sagen"
+    "subtitle": "Was Gesundheitsfachleute über DocNote sagen",
+    "quote1": "DocNote hat meinen Alltag in der Notaufnahme wirklich verändert und mir ermöglicht, mich auf meine Patienten zu konzentrieren und meine Konsultationen wieder zu geniessen.",
+    "author1": "Dre Perrot",
+    "role1": "Assistenzärztin in der Notaufnahme",
+    "quote2": "Seit ich DocNote nutze, ist die Vorbereitung und Nachbereitung von Konsultationen ein schneller und effizienter Prozess geworden.",
+    "author2": "Dr Patel",
+    "role2": "Assistenzarzt in der Allgemeinchirurgie",
+    "quote3": "Ich habe immer gesagt, ich würde mir einen Vollzeitassistenten leisten, wenn ich Milliardär wäre, aber jetzt muss ich nicht einmal Milliardär sein.",
+    "author3": "Pr Ris",
+    "role3": "Chefarzt der Kolorektalchirurgie"
   },
   "cta": {
     "title": "Bereit, täglich 2+ Stunden zu sparen?",
-    "subtitle": "Schliessen Sie sich Tausenden von Ärzten an, die ihren Dokumentationsworkflow transformiert haben.",
+    "subtitle": "Schliessen Sie sich Hunderten von Ärzten an, die ihren Dokumentationsworkflow transformiert haben.",
     "button": "Kostenlos starten",
     "noCard": "Keine Kreditkarte erforderlich"
   },
@@ -88,8 +146,16 @@
     }
   },
   "compliance": {
-    "title": "Sicherheit für das Gesundheitswesen",
-    "subtitle": "Klare Datenschutzstandards etablieren und Patienteninformationen sicher und konform halten.",
+    "badge": "Vertraulichkeit",
+    "title": "Sicherheit angepasst an medizinische Anforderungen",
+    "subtitle": "Unsere Infrastruktur entspricht hohen Datenschutzstandards, die speziell auf die Anforderungen des medizinischen Sektors zugeschnitten sind.",
+    "cardTitle": "Datenschutz-Rahmenwerk",
+    "cardDescription": "DocNote implementiert Sicherheit auf Unternehmensniveau mit Ende-zu-Ende-Verschlüsselung, strikten Zugriffskontrollen und umfassender Audit-Protokollierung zum Schutz sensibler Patientendaten.",
+    "protocolTitle": "DocNote Sicherheitsprotokoll",
+    "protocolEncryption": "Ende-zu-Ende-Verschlüsselung: TLS 1.3 (bei Übertragung) & AES-256 (im Ruhezustand)",
+    "protocolRetention": "Keine Datenspeicherung über 48 Stunden hinaus",
+    "protocolRbac": "Rollenbasierte Zugriffskontrolle (RBAC)",
+    "protocolAudit": "Umfassende Audit-Trail-Protokollierung",
     "swiss": {
       "title": "Schweizer Hosting",
       "description": "Alle Daten werden ausschliesslich auf Schweizer Servern gespeichert und gewährleisten die vollständige Einhaltung lokaler Gesundheitsvorschriften."
@@ -107,18 +173,14 @@
     "title": "Häufig gestellte Fragen",
     "subtitle": "Die meisten Nutzer stellen diese Fragen. Brauchen Sie Hilfe?",
     "contactUs": "Kontaktieren Sie uns",
-    "q1": "Was kann ich von DocNotes Kernfunktionen erwarten?",
-    "a1": "DocNote bietet KI-gestützte Aufnahme, Echtzeit-Transkription mit 99% Genauigkeit für medizinische Terminologie, automatische SOAP-Notizen-Generierung und nahtlose KIS-Integration — alles entwickelt, um Ihnen täglich 2+ Stunden Dokumentationszeit zu sparen.",
-    "q2": "Trainiert DocNote mit Patientendaten?",
-    "a2": "Nein. DocNote verwendet niemals Patientendaten für das KI-Training. Alle Aufnahmen und Transkriptionen werden sicher verarbeitet und nach der Notizerstellung gelöscht, es sei denn, Sie entscheiden sich ausdrücklich für die Speicherung.",
-    "q3": "Ist DocNote konform mit Gesundheitsvorschriften?",
-    "a3": "Ja. DocNote ist vollständig HIPAA-konform und ISO 27001 zertifiziert. Alle Daten werden verschlüsselt und ausschliesslich auf Schweizer Servern gespeichert.",
-    "q4": "Mit welchen KIS-Systemen integriert DocNote?",
-    "a4": "DocNote integriert mit den meisten grossen KIS-Systemen einschliesslich Epic, Cerner und Schweizer Systemen wie Elexis. Wir bieten auch individuelle Integrationsunterstützung für Unternehmenskunden.",
-    "q5": "Welche Sprachen werden unterstützt?",
-    "a5": "DocNote unterstützt Deutsch, Französisch, Italienisch, Englisch und 20+ weitere Sprachen für Transkription und Notizerstellung.",
-    "q6": "Kann ich DocNote kostenlos testen?",
-    "a6": "Ja! Starten Sie mit 30 kostenlosen Konsultationen mit vollem Zugang zu Professional-Funktionen. Keine Kreditkarte erforderlich."
+    "q1": "Wie gewährleistet DocNote die Datensicherheit?",
+    "a1": "Wir verwenden fortschrittliche Verschlüsselungsprotokolle und verarbeiten Informationen auf sicheren Servern in der Schweiz, um maximalen Schutz zu gewährleisten.",
+    "q2": "Ist DocNote mit allen medizinischen Systemen kompatibel?",
+    "a2": "Ja, DocNote ist so konzipiert, dass es sich an verschiedene medizinische Umgebungen anpasst, einschliesslich Praxisverwaltungssoftware und elektronischer Patientenaktensysteme.",
+    "q3": "Kann ich DocNote auf mehreren Geräten verwenden?",
+    "a3": "Absolut, DocNote ist auf Tablets und Smartphones zugänglich und ermöglicht es Ihnen, Ihre Berichte überall zu verwalten.",
+    "q4": "Bietet DocNote eine Testphase an?",
+    "a4": "Ja, wir bieten eine Testphase von 30 Konsultationen an, damit Sie alle Funktionen testen und die Verbesserungen bei der Verwaltung Ihrer medizinischen Berichte erleben können."
   },
   "footer": {
     "description": "KI-gestützte medizinische Dokumentation für Klinikabläufe.",
@@ -184,7 +246,7 @@
       "q3": "Sind meine Daten sicher?",
       "a3": "Absolut. Alle Daten werden verschlüsselt und in der Schweiz gespeichert. Wir sind HIPAA-konform und ISO 27001 zertifiziert.",
       "q4": "Mit welchen KIS-Systemen integrieren Sie?",
-      "a4": "Wir integrieren mit den meisten grossen KIS-Systemen einschliesslich Epic, Cerner und lokalen Schweizer Systemen wie Elexis."
+      "a4": "Wir integrieren mit den meisten grossen KIS-Systemen einschliesslich Epic, Cerner und lokalen Schweizer Systemen wie Sokle oder Mediway."
     }
   },
   "blog": {
@@ -243,14 +305,15 @@
     "title": "Erste Schritte mit DocNote",
     "subtitle": "Folgen Sie diesen einfachen Schritten, um Ihren Dokumentationsworkflow zu transformieren",
     "step1": {
-      "title": "Mobile Anwendung herunterladen",
-      "description": "Laden Sie die DocNote Mobile App aus dem App Store Ihres Telefons herunter:",
+      "title": "Mobile Anwendung herunterladen oder zur Web-App verbinden",
+      "description": "Laden Sie die DocNote Mobile App aus dem App Store Ihres Telefons herunter oder greifen Sie direkt über unsere Web-App zu:",
       "ios": "Verfügbar im App Store",
       "android": "Verfügbar bei Google Play"
     },
     "step2": {
       "title": "Erstellen Sie Ihr Konto",
-      "description": "Erstellen Sie Ihr Konto, indem Sie Ihre professionelle E-Mail direkt in der mobilen Anwendung eingeben. Wir senden Ihnen in Kürze einen Aktivierungscode. Ihre 30-Konsultationen-Testversion beginnt, sobald Sie den Code erhalten."
+      "description": "Erstellen Sie Ihr Konto, indem Sie Ihre professionelle E-Mail eingeben. Wir senden Ihnen einen Aktivierungscode.",
+      "trialInfo": "Ihre 30-Konsultationen-Testversion beginnt, sobald Sie Ihren Aktivierungscode erhalten und eingeben."
     },
     "step3": {
       "title": "Hauptbildschirm",

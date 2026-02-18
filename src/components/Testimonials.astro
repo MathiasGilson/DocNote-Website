@@ -7,36 +7,36 @@ const { translations: t } = Astro.props;
 
 const testimonials = [
   {
-    quote: 'DocNote has transformed my practice. I now spend my evenings with family instead of typing notes.',
-    author: 'Dr. Sarah Mueller',
-    role: 'General Practitioner',
-    location: 'Zurich',
-    image: 'https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+    quote: t.testimonials.quote1,
+    author: t.testimonials.author1,
+    role: t.testimonials.role1,
+    image: '/images/perrot.png',
   },
   {
-    quote: 'The accuracy is incredible. It understands medical terminology better than any tool I have used before.',
-    author: 'Dr. Thomas Keller',
-    role: 'Cardiologist',
-    location: 'Geneva',
-    image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+    quote: t.testimonials.quote2,
+    author: t.testimonials.author2,
+    role: t.testimonials.role2,
+    image: '/images/patel.jpg',
   },
   {
-    quote: 'Our clinic saved 15 hours per week. The ROI was immediate and the patients noticed we are more present.',
-    author: 'Dr. Anna Weber',
-    role: 'Medical Director',
-    location: 'Bern',
-    image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+    quote: t.testimonials.quote3,
+    author: t.testimonials.author3,
+    role: t.testimonials.role3,
+    image: '/images/ris.png',
   },
 ];
 ---
 
 <section class="py-20">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <span class="text-xs font-medium text-gray-400 uppercase tracking-widest mb-8 block">Testimonial</span>
+    <span class="text-xs font-medium text-gray-400 uppercase tracking-widest mb-8 block">{t.testimonials.badge}</span>
 
-    <div class="relative">
+    <div class="relative" id="testimonial-container">
       {testimonials.map((testimonial, index) => (
-        <div class:list={['testimonial-slide', index === 0 ? '' : 'hidden']} data-index={index}>
+        <div
+          class:list={['testimonial-slide absolute inset-0 transition-opacity duration-500 ease-in-out', index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none']}
+          data-index={index}
+        >
           <blockquote class="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 leading-snug mb-8">
             &ldquo;{testimonial.quote}&rdquo;
           </blockquote>
@@ -49,17 +49,25 @@ const testimonials = [
             />
             <div>
               <p class="text-sm font-semibold text-gray-900">{testimonial.author}</p>
-              <p class="text-xs text-gray-500">{testimonial.role} at {testimonial.location}</p>
+              <p class="text-xs text-gray-500">{testimonial.role}</p>
             </div>
           </div>
         </div>
       ))}
     </div>
 
-    <div class="flex items-center justify-center gap-2 mt-10">
+    <div class="flex items-center justify-center gap-3 mt-10">
       <button id="testimonial-prev" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
       </button>
+      <div class="flex items-center gap-2" id="testimonial-dots">
+        {testimonials.map((_, index) => (
+          <button
+            class:list={['testimonial-dot w-2 h-2 rounded-full transition-all duration-300', index === 0 ? 'bg-violet-500 w-6' : 'bg-gray-300']}
+            data-dot={index}
+          />
+        ))}
+      </div>
       <button id="testimonial-next" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
       </button>
@@ -68,22 +76,82 @@ const testimonials = [
 </section>
 
 <script>
+  const container = document.getElementById('testimonial-container');
   const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testimonial-dot');
   const prevBtn = document.getElementById('testimonial-prev');
   const nextBtn = document.getElementById('testimonial-next');
   let currentSlide = 0;
+  let autoplayTimer: number;
+
+  // Set container height to tallest slide
+  function updateContainerHeight() {
+    if (!container) return;
+    let maxHeight = 0;
+    slides.forEach((slide) => {
+      const el = slide as HTMLElement;
+      const prevOpacity = el.style.opacity;
+      const prevPosition = el.style.position;
+      el.style.opacity = '1';
+      el.style.position = 'relative';
+      const h = el.offsetHeight;
+      el.style.opacity = prevOpacity;
+      el.style.position = prevPosition;
+      if (h > maxHeight) maxHeight = h;
+    });
+    container.style.minHeight = maxHeight + 'px';
+  }
+
+  updateContainerHeight();
+  window.addEventListener('resize', updateContainerHeight);
 
   const showSlide = (index: number) => {
-    slides.forEach((slide) => slide.classList.add('hidden'));
-    slides[index]?.classList.remove('hidden');
+    if (index === currentSlide) return;
+
+    slides.forEach((slide, i) => {
+      const el = slide as HTMLElement;
+      if (i === index) {
+        el.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+        el.classList.add('opacity-100', 'z-10');
+      } else {
+        el.classList.remove('opacity-100', 'z-10');
+        el.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('bg-violet-500', 'w-6');
+        dot.classList.remove('bg-gray-300');
+      } else {
+        dot.classList.remove('bg-violet-500', 'w-6');
+        dot.classList.add('bg-gray-300');
+      }
+    });
+
     currentSlide = index;
+    resetAutoplay();
   };
 
-  prevBtn?.addEventListener('click', () => {
+  const goNext = () => {
+    showSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
+  };
+
+  const goPrev = () => {
     showSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
+  };
+
+  prevBtn?.addEventListener('click', goPrev);
+  nextBtn?.addEventListener('click', goNext);
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
   });
 
-  nextBtn?.addEventListener('click', () => {
-    showSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
-  });
+  const resetAutoplay = () => {
+    clearInterval(autoplayTimer);
+    autoplayTimer = window.setInterval(goNext, 5000);
+  };
+
+  resetAutoplay();
 </script>

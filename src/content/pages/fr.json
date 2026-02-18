@@ -11,46 +11,94 @@
   },
   "hero": {
     "badge": "Documentation médicale assistée par IA",
-    "title": "Le premier assistant IA pour les",
-    "titleHighlight": "flux de travail hospitaliers",
-    "subtitle": "DocNote capture, transcrit et structure automatiquement tout votre travail clinique, des consultations et visites de service aux comptes-rendus opératoires et lettres de sortie, vous faisant gagner des heures de documentation.",
+    "title": "La documentation médicale",
+    "titleHighlight": "simplifiée par l'IA",
+    "subtitle": "Conçu pour la complexité des soins hospitaliers.",
     "cta": "Essai gratuit",
     "ctaSecondary": "Voir la démo",
     "trustedBy": "Approuvé par les principaux prestataires de santé"
   },
+  "soapDemo": {
+    "consultations": "Consultations",
+    "patients": "Patients",
+    "templates": "Modèles",
+    "settings": "Paramètres",
+    "consultationTitle": "Consultation — Patient #1247",
+    "consultationDate": "Aujourd'hui, 14h30 · Médecine générale",
+    "recording": "Enregistrement",
+    "soapNoteGenerated": "Note SOAP générée",
+    "soapNote": "Note SOAP",
+    "savedToEHR": "Enregistré dans le DPI",
+    "justNow": "À l'instant",
+    "patientId": "Patient #1247",
+    "generalPractice": "Médecine générale",
+    "liveTranscript": "Transcription en direct",
+    "soapS": "Le patient rapporte des céphalées persistantes depuis 3 jours, s'aggravant le soir. Évalue la douleur à 6/10, pression bilatérale. Nie nausées ou photophobie.",
+    "soapO": "TA 120/80, FC 72, Temp 36,8°C. Alerte et orienté. Légère sensibilité bilatérale du trapèze. NC II-XII intacts.",
+    "soapA": "Céphalée de tension, probablement liée au stress. Pas de signes d'alerte pour céphalée secondaire.",
+    "soapP": "Ibuprofène 400mg si nécessaire. Conseils d'hygiène du sommeil. Suivi dans 2 semaines si pas d'amélioration.",
+    "phoneSoapS": "Céphalées persistantes 3 jours, 6/10, pression bilatérale.",
+    "phoneSoapO": "TA 120/80, FC 72. Sensibilité trapèze. NC intacts.",
+    "phoneSoapA": "Céphalée de tension, liée au stress.",
+    "phoneSoapP": "Ibuprofène 400mg si néc. Suivi 2 sem."
+  },
   "stats": {
     "timeSaved": "Temps de documentation économisé",
     "timeSavedValue": "2+ heures",
+    "timeSavedSuffix": "+ heures",
     "timeSavedDesc": "par jour en moyenne",
     "accuracy": "Précision de transcription",
     "accuracyValue": "99%",
     "accuracyDesc": "terminologie médicale",
     "doctors": "Médecins actifs",
-    "doctorsValue": "5 000+",
-    "doctorsDesc": "en Suisse"
+    "doctorsValue": "1 000+",
+    "doctorsDesc": "en Europe"
   },
   "features": {
-    "title": "Conçu pour la santé moderne",
-    "subtitle": "Tout ce dont vous avez besoin pour optimiser votre flux de documentation médicale",
+    "badge": "Fonctionnalités & Avantages",
+    "title": "Conçu pour simplifier tous types de tâches administratives",
+    "subtitle": "Tous les outils dont vous avez besoin pour accélérer votre documentation",
     "recording": {
       "title": "Enregistrement intelligent",
       "description": "Enregistrez les consultations en un clic. Notre IA comprend le contexte médical et filtre le bruit de fond."
     },
     "transcription": {
       "title": "Transcription précise",
-      "description": "Transcription en temps réel avec 99% de précision pour la terminologie médicale en plusieurs langues."
+      "description": "Transcription en temps réel avec 99% de précision pour la terminologie médicale en plusieurs langues.",
+      "animLine1": "Le patient présente",
+      "animLine2Pre": "un ",
+      "animWrong1": "diabéte",
+      "animRight1": "diabète",
+      "animLine2Post": " récurrent,",
+      "animLine3Pre": "taux de ",
+      "animWrong2": "glicémie",
+      "animRight2": "glycémie",
+      "animLine3Post": " élevés."
     },
     "summaries": {
       "title": "Résumés structurés",
-      "description": "Génération automatique de notes SOAP, lettres de référence et documentation clinique structurée."
+      "description": "Génération automatique de notes de consultation, lettres de sortie et comptes rendus de consultation.",
+      "animTitle": "Résumé de consultation",
+      "animSection1": "Diagnostic",
+      "animSection2": "Traitement",
+      "animSection3": "Suivi"
     },
     "integration": {
-      "title": "Intégration DME",
+      "title": "Intégration DPI",
       "description": "Intégration transparente avec votre système de dossier médical électronique existant."
     },
     "security": {
-      "title": "Sécurité des données suisse",
-      "description": "Vos données restent en Suisse. Conforme HIPAA, certifié ISO 27001."
+      "title": "Sécurité des données",
+      "description": "Vos données restent en Suisse. Conforme HIPAA, certifié ISO 27001.",
+      "animLabel1": "Patient",
+      "animLabel2": "DDN",
+      "animLabel3": "Diagnostic",
+      "animLabel4": "Notes",
+      "animValue1": "Marie Dupont",
+      "animValue2": "12.03.1987",
+      "animValue3": "Diabète de type 2",
+      "animValue4": "HbA1c élevée",
+      "animNoReport": "Aucun rapport"
     },
     "languages": {
       "title": "Support multilingue",
@@ -62,12 +110,22 @@
     "subtitle": "De la médecine générale aux soins spécialisés"
   },
   "testimonials": {
+    "badge": "Témoignage",
     "title": "Adoré par les médecins",
-    "subtitle": "Découvrez ce que les professionnels de santé disent de DocNote"
+    "subtitle": "Découvrez ce que les professionnels de santé disent de DocNote",
+    "quote1": "DocNote a vraiment changé ma journée aux urgences, me permettant de me concentrer sur mes patients et de profiter à nouveau de mes consultations.",
+    "author1": "Dre Perrot",
+    "role1": "Médecin interne aux urgences",
+    "quote2": "Depuis que j'utilise DocNote, la préparation et le suivi des consultations sont devenus un processus rapide et efficace.",
+    "author2": "Dr Patel",
+    "role2": "Médecin interne en chirurgie générale",
+    "quote3": "J'ai toujours dit que je me paierais un assistant à plein temps quand je serais milliardaire, mais maintenant je n'ai même plus besoin d'être milliardaire.",
+    "author3": "Pr Ris",
+    "role3": "Chef du service de chirurgie colorectale"
   },
   "cta": {
     "title": "Prêt à économiser 2+ heures par jour ?",
-    "subtitle": "Rejoignez des milliers de médecins qui ont transformé leur flux de documentation.",
+    "subtitle": "Rejoignez des centaines de médecins qui ont transformé leur flux de documentation.",
     "button": "Commencer gratuitement",
     "noCard": "Aucune carte de crédit requise"
   },
@@ -79,8 +137,8 @@
       "description": "Commencez immédiatement. Tout médecin de votre équipe peut enregistrer, transcrire et partager des notes en minutes."
     },
     "card2": {
-      "title": "Synchronisez avec votre DME",
-      "description": "Unifiez vos outils. Connectez vos données avec des intégrations DME transparentes et des workflows automatisés."
+      "title": "Synchronisez avec votre DPI",
+      "description": "Unifiez vos outils. Connectez vos données avec des intégrations DPI transparentes et des workflows automatisés."
     },
     "card3": {
       "title": "Disponible sur tous les appareils",
@@ -88,8 +146,16 @@
     }
   },
   "compliance": {
-    "title": "Sécurité conçue pour la santé",
-    "subtitle": "Établissez des normes claires de protection des données et gardez les informations patients en sécurité et conformes.",
+    "badge": "Confidentialité",
+    "title": "Sécurité adaptée aux exigences médicales",
+    "subtitle": "Notre infrastructure est conforme à des normes élevées de protection des données, spécifiquement adaptées aux exigences du secteur médical.",
+    "cardTitle": "Cadre de protection des données",
+    "cardDescription": "DocNote met en œuvre une sécurité de niveau entreprise avec un chiffrement de bout en bout, des contrôles d'accès stricts et une journalisation complète des audits pour protéger les données sensibles des patients.",
+    "protocolTitle": "Protocole de sécurité DocNote",
+    "protocolEncryption": "Chiffrement de bout en bout : TLS 1.3 (en transit) & AES-256 (au repos)",
+    "protocolRetention": "Aucune donnée conservée au-delà de 48 heures",
+    "protocolRbac": "Contrôle d'accès basé sur les rôles (RBAC)",
+    "protocolAudit": "Journalisation complète des pistes d'audit",
     "swiss": {
       "title": "Hébergement suisse",
       "description": "Toutes les données sont stockées exclusivement sur des serveurs suisses, garantissant une conformité totale avec les réglementations locales de santé."
@@ -107,18 +173,14 @@
     "title": "Questions fréquemment posées",
     "subtitle": "La plupart des utilisateurs posent ces questions. Besoin d'aide ?",
     "contactUs": "Contactez-nous",
-    "q1": "Que puis-je attendre des fonctionnalités principales de DocNote ?",
-    "a1": "DocNote offre l'enregistrement alimenté par IA, la transcription en temps réel avec 99% de précision pour la terminologie médicale, la génération automatique de notes SOAP et l'intégration DME transparente — le tout conçu pour vous faire gagner 2+ heures de documentation par jour.",
-    "q2": "DocNote s'entraîne-t-il sur les données des patients ?",
-    "a2": "Non. DocNote n'utilise jamais les données patients pour l'entraînement des modèles IA. Tous les enregistrements et transcriptions sont traités de manière sécurisée et supprimés après la génération des notes, sauf si vous choisissez explicitement de les sauvegarder.",
-    "q3": "DocNote est-il conforme aux réglementations de santé ?",
-    "a3": "Oui. DocNote est entièrement conforme HIPAA et certifié ISO 27001. Toutes les données sont chiffrées et stockées exclusivement sur des serveurs suisses.",
-    "q4": "Avec quels systèmes DME DocNote s'intègre-t-il ?",
-    "a4": "DocNote s'intègre avec la plupart des systèmes DME majeurs, y compris Epic, Cerner et les systèmes suisses comme Elexis. Nous offrons également un support d'intégration personnalisé pour les clients entreprise.",
-    "q5": "Quelles langues sont supportées ?",
-    "a5": "DocNote supporte l'allemand, le français, l'italien, l'anglais et 20+ autres langues pour la transcription et la génération de notes.",
-    "q6": "Puis-je essayer DocNote gratuitement ?",
-    "a6": "Oui ! Commencez avec 30 consultations gratuites avec accès complet aux fonctionnalités Professional. Aucune carte de crédit requise."
+    "q1": "Comment DocNote assure-t-il la sécurité des données ?",
+    "a1": "Nous utilisons des protocoles de chiffrement avancés et traitons les informations sur des serveurs sécurisés, situés en Suisse, garantissant ainsi une protection maximale.",
+    "q2": "DocNote est-il compatible avec tous les systèmes médicaux ?",
+    "a2": "Oui, DocNote est conçu pour s'adapter à une variété d'environnements médicaux, y compris les logiciels de gestion de cabinet et les systèmes de dossiers médicaux électroniques.",
+    "q3": "Puis-je utiliser DocNote sur plusieurs appareils ?",
+    "a3": "Absolument, DocNote est accessible sur tablettes et smartphones, vous permettant de gérer vos comptes rendus où que vous soyez.",
+    "q4": "DocNote propose-t-il une période d'essai ?",
+    "a4": "Oui, nous proposons une période d'essai de 30 consultations pour que vous puissiez tester toutes les fonctionnalités et constater les améliorations dans la gestion de vos comptes rendus médicaux."
   },
   "footer": {
     "description": "Documentation médicale assistée par IA pour les flux de travail hospitaliers.",
@@ -183,8 +245,8 @@
       "a2": "Oui, vous pouvez passer à un plan supérieur ou inférieur à tout moment. Les changements prennent effet au prochain cycle de facturation.",
       "q3": "Mes données sont-elles sécurisées ?",
       "a3": "Absolument. Toutes les données sont chiffrées et stockées en Suisse. Nous sommes conformes HIPAA et certifiés ISO 27001.",
-      "q4": "Avec quels systèmes DME vous intégrez-vous ?",
-      "a4": "Nous nous intégrons avec la plupart des systèmes DME majeurs, y compris Epic, Cerner et les systèmes suisses locaux comme Elexis."
+      "q4": "Avec quels systèmes DPI vous intégrez-vous ?",
+      "a4": "Nous nous intégrons avec la plupart des systèmes DPI majeurs, y compris Epic, Cerner et les systèmes suisses locaux comme Sokle ou Mediway."
     }
   },
   "blog": {
@@ -243,19 +305,20 @@
     "title": "Débuter avec DocNote",
     "subtitle": "Suivez ces étapes simples pour transformer votre flux de documentation médicale",
     "step1": {
-      "title": "Téléchargez l'application mobile",
-      "description": "Téléchargez l'application mobile DocNote depuis la boutique d'applications de votre téléphone :",
+      "title": "Téléchargez l'application mobile, ou connectez-vous à l'application web",
+      "description": "Téléchargez l'application mobile DocNote depuis la boutique d'applications de votre téléphone, ou accédez-y directement via notre application web :",
       "ios": "Disponible sur l'App Store",
       "android": "Disponible sur Google Play"
     },
     "step2": {
       "title": "Créez votre compte",
-      "description": "Créez votre compte en entrant votre email professionnel directement depuis l'application mobile. Nous vous enverrons un code d'activation sous peu. Votre essai de 30 consultations débutera dès réception du code."
+      "description": "Créez votre compte en entrant votre email professionnel. Nous vous enverrons un code d'activation.",
+      "trialInfo": "Votre essai de 30 consultations débutera dès réception et saisie de votre code d'activation."
     },
     "step3": {
       "title": "Écran principal",
       "description": "Commencez à utiliser notre solution pour améliorer votre charge administrative et recommencez à apprécier votre travail. Vous pouvez regarder le tutoriel ci-dessous pour comprendre nos principales fonctionnalités.",
-      "chooseModel": "Depuis la page d'accueil, vous pouvez sélectionner le modèle de rapport le mieux adapté à vos besoins :",
+      "chooseModel": "Depuis la page d'accueil, vous pouvez sélectionner le modèle de rapport le plus adapté à vos besoins :",
       "models": {
         "dictation": {
           "title": "Dictée",
@@ -263,11 +326,11 @@
         },
         "general": {
           "title": "Consultation de médecine générale",
-          "description": "Notes cliniques concises et structurées conçues pour les soins primaires"
+          "description": "Notes cliniques concises et structurées conçues pour les consultations de médecin généraliste"
         },
         "specialist": {
           "title": "Consultation de spécialiste",
-          "description": "Consultation spécialisée détaillée structurée en lettre formelle au médecin référent"
+          "description": "Consultation spécialisée détaillée structurée sous format de lettre adressée au médecin généraliste"
         },
         "operative": {
           "title": "Compte-rendu opératoire",

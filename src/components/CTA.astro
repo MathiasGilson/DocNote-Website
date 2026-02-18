@@ -11,8 +11,8 @@ const locale = getLocaleFromUrl(Astro.url);
 
 <section class="bg-gradient-to-b from-white to-indigo-50 py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+        <div class="grid lg:grid-cols-2 gap-12 items-end">
+            <div class="pb-4">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 leading-snug">
                     {t.cta.title}
                 </h2>
@@ -27,9 +27,10 @@ const locale = getLocaleFromUrl(Astro.url);
                 </a>
             </div>
 
-            <div class="relative">
+            <div class="relative" id="cta-card-wrapper" data-locale={locale}>
                 <div
-                    class="bg-white backdrop-blur-sm rounded-xl border border-gray-200/60 shadow-xl p-6 transform rotate-1 hover:rotate-0 transition-transform duration-500 max-w-[600px]"
+                    id="cta-card"
+                    class="bg-white backdrop-blur-sm rounded-xl border border-gray-200/60 shadow-xl p-6 transform transition-all duration-500 max-w-[600px] overflow-hidden"
                 >
                     <div class="flex items-center gap-3 mb-4">
                         <img src="/images/logo.png" alt="DocNote" class="w-8 h-8 rounded-lg" />
@@ -38,15 +39,23 @@ const locale = getLocaleFromUrl(Astro.url);
                             <p class="text-xs text-gray-400">AI Medical Documentation</p>
                         </div>
                     </div>
-                    <div class="space-y-2.5">
+
+                    <!-- Placeholder bars - visible by default -->
+                    <div id="cta-placeholder" class="space-y-2.5 transition-opacity duration-300">
                         <div class="h-2 bg-gray-200 rounded-full w-full"></div>
                         <div class="h-2 bg-gray-200 rounded-full w-4/5"></div>
                         <div class="h-2 bg-gray-200 rounded-full w-3/5"></div>
                         <div class="h-2 bg-gray-100 rounded-full w-2/5 mt-4"></div>
                     </div>
+
+                    <!-- Medical text - typed on hover -->
+                    <div id="cta-medical-text" class="hidden text-[11px] leading-relaxed text-gray-600 min-h-[80px]">
+                        <span id="cta-typed"></span><span id="cta-cursor" class="inline-block w-[2px] h-3 bg-violet-500 ml-0.5 align-middle animate-pulse"></span>
+                    </div>
+
                     <div class="flex items-center gap-2 mt-4">
                         <div class="flex-1 h-8 bg-gray-100 rounded-md"></div>
-                        <div class="w-20 h-8 bg-gray-300 rounded-md flex items-center justify-center">
+                        <div class="w-20 h-8 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-md flex items-center justify-center">
                             <span class="text-xs text-white font-medium">Save</span>
                         </div>
                     </div>
@@ -55,3 +64,88 @@ const locale = getLocaleFromUrl(Astro.url);
         </div>
     </div>
 </section>
+
+<script>
+    const wrapper = document.getElementById('cta-card-wrapper');
+    const card = document.getElementById('cta-card');
+    const placeholder = document.getElementById('cta-placeholder');
+    const medicalText = document.getElementById('cta-medical-text');
+    const typed = document.getElementById('cta-typed');
+    const cursor = document.getElementById('cta-cursor');
+
+    const locale = wrapper?.dataset.locale || 'en';
+
+    const texts: Record<string, string> = {
+        en: `Dear colleagues, I am sending you this report concerning your patient seen in consultation.\n\nREASON FOR CONSULTATION\nPostoperative follow-up\n\nMEDICAL HISTORY\nMr. X, 68 years old, is seen for a post-operative follow-up consultation. He reports a marked improvement since the operation, with a gradual reduction in pain. He has had no further hematochezia since the operation. He has not taken any painkillers for several days (the early post-operative period was described as difficult).`,
+        fr: `Chers confrères, je vous adresse ce compte-rendu concernant votre patient vu en consultation.\n\nMOTIF DE CONSULTATION\nSuivi postopératoire\n\nHISTOIRE DE LA MALADIE\nM. X, 68 ans, est vu pour une consultation de suivi postopératoire. Il rapporte une nette amélioration depuis l'intervention, avec une diminution progressive des douleurs. Il n'a plus présenté de rectorragies depuis l'opération. Il n'a pas pris d'antalgiques depuis plusieurs jours (les suites opératoires immédiates avaient été décrites comme difficiles).`,
+        de: `Sehr geehrte Kollegen, ich übersende Ihnen diesen Bericht bezüglich Ihres Patienten, der in der Sprechstunde vorstellig wurde.\n\nKONSULTATIONSGRUND\nPostoperative Nachsorge\n\nANAMNESE\nHerr X, 68 Jahre alt, stellt sich zur postoperativen Nachsorgekonsultation vor. Er berichtet über eine deutliche Besserung seit der Operation mit einem allmählichen Rückgang der Schmerzen. Seit der Operation sind keine Hämatochezien mehr aufgetreten. Er hat seit mehreren Tagen keine Schmerzmittel mehr eingenommen (die frühe postoperative Phase wurde als schwierig beschrieben).`,
+    };
+
+    const fullText = texts[locale] || texts.en;
+
+    let typingTimer: number | null = null;
+    let charIndex = 0;
+    let isHovering = false;
+
+    function startTyping() {
+        if (!typed || !medicalText || !placeholder) return;
+
+        // Show medical text area, hide placeholder
+        placeholder.style.opacity = '0';
+        setTimeout(() => {
+            placeholder.classList.add('hidden');
+            medicalText.classList.remove('hidden');
+        }, 300);
+
+        // Tilt the card
+        card?.classList.add('rotate-1', '-translate-y-2', 'shadow-2xl');
+
+        // Start typewriter
+        charIndex = 0;
+        typed.innerHTML = '';
+        isHovering = true;
+        typeNext();
+    }
+
+    function typeNext() {
+        if (!isHovering || !typed || charIndex >= fullText.length) return;
+
+        const char = fullText[charIndex];
+        if (char === '\n') {
+            typed.innerHTML += '<br>';
+        } else {
+            typed.innerHTML += char;
+        }
+        charIndex++;
+
+        // Scroll to keep cursor visible
+        if (medicalText) {
+            medicalText.scrollTop = medicalText.scrollHeight;
+        }
+
+        typingTimer = window.setTimeout(typeNext, 12);
+    }
+
+    function stopTyping() {
+        isHovering = false;
+        if (typingTimer) {
+            clearTimeout(typingTimer);
+            typingTimer = null;
+        }
+
+        // Reset card
+        card?.classList.remove('rotate-1', '-translate-y-2', 'shadow-2xl');
+
+        // Hide medical text, show placeholder
+        if (medicalText) medicalText.classList.add('hidden');
+        if (placeholder) {
+            placeholder.classList.remove('hidden');
+            placeholder.style.opacity = '1';
+        }
+        if (typed) typed.innerHTML = '';
+        charIndex = 0;
+    }
+
+    wrapper?.addEventListener('mouseenter', startTyping);
+    wrapper?.addEventListener('mouseleave', stopTyping);
+</script>

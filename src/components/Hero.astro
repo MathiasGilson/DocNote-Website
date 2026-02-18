@@ -15,7 +15,7 @@ const stats = [
         target: 2,
         startFrom: 0,
         duration: 200,
-        suffix: "+ hours",
+        suffix: t.stats.timeSavedSuffix,
         easing: "linear",
         desc: t.stats.timeSavedDesc,
         icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />`
@@ -34,7 +34,7 @@ const stats = [
     {
         label: t.stats.doctors,
         value: t.stats.doctorsValue,
-        target: 5000,
+        target: 1000,
         startFrom: 0,
         duration: 900,
         suffix: "+",
@@ -114,7 +114,7 @@ const stats = [
                                         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                     ></path></svg
                                 >
-                                Consultations
+                                {t.soapDemo.consultations}
                             </div>
                             <div class="flex items-center gap-1.5 px-1.5 py-1 text-gray-500 rounded text-[10px]">
                                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -125,7 +125,7 @@ const stats = [
                                         d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
                                     ></path></svg
                                 >
-                                Patients
+                                {t.soapDemo.patients}
                             </div>
                             <div class="flex items-center gap-1.5 px-1.5 py-1 text-gray-500 rounded text-[10px]">
                                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -136,7 +136,7 @@ const stats = [
                                         d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"
                                     ></path></svg
                                 >
-                                Templates
+                                {t.soapDemo.templates}
                             </div>
                             <div class="flex items-center gap-1.5 px-1.5 py-1 text-gray-500 rounded text-[10px]">
                                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -151,7 +151,7 @@ const stats = [
                                         stroke-width="2"
                                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg
                                 >
-                                Settings
+                                {t.soapDemo.settings}
                             </div>
                         </nav>
                     </div>
@@ -159,15 +159,15 @@ const stats = [
                     <div class="flex-1 p-3 sm:p-4">
                         <div class="flex items-center justify-between mb-3">
                             <div>
-                                <h3 class="text-xs font-semibold text-gray-900">Consultation — Patient #1247</h3>
-                                <p class="text-[10px] text-gray-400 mt-0.5">Today, 14:30 · General Practice</p>
+                                <h3 class="text-xs font-semibold text-gray-900">{t.soapDemo.consultationTitle}</h3>
+                                <p class="text-[10px] text-gray-400 mt-0.5">{t.soapDemo.consultationDate}</p>
                             </div>
                             <div
                                 id="recording-indicator"
                                 class="flex items-center gap-1 px-2 py-0.5 bg-red-50 text-red-600 rounded-full text-[10px] font-medium opacity-0"
                             >
                                 <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
-                                Recording
+                                {t.soapDemo.recording}
                             </div>
                         </div>
 
@@ -176,23 +176,23 @@ const stats = [
                                 id="soap-title"
                                 class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2 opacity-0"
                             >
-                                SOAP Note Generated
+                                {t.soapDemo.soapNoteGenerated}
                             </div>
                             <div class="space-y-2">
-                                <div id="soap-s" class="flex gap-1.5 opacity-0">
-                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">S:</span>
+                                <div id="soap-s" class="flex items-baseline gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0">S:</span>
                                     <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
                                 </div>
-                                <div id="soap-o" class="flex gap-1.5 opacity-0">
-                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">O:</span>
+                                <div id="soap-o" class="flex items-baseline gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0">O:</span>
                                     <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
                                 </div>
-                                <div id="soap-a" class="flex gap-1.5 opacity-0">
-                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">A:</span>
+                                <div id="soap-a" class="flex items-baseline gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0">A:</span>
                                     <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
                                 </div>
-                                <div id="soap-p" class="flex gap-1.5 opacity-0">
-                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0 mt-0.5">P:</span>
+                                <div id="soap-p" class="flex items-baseline gap-1.5 opacity-0">
+                                    <span class="text-[10px] font-bold text-gray-900 flex-shrink-0">P:</span>
                                     <span class="text-[10px] text-gray-600 leading-relaxed soap-text"></span>
                                 </div>
                             </div>
@@ -207,9 +207,9 @@ const stats = [
                                         stroke-width="2"
                                         d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                Saved to EHR
+                                {t.soapDemo.savedToEHR}
                             </span>
-                            <span class="text-gray-400 text-[10px]">Just now</span>
+                            <span class="text-gray-400 text-[10px]">{t.soapDemo.justNow}</span>
                         </div>
                     </div>
                 </div>
@@ -254,8 +254,8 @@ const stats = [
 
                     <!-- Content -->
                     <div class="flex-1 p-4 flex flex-col">
-                        <p class="text-[12px] text-gray-500 mb-0.5">Patient #1247</p>
-                        <p class="text-sm font-semibold text-gray-900 mb-3">General Practice</p>
+                        <p class="text-[12px] text-gray-500 mb-0.5">{t.soapDemo.patientId}</p>
+                        <p class="text-sm font-semibold text-gray-900 mb-3">{t.soapDemo.generalPractice}</p>
 
                         <!-- Recording status -->
                         <div id="phone-recording-status" class="opacity-0">
@@ -263,7 +263,7 @@ const stats = [
                                 <div class="flex items-center justify-between mb-2">
                                     <div class="flex items-center gap-1.5">
                                         <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                                        <span class="text-[12px] text-red-600 font-medium">Recording</span>
+                                        <span class="text-[12px] text-red-600 font-medium">{t.soapDemo.recording}</span>
                                     </div>
                                     <span id="phone-timer" class="text-[12px] text-red-500 font-mono">0:00</span>
                                 </div>
@@ -357,7 +357,7 @@ const stats = [
                             </div>
 
                             <div id="phone-transcript" class="opacity-0">
-                                <p class="text-[9px] text-gray-400 uppercase tracking-wider mb-1">Live transcript</p>
+                                <p class="text-[9px] text-gray-400 uppercase tracking-wider mb-1">{t.soapDemo.liveTranscript}</p>
                                 <div class="space-y-1">
                                     <div class="h-1.5 bg-gray-100 rounded-full w-full"></div>
                                     <div class="h-1.5 bg-gray-100 rounded-full w-4/5"></div>
@@ -369,22 +369,22 @@ const stats = [
                         <!-- SOAP report on phone -->
                         <div id="phone-done" class="opacity-0 hidden">
                             <div class="text-[9px] font-semibold text-gray-400 uppercase tracking-wider mb-1.5">
-                                SOAP Note
+                                {t.soapDemo.soapNote}
                             </div>
                             <div class="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1.5">
-                                <div id="phone-soap-s" class="flex gap-1 opacity-0">
+                                <div id="phone-soap-s" class="flex items-baseline gap-1 opacity-0">
                                     <span class="text-[12px] font-bold text-gray-900 flex-shrink-0">S:</span>
                                     <span class="text-[12px] text-gray-600 leading-relaxed phone-soap-text"></span>
                                 </div>
-                                <div id="phone-soap-o" class="flex gap-1 opacity-0">
+                                <div id="phone-soap-o" class="flex items-baseline gap-1 opacity-0">
                                     <span class="text-[12px] font-bold text-gray-900 flex-shrink-0">O:</span>
                                     <span class="text-[12px] text-gray-600 leading-relaxed phone-soap-text"></span>
                                 </div>
-                                <div id="phone-soap-a" class="flex gap-1 opacity-0">
+                                <div id="phone-soap-a" class="flex items-baseline gap-1 opacity-0">
                                     <span class="text-[12px] font-bold text-gray-900 flex-shrink-0">A:</span>
                                     <span class="text-[12px] text-gray-600 leading-relaxed phone-soap-text"></span>
                                 </div>
-                                <div id="phone-soap-p" class="flex gap-1 opacity-0">
+                                <div id="phone-soap-p" class="flex items-baseline gap-1 opacity-0">
                                     <span class="text-[12px] font-bold text-gray-900 flex-shrink-0">P:</span>
                                     <span class="text-[12px] text-gray-600 leading-relaxed phone-soap-text"></span>
                                 </div>
@@ -402,7 +402,7 @@ const stats = [
                                         stroke-width="2"
                                         d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span class="text-[12px] text-green-600 font-medium">Saved to EHR</span>
+                                <span class="text-[12px] text-green-600 font-medium">{t.soapDemo.savedToEHR}</span>
                             </div>
                         </div>
 
@@ -495,6 +495,21 @@ const stats = [
     </div>
 </div>
 
+<script is:inline type="application/json" id="soap-data" set:html={JSON.stringify({
+    soapLines: [
+        { id: "soap-s", text: t.soapDemo.soapS },
+        { id: "soap-o", text: t.soapDemo.soapO },
+        { id: "soap-a", text: t.soapDemo.soapA },
+        { id: "soap-p", text: t.soapDemo.soapP }
+    ],
+    phoneSoapLines: {
+        "soap-s": t.soapDemo.phoneSoapS,
+        "soap-o": t.soapDemo.phoneSoapO,
+        "soap-a": t.soapDemo.phoneSoapA,
+        "soap-p": t.soapDemo.phoneSoapP
+    }
+})} />
+
 <style>
     .soap-text {
         overflow: hidden;
@@ -532,18 +547,9 @@ const stats = [
         if (e.key === "Escape" && !videoModal?.classList.contains("hidden")) closeModal()
     })
 
-    const soapLines = [
-        {
-            id: "soap-s",
-            text: "Patient reports persistent headache for 3 days, worsening in the evening. Rates pain 6/10, bilateral pressure. Denies nausea or photophobia."
-        },
-        {
-            id: "soap-o",
-            text: "BP 120/80, HR 72, Temp 36.8C. Alert and oriented. Mild trapezius tenderness bilaterally. CN II-XII intact."
-        },
-        { id: "soap-a", text: "Tension-type headache, likely stress-related. No red flags for secondary headache." },
-        { id: "soap-p", text: "Ibuprofen 400mg PRN. Sleep hygiene counseling. Follow-up in 2 weeks if no improvement." }
-    ]
+    const soapDataEl = document.getElementById("soap-data")
+    const soapData = soapDataEl ? JSON.parse(soapDataEl.textContent || "{}") : {}
+    const soapLines: { id: string; text: string }[] = soapData.soapLines || []
 
     const typeText = (
         element: HTMLElement,
@@ -687,12 +693,7 @@ const stats = [
         }
         await new Promise((r) => setTimeout(r, 400))
 
-        const phoneSoapLines: Record<string, string> = {
-            "soap-s": "Persistent headache 3 days, 6/10, bilateral pressure.",
-            "soap-o": "BP 120/80, HR 72. Trapezius tenderness. CN intact.",
-            "soap-a": "Tension-type headache, stress-related.",
-            "soap-p": "Ibuprofen 400mg PRN. Follow-up 2 wks."
-        }
+        const phoneSoapLines: Record<string, string> = soapData.phoneSoapLines || {}
 
         for (const line of soapLines) {
             const el = document.getElementById(line.id)

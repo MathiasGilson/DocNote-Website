@@ -48,7 +48,7 @@ const features = [
 <section class="py-20">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-4">
-      <span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Features & Benefits</span>
+      <span class="text-xs font-medium text-gray-400 uppercase tracking-widest">{t.features.badge}</span>
     </div>
     <div class="text-center mb-6">
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 max-w-2xl mx-auto leading-snug">
@@ -92,9 +92,9 @@ const features = [
             <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="transcribe-card">
               <div class="transcribe-demo">
                 <div class="transcribe-ui animate-correct">
-                  <div class="transcribe-line">Patient presents with</div>
-                  <div class="transcribe-line">recurring <span class="tw-correct"><span class="tw-wrong">diyabetis</span><span class="tw-right">diabetes</span></span> symptoms,</div>
-                  <div class="transcribe-line">elevated <span class="tw-correct"><span class="tw-wrong">glikemia</span><span class="tw-right">glycemia</span></span> levels noted.</div>
+                  <div class="transcribe-line">{t.features.transcription.animLine1}</div>
+                  <div class="transcribe-line">{t.features.transcription.animLine2Pre}<span class="tw-correct"><span class="tw-wrong">{t.features.transcription.animWrong1}</span><span class="tw-right">{t.features.transcription.animRight1}</span></span>{t.features.transcription.animLine2Post}</div>
+                  <div class="transcribe-line">{t.features.transcription.animLine3Pre}<span class="tw-correct"><span class="tw-wrong">{t.features.transcription.animWrong2}</span><span class="tw-right">{t.features.transcription.animRight2}</span></span>{t.features.transcription.animLine3Post}</div>
                 </div>
               </div>
             </div>
@@ -129,20 +129,20 @@ const features = [
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     </div>
-                    <span class="summary-doc-title">Consultation Summary</span>
+                    <span class="summary-doc-title">{t.features.summaries.animTitle}</span>
                   </div>
                   <div class="summary-sections">
                     <div class="summary-section s-1">
-                      <div class="summary-section-label">Diagnosis</div>
+                      <div class="summary-section-label">{t.features.summaries.animSection1}</div>
                       <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
                       <div class="summary-section-bar short"><div class="summary-bar-fill"></div></div>
                     </div>
                     <div class="summary-section s-2">
-                      <div class="summary-section-label">Treatment</div>
+                      <div class="summary-section-label">{t.features.summaries.animSection2}</div>
                       <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
                     </div>
                     <div class="summary-section s-3">
-                      <div class="summary-section-label">Follow-up</div>
+                      <div class="summary-section-label">{t.features.summaries.animSection3}</div>
                       <div class="summary-section-bar med"><div class="summary-bar-fill"></div></div>
                     </div>
                   </div>
@@ -205,23 +205,23 @@ const features = [
               <div class="encrypt-demo">
                 <div class="encrypt-lines">
                   <div class="encrypt-row r-1">
-                    <span class="encrypt-label">Patient</span>
-                    <span class="encrypt-plain">Marie Dupont</span>
+                    <span class="encrypt-label">{t.features.security.animLabel1}</span>
+                    <span class="encrypt-plain">{t.features.security.animValue1}</span>
                     <span class="encrypt-cipher">••••• •••••••</span>
                   </div>
                   <div class="encrypt-row r-2">
-                    <span class="encrypt-label">DOB</span>
-                    <span class="encrypt-plain">12.03.1987</span>
+                    <span class="encrypt-label">{t.features.security.animLabel2}</span>
+                    <span class="encrypt-plain">{t.features.security.animValue2}</span>
                     <span class="encrypt-cipher">••.••.••••</span>
                   </div>
                   <div class="encrypt-row r-3">
-                    <span class="encrypt-label">Diagnosis</span>
-                    <span class="encrypt-plain">Type 2 diabetes</span>
+                    <span class="encrypt-label">{t.features.security.animLabel3}</span>
+                    <span class="encrypt-plain">{t.features.security.animValue3}</span>
                     <span class="encrypt-cipher">•••• • ••••••••</span>
                   </div>
                   <div class="encrypt-row r-4">
-                    <span class="encrypt-label">Notes</span>
-                    <span class="encrypt-plain">HbA1c elevated</span>
+                    <span class="encrypt-label">{t.features.security.animLabel4}</span>
+                    <span class="encrypt-plain">{t.features.security.animValue4}</span>
                     <span class="encrypt-cipher">••••• ••••••••</span>
                   </div>
                 </div>

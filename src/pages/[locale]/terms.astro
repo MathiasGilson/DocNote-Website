@@ -15,100 +15,280 @@ if (!isValidLocale(locale)) {
 
 const entry = await getEntry('pages', locale as Locale);
 const t = entry.data;
+
+const layoutTitle = locale === 'fr' ? 'Conditions Générales d\'Utilisation' : locale === 'de' ? 'Allgemeine Geschäftsbedingungen' : 'Terms and Conditions';
 ---
 
-<Layout title="Terms and Conditions">
+<Layout title={layoutTitle}>
   <section class="pt-32 pb-20 bg-white">
     <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
-        Terms and Conditions
+        {locale === 'fr' ? 'Conditions Générales d\'Utilisation' : locale === 'de' ? 'Allgemeine Geschäftsbedingungen' : 'Terms and Conditions'}
       </h1>
-      <p class="text-center text-gray-500 mb-12">Date of last update: July 22nd 2025</p>
+      <p class="text-center text-gray-500 mb-12">
+        {locale === 'fr' ? 'Date de dernière mise à jour : 22 juillet 2025' : locale === 'de' ? 'Datum der letzten Aktualisierung: 22. Juli 2025' : 'Date of last update: July 22nd 2025'}
+      </p>
 
-      <div class="terms-content">
-        <p>The terms and conditions (hereinafter the &laquo; Terms &raquo;) are intended to govern the use of the website (docnote.ch) (hereinafter "the Site"), its Services and Content by any User, as well as the respective rights and obligations of the Users and Docnote.</p>
+      {locale === 'en' && (
+        <div class="terms-content">
+          <p>The terms and conditions (hereinafter the &laquo; Terms &raquo;) are intended to govern the use of the website (docnote.ch) (hereinafter "the Site"), its Services and Content by any User, as well as the respective rights and obligations of the Users and Docnote.</p>
 
-        <h3>Legal Notice - Publisher</h3>
+          <h3>Legal Notice - Publisher</h3>
 
-        <h3>Agreement &ndash; Entry into force &ndash; Duration</h3>
-        <p>Any use of the website is submitted to the following conditions:</p>
-        <ul>
-          <li>the prior express acceptance of the Site Terms by each User;</li>
-          <li>the prior reading by each User of the Privacy Policy applicable to the collecting and processing their personal data in connection with the use of the Site.</li>
-        </ul>
-        <p>The User acknowledges and accepts that its express acceptance of these Terms materializes on its first connection to the Site.</p>
-        <p>Docnote reserves the right to change at any time the Site, the Services and Content, the Terms, or the rules regarding the use of the Site, its Services and Content.</p>
-        <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNING:</strong> THE USER ACKNOWLEDGES THAT HE HAS READ AND UNDERSTOOD THE TERMS AND THE PRIVACY POLICY, ACCEPTS THEM WITHOUT RESTRICTION OR RESERVATION, AND UNDERTAKES TO COMPLY WITH THEM UNCONDITIONALLY AND IN FULL.</p>
+          <h3>Agreement &ndash; Entry into force &ndash; Duration</h3>
+          <p>Any use of the website is submitted to the following conditions:</p>
+          <ul>
+            <li>the prior express acceptance of the Site Terms by each User;</li>
+            <li>the prior reading by each User of the Privacy Policy applicable to the collecting and processing their personal data in connection with the use of the Site.</li>
+          </ul>
+          <p>The User acknowledges and accepts that its express acceptance of these Terms materializes on its first connection to the Site.</p>
+          <p>Docnote reserves the right to change at any time the Site, the Services and Content, the Terms, or the rules regarding the use of the Site, its Services and Content.</p>
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNING:</strong> THE USER ACKNOWLEDGES THAT HE HAS READ AND UNDERSTOOD THE TERMS AND THE PRIVACY POLICY, ACCEPTS THEM WITHOUT RESTRICTION OR RESERVATION, AND UNDERTAKES TO COMPLY WITH THEM UNCONDITIONALLY AND IN FULL.</p>
 
-        <h3>Definitions</h3>
-        <p><strong>&laquo; Content &raquo;</strong>: refers to all texts, photographs, illustrations, videos, functionalities, data existing within the Site;</p>
-        <p><strong>&laquo; Services &raquo;</strong>: refers to the various functionalities and sections accessible from the Site and in particular the information sections on Docnote, its Products and Solutions, the section concerning careers and recruitment, access to the Blog as well as sections to contact Docnote for information or to organise demonstrations of Docnote's products and services. This list of Services is not exhaustive and may be amended from time to time at Docnote's discretion;</p>
-        <p><strong>&laquo; User &raquo;</strong>: refers to any Site User who accesses its Content and Services.</p>
+          <h3>Definitions</h3>
+          <p><strong>&laquo; Content &raquo;</strong>: refers to all texts, photographs, illustrations, videos, functionalities, data existing within the Site;</p>
+          <p><strong>&laquo; Services &raquo;</strong>: refers to the various functionalities and sections accessible from the Site and in particular the information sections on Docnote, its Products and Solutions, the section concerning careers and recruitment, access to the Blog as well as sections to contact Docnote for information or to organise demonstrations of Docnote's products and services. This list of Services is not exhaustive and may be amended from time to time at Docnote's discretion;</p>
+          <p><strong>&laquo; User &raquo;</strong>: refers to any Site User who accesses its Content and Services.</p>
 
-        <h3>Site description</h3>
-        <p>The Site is a digital space &ndash; accessible at (docnote.ch) &ndash; allowing access to all Content and Services.</p>
-        <p>The Site informs the User of the products and services offered by DOCNOTE.</p>
-        <p>The Site may give Users access to general information related among others to health (information in the field of health, including articles on a particular topic, news, public health, articles published on the Blog, information on Docnote).</p>
+          <h3>Site description</h3>
+          <p>The Site is a digital space &ndash; accessible at (docnote.ch) &ndash; allowing access to all Content and Services.</p>
+          <p>The Site informs the User of the products and services offered by DOCNOTE.</p>
+          <p>The Site may give Users access to general information related among others to health (information in the field of health, including articles on a particular topic, news, public health, articles published on the Blog, information on Docnote).</p>
 
-        <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNING:</strong> ALL INFORMATION MADE AVAILABLE TO USERS VIA THE SITE IS PROVIDED AS AN INDICATION. THE INFORMATION PROVIDED TENDS TO BE SCIENTIFICALLY ACCURATE AT THE TIME OF PUBLICATION, RELIABLE AND RELEVANT.</p>
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNING:</strong> ALL INFORMATION MADE AVAILABLE TO USERS VIA THE SITE IS PROVIDED AS AN INDICATION. THE INFORMATION PROVIDED TENDS TO BE SCIENTIFICALLY ACCURATE AT THE TIME OF PUBLICATION, RELIABLE AND RELEVANT.</p>
 
-        <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800">DESPITE THE CARE TAKEN TO PROCESS THE INFORMATION, DOCNOTE DECLINES ALL RESPONSIBILITY FOR ERRORS OR OMISSIONS RELATING TO THE INFORMATION PROVIDED ON THE SITE.</p>
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800">DESPITE THE CARE TAKEN TO PROCESS THE INFORMATION, DOCNOTE DECLINES ALL RESPONSIBILITY FOR ERRORS OR OMISSIONS RELATING TO THE INFORMATION PROVIDED ON THE SITE.</p>
 
-        <p>The Site allows the User to enter his email to be informed of the latest news related to the services offered by DOCNOTE and/or to get in touch with the team to organize a demonstration of the products offered by Docnote or as part of a job application or any other possibility of collaboration.</p>
+          <p>The Site allows the User to enter his email to be informed of the latest news related to the services offered by DOCNOTE and/or to get in touch with the team to organize a demonstration of the products offered by Docnote or as part of a job application or any other possibility of collaboration.</p>
 
-        <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNING:</strong> THE USER IS ALERTED TO THE FACT THAT THE CONTACT SECTION OF THE SITE DOES NOT ALLOW THE USER TO CONTACT A HEALTH PROFESSIONAL TO RECEIVE PERSONALIZED ADVICE OR A MEDICAL CONSULTATION.</p>
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNING:</strong> THE USER IS ALERTED TO THE FACT THAT THE CONTACT SECTION OF THE SITE DOES NOT ALLOW THE USER TO CONTACT A HEALTH PROFESSIONAL TO RECEIVE PERSONALIZED ADVICE OR A MEDICAL CONSULTATION.</p>
 
-        <h3>Obligations and Responsibility</h3>
-        <p>Each User remains fully and personally responsible for the use of the Site and all the information he communicates via the Site under the conditions of common law.</p>
-        <p>The User remains solely responsible for the use he makes of the Content and Services to which the Site gives him access and undertakes to validate the suitability of the Site, its Services and its Content for his own needs.</p>
-        <p>Each User agrees to use the Site:</p>
-        <ul>
-          <li>in compliance with the laws, regulations and rights of third parties, including intellectual property rights;</li>
-          <li>fairly and in accordance with its purpose.</li>
-        </ul>
-        <p>Docnote is bound by an obligation of means in connection with the provision of the Site, the Services and Content provided within the limits defined in the Terms and will make its best efforts to ensure that the Site is accessible to the User at all times. As a result, Docnote is liable only for direct and foreseeable damages related to the use of the Site, its Services and Contents, excluding acts, services rendered and/or decisions made vis-&agrave;-vis the User from his registration on the Site.</p>
-        <p>As a result, Docnote cannot be held responsible for the direct and indirect consequences of the decisions that the User will take.</p>
-        <p>Furthermore, each User acknowledges that Docnote cannot be held responsible for any material or immaterial damage, direct or indirect, whatever the causes, including any damage that may be caused by the possible spread of viruses, by computer fraud, due to the constraints and limitations of the Internet network or the loss, deterioration or alteration of files or the consequences resulting from:</p>
-        <ul>
-          <li>his use of the Site, its Services, its Content and functionalities and/or the interpretation of its Content;</li>
-          <li>his inability to access the Site, Services and Content.</li>
-        </ul>
-        <p>By exception to the foregoing, access to the Site will be suspended for the duration of the technical operations necessary for its updating, development and maintenance, operations of which the User may be informed on the Site's home page. Access to the Site will also be suspended in case of force majeure as described in the article in accordance with the article "Force majeure" of the Terms.</p>
-        <p>These periods of suspension of access to the Site, whatever their causes and duration, will not entitle the User to any compensation.</p>
+          <h3>Obligations and Responsibility</h3>
+          <p>Each User remains fully and personally responsible for the use of the Site and all the information he communicates via the Site under the conditions of common law.</p>
+          <p>The User remains solely responsible for the use he makes of the Content and Services to which the Site gives him access and undertakes to validate the suitability of the Site, its Services and its Content for his own needs.</p>
+          <p>Each User agrees to use the Site:</p>
+          <ul>
+            <li>in compliance with the laws, regulations and rights of third parties, including intellectual property rights;</li>
+            <li>fairly and in accordance with its purpose.</li>
+          </ul>
+          <p>Docnote is bound by an obligation of means in connection with the provision of the Site, the Services and Content provided within the limits defined in the Terms and will make its best efforts to ensure that the Site is accessible to the User at all times. As a result, Docnote is liable only for direct and foreseeable damages related to the use of the Site, its Services and Contents, excluding acts, services rendered and/or decisions made vis-&agrave;-vis the User from his registration on the Site.</p>
+          <p>As a result, Docnote cannot be held responsible for the direct and indirect consequences of the decisions that the User will take.</p>
+          <p>Furthermore, each User acknowledges that Docnote cannot be held responsible for any material or immaterial damage, direct or indirect, whatever the causes, including any damage that may be caused by the possible spread of viruses, by computer fraud, due to the constraints and limitations of the Internet network or the loss, deterioration or alteration of files or the consequences resulting from:</p>
+          <ul>
+            <li>his use of the Site, its Services, its Content and functionalities and/or the interpretation of its Content;</li>
+            <li>his inability to access the Site, Services and Content.</li>
+          </ul>
+          <p>By exception to the foregoing, access to the Site will be suspended for the duration of the technical operations necessary for its updating, development and maintenance, operations of which the User may be informed on the Site's home page. Access to the Site will also be suspended in case of force majeure as described in the article in accordance with the article "Force majeure" of the Terms.</p>
+          <p>These periods of suspension of access to the Site, whatever their causes and duration, will not entitle the User to any compensation.</p>
 
-        <h3>Intellectual property</h3>
-        <p>Docnote holds the intellectual property rights to the Content and Services on the Site, with the exception of the information and content provided by the Users for whom they are the owners and responsible.</p>
-        <p>The use of the Site in no way confers on the User a right of ownership over the Site, its Services and Content.</p>
-        <p>All the Site Content and Services, including but not limited to, the domain name, trademarks, texts, graphics, photographs, drawings, sounds, images, audio and video, but also the tree structure, the navigation plan, the design and organization of its headings, their titles, existing or future, is protected by intellectual property rights, held or claimed by Docnote, with the authorization of the holders of those rights, where applicable.</p>
-        <p>Any use, reproduction, copy, distribution of all or part of the Content and Services of the Site by the User for a use other than private or other than the use of the Site is prohibited. This right of use is non-transferable and non-exclusive.</p>
-        <p>Unless expressly authorized in advance by Docnote, the User is prohibited from any reproduction, representation and use other than those referred to above and in particular:</p>
-        <ul>
-          <li>any adaptation, reproduction, representation, making available to the public at its request or not, distribution, rebroadcasting in any form whatsoever, in whole or in part, free of charge or for a fee, of all or part of the works, services, and of all elements protected or likely to be protected by intellectual property rights reproduced within the Site;</li>
-          <li>any link, access, modification, addition, deletion related to the Site. Any form of use of the Content or the Services or the Site in fraud of Docnote's rights would constitute an infringement sanctioned by the Intellectual Property Code, likely to expose the perpetrators of these acts to civil and criminal lawsuits.</li>
-        </ul>
-        <p>The following are also prohibited:</p>
-        <ul>
-          <li>any commercial use in whole or in part of the Site;</li>
-          <li>any collective use that creates or is likely to create an illegitimate obstacle to the exploitation of the Site.</li>
-        </ul>
-        <p>Docnote reserves the right to take any measures it deems appropriate to prevent or put an end to the infringement of its intellectual property rights or the intellectual property rights of third parties, without being held liable for these measures.</p>
+          <h3>Intellectual property</h3>
+          <p>Docnote holds the intellectual property rights to the Content and Services on the Site, with the exception of the information and content provided by the Users for whom they are the owners and responsible.</p>
+          <p>The use of the Site in no way confers on the User a right of ownership over the Site, its Services and Content.</p>
+          <p>All the Site Content and Services, including but not limited to, the domain name, trademarks, texts, graphics, photographs, drawings, sounds, images, audio and video, but also the tree structure, the navigation plan, the design and organization of its headings, their titles, existing or future, is protected by intellectual property rights, held or claimed by Docnote, with the authorization of the holders of those rights, where applicable.</p>
+          <p>Any use, reproduction, copy, distribution of all or part of the Content and Services of the Site by the User for a use other than private or other than the use of the Site is prohibited. This right of use is non-transferable and non-exclusive.</p>
+          <p>Unless expressly authorized in advance by Docnote, the User is prohibited from any reproduction, representation and use other than those referred to above and in particular:</p>
+          <ul>
+            <li>any adaptation, reproduction, representation, making available to the public at its request or not, distribution, rebroadcasting in any form whatsoever, in whole or in part, free of charge or for a fee, of all or part of the works, services, and of all elements protected or likely to be protected by intellectual property rights reproduced within the Site;</li>
+            <li>any link, access, modification, addition, deletion related to the Site. Any form of use of the Content or the Services or the Site in fraud of Docnote's rights would constitute an infringement sanctioned by the Intellectual Property Code, likely to expose the perpetrators of these acts to civil and criminal lawsuits.</li>
+          </ul>
+          <p>The following are also prohibited:</p>
+          <ul>
+            <li>any commercial use in whole or in part of the Site;</li>
+            <li>any collective use that creates or is likely to create an illegitimate obstacle to the exploitation of the Site.</li>
+          </ul>
+          <p>Docnote reserves the right to take any measures it deems appropriate to prevent or put an end to the infringement of its intellectual property rights or the intellectual property rights of third parties, without being held liable for these measures.</p>
 
-        <h3>Protection of personal data</h3>
-        <p>In accordance with the Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and the free movement of such data &ndash; hereinafter "Regulations"), personal data concerning the User (including information on the civil status and personal life data) are collected and processed in the context of access to and use of the Site and its Services.</p>
-        <p>Information concerning the processing of personal data is provided in the User-accepted Privacy Policy.</p>
+          <h3>Protection of personal data</h3>
+          <p>In accordance with the Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and the free movement of such data &ndash; hereinafter "Regulations"), personal data concerning the User (including information on the civil status and personal life data) are collected and processed in the context of access to and use of the Site and its Services.</p>
+          <p>Information concerning the processing of personal data is provided in the User-accepted Privacy Policy.</p>
 
-        <h3>Linking to the Site</h3>
-        <h4>Links from the Site</h4>
-        <p>Docnote does not check or select the content and websites that may be linked to the Site and is in no way responsible for the content of the sites to which links are made, including the sites of the partners that are published under their exclusive responsibility for what concerns them.</p>
-        <p>Their presence does not imply in any way that Docnote selects, qualifies, certifies, endorses or validates their content or accepts any liability for the content or use of these third-party sites, including those of partners.</p>
-        <p>Each User accesses third-party sites under its sole and exclusive responsibility, including when links have been offered from the Site.</p>
+          <h3>Linking to the Site</h3>
+          <h4>Links from the Site</h4>
+          <p>Docnote does not check or select the content and websites that may be linked to the Site and is in no way responsible for the content of the sites to which links are made, including the sites of the partners that are published under their exclusive responsibility for what concerns them.</p>
+          <p>Their presence does not imply in any way that Docnote selects, qualifies, certifies, endorses or validates their content or accepts any liability for the content or use of these third-party sites, including those of partners.</p>
+          <p>Each User accesses third-party sites under its sole and exclusive responsibility, including when links have been offered from the Site.</p>
 
-        <h4>Links to the Site</h4>
-        <p>Any implementation of a link to the Site requires the express prior permission of Docnote which can be requested at the following email address: <a href="mailto:contact@docnote.ch">contact@docnote.ch</a></p>
+          <h4>Links to the Site</h4>
+          <p>Any implementation of a link to the Site requires the express prior permission of Docnote which can be requested at the following email address: <a href="mailto:contact@docnote.ch">contact@docnote.ch</a></p>
 
-        <h3>Law and jurisdiction</h3>
-        <p>The Terms shall be executed and interpreted in accordance with Swiss law. In the absence of an amicable settlement, any dispute relating to the Site or in relation to its use will be submitted to the exclusive jurisdiction of the courts in Switzerland, regardless of the User's place of residence.</p>
-      </div>
+          <h3>Law and jurisdiction</h3>
+          <p>The Terms shall be executed and interpreted in accordance with Swiss law. In the absence of an amicable settlement, any dispute relating to the Site or in relation to its use will be submitted to the exclusive jurisdiction of the courts in Switzerland, regardless of the User's place of residence.</p>
+        </div>
+      )}
+
+      {locale === 'fr' && (
+        <div class="terms-content">
+          <p>Les conditions g&eacute;n&eacute;rales d'utilisation (ci-apr&egrave;s les &laquo;&nbsp;CGU&nbsp;&raquo;) ont pour objet de r&eacute;gir l'utilisation du site internet (docnote.ch) (ci-apr&egrave;s &laquo;&nbsp;le Site&nbsp;&raquo;), de ses Services et Contenus par tout Utilisateur, ainsi que les droits et obligations respectifs des Utilisateurs et de Docnote.</p>
+
+          <h3>Mentions l&eacute;gales &ndash; &Eacute;diteur</h3>
+
+          <h3>Accord &ndash; Entr&eacute;e en vigueur &ndash; Dur&eacute;e</h3>
+          <p>Toute utilisation du site internet est soumise aux conditions suivantes&nbsp;:</p>
+          <ul>
+            <li>l'acceptation pr&eacute;alable et expresse des CGU du Site par chaque Utilisateur&nbsp;;</li>
+            <li>la lecture pr&eacute;alable par chaque Utilisateur de la Politique de confidentialit&eacute; applicable &agrave; la collecte et au traitement de ses donn&eacute;es personnelles dans le cadre de l'utilisation du Site.</li>
+          </ul>
+          <p>L'Utilisateur reconna&icirc;t et accepte que son acceptation expresse des pr&eacute;sentes CGU se mat&eacute;rialise d&egrave;s sa premi&egrave;re connexion au Site.</p>
+          <p>Docnote se r&eacute;serve le droit de modifier &agrave; tout moment le Site, les Services et Contenus, les CGU, ou les r&egrave;gles relatives &agrave; l'utilisation du Site, de ses Services et Contenus.</p>
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>AVERTISSEMENT&nbsp;:</strong> L'UTILISATEUR RECONNA&Icirc;T AVOIR LU ET COMPRIS LES CGU ET LA POLITIQUE DE CONFIDENTIALIT&Eacute;, LES ACCEPTE SANS RESTRICTION NI R&Eacute;SERVE, ET S'ENGAGE &Agrave; LES RESPECTER DE MANI&Egrave;RE INCONDITIONNELLE ET INT&Eacute;GRALE.</p>
+
+          <h3>D&eacute;finitions</h3>
+          <p><strong>&laquo;&nbsp;Contenu&nbsp;&raquo;</strong>&nbsp;: d&eacute;signe l'ensemble des textes, photographies, illustrations, vid&eacute;os, fonctionnalit&eacute;s, donn&eacute;es existant au sein du Site&nbsp;;</p>
+          <p><strong>&laquo;&nbsp;Services&nbsp;&raquo;</strong>&nbsp;: d&eacute;signe les diff&eacute;rentes fonctionnalit&eacute;s et rubriques accessibles depuis le Site et notamment les rubriques d'information sur Docnote, ses Produits et Solutions, la rubrique concernant les carri&egrave;res et le recrutement, l'acc&egrave;s au Blog ainsi que les rubriques permettant de contacter Docnote pour obtenir des informations ou organiser des d&eacute;monstrations des produits et services de Docnote. Cette liste de Services n'est pas exhaustive et peut &ecirc;tre modifi&eacute;e de temps &agrave; autre &agrave; la discr&eacute;tion de Docnote&nbsp;;</p>
+          <p><strong>&laquo;&nbsp;Utilisateur&nbsp;&raquo;</strong>&nbsp;: d&eacute;signe tout Utilisateur du Site qui acc&egrave;de &agrave; ses Contenus et Services.</p>
+
+          <h3>Description du Site</h3>
+          <p>Le Site est un espace num&eacute;rique &ndash; accessible &agrave; l'adresse (docnote.ch) &ndash; permettant l'acc&egrave;s &agrave; l'ensemble des Contenus et Services.</p>
+          <p>Le Site informe l'Utilisateur des produits et services propos&eacute;s par DOCNOTE.</p>
+          <p>Le Site peut donner aux Utilisateurs acc&egrave;s &agrave; des informations g&eacute;n&eacute;rales li&eacute;es entre autres &agrave; la sant&eacute; (informations dans le domaine de la sant&eacute;, y compris des articles sur un sujet particulier, des actualit&eacute;s, la sant&eacute; publique, des articles publi&eacute;s sur le Blog, des informations sur Docnote).</p>
+
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>AVERTISSEMENT&nbsp;:</strong> TOUTES LES INFORMATIONS MISES &Agrave; DISPOSITION DES UTILISATEURS VIA LE SITE SONT FOURNIES &Agrave; TITRE INDICATIF. LES INFORMATIONS FOURNIES TENDENT &Agrave; &Ecirc;TRE SCIENTIFIQUEMENT EXACTES AU MOMENT DE LEUR PUBLICATION, FIABLES ET PERTINENTES.</p>
+
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800">MALGR&Eacute; LE SOIN APPORT&Eacute; AU TRAITEMENT DE L'INFORMATION, DOCNOTE D&Eacute;CLINE TOUTE RESPONSABILIT&Eacute; EN CAS D'ERREURS OU D'OMISSIONS RELATIVES AUX INFORMATIONS FOURNIES SUR LE SITE.</p>
+
+          <p>Le Site permet &agrave; l'Utilisateur de saisir son adresse e-mail afin d'&ecirc;tre inform&eacute; des derni&egrave;res actualit&eacute;s relatives aux services propos&eacute;s par DOCNOTE et/ou d'entrer en contact avec l'&eacute;quipe pour organiser une d&eacute;monstration des produits propos&eacute;s par Docnote, dans le cadre d'une candidature &agrave; un emploi ou de toute autre possibilit&eacute; de collaboration.</p>
+
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>AVERTISSEMENT&nbsp;:</strong> L'UTILISATEUR EST ALERT&Eacute; DU FAIT QUE LA RUBRIQUE DE CONTACT DU SITE NE LUI PERMET PAS DE CONTACTER UN PROFESSIONNEL DE SANT&Eacute; POUR RECEVOIR DES CONSEILS PERSONNALIS&Eacute;S OU UNE CONSULTATION M&Eacute;DICALE.</p>
+
+          <h3>Obligations et Responsabilit&eacute;</h3>
+          <p>Chaque Utilisateur reste pleinement et personnellement responsable de l'utilisation du Site et de toutes les informations qu'il communique via le Site dans les conditions de droit commun.</p>
+          <p>L'Utilisateur reste seul responsable de l'utilisation qu'il fait des Contenus et Services auxquels le Site lui donne acc&egrave;s et s'engage &agrave; valider l'ad&eacute;quation du Site, de ses Services et de ses Contenus &agrave; ses propres besoins.</p>
+          <p>Chaque Utilisateur s'engage &agrave; utiliser le Site&nbsp;:</p>
+          <ul>
+            <li>dans le respect des lois, r&eacute;glementations et droits des tiers, y compris les droits de propri&eacute;t&eacute; intellectuelle&nbsp;;</li>
+            <li>de mani&egrave;re loyale et conform&eacute;ment &agrave; sa finalit&eacute;.</li>
+          </ul>
+          <p>Docnote est tenu d'une obligation de moyens dans le cadre de la mise &agrave; disposition du Site, des Services et Contenus fournis dans les limites d&eacute;finies dans les CGU et mettra tout en &oelig;uvre pour que le Site soit accessible &agrave; l'Utilisateur &agrave; tout moment. En cons&eacute;quence, Docnote n'est responsable que des dommages directs et pr&eacute;visibles li&eacute;s &agrave; l'utilisation du Site, de ses Services et Contenus, &agrave; l'exclusion des actes, services rendus et/ou d&eacute;cisions prises vis-&agrave;-vis de l'Utilisateur &agrave; compter de son inscription sur le Site.</p>
+          <p>En cons&eacute;quence, Docnote ne saurait &ecirc;tre tenu responsable des cons&eacute;quences directes et indirectes des d&eacute;cisions que l'Utilisateur sera amen&eacute; &agrave; prendre.</p>
+          <p>En outre, chaque Utilisateur reconna&icirc;t que Docnote ne saurait &ecirc;tre tenu responsable de tout dommage mat&eacute;riel ou immat&eacute;riel, direct ou indirect, quelles qu'en soient les causes, y compris tout dommage pouvant &ecirc;tre caus&eacute; par la propagation &eacute;ventuelle de virus, par des actes de fraude informatique, en raison des contraintes et limitations du r&eacute;seau Internet ou de la perte, de la d&eacute;t&eacute;rioration ou de l'alt&eacute;ration de fichiers ou des cons&eacute;quences r&eacute;sultant de&nbsp;:</p>
+          <ul>
+            <li>son utilisation du Site, de ses Services, de ses Contenus et fonctionnalit&eacute;s et/ou de l'interpr&eacute;tation de ses Contenus&nbsp;;</li>
+            <li>son impossibilit&eacute; d'acc&eacute;der au Site, aux Services et aux Contenus.</li>
+          </ul>
+          <p>Par exception &agrave; ce qui pr&eacute;c&egrave;de, l'acc&egrave;s au Site sera suspendu pendant la dur&eacute;e des op&eacute;rations techniques n&eacute;cessaires &agrave; sa mise &agrave; jour, son d&eacute;veloppement et sa maintenance, op&eacute;rations dont l'Utilisateur pourra &ecirc;tre inform&eacute; sur la page d'accueil du Site. L'acc&egrave;s au Site sera &eacute;galement suspendu en cas de force majeure tel que d&eacute;crit dans l'article conform&eacute;ment &agrave; l'article &laquo;&nbsp;Force majeure&nbsp;&raquo; des CGU.</p>
+          <p>Ces p&eacute;riodes de suspension d'acc&egrave;s au Site, quelles qu'en soient les causes et la dur&eacute;e, n'ouvriront droit &agrave; aucune indemnisation au profit de l'Utilisateur.</p>
+
+          <h3>Propri&eacute;t&eacute; intellectuelle</h3>
+          <p>Docnote d&eacute;tient les droits de propri&eacute;t&eacute; intellectuelle sur les Contenus et Services du Site, &agrave; l'exception des informations et contenus fournis par les Utilisateurs dont ils sont les propri&eacute;taires et responsables.</p>
+          <p>L'utilisation du Site ne conf&egrave;re en aucun cas &agrave; l'Utilisateur un droit de propri&eacute;t&eacute; sur le Site, ses Services et Contenus.</p>
+          <p>L'ensemble des Contenus et Services du Site, y compris mais sans s'y limiter, le nom de domaine, les marques, les textes, graphiques, photographies, dessins, sons, images, audio et vid&eacute;o, ainsi que l'arborescence, le plan de navigation, la conception et l'organisation de ses rubriques, leurs titres, existants ou futurs, est prot&eacute;g&eacute; par des droits de propri&eacute;t&eacute; intellectuelle, d&eacute;tenus ou revendiqu&eacute;s par Docnote, avec l'autorisation des titulaires de ces droits, le cas &eacute;ch&eacute;ant.</p>
+          <p>Toute utilisation, reproduction, copie, distribution de tout ou partie des Contenus et Services du Site par l'Utilisateur pour un usage autre que priv&eacute; ou autre que l'utilisation du Site est interdite. Ce droit d'utilisation est incessible et non exclusif.</p>
+          <p>Sauf autorisation expresse pr&eacute;alable de Docnote, il est interdit &agrave; l'Utilisateur toute reproduction, repr&eacute;sentation et utilisation autres que celles vis&eacute;es ci-dessus et notamment&nbsp;:</p>
+          <ul>
+            <li>toute adaptation, reproduction, repr&eacute;sentation, mise &agrave; disposition du public &agrave; sa demande ou non, distribution, rediffusion sous quelque forme que ce soit, en tout ou en partie, &agrave; titre gratuit ou on&eacute;reux, de tout ou partie des &oelig;uvres, services, et de tous &eacute;l&eacute;ments prot&eacute;g&eacute;s ou susceptibles d'&ecirc;tre prot&eacute;g&eacute;s par des droits de propri&eacute;t&eacute; intellectuelle reproduits au sein du Site&nbsp;;</li>
+            <li>tout lien, acc&egrave;s, modification, ajout, suppression relatif au Site. Toute forme d'utilisation du Contenu ou des Services ou du Site en fraude des droits de Docnote constituerait une contrefa&ccedil;on sanctionn&eacute;e par le Code de la propri&eacute;t&eacute; intellectuelle, susceptible d'exposer ses auteurs &agrave; des poursuites civiles et p&eacute;nales.</li>
+          </ul>
+          <p>Sont &eacute;galement interdits&nbsp;:</p>
+          <ul>
+            <li>toute utilisation commerciale en tout ou en partie du Site&nbsp;;</li>
+            <li>toute utilisation collective cr&eacute;ant ou susceptible de cr&eacute;er un obstacle ill&eacute;gitime &agrave; l'exploitation du Site.</li>
+          </ul>
+          <p>Docnote se r&eacute;serve le droit de prendre toute mesure qu'il juge appropri&eacute;e pour pr&eacute;venir ou mettre fin &agrave; l'atteinte &agrave; ses droits de propri&eacute;t&eacute; intellectuelle ou aux droits de propri&eacute;t&eacute; intellectuelle de tiers, sans que sa responsabilit&eacute; ne puisse &ecirc;tre engag&eacute;e &agrave; ce titre.</p>
+
+          <h3>Protection des donn&eacute;es personnelles</h3>
+          <p>Conform&eacute;ment au R&egrave;glement (UE) 2016/679 du Parlement europ&eacute;en et du Conseil du 27 avril 2016 relatif &agrave; la protection des personnes physiques &agrave; l'&eacute;gard du traitement des donn&eacute;es &agrave; caract&egrave;re personnel et &agrave; la libre circulation de ces donn&eacute;es &ndash; ci-apr&egrave;s le &laquo;&nbsp;R&egrave;glement&nbsp;&raquo;), les donn&eacute;es &agrave; caract&egrave;re personnel concernant l'Utilisateur (y compris les informations relatives &agrave; l'&eacute;tat civil et les donn&eacute;es de la vie personnelle) sont collect&eacute;es et trait&eacute;es dans le cadre de l'acc&egrave;s et de l'utilisation du Site et de ses Services.</p>
+          <p>Les informations relatives au traitement des donn&eacute;es personnelles sont fournies dans la Politique de confidentialit&eacute; accept&eacute;e par l'Utilisateur.</p>
+
+          <h3>Liens vers le Site</h3>
+          <h4>Liens depuis le Site</h4>
+          <p>Docnote ne v&eacute;rifie ni ne s&eacute;lectionne le contenu et les sites internet susceptibles d'&ecirc;tre reli&eacute;s au Site et n'est en aucun cas responsable du contenu des sites vers lesquels des liens sont &eacute;tablis, y compris les sites des partenaires qui sont publi&eacute;s sous leur responsabilit&eacute; exclusive pour ce qui les concerne.</p>
+          <p>Leur pr&eacute;sence n'implique en aucune mani&egrave;re que Docnote s&eacute;lectionne, qualifie, certifie, approuve ou valide leur contenu ou accepte une quelconque responsabilit&eacute; quant au contenu ou &agrave; l'utilisation de ces sites tiers, y compris ceux des partenaires.</p>
+          <p>Chaque Utilisateur acc&egrave;de aux sites tiers sous sa seule et exclusive responsabilit&eacute;, y compris lorsque des liens lui ont &eacute;t&eacute; propos&eacute;s depuis le Site.</p>
+
+          <h4>Liens vers le Site</h4>
+          <p>Toute mise en place d'un lien vers le Site n&eacute;cessite l'autorisation expresse et pr&eacute;alable de Docnote qui peut &ecirc;tre demand&eacute;e &agrave; l'adresse e-mail suivante&nbsp;: <a href="mailto:contact@docnote.ch">contact@docnote.ch</a></p>
+
+          <h3>Droit applicable et juridiction comp&eacute;tente</h3>
+          <p>Les CGU sont r&eacute;gies et interpr&eacute;t&eacute;es conform&eacute;ment au droit suisse. En l'absence de r&egrave;glement amiable, tout litige relatif au Site ou &agrave; son utilisation sera soumis &agrave; la comp&eacute;tence exclusive des tribunaux de Suisse, quel que soit le lieu de r&eacute;sidence de l'Utilisateur.</p>
+        </div>
+      )}
+
+      {locale === 'de' && (
+        <div class="terms-content">
+          <p>Die Allgemeinen Gesch&auml;ftsbedingungen (nachfolgend die &laquo;&nbsp;AGB&nbsp;&raquo;) regeln die Nutzung der Website (docnote.ch) (nachfolgend &laquo;&nbsp;die Website&nbsp;&raquo;), ihrer Dienste und Inhalte durch jeden Nutzer sowie die jeweiligen Rechte und Pflichten der Nutzer und von Docnote.</p>
+
+          <h3>Impressum &ndash; Herausgeber</h3>
+
+          <h3>Vereinbarung &ndash; Inkrafttreten &ndash; Dauer</h3>
+          <p>Jede Nutzung der Website unterliegt den folgenden Bedingungen:</p>
+          <ul>
+            <li>die vorherige ausdr&uuml;ckliche Annahme der AGB der Website durch jeden Nutzer;</li>
+            <li>die vorherige Kenntnisnahme der Datenschutzerkl&auml;rung durch jeden Nutzer, die f&uuml;r die Erhebung und Verarbeitung seiner personenbezogenen Daten im Zusammenhang mit der Nutzung der Website gilt.</li>
+          </ul>
+          <p>Der Nutzer erkennt an und akzeptiert, dass seine ausdr&uuml;ckliche Annahme dieser AGB mit seiner ersten Verbindung zur Website wirksam wird.</p>
+          <p>Docnote beh&auml;lt sich das Recht vor, die Website, die Dienste und Inhalte, die AGB oder die Regeln zur Nutzung der Website, ihrer Dienste und Inhalte jederzeit zu &auml;ndern.</p>
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNUNG:</strong> DER NUTZER BEST&Auml;TIGT, DIE AGB UND DIE DATENSCHUTZERKL&Auml;RUNG GELESEN UND VERSTANDEN ZU HABEN, DIESE OHNE EINSCHR&Auml;NKUNG ODER VORBEHALT ZU AKZEPTIEREN UND SICH ZU DEREN BEDINGUNGSLOSER UND VOLLST&Auml;NDIGER EINHALTUNG ZU VERPFLICHTEN.</p>
+
+          <h3>Definitionen</h3>
+          <p><strong>&laquo;&nbsp;Inhalt&nbsp;&raquo;</strong>: bezeichnet s&auml;mtliche Texte, Fotografien, Illustrationen, Videos, Funktionalit&auml;ten und Daten, die auf der Website vorhanden sind;</p>
+          <p><strong>&laquo;&nbsp;Dienste&nbsp;&raquo;</strong>: bezeichnet die verschiedenen Funktionalit&auml;ten und Rubriken, die &uuml;ber die Website zug&auml;nglich sind, insbesondere die Informationsrubriken &uuml;ber Docnote, seine Produkte und L&ouml;sungen, die Rubrik zu Karriere und Personalgewinnung, den Zugang zum Blog sowie die Rubriken zur Kontaktaufnahme mit Docnote zwecks Information oder Organisation von Vorf&uuml;hrungen der Produkte und Dienste von Docnote. Diese Auflistung der Dienste ist nicht abschliessend und kann von Docnote nach eigenem Ermessen jederzeit ge&auml;ndert werden;</p>
+          <p><strong>&laquo;&nbsp;Nutzer&nbsp;&raquo;</strong>: bezeichnet jeden Nutzer der Website, der auf deren Inhalte und Dienste zugreift.</p>
+
+          <h3>Beschreibung der Website</h3>
+          <p>Die Website ist ein digitaler Raum &ndash; erreichbar unter (docnote.ch) &ndash; der den Zugang zu allen Inhalten und Diensten erm&ouml;glicht.</p>
+          <p>Die Website informiert den Nutzer &uuml;ber die von DOCNOTE angebotenen Produkte und Dienstleistungen.</p>
+          <p>Die Website kann Nutzern Zugang zu allgemeinen Informationen gew&auml;hren, die unter anderem mit der Gesundheit zusammenh&auml;ngen (Informationen im Bereich Gesundheit, einschliesslich Artikel zu bestimmten Themen, Nachrichten, &ouml;ffentliche Gesundheit, im Blog ver&ouml;ffentlichte Artikel, Informationen &uuml;ber Docnote).</p>
+
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNUNG:</strong> ALLE DEN NUTZERN &Uuml;BER DIE WEBSITE ZUR VERF&Uuml;GUNG GESTELLTEN INFORMATIONEN WERDEN ZU ORIENTIERUNGSZWECKEN BEREITGESTELLT. DIE BEREITGESTELLTEN INFORMATIONEN SIND ZUM ZEITPUNKT DER VER&Ouml;FFENTLICHUNG NACH BESTEM WISSEN WISSENSCHAFTLICH KORREKT, ZUVERL&Auml;SSIG UND RELEVANT.</p>
+
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800">TROTZ DER BEI DER VERARBEITUNG DER INFORMATIONEN ANGEWANDTEN SORGFALT LEHNT DOCNOTE JEDE HAFTUNG F&Uuml;R FEHLER ODER AUSLASSUNGEN IN BEZUG AUF DIE AUF DER WEBSITE BEREITGESTELLTEN INFORMATIONEN AB.</p>
+
+          <p>Die Website erm&ouml;glicht es dem Nutzer, seine E-Mail-Adresse einzugeben, um &uuml;ber die neuesten Nachrichten zu den von DOCNOTE angebotenen Dienstleistungen informiert zu werden und/oder mit dem Team in Kontakt zu treten, um eine Vorf&uuml;hrung der von Docnote angebotenen Produkte zu organisieren, im Rahmen einer Stellenbewerbung oder jeder anderen M&ouml;glichkeit der Zusammenarbeit.</p>
+
+          <p class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800"><strong>WARNUNG:</strong> DER NUTZER WIRD DARAUF HINGEWIESEN, DASS DER KONTAKTBEREICH DER WEBSITE ES IHM NICHT ERM&Ouml;GLICHT, EINEN MEDIZINISCHEN FACHMANN ZU KONTAKTIEREN, UM PERSONALISIERTE BERATUNG ODER EINE &Auml;RZTLICHE KONSULTATION ZU ERHALTEN.</p>
+
+          <h3>Pflichten und Haftung</h3>
+          <p>Jeder Nutzer bleibt im Rahmen des allgemeinen Rechts vollumf&auml;nglich und pers&ouml;nlich verantwortlich f&uuml;r die Nutzung der Website und s&auml;mtliche Informationen, die er &uuml;ber die Website &uuml;bermittelt.</p>
+          <p>Der Nutzer bleibt allein verantwortlich f&uuml;r die Nutzung der Inhalte und Dienste, zu denen ihm die Website Zugang gew&auml;hrt, und verpflichtet sich, die Eignung der Website, ihrer Dienste und Inhalte f&uuml;r seine eigenen Bed&uuml;rfnisse zu &uuml;berpr&uuml;fen.</p>
+          <p>Jeder Nutzer verpflichtet sich, die Website zu nutzen:</p>
+          <ul>
+            <li>unter Einhaltung der Gesetze, Vorschriften und Rechte Dritter, einschliesslich der Rechte des geistigen Eigentums;</li>
+            <li>redlich und im Einklang mit dem vorgesehenen Zweck.</li>
+          </ul>
+          <p>Docnote unterliegt im Rahmen der Bereitstellung der Website, der Dienste und Inhalte einer Sorgfaltspflicht innerhalb der in den AGB definierten Grenzen und wird alle Anstrengungen unternehmen, um sicherzustellen, dass die Website dem Nutzer jederzeit zug&auml;nglich ist. Dementsprechend haftet Docnote nur f&uuml;r direkte und vorhersehbare Sch&auml;den im Zusammenhang mit der Nutzung der Website, ihrer Dienste und Inhalte, unter Ausschluss von Handlungen, erbrachten Leistungen und/oder Entscheidungen gegen&uuml;ber dem Nutzer ab seiner Registrierung auf der Website.</p>
+          <p>Dementsprechend kann Docnote nicht f&uuml;r die direkten und indirekten Folgen der Entscheidungen haftbar gemacht werden, die der Nutzer treffen wird.</p>
+          <p>Dar&uuml;ber hinaus erkennt jeder Nutzer an, dass Docnote nicht f&uuml;r materielle oder immaterielle, direkte oder indirekte Sch&auml;den haftbar gemacht werden kann, ungeachtet der Ursachen, einschliesslich Sch&auml;den, die durch die m&ouml;gliche Verbreitung von Viren, durch Computerbetrug, aufgrund der Einschr&auml;nkungen und Begrenzungen des Internetnetzwerks oder durch den Verlust, die Besch&auml;digung oder Ver&auml;nderung von Dateien verursacht werden k&ouml;nnen, oder der Folgen, die sich ergeben aus:</p>
+          <ul>
+            <li>seiner Nutzung der Website, ihrer Dienste, Inhalte und Funktionalit&auml;ten und/oder der Auslegung ihrer Inhalte;</li>
+            <li>seiner Unm&ouml;glichkeit, auf die Website, die Dienste und Inhalte zuzugreifen.</li>
+          </ul>
+          <p>Abweichend von den vorstehenden Bestimmungen wird der Zugang zur Website f&uuml;r die Dauer der f&uuml;r ihre Aktualisierung, Weiterentwicklung und Wartung erforderlichen technischen Arbeiten ausgesetzt, &uuml;ber die der Nutzer auf der Startseite der Website informiert werden kann. Der Zugang zur Website wird auch im Falle h&ouml;herer Gewalt ausgesetzt, wie im Artikel gem&auml;ss dem Artikel &laquo;&nbsp;H&ouml;here Gewalt&nbsp;&raquo; der AGB beschrieben.</p>
+          <p>Diese Zeitr&auml;ume der Aussetzung des Zugangs zur Website, gleich welcher Ursache und Dauer, begr&uuml;nden keinen Entsch&auml;digungsanspruch des Nutzers.</p>
+
+          <h3>Geistiges Eigentum</h3>
+          <p>Docnote besitzt die Rechte am geistigen Eigentum an den Inhalten und Diensten der Website, mit Ausnahme der von den Nutzern bereitgestellten Informationen und Inhalte, f&uuml;r die diese Eigent&uuml;mer und Verantwortliche sind.</p>
+          <p>Die Nutzung der Website verleiht dem Nutzer in keiner Weise ein Eigentumsrecht an der Website, ihren Diensten und Inhalten.</p>
+          <p>S&auml;mtliche Inhalte und Dienste der Website, einschliesslich, aber nicht beschr&auml;nkt auf den Domainnamen, Marken, Texte, Grafiken, Fotografien, Zeichnungen, T&ouml;ne, Bilder, Audio- und Videoinhalte, aber auch die Baumstruktur, den Navigationsplan, die Gestaltung und Organisation ihrer Rubriken, ihre Titel, bestehend oder zuk&uuml;nftig, sind durch Rechte des geistigen Eigentums gesch&uuml;tzt, die von Docnote gehalten oder beansprucht werden, gegebenenfalls mit der Genehmigung der Inhaber dieser Rechte.</p>
+          <p>Jede Nutzung, Vervielf&auml;ltigung, Kopie, Verbreitung der Inhalte und Dienste der Website ganz oder teilweise durch den Nutzer f&uuml;r einen anderen als den privaten Gebrauch oder die Nutzung der Website ist untersagt. Dieses Nutzungsrecht ist nicht &uuml;bertragbar und nicht exklusiv.</p>
+          <p>Sofern nicht von Docnote ausdr&uuml;cklich vorab genehmigt, ist dem Nutzer jede Vervielf&auml;ltigung, Darstellung und Nutzung untersagt, die &uuml;ber die oben genannten hinausgeht, insbesondere:</p>
+          <ul>
+            <li>jede Anpassung, Vervielf&auml;ltigung, Darstellung, &ouml;ffentliche Zug&auml;nglichmachung auf Anfrage oder nicht, Verbreitung, Weiterverbreitung in jeglicher Form, ganz oder teilweise, unentgeltlich oder entgeltlich, aller oder eines Teils der Werke, Dienste und aller durch Rechte des geistigen Eigentums gesch&uuml;tzten oder potenziell gesch&uuml;tzten Elemente, die auf der Website wiedergegeben werden;</li>
+            <li>jeder Link, Zugriff, jede &Auml;nderung, Hinzuf&uuml;gung, L&ouml;schung im Zusammenhang mit der Website. Jede Form der Nutzung des Inhalts, der Dienste oder der Website unter Verletzung der Rechte von Docnote stellt eine Rechtsverletzung dar, die nach dem Recht des geistigen Eigentums sanktioniert wird und die T&auml;ter zivil- und strafrechtlichen Verfahren aussetzen kann.</li>
+          </ul>
+          <p>Ebenfalls untersagt sind:</p>
+          <ul>
+            <li>jede kommerzielle Nutzung der Website ganz oder teilweise;</li>
+            <li>jede kollektive Nutzung, die ein unrechtm&auml;ssiges Hindernis f&uuml;r den Betrieb der Website schafft oder schaffen k&ouml;nnte.</li>
+          </ul>
+          <p>Docnote beh&auml;lt sich das Recht vor, alle Massnahmen zu ergreifen, die es f&uuml;r angemessen h&auml;lt, um die Verletzung seiner Rechte am geistigen Eigentum oder der Rechte Dritter am geistigen Eigentum zu verhindern oder zu beenden, ohne daf&uuml;r haftbar gemacht werden zu k&ouml;nnen.</p>
+
+          <h3>Schutz personenbezogener Daten</h3>
+          <p>Gem&auml;ss der Verordnung (EU) 2016/679 des Europ&auml;ischen Parlaments und des Rates vom 27. April 2016 zum Schutz nat&uuml;rlicher Personen bei der Verarbeitung personenbezogener Daten und zum freien Datenverkehr &ndash; nachfolgend &laquo;&nbsp;Verordnung&nbsp;&raquo;) werden personenbezogene Daten des Nutzers (einschliesslich Angaben zum Personenstand und Daten des pers&ouml;nlichen Lebens) im Rahmen des Zugangs zur und der Nutzung der Website und ihrer Dienste erhoben und verarbeitet.</p>
+          <p>Informationen zur Verarbeitung personenbezogener Daten sind in der vom Nutzer akzeptierten Datenschutzerkl&auml;rung enthalten.</p>
+
+          <h3>Verlinkung zur Website</h3>
+          <h4>Links von der Website</h4>
+          <p>Docnote &uuml;berpr&uuml;ft und w&auml;hlt weder die Inhalte noch die Websites aus, die m&ouml;glicherweise mit der Website verlinkt sind, und ist in keiner Weise f&uuml;r den Inhalt der Websites verantwortlich, auf die verlinkt wird, einschliesslich der Websites von Partnern, die unter deren alleiniger Verantwortung ver&ouml;ffentlicht werden, soweit es sie betrifft.</p>
+          <p>Ihre Pr&auml;senz bedeutet in keiner Weise, dass Docnote deren Inhalt ausw&auml;hlt, qualifiziert, zertifiziert, bef&uuml;rwortet oder validiert oder eine Haftung f&uuml;r den Inhalt oder die Nutzung dieser Drittanbieter-Websites &uuml;bernimmt, einschliesslich derjenigen von Partnern.</p>
+          <p>Jeder Nutzer greift auf Drittanbieter-Websites unter seiner alleinigen und ausschliesslichen Verantwortung zu, auch wenn Links von der Website aus angeboten wurden.</p>
+
+          <h4>Links zur Website</h4>
+          <p>Jede Einrichtung eines Links zur Website bedarf der ausdr&uuml;cklichen vorherigen Genehmigung von Docnote, die unter folgender E-Mail-Adresse angefordert werden kann: <a href="mailto:contact@docnote.ch">contact@docnote.ch</a></p>
+
+          <h3>Anwendbares Recht und Gerichtsstand</h3>
+          <p>Die AGB unterliegen dem Schweizer Recht und werden nach diesem ausgelegt. Mangels g&uuml;tlicher Einigung wird jede Streitigkeit im Zusammenhang mit der Website oder ihrer Nutzung der ausschliesslichen Zust&auml;ndigkeit der Gerichte in der Schweiz unterworfen, ungeachtet des Wohnsitzes des Nutzers.</p>
+        </div>
+      )}
     </div>
   </section>
 </Layout>

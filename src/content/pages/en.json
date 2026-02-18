@@ -11,46 +11,94 @@
     },
     "hero": {
         "badge": "AI-Powered Medical Documentation",
-        "title": "The first AI assistant for",
-        "titleHighlight": "hospital workflows",
-        "subtitle": "DocNote automatically captures, transcribes and structures all your clinical work, from patient consultations and ward rounds to operative reports and discharge letters, saving you hours of documentation.",
+        "title": "Medical documentation",
+        "titleHighlight": "simplified by AI",
+        "subtitle": "Built for the complexity of hospital care.",
         "cta": "Start for free",
         "ctaSecondary": "Watch Demo",
         "trustedBy": "Trusted by leading healthcare providers"
     },
+    "soapDemo": {
+        "consultations": "Consultations",
+        "patients": "Patients",
+        "templates": "Templates",
+        "settings": "Settings",
+        "consultationTitle": "Consultation — Patient #1247",
+        "consultationDate": "Today, 14:30 · General Practice",
+        "recording": "Recording",
+        "soapNoteGenerated": "SOAP Note Generated",
+        "soapNote": "SOAP Note",
+        "savedToEHR": "Saved to EHR",
+        "justNow": "Just now",
+        "patientId": "Patient #1247",
+        "generalPractice": "General Practice",
+        "liveTranscript": "Live transcript",
+        "soapS": "Patient reports persistent headache for 3 days, worsening in the evening. Rates pain 6/10, bilateral pressure. Denies nausea or photophobia.",
+        "soapO": "BP 120/80, HR 72, Temp 36.8°C. Alert and oriented. Mild trapezius tenderness bilaterally. CN II-XII intact.",
+        "soapA": "Tension-type headache, likely stress-related. No red flags for secondary headache.",
+        "soapP": "Ibuprofen 400mg PRN. Sleep hygiene counseling. Follow-up in 2 weeks if no improvement.",
+        "phoneSoapS": "Persistent headache 3 days, 6/10, bilateral pressure.",
+        "phoneSoapO": "BP 120/80, HR 72. Trapezius tenderness. CN intact.",
+        "phoneSoapA": "Tension-type headache, stress-related.",
+        "phoneSoapP": "Ibuprofen 400mg PRN. Follow-up 2 wks."
+    },
     "stats": {
         "timeSaved": "Documentation time saved",
         "timeSavedValue": "2+ hours",
+        "timeSavedSuffix": "+ hours",
         "timeSavedDesc": "per day on average",
         "accuracy": "Transcription accuracy",
         "accuracyValue": "99%",
         "accuracyDesc": "medical terminology",
         "doctors": "Active doctors",
-        "doctorsValue": "5,000+",
-        "doctorsDesc": "across Switzerland"
+        "doctorsValue": "1,000+",
+        "doctorsDesc": "across Europe"
     },
     "features": {
-        "title": "Built for modern healthcare",
-        "subtitle": "Everything you need to streamline your medical documentation workflow",
+        "badge": "Features & Benefits",
+        "title": "Adaptable to all administrative tasks",
+        "subtitle": "All the tools you need to speed up your documentation",
         "recording": {
             "title": "Smart Recording",
             "description": "Record consultations with one tap. Our AI understands medical context and filters background noise."
         },
         "transcription": {
             "title": "Accurate Transcription",
-            "description": "Real-time transcription with 99% accuracy for medical terminology in multiple languages."
+            "description": "Real-time transcription with 99% accuracy for medical terminology in multiple languages.",
+            "animLine1": "Patient presents with",
+            "animLine2Pre": "recurring ",
+            "animWrong1": "diyabetis",
+            "animRight1": "diabetes",
+            "animLine2Post": " symptoms,",
+            "animLine3Pre": "elevated ",
+            "animWrong2": "glikemia",
+            "animRight2": "glycemia",
+            "animLine3Post": " levels noted."
         },
         "summaries": {
             "title": "Structured Summaries",
-            "description": "Automatically generate SOAP notes, referral letters, and structured clinical documentation."
+            "description": "Automatically generate medical visit notes, discharge letters, and consultation reports.",
+            "animTitle": "Consultation Summary",
+            "animSection1": "Diagnosis",
+            "animSection2": "Treatment",
+            "animSection3": "Follow-up"
         },
         "integration": {
             "title": "EHR Integration",
             "description": "Seamlessly integrate with your existing Electronic Health Record system."
         },
         "security": {
-            "title": "Swiss Data Security",
-            "description": "Your data stays in Switzerland. HIPAA compliant, ISO 27001 certified."
+            "title": "Data Security",
+            "description": "Your data stays in Switzerland. HIPAA compliant, ISO 27001 certified.",
+            "animLabel1": "Patient",
+            "animLabel2": "DOB",
+            "animLabel3": "Diagnosis",
+            "animLabel4": "Notes",
+            "animValue1": "Marie Dupont",
+            "animValue2": "12.03.1987",
+            "animValue3": "Type 2 diabetes",
+            "animValue4": "HbA1c elevated",
+            "animNoReport": "No report"
         },
         "languages": {
             "title": "Multilingual Support",
@@ -62,12 +110,22 @@
         "subtitle": "From general practice to specialized care"
     },
     "testimonials": {
+        "badge": "Testimonial",
         "title": "Loved by doctors",
-        "subtitle": "See what healthcare professionals say about DocNote"
+        "subtitle": "See what healthcare professionals say about DocNote",
+        "quote1": "DocNote has really changed my day in the emergency department, allowing me to concentrate on my patients and enjoy my consultations once again.",
+        "author1": "Dre Perrot",
+        "role1": "Resident Doctor in Emergency Department",
+        "quote2": "Since I started using DocNote, preparing and following up consultations has become a quick and efficient process.",
+        "author2": "Dr Patel",
+        "role2": "Resident Doctor in General Surgery",
+        "quote3": "I always said I'd pay for a full-time assistant when I became a billionaire, but now I don't even need to be a billionaire.",
+        "author3": "Pr Ris",
+        "role3": "Chief of Colorectal Surgery"
     },
     "cta": {
         "title": "Ready to save 2+ hours daily?",
-        "subtitle": "Join thousands of doctors who have transformed their documentation workflow.",
+        "subtitle": "Join hundreds of doctors who have transformed their documentation workflow.",
         "button": "Start for Free",
         "noCard": "No credit card required"
     },
@@ -88,8 +146,16 @@
         }
     },
     "compliance": {
-        "title": "Security built for healthcare",
-        "subtitle": "Establish clear data protection standards and keep patient information safe and compliant.",
+        "badge": "Confidentiality",
+        "title": "Security tailored to medical requirements",
+        "subtitle": "Our infrastructure complies with high data protection standards, specifically tailored to the requirements of the medical sector.",
+        "cardTitle": "Data Protection Framework",
+        "cardDescription": "DocNote implements enterprise-grade security with end-to-end encryption, strict access controls, and comprehensive audit logging to protect sensitive patient data.",
+        "protocolTitle": "DocNote Security Protocol",
+        "protocolEncryption": "End-to-end encryption: TLS 1.3 (in transit) & AES-256 (at rest)",
+        "protocolRetention": "No data stored beyond 48 hours",
+        "protocolRbac": "Role-based access control (RBAC)",
+        "protocolAudit": "Comprehensive audit trail logging",
         "swiss": {
             "title": "Swiss Hosting",
             "description": "All data stored exclusively on Swiss servers, ensuring full compliance with local healthcare regulations."
@@ -107,18 +173,14 @@
         "title": "Frequently Asked Questions",
         "subtitle": "Most of the users ask these questions. Need help?",
         "contactUs": "Contact us",
-        "q1": "What can I expect from DocNote's core features?",
-        "a1": "DocNote offers AI-powered recording, real-time transcription with 99% accuracy for medical terminology, automatic SOAP note generation, and seamless EHR integration — all designed to save you 2+ hours of documentation time daily.",
-        "q2": "Does DocNote train on patient data?",
-        "a2": "No. DocNote never uses patient data for AI model training. All recordings and transcriptions are processed securely and deleted after note generation unless you explicitly choose to save them.",
-        "q3": "Is DocNote compliant with healthcare regulations?",
-        "a3": "Yes. DocNote is fully HIPAA compliant and ISO 27001 certified. All data is encrypted and stored exclusively on Swiss servers.",
-        "q4": "Which EHR systems does DocNote integrate with?",
-        "a4": "DocNote integrates with most major EHR systems including Epic, Cerner, and Swiss-specific systems like Elexis. We also offer custom integration support for enterprise clients.",
-        "q5": "What languages are supported?",
-        "a5": "DocNote supports German, French, Italian, English, and 20+ other languages for both transcription and note generation.",
-        "q6": "Can I try DocNote for free?",
-        "a6": "Yes! Start with 30 free consultations with full access to Professional features. No credit card required."
+        "q1": "How does DocNote ensure data security?",
+        "a1": "We use advanced encryption protocols and process information on secure servers, located in Switzerland, thus ensuring maximum protection.",
+        "q2": "Is DocNote compatible with all medical systems?",
+        "a2": "Yes, DocNote is designed to adapt to a variety of medical environments, including practice management software and electronic medical record systems.",
+        "q3": "Can I use DocNote on several devices?",
+        "a3": "Absolutely, DocNote is accessible on tablets and smartphones, allowing you to manage your reports wherever you are.",
+        "q4": "Does DocNote offer a trial period?",
+        "a4": "Yes, we offer a 30-consultation trial period so you can test all the features and see the improvements in managing your medical reports."
     },
     "footer": {
         "description": "AI-powered medical documentation for hospital workflows.",
@@ -184,7 +246,7 @@
             "q3": "Is my data secure?",
             "a3": "Absolutely. All data is encrypted and stored in Switzerland. We are HIPAA compliant and ISO 27001 certified.",
             "q4": "Which EHR systems do you integrate with?",
-            "a4": "We integrate with most major EHR systems including Epic, Cerner, and local Swiss systems like Elexis."
+            "a4": "We integrate with most major EHR systems including Epic, Cerner, and local Swiss systems like Sokle or Mediway."
         }
     },
     "blog": {
@@ -243,14 +305,15 @@
         "title": "Getting Started with DocNote",
         "subtitle": "Follow these simple steps to transform your medical documentation workflow",
         "step1": {
-            "title": "Download the Mobile Application",
-            "description": "Download the DocNote mobile application from your phone's app store:",
+            "title": "Download the Mobile Application, or connect to the Web App",
+            "description": "Download the DocNote mobile application from your phone's app store, or access it directly via our web app:",
             "ios": "Available on the App Store",
             "android": "Available on Google Play"
         },
         "step2": {
             "title": "Create Your Account",
-            "description": "Create your account by entering your professional email directly through the mobile application. We will send you an activation code shortly. Your 30-consultation trial will start once you receive the code."
+            "description": "Create your account by entering your professional email. We will send you an activation code.",
+            "trialInfo": "Your 30-consultation trial will start once you receive and enter your activation code."
         },
         "step3": {
             "title": "Main Screen",

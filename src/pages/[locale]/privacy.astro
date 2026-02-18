@@ -17,230 +17,672 @@ const entry = await getEntry('pages', locale as Locale);
 const t = entry.data;
 ---
 
-<Layout title="Privacy Policy">
+<Layout title={locale === 'fr' ? 'Politique de confidentialité' : locale === 'de' ? 'Datenschutzrichtlinie' : 'Privacy Policy'}>
   <section class="pt-32 pb-20 bg-white">
     <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
-        DOCNOTE GENERAL PRIVACY AND COOKIES POLICY
+        {locale === 'fr' ? 'POLITIQUE GÉNÉRALE DE CONFIDENTIALITÉ ET DE COOKIES DE DOCNOTE' : locale === 'de' ? 'ALLGEMEINE DATENSCHUTZ- UND COOKIE-RICHTLINIE VON DOCNOTE' : 'DOCNOTE GENERAL PRIVACY AND COOKIES POLICY'}
       </h1>
-      <p class="text-center text-gray-500 mb-12">Date of policy: July 22nd 2025</p>
+      <p class="text-center text-gray-500 mb-12">
+        {locale === 'fr' ? 'Date de la politique : 22 juillet 2025' : locale === 'de' ? 'Datum der Richtlinie: 22. Juli 2025' : 'Date of policy: July 22nd 2025'}
+      </p>
 
-      <div class="privacy-content">
-        <h2>PART A DOCNOTE GENERAL PRIVACY POLICY</h2>
+      {locale === 'en' && (
+        <div class="privacy-content">
+          <h2>PART A DOCNOTE GENERAL PRIVACY POLICY</h2>
 
-        <h3>Purpose of this privacy policy.</h3>
-        <p>DocNote respects your privacy and is committed to protecting your personal data and to respecting data privacy legislation. This privacy policy will inform you as to how we look after your personal data when you subscribe to the products or services we offer (the "Services") and tell you about your privacy rights and how the law protects you. This policy (together with our Terms of service) applies to the personal data collected to manage the Agreement you signed to use the Services. This privacy policy does not apply to the personal data we process on your behalf during our delivering the Services to you. This policy sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our practices regarding your personal data and how we will treat it.</p>
+          <h3>Purpose of this privacy policy.</h3>
+          <p>DocNote respects your privacy and is committed to protecting your personal data and to respecting data privacy legislation. This privacy policy will inform you as to how we look after your personal data when you subscribe to the products or services we offer (the "Services") and tell you about your privacy rights and how the law protects you. This policy (together with our Terms of service) applies to the personal data collected to manage the Agreement you signed to use the Services. This privacy policy does not apply to the personal data we process on your behalf during our delivering the Services to you. This policy sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our practices regarding your personal data and how we will treat it.</p>
 
-        <h3>Data controller</h3>
-        <p>DocNote is a company being incorporated in Switzerland. The company registration number will be registered shortly along the registered office.</p>
-        <p>DocNote is the Data controller and is referred to in this privacy policy as "DocNote", "we", "us" or "ours". We are committed to protecting your personal data and respecting your privacy. If you have any questions about this privacy policy, please contact us using the details set out below.</p>
+          <h3>Data controller</h3>
+          <p>DocNote is a company being incorporated in Switzerland. The company registration number will be registered shortly along the registered office.</p>
+          <p>DocNote is the Data controller and is referred to in this privacy policy as "DocNote", "we", "us" or "ours". We are committed to protecting your personal data and respecting your privacy. If you have any questions about this privacy policy, please contact us using the details set out below.</p>
 
-        <h3>Changes to the privacy policy and your duty to inform us of changes</h3>
-        <p>We keep our privacy policy under regular review. It may change and if it does, these changes will be posted on this page and, where appropriate, notified to you by email and/or when you next log into the Website. The new policy may be displayed on-screen and you may be required to read and accept the changes to continue your use of the Services. It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during our relationship with you.</p>
+          <h3>Changes to the privacy policy and your duty to inform us of changes</h3>
+          <p>We keep our privacy policy under regular review. It may change and if it does, these changes will be posted on this page and, where appropriate, notified to you by email and/or when you next log into the Website. The new policy may be displayed on-screen and you may be required to read and accept the changes to continue your use of the Services. It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during our relationship with you.</p>
 
-        <h3>Third party links</h3>
-        <p>Our Website may, from time to time, contain links to and from the websites of our partner networks, and affiliates. Please note that these websites and any services that may be accessible through them have their own privacy policies and that we do not accept any responsibility or liability for these policies or for any personal data that may be collected through these websites or services. Please check these policies before you submit any personal data to these websites or use these services.</p>
+          <h3>Third party links</h3>
+          <p>Our Website may, from time to time, contain links to and from the websites of our partner networks, and affiliates. Please note that these websites and any services that may be accessible through them have their own privacy policies and that we do not accept any responsibility or liability for these policies or for any personal data that may be collected through these websites or services. Please check these policies before you submit any personal data to these websites or use these services.</p>
 
-        <h3>The data we collect about you</h3>
-        <p>Depending on the level of your engagement with our website or the Services, we may collect, use, store and transfer different kinds of personal data about you as follows:</p>
+          <h3>The data we collect about you</h3>
+          <p>Depending on the level of your engagement with our website or the Services, we may collect, use, store and transfer different kinds of personal data about you as follows:</p>
 
-        <div class="overflow-x-auto my-6">
-          <table class="w-full border-collapse border border-gray-200 text-sm">
-            <tbody>
-              <tr class="bg-gray-50">
-                <td class="border border-gray-200 p-3 font-semibold align-top w-1/4">Identity Data</td>
-                <td class="border border-gray-200 p-3">Includes first name, last name, username or similar identifier, position. This is information you provide to us when you subscribe to our Services</td>
-              </tr>
-              <tr>
-                <td class="border border-gray-200 p-3 font-semibold align-top">Contact Data</td>
-                <td class="border border-gray-200 p-3">Includes email address. It also includes some contact data within your organisation when you are about to enter or have entered a Contract with us. We require this information to manage the Contract we have entered or we are about to enter with you and to enable you to communicate with us. We also collect these data for our regulatory and legal compliance obligations</td>
-              </tr>
-              <tr class="bg-gray-50">
-                <td class="border border-gray-200 p-3 font-semibold align-top">Technical Data</td>
-                <td class="border border-gray-200 p-3">In relation to the use of the Services, this includes: internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access the Services. Please see our cookies policy at Part B below for more details about why and how we use cookies and other tracking technologies</td>
-              </tr>
-              <tr>
-                <td class="border border-gray-200 p-3 font-semibold align-top">Usage Data</td>
-                <td class="border border-gray-200 p-3">Includes details of your use of the Services including but not limited to, traffic data and other communication data, and the resources that you access, the number of active users of our Services. We collect this data to monitor and measure the performance of the Services and to manage the Contract</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <tbody>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 font-semibold align-top w-1/4">Identity Data</td>
+                  <td class="border border-gray-200 p-3">Includes first name, last name, username or similar identifier, position. This is information you provide to us when you subscribe to our Services</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Contact Data</td>
+                  <td class="border border-gray-200 p-3">Includes email address. It also includes some contact data within your organisation when you are about to enter or have entered a Contract with us. We require this information to manage the Contract we have entered or we are about to enter with you and to enable you to communicate with us. We also collect these data for our regulatory and legal compliance obligations</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Technical Data</td>
+                  <td class="border border-gray-200 p-3">In relation to the use of the Services, this includes: internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access the Services. Please see our cookies policy at Part B below for more details about why and how we use cookies and other tracking technologies</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Usage Data</td>
+                  <td class="border border-gray-200 p-3">Includes details of your use of the Services including but not limited to, traffic data and other communication data, and the resources that you access, the number of active users of our Services. We collect this data to monitor and measure the performance of the Services and to manage the Contract</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>We also collect, use and share Aggregated Data such as statistical or demographic data for any purpose. Aggregated Data could be derived from your personal data but is not considered personal data in law as this data will not directly or indirectly reveal your identity. For example, we may aggregate your Usage Data to calculate the percentage of users accessing a specific Services feature. However, if we combine or connect Aggregated Data with your personal data so that it can directly or indirectly identify you, we treat the combined data as personal data which will be used in accordance with this privacy policy.</p>
+
+          <h3>How is your personal data collected?</h3>
+          <p>Most of the personal data that we process about you will be provided by you, for example when entering a Contract for the use of our Services. The provision of such information is voluntary, but if you cannot provide it to us, you may not be able to work with DocNote. Each time you use the Services we will automatically collect personal data including Technical Data and Usage Data. We collect this data using cookies and other similar technologies. Please see our cookie policy at Part B below for further details.</p>
+
+          <h3>Cookies</h3>
+          <p>We use cookies and/or other tracking technologies to distinguish you from other users of the Services and to remember your preferences. This helps us to provide you with a good experience when you use the Services and also allows us to improve the Services. For detailed information on the cookies we use, the purposes for which we use them and how you can exercise your choices regarding our use of your cookies, see our cookie policy at Part B below.</p>
+
+          <h3>How we use your personal data</h3>
+          <p>We will only use your personal data when the law allows us to do so. Most commonly we will use your personal data in the following circumstances:</p>
+          <ul>
+            <li><strong>Where you have consented before the processing.</strong> Consent means processing your personal data where you have signified your agreement by a statement or clear opt-in to processing for a specific purpose. Consent will only be valid if it is a freely given, specific, informed and unambiguous indication of what you want. You can withdraw your consent at any time by contacting us.</li>
+            <li><strong>Where we need to perform a contract</strong> we are about to enter or have entered with you. Performance of contract means processing your data where it is necessary for the performance of a contract to which you are a party or to take steps at your request before entering into such a contract.</li>
+            <li><strong>Where it is necessary for our legitimate interests</strong> (or those of a third party) and your interests and fundamental rights do not override those interests. Legitimate Interest means the interest of our business in conducting and managing our business to enable us to give you the best service/product and the best and most secure experience. We make sure we consider and balance any potential impact on you (both positive and negative) and your rights before we process your personal data for our legitimate interests. We do not use your personal data for activities where our interests are overridden by the impact on you (unless we have your consent or are otherwise required or permitted to by law). You can obtain further information about how we assess our legitimate interests against any potential impact on you in respect of specific activities by contacting us.</li>
+            <li><strong>Where we need to comply with a legal or regulatory obligation.</strong> Comply with a legal obligation means processing your personal data where it is necessary for compliance with a legal obligation that we are subject to.</li>
+          </ul>
+
+          <p>The table below explains what we use (process) your personal information for (other than the special category of data) and our reasons for doing so.</p>
+
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Purpose/Activity</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Type of Data</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Lawful basis for processing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-200 p-3 align-top">To manage our relationship with you including responding to your queries and requests, notifying you of changes to the Website and/or to the Services and/or our Terms of Service or Terms of Use of the Services or this privacy policy</td>
+                  <td class="border border-gray-200 p-3 align-top">Identity Contact</td>
+                  <td class="border border-gray-200 p-3 align-top">Necessary to comply with legal obligations (to inform you of any changes to our terms and conditions) Necessary to perform a contract</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 align-top">To administer and protect our business and the Services, including troubleshooting, data analysis and system testing</td>
+                  <td class="border border-gray-200 p-3 align-top">Identity (optional) Contact Technical</td>
+                  <td class="border border-gray-200 p-3 align-top">Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 align-top">To ensure that you are able to meet your regulatory obligations</td>
+                  <td class="border border-gray-200 p-3 align-top">Identity (optional) Contact</td>
+                  <td class="border border-gray-200 p-3 align-top">Performance of a contract with you to comply with a legal or regulatory obligation or expectations</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Disclosures of your personal data</h3>
+          <p>The above purposes and activities may require us to pass on some of our personal data to the following third parties:</p>
+          <ul>
+            <li>Our service providers acting as our processors, including:
+              <ul>
+                <li>Suppliers such as Infomaniak for our infrastructure.</li>
+                <li>Other supplies which we may appoint from time to time to provide various services to us, such as IT and system administration services.</li>
+              </ul>
+            </li>
+            <li>Professional advisers acting as processors or joint controllers including lawyers, bankers, auditors and insurers who provide consultancy, banking, legal, insurance and accounting services; and</li>
+            <li>Regulators, local authorities and other public or regulatory authorities acting as processors or joint controllers who require reporting of processing activities in certain circumstances.</li>
+          </ul>
+          <p>We only allow our service providers to handle your personal information if we are satisfied, they take appropriate measures to protect your personal information. We also impose contractual obligations on service providers to ensure they can only use your personal information to provide services to us and to you and for no other reasons. We may disclose and exchange information with law enforcement agencies and regulatory bodies to comply with our legal and regulatory obligations.</p>
+
+          <h3>Data security</h3>
+          <p>All information you provide to us is stored on our secure servers in Switzerland. Once we have received your information, we will use strict procedures and security features to try to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way. We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator when we are legally required to do so.</p>
+          <p>By contracting with us or using our Services, you consent to the collection, storage, processing and transfer of your information in and to Switzerland.</p>
+
+          <h3>Data retention</h3>
+          <p>We retain your personal data for as long as we need it for the purposes, we have collected it for, such as contracting with you for your use of our Services. We may retain your personal data for a longer period if you make a complaint under this privacy policy or our Terms of service, or if we have a reasonable belief that litigation may arise in relation to our relationship with you. We may also be required to retain certain personal data from you to comply with our legal and regulatory requirements. In some circumstances you can ask us to delete your data: see your legal rights section below for further information. In some circumstances, we will anonymize your personal data (so that it can no longer be associated with you) for research or statistical purposes, in which case we may use this information indefinitely without further notice to you.</p>
+
+          <h3>Your legal rights</h3>
+          <p>Under certain circumstances, you have the following rights under data protection laws in relation to your personal data.</p>
+          <ul>
+            <li><strong>Request access to your personal data</strong> (commonly known as a "data subject access request"). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.</li>
+            <li><strong>Right to be informed.</strong> You have the right to be informed how your personal data will be used. This privacy policy as well as any additional information or notice that is provided to you either at the time you provided your details, or otherwise, is intended to provide you with this information.</li>
+            <li><strong>Request correction</strong> of the personal data that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us.</li>
+            <li><strong>Request erasure</strong> of your personal data. This enables you to ask us to delete or remove personal data where there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your personal data where you have successfully exercised your right to object to processing (see below), where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Note, however, that we may not always be able to comply with your request of erasure for specific legal reasons which will be notified to you, if applicable, at the time of your request.</li>
+            <li><strong>Object to processing</strong> of your personal data where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground as you feel it impacts on your fundamental rights and freedoms. You also have the right to object where we are processing your personal data for direct marketing purposes. In some cases, we may demonstrate that we have compelling legitimate grounds to process your information which override your rights and freedoms.</li>
+            <li><strong>Request restriction of processing</strong> of your personal data. This enables you to ask us to suspend the processing of your personal data in the following scenarios:
+              <ul>
+                <li>if you want us to establish the data's accuracy;</li>
+                <li>where our use of the data is unlawful but you do not want us to erase it;</li>
+                <li>where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims; or</li>
+                <li>you have objected to our use of your data but we need to verify whether we have overriding legitimate grounds to use it.</li>
+              </ul>
+            </li>
+            <li><strong>Request the transfer</strong> of your personal data to you or to a third party. We will provide to you, or a third party you have chosen, your personal data in a structured, commonly used, machine-readable format. Note that this right only applies to automated information which you initially provided consent for us to use or where we used the information to perform a contract with you.</li>
+            <li><strong>Withdraw consent at any time</strong> where we are relying on consent to process your personal data. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. If you withdraw your consent, we may not be able to provide certain products or services to you. We will advise you if this is the case at the time you withdraw your consent.</li>
+          </ul>
+          <p>If you would like to exercise any of those rights, please contact us (<a href="mailto:contact@docnote.ch">contact@docnote.ch</a>) and:</p>
+          <ul>
+            <li>let us have enough information to identify you;</li>
+            <li>let us have proof of your identity and address (a copy of your driving licence or passport and a recent utility or credit card bill); and</li>
+            <li>let us know what right you want to exercise and the information to which your request relates.</li>
+          </ul>
+          <p>We try to respond to all legitimate requests within one month. Occasionally it could take us longer than a month if your request is particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.</p>
+
+          <h3>How to complain</h3>
+          <p>If you are unhappy with the way in which we have handled your personal data, please get in touch with us by sending an email to <a href="mailto:contact@docnote.ch">contact@docnote.ch</a>. You are also entitled to make a complaint to the respective judicial and executive body which may have jurisdiction over the case.</p>
+
+          <h3>Changes to this privacy policy</h3>
+          <p>We keep this privacy policy under regular review and may update it from time to time without notice to you, so please check it regularly. We will however aim to bring any significant changes to your attention.</p>
+
+          <hr />
+
+          <h2>PART B - DOCNOTE COOKIES POLICY</h2>
+          <p class="text-gray-500 mb-6">Date of policy: 22nd of July 2025</p>
+
+          <p>This cookies policy explains how DocNote uses cookies and other tracking technologies on the Services. This cookies policy is to be read alongside our privacy policy above which explains how we use personal information.</p>
+
+          <h3>What are web cookies?</h3>
+          <p>Web cookies are small files that are placed on your computer or mobile device by a website when you visit it. They contain details of your browsing history on that website and distinguish you from other users. Cookies send data back to the originating website on each subsequent visit or allow another website or app to recognize the cookie. Cookies are useful because they allow a website or app to recognize a user's device and, for instance, remember your preferences and generally improve your online user experience. Like most websites and apps, we use cookies.</p>
+          <p>Although this cookies policy refers to the general term "cookie", which is the main method used by the Services to store information, the browser's local storage space is also used for the same purpose, and we may use other tracking technologies through the Services. As a result, the information included in this cookie policy is likewise applicable to all such tracking technologies that we use.</p>
+
+          <h3>Why do we use cookies?</h3>
+          <ul>
+            <li>To let you do things on the Services - for example, cookies enable you to log in to secure areas of our Services.</li>
+            <li>To collect anonymous statistics - the information collected by cookies enables us to improve the Services through usage figures and patterns.</li>
+            <li>To improve your experience of the Services - for example, to prevent you having to re-enter details when you have already done so, or by ensuring that users can find what they are looking for easily.</li>
+          </ul>
+
+          <h3>What cookies do we use?</h3>
+          <p>We use the following cookies:</p>
+
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Cookie</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Lifespan</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Category</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-200 p-3">u_sp</td>
+                  <td class="border border-gray-200 p-3">365 days</td>
+                  <td class="border border-gray-200 p-3">Essential</td>
+                  <td class="border border-gray-200 p-3">Authentication/session token</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3">lang</td>
+                  <td class="border border-gray-200 p-3">365 days</td>
+                  <td class="border border-gray-200 p-3">Essential</td>
+                  <td class="border border-gray-200 p-3">Stores visitor's language preference</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3">cookie_consent</td>
+                  <td class="border border-gray-200 p-3">365 days</td>
+                  <td class="border border-gray-200 p-3">Essential</td>
+                  <td class="border border-gray-200 p-3">Records advanced cookie-banner consent</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3">trackingPreferences</td>
+                  <td class="border border-gray-200 p-3">365 days</td>
+                  <td class="border border-gray-200 p-3">Essential</td>
+                  <td class="border border-gray-200 p-3">Records basic banner consent (accept/reject)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3">usr</td>
+                  <td class="border border-gray-200 p-3">365 days</td>
+                  <td class="border border-gray-200 p-3">Performance & Analytics</td>
+                  <td class="border border-gray-200 p-3">First-party analytics for Umso's built-in stats</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Cookie acceptance</h3>
+          <p>By using the Services you have consented to our use of cookies as updated from time to time. In particular, you consent to cookies being stored on your computer and/or mobile device (unless rejected or disabled by your browser). You can accept or refuse cookies through your internet browser or through the Services. The option to do this is usually found in the options, settings or preferences menu of your browser or mobile device. If you access the Services through different devices, computer profile or browser you will have to tell us your cookies preferences again.</p>
+
+          <h3>Updating our cookies policy</h3>
+          <p>We may update our use of cookies from time to time and consequently, we may update this policy. We, therefore, recommend that you check this cookies policy regularly.</p>
         </div>
+      )}
 
-        <p>We also collect, use and share Aggregated Data such as statistical or demographic data for any purpose. Aggregated Data could be derived from your personal data but is not considered personal data in law as this data will not directly or indirectly reveal your identity. For example, we may aggregate your Usage Data to calculate the percentage of users accessing a specific Services feature. However, if we combine or connect Aggregated Data with your personal data so that it can directly or indirectly identify you, we treat the combined data as personal data which will be used in accordance with this privacy policy.</p>
+      {locale === 'fr' && (
+        <div class="privacy-content">
+          <h2>PARTIE A POLITIQUE GÉNÉRALE DE CONFIDENTIALITÉ DE DOCNOTE</h2>
 
-        <h3>How is your personal data collected?</h3>
-        <p>Most of the personal data that we process about you will be provided by you, for example when entering a Contract for the use of our Services. The provision of such information is voluntary, but if you cannot provide it to us, you may not be able to work with DocNote. Each time you use the Services we will automatically collect personal data including Technical Data and Usage Data. We collect this data using cookies and other similar technologies. Please see our cookie policy at Part B below for further details.</p>
+          <h3>Objet de la présente politique de confidentialité.</h3>
+          <p>DocNote respecte votre vie privée et s'engage à protéger vos données personnelles et à respecter la législation en matière de protection des données. La présente politique de confidentialité vous informe de la manière dont nous traitons vos données personnelles lorsque vous souscrivez aux produits ou services que nous proposons (les « Services ») et vous renseigne sur vos droits en matière de vie privée et sur la manière dont la loi vous protège. La présente politique (conjointement avec nos Conditions d'utilisation) s'applique aux données personnelles collectées pour gérer le Contrat que vous avez signé pour utiliser les Services. La présente politique de confidentialité ne s'applique pas aux données personnelles que nous traitons pour votre compte dans le cadre de la fourniture des Services. La présente politique définit les bases sur lesquelles toute donnée personnelle que nous collectons auprès de vous, ou que vous nous fournissez, sera traitée par nos soins. Veuillez lire attentivement ce qui suit pour comprendre nos pratiques concernant vos données personnelles et la manière dont nous les traiterons.</p>
 
-        <h3>Cookies</h3>
-        <p>We use cookies and/or other tracking technologies to distinguish you from other users of the Services and to remember your preferences. This helps us to provide you with a good experience when you use the Services and also allows us to improve the Services. For detailed information on the cookies we use, the purposes for which we use them and how you can exercise your choices regarding our use of your cookies, see our cookie policy at Part B below.</p>
+          <h3>Responsable du traitement des données</h3>
+          <p>DocNote est une société en cours de constitution en Suisse. Le numéro d'immatriculation de la société sera enregistré prochainement, de même que le siège social.</p>
+          <p>DocNote est le responsable du traitement des données et est désigné dans la présente politique de confidentialité par « DocNote », « nous », « notre » ou « nos ». Nous nous engageons à protéger vos données personnelles et à respecter votre vie privée. Si vous avez des questions concernant la présente politique de confidentialité, veuillez nous contacter en utilisant les coordonnées indiquées ci-dessous.</p>
 
-        <h3>How we use your personal data</h3>
-        <p>We will only use your personal data when the law allows us to do so. Most commonly we will use your personal data in the following circumstances:</p>
-        <ul>
-          <li><strong>Where you have consented before the processing.</strong> Consent means processing your personal data where you have signified your agreement by a statement or clear opt-in to processing for a specific purpose. Consent will only be valid if it is a freely given, specific, informed and unambiguous indication of what you want. You can withdraw your consent at any time by contacting us.</li>
-          <li><strong>Where we need to perform a contract</strong> we are about to enter or have entered with you. Performance of contract means processing your data where it is necessary for the performance of a contract to which you are a party or to take steps at your request before entering into such a contract.</li>
-          <li><strong>Where it is necessary for our legitimate interests</strong> (or those of a third party) and your interests and fundamental rights do not override those interests. Legitimate Interest means the interest of our business in conducting and managing our business to enable us to give you the best service/product and the best and most secure experience. We make sure we consider and balance any potential impact on you (both positive and negative) and your rights before we process your personal data for our legitimate interests. We do not use your personal data for activities where our interests are overridden by the impact on you (unless we have your consent or are otherwise required or permitted to by law). You can obtain further information about how we assess our legitimate interests against any potential impact on you in respect of specific activities by contacting us.</li>
-          <li><strong>Where we need to comply with a legal or regulatory obligation.</strong> Comply with a legal obligation means processing your personal data where it is necessary for compliance with a legal obligation that we are subject to.</li>
-        </ul>
+          <h3>Modifications de la politique de confidentialité et votre obligation de nous informer des changements</h3>
+          <p>Nous révisons régulièrement notre politique de confidentialité. Elle peut être modifiée et, le cas échéant, ces modifications seront publiées sur cette page et, si nécessaire, vous seront notifiées par e-mail et/ou lors de votre prochaine connexion au Site Web. La nouvelle politique pourra être affichée à l'écran et vous pourrez être tenu(e) de la lire et de l'accepter pour continuer à utiliser les Services. Il est important que les données personnelles que nous détenons à votre sujet soient exactes et à jour. Veuillez nous informer si vos données personnelles changent au cours de notre relation avec vous.</p>
 
-        <p>The table below explains what we use (process) your personal information for (other than the special category of data) and our reasons for doing so.</p>
+          <h3>Liens vers des tiers</h3>
+          <p>Notre Site Web peut, de temps à autre, contenir des liens vers et depuis les sites web de nos réseaux partenaires et affiliés. Veuillez noter que ces sites web et tout service accessible par leur intermédiaire disposent de leurs propres politiques de confidentialité et que nous déclinons toute responsabilité quant à ces politiques ou à toute donnée personnelle susceptible d'être collectée par le biais de ces sites web ou services. Veuillez vérifier ces politiques avant de soumettre des données personnelles à ces sites web ou d'utiliser ces services.</p>
 
-        <div class="overflow-x-auto my-6">
-          <table class="w-full border-collapse border border-gray-200 text-sm">
-            <thead>
-              <tr class="bg-gray-100">
-                <th class="border border-gray-200 p-3 text-left font-semibold">Purpose/Activity</th>
-                <th class="border border-gray-200 p-3 text-left font-semibold">Type of Data</th>
-                <th class="border border-gray-200 p-3 text-left font-semibold">Lawful basis for processing</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border border-gray-200 p-3 align-top">To manage our relationship with you including responding to your queries and requests, notifying you of changes to the Website and/or to the Services and/or our Terms of Service or Terms of Use of the Services or this privacy policy</td>
-                <td class="border border-gray-200 p-3 align-top">Identity Contact</td>
-                <td class="border border-gray-200 p-3 align-top">Necessary to comply with legal obligations (to inform you of any changes to our terms and conditions) Necessary to perform a contract</td>
-              </tr>
-              <tr class="bg-gray-50">
-                <td class="border border-gray-200 p-3 align-top">To administer and protect our business and the Services, including troubleshooting, data analysis and system testing</td>
-                <td class="border border-gray-200 p-3 align-top">Identity (optional) Contact Technical</td>
-                <td class="border border-gray-200 p-3 align-top">Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security)</td>
-              </tr>
-              <tr>
-                <td class="border border-gray-200 p-3 align-top">To ensure that you are able to meet your regulatory obligations</td>
-                <td class="border border-gray-200 p-3 align-top">Identity (optional) Contact</td>
-                <td class="border border-gray-200 p-3 align-top">Performance of a contract with you to comply with a legal or regulatory obligation or expectations</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Les données que nous collectons à votre sujet</h3>
+          <p>Selon le niveau de votre engagement avec notre site web ou les Services, nous pouvons collecter, utiliser, stocker et transférer différentes catégories de données personnelles vous concernant, comme suit :</p>
+
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <tbody>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 font-semibold align-top w-1/4">Données d'identité</td>
+                  <td class="border border-gray-200 p-3">Comprennent le prénom, le nom de famille, le nom d'utilisateur ou un identifiant similaire, le poste. Ce sont des informations que vous nous fournissez lorsque vous souscrivez à nos Services</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Données de contact</td>
+                  <td class="border border-gray-200 p-3">Comprennent l'adresse e-mail. Elles comprennent également certaines données de contact au sein de votre organisation lorsque vous êtes sur le point de conclure ou avez conclu un Contrat avec nous. Nous avons besoin de ces informations pour gérer le Contrat que nous avons conclu ou que nous sommes sur le point de conclure avec vous et pour vous permettre de communiquer avec nous. Nous collectons également ces données dans le cadre de nos obligations réglementaires et légales</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Données techniques</td>
+                  <td class="border border-gray-200 p-3">En ce qui concerne l'utilisation des Services, cela comprend : l'adresse de protocole Internet (IP), vos données de connexion, le type et la version du navigateur, le réglage du fuseau horaire et la localisation, les types et versions des plug-ins du navigateur, le système d'exploitation et la plateforme, ainsi que toute autre technologie sur les appareils que vous utilisez pour accéder aux Services. Veuillez consulter notre politique en matière de cookies dans la Partie B ci-dessous pour plus de détails sur les raisons et la manière dont nous utilisons les cookies et autres technologies de suivi</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Données d'utilisation</td>
+                  <td class="border border-gray-200 p-3">Comprennent les détails de votre utilisation des Services, y compris, mais sans s'y limiter, les données de trafic et autres données de communication, les ressources auxquelles vous accédez, le nombre d'utilisateurs actifs de nos Services. Nous collectons ces données pour surveiller et mesurer les performances des Services et pour gérer le Contrat</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Nous collectons, utilisons et partageons également des Données agrégées telles que des données statistiques ou démographiques à toute fin. Les Données agrégées peuvent être dérivées de vos données personnelles mais ne sont pas considérées comme des données personnelles en droit, car ces données ne révéleront pas directement ou indirectement votre identité. Par exemple, nous pouvons agréger vos Données d'utilisation pour calculer le pourcentage d'utilisateurs accédant à une fonctionnalité spécifique des Services. Toutefois, si nous combinons ou associons des Données agrégées avec vos données personnelles de manière à pouvoir vous identifier directement ou indirectement, nous traitons les données combinées comme des données personnelles qui seront utilisées conformément à la présente politique de confidentialité.</p>
+
+          <h3>Comment vos données personnelles sont-elles collectées ?</h3>
+          <p>La plupart des données personnelles que nous traitons à votre sujet vous seront demandées directement, par exemple lors de la conclusion d'un Contrat pour l'utilisation de nos Services. La fourniture de ces informations est volontaire, mais si vous ne pouvez pas nous les fournir, vous pourriez ne pas être en mesure de travailler avec DocNote. Chaque fois que vous utilisez les Services, nous collecterons automatiquement des données personnelles, y compris des Données techniques et des Données d'utilisation. Nous collectons ces données à l'aide de cookies et d'autres technologies similaires. Veuillez consulter notre politique en matière de cookies dans la Partie B ci-dessous pour plus de détails.</p>
+
+          <h3>Cookies</h3>
+          <p>Nous utilisons des cookies et/ou d'autres technologies de suivi pour vous distinguer des autres utilisateurs des Services et pour mémoriser vos préférences. Cela nous aide à vous offrir une bonne expérience lorsque vous utilisez les Services et nous permet également d'améliorer les Services. Pour des informations détaillées sur les cookies que nous utilisons, les finalités pour lesquelles nous les utilisons et la manière dont vous pouvez exercer vos choix concernant notre utilisation de vos cookies, consultez notre politique en matière de cookies dans la Partie B ci-dessous.</p>
+
+          <h3>Comment nous utilisons vos données personnelles</h3>
+          <p>Nous n'utiliserons vos données personnelles que lorsque la loi nous le permet. Le plus souvent, nous utiliserons vos données personnelles dans les circonstances suivantes :</p>
+          <ul>
+            <li><strong>Lorsque vous avez consenti avant le traitement.</strong> Le consentement signifie le traitement de vos données personnelles lorsque vous avez manifesté votre accord par une déclaration ou une acceptation claire pour un traitement à une finalité spécifique. Le consentement n'est valable que s'il constitue une indication libre, spécifique, éclairée et sans ambiguïté de votre volonté. Vous pouvez retirer votre consentement à tout moment en nous contactant.</li>
+            <li><strong>Lorsque nous devons exécuter un contrat</strong> que nous sommes sur le point de conclure ou avons conclu avec vous. L'exécution du contrat signifie le traitement de vos données lorsque cela est nécessaire pour l'exécution d'un contrat auquel vous êtes partie ou pour prendre des mesures à votre demande avant la conclusion d'un tel contrat.</li>
+            <li><strong>Lorsque cela est nécessaire pour nos intérêts légitimes</strong> (ou ceux d'un tiers) et que vos intérêts et droits fondamentaux ne prévalent pas sur ces intérêts. L'Intérêt légitime désigne l'intérêt de notre entreprise à conduire et gérer nos activités afin de vous offrir le meilleur service/produit et l'expérience la plus sûre. Nous veillons à prendre en compte et à équilibrer tout impact potentiel sur vous (positif et négatif) et vos droits avant de traiter vos données personnelles pour nos intérêts légitimes. Nous n'utilisons pas vos données personnelles pour des activités où nos intérêts sont supplantés par l'impact sur vous (sauf si nous avons votre consentement ou si la loi nous y oblige ou nous le permet). Vous pouvez obtenir de plus amples informations sur la manière dont nous évaluons nos intérêts légitimes par rapport à tout impact potentiel sur vous pour des activités spécifiques en nous contactant.</li>
+            <li><strong>Lorsque nous devons nous conformer à une obligation légale ou réglementaire.</strong> Se conformer à une obligation légale signifie traiter vos données personnelles lorsque cela est nécessaire pour le respect d'une obligation légale à laquelle nous sommes soumis.</li>
+          </ul>
+
+          <p>Le tableau ci-dessous explique à quelles fins nous utilisons (traitons) vos informations personnelles (autres que la catégorie spéciale de données) et nos raisons de le faire.</p>
+
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Finalité/Activité</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Type de données</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Base légale du traitement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-200 p-3 align-top">Gérer notre relation avec vous, y compris répondre à vos demandes et requêtes, vous notifier des modifications du Site Web et/ou des Services et/ou de nos Conditions d'utilisation ou de la présente politique de confidentialité</td>
+                  <td class="border border-gray-200 p-3 align-top">Identité Contact</td>
+                  <td class="border border-gray-200 p-3 align-top">Nécessaire pour se conformer aux obligations légales (pour vous informer de tout changement de nos conditions générales) Nécessaire pour l'exécution d'un contrat</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 align-top">Administrer et protéger notre entreprise et les Services, y compris le dépannage, l'analyse de données et les tests système</td>
+                  <td class="border border-gray-200 p-3 align-top">Identité (facultatif) Contact Technique</td>
+                  <td class="border border-gray-200 p-3 align-top">Nécessaire pour nos intérêts légitimes (pour la gestion de notre entreprise, la fourniture de services d'administration et informatiques, la sécurité du réseau)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 align-top">S'assurer que vous êtes en mesure de remplir vos obligations réglementaires</td>
+                  <td class="border border-gray-200 p-3 align-top">Identité (facultatif) Contact</td>
+                  <td class="border border-gray-200 p-3 align-top">Exécution d'un contrat avec vous pour se conformer à une obligation ou attente légale ou réglementaire</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Divulgation de vos données personnelles</h3>
+          <p>Les finalités et activités ci-dessus peuvent nous obliger à transmettre certaines de vos données personnelles aux tiers suivants :</p>
+          <ul>
+            <li>Nos prestataires de services agissant en tant que sous-traitants, y compris :
+              <ul>
+                <li>Des fournisseurs tels qu'Infomaniak pour notre infrastructure.</li>
+                <li>D'autres fournisseurs que nous pouvons désigner de temps à autre pour nous fournir divers services, tels que des services informatiques et d'administration système.</li>
+              </ul>
+            </li>
+            <li>Des conseillers professionnels agissant en tant que sous-traitants ou responsables conjoints du traitement, y compris des avocats, des banquiers, des auditeurs et des assureurs qui fournissent des services de conseil, bancaires, juridiques, d'assurance et comptables ; et</li>
+            <li>Des régulateurs, des autorités locales et d'autres autorités publiques ou réglementaires agissant en tant que sous-traitants ou responsables conjoints du traitement qui exigent la déclaration des activités de traitement dans certaines circonstances.</li>
+          </ul>
+          <p>Nous n'autorisons nos prestataires de services à traiter vos informations personnelles que si nous sommes convaincus qu'ils prennent les mesures appropriées pour protéger vos informations personnelles. Nous imposons également des obligations contractuelles aux prestataires de services pour garantir qu'ils ne peuvent utiliser vos informations personnelles que pour nous fournir des services, à nous et à vous, et pour aucune autre raison. Nous pouvons divulguer et échanger des informations avec les forces de l'ordre et les organismes de réglementation pour nous conformer à nos obligations légales et réglementaires.</p>
+
+          <h3>Sécurité des données</h3>
+          <p>Toutes les informations que vous nous fournissez sont stockées sur nos serveurs sécurisés en Suisse. Une fois que nous avons reçu vos informations, nous utiliserons des procédures strictes et des dispositifs de sécurité pour tenter d'empêcher que vos données personnelles ne soient accidentellement perdues, utilisées ou consultées de manière non autorisée. Nous avons mis en place des procédures pour traiter toute violation présumée de données personnelles et nous vous notifierons, ainsi que tout régulateur compétent, lorsque nous serons légalement tenus de le faire.</p>
+          <p>En contractant avec nous ou en utilisant nos Services, vous consentez à la collecte, au stockage, au traitement et au transfert de vos informations en Suisse et vers la Suisse.</p>
+
+          <h3>Conservation des données</h3>
+          <p>Nous conservons vos données personnelles aussi longtemps que nous en avons besoin aux fins pour lesquelles nous les avons collectées, par exemple pour contracter avec vous pour votre utilisation de nos Services. Nous pouvons conserver vos données personnelles pendant une période plus longue si vous formulez une réclamation en vertu de la présente politique de confidentialité ou de nos Conditions d'utilisation, ou si nous avons des raisons de croire qu'un litige pourrait survenir en relation avec notre relation avec vous. Il peut également nous être demandé de conserver certaines données personnelles vous concernant pour nous conformer à nos exigences légales et réglementaires. Dans certaines circonstances, vous pouvez nous demander de supprimer vos données : consultez la section relative à vos droits légaux ci-dessous pour plus d'informations. Dans certaines circonstances, nous anonymiserons vos données personnelles (de sorte qu'elles ne puissent plus être associées à vous) à des fins de recherche ou de statistiques, auquel cas nous pourrons utiliser ces informations indéfiniment sans autre avis.</p>
+
+          <h3>Vos droits légaux</h3>
+          <p>Dans certaines circonstances, vous disposez des droits suivants en vertu des lois sur la protection des données en ce qui concerne vos données personnelles.</p>
+          <ul>
+            <li><strong>Demander l'accès à vos données personnelles</strong> (communément appelé « demande d'accès de la personne concernée »). Cela vous permet de recevoir une copie des données personnelles que nous détenons à votre sujet et de vérifier que nous les traitons de manière licite.</li>
+            <li><strong>Droit d'être informé(e).</strong> Vous avez le droit d'être informé(e) de la manière dont vos données personnelles seront utilisées. La présente politique de confidentialité ainsi que toute information ou notification supplémentaire qui vous est fournie soit au moment où vous avez communiqué vos coordonnées, soit autrement, vise à vous fournir ces informations.</li>
+            <li><strong>Demander la rectification</strong> des données personnelles que nous détenons à votre sujet. Cela vous permet de faire corriger toute donnée incomplète ou inexacte que nous détenons à votre sujet, bien que nous puissions avoir besoin de vérifier l'exactitude des nouvelles données que vous nous fournissez.</li>
+            <li><strong>Demander l'effacement</strong> de vos données personnelles. Cela vous permet de nous demander de supprimer ou de retirer des données personnelles lorsqu'il n'y a aucune raison valable pour que nous continuions à les traiter. Vous avez également le droit de nous demander de supprimer ou de retirer vos données personnelles lorsque vous avez exercé avec succès votre droit d'opposition au traitement (voir ci-dessous), lorsque nous avons pu traiter vos informations de manière illicite ou lorsque nous sommes tenus d'effacer vos données personnelles pour nous conformer au droit local. Notez cependant que nous ne serons pas toujours en mesure de donner suite à votre demande d'effacement pour des raisons juridiques spécifiques qui vous seront notifiées, le cas échéant, au moment de votre demande.</li>
+            <li><strong>S'opposer au traitement</strong> de vos données personnelles lorsque nous nous appuyons sur un intérêt légitime (ou celui d'un tiers) et qu'il y a quelque chose dans votre situation particulière qui vous amène à vous opposer au traitement sur ce fondement car vous estimez qu'il porte atteinte à vos droits et libertés fondamentaux. Vous avez également le droit de vous opposer lorsque nous traitons vos données personnelles à des fins de prospection commerciale. Dans certains cas, nous pouvons démontrer que nous avons des motifs légitimes impérieux de traiter vos informations qui prévalent sur vos droits et libertés.</li>
+            <li><strong>Demander la limitation du traitement</strong> de vos données personnelles. Cela vous permet de nous demander de suspendre le traitement de vos données personnelles dans les cas suivants :
+              <ul>
+                <li>si vous souhaitez que nous établissions l'exactitude des données ;</li>
+                <li>lorsque notre utilisation des données est illicite mais que vous ne souhaitez pas que nous les effacions ;</li>
+                <li>lorsque vous avez besoin que nous conservions les données même si nous n'en avons plus besoin, car vous en avez besoin pour établir, exercer ou défendre des droits en justice ; ou</li>
+                <li>vous vous êtes opposé(e) à notre utilisation de vos données mais nous devons vérifier si nous avons des motifs légitimes prépondérants pour les utiliser.</li>
+              </ul>
+            </li>
+            <li><strong>Demander le transfert</strong> de vos données personnelles à vous ou à un tiers. Nous vous fournirons, ou au tiers que vous avez choisi, vos données personnelles dans un format structuré, couramment utilisé et lisible par machine. Notez que ce droit ne s'applique qu'aux informations automatisées pour lesquelles vous avez initialement donné votre consentement à notre utilisation ou lorsque nous avons utilisé les informations pour exécuter un contrat avec vous.</li>
+            <li><strong>Retirer votre consentement à tout moment</strong> lorsque nous nous appuyons sur le consentement pour traiter vos données personnelles. Toutefois, cela n'affectera pas la licéité de tout traitement effectué avant que vous ne retiriez votre consentement. Si vous retirez votre consentement, nous pourrions ne pas être en mesure de vous fournir certains produits ou services. Nous vous en informerons le cas échéant au moment du retrait de votre consentement.</li>
+          </ul>
+          <p>Si vous souhaitez exercer l'un de ces droits, veuillez nous contacter (<a href="mailto:contact@docnote.ch">contact@docnote.ch</a>) et :</p>
+          <ul>
+            <li>nous fournir suffisamment d'informations pour vous identifier ;</li>
+            <li>nous fournir une preuve de votre identité et de votre adresse (une copie de votre permis de conduire ou de votre passeport et une facture récente de services publics ou de carte de crédit) ; et</li>
+            <li>nous indiquer le droit que vous souhaitez exercer et les informations auxquelles se rapporte votre demande.</li>
+          </ul>
+          <p>Nous nous efforçons de répondre à toutes les demandes légitimes dans un délai d'un mois. Il peut parfois nous falloir plus d'un mois si votre demande est particulièrement complexe ou si vous avez formulé plusieurs demandes. Dans ce cas, nous vous en informerons et vous tiendrons au courant.</p>
+
+          <h3>Comment formuler une réclamation</h3>
+          <p>Si vous n'êtes pas satisfait(e) de la manière dont nous avons traité vos données personnelles, veuillez nous contacter en envoyant un e-mail à <a href="mailto:contact@docnote.ch">contact@docnote.ch</a>. Vous avez également le droit de déposer une plainte auprès de l'organisme judiciaire et exécutif compétent qui pourrait avoir juridiction sur l'affaire.</p>
+
+          <h3>Modifications de la présente politique de confidentialité</h3>
+          <p>Nous révisons régulièrement la présente politique de confidentialité et pouvons la mettre à jour de temps à autre sans préavis, veuillez donc la consulter régulièrement. Nous nous efforcerons toutefois de porter à votre attention tout changement significatif.</p>
+
+          <hr />
+
+          <h2>PARTIE B - POLITIQUE DE COOKIES DE DOCNOTE</h2>
+          <p class="text-gray-500 mb-6">Date de la politique : 22 juillet 2025</p>
+
+          <p>La présente politique de cookies explique comment DocNote utilise les cookies et autres technologies de suivi dans le cadre des Services. La présente politique de cookies doit être lue conjointement avec notre politique de confidentialité ci-dessus qui explique comment nous utilisons les informations personnelles.</p>
+
+          <h3>Que sont les cookies web ?</h3>
+          <p>Les cookies web sont de petits fichiers placés sur votre ordinateur ou appareil mobile par un site web lorsque vous le visitez. Ils contiennent des détails sur votre historique de navigation sur ce site web et vous distinguent des autres utilisateurs. Les cookies renvoient des données au site web d'origine à chaque visite ultérieure ou permettent à un autre site web ou application de reconnaître le cookie. Les cookies sont utiles car ils permettent à un site web ou à une application de reconnaître l'appareil d'un utilisateur et, par exemple, de mémoriser vos préférences et d'améliorer globalement votre expérience en ligne. Comme la plupart des sites web et applications, nous utilisons des cookies.</p>
+          <p>Bien que la présente politique de cookies fasse référence au terme général « cookie », qui est la principale méthode utilisée par les Services pour stocker des informations, l'espace de stockage local du navigateur est également utilisé dans le même but, et nous pouvons utiliser d'autres technologies de suivi par le biais des Services. Par conséquent, les informations contenues dans la présente politique de cookies s'appliquent également à toutes les technologies de suivi que nous utilisons.</p>
+
+          <h3>Pourquoi utilisons-nous des cookies ?</h3>
+          <ul>
+            <li>Pour vous permettre d'effectuer des actions sur les Services - par exemple, les cookies vous permettent de vous connecter aux zones sécurisées de nos Services.</li>
+            <li>Pour collecter des statistiques anonymes - les informations collectées par les cookies nous permettent d'améliorer les Services grâce aux chiffres et tendances d'utilisation.</li>
+            <li>Pour améliorer votre expérience des Services - par exemple, pour éviter que vous ayez à saisir à nouveau des informations que vous avez déjà fournies, ou pour garantir que les utilisateurs puissent trouver facilement ce qu'ils recherchent.</li>
+          </ul>
+
+          <h3>Quels cookies utilisons-nous ?</h3>
+          <p>Nous utilisons les cookies suivants :</p>
+
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Cookie</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Durée de vie</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Catégorie</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Finalité</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-200 p-3">u_sp</td>
+                  <td class="border border-gray-200 p-3">365 jours</td>
+                  <td class="border border-gray-200 p-3">Essentiel</td>
+                  <td class="border border-gray-200 p-3">Jeton d'authentification/de session</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3">lang</td>
+                  <td class="border border-gray-200 p-3">365 jours</td>
+                  <td class="border border-gray-200 p-3">Essentiel</td>
+                  <td class="border border-gray-200 p-3">Enregistre la préférence linguistique du visiteur</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3">cookie_consent</td>
+                  <td class="border border-gray-200 p-3">365 jours</td>
+                  <td class="border border-gray-200 p-3">Essentiel</td>
+                  <td class="border border-gray-200 p-3">Enregistre le consentement avancé du bandeau de cookies</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3">trackingPreferences</td>
+                  <td class="border border-gray-200 p-3">365 jours</td>
+                  <td class="border border-gray-200 p-3">Essentiel</td>
+                  <td class="border border-gray-200 p-3">Enregistre le consentement de base du bandeau (accepter/refuser)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3">usr</td>
+                  <td class="border border-gray-200 p-3">365 jours</td>
+                  <td class="border border-gray-200 p-3">Performance et analytique</td>
+                  <td class="border border-gray-200 p-3">Analytique propriétaire pour les statistiques intégrées d'Umso</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Acceptation des cookies</h3>
+          <p>En utilisant les Services, vous avez consenti à notre utilisation des cookies telle que mise à jour de temps à autre. En particulier, vous consentez à ce que des cookies soient stockés sur votre ordinateur et/ou appareil mobile (sauf rejet ou désactivation par votre navigateur). Vous pouvez accepter ou refuser les cookies via votre navigateur Internet ou via les Services. L'option pour ce faire se trouve généralement dans le menu options, paramètres ou préférences de votre navigateur ou appareil mobile. Si vous accédez aux Services via différents appareils, profils d'ordinateur ou navigateurs, vous devrez nous indiquer à nouveau vos préférences en matière de cookies.</p>
+
+          <h3>Mise à jour de notre politique de cookies</h3>
+          <p>Nous pouvons mettre à jour notre utilisation des cookies de temps à autre et, par conséquent, nous pouvons mettre à jour la présente politique. Nous vous recommandons donc de consulter régulièrement la présente politique de cookies.</p>
         </div>
+      )}
 
-        <h3>Disclosures of your personal data</h3>
-        <p>The above purposes and activities may require us to pass on some of our personal data to the following third parties:</p>
-        <ul>
-          <li>Our service providers acting as our processors, including:
-            <ul>
-              <li>Suppliers such as Infomaniak for our infrastructure.</li>
-              <li>Other supplies which we may appoint from time to time to provide various services to us, such as IT and system administration services.</li>
-            </ul>
-          </li>
-          <li>Professional advisers acting as processors or joint controllers including lawyers, bankers, auditors and insurers who provide consultancy, banking, legal, insurance and accounting services; and</li>
-          <li>Regulators, local authorities and other public or regulatory authorities acting as processors or joint controllers who require reporting of processing activities in certain circumstances.</li>
-        </ul>
-        <p>We only allow our service providers to handle your personal information if we are satisfied, they take appropriate measures to protect your personal information. We also impose contractual obligations on service providers to ensure they can only use your personal information to provide services to us and to you and for no other reasons. We may disclose and exchange information with law enforcement agencies and regulatory bodies to comply with our legal and regulatory obligations.</p>
+      {locale === 'de' && (
+        <div class="privacy-content">
+          <h2>TEIL A ALLGEMEINE DATENSCHUTZRICHTLINIE VON DOCNOTE</h2>
 
-        <h3>Data security</h3>
-        <p>All information you provide to us is stored on our secure servers in Switzerland. Once we have received your information, we will use strict procedures and security features to try to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way. We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator when we are legally required to do so.</p>
-        <p>By contracting with us or using our Services, you consent to the collection, storage, processing and transfer of your information in and to Switzerland.</p>
+          <h3>Zweck dieser Datenschutzrichtlinie.</h3>
+          <p>DocNote respektiert Ihre Privatsphäre und verpflichtet sich, Ihre personenbezogenen Daten zu schützen und die Datenschutzgesetzgebung einzuhalten. Diese Datenschutzrichtlinie informiert Sie darüber, wie wir Ihre personenbezogenen Daten verarbeiten, wenn Sie die von uns angebotenen Produkte oder Dienstleistungen (die „Dienste") abonnieren, und informiert Sie über Ihre Datenschutzrechte und darüber, wie das Gesetz Sie schützt. Diese Richtlinie (zusammen mit unseren Nutzungsbedingungen) gilt für die personenbezogenen Daten, die zur Verwaltung des Vertrags erhoben werden, den Sie zur Nutzung der Dienste unterzeichnet haben. Diese Datenschutzrichtlinie gilt nicht für die personenbezogenen Daten, die wir in Ihrem Auftrag im Rahmen der Erbringung der Dienste verarbeiten. Diese Richtlinie legt die Grundlage dar, auf der alle personenbezogenen Daten, die wir von Ihnen erheben oder die Sie uns zur Verfügung stellen, von uns verarbeitet werden. Bitte lesen Sie das Folgende sorgfältig durch, um unsere Praktiken in Bezug auf Ihre personenbezogenen Daten und deren Behandlung zu verstehen.</p>
 
-        <h3>Data retention</h3>
-        <p>We retain your personal data for as long as we need it for the purposes, we have collected it for, such as contracting with you for your use of our Services. We may retain your personal data for a longer period if you make a complaint under this privacy policy or our Terms of service, or if we have a reasonable belief that litigation may arise in relation to our relationship with you. We may also be required to retain certain personal data from you to comply with our legal and regulatory requirements. In some circumstances you can ask us to delete your data: see your legal rights section below for further information. In some circumstances, we will anonymize your personal data (so that it can no longer be associated with you) for research or statistical purposes, in which case we may use this information indefinitely without further notice to you.</p>
+          <h3>Verantwortlicher für die Datenverarbeitung</h3>
+          <p>DocNote ist ein Unternehmen, das in der Schweiz gegründet wird. Die Handelsregisternummer wird in Kürze zusammen mit dem Sitz der Gesellschaft eingetragen.</p>
+          <p>DocNote ist der Verantwortliche für die Datenverarbeitung und wird in dieser Datenschutzrichtlinie als „DocNote", „wir", „uns" oder „unser" bezeichnet. Wir verpflichten uns, Ihre personenbezogenen Daten zu schützen und Ihre Privatsphäre zu respektieren. Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte über die unten angegebenen Kontaktdaten.</p>
 
-        <h3>Your legal rights</h3>
-        <p>Under certain circumstances, you have the following rights under data protection laws in relation to your personal data.</p>
-        <ul>
-          <li><strong>Request access to your personal data</strong> (commonly known as a "data subject access request"). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.</li>
-          <li><strong>Right to be informed.</strong> You have the right to be informed how your personal data will be used. This privacy policy as well as any additional information or notice that is provided to you either at the time you provided your details, or otherwise, is intended to provide you with this information.</li>
-          <li><strong>Request correction</strong> of the personal data that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us.</li>
-          <li><strong>Request erasure</strong> of your personal data. This enables you to ask us to delete or remove personal data where there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your personal data where you have successfully exercised your right to object to processing (see below), where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Note, however, that we may not always be able to comply with your request of erasure for specific legal reasons which will be notified to you, if applicable, at the time of your request.</li>
-          <li><strong>Object to processing</strong> of your personal data where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground as you feel it impacts on your fundamental rights and freedoms. You also have the right to object where we are processing your personal data for direct marketing purposes. In some cases, we may demonstrate that we have compelling legitimate grounds to process your information which override your rights and freedoms.</li>
-          <li><strong>Request restriction of processing</strong> of your personal data. This enables you to ask us to suspend the processing of your personal data in the following scenarios:
-            <ul>
-              <li>if you want us to establish the data's accuracy;</li>
-              <li>where our use of the data is unlawful but you do not want us to erase it;</li>
-              <li>where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims; or</li>
-              <li>you have objected to our use of your data but we need to verify whether we have overriding legitimate grounds to use it.</li>
-            </ul>
-          </li>
-          <li><strong>Request the transfer</strong> of your personal data to you or to a third party. We will provide to you, or a third party you have chosen, your personal data in a structured, commonly used, machine-readable format. Note that this right only applies to automated information which you initially provided consent for us to use or where we used the information to perform a contract with you.</li>
-          <li><strong>Withdraw consent at any time</strong> where we are relying on consent to process your personal data. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. If you withdraw your consent, we may not be able to provide certain products or services to you. We will advise you if this is the case at the time you withdraw your consent.</li>
-        </ul>
-        <p>If you would like to exercise any of those rights, please contact us (<a href="mailto:contact@docnote.ch">contact@docnote.ch</a>) and:</p>
-        <ul>
-          <li>let us have enough information to identify you;</li>
-          <li>let us have proof of your identity and address (a copy of your driving licence or passport and a recent utility or credit card bill); and</li>
-          <li>let us know what right you want to exercise and the information to which your request relates.</li>
-        </ul>
-        <p>We try to respond to all legitimate requests within one month. Occasionally it could take us longer than a month if your request is particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.</p>
+          <h3>Änderungen der Datenschutzrichtlinie und Ihre Pflicht, uns über Änderungen zu informieren</h3>
+          <p>Wir überprüfen unsere Datenschutzrichtlinie regelmässig. Sie kann sich ändern, und falls dies der Fall ist, werden diese Änderungen auf dieser Seite veröffentlicht und Ihnen gegebenenfalls per E-Mail und/oder bei Ihrer nächsten Anmeldung auf der Website mitgeteilt. Die neue Richtlinie kann auf dem Bildschirm angezeigt werden, und Sie können aufgefordert werden, die Änderungen zu lesen und zu akzeptieren, um die Nutzung der Dienste fortzusetzen. Es ist wichtig, dass die personenbezogenen Daten, die wir über Sie speichern, korrekt und aktuell sind. Bitte informieren Sie uns, wenn sich Ihre personenbezogenen Daten während unserer Geschäftsbeziehung ändern.</p>
 
-        <h3>How to complain</h3>
-        <p>If you are unhappy with the way in which we have handled your personal data, please get in touch with us by sending an email to <a href="mailto:contact@docnote.ch">contact@docnote.ch</a>. You are also entitled to make a complaint to the respective judicial and executive body which may have jurisdiction over the case.</p>
+          <h3>Links zu Dritten</h3>
+          <p>Unsere Website kann von Zeit zu Zeit Links zu und von Websites unserer Partnernetzwerke und verbundenen Unternehmen enthalten. Bitte beachten Sie, dass diese Websites und alle Dienste, die über sie zugänglich sein können, ihre eigenen Datenschutzrichtlinien haben und dass wir keine Verantwortung oder Haftung für diese Richtlinien oder für personenbezogene Daten übernehmen, die über diese Websites oder Dienste erhoben werden können. Bitte überprüfen Sie diese Richtlinien, bevor Sie personenbezogene Daten an diese Websites übermitteln oder diese Dienste nutzen.</p>
 
-        <h3>Changes to this privacy policy</h3>
-        <p>We keep this privacy policy under regular review and may update it from time to time without notice to you, so please check it regularly. We will however aim to bring any significant changes to your attention.</p>
+          <h3>Die Daten, die wir über Sie erheben</h3>
+          <p>Abhängig vom Umfang Ihrer Interaktion mit unserer Website oder den Diensten können wir verschiedene Arten personenbezogener Daten über Sie wie folgt erheben, verwenden, speichern und übertragen:</p>
 
-        <hr />
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <tbody>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 font-semibold align-top w-1/4">Identitätsdaten</td>
+                  <td class="border border-gray-200 p-3">Umfassen Vorname, Nachname, Benutzername oder ähnliche Kennung, Position. Dies sind Informationen, die Sie uns bei der Anmeldung für unsere Dienste zur Verfügung stellen</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Kontaktdaten</td>
+                  <td class="border border-gray-200 p-3">Umfassen die E-Mail-Adresse. Sie umfassen auch einige Kontaktdaten innerhalb Ihrer Organisation, wenn Sie im Begriff sind, einen Vertrag mit uns abzuschliessen, oder einen solchen bereits abgeschlossen haben. Wir benötigen diese Informationen zur Verwaltung des Vertrags, den wir mit Ihnen geschlossen haben oder im Begriff sind abzuschliessen, und um Ihnen die Kommunikation mit uns zu ermöglichen. Wir erheben diese Daten auch im Rahmen unserer regulatorischen und gesetzlichen Compliance-Pflichten</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Technische Daten</td>
+                  <td class="border border-gray-200 p-3">In Bezug auf die Nutzung der Dienste umfassen diese: Internetprotokoll-Adresse (IP), Ihre Anmeldedaten, Browsertyp und -version, Zeitzoneneinstellung und Standort, Browser-Plug-in-Typen und -Versionen, Betriebssystem und Plattform sowie andere Technologien auf den Geräten, die Sie für den Zugang zu den Diensten verwenden. Bitte beachten Sie unsere Cookie-Richtlinie in Teil B unten für weitere Einzelheiten darüber, warum und wie wir Cookies und andere Tracking-Technologien verwenden</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 font-semibold align-top">Nutzungsdaten</td>
+                  <td class="border border-gray-200 p-3">Umfassen Einzelheiten Ihrer Nutzung der Dienste, einschliesslich, aber nicht beschränkt auf Verkehrsdaten und andere Kommunikationsdaten, die Ressourcen, auf die Sie zugreifen, und die Anzahl der aktiven Nutzer unserer Dienste. Wir erheben diese Daten, um die Leistung der Dienste zu überwachen und zu messen sowie den Vertrag zu verwalten</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-        <h2>PART B - DOCNOTE COOKIES POLICY</h2>
-        <p class="text-gray-500 mb-6">Date of policy: 22nd of July 2025</p>
+          <p>Wir erheben, verwenden und teilen auch aggregierte Daten wie statistische oder demografische Daten für beliebige Zwecke. Aggregierte Daten können aus Ihren personenbezogenen Daten abgeleitet werden, gelten jedoch rechtlich nicht als personenbezogene Daten, da diese Daten Ihre Identität weder direkt noch indirekt offenbaren. Beispielsweise können wir Ihre Nutzungsdaten aggregieren, um den Prozentsatz der Nutzer zu berechnen, die auf eine bestimmte Funktion der Dienste zugreifen. Wenn wir jedoch aggregierte Daten mit Ihren personenbezogenen Daten kombinieren oder verknüpfen, sodass sie Sie direkt oder indirekt identifizieren können, behandeln wir die kombinierten Daten als personenbezogene Daten, die gemäss dieser Datenschutzrichtlinie verwendet werden.</p>
 
-        <p>This cookies policy explains how DocNote uses cookies and other tracking technologies on the Services. This cookies policy is to be read alongside our privacy policy above which explains how we use personal information.</p>
+          <h3>Wie werden Ihre personenbezogenen Daten erhoben?</h3>
+          <p>Die meisten personenbezogenen Daten, die wir über Sie verarbeiten, werden von Ihnen bereitgestellt, beispielsweise beim Abschluss eines Vertrags über die Nutzung unserer Dienste. Die Bereitstellung dieser Informationen ist freiwillig. Wenn Sie sie uns jedoch nicht zur Verfügung stellen können, sind Sie möglicherweise nicht in der Lage, mit DocNote zusammenzuarbeiten. Jedes Mal, wenn Sie die Dienste nutzen, erheben wir automatisch personenbezogene Daten, einschliesslich technischer Daten und Nutzungsdaten. Wir erheben diese Daten mithilfe von Cookies und anderen ähnlichen Technologien. Bitte beachten Sie unsere Cookie-Richtlinie in Teil B unten für weitere Einzelheiten.</p>
 
-        <h3>What are web cookies?</h3>
-        <p>Web cookies are small files that are placed on your computer or mobile device by a website when you visit it. They contain details of your browsing history on that website and distinguish you from other users. Cookies send data back to the originating website on each subsequent visit or allow another website or app to recognize the cookie. Cookies are useful because they allow a website or app to recognize a user's device and, for instance, remember your preferences and generally improve your online user experience. Like most websites and apps, we use cookies.</p>
-        <p>Although this cookies policy refers to the general term "cookie", which is the main method used by the Services to store information, the browser's local storage space is also used for the same purpose, and we may use other tracking technologies through the Services. As a result, the information included in this cookie policy is likewise applicable to all such tracking technologies that we use.</p>
+          <h3>Cookies</h3>
+          <p>Wir verwenden Cookies und/oder andere Tracking-Technologien, um Sie von anderen Nutzern der Dienste zu unterscheiden und Ihre Präferenzen zu speichern. Dies hilft uns, Ihnen ein gutes Erlebnis bei der Nutzung der Dienste zu bieten, und ermöglicht es uns auch, die Dienste zu verbessern. Ausführliche Informationen über die von uns verwendeten Cookies, die Zwecke, für die wir sie verwenden, und wie Sie Ihre Wahlmöglichkeiten bezüglich unserer Verwendung Ihrer Cookies ausüben können, finden Sie in unserer Cookie-Richtlinie in Teil B unten.</p>
 
-        <h3>Why do we use cookies?</h3>
-        <ul>
-          <li>To let you do things on the Services - for example, cookies enable you to log in to secure areas of our Services.</li>
-          <li>To collect anonymous statistics - the information collected by cookies enables us to improve the Services through usage figures and patterns.</li>
-          <li>To improve your experience of the Services - for example, to prevent you having to re-enter details when you have already done so, or by ensuring that users can find what they are looking for easily.</li>
-        </ul>
+          <h3>Wie wir Ihre personenbezogenen Daten verwenden</h3>
+          <p>Wir verwenden Ihre personenbezogenen Daten nur, wenn das Gesetz es uns erlaubt. Am häufigsten verwenden wir Ihre personenbezogenen Daten unter folgenden Umständen:</p>
+          <ul>
+            <li><strong>Wenn Sie vor der Verarbeitung eingewilligt haben.</strong> Einwilligung bedeutet die Verarbeitung Ihrer personenbezogenen Daten, wenn Sie Ihre Zustimmung durch eine Erklärung oder eine eindeutige Opt-in-Handlung für einen bestimmten Zweck signalisiert haben. Die Einwilligung ist nur gültig, wenn sie eine freiwillige, spezifische, informierte und unmissverständliche Willensbekundung darstellt. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie uns kontaktieren.</li>
+            <li><strong>Wenn wir einen Vertrag erfüllen müssen</strong>, den wir mit Ihnen abschliessen werden oder abgeschlossen haben. Vertragserfüllung bedeutet die Verarbeitung Ihrer Daten, wenn dies für die Erfüllung eines Vertrags, dessen Vertragspartei Sie sind, erforderlich ist oder um auf Ihren Wunsch hin vor Abschluss eines solchen Vertrags Massnahmen zu ergreifen.</li>
+            <li><strong>Wenn es für unsere berechtigten Interessen erforderlich ist</strong> (oder die eines Dritten) und Ihre Interessen und Grundrechte diese Interessen nicht überwiegen. Berechtigtes Interesse bezeichnet das Interesse unseres Unternehmens an der Führung und Verwaltung unserer Geschäftstätigkeit, um Ihnen den besten Service/das beste Produkt und das sicherste Erlebnis zu bieten. Wir stellen sicher, dass wir alle potenziellen Auswirkungen auf Sie (sowohl positive als auch negative) und Ihre Rechte abwägen, bevor wir Ihre personenbezogenen Daten für unsere berechtigten Interessen verarbeiten. Wir verwenden Ihre personenbezogenen Daten nicht für Aktivitäten, bei denen unsere Interessen durch die Auswirkungen auf Sie überwiegen werden (es sei denn, wir haben Ihre Einwilligung oder sind anderweitig gesetzlich dazu verpflichtet oder berechtigt). Sie können weitere Informationen darüber, wie wir unsere berechtigten Interessen gegen mögliche Auswirkungen auf Sie bei bestimmten Aktivitäten abwägen, erhalten, indem Sie uns kontaktieren.</li>
+            <li><strong>Wenn wir einer gesetzlichen oder regulatorischen Verpflichtung nachkommen müssen.</strong> Die Einhaltung einer gesetzlichen Verpflichtung bedeutet die Verarbeitung Ihrer personenbezogenen Daten, wenn dies für die Erfüllung einer gesetzlichen Verpflichtung erforderlich ist, der wir unterliegen.</li>
+          </ul>
 
-        <h3>What cookies do we use?</h3>
-        <p>We use the following cookies:</p>
+          <p>Die folgende Tabelle erläutert, wofür wir Ihre personenbezogenen Daten verwenden (verarbeiten) (ausser den besonderen Datenkategorien) und unsere Gründe dafür.</p>
 
-        <div class="overflow-x-auto my-6">
-          <table class="w-full border-collapse border border-gray-200 text-sm">
-            <thead>
-              <tr class="bg-gray-100">
-                <th class="border border-gray-200 p-3 text-left font-semibold">Cookie</th>
-                <th class="border border-gray-200 p-3 text-left font-semibold">Lifespan</th>
-                <th class="border border-gray-200 p-3 text-left font-semibold">Category</th>
-                <th class="border border-gray-200 p-3 text-left font-semibold">Purpose</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border border-gray-200 p-3">u_sp</td>
-                <td class="border border-gray-200 p-3">365 days</td>
-                <td class="border border-gray-200 p-3">Essential</td>
-                <td class="border border-gray-200 p-3">Authentication/session token</td>
-              </tr>
-              <tr class="bg-gray-50">
-                <td class="border border-gray-200 p-3">lang</td>
-                <td class="border border-gray-200 p-3">365 days</td>
-                <td class="border border-gray-200 p-3">Essential</td>
-                <td class="border border-gray-200 p-3">Stores visitor's language preference</td>
-              </tr>
-              <tr>
-                <td class="border border-gray-200 p-3">cookie_consent</td>
-                <td class="border border-gray-200 p-3">365 days</td>
-                <td class="border border-gray-200 p-3">Essential</td>
-                <td class="border border-gray-200 p-3">Records advanced cookie-banner consent</td>
-              </tr>
-              <tr class="bg-gray-50">
-                <td class="border border-gray-200 p-3">trackingPreferences</td>
-                <td class="border border-gray-200 p-3">365 days</td>
-                <td class="border border-gray-200 p-3">Essential</td>
-                <td class="border border-gray-200 p-3">Records basic banner consent (accept/reject)</td>
-              </tr>
-              <tr>
-                <td class="border border-gray-200 p-3">usr</td>
-                <td class="border border-gray-200 p-3">365 days</td>
-                <td class="border border-gray-200 p-3">Performance & Analytics</td>
-                <td class="border border-gray-200 p-3">First-party analytics for Umso's built-in stats</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Zweck/Aktivität</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Art der Daten</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Rechtsgrundlage für die Verarbeitung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-200 p-3 align-top">Verwaltung unserer Beziehung mit Ihnen, einschliesslich der Beantwortung Ihrer Anfragen und Wünsche, Benachrichtigung über Änderungen der Website und/oder der Dienste und/oder unserer Nutzungsbedingungen oder dieser Datenschutzrichtlinie</td>
+                  <td class="border border-gray-200 p-3 align-top">Identität Kontakt</td>
+                  <td class="border border-gray-200 p-3 align-top">Erforderlich zur Erfüllung gesetzlicher Verpflichtungen (um Sie über Änderungen unserer Geschäftsbedingungen zu informieren) Erforderlich zur Vertragserfüllung</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3 align-top">Verwaltung und Schutz unseres Unternehmens und der Dienste, einschliesslich Fehlerbehebung, Datenanalyse und Systemtests</td>
+                  <td class="border border-gray-200 p-3 align-top">Identität (optional) Kontakt Technisch</td>
+                  <td class="border border-gray-200 p-3 align-top">Erforderlich für unsere berechtigten Interessen (für den Betrieb unseres Unternehmens, die Bereitstellung von Verwaltungs- und IT-Diensten, Netzwerksicherheit)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3 align-top">Sicherstellen, dass Sie in der Lage sind, Ihre regulatorischen Verpflichtungen zu erfüllen</td>
+                  <td class="border border-gray-200 p-3 align-top">Identität (optional) Kontakt</td>
+                  <td class="border border-gray-200 p-3 align-top">Erfüllung eines Vertrags mit Ihnen zur Einhaltung einer gesetzlichen oder regulatorischen Verpflichtung oder Erwartung</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Offenlegung Ihrer personenbezogenen Daten</h3>
+          <p>Die oben genannten Zwecke und Aktivitäten können es erforderlich machen, dass wir einige Ihrer personenbezogenen Daten an die folgenden Dritten weitergeben:</p>
+          <ul>
+            <li>Unsere Dienstleister, die als unsere Auftragsverarbeiter handeln, einschliesslich:
+              <ul>
+                <li>Lieferanten wie Infomaniak für unsere Infrastruktur.</li>
+                <li>Andere Lieferanten, die wir von Zeit zu Zeit beauftragen können, uns verschiedene Dienste bereitzustellen, wie z. B. IT- und Systemadministrationsdienste.</li>
+              </ul>
+            </li>
+            <li>Professionelle Berater, die als Auftragsverarbeiter oder gemeinsame Verantwortliche handeln, einschliesslich Anwälte, Bankiers, Wirtschaftsprüfer und Versicherer, die Beratungs-, Bank-, Rechts-, Versicherungs- und Buchhaltungsdienstleistungen erbringen; und</li>
+            <li>Regulierungsbehörden, lokale Behörden und andere öffentliche oder regulatorische Behörden, die als Auftragsverarbeiter oder gemeinsame Verantwortliche handeln und in bestimmten Fällen die Meldung von Verarbeitungstätigkeiten verlangen.</li>
+          </ul>
+          <p>Wir gestatten unseren Dienstleistern nur dann den Umgang mit Ihren personenbezogenen Daten, wenn wir davon überzeugt sind, dass sie angemessene Massnahmen zum Schutz Ihrer personenbezogenen Daten ergreifen. Wir erlegen Dienstleistern auch vertragliche Verpflichtungen auf, um sicherzustellen, dass sie Ihre personenbezogenen Daten nur zur Erbringung von Dienstleistungen für uns und für Sie verwenden können und für keine anderen Zwecke. Wir können Informationen an Strafverfolgungsbehörden und Regulierungsbehörden weitergeben und mit diesen austauschen, um unseren gesetzlichen und regulatorischen Verpflichtungen nachzukommen.</p>
+
+          <h3>Datensicherheit</h3>
+          <p>Alle Informationen, die Sie uns zur Verfügung stellen, werden auf unseren sicheren Servern in der Schweiz gespeichert. Sobald wir Ihre Informationen erhalten haben, werden wir strenge Verfahren und Sicherheitsfunktionen anwenden, um zu verhindern, dass Ihre personenbezogenen Daten versehentlich verloren gehen, verwendet oder auf unbefugte Weise abgerufen werden. Wir haben Verfahren eingerichtet, um mit jedem vermuteten Verstoss gegen den Schutz personenbezogener Daten umzugehen, und werden Sie und die zuständige Aufsichtsbehörde benachrichtigen, wenn wir gesetzlich dazu verpflichtet sind.</p>
+          <p>Durch den Vertragsabschluss mit uns oder die Nutzung unserer Dienste stimmen Sie der Erhebung, Speicherung, Verarbeitung und Übermittlung Ihrer Daten in die und innerhalb der Schweiz zu.</p>
+
+          <h3>Datenspeicherung</h3>
+          <p>Wir bewahren Ihre personenbezogenen Daten so lange auf, wie wir sie für die Zwecke benötigen, für die wir sie erhoben haben, z. B. für den Vertragsabschluss mit Ihnen über die Nutzung unserer Dienste. Wir können Ihre personenbezogenen Daten für einen längeren Zeitraum aufbewahren, wenn Sie eine Beschwerde im Rahmen dieser Datenschutzrichtlinie oder unserer Nutzungsbedingungen einreichen oder wenn wir vernünftigerweise davon ausgehen, dass im Zusammenhang mit unserer Geschäftsbeziehung mit Ihnen ein Rechtsstreit entstehen könnte. Es kann auch erforderlich sein, dass wir bestimmte personenbezogene Daten von Ihnen aufbewahren, um unseren gesetzlichen und regulatorischen Anforderungen nachzukommen. Unter bestimmten Umständen können Sie uns auffordern, Ihre Daten zu löschen: Weitere Informationen finden Sie im Abschnitt über Ihre gesetzlichen Rechte weiter unten. Unter bestimmten Umständen werden wir Ihre personenbezogenen Daten anonymisieren (sodass sie nicht mehr mit Ihnen in Verbindung gebracht werden können), zu Forschungs- oder statistischen Zwecken. In diesem Fall können wir diese Informationen ohne weitere Benachrichtigung an Sie auf unbestimmte Zeit verwenden.</p>
+
+          <h3>Ihre gesetzlichen Rechte</h3>
+          <p>Unter bestimmten Umständen haben Sie im Rahmen der Datenschutzgesetze die folgenden Rechte in Bezug auf Ihre personenbezogenen Daten.</p>
+          <ul>
+            <li><strong>Auskunft über Ihre personenbezogenen Daten verlangen</strong> (allgemein als „Betroffenenauskunft" bekannt). Dies ermöglicht es Ihnen, eine Kopie der personenbezogenen Daten zu erhalten, die wir über Sie gespeichert haben, und zu überprüfen, ob wir sie rechtmässig verarbeiten.</li>
+            <li><strong>Recht auf Information.</strong> Sie haben das Recht, darüber informiert zu werden, wie Ihre personenbezogenen Daten verwendet werden. Diese Datenschutzrichtlinie sowie alle zusätzlichen Informationen oder Hinweise, die Ihnen entweder zum Zeitpunkt der Angabe Ihrer Daten oder anderweitig zur Verfügung gestellt werden, sollen Ihnen diese Informationen bereitstellen.</li>
+            <li><strong>Berichtigung verlangen</strong> der personenbezogenen Daten, die wir über Sie gespeichert haben. Dies ermöglicht es Ihnen, unvollständige oder ungenaue Daten, die wir über Sie gespeichert haben, korrigieren zu lassen, obwohl wir die Richtigkeit der neuen Daten, die Sie uns zur Verfügung stellen, möglicherweise überprüfen müssen.</li>
+            <li><strong>Löschung verlangen</strong> Ihrer personenbezogenen Daten. Dies ermöglicht es Ihnen, uns aufzufordern, personenbezogene Daten zu löschen oder zu entfernen, wenn kein triftiger Grund für deren weitere Verarbeitung durch uns besteht. Sie haben auch das Recht, uns aufzufordern, Ihre personenbezogenen Daten zu löschen oder zu entfernen, wenn Sie Ihr Widerspruchsrecht erfolgreich ausgeübt haben (siehe unten), wenn wir Ihre Daten möglicherweise unrechtmässig verarbeitet haben oder wenn wir verpflichtet sind, Ihre personenbezogenen Daten zur Einhaltung des lokalen Rechts zu löschen. Beachten Sie jedoch, dass wir Ihrer Löschungsanfrage aus bestimmten rechtlichen Gründen möglicherweise nicht immer nachkommen können, die Ihnen gegebenenfalls zum Zeitpunkt Ihrer Anfrage mitgeteilt werden.</li>
+            <li><strong>Der Verarbeitung widersprechen</strong> Ihrer personenbezogenen Daten, wenn wir uns auf ein berechtigtes Interesse (oder das eines Dritten) stützen und es etwas in Ihrer besonderen Situation gibt, das Sie dazu veranlasst, der Verarbeitung auf dieser Grundlage zu widersprechen, da Sie der Meinung sind, dass dies Ihre Grundrechte und -freiheiten beeinträchtigt. Sie haben auch das Recht, Widerspruch einzulegen, wenn wir Ihre personenbezogenen Daten für Direktmarketingzwecke verarbeiten. In einigen Fällen können wir nachweisen, dass wir zwingende berechtigte Gründe für die Verarbeitung Ihrer Daten haben, die Ihre Rechte und Freiheiten überwiegen.</li>
+            <li><strong>Einschränkung der Verarbeitung verlangen</strong> Ihrer personenbezogenen Daten. Dies ermöglicht es Ihnen, uns aufzufordern, die Verarbeitung Ihrer personenbezogenen Daten in den folgenden Fällen auszusetzen:
+              <ul>
+                <li>wenn Sie möchten, dass wir die Richtigkeit der Daten feststellen;</li>
+                <li>wenn unsere Nutzung der Daten unrechtmässig ist, Sie aber nicht möchten, dass wir sie löschen;</li>
+                <li>wenn Sie die Daten benötigen, auch wenn wir sie nicht mehr benötigen, da Sie sie zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen benötigen; oder</li>
+                <li>Sie der Nutzung Ihrer Daten durch uns widersprochen haben, wir aber überprüfen müssen, ob wir überwiegende berechtigte Gründe für deren Nutzung haben.</li>
+              </ul>
+            </li>
+            <li><strong>Übertragung verlangen</strong> Ihrer personenbezogenen Daten an Sie oder an einen Dritten. Wir stellen Ihnen oder einem von Ihnen gewählten Dritten Ihre personenbezogenen Daten in einem strukturierten, gängigen, maschinenlesbaren Format zur Verfügung. Beachten Sie, dass dieses Recht nur für automatisierte Informationen gilt, für die Sie ursprünglich Ihre Einwilligung zur Nutzung gegeben haben oder bei denen wir die Informationen zur Vertragserfüllung mit Ihnen verwendet haben.</li>
+            <li><strong>Einwilligung jederzeit widerrufen</strong>, wenn wir uns auf die Einwilligung zur Verarbeitung Ihrer personenbezogenen Daten stützen. Dies berührt jedoch nicht die Rechtmässigkeit der Verarbeitung, die vor dem Widerruf Ihrer Einwilligung durchgeführt wurde. Wenn Sie Ihre Einwilligung widerrufen, sind wir möglicherweise nicht in der Lage, Ihnen bestimmte Produkte oder Dienstleistungen bereitzustellen. Wir werden Sie darüber informieren, falls dies zum Zeitpunkt des Widerrufs Ihrer Einwilligung der Fall ist.</li>
+          </ul>
+          <p>Wenn Sie eines dieser Rechte ausüben möchten, kontaktieren Sie uns bitte (<a href="mailto:contact@docnote.ch">contact@docnote.ch</a>) und:</p>
+          <ul>
+            <li>geben Sie uns genügend Informationen, um Sie zu identifizieren;</li>
+            <li>legen Sie uns einen Nachweis Ihrer Identität und Adresse vor (eine Kopie Ihres Führerscheins oder Reisepasses und eine aktuelle Versorgungs- oder Kreditkartenabrechnung); und</li>
+            <li>teilen Sie uns mit, welches Recht Sie ausüben möchten und auf welche Informationen sich Ihre Anfrage bezieht.</li>
+          </ul>
+          <p>Wir bemühen uns, alle berechtigten Anfragen innerhalb eines Monats zu beantworten. Gelegentlich kann es länger als einen Monat dauern, wenn Ihre Anfrage besonders komplex ist oder Sie mehrere Anfragen gestellt haben. In diesem Fall werden wir Sie benachrichtigen und auf dem Laufenden halten.</p>
+
+          <h3>Wie Sie eine Beschwerde einreichen</h3>
+          <p>Wenn Sie mit der Art und Weise, wie wir mit Ihren personenbezogenen Daten umgegangen sind, unzufrieden sind, kontaktieren Sie uns bitte per E-Mail an <a href="mailto:contact@docnote.ch">contact@docnote.ch</a>. Sie sind auch berechtigt, eine Beschwerde bei der zuständigen Justiz- und Vollzugsbehörde einzureichen, die möglicherweise für den Fall zuständig ist.</p>
+
+          <h3>Änderungen dieser Datenschutzrichtlinie</h3>
+          <p>Wir überprüfen diese Datenschutzrichtlinie regelmässig und können sie von Zeit zu Zeit ohne vorherige Ankündigung aktualisieren. Bitte überprüfen Sie sie daher regelmässig. Wir werden uns jedoch bemühen, Sie auf wesentliche Änderungen aufmerksam zu machen.</p>
+
+          <hr />
+
+          <h2>TEIL B - COOKIE-RICHTLINIE VON DOCNOTE</h2>
+          <p class="text-gray-500 mb-6">Datum der Richtlinie: 22. Juli 2025</p>
+
+          <p>Diese Cookie-Richtlinie erläutert, wie DocNote Cookies und andere Tracking-Technologien in den Diensten verwendet. Diese Cookie-Richtlinie ist zusammen mit unserer oben stehenden Datenschutzrichtlinie zu lesen, die erläutert, wie wir personenbezogene Daten verwenden.</p>
+
+          <h3>Was sind Web-Cookies?</h3>
+          <p>Web-Cookies sind kleine Dateien, die von einer Website auf Ihrem Computer oder Mobilgerät abgelegt werden, wenn Sie diese besuchen. Sie enthalten Details zu Ihrem Browserverlauf auf dieser Website und unterscheiden Sie von anderen Nutzern. Cookies senden bei jedem weiteren Besuch Daten an die ursprüngliche Website zurück oder ermöglichen es einer anderen Website oder App, das Cookie zu erkennen. Cookies sind nützlich, da sie es einer Website oder App ermöglichen, das Gerät eines Nutzers zu erkennen und beispielsweise Ihre Präferenzen zu speichern und Ihr Online-Erlebnis insgesamt zu verbessern. Wie die meisten Websites und Apps verwenden wir Cookies.</p>
+          <p>Obwohl sich diese Cookie-Richtlinie auf den allgemeinen Begriff „Cookie" bezieht, der die Hauptmethode ist, die von den Diensten zum Speichern von Informationen verwendet wird, wird auch der lokale Speicherplatz des Browsers für denselben Zweck verwendet, und wir können andere Tracking-Technologien über die Dienste nutzen. Daher gelten die in dieser Cookie-Richtlinie enthaltenen Informationen gleichermassen für alle von uns verwendeten Tracking-Technologien.</p>
+
+          <h3>Warum verwenden wir Cookies?</h3>
+          <ul>
+            <li>Um Ihnen die Nutzung der Dienste zu ermöglichen - Cookies ermöglichen es Ihnen beispielsweise, sich in geschützte Bereiche unserer Dienste einzuloggen.</li>
+            <li>Um anonyme Statistiken zu sammeln - die durch Cookies gesammelten Informationen ermöglichen es uns, die Dienste anhand von Nutzungszahlen und -mustern zu verbessern.</li>
+            <li>Um Ihr Erlebnis mit den Diensten zu verbessern - zum Beispiel, um zu verhindern, dass Sie Angaben erneut eingeben müssen, die Sie bereits gemacht haben, oder um sicherzustellen, dass Nutzer leicht finden, wonach sie suchen.</li>
+          </ul>
+
+          <h3>Welche Cookies verwenden wir?</h3>
+          <p>Wir verwenden die folgenden Cookies:</p>
+
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Cookie</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Lebensdauer</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Kategorie</th>
+                  <th class="border border-gray-200 p-3 text-left font-semibold">Zweck</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-200 p-3">u_sp</td>
+                  <td class="border border-gray-200 p-3">365 Tage</td>
+                  <td class="border border-gray-200 p-3">Essenziell</td>
+                  <td class="border border-gray-200 p-3">Authentifizierungs-/Sitzungstoken</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3">lang</td>
+                  <td class="border border-gray-200 p-3">365 Tage</td>
+                  <td class="border border-gray-200 p-3">Essenziell</td>
+                  <td class="border border-gray-200 p-3">Speichert die Sprachpräferenz des Besuchers</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3">cookie_consent</td>
+                  <td class="border border-gray-200 p-3">365 Tage</td>
+                  <td class="border border-gray-200 p-3">Essenziell</td>
+                  <td class="border border-gray-200 p-3">Zeichnet die erweiterte Cookie-Banner-Einwilligung auf</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-200 p-3">trackingPreferences</td>
+                  <td class="border border-gray-200 p-3">365 Tage</td>
+                  <td class="border border-gray-200 p-3">Essenziell</td>
+                  <td class="border border-gray-200 p-3">Zeichnet die grundlegende Banner-Einwilligung auf (akzeptieren/ablehnen)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-200 p-3">usr</td>
+                  <td class="border border-gray-200 p-3">365 Tage</td>
+                  <td class="border border-gray-200 p-3">Leistung und Analyse</td>
+                  <td class="border border-gray-200 p-3">Erstanbieter-Analyse für die integrierten Statistiken von Umso</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Cookie-Akzeptanz</h3>
+          <p>Durch die Nutzung der Dienste haben Sie unserer Verwendung von Cookies zugestimmt, wie sie von Zeit zu Zeit aktualisiert wird. Insbesondere stimmen Sie zu, dass Cookies auf Ihrem Computer und/oder Mobilgerät gespeichert werden (sofern sie nicht von Ihrem Browser abgelehnt oder deaktiviert werden). Sie können Cookies über Ihren Internetbrowser oder über die Dienste akzeptieren oder ablehnen. Die Option dazu finden Sie in der Regel im Menü Optionen, Einstellungen oder Präferenzen Ihres Browsers oder Mobilgeräts. Wenn Sie über verschiedene Geräte, Computerprofile oder Browser auf die Dienste zugreifen, müssen Sie uns Ihre Cookie-Präferenzen erneut mitteilen.</p>
+
+          <h3>Aktualisierung unserer Cookie-Richtlinie</h3>
+          <p>Wir können unsere Verwendung von Cookies von Zeit zu Zeit aktualisieren und folglich diese Richtlinie aktualisieren. Wir empfehlen Ihnen daher, diese Cookie-Richtlinie regelmässig zu überprüfen.</p>
         </div>
-
-        <h3>Cookie acceptance</h3>
-        <p>By using the Services you have consented to our use of cookies as updated from time to time. In particular, you consent to cookies being stored on your computer and/or mobile device (unless rejected or disabled by your browser). You can accept or refuse cookies through your internet browser or through the Services. The option to do this is usually found in the options, settings or preferences menu of your browser or mobile device. If you access the Services through different devices, computer profile or browser you will have to tell us your cookies preferences again.</p>
-
-        <h3>Updating our cookies policy</h3>
-        <p>We may update our use of cookies from time to time and consequently, we may update this policy. We, therefore, recommend that you check this cookies policy regularly.</p>
-      </div>
+      )}
     </div>
   </section>
 </Layout>
