@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear()
     class="relative lg:fixed lg:bottom-0 lg:left-0 lg:right-0 bg-gradient-to-b from-gray-900 via-indigo-950 to-indigo-900 text-gray-400 overflow-hidden"
 >
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-64">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
             <div class="col-span-2 md:col-span-1">
                 <a href={getLocalizedPath("/", locale)} class="flex items-center gap-2 mb-4">
                     <img src="/images/logo.png" alt="DocNote" class="h-6 w-auto" />
@@ -79,20 +79,6 @@ const currentYear = new Date().getFullYear()
                 </ul>
             </div>
 
-            <div>
-                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.legal}</h4>
-                <ul class="space-y-2.5">
-                    <li>
-                        <a href={getLocalizedPath("/privacy", locale)} class="text-sm text-white hover:text-white/70 transition-colors"
-                            >{t.footer.privacy}</a
-                        >
-                    </li>
-                    <li>
-                        <a href={getLocalizedPath("/terms", locale)} class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.terms}</a
-                        >
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none select-none overflow-hidden">
