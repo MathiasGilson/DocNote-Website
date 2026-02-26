@@ -52,10 +52,12 @@ const layoutTitle = locale === 'fr' ? 'Conditions Générales' : locale === 'de'
         <p>3.3 Human validation: AI models may generate omissions or inaccuracies. The Client is strictly obliged to medically review and validate any document produced before any clinical use or integration into a patient record.</p>
 
         <h2>4. Security, Traceability, and Data Access</h2>
-        <p>4.1 Technical and Organisational Measures (TOMs): DocNote maintains documented TOMs consistent with the state of the art for health data. The architecture ensures strict logical separation (isolation) of Data between clients.</p>
-        <p>4.2 Encryption and authentication: Data is encrypted in transit and at rest. Multi-factor authentication (MFA) is mandatory for any access involving health data. By exception, where the Client implements single sign-on (SSO) under its control, SSO may replace DocNote's MFA provided it offers a level of security at least equivalent, as defined in the Order Form or the DPA.</p>
-        <p>4.3 Need-to-know principle: By default, DocNote staff doesn't have access to Data in plaintext (unencrypted form), including audio streams. Any access is permitted only upon the Client's documented instruction, for a limited duration, and with strict traceability (including logging of administrator access).</p>
-        <p>4.4 Environments: DocNote maintains strict separation between production and test environments. No real health data is used for testing or debugging.</p>
+        <p>4.1 Technical and Organisational Measures (TOMs): DocNote implements documented Technical and Organisational Measures consistent with the state of the art for health data protection. Data is strictly isolated between clients through logical separation. Development, test, and production environments are strictly segregated, and no real health data is used outside production.</p>
+        <p>During temporary processing, physician identity data and consultation content are logically separated to reduce re-identification risk.</p>
+        <p>4.2 Encryption and authentication: All Data is protected by end-to-end encryption (AES-256 at rest; TLS 3.0 in transit).</p>
+        <p>4.3 Need-to-know and traceability: DocNote staff does not access Data in plaintext by default. Any exceptional access requires the Client's documented instruction, is time-limited, and subject to strict audit logging.</p>
+        <p>Systematic audit logs ensure full traceability of administrative access and processing activities.</p>
+        <p>4.4 Data lifecycle: All files containing health data are automatically and irreversibly deleted within forty-eight (48) hours. DocNote does not retain permanent copies of audio files, transcriptions, or medical reports unless expressly agreed in writing.</p>
 
         <h2>5. Client Obligations and Audio Consent</h2>
         <p>5.1 Legal basis: The Client warrants that it has the necessary legal basis under the FADP to process Data via the Service.</p>
@@ -85,12 +87,15 @@ const layoutTitle = locale === 'fr' ? 'Conditions Générales' : locale === 'de'
         <p>10.3 Statistical data: DocNote may use only strictly and irreversibly anonymised usage metadata (so that it no longer constitutes personal data under the FADP) to improve technical performance.</p>
 
         <h2>11. Service Continuity and Billing</h2>
-        <p>11.1 SLA: Availability commitments are set out in the SLA.</p>
+        <p>11.1 Service Level Agreement (SLA): Availability commitments are set out in the SLA.</p>
         <p>11.2 Non-payment: Non-payment triggers a formal notice. If not remedied within a 30-day grace period, DocNote may suspend the Service. To avoid compromising continuity of care, access to prior Data will be maintained at least on a read-only basis or via an export function.</p>
 
-        <h2>12. Exit, Data Portability, and Data Lifecycle</h2>
-        <p>12.1 Export: Upon termination or expiry, the Client has 60 days to export its Data in a standard format (for example JSON, PDF).</p>
-        <p>12.2 Deletion: After this period, production Data will be irreversibly deleted. Upon request, DocNote may provide a certificate of deletion. Data contained in backups remains protected by strict security measures and will be automatically deleted at the end of its standard retention period (as defined in the DPA). Where legally required, upon request by a competent authority, or in the event of a dispute, DocNote may retain certain Data for the strictly necessary duration, subject to restricted access and enhanced safeguards, in accordance with the DPA.</p>
+        <h2>12. Data Retention and Deletion</h2>
+        <p>12.1 Limited retention period: Unless expressly agreed otherwise in the applicable Order Form, production Data is retained for a maximum period of 48 hours after processing. After this period, Data is automatically and irreversibly deleted from production systems.</p>
+        <p>DocNote is not intended to serve as a long-term storage or archiving solution. The Client remains solely responsible for exporting, integrating, and storing validated medical documents within its own patient record systems.</p>
+        <p>12.2 Backups: Data temporarily contained in encrypted system backups may persist solely for technical resilience purposes and is automatically deleted in accordance with the retention schedule defined in the DPA. Such backup Data is not accessible in plaintext and cannot be restored selectively for operational use.</p>
+        <p>12.3 Early deletion: Upon documented request, DocNote may confirm deletion of Data still within the 48-hour processing window.</p>
+        <p>12.4 Legal retention exceptions: In exceptional cases where retention is required by applicable law, by a competent authority, or in the event of a dispute, DocNote may retain strictly necessary Data for the legally required duration, subject to restricted access and enhanced safeguards, in accordance with the DPA.</p>
 
         <h2>13. Liability</h2>
         <p>13.1 Standard cap: Subject to Section 13.2 and to the extent permitted by applicable law, DocNote's liability for direct damages is limited to the amounts paid by the Client in the 12 months preceding the incident. DocNote excludes indirect damages and any damages arising from a medical error attributable to the Client's failure to review.</p>
@@ -134,10 +139,12 @@ const layoutTitle = locale === 'fr' ? 'Conditions Générales' : locale === 'de'
         <p>3.3 Human validation: AI models may generate omissions or inaccuracies. The Client is strictly obliged to medically review and validate any document produced before any clinical use or integration into a patient record.</p>
 
         <h2>4. Security, Traceability, and Data Access</h2>
-        <p>4.1 TOMs: DocNote maintains documented TOMs consistent with the state of the art for health data. The architecture ensures strict logical separation (isolation) of Data between clients.</p>
-        <p>4.2 Encryption and authentication: Data is encrypted in transit and at rest. Multi-factor authentication (MFA) is mandatory for any access involving health data. By exception, where the Client implements single sign-on (SSO) under its control, SSO may replace DocNote's MFA provided it offers a level of security at least equivalent, as defined in the Order Form or the DPA.</p>
-        <p>4.3 Need-to-know principle: By default, DocNote staff doesn't have access to Data in plaintext (unencrypted form), including audio streams. Any access is permitted only upon the Client's documented instruction, for a limited duration, and with strict traceability (including logging of administrator access).</p>
-        <p>4.4 Environments: DocNote maintains strict separation between production and test environments. No real health data is used for testing or debugging.</p>
+        <p>4.1 Technical and Organisational Measures (TOMs): DocNote implements documented Technical and Organisational Measures consistent with the state of the art for health data protection. Data is strictly isolated between clients through logical separation. Development, test, and production environments are strictly segregated, and no real health data is used outside production.</p>
+        <p>During temporary processing, physician identity data and consultation content are logically separated to reduce re-identification risk.</p>
+        <p>4.2 Encryption and authentication: All Data is protected by end-to-end encryption (AES-256 at rest; TLS 3.0 in transit).</p>
+        <p>4.3 Need-to-know and traceability: DocNote staff does not access Data in plaintext by default. Any exceptional access requires the Client's documented instruction, is time-limited, and subject to strict audit logging.</p>
+        <p>Systematic audit logs ensure full traceability of administrative access and processing activities.</p>
+        <p>4.4 Data lifecycle: All files containing health data are automatically and irreversibly deleted within forty-eight (48) hours. DocNote does not retain permanent copies of audio files, transcriptions, or medical reports unless expressly agreed in writing.</p>
 
         <h2>5. Client Obligations and Audio Consent</h2>
         <p>5.1 Legal basis: The Client warrants that it has the necessary legal basis under the FADP to process Data via the Service.</p>
@@ -167,12 +174,15 @@ const layoutTitle = locale === 'fr' ? 'Conditions Générales' : locale === 'de'
         <p>10.3 Statistical data: DocNote may use only strictly and irreversibly anonymised usage metadata (so that it no longer constitutes personal data under the FADP) to improve technical performance.</p>
 
         <h2>11. Service Continuity and Billing</h2>
-        <p>11.1 SLA: Availability commitments are set out in the SLA.</p>
+        <p>11.1 Service Level Agreement (SLA): Availability commitments are set out in the SLA.</p>
         <p>11.2 Non-payment: Non-payment triggers a formal notice. If not remedied within a 30-day grace period, DocNote may suspend the Service. To avoid compromising continuity of care, access to prior Data will be maintained at least on a read-only basis or via an export function.</p>
 
-        <h2>12. Exit, Data Portability, and Data Lifecycle</h2>
-        <p>12.1 Export: Upon termination or expiry, the Client has 60 days to export its Data in a standard format (for example JSON, PDF).</p>
-        <p>12.2 Deletion: After this period, production Data will be irreversibly deleted. Upon request, DocNote may provide a certificate of deletion. Data contained in backups remains protected by strict security measures and will be automatically deleted at the end of its standard retention period (as defined in the DPA). Where legally required, upon request by a competent authority, or in the event of a dispute, DocNote may retain certain Data for the strictly necessary duration, subject to restricted access and enhanced safeguards, in accordance with the DPA.</p>
+        <h2>12. Data Retention and Deletion</h2>
+        <p>12.1 Limited retention period: Unless expressly agreed otherwise in the applicable Order Form, production Data is retained for a maximum period of 48 hours after processing. After this period, Data is automatically and irreversibly deleted from production systems.</p>
+        <p>DocNote is not intended to serve as a long-term storage or archiving solution. The Client remains solely responsible for exporting, integrating, and storing validated medical documents within its own patient record systems.</p>
+        <p>12.2 Backups: Data temporarily contained in encrypted system backups may persist solely for technical resilience purposes and is automatically deleted in accordance with the retention schedule defined in the DPA. Such backup Data is not accessible in plaintext and cannot be restored selectively for operational use.</p>
+        <p>12.3 Early deletion: Upon documented request, DocNote may confirm deletion of Data still within the 48-hour processing window.</p>
+        <p>12.4 Legal retention exceptions: In exceptional cases where retention is required by applicable law, by a competent authority, or in the event of a dispute, DocNote may retain strictly necessary Data for the legally required duration, subject to restricted access and enhanced safeguards, in accordance with the DPA.</p>
 
         <h2>13. Liability</h2>
         <p>13.1 Standard cap: Subject to Section 13.2 and to the extent permitted by applicable law, DocNote's liability for direct damages is limited to the amounts paid by the Client in the 12 months preceding the incident. DocNote excludes indirect damages and any damages arising from a medical error attributable to the Client's failure to review.</p>
