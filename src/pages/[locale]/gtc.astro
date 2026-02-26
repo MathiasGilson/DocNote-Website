@@ -1,0 +1,240 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en/gtc');
+}
+
+const entry = await getEntry('pages', locale as Locale);
+const t = entry.data;
+
+const layoutTitle = locale === 'fr' ? 'Conditions Générales' : locale === 'de' ? 'Allgemeine Geschäftsbedingungen' : 'General Terms and Conditions';
+---
+
+<Layout title={layoutTitle}>
+  <section class="pt-32 pb-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
+        {layoutTitle}
+      </h1>
+
+      <!-- Switzerland version -->
+      <div id="gtc-ch" class="gtc-content hidden">
+        <p class="text-center text-gray-500 mb-12">DocNote Service — Gilson GmbH · Version 1.3 · Effective date: January 27th 2026</p>
+
+        <p>These General Terms and Conditions (the "GTCs") govern access to and use of the DocNote solution (the "Service") offered by Gilson GmbH, having its registered office at Baarermattstrasse 8B, 6340 Baar, Switzerland, registered with the Swiss Commercial Register under number CH-170.4.018.382-0 (hereinafter "DocNote"). The Client acknowledges that it uses the Service exclusively in the course of its professional and institutional activities.</p>
+
+        <h2>1. Definitions</h2>
+        <ul>
+          <li><strong>Client:</strong> any legal entity or natural person acting in a professional capacity and subscribing to the Service.</li>
+          <li><strong>User:</strong> any person authorised by the Client to access the Service (each access is named and strictly personal).</li>
+          <li><strong>Data:</strong> all information processed via the Service, including sensitive personal data within the meaning of Art. 5 lit. c of the Swiss Federal Act on Data Protection (FADP, revised; in force since 1 September 2023), in particular health data.</li>
+          <li><strong>Security Incident:</strong> any suspected or confirmed breach resulting, accidentally or unlawfully, in the destruction, loss, alteration, unauthorised disclosure of, or unauthorised access to, Data.</li>
+          <li><strong>Order Form:</strong> any contractual document (quote, order form, framework agreement) specifying the offer, scope, and service levels (Service Level Agreement, "SLA").</li>
+          <li><strong>Data Processing Agreement (DPA):</strong> appendix governing the Parties' obligations under the FADP and setting out the Technical and Organisational Measures ("TOMs").</li>
+        </ul>
+
+        <h2>2. Scope and order of precedence</h2>
+        <p>2.1 In the event of any conflict, the following order of precedence applies: (a) the Order Form (including the SLA), (b) the DPA, (c) these GTCs.</p>
+        <p>2.2 The Client's general purchasing conditions or any other conditions are expressly excluded unless expressly accepted in writing by DocNote.</p>
+
+        <h2>3. Licence, Service Description, and Usage Restrictions</h2>
+        <p>3.1 Licence grant: DocNote grants the Client a personal, non-exclusive, non-transferable right to use the Service for the term of the agreement. The Client shall not share User accounts, perform reverse engineering, or attempt to circumvent security measures.</p>
+        <p>3.2 Assistance tool: The Service is a SaaS software solution assisting medical documentation. It is not a medical device and is not intended for diagnostic purposes.</p>
+        <p>3.3 Human validation: AI models may generate omissions or inaccuracies. The Client is strictly obliged to medically review and validate any document produced before any clinical use or integration into a patient record.</p>
+
+        <h2>4. Security, Traceability, and Data Access</h2>
+        <p>4.1 Technical and Organisational Measures (TOMs): DocNote maintains documented TOMs consistent with the state of the art for health data. The architecture ensures strict logical separation (isolation) of Data between clients.</p>
+        <p>4.2 Encryption and authentication: Data is encrypted in transit and at rest. Multi-factor authentication (MFA) is mandatory for any access involving health data. By exception, where the Client implements single sign-on (SSO) under its control, SSO may replace DocNote's MFA provided it offers a level of security at least equivalent, as defined in the Order Form or the DPA.</p>
+        <p>4.3 Need-to-know principle: By default, DocNote staff doesn't have access to Data in plaintext (unencrypted form), including audio streams. Any access is permitted only upon the Client's documented instruction, for a limited duration, and with strict traceability (including logging of administrator access).</p>
+        <p>4.4 Environments: DocNote maintains strict separation between production and test environments. No real health data is used for testing or debugging.</p>
+
+        <h2>5. Client Obligations and Audio Consent</h2>
+        <p>5.1 Legal basis: The Client warrants that it has the necessary legal basis under the FADP to process Data via the Service.</p>
+        <p>5.2 Recording: Where audio capture is used, the Client is responsible for informing the patient. DocNote provides features supporting transparency (for example visual recording indicators and a "push-to-talk" pause function).</p>
+
+        <h2>6. Medical Professional Secrecy (Art. 321 Swiss Criminal Code)</h2>
+        <p>6.1 Status: DocNote acts as an auxiliary person of the Client within the meaning of Art. 321 of the Swiss Criminal Code ("SCC").</p>
+        <p>6.2 Flow-down obligations: Any DocNote employee or subcontractor who may potentially access the infrastructure is bound by an enhanced confidentiality undertaking and is expressly informed of the criminal sanctions applicable to breaches of medical professional secrecy, which remain applicable after termination of the agreement.</p>
+
+        <h2>7. Data Protection (FADP) and Data Location</h2>
+        <p>7.1 Roles: The Client acts as Controller and DocNote acts as Processor.</p>
+        <p>7.2 Swiss hosting and access restrictions: DocNote warrants that all Data under this agreement is physically hosted in Switzerland (production storage and backups). Any remote access by DocNote teams from outside Switzerland to Data in plaintext (unencrypted form) is strictly prohibited. "Data in plaintext" means any Data rendered intelligible, including during support, administration, viewing, export operations, or through application logs containing Data. Key and secret management is designed to prevent any decryption or reconstruction of Data in plaintext from outside Switzerland. Subprocessors and third-party tools processing Data (including telemetry and logs) are documented in the DPA.</p>
+        <p>7.3 Assistance: DocNote will assist the Client in responding to data subject rights requests, carrying out data protection impact assessments (DPIAs), and documenting institutional compliance.</p>
+
+        <h2>8. Security Incident Notification</h2>
+        <p>8.1 Notification: In the event of a Security Incident, DocNote will notify the Client's designated security contact without undue delay and in any event no later than 24 hours after becoming aware of it.</p>
+        <p>8.2 Content and support: The initial alert will be followed by a detailed report including the nature of the incident, the Data concerned, mitigation measures taken, and available indicators of compromise (IoCs). DocNote will actively assist the Client in assessing risk and, where required, notifying the Swiss Federal Data Protection and Information Commissioner (FDPIC).</p>
+
+        <h2>9. Subprocessing</h2>
+        <p>9.1 Subprocessors: DocNote uses subprocessors (cloud infrastructure, support tools, maintenance). An exhaustive list is appended to the DPA. DocNote prioritises partners hosted in Switzerland and holding recognised security certifications (for example ISO 27001 and, where applicable, ISO 27017 or ISO 27018, or an equivalent recognised certification).</p>
+        <p>9.2 Changes: Any addition or change of subprocessors will be notified with at least 30 days' prior notice, allowing the Client to object on legitimate security or compliance grounds.</p>
+        <p>9.3 Consequences of objection: If the Client raises a justified objection and DocNote cannot maintain the prior subprocessor or provide a compliant alternative, the Client may terminate the affected Order Form without penalty, effective on the date the change would otherwise take effect.</p>
+
+        <h2>10. Intellectual Property and AI Training</h2>
+        <p>10.1 Ownership: The Client remains the sole owner of its Data. DocNote retains all rights in the Service.</p>
+        <p>10.2 No training on Client Data: DocNote shall not use the Client's real textual or audio Data to train or fine-tune AI models. Any use of a third-party AI model must be disclosed in the DPA and must include strict guarantees of non-reuse of Data and Swiss localisation.</p>
+        <p>10.3 Statistical data: DocNote may use only strictly and irreversibly anonymised usage metadata (so that it no longer constitutes personal data under the FADP) to improve technical performance.</p>
+
+        <h2>11. Service Continuity and Billing</h2>
+        <p>11.1 SLA: Availability commitments are set out in the SLA.</p>
+        <p>11.2 Non-payment: Non-payment triggers a formal notice. If not remedied within a 30-day grace period, DocNote may suspend the Service. To avoid compromising continuity of care, access to prior Data will be maintained at least on a read-only basis or via an export function.</p>
+
+        <h2>12. Exit, Data Portability, and Data Lifecycle</h2>
+        <p>12.1 Export: Upon termination or expiry, the Client has 60 days to export its Data in a standard format (for example JSON, PDF).</p>
+        <p>12.2 Deletion: After this period, production Data will be irreversibly deleted. Upon request, DocNote may provide a certificate of deletion. Data contained in backups remains protected by strict security measures and will be automatically deleted at the end of its standard retention period (as defined in the DPA). Where legally required, upon request by a competent authority, or in the event of a dispute, DocNote may retain certain Data for the strictly necessary duration, subject to restricted access and enhanced safeguards, in accordance with the DPA.</p>
+
+        <h2>13. Liability</h2>
+        <p>13.1 Standard cap: Subject to Section 13.2 and to the extent permitted by applicable law, DocNote's liability for direct damages is limited to the amounts paid by the Client in the 12 months preceding the incident. DocNote excludes indirect damages and any damages arising from a medical error attributable to the Client's failure to review.</p>
+        <p>13.2 Exceptions: The liability cap does not apply in cases of wilful misconduct, gross negligence, proven breach of medical professional secrecy (Art. 321 SCC), or breach of the security obligations under these GTCs and the DPA resulting in a Data breach.</p>
+
+        <h2>14. Audit</h2>
+        <p>14.1 The Client may, with 30 days' prior notice, arrange an audit (maximum once per year). To limit operational impact, DocNote may provide recent independent third-party audit reports (for example penetration tests, ISO 27001) to reduce the scope of an on-site audit, without removing the Client's audit right.</p>
+        <p>14.2 The annual limit and notice period do not apply in the event of a major Security Incident or a well-founded suspicion of a serious breach of the FADP.</p>
+
+        <h2>15. General Confidentiality</h2>
+        <p>15.1 In addition to Data, the Parties shall keep strictly confidential all commercial, technical, or financial information exchanged in connection with the agreement during its term and for 5 years after termination.</p>
+
+        <h2>16. Amendments, Governing Law, and Jurisdiction</h2>
+        <p>16.1 Amendments: DocNote may amend these GTCs for minor changes with 30 days' prior notice. Any material change that reduces security, data location commitments, medical secrecy protections, or that affects prices requires the Client's express consent. If the Client refuses, it may terminate without penalty.</p>
+        <p>16.2 Governing law and jurisdiction: Swiss substantive law applies. The competent courts of Geneva, Switzerland, shall have exclusive jurisdiction.</p>
+      </div>
+
+      <!-- International version -->
+      <div id="gtc-int" class="gtc-content hidden">
+        <p class="text-center text-gray-500 mb-12">DocNote Service — Gilson GmbH · Version 1.3 · Effective date: January 27th 2026</p>
+
+        <p>These General Terms and Conditions (the "GTCs") govern access to and use of the DocNote solution (the "Service") offered by Gilson GmbH, having its registered office at Baarermattstrasse 8B, 6340 Baar, Switzerland, registered with the Swiss Commercial Register under number CH-170.4.018.382-0 (hereinafter "DocNote"). The Client acknowledges that it uses the Service exclusively in the course of its professional and institutional activities.</p>
+
+        <h2>1. Definitions</h2>
+        <ul>
+          <li><strong>Client:</strong> any legal entity or natural person acting in a professional capacity and subscribing to the Service.</li>
+          <li><strong>User:</strong> any person authorised by the Client to access the Service (each access is named and strictly personal).</li>
+          <li><strong>Data:</strong> all information processed via the Service, including sensitive personal data within the meaning of Art. 5 lit. c of the Swiss Federal Act on Data Protection (FADP, revised; in force since 1 September 2023), in particular health data.</li>
+          <li><strong>Security Incident:</strong> any suspected or confirmed breach resulting, accidentally or unlawfully, in the destruction, loss, alteration, unauthorised disclosure of, or unauthorised access to, Data.</li>
+          <li><strong>Order Form:</strong> any contractual document (quote, order form, framework agreement) specifying the offer, scope, and service levels (Service Level Agreement, "SLA").</li>
+          <li><strong>Data Processing Agreement (DPA):</strong> appendix governing the Parties' obligations under the FADP and setting out the Technical and Organisational Measures ("TOMs").</li>
+        </ul>
+
+        <h2>2. Scope and order of precedence</h2>
+        <p>2.1 In the event of any conflict, the following order of precedence applies: (a) the Order Form (including the SLA), (b) the DPA, (c) these GTCs.</p>
+        <p>2.2 The Client's general purchasing conditions or any other conditions are expressly excluded unless expressly accepted in writing by DocNote.</p>
+
+        <h2>3. Licence, Service Description, and Usage Restrictions</h2>
+        <p>3.1 Licence grant: DocNote grants the Client a personal, non-exclusive, non-transferable right to use the Service for the term of the agreement. The Client shall not share User accounts, perform reverse engineering, or attempt to circumvent security measures.</p>
+        <p>3.2 Assistance tool: The Service is a SaaS software solution assisting medical documentation. It is not a medical device and is not intended for diagnostic purposes.</p>
+        <p>3.3 Human validation: AI models may generate omissions or inaccuracies. The Client is strictly obliged to medically review and validate any document produced before any clinical use or integration into a patient record.</p>
+
+        <h2>4. Security, Traceability, and Data Access</h2>
+        <p>4.1 TOMs: DocNote maintains documented TOMs consistent with the state of the art for health data. The architecture ensures strict logical separation (isolation) of Data between clients.</p>
+        <p>4.2 Encryption and authentication: Data is encrypted in transit and at rest. Multi-factor authentication (MFA) is mandatory for any access involving health data. By exception, where the Client implements single sign-on (SSO) under its control, SSO may replace DocNote's MFA provided it offers a level of security at least equivalent, as defined in the Order Form or the DPA.</p>
+        <p>4.3 Need-to-know principle: By default, DocNote staff doesn't have access to Data in plaintext (unencrypted form), including audio streams. Any access is permitted only upon the Client's documented instruction, for a limited duration, and with strict traceability (including logging of administrator access).</p>
+        <p>4.4 Environments: DocNote maintains strict separation between production and test environments. No real health data is used for testing or debugging.</p>
+
+        <h2>5. Client Obligations and Audio Consent</h2>
+        <p>5.1 Legal basis: The Client warrants that it has the necessary legal basis under the FADP to process Data via the Service.</p>
+        <p>5.2 Recording: Where audio capture is used, the Client is responsible for informing the patient. DocNote provides features supporting transparency (for example visual recording indicators and a "push-to-talk" pause function).</p>
+
+        <h2>6. Medical Professional Secrecy (Art. 321 Swiss Criminal Code)</h2>
+        <p>6.1 Status: DocNote acts as an auxiliary person of the Client within the meaning of Art. 321 of the Swiss Criminal Code ("SCC").</p>
+        <p>6.2 Flow-down obligations: Any DocNote employee or subcontractor who may potentially access the infrastructure is bound by an enhanced confidentiality undertaking and is expressly informed of the criminal sanctions applicable to breaches of medical professional secrecy, which remain applicable after termination of the agreement.</p>
+
+        <h2>7. Data Protection (FADP) and Data Location</h2>
+        <p>7.1 Roles: The Client acts as Controller and DocNote acts as Processor.</p>
+        <p>7.2 Swiss hosting and access restrictions: DocNote warrants that all Data under this agreement is physically hosted in Switzerland (production storage and backups). Any remote access by DocNote teams from outside Switzerland to Data in plaintext (unencrypted form) is strictly prohibited. "Data in plaintext" means any Data rendered intelligible, including during support, administration, viewing, export operations, or through application logs containing Data. Key and secret management is designed to prevent any decryption or reconstruction of Data in plaintext from outside Switzerland. Subprocessors and third-party tools processing Data (including telemetry and logs) are documented in the DPA.</p>
+        <p>7.3 Assistance: DocNote will assist the Client in responding to data subject rights requests, carrying out data protection impact assessments (DPIAs), and documenting institutional compliance.</p>
+
+        <h2>8. Security Incident Notification</h2>
+        <p>8.1 Notification: In the event of a Security Incident, DocNote will notify the Client's designated security contact without undue delay and in any event no later than 24 hours after becoming aware of it.</p>
+        <p>8.2 Content and support: The initial alert will be followed by a detailed report including the nature of the incident, the Data concerned, mitigation measures taken, and available indicators of compromise (IoCs). DocNote will actively assist the Client in assessing risk and, where required, notifying the Swiss Federal Data Protection and Information Commissioner (FDPIC).</p>
+
+        <h2>9. Subprocessing</h2>
+        <p>9.1 Subprocessors: DocNote uses subprocessors (cloud infrastructure, support tools, maintenance). An exhaustive list is appended to the DPA. DocNote prioritises partners hosted in Switzerland and holding recognised security certifications (for example ISO 27001 and, where applicable, ISO 27017 or ISO 27018, or an equivalent recognised certification).</p>
+        <p>9.2 Changes: Any addition or change of subprocessors will be notified with at least 30 days' prior notice, allowing the Client to object on legitimate security or compliance grounds.</p>
+        <p>9.3 Consequences of objection: If the Client raises a justified objection and DocNote cannot maintain the prior subprocessor or provide a compliant alternative, the Client may terminate the affected Order Form without penalty, effective on the date the change would otherwise take effect.</p>
+
+        <h2>10. Intellectual Property and AI Training</h2>
+        <p>10.1 Ownership: The Client remains the sole owner of its Data. DocNote retains all rights in the Service.</p>
+        <p>10.2 No training on Client Data: DocNote shall not use the Client's real textual or audio Data to train or fine-tune AI models. Any use of a third-party AI model must be disclosed in the DPA and must include strict guarantees of non-reuse of Data and Swiss localisation.</p>
+        <p>10.3 Statistical data: DocNote may use only strictly and irreversibly anonymised usage metadata (so that it no longer constitutes personal data under the FADP) to improve technical performance.</p>
+
+        <h2>11. Service Continuity and Billing</h2>
+        <p>11.1 SLA: Availability commitments are set out in the SLA.</p>
+        <p>11.2 Non-payment: Non-payment triggers a formal notice. If not remedied within a 30-day grace period, DocNote may suspend the Service. To avoid compromising continuity of care, access to prior Data will be maintained at least on a read-only basis or via an export function.</p>
+
+        <h2>12. Exit, Data Portability, and Data Lifecycle</h2>
+        <p>12.1 Export: Upon termination or expiry, the Client has 60 days to export its Data in a standard format (for example JSON, PDF).</p>
+        <p>12.2 Deletion: After this period, production Data will be irreversibly deleted. Upon request, DocNote may provide a certificate of deletion. Data contained in backups remains protected by strict security measures and will be automatically deleted at the end of its standard retention period (as defined in the DPA). Where legally required, upon request by a competent authority, or in the event of a dispute, DocNote may retain certain Data for the strictly necessary duration, subject to restricted access and enhanced safeguards, in accordance with the DPA.</p>
+
+        <h2>13. Liability</h2>
+        <p>13.1 Standard cap: Subject to Section 13.2 and to the extent permitted by applicable law, DocNote's liability for direct damages is limited to the amounts paid by the Client in the 12 months preceding the incident. DocNote excludes indirect damages and any damages arising from a medical error attributable to the Client's failure to review.</p>
+        <p>13.2 Exceptions: The liability cap does not apply in cases of wilful misconduct, gross negligence, proven breach of medical professional secrecy (Art. 321 SCC), or breach of the security obligations under these GTCs and the DPA resulting in a Data breach.</p>
+
+        <h2>14. Audit</h2>
+        <p>14.1 The Client may, with 30 days' prior notice, arrange an audit (maximum once per year). To limit operational impact, DocNote may provide recent independent third-party audit reports (for example penetration tests, ISO 27001) to reduce the scope of an on-site audit, without removing the Client's audit right.</p>
+        <p>14.2 The annual limit and notice period do not apply in the event of a major Security Incident or a well-founded suspicion of a serious breach of the FADP.</p>
+
+        <h2>15. General Confidentiality</h2>
+        <p>15.1 In addition to Data, the Parties shall keep strictly confidential all commercial, technical, or financial information exchanged in connection with the agreement during its term and for 5 years after termination.</p>
+
+        <h2>16. Amendments, Governing Law, and Jurisdiction</h2>
+        <p>16.1 Amendments: DocNote may amend these GTCs for minor changes with 30 days' prior notice. Any material change that reduces security, data location commitments, medical secrecy protections, or that affects prices requires the Client's express consent. If the Client refuses, it may terminate without penalty.</p>
+        <p>16.2 Governing law and jurisdiction: Swiss substantive law applies. The competent courts of Geneva, Switzerland, shall have exclusive jurisdiction.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gtc-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .gtc-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .gtc-content p {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+  .gtc-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .gtc-content li {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<script>
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const isSwiss = tz === 'Europe/Zurich' || tz === 'Europe/Busingen';
+
+  const chEl = document.getElementById('gtc-ch');
+  const intEl = document.getElementById('gtc-int');
+
+  if (isSwiss) {
+    chEl?.classList.remove('hidden');
+  } else {
+    intEl?.classList.remove('hidden');
+  }
+</script>

@@ -149,6 +149,7 @@ const pagesCollection = defineCollection({
       contact: z.string(),
       privacy: z.string(),
       terms: z.string(),
+      gtc: z.string(),
       gdpr: z.string(),
       rights: z.string(),
     }),

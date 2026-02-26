@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear()
     class="relative lg:fixed lg:bottom-0 lg:left-0 lg:right-0 bg-gradient-to-b from-gray-900 via-indigo-950 to-indigo-900 text-gray-400 overflow-hidden"
 >
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-64">
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
             <div class="col-span-2 md:col-span-1">
                 <a href={getLocalizedPath("/", locale)} class="flex items-center gap-2 mb-4">
                     <img src="/images/logo.png" alt="DocNote" class="h-6 w-auto" />
@@ -74,6 +74,17 @@ const currentYear = new Date().getFullYear()
                     <li>
                         <a href="https://www.linkedin.com/company/107244351" target="_blank" rel="noopener noreferrer" class="text-sm text-white hover:text-white/70 transition-colors"
                             >LinkedIn</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.legal}</h4>
+                <ul class="space-y-2.5">
+                    <li>
+                        <a href={getLocalizedPath("/gtc", locale)} class="text-sm text-white hover:text-white/70 transition-colors"
+                            >{t.footer.gtc}</a
                         >
                     </li>
                 </ul>
