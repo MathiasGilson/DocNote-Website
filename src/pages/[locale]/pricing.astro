@@ -50,7 +50,7 @@ const t = entry.data;
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
             <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
             <div class="mb-6">
-              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price}>{t.pricing.professional.price}</span>
+              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="89" data-yearly-chf="71">{t.pricing.professional.price}</span>
               <span class="text-gray-500">{t.pricing.perMonth}</span>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
@@ -63,7 +63,7 @@ const t = entry.data;
                 </li>
               ))}
             </ul>
-          <a href="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" id="subscription-btn" data-yearly-url="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" data-monthly-url="https://buy.stripe.com/14AbJ2811cVa9Z68JK8g00a" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
+          <a href="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" id="subscription-btn" data-yearly-url="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" data-monthly-url="https://buy.stripe.com/14AbJ2811cVa9Z68JK8g00a" data-yearly-chf-url="https://buy.stripe.com/3cIeVe5ST6wM7QY5xy8g00c" data-monthly-chf-url="https://buy.stripe.com/3cI8wQ3KL4oEefmbVW8g00b" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
             {t.pricing.getStarted}
           </a>
         </div>
@@ -130,15 +130,27 @@ const t = entry.data;
   let monthlyPriceValue = parseInt(proPrice?.dataset.monthlyUsd || '79');
   let yearlyPrice = '';
   let monthlyPrice = '';
+  let yearlyUrl = subscriptionBtn?.dataset.yearlyUrl || '';
+  let monthlyUrl = subscriptionBtn?.dataset.monthlyUrl || '';
 
   async function initializePricing() {
     currentCurrency = await detectUserCurrency();
+
+    if (currentCurrency === 'CHF') {
+      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyChf || '71');
+      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyChf || '89');
+      yearlyUrl = subscriptionBtn?.dataset.yearlyChfUrl || yearlyUrl;
+      monthlyUrl = subscriptionBtn?.dataset.monthlyChfUrl || monthlyUrl;
+    }
 
     yearlyPrice = formatPrice(yearlyPriceValue, currentCurrency);
     monthlyPrice = formatPrice(monthlyPriceValue, currentCurrency);
 
     if (proPrice) {
       proPrice.textContent = yearlyPrice;
+    }
+    if (subscriptionBtn) {
+      subscriptionBtn.href = yearlyUrl;
     }
   }
 
@@ -152,7 +164,7 @@ const t = entry.data;
     yearlyBtn.classList.replace('text-gray-400', 'text-gray-900');
     monthlyBtn.classList.replace('text-gray-900', 'text-gray-400');
     if (proPrice) proPrice.textContent = yearlyPrice;
-    if (subscriptionBtn) subscriptionBtn.href = subscriptionBtn.dataset.yearlyUrl || '';
+    if (subscriptionBtn) subscriptionBtn.href = yearlyUrl;
   };
 
   const selectMonthly = () => {
@@ -160,7 +172,7 @@ const t = entry.data;
     monthlyBtn.classList.replace('text-gray-400', 'text-gray-900');
     yearlyBtn.classList.replace('text-gray-900', 'text-gray-400');
     if (proPrice) proPrice.textContent = monthlyPrice;
-    if (subscriptionBtn) subscriptionBtn.href = subscriptionBtn.dataset.monthlyUrl || '';
+    if (subscriptionBtn) subscriptionBtn.href = monthlyUrl;
   };
 
   moveBgTo(yearlyBtn);
