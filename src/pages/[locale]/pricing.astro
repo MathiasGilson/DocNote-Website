@@ -50,7 +50,7 @@ const t = entry.data;
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
             <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
             <div class="mb-6">
-              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="89" data-yearly-chf="71">{t.pricing.professional.price}</span>
+              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="89" data-yearly-chf="79">{t.pricing.professional.price}</span>
               <span class="text-gray-500">{t.pricing.perMonth}</span>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
@@ -137,7 +137,7 @@ const t = entry.data;
     currentCurrency = await detectUserCurrency();
 
     if (currentCurrency === 'CHF') {
-      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyChf || '71');
+      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyChf || '79');
       monthlyPriceValue = parseInt(proPrice?.dataset.monthlyChf || '89');
       yearlyUrl = subscriptionBtn?.dataset.yearlyChfUrl || yearlyUrl;
       monthlyUrl = subscriptionBtn?.dataset.monthlyChfUrl || monthlyUrl;
