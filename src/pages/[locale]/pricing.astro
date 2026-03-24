@@ -50,7 +50,7 @@ const t = entry.data;
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
             <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
             <div class="mb-6">
-              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="89" data-yearly-chf="79">{t.pricing.professional.price}</span>
+              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="89" data-yearly-chf="79" data-monthly-eur="89" data-yearly-eur="79">{t.pricing.professional.price}</span>
               <span class="text-gray-500">{t.pricing.perMonth}</span>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
@@ -63,7 +63,7 @@ const t = entry.data;
                 </li>
               ))}
             </ul>
-          <a href="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" id="subscription-btn" data-yearly-url="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" data-monthly-url="https://buy.stripe.com/14AbJ2811cVa9Z68JK8g00a" data-yearly-chf-url="https://buy.stripe.com/5kQ28sdll6wM9Z6e448g00d" data-monthly-chf-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
+          <a href="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" id="subscription-btn" data-yearly-url="https://buy.stripe.com/3cI9AU811cVa9Z69NO8g009" data-monthly-url="https://buy.stripe.com/14AbJ2811cVa9Z68JK8g00a" data-yearly-chf-url="https://buy.stripe.com/5kQ28sdll6wM9Z6e448g00d" data-monthly-chf-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-eur-url="https://buy.stripe.com/5kQ28sdll6wM9Z6e448g00d" data-monthly-eur-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
             {t.pricing.getStarted}
           </a>
         </div>
@@ -126,8 +126,8 @@ const t = entry.data;
   const subscriptionBtn = document.getElementById('subscription-btn') as HTMLAnchorElement;
 
   let currentCurrency: Currency = 'USD';
-  let yearlyPriceValue = parseInt(proPrice?.dataset.yearlyUsd || '59');
-  let monthlyPriceValue = parseInt(proPrice?.dataset.monthlyUsd || '79');
+  let yearlyPriceValue = parseInt(proPrice?.dataset.yearlyUsd || '79');
+  let monthlyPriceValue = parseInt(proPrice?.dataset.monthlyUsd || '89');
   let yearlyPrice = '';
   let monthlyPrice = '';
   let yearlyUrl = subscriptionBtn?.dataset.yearlyUrl || '';
@@ -141,6 +141,11 @@ const t = entry.data;
       monthlyPriceValue = parseInt(proPrice?.dataset.monthlyChf || '89');
       yearlyUrl = subscriptionBtn?.dataset.yearlyChfUrl || yearlyUrl;
       monthlyUrl = subscriptionBtn?.dataset.monthlyChfUrl || monthlyUrl;
+    } else if (currentCurrency === 'EUR') {
+      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyEur || '79');
+      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyEur || '89');
+      yearlyUrl = subscriptionBtn?.dataset.yearlyEurUrl || yearlyUrl;
+      monthlyUrl = subscriptionBtn?.dataset.monthlyEurUrl || monthlyUrl;
     }
 
     yearlyPrice = formatPrice(yearlyPriceValue, currentCurrency);
