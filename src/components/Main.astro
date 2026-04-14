@@ -2,6 +2,7 @@
 import Hero from "./Hero.astro"
 import LogoBar from "./LogoBar.astro"
 import Features from "./Features.astro"
+import Specificities from "./Specificities.astro"
 import Specialties from "./Specialties.astro"
 import Compliance from "./Compliance.astro"
 import Testimonials from "./Testimonials.astro"
@@ -22,6 +23,7 @@ const t = entry!
 <Hero translations={t.data} />
 <LogoBar translations={t.data} />
 <Features translations={t.data} />
+<Specificities translations={t.data} />
 {variant === "default" && <Specialties translations={t.data} />}
 {variant === "locale" && <Compliance translations={t.data} />}
 <Testimonials translations={t.data} />
