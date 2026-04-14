@@ -88,13 +88,14 @@ const pagesCollection = defineCollection({
       subtitle: z.string(),
       clickToFlip: z.string(),
       clickToFlipBack: z.string(),
-      coding: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
+      coding: z.object({ title: z.string(), teaser: z.string(), description: z.string(), descriptionCh: z.string(), descriptionRow: z.string() }),
       tardoc: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
       ehr: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
       templates: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
       context: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
       hospital: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
       sync: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
+      dayHospital: z.object({ title: z.string(), teaser: z.string(), description: z.string() }),
     }),
     valueProp: z.object({
       title: z.string(),
@@ -221,6 +222,7 @@ const pagesCollection = defineCollection({
       }),
     }),
     team: z.object({
+      aboutUs: z.string(),
       title: z.string(),
       subtitle: z.string(),
       members: z.object({

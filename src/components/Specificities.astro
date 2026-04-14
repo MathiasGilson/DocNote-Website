@@ -41,6 +41,11 @@ const cards = [
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />`,
     gradient: 'from-fuchsia-500 to-pink-600',
   },
+  {
+    key: 'dayHospital',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />`,
+    gradient: 'from-indigo-500 to-blue-600',
+  },
 ];
 ---
 
@@ -49,15 +54,10 @@ const cards = [
     <div class="text-center mb-4">
       <span class="text-xs font-medium text-gray-400 uppercase tracking-widest">{t.specificities.badge}</span>
     </div>
-    <div class="text-center mb-6">
+    <div class="text-center mb-14">
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 max-w-3xl mx-auto leading-snug">
         {t.specificities.title}
       </h2>
-    </div>
-    <div class="text-center mb-14">
-      <p class="text-gray-500 max-w-2xl mx-auto">
-        {t.specificities.subtitle}
-      </p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -65,37 +65,33 @@ const cards = [
         <div class="spec-card group" data-key={card.key}>
           <div class="spec-card-inner">
             <!-- Front face -->
-            <div class="spec-card-face spec-card-front bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
-              <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-4 shadow-md`}>
-                <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={card.icon} />
+            <div class="spec-card-face spec-card-front bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
+              <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-5 shadow-md`}>
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={card.icon} />
               </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              <h3 class="text-base font-semibold text-gray-900 leading-snug tracking-tight">
                 {t.specificities[card.key].title}
               </h3>
-              <p class="text-sm text-gray-500 leading-relaxed flex-grow">
-                {t.specificities[card.key].teaser}
-              </p>
-              <div class="mt-4 flex items-center gap-1.5 text-xs font-medium text-violet-600">
-                <span>{t.specificities.clickToFlip}</span>
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
             </div>
             <!-- Back face -->
-            <div class={`spec-card-face spec-card-back bg-gradient-to-br ${card.gradient} rounded-2xl p-6 shadow-lg flex flex-col text-white`}>
-              <h3 class="text-lg font-semibold mb-3">
+            <div class={`spec-card-face spec-card-back bg-gradient-to-br ${card.gradient} rounded-2xl px-5 py-5 shadow-lg flex flex-col text-white overflow-auto`}>
+              <h3 class="text-sm font-semibold mb-2.5 tracking-tight">
                 {t.specificities[card.key].title}
               </h3>
-              <p class="text-sm leading-relaxed flex-grow text-white/95">
-                {t.specificities[card.key].description}
-              </p>
-              <div class="mt-4 flex items-center gap-1.5 text-xs font-medium text-white/90">
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-                <span>{t.specificities.clickToFlipBack}</span>
-              </div>
+              {card.key === 'coding' ? (
+                <p
+                  class="text-[0.8125rem] leading-[1.55] text-white/95 text-justify"
+                  data-coding-description
+                  data-description-ch={t.specificities.coding.descriptionCh}
+                  data-description-row={t.specificities.coding.descriptionRow}
+                >
+                  {t.specificities.coding.descriptionRow}
+                </p>
+              ) : (
+                <p class="text-[0.8125rem] leading-[1.55] text-white/95 text-justify">
+                  {t.specificities[card.key].description}
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -107,18 +103,18 @@ const cards = [
 <style>
   .spec-card {
     perspective: 1200px;
-    min-height: 260px;
-    cursor: pointer;
+    min-height: 280px;
   }
   .spec-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 260px;
+    min-height: 280px;
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
   }
-  .spec-card.is-flipped .spec-card-inner {
+  .spec-card:hover .spec-card-inner,
+  .spec-card:focus-within .spec-card-inner {
     transform: rotateY(180deg);
   }
   .spec-card-face {
@@ -135,10 +131,14 @@ const cards = [
 </style>
 
 <script>
-  const cards = document.querySelectorAll('.spec-card');
-  cards.forEach((card) => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('is-flipped');
-    });
-  });
+  import { detectUserCurrency } from '../utils/currency';
+
+  (async () => {
+    const el = document.querySelector<HTMLElement>('[data-coding-description]');
+    if (!el) return;
+    const currency = await detectUserCurrency();
+    const ch = el.dataset.descriptionCh || '';
+    const row = el.dataset.descriptionRow || '';
+    el.textContent = currency === 'CHF' ? ch : row;
+  })();
 </script>

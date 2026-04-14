@@ -21,13 +21,15 @@ const t = entry.data
     <section class="pt-32 pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <p class="text-sm uppercase tracking-widest text-gray-500 mb-3">About Us</p>
+                <p class="text-sm uppercase tracking-widest text-gray-500 mb-3">{t.team.aboutUs}</p>
                 <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-5">
                     {t.team.title}
                 </h1>
-                <p class="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    {t.team.subtitle}
-                </p>
+                {t.team.subtitle && (
+                    <p class="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        {t.team.subtitle}
+                    </p>
+                )}
             </div>
 
             <div class="grid md:grid-cols-2 gap-x-16">

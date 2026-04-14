@@ -108,13 +108,15 @@
   "specificities": {
     "badge": "Spécificités",
     "title": "Des spécificités à ne pas manquer",
-    "subtitle": "DocNote s'adapte aux réalités du terrain médical suisse et français. Cliquez sur une carte pour découvrir chaque spécificité en détail.",
+    "subtitle": "DocNote s'adapte aux réalités du terrain médical suisse et français. Survolez une carte pour découvrir chaque spécificité en détail.",
     "clickToFlip": "Cliquez pour en savoir plus",
     "clickToFlipBack": "Retour",
     "coding": {
-      "title": "Codage médical & DRG/PMSI",
+      "title": "Codage médical & facturation",
       "teaser": "Suggestions de codage intégrées aux lettres de sortie.",
-      "description": "DocNote met en évidence les diagnostics associés significatifs (DAS) dans les lettres de sortie et propose automatiquement des suggestions de codage médical en fin de document, adaptées au Swiss DRG en Suisse et au PMSI en France."
+      "description": "DocNote met en évidence les diagnostics associés significatifs (DAS) dans les lettres de sortie et propose automatiquement des suggestions de codage médical en fin de document.",
+      "descriptionCh": "DocNote met en évidence les diagnostics associés significatifs (DAS) dans les lettres de sortie et propose automatiquement des suggestions de codage médical en fin de document, selon le Swiss DRG.",
+      "descriptionRow": "DocNote met en évidence les diagnostics associés significatifs (DAS) dans les lettres de sortie et propose automatiquement des suggestions de codage médical en fin de document, selon le PMSI."
     },
     "tardoc": {
       "title": "Conformité TARDOC",
@@ -145,6 +147,11 @@
       "title": "Mobile & ordinateur synchronisés",
       "teaser": "Travaillez depuis votre téléphone ou votre poste, en toute fluidité.",
       "description": "Utilisez DocNote sur votre téléphone en mobilité et sur votre ordinateur au cabinet : les deux plateformes sont synchronisées en temps réel pour une continuité parfaite de votre flux de travail."
+    },
+    "dayHospital": {
+      "title": "Hôpital de jour collaboratif",
+      "teaser": "Un dossier partagé entre plusieurs intervenants, toujours structuré.",
+      "description": "En hôpital de jour (HDJ), plusieurs intervenants peuvent se partager localement le dossier patient DocNote, le compléter chacun de leur côté, et obtenir au final un dossier unique, structuré et fiable malgré la multiplicité des professionnels impliqués."
     }
   },
   "specialties": {
@@ -309,17 +316,18 @@
     }
   },
   "team": {
-    "title": "Conçu par des cliniciens,<br>avec des ingénieurs tech",
-    "subtitle": "Professionnels de santé et ingénieurs travaillant ensemble pour transformer la documentation médicale",
+    "aboutUs": "À propos",
+    "title": "Pensé par des médecins, développé par des ingénieurs en IA",
+    "subtitle": "",
     "members": {
       "vincentTan": {
         "name": "Dr Vincent Tan",
-        "role": "Médecin & Directeur général",
+        "role": "Médecin & Cofondateur",
         "bio": "Médecin expérimenté avec une expérience à l'Hôpital de la Tour à Genève, apportant une connaissance approfondie du secteur de la santé à DocNote."
       },
       "aliceGilson": {
         "name": "Dre Alice Gilson",
-        "role": "Médecin & Directrice générale",
+        "role": "Médecin & Cofondatrice",
         "bio": "Spécialiste en chirurgie avec une expérience aux Hôpitaux Universitaires de Genève (HUG), dédiée à l'amélioration des flux de travail cliniques."
       },
       "mathiasGilson": {

@@ -108,13 +108,15 @@
     "specificities": {
         "badge": "Specificities",
         "title": "Specificities you shouldn't miss",
-        "subtitle": "DocNote is built for the realities of Swiss and French healthcare. Click a card to discover each specificity in detail.",
+        "subtitle": "DocNote is built for the realities of Swiss and French healthcare. Hover a card to discover each specificity in detail.",
         "clickToFlip": "Click to learn more",
         "clickToFlipBack": "Flip back",
         "coding": {
-            "title": "Medical coding & DRG/PMSI",
+            "title": "Medical coding & billing",
             "teaser": "Coding suggestions built into your discharge letters.",
-            "description": "DocNote highlights significant associated diagnoses (SADs) in discharge letters and automatically provides medical coding suggestions at the end of each document, aligned with Swiss DRG in Switzerland and PMSI in France."
+            "description": "DocNote highlights significant associated diagnoses (SADs) in discharge letters and automatically provides medical coding suggestions at the end of each document.",
+            "descriptionCh": "DocNote highlights significant associated diagnoses (SADs) in discharge letters and automatically provides medical coding suggestions at the end of each document, aligned with Swiss DRG.",
+            "descriptionRow": "DocNote highlights significant associated diagnoses (SADs) in discharge letters and automatically provides medical coding suggestions at the end of each document, aligned with PMSI."
         },
         "tardoc": {
             "title": "TARDOC compliance",
@@ -145,6 +147,11 @@
             "title": "Phone & desktop in sync",
             "teaser": "Work from your phone or your computer — seamlessly.",
             "description": "Use DocNote on your phone while on the move and on your computer at your desk: both platforms stay synchronized in real time for a perfectly continuous workflow."
+        },
+        "dayHospital": {
+            "title": "Collaborative day hospital",
+            "teaser": "A shared patient file across multiple caregivers, always structured.",
+            "description": "In day-hospital settings, multiple caregivers can share the same DocNote patient file locally, each contributing their own notes. The result is a single, structured, and reliable complete record no matter how many different professionals are involved."
         }
     },
     "specialties": {
@@ -309,8 +316,9 @@
         }
     },
     "team": {
-        "title": "Built for clinicians, by clinicians",
-        "subtitle": "Healthcare professionals and engineers working together to transform medical documentation",
+        "aboutUs": "About Us",
+        "title": "Designed by doctors, built by AI engineers",
+        "subtitle": "",
         "members": {
             "vincentTan": {
                 "name": "Dr. Vincent Tan",

@@ -108,13 +108,15 @@
   "specificities": {
     "badge": "Besonderheiten",
     "title": "Besonderheiten, die Sie nicht verpassen sollten",
-    "subtitle": "DocNote ist auf die Realitäten des schweizerischen und französischen Gesundheitswesens zugeschnitten. Klicken Sie auf eine Karte, um jede Besonderheit im Detail zu entdecken.",
+    "subtitle": "DocNote ist auf die Realitäten des schweizerischen und französischen Gesundheitswesens zugeschnitten. Bewegen Sie den Mauszeiger über eine Karte, um jede Besonderheit im Detail zu entdecken.",
     "clickToFlip": "Zum Umdrehen klicken",
     "clickToFlipBack": "Zurück",
     "coding": {
-      "title": "Medizinische Kodierung & DRG/PMSI",
+      "title": "Medizinische Kodierung & Abrechnung",
       "teaser": "Kodierungsvorschläge direkt in Ihren Austrittsberichten.",
-      "description": "DocNote hebt signifikante assoziierte Diagnosen (SADs) in Austrittsberichten hervor und liefert am Ende jedes Dokuments automatisch Vorschläge zur medizinischen Kodierung – angepasst an Swiss DRG in der Schweiz und PMSI in Frankreich."
+      "description": "DocNote hebt signifikante assoziierte Diagnosen (SADs) in Austrittsberichten hervor und liefert am Ende jedes Dokuments automatisch Vorschläge zur medizinischen Kodierung.",
+      "descriptionCh": "DocNote hebt signifikante assoziierte Diagnosen (SADs) in Austrittsberichten hervor und liefert am Ende jedes Dokuments automatisch Vorschläge zur medizinischen Kodierung gemäss Swiss DRG.",
+      "descriptionRow": "DocNote hebt signifikante assoziierte Diagnosen (SADs) in Austrittsberichten hervor und liefert am Ende jedes Dokuments automatisch Vorschläge zur medizinischen Kodierung gemäss PMSI."
     },
     "tardoc": {
       "title": "TARDOC-Konformität",
@@ -145,6 +147,11 @@
       "title": "Handy & Computer synchronisiert",
       "teaser": "Arbeiten Sie nahtlos auf Ihrem Handy oder Computer.",
       "description": "Nutzen Sie DocNote unterwegs auf Ihrem Handy und im Büro auf Ihrem Computer: Beide Plattformen sind in Echtzeit synchronisiert – für einen perfekt nahtlosen Arbeitsablauf."
+    },
+    "dayHospital": {
+      "title": "Kollaborative Tagesklinik",
+      "teaser": "Eine gemeinsame Patientenakte für mehrere Behandelnde, stets strukturiert.",
+      "description": "In der Tagesklinik können mehrere Behandelnde lokal dieselbe DocNote-Patientenakte teilen und ergänzen. Das Ergebnis ist eine einzige, strukturierte und zuverlässige Gesamtakte, unabhängig davon, wie viele verschiedene Fachpersonen beteiligt sind."
     }
   },
   "specialties": {
@@ -309,8 +316,9 @@
     }
   },
   "team": {
-    "title": "Von Klinikern entwickelt,<br>mit Tech-Ingenieuren",
-    "subtitle": "Medizinische Fachkräfte und Ingenieure arbeiten zusammen, um die medizinische Dokumentation zu transformieren",
+    "aboutUs": "Über uns",
+    "title": "Von Ärzten konzipiert, von KI-Ingenieuren entwickelt",
+    "subtitle": "",
     "members": {
       "vincentTan": {
         "name": "Dr. Vincent Tan",
