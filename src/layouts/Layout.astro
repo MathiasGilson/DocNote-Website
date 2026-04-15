@@ -10,9 +10,130 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'AI-powered medical documentation for doctors' } = Astro.props;
+const DEFAULT_DESCRIPTIONS: Record<Locale, string> = {
+  en: 'DocNote is the AI-powered medical scribe and clinical documentation assistant for doctors, surgeons and hospitals in Switzerland and Europe. Generate consultation notes, discharge letters, operative reports and ward-round notes from voice in seconds. Swiss-hosted, FADP, GDPR, HIPAA and ISO 27001 compliant.',
+  fr: "DocNote est l'assistant IA de documentation médicale pour les médecins, chirurgiens et hôpitaux en Suisse, en France et en Europe. Générez en quelques secondes vos notes de consultation, lettres de sortie, comptes rendus opératoires et notes de visite à partir de la voix. Hébergé en Suisse, conforme nLPD, RGPD, HIPAA et ISO 27001.",
+  de: 'DocNote ist der KI-gestützte medizinische Schreibassistent für Ärztinnen, Ärzte, Chirurginnen, Chirurgen und Spitäler in der Schweiz, in Deutschland, Österreich und Europa. Konsultationsnotizen, Austrittsberichte, OP-Berichte und Visitennotizen in Sekunden aus der Sprache. In der Schweiz gehostet, DSG-, DSGVO-, HIPAA- und ISO-27001-konform.',
+};
+
 const locale = getLocaleFromUrl(Astro.url);
+const { title, description = DEFAULT_DESCRIPTIONS[locale] } = Astro.props;
 const t = await getEntry('pages', locale);
+
+const siteUrl = 'https://docnote.ch';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImage = `${siteUrl}/images/og-image.png`;
+
+// Site-wide Organization, WebSite, and SoftwareApplication structured data.
+// Helps Google rich results AND gives LLMs (ChatGPT, Claude, Perplexity, Gemini)
+// a clean entity graph to cite when users ask "best AI medical scribe".
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'DocNote',
+  legalName: 'Gilson GmbH',
+  url: siteUrl,
+  logo: `${siteUrl}/images/logo.png`,
+  description: DEFAULT_DESCRIPTIONS.en,
+  foundingDate: '2024',
+  email: 'contact@docnote.ch',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Baarermattstrasse 8B',
+    postalCode: '6340',
+    addressLocality: 'Baar',
+    addressCountry: 'CH',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'contact@docnote.ch',
+      telephone: '+41 76 242 72 99',
+      areaServed: ['CH', 'FR', 'DE', 'AT', 'BE', 'LU', 'IT'],
+      availableLanguage: ['French', 'German', 'English', 'Italian'],
+    },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/company/docnote-for-doctors',
+    'https://www.linkedin.com/company/107244351',
+  ],
+};
+
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'DocNote',
+  url: siteUrl,
+  inLanguage: ['en', 'fr', 'de'],
+  publisher: { '@type': 'Organization', name: 'DocNote' },
+};
+
+const softwareApplicationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'DocNote',
+  applicationCategory: 'HealthApplication',
+  applicationSubCategory: 'AI Medical Scribe',
+  operatingSystem: 'iOS, Android, Web',
+  description: DEFAULT_DESCRIPTIONS.en,
+  url: siteUrl,
+  image: `${siteUrl}/images/logo.png`,
+  softwareVersion: '2026',
+  inLanguage: ['en', 'fr', 'de', 'it'],
+  audience: {
+    '@type': 'MedicalAudience',
+    audienceType: 'Physicians, surgeons, hospitals, medical practices',
+  },
+  featureList: [
+    'AI-powered medical voice transcription',
+    'Automatic SOAP note generation',
+    'Discharge letter generation',
+    'Operative report (OR report) generation',
+    'Ward-round notes',
+    'Swiss DRG and PMSI medical coding suggestions',
+    'TARDOC-compliant clinical examination descriptions',
+    'EHR integration with Mediway and SOKLE',
+    'Custom Word template support (drag and drop)',
+    'Multi-caregiver day-hospital file sharing',
+    'End-to-end encryption (AES-256, TLS 1.3)',
+    'Swiss-only data hosting',
+    'FADP, GDPR, HIPAA, ISO 27001 compliance',
+    'Mobile and desktop real-time sync',
+    'Multilingual support (French, German, Italian, English, 20+ languages)',
+  ],
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Professional (monthly)',
+      price: '89',
+      priceCurrency: 'CHF',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '89',
+        priceCurrency: 'CHF',
+        unitText: 'MONTH',
+      },
+      availability: 'https://schema.org/InStock',
+      url: `${siteUrl}/${locale}/pricing`,
+    },
+    {
+      '@type': 'Offer',
+      name: 'Professional (yearly billing)',
+      price: '79',
+      priceCurrency: 'CHF',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '79',
+        priceCurrency: 'CHF',
+        unitText: 'MONTH',
+      },
+      availability: 'https://schema.org/InStock',
+      url: `${siteUrl}/${locale}/pricing`,
+    },
+  ],
+  provider: { '@type': 'Organization', name: 'DocNote', legalName: 'Gilson GmbH' },
+};
 ---
 
 <!doctype html>
@@ -21,8 +142,37 @@ const t = await getEntry('pages', locale);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="author" content="DocNote — Gilson GmbH" />
+    <meta name="keywords" content="AI medical scribe, scribe IA médical, KI medizinischer Schreibassistent, medical documentation AI, documentation médicale IA, DocNote, ambient AI scribe, clinical documentation, Swiss DRG, TARDOC, PMSI, FADP, nLPD, GDPR, HIPAA, ISO 27001, Mediway, SOKLE, discharge letter, lettre de sortie, Austrittsbericht, operative report, compte rendu opératoire, OP-Bericht, ward round notes, doctor productivity, physician burnout, ambient listening" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}/en${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
+    <link rel="alternate" hreflang="fr" href={`${siteUrl}/fr${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
+    <link rel="alternate" hreflang="de" href={`${siteUrl}/de${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DocNote" />
+    <meta property="og:title" content={`${title} | DocNote`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : locale === 'de' ? 'de_CH' : 'en_US'} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | DocNote`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
     <title>{title} | DocNote</title>
+
+    <!-- Structured data: Organization, WebSite, SoftwareApplication -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(softwareApplicationLd)} />
   </head>
   <body class="min-h-screen bg-gray-900 text-gray-900 antialiased">
     <Header locale={locale} translations={t.data} />

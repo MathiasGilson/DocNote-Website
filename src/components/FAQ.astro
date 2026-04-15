@@ -8,13 +8,37 @@ interface Props {
 const { translations: t } = Astro.props
 const locale = getLocaleFromUrl(Astro.url)
 
+// Items 2, 3 and 8 have location-aware variants (CH = Swiss DRG/FADP/CHF,
+// ROW = PMSI/GDPR/EUR). The page is rendered server-side with the ROW
+// variant by default; a small client script swaps to the CH variant when
+// the visitor is detected as Swiss (timezone first, then IP fallback).
 const items = [
     { q: t.faq.q1, a: t.faq.a1 },
-    { q: t.faq.q2, a: t.faq.a2 },
-    { q: t.faq.q3, a: t.faq.a3 },
+    { q: t.faq.q2, a: t.faq.a2Row, aCh: t.faq.a2Ch, aRow: t.faq.a2Row, locationAware: true },
+    { q: t.faq.q3, a: t.faq.a3Row, aCh: t.faq.a3Ch, aRow: t.faq.a3Row, locationAware: true },
     { q: t.faq.q4, a: t.faq.a4 },
+    { q: t.faq.q5, a: t.faq.a5 },
+    { q: t.faq.q6, a: t.faq.a6 },
+    { q: t.faq.q7, a: t.faq.a7 },
+    { q: t.faq.q8, a: t.faq.a8Row, aCh: t.faq.a8Ch, aRow: t.faq.a8Row, locationAware: true },
 ]
+
+// JSON-LD FAQPage schema for SEO and AI/LLM discoverability
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a,
+        },
+    })),
+}
 ---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 
 <section id="faq" class="py-20 scroll-mt-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +76,18 @@ const items = [
                             </svg>
                         </button>
                         <div class="faq-content hidden pb-5">
-                            <p class="text-base text-gray-500 leading-relaxed pr-8">{item.a}</p>
+                            {item.locationAware ? (
+                                <p
+                                    class="text-base text-gray-500 leading-relaxed pr-8"
+                                    data-faq-location-aware
+                                    data-answer-ch={item.aCh}
+                                    data-answer-row={item.aRow}
+                                >
+                                    {item.a}
+                                </p>
+                            ) : (
+                                <p class="text-base text-gray-500 leading-relaxed pr-8">{item.a}</p>
+                            )}
                         </div>
                     </div>
                 ))
@@ -62,6 +97,20 @@ const items = [
 </section>
 
 <script>
+    import { detectUserCurrency } from "../utils/currency"
+
+    ;(async () => {
+        const els = document.querySelectorAll<HTMLElement>("[data-faq-location-aware]")
+        if (!els.length) return
+        const currency = await detectUserCurrency()
+        const useCh = currency === "CHF"
+        els.forEach((el) => {
+            const ch = el.dataset.answerCh || ""
+            const row = el.dataset.answerRow || ""
+            el.textContent = useCh ? ch : row
+        })
+    })()
+
     document.querySelectorAll(".faq-toggle").forEach((btn) => {
         btn.addEventListener("click", () => {
             const item = btn.closest(".faq-item")

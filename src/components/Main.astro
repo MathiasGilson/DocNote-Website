@@ -8,6 +8,7 @@ import Compliance from "./Compliance.astro"
 import Testimonials from "./Testimonials.astro"
 import FAQ from "./FAQ.astro"
 import CTA from "./CTA.astro"
+import SeoContent from "./SeoContent.astro"
 import { getEntry } from "astro:content"
 
 interface Props {
@@ -29,3 +30,4 @@ const t = entry!
 <Testimonials translations={t.data} />
 <FAQ translations={t.data} />
 <CTA translations={t.data} />
+<SeoContent locale={(locale as "en" | "fr" | "de") || "en"} />
