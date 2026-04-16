@@ -131,6 +131,7 @@ const pagesCollection = defineCollection({
       q6: z.string(), a6: z.string(),
       q7: z.string(), a7: z.string(),
       q8: z.string(), a8: z.string(), a8Ch: z.string(), a8Row: z.string(),
+      q9: z.string(), a9: z.string(),
     }),
     specialties: z.object({
       title: z.string(),
