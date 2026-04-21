@@ -92,21 +92,3 @@ export async function detectUserCurrency(): Promise<Currency> {
     return 'USD';
   }
 }
-
-// Fine-grained country detection via IANA timezone, used when pricing depends
-// on the specific country (not just the currency bucket). Extend this map
-// whenever a new country gets country-specific pricing or Stripe links.
-const TIMEZONE_TO_COUNTRY: Record<string, string> = {
-  'Europe/Zurich': 'CH',
-  'Europe/Busingen': 'CH',
-  'Europe/Paris': 'FR',
-};
-
-export function getCountryByTimezone(): string | null {
-  try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    return TIMEZONE_TO_COUNTRY[tz] ?? null;
-  } catch {
-    return null;
-  }
-}
