@@ -50,7 +50,7 @@ const t = entry.data;
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
             <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
             <div class="mb-6">
-              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="89" data-yearly-chf="79" data-monthly-eur="89" data-yearly-eur="79">{t.pricing.professional.price}</span>
+              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="89" data-yearly-chf="79" data-monthly-eur="89" data-yearly-eur="79" data-monthly-fr="79" data-yearly-fr="69">{t.pricing.professional.price}</span>
               <span class="text-gray-500">{t.pricing.perMonth}</span>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
@@ -63,7 +63,7 @@ const t = entry.data;
                 </li>
               ))}
             </ul>
-          <a href="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" id="subscription-btn" data-yearly-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-chf-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-chf-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-eur-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-eur-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
+          <a href="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" id="subscription-btn" data-yearly-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-chf-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-chf-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-eur-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-eur-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-fr-url="https://buy.stripe.com/bJe5kEftt1cs1sA7FG8g00h" data-monthly-fr-url="https://buy.stripe.com/fZu28sa99dZe0ow9NO8g00g" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
             {t.pricing.getStarted}
           </a>
         </div>
@@ -116,7 +116,7 @@ const t = entry.data;
 </Layout>
 
 <script>
-  import { detectUserCurrency, formatPrice, type Currency } from '../../utils/currency';
+  import { detectUserCurrency, getCountryByTimezone, formatPrice, type Currency } from '../../utils/currency';
 
   const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
   const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
@@ -135,8 +135,16 @@ const t = entry.data;
 
   async function initializePricing() {
     currentCurrency = await detectUserCurrency();
+    const country = getCountryByTimezone();
 
-    if (currentCurrency === 'CHF') {
+    // France gets its own prices (79/69 EUR) and its own Stripe links — this
+    // override wins over the generic EUR/CHF branches below.
+    if (country === 'FR') {
+      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyFr || '69');
+      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyFr || '79');
+      yearlyUrl = subscriptionBtn?.dataset.yearlyFrUrl || yearlyUrl;
+      monthlyUrl = subscriptionBtn?.dataset.monthlyFrUrl || monthlyUrl;
+    } else if (currentCurrency === 'CHF') {
       yearlyPriceValue = parseInt(proPrice?.dataset.yearlyChf || '79');
       monthlyPriceValue = parseInt(proPrice?.dataset.monthlyChf || '89');
       yearlyUrl = subscriptionBtn?.dataset.yearlyChfUrl || yearlyUrl;
