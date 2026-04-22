@@ -116,7 +116,7 @@ const t = entry.data;
 </Layout>
 
 <script>
-  import { detectUserCurrency, getCountryByTimezone, formatPrice, type Currency } from '../../utils/currency';
+  import { detectUserCurrency, detectUserCountry, formatPrice, type Currency } from '../../utils/currency';
 
   const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
   const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
@@ -135,7 +135,7 @@ const t = entry.data;
 
   async function initializePricing() {
     currentCurrency = await detectUserCurrency();
-    const country = getCountryByTimezone();
+    const country = await detectUserCountry();
 
     // France gets its own prices (79/69 EUR) and its own Stripe links — this
     // override wins over the generic EUR/CHF branches below.

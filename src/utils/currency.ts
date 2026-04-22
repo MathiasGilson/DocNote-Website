@@ -75,27 +75,9 @@ export function getCurrencyByTimezone(): Currency | null {
   }
 }
 
-export async function detectUserCurrency(): Promise<Currency> {
-  // 1. Primary: browser timezone (reliable, offline, no API call).
-  const fromTz = getCurrencyByTimezone();
-  if (fromTz) return fromTz;
-
-  // 2. Fallback: IP geolocation via ipapi.co. Only reached when the timezone
-  //    isn't in our known-mapping (e.g. non-Eurozone EU countries, rest of world).
-  try {
-    const response = await fetch('https://ipapi.co/json/');
-    const data = await response.json();
-    const countryCode = data.country_code;
-    return getCurrencyByCountry(countryCode);
-  } catch (error) {
-    console.error('Failed to detect currency via IP:', error);
-    return 'USD';
-  }
-}
-
-// Fine-grained country detection via IANA timezone, used when pricing depends
-// on the specific country (not just the currency bucket). Extend this map
-// whenever a new country gets country-specific pricing or Stripe links.
+// Fine-grained country detection via IANA timezone, used as a fallback when
+// IP geolocation is unavailable. Extend this map whenever a new country gets
+// country-specific pricing or Stripe links.
 const TIMEZONE_TO_COUNTRY: Record<string, string> = {
   'Europe/Zurich': 'CH',
   'Europe/Busingen': 'CH',
@@ -109,4 +91,40 @@ export function getCountryByTimezone(): string | null {
   } catch {
     return null;
   }
+}
+
+// Cache the IP lookup across callers on the same page load so pricing, FAQ
+// and SeoContent share a single network round-trip.
+let _ipLookup: Promise<{ country_code: string | null } | null> | null = null;
+function fetchIpLocation(): Promise<{ country_code: string | null } | null> {
+  if (_ipLookup) return _ipLookup;
+  _ipLookup = fetch('https://ipapi.co/json/')
+    .then((r) => r.json())
+    .then((d) => ({ country_code: d?.country_code ?? null }))
+    .catch(() => null);
+  return _ipLookup;
+}
+
+// Country detection: IP first (real physical location, what billing should
+// follow), browser timezone as fallback when the IP lookup fails. This matches
+// user expectation that a Swiss user with a Paris-timezone laptop still sees
+// Swiss pricing.
+export async function detectUserCountry(): Promise<string | null> {
+  const ip = await fetchIpLocation();
+  if (ip?.country_code) return ip.country_code;
+  return getCountryByTimezone();
+}
+
+export async function detectUserCurrency(): Promise<Currency> {
+  // 1. Primary: IP geolocation. A Swiss user whose laptop timezone is stuck
+  //    on Europe/Paris still gets CHF because the IP is Swiss.
+  const ip = await fetchIpLocation();
+  if (ip?.country_code) return getCurrencyByCountry(ip.country_code);
+
+  // 2. Fallback: browser timezone, used only when the IP lookup fails
+  //    (offline, blocked by ad blocker, rate-limited, etc.).
+  const fromTz = getCurrencyByTimezone();
+  if (fromTz) return fromTz;
+
+  return 'USD';
 }
