@@ -95,13 +95,39 @@ export function getCountryByTimezone(): string | null {
 
 // Cache the IP lookup across callers on the same page load so pricing, FAQ
 // and SeoContent share a single network round-trip.
+//
+// Primary source: Cloudflare's /cdn-cgi/trace endpoint. The site is hosted on
+// Cloudflare Pages, so this returns Cloudflare's own geolocation of the
+// requesting client (more accurate than third-party IP databases like
+// ipapi.co, which has been observed to mislocate French IPs as Swiss). The
+// response is a plain-text key=value list — we parse the `loc=XX` line.
+//
+// Fallback: ipapi.co/json/, used when /cdn-cgi/trace isn't reachable (local
+// dev server, ad blocker stripping cdn-cgi requests, etc.).
 let _ipLookup: Promise<{ country_code: string | null } | null> | null = null;
 function fetchIpLocation(): Promise<{ country_code: string | null } | null> {
   if (_ipLookup) return _ipLookup;
-  _ipLookup = fetch('https://ipapi.co/json/')
-    .then((r) => r.json())
-    .then((d) => ({ country_code: d?.country_code ?? null }))
-    .catch(() => null);
+  _ipLookup = (async () => {
+    // 1) Same-origin Cloudflare trace (when running on Cloudflare Pages).
+    try {
+      const res = await fetch('/cdn-cgi/trace');
+      if (res.ok) {
+        const text = await res.text();
+        const match = text.match(/^loc=([A-Z]{2})/m);
+        if (match) return { country_code: match[1] };
+      }
+    } catch {
+      /* fall through to ipapi */
+    }
+    // 2) Fallback to third-party IP database.
+    try {
+      const res = await fetch('https://ipapi.co/json/');
+      const data = await res.json();
+      return { country_code: data?.country_code ?? null };
+    } catch {
+      return null;
+    }
+  })();
   return _ipLookup;
 }
 
