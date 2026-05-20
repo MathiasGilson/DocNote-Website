@@ -304,6 +304,14 @@ const pagesCollection = defineCollection({
           }),
         }),
       }),
+      step4: z.object({
+        title: z.string(),
+        description: z.string(),
+      }).optional(),
+      step5: z.object({
+        title: z.string(),
+        description: z.string(),
+      }).optional(),
       cta: z.object({
         title: z.string(),
         subtitle: z.string(),

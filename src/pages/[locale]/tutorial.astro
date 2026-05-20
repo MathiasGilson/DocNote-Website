@@ -16,7 +16,12 @@ if (!isValidLocale(locale)) {
 const entry = await getEntry('pages', locale as Locale);
 const t = entry.data;
 
-const tutorialVideoId = locale === 'fr' ? '-U7Tw03_f10' : 'AJCoJ9kOKrU';
+const tutorialVideoId = locale === 'fr' ? 'xnKpex2jtgs' : 'AJCoJ9kOKrU';
+// FR-only video tutorials for the optional Custom Templates (step 4) and EHR
+// integration (step 5) sections. Other locales don't have step4/step5 in
+// their translation files, so the JSX guards on the data presence below.
+const step4VideoId = locale === 'fr' ? '2Qz-M7LPeAw' : null;
+const step5VideoId = locale === 'fr' ? 'TPkAZcxoqoI' : null;
 ---
 
 <Layout title={`${t.tutorial.title} - DocNote`} description={t.tutorial.subtitle}>
@@ -208,6 +213,64 @@ const tutorialVideoId = locale === 'fr' ? '-U7Tw03_f10' : 'AJCoJ9kOKrU';
             </div>
           </div>
         </div>
+
+        {t.tutorial.step4 && step4VideoId && (
+          <div class="relative">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-indigo-500/30">
+                4
+              </div>
+              <div class="flex-1">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                  {t.tutorial.step4.title}
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                  {t.tutorial.step4.description}
+                </p>
+                <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${step4VideoId}`}
+                    title="DocNote — Templates personnalisés"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {t.tutorial.step5 && step5VideoId && (
+          <div class="relative">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-indigo-500/30">
+                5
+              </div>
+              <div class="flex-1">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                  {t.tutorial.step5.title}
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                  {t.tutorial.step5.description}
+                </p>
+                <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${step5VideoId}`}
+                    title="DocNote — Intégration SOKLE"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <!-- CTA Section -->
