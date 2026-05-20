@@ -510,21 +510,6 @@ const stats = [
     }
 })} />
 
-<style>
-    .soap-text {
-        overflow: hidden;
-        border-right: 2px solid transparent;
-    }
-    .soap-text.typing {
-        border-right-color: currentColor;
-        animation: blink 0.7s step-end infinite;
-    }
-    @keyframes blink {
-        50% {
-            border-right-color: transparent;
-        }
-    }
-</style>
 
 <script>
     const videoModal = document.getElementById("video-modal")
@@ -568,7 +553,6 @@ const stats = [
             }
             element.classList.remove("opacity-0")
             element.classList.add("fade-in-up")
-            textEl.classList.add("typing")
             textEl.textContent = ""
             if (mirrorEl) {
                 mirrorEl.classList.remove("opacity-0")
@@ -578,26 +562,35 @@ const stats = [
             let i = 0
             let j = 0
             const phoneRatio = phoneText.length / text.length
-            const interval = setInterval(() => {
-                if (i < text.length) {
-                    textEl.textContent += text[i]
-                    const targetJ = Math.min(Math.floor((i + 1) * phoneRatio), phoneText.length)
-                    if (mirrorTextEl) {
-                        while (j < targetJ) {
-                            mirrorTextEl.textContent += phoneText[j]
-                            j++
-                        }
-                    }
+            let lastTime = 0
+            let acc = 0
+
+            const tick = (time: number) => {
+                if (!lastTime) lastTime = time
+                acc += time - lastTime
+                lastTime = time
+
+                while (acc >= speed && i < text.length) {
+                    acc -= speed
                     i++
+                    textEl.textContent = text.slice(0, i)
+                    const targetJ = Math.min(Math.floor(i * phoneRatio), phoneText.length)
+                    if (mirrorTextEl) {
+                        mirrorTextEl.textContent = phoneText.slice(0, targetJ)
+                        j = targetJ
+                    }
+                }
+
+                if (i < text.length) {
+                    requestAnimationFrame(tick)
                 } else {
                     if (mirrorTextEl && j < phoneText.length) {
                         mirrorTextEl.textContent = phoneText
                     }
-                    clearInterval(interval)
-                    textEl.classList.remove("typing")
                     resolve()
                 }
-            }, speed)
+            }
+            requestAnimationFrame(tick)
         })
     }
 

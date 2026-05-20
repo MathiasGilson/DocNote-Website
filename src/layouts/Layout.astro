@@ -20,7 +20,7 @@ const locale = getLocaleFromUrl(Astro.url);
 const { title, description = DEFAULT_DESCRIPTIONS[locale] } = Astro.props;
 const t = await getEntry('pages', locale);
 
-const siteUrl = 'https://docnote.ch';
+const siteUrl = 'https://docnote.care';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const ogImage = `${siteUrl}/images/og-image.png`;
 
@@ -36,7 +36,7 @@ const organizationLd = {
   logo: `${siteUrl}/images/logo.png`,
   description: DEFAULT_DESCRIPTIONS.en,
   foundingDate: '2024',
-  email: 'contact@docnote.ch',
+  email: 'contact@docnote.care',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Baarermattstrasse 8B',
@@ -48,7 +48,7 @@ const organizationLd = {
     {
       '@type': 'ContactPoint',
       contactType: 'customer support',
-      email: 'contact@docnote.ch',
+      email: 'contact@docnote.care',
       telephone: '+41 76 242 72 99',
       areaServed: ['CH', 'FR', 'DE', 'AT', 'BE', 'LU', 'IT'],
       availableLanguage: ['French', 'German', 'English', 'Italian'],
