@@ -1,11 +1,8 @@
 import { Readable } from 'node:stream';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { getSitemapUrls } from '../utils/sitemap-urls';
 
-export const GET = async () => {
-  const site = import.meta.env.SITE;
+export const buildSitemapXml = async (site: string, urls: string[]) => {
   const hostname = new URL('/', site).href;
-  const urls = await getSitemapUrls(site);
   const sitemapStream = new SitemapStream({
     hostname,
     xmlns: { news: true, xhtml: true, image: true, video: true },
@@ -13,8 +10,10 @@ export const GET = async () => {
   const xml = await streamToPromise(
     Readable.from(urls.map((url) => ({ url }))).pipe(sitemapStream)
   );
+  return xml.toString();
+};
 
-  return new Response(xml.toString(), {
+export const sitemapXmlResponse = (xml: string) =>
+  new Response(xml, {
     headers: { 'Content-Type': 'application/xml' },
   });
-};

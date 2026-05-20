@@ -1,25 +1,30 @@
 import { getCollection } from 'astro:content';
 import { locales } from './i18n';
 
-const STATIC_PAGES = ['', '/blog', '/contact', '/pricing', '/team', '/tutorial', '/gtc'];
+const STATIC_PAGES = ['/blog', '/contact', '/pricing', '/team', '/tutorial', '/gtc'];
 
-export const getSitemapUrls = async (site: string, base = '/') => {
-  const siteUrl = new URL(base, site);
-  const urls = [new URL('/', siteUrl).href];
+const buildUrls = (site: string, paths: string[]) => {
+  const siteUrl = new URL('/', site);
+  return [...new Set(paths.map((path) => new URL(path, siteUrl).href))].sort((a, b) =>
+    a.localeCompare(b, 'en', { numeric: true })
+  );
+};
 
-  for (const locale of locales) {
-    for (const page of STATIC_PAGES) {
-      const path = page === '' ? `/${locale}/` : `/${locale}${page}/`;
-      urls.push(new URL(path, siteUrl).href);
-    }
-  }
+export const getLandingUrls = (site: string) => {
+  const paths = [
+    '/',
+    ...locales.map((locale) => `/${locale}/`),
+    ...locales.flatMap((locale) => STATIC_PAGES.map((page) => `/${locale}${page}/`)),
+  ];
+  return buildUrls(site, paths);
+};
 
+export const getBlogUrls = async (site: string) => {
   const posts = await getCollection('blog');
-  for (const post of posts) {
+  const paths = posts.map((post) => {
     const [locale, ...slugParts] = post.slug.split('/');
     const slug = slugParts.join('/');
-    urls.push(new URL(`/${locale}/blog/${slug}/`, siteUrl).href);
-  }
-
-  return [...new Set(urls)].sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+    return `/${locale}/blog/${slug}/`;
+  });
+  return buildUrls(site, paths);
 };
