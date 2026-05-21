@@ -33,6 +33,10 @@ jobs:
             echo "::error::CLOUDFLARE_API_TOKEN is not set. Add it in GitHub → Settings → Secrets and variables → Actions."
             exit 1
           fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID is not set. Add your Cloudflare account ID (Qualtir: a03ffe61aba35866b35fc7c1995eb25b)."
+            exit 1
+          fi
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
