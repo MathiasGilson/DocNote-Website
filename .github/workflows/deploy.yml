@@ -42,4 +42,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: a03ffe61aba35866b35fc7c1995eb25b
-          command: pages deploy dist --project-name=docnote-landing
+          command: pages deploy dist --project-name=docnote-website
