@@ -1,0 +1,157 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import { locales, isValidLocale, type Locale } from "../../utils/i18n"
+import { getEntry } from "astro:content"
+
+export function getStaticPaths() {
+    return locales.map((locale) => ({ params: { locale } }))
+}
+
+const { locale } = Astro.params
+
+if (!isValidLocale(locale)) {
+    return Astro.redirect("/fr/patient")
+}
+
+const entry = await getEntry("pages", locale as Locale)
+const t = entry.data
+---
+
+<Layout title="Pour les patients — DocNote">
+    <section class="pt-32 pb-24">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Hero -->
+            <div class="mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                    Et si votre médecin pouvait vous consacrer toute son attention&nbsp;?
+                </h1>
+                <p class="text-lg text-gray-500 leading-relaxed">
+                    Pourquoi votre soignant utilise DocNote, et ce que ça change pour vous.
+                </p>
+            </div>
+
+            <!-- En quelques mots -->
+            <div class="mb-12">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">En quelques mots</h2>
+                <p class="text-gray-700 leading-relaxed text-base">
+                    Pendant votre consultation, votre soignant utilise un assistant qui transcrit ce qui se dit et rédige ensuite le compte-rendu à sa place. Il n'a donc plus besoin de prendre des notes ni de taper sur son clavier pendant que vous lui parlez. Il peut se consacrer entièrement à vous.
+                </p>
+            </div>
+
+            <hr class="border-gray-100 mb-12" />
+
+            <!-- Pourquoi votre soignant l'utilise -->
+            <div class="mb-12">
+                <h2 class="text-xl font-semibold text-gray-900 mb-6">Pourquoi votre soignant l'utilise</h2>
+                <div class="flex flex-col gap-5">
+                    <div class="flex items-baseline gap-3">
+                        <div class="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0 translate-y-[-2px]"></div>
+                        <p class="text-gray-700 leading-relaxed"><span class="font-medium text-gray-900">Il est plus présent.</span> Plutôt que de fixer son écran et de taper, il vous écoute et vous regarde. La consultation redevient un vrai échange.</p>
+                    </div>
+                    <div class="flex items-baseline gap-3">
+                        <div class="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0 translate-y-[-2px]"></div>
+                        <p class="text-gray-700 leading-relaxed"><span class="font-medium text-gray-900">Rien d'important n'est oublié.</span> Le compte-rendu reprend fidèlement ce qui a été dit : vos symptômes, vos antécédents, les décisions prises.</p>
+                    </div>
+                    <div class="flex items-baseline gap-3">
+                        <div class="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0 translate-y-[-2px]"></div>
+                        <p class="text-gray-700 leading-relaxed"><span class="font-medium text-gray-900">Et il a plus de temps pour vous.</span> Le temps qu'il passait à rédiger ses documents, il peut maintenant le passer à vous soigner.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-100 mb-12" />
+
+            <!-- Ce qui se passe avec votre consultation -->
+            <div class="mb-12">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Ce qui se passe avec votre consultation</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    La consultation est enregistrée, avec votre accord. L'enregistrement est ensuite transformé en texte, puis en compte-rendu. Votre soignant le relit, le corrige si besoin et le valide : il reste seul responsable de votre dossier. L'enregistrement audio, lui, est supprimé automatiquement au plus tard 7 jours après la consultation. Seul le compte-rendu validé est conservé dans votre dossier, comme n'importe quelle note de consultation.
+                </p>
+            </div>
+
+            <hr class="border-gray-100 mb-12" />
+
+            <!-- Vos données -->
+            <div class="mb-12">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Vos données</h2>
+                <div class="flex flex-col gap-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Vos données restent en Suisse, sur des serveurs suisses, et ne quittent jamais le territoire. Elles sont confidentielles et protégées par le secret médical, au même titre que le reste de votre dossier. Seule votre équipe de soin peut y accéder.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Elles ne sont jamais vendues, ni utilisées à des fins publicitaires. Et elles ne servent jamais à entraîner une intelligence artificielle : vos consultations ne servent qu'à produire votre compte-rendu.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="border-gray-100 mb-12" />
+
+            <!-- Vous gardez le contrôle -->
+            <div class="mb-12">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Vous gardez le contrôle</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Vous pouvez refuser à tout moment, simplement en le disant à votre soignant, et cela ne change rien à votre prise en charge. Vous pouvez aussi lui poser toutes vos questions. Enfin, vous disposez de droits sur vos données, notamment celui de savoir lesquelles vous concernent, conformément à la loi suisse sur la protection des données.
+                </p>
+            </div>
+
+            <hr class="border-gray-100 mb-12" />
+
+            <!-- FAQ -->
+            <div class="mb-16">
+                <h2 class="text-xl font-semibold text-gray-900 mb-6">Questions fréquentes</h2>
+                <div class="flex flex-col gap-2">
+                    {[
+                        {
+                            q: "Un humain écoute-t-il ma consultation ?",
+                            a: "Non. Tout est automatisé, l'enregistrement n'est écouté par personne. Seul votre soignant accède au compte-rendu, qu'il relit et valide."
+                        },
+                        {
+                            q: "Et si l'assistant se trompe ?",
+                            a: "Aucun document n'arrive dans votre dossier sans relecture. Votre soignant vérifie et corrige chaque compte-rendu avant de le valider. Votre dossier médical reste entièrement sous sa responsabilité."
+                        },
+                        {
+                            q: "Mon assurance peut-elle y accéder ?",
+                            a: "Non. Vos données sont couvertes par le secret médical et ne sont transmises à personne d'autre que votre équipe de soin, ni à votre assurance, ni à votre employeur, ni à un publicitaire."
+                        },
+                        {
+                            q: "Mes données servent-elles à entraîner une intelligence artificielle ?",
+                            a: "Non, jamais. Elles servent uniquement à produire votre compte-rendu."
+                        },
+                        {
+                            q: "Combien de temps l'enregistrement est-il conservé ?",
+                            a: "Il est supprimé automatiquement au plus tard 7 jours après la consultation. Seul le compte-rendu validé par votre soignant reste dans votre dossier."
+                        },
+                        {
+                            q: "Puis-je refuser ?",
+                            a: "Oui, à tout moment, et cela ne change rien à la qualité de votre prise en charge."
+                        },
+                        {
+                            q: "Qui est derrière DocNote ?",
+                            a: "DocNote a été conçu en Suisse par un médecin, pour coller à la réalité du soin et respecter les exigences du secret médical. L'idée de départ était simple : rendre aux soignants le temps et l'attention qu'ils doivent à leurs patients."
+                        }
+                    ].map((item) => (
+                        <details class="group border-b border-gray-100 last:border-b-0">
+                            <summary class="flex items-center justify-between gap-4 py-4 cursor-pointer text-gray-900 font-medium list-none select-none">
+                                {item.q}
+                                <svg class="w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </summary>
+                            <div class="pb-4 text-gray-600 leading-relaxed text-sm">
+                                {item.a}
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="text-gray-500 text-sm">
+                Une question ? Parlez-en à votre soignant, ou écrivez-nous à{" "}
+                <a href="mailto:contact@docnote.app" class="text-violet-600 hover:underline">contact@docnote.app</a>.
+            </div>
+
+        </div>
+    </section>
+</Layout>
