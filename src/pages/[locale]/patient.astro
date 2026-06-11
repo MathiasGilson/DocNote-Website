@@ -14,123 +14,224 @@ if (!isValidLocale(locale)) {
 }
 
 const entry = await getEntry("pages", locale as Locale)
-const t = entry.data
+
+const content = {
+    fr: {
+        pageTitle: "Pour les patients — DocNote",
+        hero: {
+            title: "Et si votre médecin pouvait vous consacrer toute son attention ?",
+            subtitle: "Pourquoi votre soignant utilise DocNote, et ce que ça change pour vous.",
+        },
+        inShort: {
+            label: "En quelques mots",
+            body: "Pendant votre consultation, votre soignant utilise un assistant qui transcrit ce qui se dit et rédige ensuite le compte-rendu à sa place. Il n'a donc plus besoin de prendre des notes ni de taper sur son clavier pendant que vous lui parlez. Il peut se consacrer entièrement à vous.",
+        },
+        why: {
+            title: "Pourquoi votre soignant l'utilise",
+            bullets: [
+                { bold: "Il est plus présent.", text: "Plutôt que de fixer son écran et de taper, il vous écoute et vous regarde. La consultation redevient un vrai échange." },
+                { bold: "Rien d'important n'est oublié.", text: "Le compte-rendu reprend fidèlement ce qui a été dit : vos symptômes, vos antécédents, les décisions prises." },
+                { bold: "Et il a plus de temps pour vous.", text: "Le temps qu'il passait à rédiger ses documents, il peut maintenant le passer à vous soigner." },
+            ],
+        },
+        consultation: {
+            title: "Ce qui se passe avec votre consultation",
+            body: "La consultation est enregistrée, avec votre accord. L'enregistrement est ensuite transformé en texte, puis en compte-rendu. Votre soignant le relit, le corrige si besoin et le valide : il reste seul responsable de votre dossier. L'enregistrement audio, lui, est supprimé automatiquement au plus tard 7 jours après la consultation. Seul le compte-rendu validé est conservé dans votre dossier, comme n'importe quelle note de consultation.",
+        },
+        data: {
+            title: "Vos données",
+            paragraphs: [
+                "Vos données restent en Suisse, sur des serveurs suisses, et ne quittent jamais le territoire. Elles sont confidentielles et protégées par le secret médical, au même titre que le reste de votre dossier. Seule votre équipe de soin peut y accéder.",
+                "Elles ne sont jamais vendues, ni utilisées à des fins publicitaires. Et elles ne servent jamais à entraîner une intelligence artificielle : vos consultations ne servent qu'à produire votre compte-rendu.",
+            ],
+        },
+        control: {
+            title: "Vous gardez le contrôle",
+            body: "Vous pouvez refuser à tout moment, simplement en le disant à votre soignant, et cela ne change rien à votre prise en charge. Vous pouvez aussi lui poser toutes vos questions. Enfin, vous disposez de droits sur vos données, notamment celui de savoir lesquelles vous concernent, conformément à la loi suisse sur la protection des données.",
+        },
+        faq: {
+            title: "Questions fréquentes",
+            items: [
+                { q: "Un humain écoute-t-il ma consultation ?", a: "Non. Tout est automatisé, l'enregistrement n'est écouté par personne. Seul votre soignant accède au compte-rendu, qu'il relit et valide." },
+                { q: "Et si l'assistant se trompe ?", a: "Aucun document n'arrive dans votre dossier sans relecture. Votre soignant vérifie et corrige chaque compte-rendu avant de le valider. Votre dossier médical reste entièrement sous sa responsabilité." },
+                { q: "Mon assurance peut-elle y accéder ?", a: "Non. Vos données sont couvertes par le secret médical et ne sont transmises à personne d'autre que votre équipe de soin, ni à votre assurance, ni à votre employeur, ni à un publicitaire." },
+                { q: "Mes données servent-elles à entraîner une intelligence artificielle ?", a: "Non, jamais. Elles servent uniquement à produire votre compte-rendu." },
+                { q: "Combien de temps l'enregistrement est-il conservé ?", a: "Il est supprimé automatiquement au plus tard 7 jours après la consultation. Seul le compte-rendu validé par votre soignant reste dans votre dossier." },
+                { q: "Puis-je refuser ?", a: "Oui, à tout moment, et cela ne change rien à la qualité de votre prise en charge." },
+                { q: "Qui est derrière DocNote ?", a: "DocNote a été conçu en Suisse par un médecin, pour coller à la réalité du soin et respecter les exigences du secret médical. L'idée de départ était simple : rendre aux soignants le temps et l'attention qu'ils doivent à leurs patients." },
+            ],
+        },
+        contact: "Une question ? Parlez-en à votre soignant, ou écrivez-nous à",
+    },
+    en: {
+        pageTitle: "For patients — DocNote",
+        hero: {
+            title: "What if your doctor could give you their full attention?",
+            subtitle: "Why your care provider uses DocNote, and what it changes for you.",
+        },
+        inShort: {
+            label: "In a nutshell",
+            body: "During your appointment, your care provider uses an assistant that transcribes the conversation and then writes up the notes on their behalf. They no longer need to take notes or type while talking to you. They can focus entirely on you.",
+        },
+        why: {
+            title: "Why your care provider uses it",
+            bullets: [
+                { bold: "They are more present.", text: "Rather than staring at a screen and typing, they listen to you and look at you. The consultation becomes a real exchange again." },
+                { bold: "Nothing important is missed.", text: "The report faithfully captures what was said: your symptoms, your history, the decisions made." },
+                { bold: "And they have more time for you.", text: "The time they used to spend writing up documents can now be spent on your care." },
+            ],
+        },
+        consultation: {
+            title: "What happens with your appointment",
+            body: "The consultation is recorded, with your agreement. The recording is then converted into text, then into a report. Your care provider reads it, corrects it if needed, and validates it — they remain solely responsible for your file. The audio recording is automatically deleted no later than 7 days after the appointment. Only the validated report is kept in your file, like any other consultation note.",
+        },
+        data: {
+            title: "Your data",
+            paragraphs: [
+                "Your data stays in Switzerland, on Swiss servers, and never leaves the country. It is confidential and protected by medical secrecy, just like the rest of your file. Only your care team can access it.",
+                "It is never sold or used for advertising purposes. And it is never used to train an artificial intelligence: your consultations are only used to produce your report.",
+            ],
+        },
+        control: {
+            title: "You stay in control",
+            body: "You can refuse at any time, simply by telling your care provider, and this does not affect your care in any way. You can also ask them any questions you have. Finally, you have rights over your data, including the right to know what data concerns you, in accordance with Swiss data protection law.",
+        },
+        faq: {
+            title: "Frequently asked questions",
+            items: [
+                { q: "Does a human listen to my consultation?", a: "No. Everything is automated — the recording is not listened to by anyone. Only your care provider accesses the report, which they read and validate." },
+                { q: "What if the assistant makes a mistake?", a: "No document reaches your file without review. Your care provider checks and corrects each report before validating it. Your medical file remains entirely under their responsibility." },
+                { q: "Can my insurance company access it?", a: "No. Your data is covered by medical secrecy and is not shared with anyone outside your care team — not your insurance, not your employer, not an advertiser." },
+                { q: "Is my data used to train an AI?", a: "No, never. It is only used to produce your report." },
+                { q: "How long is the recording kept?", a: "It is automatically deleted no later than 7 days after the consultation. Only the report validated by your care provider remains in your file." },
+                { q: "Can I refuse?", a: "Yes, at any time, and it does not affect the quality of your care." },
+                { q: "Who is behind DocNote?", a: "DocNote was designed in Switzerland by a doctor, to fit the reality of medical care and respect the requirements of medical secrecy. The original idea was simple: give care providers back the time and attention they owe their patients." },
+            ],
+        },
+        contact: "A question? Talk to your care provider, or write to us at",
+    },
+    de: {
+        pageTitle: "Für Patienten — DocNote",
+        hero: {
+            title: "Was wäre, wenn Ihr Arzt Ihnen seine volle Aufmerksamkeit widmen könnte?",
+            subtitle: "Warum Ihr Arzt DocNote verwendet und was das für Sie bedeutet.",
+        },
+        inShort: {
+            label: "Kurz erklärt",
+            body: "Während Ihrer Konsultation verwendet Ihr Arzt einen Assistenten, der das Gespräch transkribiert und anschließend den Bericht erstellt. Er muss keine Notizen mehr machen oder tippen, während er mit Ihnen spricht. Er kann sich vollständig auf Sie konzentrieren.",
+        },
+        why: {
+            title: "Warum Ihr Arzt es verwendet",
+            bullets: [
+                { bold: "Er ist präsenter.", text: "Anstatt auf den Bildschirm zu starren und zu tippen, hört er Ihnen zu und schaut Sie an. Die Konsultation wird wieder zu einem echten Gespräch." },
+                { bold: "Nichts Wichtiges wird vergessen.", text: "Der Bericht gibt das Gesagte getreu wieder: Ihre Symptome, Ihre Vorgeschichte, die getroffenen Entscheidungen." },
+                { bold: "Und er hat mehr Zeit für Sie.", text: "Die Zeit, die er früher mit dem Verfassen von Dokumenten verbracht hat, kann er jetzt für Ihre Behandlung nutzen." },
+            ],
+        },
+        consultation: {
+            title: "Was mit Ihrer Konsultation passiert",
+            body: "Die Konsultation wird mit Ihrer Zustimmung aufgezeichnet. Die Aufnahme wird dann in Text und anschließend in einen Bericht umgewandelt. Ihr Arzt liest ihn, korrigiert ihn bei Bedarf und validiert ihn — er bleibt allein verantwortlich für Ihre Akte. Die Audioaufnahme wird spätestens 7 Tage nach der Konsultation automatisch gelöscht. Nur der validierte Bericht bleibt in Ihrer Akte, wie jede andere Konsultationsnotiz.",
+        },
+        data: {
+            title: "Ihre Daten",
+            paragraphs: [
+                "Ihre Daten bleiben in der Schweiz, auf Schweizer Servern, und verlassen das Land nie. Sie sind vertraulich und durch das Arztgeheimnis geschützt, genau wie der Rest Ihrer Akte. Nur Ihr Behandlungsteam kann darauf zugreifen.",
+                "Sie werden nie verkauft oder zu Werbezwecken verwendet. Und sie dienen nie dazu, eine künstliche Intelligenz zu trainieren: Ihre Konsultationen dienen nur dazu, Ihren Bericht zu erstellen.",
+            ],
+        },
+        control: {
+            title: "Sie behalten die Kontrolle",
+            body: "Sie können jederzeit ablehnen, indem Sie es Ihrem Arzt einfach sagen, und das ändert nichts an Ihrer Behandlung. Sie können ihm auch alle Ihre Fragen stellen. Schließlich haben Sie Rechte an Ihren Daten, einschließlich des Rechts zu erfahren, welche Daten Sie betreffen, gemäß dem Schweizer Datenschutzgesetz.",
+        },
+        faq: {
+            title: "Häufig gestellte Fragen",
+            items: [
+                { q: "Hört ein Mensch meine Konsultation ab?", a: "Nein. Alles ist automatisiert — die Aufnahme wird von niemandem abgehört. Nur Ihr Arzt greift auf den Bericht zu, den er liest und validiert." },
+                { q: "Was, wenn der Assistent einen Fehler macht?", a: "Kein Dokument gelangt ohne Überprüfung in Ihre Akte. Ihr Arzt prüft und korrigiert jeden Bericht, bevor er ihn validiert. Ihre Krankenakte bleibt vollständig unter seiner Verantwortung." },
+                { q: "Kann meine Versicherung darauf zugreifen?", a: "Nein. Ihre Daten unterliegen dem Arztgeheimnis und werden an niemanden außerhalb Ihres Behandlungsteams weitergegeben — nicht an Ihre Versicherung, nicht an Ihren Arbeitgeber, nicht an einen Werbetreibenden." },
+                { q: "Werden meine Daten zum Trainieren einer KI verwendet?", a: "Nein, niemals. Sie dienen ausschließlich zur Erstellung Ihres Berichts." },
+                { q: "Wie lange wird die Aufnahme aufbewahrt?", a: "Sie wird spätestens 7 Tage nach der Konsultation automatisch gelöscht. Nur der von Ihrem Arzt validierte Bericht bleibt in Ihrer Akte." },
+                { q: "Kann ich ablehnen?", a: "Ja, jederzeit, und das hat keinen Einfluss auf die Qualität Ihrer Behandlung." },
+                { q: "Wer steckt hinter DocNote?", a: "DocNote wurde in der Schweiz von einem Arzt entwickelt, um der Realität der medizinischen Versorgung gerecht zu werden und die Anforderungen des Arztgeheimnisses zu erfüllen. Die ursprüngliche Idee war einfach: den Ärzten die Zeit und Aufmerksamkeit zurückzugeben, die sie ihren Patienten schulden." },
+            ],
+        },
+        contact: "Eine Frage? Sprechen Sie mit Ihrem Arzt oder schreiben Sie uns an",
+    },
+}
+
+const c = content[locale as keyof typeof content] ?? content.fr
 ---
 
-<Layout title="Pour les patients — DocNote">
+<Layout title={c.pageTitle}>
     <section class="pt-32 pb-24">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Hero -->
             <div class="mb-16">
                 <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-4">
-                    Et si votre médecin pouvait vous consacrer toute son attention&nbsp;?
+                    {c.hero.title}
                 </h1>
                 <p class="text-lg text-gray-500 leading-relaxed">
-                    Pourquoi votre soignant utilise DocNote, et ce que ça change pour vous.
+                    {c.hero.subtitle}
                 </p>
             </div>
 
-            <!-- En quelques mots -->
+            <!-- In short -->
             <div class="mb-12">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">En quelques mots</h2>
-                <p class="text-gray-700 leading-relaxed text-base">
-                    Pendant votre consultation, votre soignant utilise un assistant qui transcrit ce qui se dit et rédige ensuite le compte-rendu à sa place. Il n'a donc plus besoin de prendre des notes ni de taper sur son clavier pendant que vous lui parlez. Il peut se consacrer entièrement à vous.
-                </p>
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">{c.inShort.label}</h2>
+                <p class="text-gray-700 leading-relaxed text-base">{c.inShort.body}</p>
             </div>
 
             <hr class="border-gray-100 mb-12" />
 
-            <!-- Pourquoi votre soignant l'utilise -->
+            <!-- Why -->
             <div class="mb-12">
-                <h2 class="text-xl font-semibold text-gray-900 mb-6">Pourquoi votre soignant l'utilise</h2>
+                <h2 class="text-xl font-semibold text-gray-900 mb-6">{c.why.title}</h2>
                 <div class="flex flex-col gap-5">
-                    <div class="flex items-baseline gap-3">
-                        <div class="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0 translate-y-[-2px]"></div>
-                        <p class="text-gray-700 leading-relaxed"><span class="font-medium text-gray-900">Il est plus présent.</span> Plutôt que de fixer son écran et de taper, il vous écoute et vous regarde. La consultation redevient un vrai échange.</p>
-                    </div>
-                    <div class="flex items-baseline gap-3">
-                        <div class="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0 translate-y-[-2px]"></div>
-                        <p class="text-gray-700 leading-relaxed"><span class="font-medium text-gray-900">Rien d'important n'est oublié.</span> Le compte-rendu reprend fidèlement ce qui a été dit : vos symptômes, vos antécédents, les décisions prises.</p>
-                    </div>
-                    <div class="flex items-baseline gap-3">
-                        <div class="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0 translate-y-[-2px]"></div>
-                        <p class="text-gray-700 leading-relaxed"><span class="font-medium text-gray-900">Et il a plus de temps pour vous.</span> Le temps qu'il passait à rédiger ses documents, il peut maintenant le passer à vous soigner.</p>
-                    </div>
+                    {c.why.bullets.map((b) => (
+                        <div class="flex items-baseline gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0 translate-y-[-2px]"></div>
+                            <p class="text-gray-700 leading-relaxed"><span class="font-medium text-gray-900">{b.bold}</span> {b.text}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
 
             <hr class="border-gray-100 mb-12" />
 
-            <!-- Ce qui se passe avec votre consultation -->
+            <!-- Consultation -->
             <div class="mb-12">
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Ce qui se passe avec votre consultation</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    La consultation est enregistrée, avec votre accord. L'enregistrement est ensuite transformé en texte, puis en compte-rendu. Votre soignant le relit, le corrige si besoin et le valide : il reste seul responsable de votre dossier. L'enregistrement audio, lui, est supprimé automatiquement au plus tard 7 jours après la consultation. Seul le compte-rendu validé est conservé dans votre dossier, comme n'importe quelle note de consultation.
-                </p>
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">{c.consultation.title}</h2>
+                <p class="text-gray-700 leading-relaxed">{c.consultation.body}</p>
             </div>
 
             <hr class="border-gray-100 mb-12" />
 
-            <!-- Vos données -->
+            <!-- Data -->
             <div class="mb-12">
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Vos données</h2>
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">{c.data.title}</h2>
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 leading-relaxed">
-                        Vos données restent en Suisse, sur des serveurs suisses, et ne quittent jamais le territoire. Elles sont confidentielles et protégées par le secret médical, au même titre que le reste de votre dossier. Seule votre équipe de soin peut y accéder.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Elles ne sont jamais vendues, ni utilisées à des fins publicitaires. Et elles ne servent jamais à entraîner une intelligence artificielle : vos consultations ne servent qu'à produire votre compte-rendu.
-                    </p>
+                    {c.data.paragraphs.map((p) => (
+                        <p class="text-gray-700 leading-relaxed">{p}</p>
+                    ))}
                 </div>
             </div>
 
             <hr class="border-gray-100 mb-12" />
 
-            <!-- Vous gardez le contrôle -->
+            <!-- Control -->
             <div class="mb-12">
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Vous gardez le contrôle</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    Vous pouvez refuser à tout moment, simplement en le disant à votre soignant, et cela ne change rien à votre prise en charge. Vous pouvez aussi lui poser toutes vos questions. Enfin, vous disposez de droits sur vos données, notamment celui de savoir lesquelles vous concernent, conformément à la loi suisse sur la protection des données.
-                </p>
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">{c.control.title}</h2>
+                <p class="text-gray-700 leading-relaxed">{c.control.body}</p>
             </div>
 
             <hr class="border-gray-100 mb-12" />
 
             <!-- FAQ -->
             <div class="mb-16">
-                <h2 class="text-xl font-semibold text-gray-900 mb-6">Questions fréquentes</h2>
+                <h2 class="text-xl font-semibold text-gray-900 mb-6">{c.faq.title}</h2>
                 <div class="flex flex-col gap-2">
-                    {[
-                        {
-                            q: "Un humain écoute-t-il ma consultation ?",
-                            a: "Non. Tout est automatisé, l'enregistrement n'est écouté par personne. Seul votre soignant accède au compte-rendu, qu'il relit et valide."
-                        },
-                        {
-                            q: "Et si l'assistant se trompe ?",
-                            a: "Aucun document n'arrive dans votre dossier sans relecture. Votre soignant vérifie et corrige chaque compte-rendu avant de le valider. Votre dossier médical reste entièrement sous sa responsabilité."
-                        },
-                        {
-                            q: "Mon assurance peut-elle y accéder ?",
-                            a: "Non. Vos données sont couvertes par le secret médical et ne sont transmises à personne d'autre que votre équipe de soin, ni à votre assurance, ni à votre employeur, ni à un publicitaire."
-                        },
-                        {
-                            q: "Mes données servent-elles à entraîner une intelligence artificielle ?",
-                            a: "Non, jamais. Elles servent uniquement à produire votre compte-rendu."
-                        },
-                        {
-                            q: "Combien de temps l'enregistrement est-il conservé ?",
-                            a: "Il est supprimé automatiquement au plus tard 7 jours après la consultation. Seul le compte-rendu validé par votre soignant reste dans votre dossier."
-                        },
-                        {
-                            q: "Puis-je refuser ?",
-                            a: "Oui, à tout moment, et cela ne change rien à la qualité de votre prise en charge."
-                        },
-                        {
-                            q: "Qui est derrière DocNote ?",
-                            a: "DocNote a été conçu en Suisse par un médecin, pour coller à la réalité du soin et respecter les exigences du secret médical. L'idée de départ était simple : rendre aux soignants le temps et l'attention qu'ils doivent à leurs patients."
-                        }
-                    ].map((item) => (
+                    {c.faq.items.map((item) => (
                         <details class="group border-b border-gray-100 last:border-b-0">
                             <summary class="flex items-center justify-between gap-4 py-4 cursor-pointer text-gray-900 font-medium list-none select-none">
                                 {item.q}
@@ -148,7 +249,7 @@ const t = entry.data
 
             <!-- Contact -->
             <div class="text-gray-500 text-sm">
-                Une question ? Parlez-en à votre soignant, ou écrivez-nous à{" "}
+                {c.contact}{" "}
                 <a href="mailto:contact@docnote.app" class="text-violet-600 hover:underline">contact@docnote.app</a>.
             </div>
 
