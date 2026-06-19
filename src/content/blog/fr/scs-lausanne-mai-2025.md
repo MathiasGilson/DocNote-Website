@@ -14,14 +14,8 @@ Au congrès du SCS à Lausanne, Dre Alice Gilson, du département de chirurgie v
 
 ![DocNote au Congrès SCS à Lausanne](/images/SCS%20Lausanne.jpeg)
 
-<br>
-
 S'appuyant sur des données suisses récentes, elle a souligné que les médecins consacrent jusqu'à cinq heures par jour aux tâches administratives. Elle a identifié les causes principales : des systèmes de DME mal conçus, des exigences réglementaires croissantes, la traçabilité médico-légale et les obligations complexes de codification clinique.
 
-<br>
-
 Si les premières études montrent que les outils de documentation alimentés par l'IA peuvent réduire le temps de rédaction d'environ 20 % et améliorer la qualité, Dre Gilson a insisté sur les risques associés, notamment les hallucinations, la responsabilité clinique et les préoccupations en matière de protection des données selon le droit suisse et européen.
-
-<br>
 
 Elle a conclu en présentant DocNote, une solution développée en Suisse conçue pour générer des comptes rendus de consultation anonymisés tout en garantissant un stockage local strict des données et la suppression automatique des enregistrements, visant à réduire la charge administrative sans compromettre la confidentialité.

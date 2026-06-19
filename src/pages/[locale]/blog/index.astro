@@ -54,6 +54,7 @@ const categoryColors: Record<string, string> = {
                             src={post.data.image}
                             alt={post.data.title}
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            style={`object-position: ${post.data.imagePosition ?? 'center'};`}
                           />
                         </div>
                         <div class="p-5 flex-1">
@@ -122,6 +123,7 @@ const categoryColors: Record<string, string> = {
                       src={post.data.image}
                       alt={post.data.title}
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      style={`object-position: ${post.data.imagePosition ?? 'center'};`}
                     />
                   </div>
                   <div class="p-6">

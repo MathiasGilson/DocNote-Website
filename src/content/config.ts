@@ -344,6 +344,8 @@ const blogCollection = defineCollection({
     authorRole: z.string(),
     authorImage: z.string(),
     image: z.string(),
+    imagePosition: z.string().optional(),
+    fullImage: z.boolean().optional(),
     date: z.string(),
     readTime: z.number(),
   }),

@@ -61,15 +61,21 @@ const categoryColors: Record<string, string> = {
         </div>
       </header>
 
-      <div id="photo-gallery" class="flex gap-4 mb-10">
-        <div class="gallery-item relative rounded-xl overflow-hidden shadow-lg">
-          <img
-            src={post.data.image}
-            alt={post.data.title}
-            class="gallery-img"
-          />
+      {post.data.fullImage ? (
+        <figure class="hero-image mb-12">
+          <img src={post.data.image} alt={post.data.title} />
+        </figure>
+      ) : (
+        <div id="photo-gallery" class="flex gap-4 mb-10">
+          <div class="gallery-item relative rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={post.data.image}
+              alt={post.data.title}
+              class="gallery-img"
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       <div class="blog-content max-w-none">
         <Content />
@@ -80,6 +86,21 @@ const categoryColors: Record<string, string> = {
 </Layout>
 
 <style>
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    max-height: 520px;
+    width: auto;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
   :global(.gallery-item) {
     flex: 1;
     min-width: 0;
@@ -192,5 +213,4 @@ const categoryColors: Record<string, string> = {
       }
     });
   }
-
 </script>

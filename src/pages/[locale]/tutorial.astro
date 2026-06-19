@@ -16,7 +16,7 @@ if (!isValidLocale(locale)) {
 const entry = await getEntry('pages', locale as Locale);
 const t = entry.data;
 
-const tutorialVideoId = locale === 'fr' ? 'xnKpex2jtgs' : 'AJCoJ9kOKrU';
+const tutorialVideoId = locale === 'fr' ? 'xnKpex2jtgs' : locale === 'de' ? 'AJCoJ9kOKrU' : 'DdQ_POkaaPE';
 // FR-only video tutorials for the optional Custom Templates (step 4) and EHR
 // integration (step 5) sections. Other locales don't have step4/step5 in
 // their translation files, so the JSX guards on the data presence below.

@@ -14,14 +14,8 @@ At the SCS Congress in Lausanne, Dr. Alice Gilson from the Department of Viscera
 
 ![DocNote at SCS Congress in Lausanne](/images/SCS%20Lausanne.jpeg)
 
-<br>
-
 Citing recent Swiss data, she highlighted that physicians spend up to five hours per day on administrative tasks. She identified key causes: poorly designed EHR systems, increasing regulatory requirements, medico-legal traceability and complex clinical coding obligations.
 
-<br>
-
 While early studies show that AI-powered documentation tools can reduce note-writing time by around 20% and improve quality, Dr. Gilson stressed the associated risks, including hallucinations, clinical responsibility and data protection concerns under Swiss and EU law.
-
-<br>
 
 She concluded by presenting DocNote, a Swiss-developed solution designed to generate anonymised consultation reports while ensuring strict local data storage and automatic deletion of recordings, aiming to reduce administrative workload without compromising confidentiality.

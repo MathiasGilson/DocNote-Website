@@ -14,14 +14,8 @@ Am Jahreskongress der SSMIG (Schweizerische Gesellschaft für Allgemeine Innere 
 
 ![DocNote an der SGAIM-Jahreskonferenz](/images/ssmig_-_2.jpg)
 
-<br>
-
 Im Rahmen des Kongressprogramms wurde das Projekt beim Prix Lumière hervorgehoben, einer Auszeichnung für zukunftsweisende Initiativen zur Verbesserung der Versorgungsqualität und der Arbeitsbedingungen von Ärzten. Diese Anerkennung stellte DocNote in eine ausgewählte Gruppe von Projekten, die strukturelle Herausforderungen der Inneren Medizin adressieren.
 
-<br>
-
 Die Präsentation betonte sowohl die messbaren Vorteile der KI-gestützten Dokumentation, darunter reduzierter Zeitaufwand für die Berichterstellung, verbesserte Berichtsqualität und verbesserte Beziehung zum Patienten, als auch die Bedeutung der Auseinandersetzung mit Limitationen wie Halluzinationen, medizinisch-rechtlicher Verantwortung und Datenschutz.
-
-<br>
 
 DocNotes Präsenz an der SSMIG spiegelte einen breiteren Wandel in der Schweizer Inneren Medizin wider: ein wachsendes Interesse an KI-Tools, die nicht nur technologisch fortschrittlich, sondern klinisch relevant, sicher und nahtlos in die täglichen Arbeitsabläufe integriert sind.
