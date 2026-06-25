@@ -38,6 +38,9 @@ function isActive(path: string) {
           <a href={getLocalizedPath('/team', locale)} class:list={["text-base transition-colors", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.team}
           </a>
+          <a href="/fr/sondage" class:list={["text-base transition-colors", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+            {t.nav.survey}
+          </a>
           <a href={getLocalizedPath('/patient', locale)} class:list={["text-base transition-colors", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.patient}
           </a>
@@ -83,6 +86,7 @@ function isActive(path: string) {
         <a href={getLocalizedPath('/pricing', locale)} class:list={["text-lg", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.pricing}</a>
         <a href={getLocalizedPath('/blog', locale)} class:list={["text-lg", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.blog}</a>
         <a href={getLocalizedPath('/team', locale)} class:list={["text-lg", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.team}</a>
+        <a href="/fr/sondage" class:list={["text-lg", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.survey}</a>
         <a href={getLocalizedPath('/patient', locale)} class:list={["text-lg", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.patient}</a>
         <div class="flex flex-col gap-3 mt-2">
           <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 text-center hover:bg-gray-200 transition-all">{t.nav.appStore}</a>

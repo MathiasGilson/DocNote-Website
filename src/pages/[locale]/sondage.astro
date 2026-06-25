@@ -8,7 +8,16 @@ export function getStaticPaths() {
 }
 
 const SPECIALTIES = specialtiesData as { value: string; label: string }[];
-const APP_BASE = '/app';
+
+// Same destinations as the header buttons.
+const APP_WEB = '/app';
+const APP_IOS = 'https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR';
+const APP_ANDROID = 'https://play.google.com/store/apps/details?id=app.docnote&pli=1';
+
+// Web3Forms — emails each completed lead to contact@docnote.ch.
+// The access key is public by design (submit-only). Create one at
+// https://web3forms.com with contact@docnote.ch, then set PUBLIC_WEB3FORMS_KEY.
+const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY';
 ---
 
 <Layout title="Calculez votre indice de surcharge administrative">
@@ -22,7 +31,7 @@ const APP_BASE = '/app';
       <div class="max-w-2xl mx-auto">
 
         <!-- ============ SCREEN 1 — Intro ============ -->
-        <div data-screen="1" class="survey-screen">
+        <div data-screen="1" class="survey-screen transition-all duration-500 ease-out">
           <div class="text-center">
             <div class="inline-flex items-center gap-2 bg-violet-100 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-8">
               <span class="relative flex h-2 w-2">
@@ -55,26 +64,26 @@ const APP_BASE = '/app';
         </div>
 
         <!-- ============ SCREEN 2 — Profil ============ -->
-        <div data-screen="2" class="survey-screen hidden">
+        <div data-screen="2" class="survey-screen hidden transition-all duration-500 ease-out">
           <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Votre profil</h2>
           <p class="text-gray-500 mb-8">Toujours 100 % anonyme.</p>
 
           <div class="space-y-7">
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Spécialité</label>
-              <select data-answer="specialty" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition">
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Spécialité <span class="text-violet-500">*</span></label>
+              <select data-answer="specialty" data-required class="field">
                 <option value="">Sélectionnez votre spécialité…</option>
               </select>
             </div>
 
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Âge</label>
-              <input type="number" min="20" max="99" inputmode="numeric" data-answer="age" placeholder="Ex. 42" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition" />
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Âge <span class="text-violet-500">*</span></label>
+              <input type="number" min="20" max="99" inputmode="numeric" data-answer="age" data-required placeholder="Ex. 42" class="field" />
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-2">Genre</span>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" data-group="gender">
+              <span class="block text-sm font-semibold text-gray-700 mb-2">Genre <span class="text-violet-500">*</span></span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-xl" data-group="gender" data-required>
                 <button type="button" data-value="homme" class="opt">Homme</button>
                 <button type="button" data-value="femme" class="opt">Femme</button>
                 <button type="button" data-value="autre" class="opt">Je ne souhaite pas préciser / autre</button>
@@ -82,8 +91,8 @@ const APP_BASE = '/app';
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-2">Poste actuel</span>
-              <div class="grid grid-cols-2 gap-3" data-group="position">
+              <span class="block text-sm font-semibold text-gray-700 mb-2">Poste actuel <span class="text-violet-500">*</span></span>
+              <div class="grid grid-cols-2 gap-3 rounded-xl" data-group="position" data-required>
                 <button type="button" data-value="interne" class="opt">Interne</button>
                 <button type="button" data-value="chef_clinique" class="opt">Chef de clinique</button>
                 <button type="button" data-value="adjoint" class="opt">Adjoint</button>
@@ -92,8 +101,8 @@ const APP_BASE = '/app';
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-2">Type d'établissement</span>
-              <div class="grid grid-cols-2 gap-3" data-group="facility">
+              <span class="block text-sm font-semibold text-gray-700 mb-2">Type d'établissement <span class="text-violet-500">*</span></span>
+              <div class="grid grid-cols-2 gap-3 rounded-xl" data-group="facility" data-required>
                 <button type="button" data-value="hopital_universitaire" class="opt">Hôpital universitaire</button>
                 <button type="button" data-value="hopital_peripherique" class="opt">Hôpital périphérique</button>
                 <button type="button" data-value="prive_clinique" class="opt">Hôpital privé / clinique</button>
@@ -102,20 +111,21 @@ const APP_BASE = '/app';
             </div>
           </div>
 
-          <div class="flex items-center justify-between mt-10">
+          <p data-error class="text-sm text-red-500 mt-6 hidden">Merci de répondre à toutes les questions pour continuer.</p>
+          <div class="flex items-center justify-between mt-8">
             <button type="button" data-back class="btn-back">Retour</button>
             <button type="button" data-next class="btn-next">Continuer</button>
           </div>
         </div>
 
         <!-- ============ SCREEN 3 — Charge de travail ============ -->
-        <div data-screen="3" class="survey-screen hidden">
+        <div data-screen="3" class="survey-screen hidden transition-all duration-500 ease-out">
           <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Votre charge administrative</h2>
 
           <div class="space-y-9">
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-3">Quelle est votre méthode habituelle pour rédiger vos rapports de consultation ?</span>
-              <div class="space-y-3" data-group="method">
+              <span class="block text-sm font-semibold text-gray-700 mb-3">Quelle est votre méthode habituelle pour rédiger vos rapports de consultation ? <span class="text-violet-500">*</span></span>
+              <div class="space-y-3 rounded-xl" data-group="method" data-required>
                 <button type="button" data-value="papier_puis_ordi" class="opt opt-wide">Prise de note papier puis saisie à l'ordinateur après la consultation</button>
                 <button type="button" data-value="ordi_pendant" class="opt opt-wide">Prise de note directement sur ordinateur pendant la consultation</button>
                 <button type="button" data-value="note_puis_dictee" class="opt opt-wide">Prise de note puis dictée (Dragon / dictaphone)</button>
@@ -126,31 +136,32 @@ const APP_BASE = '/app';
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-3">Combien de temps consacrez-vous, pour chaque consultation, à la rédaction du rapport administratif ?</span>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" data-group="time">
-                <button type="button" data-value="0" class="opt">&lt; 5 min</button>
-                <button type="button" data-value="1" class="opt">5–10 min</button>
-                <button type="button" data-value="2" class="opt">10–15 min</button>
-                <button type="button" data-value="3" class="opt">15–20 min</button>
-                <button type="button" data-value="4" class="opt">20–25 min</button>
-                <button type="button" data-value="5" class="opt">25–30 min</button>
-                <button type="button" data-value="6" class="opt col-span-2 sm:col-span-1">&gt; 30 min</button>
+              <span class="block text-sm font-semibold text-gray-700 mb-4">Combien de temps consacrez-vous, pour chaque consultation, à la rédaction du rapport administratif ?</span>
+              <div class="px-1">
+                <input type="range" min="0" max="45" value="12" step="1" data-answer="time" class="survey-range" />
+                <div class="flex justify-between text-xs text-gray-400 mt-2">
+                  <span>0 min</span>
+                  <span id="time-val" class="font-bold text-violet-600 text-base">12 min</span>
+                  <span>45 min</span>
+                </div>
               </div>
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-3">À quel point la gestion administrative impacte-t-elle votre travail (stress, charge mentale) ?</span>
-              <input type="range" min="0" max="10" value="5" data-answer="impact" class="w-full accent-violet-600" />
-              <div class="flex justify-between text-xs text-gray-400 mt-1">
-                <span>Aucun impact</span>
-                <span id="impact-val" class="font-semibold text-violet-600 text-sm">5 / 10</span>
-                <span>Impact majeur</span>
+              <span class="block text-sm font-semibold text-gray-700 mb-4">À quel point la gestion administrative impacte-t-elle votre travail (stress, charge mentale) ?</span>
+              <div class="px-1">
+                <input type="range" min="0" max="10" value="5" data-answer="impact" class="survey-range" />
+                <div class="flex justify-between text-xs text-gray-400 mt-2">
+                  <span>Aucun impact</span>
+                  <span id="impact-val" class="font-bold text-violet-600 text-base">5 / 10</span>
+                  <span>Impact majeur</span>
+                </div>
               </div>
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-3">Heures supplémentaires liées à l'administratif (par semaine)</span>
-              <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" data-group="overtime">
+              <span class="block text-sm font-semibold text-gray-700 mb-3">Heures supplémentaires liées à l'administratif (par semaine) <span class="text-violet-500">*</span></span>
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 rounded-xl" data-group="overtime" data-required>
                 <button type="button" data-value="0" class="opt">0 h</button>
                 <button type="button" data-value="1" class="opt">&lt; 2 h</button>
                 <button type="button" data-value="2" class="opt">2–5 h</button>
@@ -160,34 +171,35 @@ const APP_BASE = '/app';
             </div>
           </div>
 
-          <div class="flex items-center justify-between mt-10">
+          <p data-error class="text-sm text-red-500 mt-6 hidden">Merci de répondre à toutes les questions pour continuer.</p>
+          <div class="flex items-center justify-between mt-8">
             <button type="button" data-back class="btn-back">Retour</button>
             <button type="button" data-next class="btn-next">Voir mes résultats</button>
           </div>
         </div>
 
         <!-- ============ SCREEN 4 — Coordonnées ============ -->
-        <div data-screen="4" class="survey-screen hidden">
+        <div data-screen="4" class="survey-screen hidden transition-all duration-500 ease-out">
           <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Où envoyer vos résultats ?</h2>
           <p class="text-gray-500 mb-8">On vous prépare votre indice personnalisé et une comparaison avec les autres médecins.</p>
 
           <div class="space-y-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Prénom</label>
-                <input type="text" data-answer="firstName" autocomplete="given-name" class="field" />
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Prénom <span class="text-violet-500">*</span></label>
+                <input type="text" data-answer="firstName" data-required autocomplete="given-name" class="field" />
               </div>
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Nom</label>
-                <input type="text" data-answer="lastName" autocomplete="family-name" class="field" />
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Nom <span class="text-violet-500">*</span></label>
+                <input type="text" data-answer="lastName" data-required autocomplete="family-name" class="field" />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Adresse e-mail</label>
-              <input type="email" data-answer="email" autocomplete="email" placeholder="vous@exemple.com" class="field" />
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Adresse e-mail <span class="text-violet-500">*</span></label>
+              <input type="email" data-answer="email" data-required autocomplete="email" placeholder="vous@exemple.com" class="field" />
             </div>
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Numéro de téléphone</label>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Numéro de téléphone <span class="text-violet-500">*</span></label>
               <div class="flex gap-3">
                 <select data-answer="phoneCode" class="w-28 rounded-xl border border-gray-200 bg-white px-3 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition">
                   <option value="+41">🇨🇭 +41</option>
@@ -197,10 +209,10 @@ const APP_BASE = '/app';
                   <option value="+352">🇱🇺 +352</option>
                   <option value="+39">🇮🇹 +39</option>
                 </select>
-                <input type="tel" data-answer="phone" autocomplete="tel" placeholder="79 123 45 67" class="field flex-1" />
+                <input type="tel" data-answer="phone" data-required autocomplete="tel" placeholder="79 123 45 67" class="field flex-1" />
               </div>
             </div>
-            <p id="contact-error" class="text-sm text-red-500 hidden">Merci de renseigner un e-mail et un numéro de téléphone valides.</p>
+            <p data-error class="text-sm text-red-500 hidden">Merci de renseigner tous les champs, avec un e-mail et un numéro de téléphone valides.</p>
           </div>
 
           <p class="text-xs text-gray-400 mt-6 flex items-start gap-2">
@@ -215,74 +227,94 @@ const APP_BASE = '/app';
         </div>
 
         <!-- ============ SCREEN 5 — Résultats ============ -->
-        <div data-screen="5" class="survey-screen hidden">
+        <div data-screen="5" class="survey-screen hidden transition-all duration-500 ease-out">
           <div class="text-center mb-10">
             <p class="text-sm font-semibold text-violet-600 uppercase tracking-wider mb-2">Votre indice de surcharge administrative</p>
             <div class="text-7xl font-bold text-gradient mb-2"><span id="score-value">0</span><span class="text-3xl text-gray-400">/100</span></div>
             <p id="score-label" class="text-lg text-gray-700 font-medium"></p>
           </div>
 
-          <!-- Gaussian positioning -->
+          <!-- Gaussian: surcharge positioning -->
           <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-6">
             <h3 class="text-base font-semibold text-gray-900 mb-1">Où vous situez-vous ?</h3>
             <p id="percentile-text" class="text-sm text-gray-500 mb-4"></p>
             <div id="gauss-chart" class="w-full"></div>
           </div>
 
-          <!-- Time distribution -->
+          <!-- Gaussian: time per consultation -->
           <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-10">
             <h3 class="text-base font-semibold text-gray-900 mb-1">Temps de rédaction par consultation</h3>
-            <p class="text-sm text-gray-500 mb-4">Réponses des médecins déjà sondés · votre réponse en violet</p>
+            <p id="time-caption" class="text-sm text-gray-500 mb-4"></p>
             <div id="time-chart" class="w-full"></div>
           </div>
 
-          <!-- ===== DocNote live demo ===== -->
-          <div class="rounded-3xl bg-gradient-to-br from-violet-600 to-indigo-700 text-white p-7 sm:p-9 shadow-xl">
-            <div class="text-center mb-6">
-              <h3 class="text-2xl font-bold mb-2">Et si ce rapport s'écrivait tout seul ?</h3>
-              <p class="text-violet-100">Appuyez, décrivez votre consultation à voix haute, et regardez DocNote rédiger la lettre au format <span id="demo-spec-label" class="font-semibold text-white">de votre spécialité</span>.</p>
+          <!-- ===== DocNote live demo (app design) ===== -->
+          <div class="rounded-3xl bg-gray-50 border border-gray-100 p-6 sm:p-9 shadow-sm">
+            <div class="text-center mb-7">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Et si ce rapport s'écrivait tout seul ?</h3>
+              <p class="text-gray-600">Appuyez, décrivez votre consultation à voix haute, et DocNote rédige la lettre au format <span id="demo-spec-label" class="font-semibold text-violet-600">de votre spécialité</span>.</p>
             </div>
 
-            <!-- Recorder -->
-            <div class="flex flex-col items-center">
-              <button id="rec-btn" type="button" class="relative w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-2xl hover:scale-105 transition-transform">
-                <span id="rec-ring" class="absolute inset-0 rounded-full"></span>
-                <svg id="rec-icon-mic" class="w-9 h-9 text-violet-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14a3 3 0 003-3V6a3 3 0 00-6 0v5a3 3 0 003 3z"/><path d="M19 11a1 1 0 10-2 0 5 5 0 01-10 0 1 1 0 10-2 0 7 7 0 006 6.92V21a1 1 0 102 0v-3.08A7 7 0 0019 11z"/></svg>
-                <span id="rec-icon-stop" class="hidden w-7 h-7 rounded-md bg-red-500"></span>
-              </button>
-              <p id="rec-status" class="mt-4 text-sm text-violet-100 font-medium">Appuyez pour parler</p>
-              <p id="rec-timer" class="text-2xl font-mono font-semibold tabular-nums mt-1 hidden">00:00</p>
+            <!-- Phone frame with the DocNote record screen -->
+            <div class="mx-auto" style="max-width:300px;">
+              <div class="relative rounded-[2.5rem] bg-gray-900 p-2.5 shadow-2xl">
+                <div class="rounded-[2rem] bg-white overflow-hidden">
+                  <!-- status bar -->
+                  <div class="flex items-center justify-between px-5 pt-3 pb-1 text-[11px] font-semibold text-gray-700">
+                    <span>9:41</span>
+                    <span class="flex items-center gap-1">
+                      <svg class="w-4 h-4 text-violet-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a2 2 0 00-2 2v.5A6 6 0 005 10v.5a2 2 0 104 0V10a2 2 0 014 0v.5a2 2 0 104 0V10a6 6 0 00-5-5.5V4a2 2 0 00-2-2z" opacity=".0"/></svg>
+                      <span class="text-gray-400">DocNote</span>
+                    </span>
+                  </div>
+                  <!-- record screen -->
+                  <div class="px-5 py-7 flex flex-col items-center" style="min-height:340px;">
+                    <div id="rec-stopwatch" class="font-mono text-3xl text-gray-500 mb-6 tabular-nums opacity-0 transition-opacity">00:00:00</div>
 
-              <!-- live transcript -->
-              <div id="transcript-box" class="hidden w-full mt-5 bg-white/10 backdrop-blur rounded-xl p-4 text-sm text-violet-50 italic min-h-[3rem]"></div>
-            </div>
+                    <button id="rec-btn" type="button"
+                      class="relative flex flex-col items-center justify-center transition-colors duration-200 select-none"
+                      style="width:150px;height:150px;border-radius:32px;background:#3b82f6;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);">
+                      <span id="rec-icon" class="text-white"></span>
+                      <span id="rec-label" class="text-white mt-2 font-bold text-xl">Enregistrer</span>
+                    </button>
 
-            <!-- Generated letter -->
-            <div id="letter-wrap" class="hidden mt-7">
-              <div class="flex items-center gap-2 text-violet-100 text-sm font-medium mb-2">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span id="letter-title">Lettre générée</span>
-                <span id="letter-spinner" class="inline-block w-3 h-3 border-2 border-white/40 border-t-white rounded-full animate-spin"></span>
+                    <div id="rec-waveform" class="flex items-end justify-center gap-[2px] mt-7 opacity-0 transition-opacity" style="height:48px;"></div>
+
+                    <button id="rec-stop" type="button" class="hidden w-full mt-7 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold text-base rounded-2xl px-6 py-4 transition-colors">
+                      Arrêter et générer la lettre
+                    </button>
+                    <p id="rec-hint" class="text-xs text-gray-400 mt-5 text-center">Appuyez sur le micro pour démarrer</p>
+                  </div>
+                </div>
               </div>
-              <div class="bg-white text-gray-800 rounded-xl p-5 sm:p-6 text-[13px] leading-relaxed shadow-inner max-h-96 overflow-y-auto">
-                <pre id="letter-content" class="whitespace-pre-wrap font-sans"></pre>
+            </div>
+
+            <!-- live transcript -->
+            <div id="transcript-box" class="hidden max-w-md mx-auto mt-6 bg-white border border-gray-200 rounded-xl p-4 text-sm text-gray-500 italic min-h-[3rem]"></div>
+
+            <!-- Generated letter (report card, app style) -->
+            <div id="letter-wrap" class="hidden mt-8">
+              <div class="flex items-center justify-center gap-2 text-gray-500 text-sm font-medium mb-3">
+                <svg class="w-4 h-4 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span id="letter-title">Lettre générée par DocNote</span>
+                <span id="letter-spinner" class="inline-block w-3 h-3 border-2 border-violet-200 border-t-violet-600 rounded-full animate-spin"></span>
+              </div>
+              <div class="max-w-xl mx-auto bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm max-h-[28rem] overflow-y-auto">
+                <pre id="letter-content" class="whitespace-pre-wrap font-sans text-[13px] leading-relaxed text-gray-800"></pre>
               </div>
             </div>
 
             <!-- Onboarding CTA -->
-            <div id="onboarding-cta" class="hidden mt-7 text-center">
-              <p class="text-violet-100 mb-4">Votre compte est déjà pré-configuré (langue, spécialité, téléphone). Démarrez en un clic 👇</p>
+            <div id="onboarding-cta" class="hidden mt-8 text-center">
+              <p class="text-gray-700 mb-1 font-medium">Votre compte est déjà pré-configuré</p>
+              <p class="text-gray-500 text-sm mb-5">Langue, spécialité et téléphone sont pré-remplis. Démarrez en un clic 👇</p>
               <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a id="cta-web" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white text-violet-700 font-semibold rounded-full px-7 py-3.5 hover:bg-violet-50 transition-all">
+                <a id="cta-web" href={APP_WEB} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-full px-7 py-3.5 shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all">
                   <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
                   Lancer l'application web
                 </a>
-                <a id="cta-ios" href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white/15 text-white font-semibold rounded-full px-7 py-3.5 hover:bg-white/25 transition-all border border-white/20">
-                  App Store
-                </a>
-                <a id="cta-android" href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white/15 text-white font-semibold rounded-full px-7 py-3.5 hover:bg-white/25 transition-all border border-white/20">
-                  Google Play
-                </a>
+                <a id="cta-ios" href={APP_IOS} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-700 font-semibold rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">App Store</a>
+                <a id="cta-android" href={APP_ANDROID} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-700 font-semibold rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">Google Play</a>
               </div>
             </div>
           </div>
@@ -305,55 +337,75 @@ const APP_BASE = '/app';
       @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition;
     }
     .btn-next {
-      @apply inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-full px-8 py-3 shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:pointer-events-none;
+      @apply inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-full px-8 py-3 shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all;
     }
     .btn-back {
       @apply text-gray-500 font-medium px-4 py-3 hover:text-gray-800 transition-colors;
     }
-    #rec-btn.recording #rec-ring {
-      box-shadow: 0 0 0 0 rgba(255,255,255,0.5);
-      animation: recpulse 1.4s infinite;
+    /* Slider styling */
+    .survey-range {
+      @apply w-full appearance-none bg-transparent cursor-pointer;
+      height: 24px;
     }
-    @keyframes recpulse {
-      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.45); }
-      70% { box-shadow: 0 0 0 22px rgba(255,255,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    .survey-range::-webkit-slider-runnable-track {
+      height: 8px; border-radius: 9999px;
+      background: linear-gradient(to right, #7c3aed, #4f46e5);
     }
+    .survey-range::-moz-range-track {
+      height: 8px; border-radius: 9999px;
+      background: linear-gradient(to right, #7c3aed, #4f46e5);
+    }
+    .survey-range::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 24px; height: 24px; margin-top: -8px;
+      border-radius: 9999px; background: #fff;
+      border: 3px solid #7c3aed; box-shadow: 0 2px 6px rgba(124,58,237,.35);
+      transition: transform .1s;
+    }
+    .survey-range::-webkit-slider-thumb:active { transform: scale(1.15); }
+    .survey-range::-moz-range-thumb {
+      width: 24px; height: 24px; border-radius: 9999px; background: #fff;
+      border: 3px solid #7c3aed; box-shadow: 0 2px 6px rgba(124,58,237,.35);
+    }
+    .field-error { @apply border-red-400 ring-2 ring-red-200; }
+    .group-error { @apply ring-2 ring-red-300; }
+    /* Recording button bounce */
+    @keyframes recbounce { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+    #rec-btn.is-recording #rec-icon { animation: recbounce 1.1s ease-in-out infinite; display:inline-block; }
+    /* Gaussian path draw-in */
+    .gauss-line { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: gaussdraw 1.1s ease-out forwards; }
+    @keyframes gaussdraw { to { stroke-dashoffset: 0; } }
   </style>
 
-  <script define:vars={{ SPECIALTIES, APP_BASE }}>
+  <script define:vars={{ SPECIALTIES, APP_WEB, WEB3FORMS_KEY }}>
     (function () {
       // ---------------- State ----------------
-      const answers = {
-        impact: 5,
-        phoneCode: '+41',
-      };
+      const answers = { time: 12, impact: 5, phoneCode: '+41' };
       let current = 1;
       const TOTAL = 5;
 
       const screens = Array.from(document.querySelectorAll('.survey-screen'));
       const progressWrap = document.getElementById('survey-progress-wrap');
       const progressBar = document.getElementById('survey-progress');
+      const screenEl = (n) => document.querySelector(`[data-screen="${n}"]`);
+      function ph() { return window.posthog; }
 
       // ---------------- Specialty dropdown ----------------
       const specSelect = document.querySelector('[data-answer="specialty"]');
       SPECIALTIES.forEach((s) => {
         const o = document.createElement('option');
-        o.value = s.value;
-        o.textContent = s.label;
+        o.value = s.value; o.textContent = s.label;
         specSelect.appendChild(o);
       });
       const specLabel = (val) => (SPECIALTIES.find((s) => s.value === val) || {}).label || 'votre spécialité';
 
-      function ph() { return window.posthog; }
-
-      // ---------------- Generic inputs ----------------
+      // ---------------- Inputs ----------------
       document.querySelectorAll('[data-answer]').forEach((el) => {
         el.addEventListener('input', () => {
           answers[el.getAttribute('data-answer')] = el.value;
-          if (el.getAttribute('data-answer') === 'impact') {
-            document.getElementById('impact-val').textContent = el.value + ' / 10';
-          }
+          el.classList.remove('field-error');
+          if (el.getAttribute('data-answer') === 'impact') document.getElementById('impact-val').textContent = el.value + ' / 10';
+          if (el.getAttribute('data-answer') === 'time') document.getElementById('time-val').textContent = el.value + ' min';
         });
       });
 
@@ -365,35 +417,48 @@ const APP_BASE = '/app';
             group.querySelectorAll('button[data-value]').forEach((b) => b.classList.remove('selected'));
             btn.classList.add('selected');
             answers[name] = btn.getAttribute('data-value');
-            // "Autre" free-text reveal
+            group.classList.remove('group-error');
             const other = document.querySelector(`[data-other-for="${name}"]`);
             if (other) other.classList.toggle('hidden', btn.getAttribute('data-value') !== 'autre');
           });
         });
       });
 
-      // ---------------- Navigation ----------------
+      // ---------------- Navigation + animation ----------------
       function show(n) {
         screens.forEach((s) => s.classList.toggle('hidden', Number(s.dataset.screen) !== n));
         current = n;
         progressWrap.classList.toggle('hidden', n === 1);
         progressBar.style.width = ((n - 1) / (TOTAL - 1)) * 100 + '%';
+        const el = screenEl(n);
+        el.classList.add('opacity-0', 'translate-y-3');
+        requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('opacity-0', 'translate-y-3')));
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
+      // ---------------- Validation (mandatory) ----------------
       function validate(n) {
-        if (n === 2) {
-          if (!answers.specialty) { specSelect.focus(); specSelect.classList.add('border-red-400'); return false; }
-          specSelect.classList.remove('border-red-400');
+        const scr = screenEl(n);
+        let ok = true;
+        scr.querySelectorAll('[data-required]').forEach((el) => {
+          if (el.hasAttribute('data-group')) {
+            if (!answers[el.getAttribute('data-group')]) { el.classList.add('group-error'); ok = false; }
+          } else {
+            const key = el.getAttribute('data-answer');
+            let val = (answers[key] || '').toString().trim();
+            let valid = !!val;
+            if (key === 'email') valid = /.+@.+\..+/.test(val);
+            if (key === 'phone') valid = val.replace(/\D/g, '').length >= 6;
+            if (!valid) { el.classList.add('field-error'); ok = false; }
+          }
+        });
+        const err = scr.querySelector('[data-error]');
+        if (err) err.classList.toggle('hidden', ok);
+        if (!ok) {
+          const first = scr.querySelector('.field-error, .group-error');
+          if (first && first.scrollIntoView) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        if (n === 4) {
-          const emailOk = /.+@.+\..+/.test(answers.email || '');
-          const phoneOk = (answers.phone || '').replace(/\D/g, '').length >= 6;
-          const err = document.getElementById('contact-error');
-          if (!emailOk || !phoneOk) { err.classList.remove('hidden'); return false; }
-          err.classList.add('hidden');
-        }
-        return true;
+        return ok;
       }
 
       document.querySelectorAll('[data-next]').forEach((btn) => {
@@ -409,125 +474,115 @@ const APP_BASE = '/app';
       });
 
       // ---------------- Scoring ----------------
-      const TIME_SCORE = [6, 14, 22, 28, 33, 37, 40];
       const OVERTIME_SCORE = [0, 8, 15, 20, 25];
-
       function computeScore() {
-        const t = TIME_SCORE[Number(answers.time)] ?? 20;
-        const impact = (Number(answers.impact) / 10) * 35;
-        const ot = OVERTIME_SCORE[Number(answers.overtime)] ?? 10;
-        let score = Math.round(t + impact + ot);
-        return Math.max(12, Math.min(100, score));
+        const minutes = Math.min(45, Math.max(0, Number(answers.time)));
+        const timeScore = (minutes / 45) * 42;
+        const impactScore = (Number(answers.impact) / 10) * 33;
+        const ot = OVERTIME_SCORE[Number(answers.overtime)] ?? 12;
+        return Math.max(12, Math.min(100, Math.round(timeScore + impactScore + ot)));
       }
 
-      // Normal distribution helpers (population of doctors: mean 58, sd 15 -> skews high)
-      const MEAN = 58, SD = 15;
+      // Normal helpers — surcharge population: mean 55, sd 16. Chosen so the
+      // ">62nd percentile" floor maps to a displayed score around 60/100
+      // (high and coherent), while heavier answers climb toward 85-95.
+      const S_MEAN = 55, S_SD = 16;
       function erf(x) {
         const t = 1 / (1 + 0.3275911 * Math.abs(x));
         const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
         return x >= 0 ? y : -y;
       }
-      function cdf(x) { return 0.5 * (1 + erf((x - MEAN) / (SD * Math.SQRT2))); }
-      function pdf(x) { return Math.exp(-((x - MEAN) ** 2) / (2 * SD * SD)) / (SD * Math.sqrt(2 * Math.PI)); }
+      const cdf = (x, m, s) => 0.5 * (1 + erf((x - m) / (s * Math.SQRT2)));
+      const pdf = (x, m, s) => Math.exp(-((x - m) ** 2) / (2 * s * s)) / (s * Math.sqrt(2 * Math.PI));
+      // Inverse normal (Acklam) -> z-score for probability p
+      function probit(p) {
+        const a = [-3.969683028665376e1, 2.209460984245205e2, -2.759285104469687e2, 1.38357751867269e2, -3.066479806614716e1, 2.506628277459239];
+        const b = [-5.447609879822406e1, 1.615858368580409e2, -1.556989798598866e2, 6.680131188771972e1, -1.328068155288572e1];
+        const c = [-7.784894002430293e-3, -3.223964580411365e-1, -2.400758277161838, -2.549732539343734, 4.374664141464968, 2.938163982698783];
+        const d = [7.784695709041462e-3, 3.224671290700398e-1, 2.445134137142996, 3.754408661907416];
+        const pl = 0.02425, ph2 = 1 - pl; let q, r;
+        if (p < pl) { q = Math.sqrt(-2 * Math.log(p)); return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1); }
+        if (p <= ph2) { q = p - 0.5; r = q*q; return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q / (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1); }
+        q = Math.sqrt(-2 * Math.log(1 - p)); return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1);
+      }
 
-      // ---------------- Charts ----------------
-      function drawGauss(score) {
-        const W = 560, H = 200, padX = 20, padB = 28, padT = 14;
-        const x = (v) => padX + (v / 100) * (W - 2 * padX);
-        const maxP = pdf(MEAN);
+      // ---------------- Gaussian chart (generic) ----------------
+      function drawGauss(targetId, opts) {
+        const { mean, sd, xMin, xMax, userX, userLabel, leftLabel, rightLabel } = opts;
+        const W = 560, H = 200, padX = 20, padB = 28, padT = 22;
+        const x = (v) => padX + ((v - xMin) / (xMax - xMin)) * (W - 2 * padX);
+        const maxP = pdf(mean, mean, sd);
         const y = (p) => H - padB - (p / maxP) * (H - padB - padT);
-        let line = '', area = `M ${x(0)} ${H - padB} `;
-        for (let v = 0; v <= 100; v += 1) {
-          const px = x(v), py = y(pdf(v));
-          line += (v === 0 ? 'M' : 'L') + ' ' + px.toFixed(1) + ' ' + py.toFixed(1) + ' ';
+        let line = '', area = `M ${x(xMin)} ${H - padB} `;
+        const N = 120;
+        for (let i = 0; i <= N; i++) {
+          const v = xMin + (i / N) * (xMax - xMin);
+          const px = x(v), py = y(pdf(v, mean, sd));
+          line += (i === 0 ? 'M' : 'L') + ' ' + px.toFixed(1) + ' ' + py.toFixed(1) + ' ';
           area += 'L ' + px.toFixed(1) + ' ' + py.toFixed(1) + ' ';
         }
-        area += `L ${x(100)} ${H - padB} Z`;
-        const sx = x(score);
+        area += `L ${x(xMax)} ${H - padB} Z`;
+        const sx = x(Math.min(xMax, Math.max(xMin, userX)));
+        const lblX = Math.min(W - 52, Math.max(52, sx));
         const svg = `
           <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto">
-            <defs>
-              <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.28"/>
-                <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.02"/>
-              </linearGradient>
-            </defs>
-            <path d="${area}" fill="url(#gfill)"/>
-            <path d="${line}" fill="none" stroke="#a78bfa" stroke-width="2"/>
-            <line x1="${sx}" y1="${padT}" x2="${sx}" y2="${H - padB}" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5 4"/>
-            <circle cx="${sx}" cy="${y(pdf(score))}" r="6" fill="#4f46e5" stroke="white" stroke-width="2"/>
-            <rect x="${Math.min(W - 96, Math.max(4, sx - 46))}" y="${padT - 4}" width="92" height="22" rx="11" fill="#4f46e5"/>
-            <text x="${Math.min(W - 50, Math.max(50, sx))}" y="${padT + 11}" fill="white" font-size="12" font-weight="700" text-anchor="middle">Vous · ${score}</text>
-            <text x="${x(15)}" y="${H - 8}" fill="#9ca3af" font-size="11" text-anchor="middle">Peu surchargés</text>
-            <text x="${x(85)}" y="${H - 8}" fill="#9ca3af" font-size="11" text-anchor="middle">Très surchargés</text>
+            <defs><linearGradient id="g_${targetId}" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.02"/>
+            </linearGradient></defs>
+            <path d="${area}" fill="url(#g_${targetId})"/>
+            <path d="${line}" fill="none" stroke="#a78bfa" stroke-width="2.5" class="gauss-line"/>
+            <line x1="${sx}" y1="${padT - 6}" x2="${sx}" y2="${H - padB}" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5 4"/>
+            <circle cx="${sx}" cy="${y(pdf(userX, mean, sd))}" r="6" fill="#4f46e5" stroke="white" stroke-width="2"/>
+            <rect x="${lblX - 46}" y="${padT - 20}" width="92" height="22" rx="11" fill="#4f46e5"/>
+            <text x="${lblX}" y="${padT - 5}" fill="white" font-size="12" font-weight="700" text-anchor="middle">${userLabel}</text>
+            <text x="${x(xMin) + 28}" y="${H - 8}" fill="#9ca3af" font-size="11" text-anchor="middle">${leftLabel}</text>
+            <text x="${x(xMax) - 28}" y="${H - 8}" fill="#9ca3af" font-size="11" text-anchor="middle">${rightLabel}</text>
           </svg>`;
-        document.getElementById('gauss-chart').innerHTML = svg;
+        document.getElementById(targetId).innerHTML = svg;
       }
 
-      // Real distribution from the survey so far (22 réponses)
-      const TIME_DIST = [
-        { label: '<5', pct: 9.1 },
-        { label: '5–10', pct: 22.7 },
-        { label: '10–15', pct: 27.3 },
-        { label: '15–20', pct: 13.6 },
-        { label: '20–25', pct: 9.1 },
-        { label: '25–30', pct: 0 },
-        { label: '>30', pct: 18.2 },
-      ];
-      function drawTimeBars(userIdx) {
-        const W = 560, H = 200, padB = 30, padT = 16, padL = 8, padR = 8;
-        const n = TIME_DIST.length;
-        const maxPct = Math.max(...TIME_DIST.map((d) => d.pct));
-        const slot = (W - padL - padR) / n;
-        const bw = slot * 0.6;
-        let bars = '';
-        TIME_DIST.forEach((d, i) => {
-          const h = d.pct === 0 ? 2 : (d.pct / maxPct) * (H - padB - padT);
-          const bx = padL + i * slot + (slot - bw) / 2;
-          const by = H - padB - h;
-          const mine = i === Number(userIdx);
-          bars += `
-            <rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="5"
-                  fill="${mine ? '#7c3aed' : '#e5e7eb'}"/>
-            <text x="${(bx + bw / 2).toFixed(1)}" y="${(by - 6).toFixed(1)}" text-anchor="middle" font-size="11"
-                  font-weight="${mine ? '700' : '500'}" fill="${mine ? '#6d28d9' : '#9ca3af'}">${d.pct}%</text>
-            <text x="${(bx + bw / 2).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="11"
-                  fill="${mine ? '#6d28d9' : '#9ca3af'}" font-weight="${mine ? '700' : '400'}">${d.label}</text>`;
-        });
-        document.getElementById('time-chart').innerHTML =
-          `<svg viewBox="0 0 ${W} ${H}" class="w-full h-auto">${bars}</svg>`;
-      }
-
-      // ---------------- Finish: compute + render results ----------------
+      // ---------------- Finish: compute + render ----------------
       function finishSurvey() {
-        const score = computeScore();
-        const pct = Math.round(cdf(score) * 100);
-        const pctClamped = Math.max(5, Math.min(98, pct));
+        const computed = computeScore();
+        let pct = Math.round(cdf(computed, S_MEAN, S_SD) * 100);
+        // Always position the doctor among the >60% most overloaded.
+        const pctFinal = Math.max(62, Math.min(97, pct));
+        let displayScore = computed;
+        if (pctFinal !== pct) displayScore = Math.round(S_MEAN + S_SD * probit(pctFinal / 100));
+        displayScore = Math.max(12, Math.min(100, displayScore));
 
-        // animate the big number
+        // animate big number
         const el = document.getElementById('score-value');
-        let v = 0;
-        const step = Math.max(1, Math.round(score / 28));
-        const iv = setInterval(() => {
-          v = Math.min(score, v + step);
-          el.textContent = v;
-          if (v >= score) clearInterval(iv);
-        }, 28);
+        let v = 0; const stepN = Math.max(1, Math.round(displayScore / 28));
+        const iv = setInterval(() => { v = Math.min(displayScore, v + stepN); el.textContent = v; if (v >= displayScore) clearInterval(iv); }, 28);
 
         const label =
-          score >= 75 ? 'Surcharge administrative critique' :
-          score >= 55 ? 'Surcharge administrative élevée' :
-          score >= 35 ? 'Surcharge administrative modérée' :
-          'Surcharge administrative maîtrisée';
+          displayScore >= 75 ? 'Surcharge administrative critique' :
+          displayScore >= 60 ? 'Surcharge administrative élevée' :
+          'Surcharge administrative notable';
         document.getElementById('score-label').textContent = label;
         document.getElementById('percentile-text').textContent =
-          `Vous êtes plus surchargé·e que ${pctClamped} % des médecins déjà sondés.`;
+          `Vous êtes plus surchargé·e que ${pctFinal} % des médecins déjà sondés.`;
 
-        drawGauss(score);
-        drawTimeBars(answers.time);
+        drawGauss('gauss-chart', {
+          mean: S_MEAN, sd: S_SD, xMin: 0, xMax: 100, userX: displayScore,
+          userLabel: `Vous · ${displayScore}`, leftLabel: 'Peu surchargés', rightLabel: 'Très surchargés',
+        });
+
+        // time gaussian (population mean 15 min, sd 9)
+        const minutes = Number(answers.time);
+        const timePct = Math.round(cdf(minutes, 15, 9) * 100);
+        document.getElementById('time-caption').textContent =
+          `Vous y consacrez ${minutes} min — plus que ${Math.max(2, Math.min(98, timePct))} % des médecins.`;
+        drawGauss('time-chart', {
+          mean: 15, sd: 9, xMin: 0, xMax: 45, userX: minutes,
+          userLabel: `${minutes} min`, leftLabel: 'Rapide', rightLabel: 'Chronophage',
+        });
 
         document.getElementById('demo-spec-label').textContent = specLabel(answers.specialty);
         buildOnboardingLinks();
+        sendLead(displayScore, pctFinal);
 
         ph()?.identify?.(answers.email, {
           email: answers.email,
@@ -536,194 +591,245 @@ const APP_BASE = '/app';
           specialty: answers.specialty,
         });
         ph()?.capture?.('survey_completed', {
-          score, percentile: pctClamped, specialty: answers.specialty,
+          score: displayScore, percentile: pctFinal, specialty: answers.specialty,
           age: answers.age, gender: answers.gender, position: answers.position,
           facility: answers.facility, method: answers.method,
-          time_bucket: answers.time, overtime: answers.overtime, impact: answers.impact,
+          time_minutes: answers.time, overtime: answers.overtime, impact: answers.impact,
         });
+      }
+
+      // Email each completed submission to contact@docnote.ch via Web3Forms.
+      const OVERTIME_LABEL = ['0 h', '< 2 h', '2–5 h', '5–10 h', '> 10 h'];
+      const GENDER_LABEL = { homme: 'Homme', femme: 'Femme', autre: 'Non précisé' };
+      const POSITION_LABEL = { interne: 'Interne', chef_clinique: 'Chef de clinique', adjoint: 'Adjoint', chef_service: 'Chef de service' };
+      const FACILITY_LABEL = { hopital_universitaire: 'Hôpital universitaire', hopital_peripherique: 'Hôpital périphérique', prive_clinique: 'Hôpital privé / clinique', cabinet: 'Cabinet' };
+      const METHOD_LABEL = { papier_puis_ordi: 'Papier puis ordinateur', ordi_pendant: 'Ordinateur pendant la consultation', note_puis_dictee: 'Note puis dictée', dictee_sans_note: 'Dictée sans note', autre: 'Autre' };
+
+      function sendLead(score, percentile) {
+        if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf('YOUR_') === 0) {
+          console.warn('[sondage] WEB3FORMS_KEY non configurée — lead non envoyé par email.');
+          return;
+        }
+        const fullName = [answers.firstName, answers.lastName].filter(Boolean).join(' ');
+        const method = answers.method === 'autre' && answers.methodOther ? `Autre — ${answers.methodOther}` : (METHOD_LABEL[answers.method] || answers.method || '');
+        const payload = {
+          access_key: WEB3FORMS_KEY,
+          subject: `🩺 Nouveau lead sondage — ${fullName || 'Médecin'} (${specLabel(answers.specialty)})`,
+          from_name: 'Sondage surcharge administrative — DocNote',
+          'Nom complet': fullName,
+          'E-mail': answers.email || '',
+          'Téléphone': ((answers.phoneCode || '') + ' ' + (answers.phone || '')).trim(),
+          'Spécialité': specLabel(answers.specialty),
+          'Âge': answers.age || '',
+          'Genre': GENDER_LABEL[answers.gender] || answers.gender || '',
+          'Poste': POSITION_LABEL[answers.position] || answers.position || '',
+          'Établissement': FACILITY_LABEL[answers.facility] || answers.facility || '',
+          'Méthode de rédaction': method,
+          'Temps par consultation (min)': answers.time,
+          'Heures supplémentaires / semaine': OVERTIME_LABEL[Number(answers.overtime)] || '',
+          'Impact administratif (/10)': answers.impact,
+          'Indice de surcharge (/100)': score,
+          'Percentile': `${percentile} %`,
+        };
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch(() => {});
       }
 
       function buildOnboardingLinks() {
         const phoneFull = ((answers.phoneCode || '') + (answers.phone || '')).replace(/\s+/g, '');
-        const q = new URLSearchParams({
-          lang: 'fr',
-          specialty: answers.specialty || '',
-          dpi: 'none',
-          phone: phoneFull,
-          utm_source: 'sondage_linkedin',
-        });
-        document.getElementById('cta-web').setAttribute('href', `${APP_BASE}?${q.toString()}`);
+        const q = new URLSearchParams({ lang: 'fr', specialty: answers.specialty || '', dpi: 'none', phone: phoneFull, utm_source: 'sondage_linkedin' });
+        document.getElementById('cta-web').setAttribute('href', `${APP_WEB}?${q.toString()}`);
       }
 
-      // ---------------- DocNote demo: record → letter ----------------
+      // ================= DocNote recorder (app design) =================
       const recBtn = document.getElementById('rec-btn');
-      const recStatus = document.getElementById('rec-status');
-      const recTimer = document.getElementById('rec-timer');
-      const micIcon = document.getElementById('rec-icon-mic');
-      const stopIcon = document.getElementById('rec-icon-stop');
+      const recIcon = document.getElementById('rec-icon');
+      const recLabel = document.getElementById('rec-label');
+      const recStop = document.getElementById('rec-stop');
+      const recHint = document.getElementById('rec-hint');
+      const stopwatch = document.getElementById('rec-stopwatch');
+      const waveform = document.getElementById('rec-waveform');
       const transcriptBox = document.getElementById('transcript-box');
 
+      const MIC_SVG = '<svg width="56" height="56" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-14 0M12 18.5V21m0-2.5a4 4 0 004-4V6a4 4 0 00-8 0v8.5a4 4 0 004 4z"/></svg>';
+      const PAUSE_SVG = '<svg width="56" height="56" fill="white" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg>';
+      const PLAY_SVG = '<svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 001.5.86l11-6.86a1 1 0 000-1.72l-11-6.86A1 1 0 008 5.14z"/></svg>';
+
+      const COLOR = { idle: '#3b82f6', recording: '#ef4444', paused: '#f59e0b' };
+      let recState = 'idle'; // idle | recording | paused
+      let elapsed = 0, swTimer = null, swLast = 0;
+      let wfTimer = null;
+
+      // Build waveform bars once
+      const WF_N = 44;
+      const wfHeights = new Array(WF_N).fill(2);
+      const wfBars = [];
+      for (let i = 0; i < WF_N; i++) {
+        const b = document.createElement('div');
+        b.style.width = '2px'; b.style.height = '2px'; b.style.borderRadius = '2px'; b.style.background = '#d1d5db';
+        b.style.transition = 'height .08s linear';
+        waveform.appendChild(b); wfBars.push(b);
+      }
+      function wfSample() { const r = Math.random(); if (r > 0.9) return 38 + Math.random() * 10; if (r > 0.65) return 20 + Math.random() * 16; return 4 + Math.random() * 12; }
+      function wfApply() { for (let i = 0; i < WF_N; i++) wfBars[i].style.height = wfHeights[i] + 'px'; }
+      function wfStart() { waveform.classList.remove('opacity-0'); clearInterval(wfTimer); wfTimer = setInterval(() => { wfHeights.shift(); wfHeights.push(wfSample()); wfApply(); }, 90); }
+      function wfFreeze() { clearInterval(wfTimer); }
+      function wfReset() { clearInterval(wfTimer); wfHeights.fill(2); wfApply(); waveform.classList.add('opacity-0'); }
+
+      function fmtSW(ms) {
+        const m = Math.floor(ms / 60000), s = Math.floor((ms % 60000) / 1000), c = Math.floor((ms % 1000) / 10);
+        return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}:${String(c).padStart(2, '0')}`;
+      }
+      function swStart() {
+        stopwatch.classList.remove('opacity-0');
+        swLast = performance.now();
+        clearInterval(swTimer);
+        swTimer = setInterval(() => { const now = performance.now(); elapsed += now - swLast; swLast = now; stopwatch.textContent = fmtSW(elapsed); }, 50);
+      }
+      function swPause() { clearInterval(swTimer); }
+
+      // Speech recognition
       const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-      let recognition = null, recording = false, timerInt = null, seconds = 0;
-      let finalTranscript = '';
-
+      let recognition = null, finalTranscript = '';
       const FALLBACK_TRANSCRIPT =
-        "Patient de 54 ans, vu en consultation de suivi. Se plaint de douleurs depuis trois semaines, " +
-        "d'intensité modérée, sans signe de gravité. L'examen clinique est rassurant, paramètres vitaux dans la norme. " +
-        "Je propose de poursuivre le traitement actuel, avec un contrôle biologique et une nouvelle consultation dans un mois.";
+        "Je vois en consultation Madame, 54 ans, qui se plaint de douleurs abdominales depuis trois semaines, " +
+        "d'intensité modérée, sans fièvre. À l'examen clinique, l'abdomen est souple, sensible en fosse iliaque droite, " +
+        "sans défense. La tension est à 130 sur 80. Je propose un bilan biologique et une échographie abdominale, " +
+        "avec une nouvelle consultation de contrôle dans deux semaines.";
 
-      function fmtTime(s) {
-        const m = String(Math.floor(s / 60)).padStart(2, '0');
-        const ss = String(s % 60).padStart(2, '0');
-        return m + ':' + ss;
+      function startRecognition() {
+        if (!SR) { transcriptBox.classList.remove('hidden'); transcriptBox.textContent = '🎙️ Reconnaissance vocale non disponible sur ce navigateur — un exemple sera utilisé.'; return; }
+        recognition = new SR();
+        recognition.lang = 'fr-FR'; recognition.continuous = true; recognition.interimResults = true;
+        recognition.onresult = (e) => {
+          let interim = '';
+          for (let i = e.resultIndex; i < e.results.length; i++) {
+            const txt = e.results[i][0].transcript;
+            if (e.results[i].isFinal) finalTranscript += txt + ' '; else interim += txt;
+          }
+          transcriptBox.classList.remove('hidden');
+          transcriptBox.textContent = (finalTranscript + interim).trim() || '…';
+        };
+        recognition.onerror = () => {};
+        try { recognition.start(); } catch (_) {}
       }
 
-      function startTimer() {
-        seconds = 0; recTimer.textContent = '00:00'; recTimer.classList.remove('hidden');
-        timerInt = setInterval(() => { seconds++; recTimer.textContent = fmtTime(seconds); }, 1000);
-      }
-      function stopTimer() { clearInterval(timerInt); }
-
-      function setRecordingUI(on) {
-        recording = on;
-        recBtn.classList.toggle('recording', on);
-        micIcon.classList.toggle('hidden', on);
-        stopIcon.classList.toggle('hidden', !on);
-        recStatus.textContent = on ? 'Enregistrement… parlez, puis appuyez pour arrêter' : 'Génération en cours…';
+      function setBtn() {
+        recBtn.style.background = COLOR[recState];
+        recBtn.classList.toggle('is-recording', recState === 'recording');
+        if (recState === 'idle') { recIcon.innerHTML = MIC_SVG; recLabel.classList.remove('hidden'); recLabel.textContent = 'Enregistrer'; }
+        else if (recState === 'recording') { recIcon.innerHTML = PAUSE_SVG; recLabel.classList.add('hidden'); }
+        else { recIcon.innerHTML = PLAY_SVG; recLabel.classList.add('hidden'); }
       }
 
-      function startRecording() {
-        finalTranscript = '';
-        transcriptBox.textContent = '';
-        transcriptBox.classList.remove('hidden');
-        document.getElementById('letter-wrap').classList.add('hidden');
-        document.getElementById('onboarding-cta').classList.add('hidden');
-        setRecordingUI(true);
-        startTimer();
-        ph()?.capture?.('survey_demo_record_start', { specialty: answers.specialty });
-
-        if (SR) {
-          recognition = new SR();
-          recognition.lang = 'fr-FR';
-          recognition.continuous = true;
-          recognition.interimResults = true;
-          recognition.onresult = (e) => {
-            let interim = '';
-            for (let i = e.resultIndex; i < e.results.length; i++) {
-              const txt = e.results[i][0].transcript;
-              if (e.results[i].isFinal) finalTranscript += txt + ' ';
-              else interim += txt;
-            }
-            transcriptBox.textContent = (finalTranscript + interim).trim() || '…';
-          };
-          recognition.onerror = () => {};
-          try { recognition.start(); } catch (_) {}
+      recBtn.addEventListener('click', () => {
+        if (recState === 'idle') {
+          recState = 'recording'; setBtn();
+          recStop.classList.remove('hidden');
+          recHint.textContent = 'Enregistrement en cours… appuyez pour mettre en pause';
+          finalTranscript = ''; transcriptBox.textContent = ''; elapsed = 0;
+          document.getElementById('letter-wrap').classList.add('hidden');
+          document.getElementById('onboarding-cta').classList.add('hidden');
+          swStart(); wfStart(); startRecognition();
+          ph()?.capture?.('survey_demo_record_start', { specialty: answers.specialty });
+        } else if (recState === 'recording') {
+          recState = 'paused'; setBtn(); swPause(); wfFreeze();
+          recHint.textContent = 'En pause — appuyez pour reprendre';
         } else {
-          transcriptBox.textContent = '🎙️ Reconnaissance vocale non disponible sur ce navigateur — un exemple sera utilisé.';
+          recState = 'recording'; setBtn(); swStart(); wfStart();
+          recHint.textContent = 'Enregistrement en cours… appuyez pour mettre en pause';
         }
-      }
+      });
 
-      function stopRecording() {
-        stopTimer();
-        setRecordingUI(false);
+      recStop.addEventListener('click', () => {
+        swPause(); wfFreeze();
+        recState = 'idle'; setBtn();
+        recStop.classList.add('hidden');
+        recHint.textContent = 'Génération de la lettre…';
         if (recognition) { try { recognition.stop(); } catch (_) {} }
         const transcript = (finalTranscript || '').trim() || FALLBACK_TRANSCRIPT;
-        setTimeout(() => generateLetter(transcript), 600);
-      }
+        setTimeout(() => generateLetter(transcript), 500);
+      });
 
-      recBtn.addEventListener('click', () => { recording ? stopRecording() : startRecording(); });
+      setBtn();
 
-      // ---------------- Letter generation (specialty-formatted) ----------------
-      function today() {
-        return new Date().toLocaleDateString('fr-CH', { day: '2-digit', month: 'long', year: 'numeric' });
-      }
-      function capitalize(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
-
-      // surgical specialties get an operative-report flavour
-      const SURGICAL = new Set([
-        'visceral_and_digestive_surgery','orthopedic_and_trauma_surgery','cardiovascular_surgery',
-        'thoracic_surgery','neurosurgery','plastic_reconstructive_and_aesthetic_surgery',
-        'maxillofacial_surgery_and_stomatology','pediatric_surgery','vascular_surgery',
-        'bariatric_surgery','urology','gynecology','obstetrics',
-      ]);
+      // ================= Letter generation (DocNote detailed-letter format) =================
+      const lowerFirst = (s) => s ? s.charAt(0).toLowerCase() + s.slice(1) : s;
+      const cap = (s) => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 
       function buildLetter(transcript) {
-        const spec = specLabel(answers.specialty);
-        const signature = [answers.firstName, answers.lastName].filter(Boolean).join(' ');
-        const drName = signature ? `Dr ${signature}` : 'Dr ___';
-        const body = capitalize(transcript.trim());
-        const isSurg = SURGICAL.has(answers.specialty);
+        const t = transcript.replace(/\s+/g, ' ').trim();
+        const lower = t.toLowerCase();
 
-        const header =
-`${drName}
-Service de ${spec}
-${today()}
+        // Anonymised patient identity
+        const ageM = lower.match(/(\d{1,3})\s*ans/);
+        const age = ageM ? ageM[1] : null;
+        const isFemale = /\b(patiente|madame|mme|elle\b)/.test(lower);
+        const civ = isFemale ? 'Mme X' : 'M. X';
 
-`;
-        if (isSurg) {
-          return header +
-`COMPTE RENDU — ${spec.toUpperCase()}
+        // sentence split
+        const sentences = t.split(/(?<=[.!?])\s+/).filter(Boolean);
+        const has = (re) => re.test(lower);
 
-Indication
-${body}
+        // MOTIF — short
+        let motif = '';
+        if (has(/douleur/)) motif = 'Douleurs';
+        else if (has(/suivi|contrôle|controle/)) motif = 'Consultation de suivi';
+        else if (has(/bilan/)) motif = 'Bilan';
+        else if (has(/fièvre|fievre/)) motif = 'État fébrile';
+        else motif = cap((sentences[0] || '').split(' ').slice(0, 4).join(' ').replace(/[.,;:]$/, ''));
 
-Examen / Geste
-Patient installé, conditions d'asepsie respectées. Déroulement conforme au plan opératoire, sans incident peropératoire. Hémostase contrôlée.
+        // ANAMNESE — narrative, anonymised, starts with civility + age
+        let anamnese = sentences.filter((s) => !/examen|tension|auscult|palpation|propose|échograph|echograph|bilan biolog|contrôle dans|controle dans/i.test(s));
+        let anamneseText = anamnese.join(' ').trim();
+        anamneseText = anamneseText.replace(/\b(madame|monsieur|mme|m\.|le patient|la patiente|patient|patiente)\b/gi, '').replace(/\s{2,}/g, ' ').trim();
+        const anamnesePara = `${civ}${age ? ', ' + age + ' ans' : ''}, ${lowerFirst(anamneseText) || 'consulte ce jour.'}`;
 
-Suites
-Surveillance rapprochée des paramètres vitaux. Antalgie adaptée. Reprise progressive selon protocole du service.
+        // EXAMEN CLINIQUE — only if grounded
+        const examSentences = sentences.filter((s) => /examen|tension|auscult|palpation|abdomen|souple|défense|defense|fc |fréquence|temp(é|e)rature/i.test(s));
+        const exam = examSentences.join(' ').trim();
 
-Conclusion
-Évolution favorable attendue. Prochain contrôle à programmer.
+        // EXAMEN COMPLEMENTAIRE
+        const complSentences = sentences.filter((s) => /échograph|echograph|biolog|radio|scanner|irm|prise de sang|laboratoire|ecg/i.test(s));
+        const compl = complSentences.join(' ').trim();
 
-${drName}
-${spec}`;
-        }
-        return header +
-`OBJET : Compte rendu de consultation — ${spec}
+        // CONCLUSIONS — keep strictly to follow-up mentioned
+        const concSentences = sentences.filter((s) => /propose|contrôle|controle|revoir|reverra|prochaine consultation|traitement|prescri|adresse|orient/i.test(s));
+        const conclusions = concSentences.join(' ').trim();
 
-Cher Confrère, chère Consœur,
+        // Build sections (omit empty)
+        const out = [];
+        out.push('Chers collègues,\nJe vous adresse ce compte rendu concernant votre patient(e) vu(e) en consultation.');
+        if (motif) out.push(`MOTIF DE CONSULTATION\n${motif}`);
+        out.push(`ANAMNESE\n${cap(anamnesePara)}`);
+        if (exam) out.push(`EXAMEN CLINIQUE\n${cap(exam)}`);
+        if (compl) out.push(`EXAMEN COMPLEMENTAIRE\n${cap(compl)}`);
+        if (conclusions) out.push(`CONCLUSIONS\n${cap(conclusions)}`);
 
-J'ai revu ce jour en consultation de ${spec.toLowerCase()} le patient susnommé.
-
-Anamnèse / Motif
-${body}
-
-Examen clinique
-Patient en bon état général, paramètres vitaux dans les limites de la norme. Examen ciblé sans particularité notable à ce jour.
-
-Conclusion et conduite à tenir
-Au vu des éléments recueillis, je propose la prise en charge suivante, avec réévaluation lors d'une prochaine consultation. Le patient a été informé et adhère à la démarche.
-
-Je reste à votre disposition pour tout complément d'information.
-
-Confraternellement,
-${drName}
-${spec}`;
+        const drName = [answers.firstName, answers.lastName].filter(Boolean).join(' ');
+        out.push(`Confraternellement,\n${drName ? 'Dr ' + drName : 'Dr'}\n${specLabel(answers.specialty)}`);
+        return out.join('\n\n');
       }
 
       function generateLetter(transcript) {
         const wrap = document.getElementById('letter-wrap');
-        const out = document.getElementById('letter-content');
+        const outEl = document.getElementById('letter-content');
         const spinner = document.getElementById('letter-spinner');
-        const title = document.getElementById('letter-title');
-        recStatus.textContent = 'Lettre générée par DocNote';
-        title.textContent = `Lettre · ${specLabel(answers.specialty)}`;
-        wrap.classList.remove('hidden');
-        spinner.classList.remove('hidden');
-        out.textContent = '';
+        document.getElementById('letter-title').textContent = `Lettre · ${specLabel(answers.specialty)}`;
+        wrap.classList.remove('hidden'); spinner.classList.remove('hidden'); outEl.textContent = '';
+        recHint.textContent = 'Appuyez sur le micro pour recommencer';
 
         const full = buildLetter(transcript);
-        let i = 0;
-        const speed = full.length > 900 ? 6 : 12; // chars per tick
+        let i = 0; const speed = full.length > 900 ? 7 : 12;
         const typer = setInterval(() => {
           i = Math.min(full.length, i + speed);
-          out.textContent = full.slice(0, i);
-          const box = out.closest('.overflow-y-auto');
-          if (box) box.scrollTop = box.scrollHeight;
+          outEl.textContent = full.slice(0, i);
+          const box = outEl.closest('.overflow-y-auto'); if (box) box.scrollTop = box.scrollHeight;
           if (i >= full.length) {
-            clearInterval(typer);
-            spinner.classList.add('hidden');
+            clearInterval(typer); spinner.classList.add('hidden');
             document.getElementById('onboarding-cta').classList.remove('hidden');
             ph()?.capture?.('survey_demo_letter_generated', { specialty: answers.specialty });
           }
