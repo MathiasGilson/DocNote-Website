@@ -8,6 +8,7 @@ const pagesCollection = defineCollection({
       pricing: z.string(),
       blog: z.string(),
       team: z.string(),
+      survey: z.string(),
       patient: z.string(),
       demo: z.string(),
       webApp: z.string(),
