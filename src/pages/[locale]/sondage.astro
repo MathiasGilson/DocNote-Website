@@ -1,0 +1,737 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import specialtiesData from '../../data/survey-specialties.json';
+
+// LinkedIn lead-funnel survey — French campaign only.
+export function getStaticPaths() {
+  return [{ params: { locale: 'fr' } }];
+}
+
+const SPECIALTIES = specialtiesData as { value: string; label: string }[];
+const APP_BASE = '/app';
+---
+
+<Layout title="Calculez votre indice de surcharge administrative">
+  <div class="bg-gradient-to-b from-violet-50/60 via-white to-white min-h-screen">
+    <!-- Progress bar -->
+    <div id="survey-progress-wrap" class="fixed top-0 left-0 right-0 z-40 h-1 bg-violet-100 hidden">
+      <div id="survey-progress" class="h-full bg-gradient-to-r from-violet-600 to-indigo-600 transition-all duration-500" style="width:0%"></div>
+    </div>
+
+    <section class="pt-28 sm:pt-32 pb-24 px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto">
+
+        <!-- ============ SCREEN 1 — Intro ============ -->
+        <div data-screen="1" class="survey-screen">
+          <div class="text-center">
+            <div class="inline-flex items-center gap-2 bg-violet-100 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-8">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-600"></span>
+              </span>
+              Sondage médecins · 2026
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-6">
+              <span class="text-gradient">Calculez votre indice<br class="hidden sm:block" /> de surcharge administrative</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-10 max-w-lg mx-auto">
+              Quelques questions sur votre charge et vos conditions de travail. Découvrez où vous vous situez par rapport aux autres médecins.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-gray-700 mb-10">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span class="font-medium">2 minutes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <span class="font-medium">100 % anonyme</span>
+              </div>
+            </div>
+            <button type="button" data-next class="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-lg font-semibold rounded-full px-10 py-4 shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+              Commencer
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ============ SCREEN 2 — Profil ============ -->
+        <div data-screen="2" class="survey-screen hidden">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Votre profil</h2>
+          <p class="text-gray-500 mb-8">Toujours 100 % anonyme.</p>
+
+          <div class="space-y-7">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Spécialité</label>
+              <select data-answer="specialty" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition">
+                <option value="">Sélectionnez votre spécialité…</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Âge</label>
+              <input type="number" min="20" max="99" inputmode="numeric" data-answer="age" placeholder="Ex. 42" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition" />
+            </div>
+
+            <div>
+              <span class="block text-sm font-semibold text-gray-700 mb-2">Genre</span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" data-group="gender">
+                <button type="button" data-value="homme" class="opt">Homme</button>
+                <button type="button" data-value="femme" class="opt">Femme</button>
+                <button type="button" data-value="autre" class="opt">Je ne souhaite pas préciser / autre</button>
+              </div>
+            </div>
+
+            <div>
+              <span class="block text-sm font-semibold text-gray-700 mb-2">Poste actuel</span>
+              <div class="grid grid-cols-2 gap-3" data-group="position">
+                <button type="button" data-value="interne" class="opt">Interne</button>
+                <button type="button" data-value="chef_clinique" class="opt">Chef de clinique</button>
+                <button type="button" data-value="adjoint" class="opt">Adjoint</button>
+                <button type="button" data-value="chef_service" class="opt">Chef de service</button>
+              </div>
+            </div>
+
+            <div>
+              <span class="block text-sm font-semibold text-gray-700 mb-2">Type d'établissement</span>
+              <div class="grid grid-cols-2 gap-3" data-group="facility">
+                <button type="button" data-value="hopital_universitaire" class="opt">Hôpital universitaire</button>
+                <button type="button" data-value="hopital_peripherique" class="opt">Hôpital périphérique</button>
+                <button type="button" data-value="prive_clinique" class="opt">Hôpital privé / clinique</button>
+                <button type="button" data-value="cabinet" class="opt">Cabinet</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between mt-10">
+            <button type="button" data-back class="btn-back">Retour</button>
+            <button type="button" data-next class="btn-next">Continuer</button>
+          </div>
+        </div>
+
+        <!-- ============ SCREEN 3 — Charge de travail ============ -->
+        <div data-screen="3" class="survey-screen hidden">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Votre charge administrative</h2>
+
+          <div class="space-y-9">
+            <div>
+              <span class="block text-sm font-semibold text-gray-700 mb-3">Quelle est votre méthode habituelle pour rédiger vos rapports de consultation ?</span>
+              <div class="space-y-3" data-group="method">
+                <button type="button" data-value="papier_puis_ordi" class="opt opt-wide">Prise de note papier puis saisie à l'ordinateur après la consultation</button>
+                <button type="button" data-value="ordi_pendant" class="opt opt-wide">Prise de note directement sur ordinateur pendant la consultation</button>
+                <button type="button" data-value="note_puis_dictee" class="opt opt-wide">Prise de note puis dictée (Dragon / dictaphone)</button>
+                <button type="button" data-value="dictee_sans_note" class="opt opt-wide">Dictée (Dragon / dictaphone) sans prise de note</button>
+                <button type="button" data-value="autre" class="opt opt-wide">Autre</button>
+              </div>
+              <input type="text" data-answer="methodOther" placeholder="Précisez (optionnel)…" class="mt-3 w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition hidden" data-other-for="method" />
+            </div>
+
+            <div>
+              <span class="block text-sm font-semibold text-gray-700 mb-3">Combien de temps consacrez-vous, pour chaque consultation, à la rédaction du rapport administratif ?</span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" data-group="time">
+                <button type="button" data-value="0" class="opt">&lt; 5 min</button>
+                <button type="button" data-value="1" class="opt">5–10 min</button>
+                <button type="button" data-value="2" class="opt">10–15 min</button>
+                <button type="button" data-value="3" class="opt">15–20 min</button>
+                <button type="button" data-value="4" class="opt">20–25 min</button>
+                <button type="button" data-value="5" class="opt">25–30 min</button>
+                <button type="button" data-value="6" class="opt col-span-2 sm:col-span-1">&gt; 30 min</button>
+              </div>
+            </div>
+
+            <div>
+              <span class="block text-sm font-semibold text-gray-700 mb-3">À quel point la gestion administrative impacte-t-elle votre travail (stress, charge mentale) ?</span>
+              <input type="range" min="0" max="10" value="5" data-answer="impact" class="w-full accent-violet-600" />
+              <div class="flex justify-between text-xs text-gray-400 mt-1">
+                <span>Aucun impact</span>
+                <span id="impact-val" class="font-semibold text-violet-600 text-sm">5 / 10</span>
+                <span>Impact majeur</span>
+              </div>
+            </div>
+
+            <div>
+              <span class="block text-sm font-semibold text-gray-700 mb-3">Heures supplémentaires liées à l'administratif (par semaine)</span>
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" data-group="overtime">
+                <button type="button" data-value="0" class="opt">0 h</button>
+                <button type="button" data-value="1" class="opt">&lt; 2 h</button>
+                <button type="button" data-value="2" class="opt">2–5 h</button>
+                <button type="button" data-value="3" class="opt">5–10 h</button>
+                <button type="button" data-value="4" class="opt">&gt; 10 h</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between mt-10">
+            <button type="button" data-back class="btn-back">Retour</button>
+            <button type="button" data-next class="btn-next">Voir mes résultats</button>
+          </div>
+        </div>
+
+        <!-- ============ SCREEN 4 — Coordonnées ============ -->
+        <div data-screen="4" class="survey-screen hidden">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Où envoyer vos résultats ?</h2>
+          <p class="text-gray-500 mb-8">On vous prépare votre indice personnalisé et une comparaison avec les autres médecins.</p>
+
+          <div class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Prénom</label>
+                <input type="text" data-answer="firstName" autocomplete="given-name" class="field" />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Nom</label>
+                <input type="text" data-answer="lastName" autocomplete="family-name" class="field" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Adresse e-mail</label>
+              <input type="email" data-answer="email" autocomplete="email" placeholder="vous@exemple.com" class="field" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">Numéro de téléphone</label>
+              <div class="flex gap-3">
+                <select data-answer="phoneCode" class="w-28 rounded-xl border border-gray-200 bg-white px-3 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition">
+                  <option value="+41">🇨🇭 +41</option>
+                  <option value="+33">🇫🇷 +33</option>
+                  <option value="+32">🇧🇪 +32</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+352">🇱🇺 +352</option>
+                  <option value="+39">🇮🇹 +39</option>
+                </select>
+                <input type="tel" data-answer="phone" autocomplete="tel" placeholder="79 123 45 67" class="field flex-1" />
+              </div>
+            </div>
+            <p id="contact-error" class="text-sm text-red-500 hidden">Merci de renseigner un e-mail et un numéro de téléphone valides.</p>
+          </div>
+
+          <p class="text-xs text-gray-400 mt-6 flex items-start gap-2">
+            <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Vos données restent confidentielles et ne sont jamais revendues. Hébergement suisse, conforme nLPD / RGPD.
+          </p>
+
+          <div class="flex items-center justify-between mt-8">
+            <button type="button" data-back class="btn-back">Retour</button>
+            <button type="button" data-next class="btn-next">Découvrir mon indice</button>
+          </div>
+        </div>
+
+        <!-- ============ SCREEN 5 — Résultats ============ -->
+        <div data-screen="5" class="survey-screen hidden">
+          <div class="text-center mb-10">
+            <p class="text-sm font-semibold text-violet-600 uppercase tracking-wider mb-2">Votre indice de surcharge administrative</p>
+            <div class="text-7xl font-bold text-gradient mb-2"><span id="score-value">0</span><span class="text-3xl text-gray-400">/100</span></div>
+            <p id="score-label" class="text-lg text-gray-700 font-medium"></p>
+          </div>
+
+          <!-- Gaussian positioning -->
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-6">
+            <h3 class="text-base font-semibold text-gray-900 mb-1">Où vous situez-vous ?</h3>
+            <p id="percentile-text" class="text-sm text-gray-500 mb-4"></p>
+            <div id="gauss-chart" class="w-full"></div>
+          </div>
+
+          <!-- Time distribution -->
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-10">
+            <h3 class="text-base font-semibold text-gray-900 mb-1">Temps de rédaction par consultation</h3>
+            <p class="text-sm text-gray-500 mb-4">Réponses des médecins déjà sondés · votre réponse en violet</p>
+            <div id="time-chart" class="w-full"></div>
+          </div>
+
+          <!-- ===== DocNote live demo ===== -->
+          <div class="rounded-3xl bg-gradient-to-br from-violet-600 to-indigo-700 text-white p-7 sm:p-9 shadow-xl">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold mb-2">Et si ce rapport s'écrivait tout seul ?</h3>
+              <p class="text-violet-100">Appuyez, décrivez votre consultation à voix haute, et regardez DocNote rédiger la lettre au format <span id="demo-spec-label" class="font-semibold text-white">de votre spécialité</span>.</p>
+            </div>
+
+            <!-- Recorder -->
+            <div class="flex flex-col items-center">
+              <button id="rec-btn" type="button" class="relative w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-2xl hover:scale-105 transition-transform">
+                <span id="rec-ring" class="absolute inset-0 rounded-full"></span>
+                <svg id="rec-icon-mic" class="w-9 h-9 text-violet-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14a3 3 0 003-3V6a3 3 0 00-6 0v5a3 3 0 003 3z"/><path d="M19 11a1 1 0 10-2 0 5 5 0 01-10 0 1 1 0 10-2 0 7 7 0 006 6.92V21a1 1 0 102 0v-3.08A7 7 0 0019 11z"/></svg>
+                <span id="rec-icon-stop" class="hidden w-7 h-7 rounded-md bg-red-500"></span>
+              </button>
+              <p id="rec-status" class="mt-4 text-sm text-violet-100 font-medium">Appuyez pour parler</p>
+              <p id="rec-timer" class="text-2xl font-mono font-semibold tabular-nums mt-1 hidden">00:00</p>
+
+              <!-- live transcript -->
+              <div id="transcript-box" class="hidden w-full mt-5 bg-white/10 backdrop-blur rounded-xl p-4 text-sm text-violet-50 italic min-h-[3rem]"></div>
+            </div>
+
+            <!-- Generated letter -->
+            <div id="letter-wrap" class="hidden mt-7">
+              <div class="flex items-center gap-2 text-violet-100 text-sm font-medium mb-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span id="letter-title">Lettre générée</span>
+                <span id="letter-spinner" class="inline-block w-3 h-3 border-2 border-white/40 border-t-white rounded-full animate-spin"></span>
+              </div>
+              <div class="bg-white text-gray-800 rounded-xl p-5 sm:p-6 text-[13px] leading-relaxed shadow-inner max-h-96 overflow-y-auto">
+                <pre id="letter-content" class="whitespace-pre-wrap font-sans"></pre>
+              </div>
+            </div>
+
+            <!-- Onboarding CTA -->
+            <div id="onboarding-cta" class="hidden mt-7 text-center">
+              <p class="text-violet-100 mb-4">Votre compte est déjà pré-configuré (langue, spécialité, téléphone). Démarrez en un clic 👇</p>
+              <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a id="cta-web" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white text-violet-700 font-semibold rounded-full px-7 py-3.5 hover:bg-violet-50 transition-all">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
+                  Lancer l'application web
+                </a>
+                <a id="cta-ios" href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white/15 text-white font-semibold rounded-full px-7 py-3.5 hover:bg-white/25 transition-all border border-white/20">
+                  App Store
+                </a>
+                <a id="cta-android" href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white/15 text-white font-semibold rounded-full px-7 py-3.5 hover:bg-white/25 transition-all border border-white/20">
+                  Google Play
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .opt {
+      @apply text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-xl px-4 py-3 text-center cursor-pointer transition-all hover:border-violet-300 hover:bg-violet-50/40;
+    }
+    .opt-wide { @apply text-left; }
+    .opt.selected {
+      @apply border-violet-600 bg-violet-50 text-violet-700 ring-1 ring-violet-600;
+    }
+    .field {
+      @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition;
+    }
+    .btn-next {
+      @apply inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-full px-8 py-3 shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:pointer-events-none;
+    }
+    .btn-back {
+      @apply text-gray-500 font-medium px-4 py-3 hover:text-gray-800 transition-colors;
+    }
+    #rec-btn.recording #rec-ring {
+      box-shadow: 0 0 0 0 rgba(255,255,255,0.5);
+      animation: recpulse 1.4s infinite;
+    }
+    @keyframes recpulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.45); }
+      70% { box-shadow: 0 0 0 22px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+  </style>
+
+  <script define:vars={{ SPECIALTIES, APP_BASE }}>
+    (function () {
+      // ---------------- State ----------------
+      const answers = {
+        impact: 5,
+        phoneCode: '+41',
+      };
+      let current = 1;
+      const TOTAL = 5;
+
+      const screens = Array.from(document.querySelectorAll('.survey-screen'));
+      const progressWrap = document.getElementById('survey-progress-wrap');
+      const progressBar = document.getElementById('survey-progress');
+
+      // ---------------- Specialty dropdown ----------------
+      const specSelect = document.querySelector('[data-answer="specialty"]');
+      SPECIALTIES.forEach((s) => {
+        const o = document.createElement('option');
+        o.value = s.value;
+        o.textContent = s.label;
+        specSelect.appendChild(o);
+      });
+      const specLabel = (val) => (SPECIALTIES.find((s) => s.value === val) || {}).label || 'votre spécialité';
+
+      function ph() { return window.posthog; }
+
+      // ---------------- Generic inputs ----------------
+      document.querySelectorAll('[data-answer]').forEach((el) => {
+        el.addEventListener('input', () => {
+          answers[el.getAttribute('data-answer')] = el.value;
+          if (el.getAttribute('data-answer') === 'impact') {
+            document.getElementById('impact-val').textContent = el.value + ' / 10';
+          }
+        });
+      });
+
+      // Single-select button groups
+      document.querySelectorAll('[data-group]').forEach((group) => {
+        const name = group.getAttribute('data-group');
+        group.querySelectorAll('button[data-value]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            group.querySelectorAll('button[data-value]').forEach((b) => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            answers[name] = btn.getAttribute('data-value');
+            // "Autre" free-text reveal
+            const other = document.querySelector(`[data-other-for="${name}"]`);
+            if (other) other.classList.toggle('hidden', btn.getAttribute('data-value') !== 'autre');
+          });
+        });
+      });
+
+      // ---------------- Navigation ----------------
+      function show(n) {
+        screens.forEach((s) => s.classList.toggle('hidden', Number(s.dataset.screen) !== n));
+        current = n;
+        progressWrap.classList.toggle('hidden', n === 1);
+        progressBar.style.width = ((n - 1) / (TOTAL - 1)) * 100 + '%';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function validate(n) {
+        if (n === 2) {
+          if (!answers.specialty) { specSelect.focus(); specSelect.classList.add('border-red-400'); return false; }
+          specSelect.classList.remove('border-red-400');
+        }
+        if (n === 4) {
+          const emailOk = /.+@.+\..+/.test(answers.email || '');
+          const phoneOk = (answers.phone || '').replace(/\D/g, '').length >= 6;
+          const err = document.getElementById('contact-error');
+          if (!emailOk || !phoneOk) { err.classList.remove('hidden'); return false; }
+          err.classList.add('hidden');
+        }
+        return true;
+      }
+
+      document.querySelectorAll('[data-next]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          if (!validate(current)) return;
+          if (current === 1) ph()?.capture?.('survey_started');
+          if (current === 4) finishSurvey();
+          if (current < TOTAL) show(current + 1);
+        });
+      });
+      document.querySelectorAll('[data-back]').forEach((btn) => {
+        btn.addEventListener('click', () => { if (current > 1) show(current - 1); });
+      });
+
+      // ---------------- Scoring ----------------
+      const TIME_SCORE = [6, 14, 22, 28, 33, 37, 40];
+      const OVERTIME_SCORE = [0, 8, 15, 20, 25];
+
+      function computeScore() {
+        const t = TIME_SCORE[Number(answers.time)] ?? 20;
+        const impact = (Number(answers.impact) / 10) * 35;
+        const ot = OVERTIME_SCORE[Number(answers.overtime)] ?? 10;
+        let score = Math.round(t + impact + ot);
+        return Math.max(12, Math.min(100, score));
+      }
+
+      // Normal distribution helpers (population of doctors: mean 58, sd 15 -> skews high)
+      const MEAN = 58, SD = 15;
+      function erf(x) {
+        const t = 1 / (1 + 0.3275911 * Math.abs(x));
+        const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+        return x >= 0 ? y : -y;
+      }
+      function cdf(x) { return 0.5 * (1 + erf((x - MEAN) / (SD * Math.SQRT2))); }
+      function pdf(x) { return Math.exp(-((x - MEAN) ** 2) / (2 * SD * SD)) / (SD * Math.sqrt(2 * Math.PI)); }
+
+      // ---------------- Charts ----------------
+      function drawGauss(score) {
+        const W = 560, H = 200, padX = 20, padB = 28, padT = 14;
+        const x = (v) => padX + (v / 100) * (W - 2 * padX);
+        const maxP = pdf(MEAN);
+        const y = (p) => H - padB - (p / maxP) * (H - padB - padT);
+        let line = '', area = `M ${x(0)} ${H - padB} `;
+        for (let v = 0; v <= 100; v += 1) {
+          const px = x(v), py = y(pdf(v));
+          line += (v === 0 ? 'M' : 'L') + ' ' + px.toFixed(1) + ' ' + py.toFixed(1) + ' ';
+          area += 'L ' + px.toFixed(1) + ' ' + py.toFixed(1) + ' ';
+        }
+        area += `L ${x(100)} ${H - padB} Z`;
+        const sx = x(score);
+        const svg = `
+          <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto">
+            <defs>
+              <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.02"/>
+              </linearGradient>
+            </defs>
+            <path d="${area}" fill="url(#gfill)"/>
+            <path d="${line}" fill="none" stroke="#a78bfa" stroke-width="2"/>
+            <line x1="${sx}" y1="${padT}" x2="${sx}" y2="${H - padB}" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5 4"/>
+            <circle cx="${sx}" cy="${y(pdf(score))}" r="6" fill="#4f46e5" stroke="white" stroke-width="2"/>
+            <rect x="${Math.min(W - 96, Math.max(4, sx - 46))}" y="${padT - 4}" width="92" height="22" rx="11" fill="#4f46e5"/>
+            <text x="${Math.min(W - 50, Math.max(50, sx))}" y="${padT + 11}" fill="white" font-size="12" font-weight="700" text-anchor="middle">Vous · ${score}</text>
+            <text x="${x(15)}" y="${H - 8}" fill="#9ca3af" font-size="11" text-anchor="middle">Peu surchargés</text>
+            <text x="${x(85)}" y="${H - 8}" fill="#9ca3af" font-size="11" text-anchor="middle">Très surchargés</text>
+          </svg>`;
+        document.getElementById('gauss-chart').innerHTML = svg;
+      }
+
+      // Real distribution from the survey so far (22 réponses)
+      const TIME_DIST = [
+        { label: '<5', pct: 9.1 },
+        { label: '5–10', pct: 22.7 },
+        { label: '10–15', pct: 27.3 },
+        { label: '15–20', pct: 13.6 },
+        { label: '20–25', pct: 9.1 },
+        { label: '25–30', pct: 0 },
+        { label: '>30', pct: 18.2 },
+      ];
+      function drawTimeBars(userIdx) {
+        const W = 560, H = 200, padB = 30, padT = 16, padL = 8, padR = 8;
+        const n = TIME_DIST.length;
+        const maxPct = Math.max(...TIME_DIST.map((d) => d.pct));
+        const slot = (W - padL - padR) / n;
+        const bw = slot * 0.6;
+        let bars = '';
+        TIME_DIST.forEach((d, i) => {
+          const h = d.pct === 0 ? 2 : (d.pct / maxPct) * (H - padB - padT);
+          const bx = padL + i * slot + (slot - bw) / 2;
+          const by = H - padB - h;
+          const mine = i === Number(userIdx);
+          bars += `
+            <rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="5"
+                  fill="${mine ? '#7c3aed' : '#e5e7eb'}"/>
+            <text x="${(bx + bw / 2).toFixed(1)}" y="${(by - 6).toFixed(1)}" text-anchor="middle" font-size="11"
+                  font-weight="${mine ? '700' : '500'}" fill="${mine ? '#6d28d9' : '#9ca3af'}">${d.pct}%</text>
+            <text x="${(bx + bw / 2).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="11"
+                  fill="${mine ? '#6d28d9' : '#9ca3af'}" font-weight="${mine ? '700' : '400'}">${d.label}</text>`;
+        });
+        document.getElementById('time-chart').innerHTML =
+          `<svg viewBox="0 0 ${W} ${H}" class="w-full h-auto">${bars}</svg>`;
+      }
+
+      // ---------------- Finish: compute + render results ----------------
+      function finishSurvey() {
+        const score = computeScore();
+        const pct = Math.round(cdf(score) * 100);
+        const pctClamped = Math.max(5, Math.min(98, pct));
+
+        // animate the big number
+        const el = document.getElementById('score-value');
+        let v = 0;
+        const step = Math.max(1, Math.round(score / 28));
+        const iv = setInterval(() => {
+          v = Math.min(score, v + step);
+          el.textContent = v;
+          if (v >= score) clearInterval(iv);
+        }, 28);
+
+        const label =
+          score >= 75 ? 'Surcharge administrative critique' :
+          score >= 55 ? 'Surcharge administrative élevée' :
+          score >= 35 ? 'Surcharge administrative modérée' :
+          'Surcharge administrative maîtrisée';
+        document.getElementById('score-label').textContent = label;
+        document.getElementById('percentile-text').textContent =
+          `Vous êtes plus surchargé·e que ${pctClamped} % des médecins déjà sondés.`;
+
+        drawGauss(score);
+        drawTimeBars(answers.time);
+
+        document.getElementById('demo-spec-label').textContent = specLabel(answers.specialty);
+        buildOnboardingLinks();
+
+        ph()?.identify?.(answers.email, {
+          email: answers.email,
+          name: [answers.firstName, answers.lastName].filter(Boolean).join(' '),
+          phone: (answers.phoneCode || '') + ' ' + (answers.phone || ''),
+          specialty: answers.specialty,
+        });
+        ph()?.capture?.('survey_completed', {
+          score, percentile: pctClamped, specialty: answers.specialty,
+          age: answers.age, gender: answers.gender, position: answers.position,
+          facility: answers.facility, method: answers.method,
+          time_bucket: answers.time, overtime: answers.overtime, impact: answers.impact,
+        });
+      }
+
+      function buildOnboardingLinks() {
+        const phoneFull = ((answers.phoneCode || '') + (answers.phone || '')).replace(/\s+/g, '');
+        const q = new URLSearchParams({
+          lang: 'fr',
+          specialty: answers.specialty || '',
+          dpi: 'none',
+          phone: phoneFull,
+          utm_source: 'sondage_linkedin',
+        });
+        document.getElementById('cta-web').setAttribute('href', `${APP_BASE}?${q.toString()}`);
+      }
+
+      // ---------------- DocNote demo: record → letter ----------------
+      const recBtn = document.getElementById('rec-btn');
+      const recStatus = document.getElementById('rec-status');
+      const recTimer = document.getElementById('rec-timer');
+      const micIcon = document.getElementById('rec-icon-mic');
+      const stopIcon = document.getElementById('rec-icon-stop');
+      const transcriptBox = document.getElementById('transcript-box');
+
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      let recognition = null, recording = false, timerInt = null, seconds = 0;
+      let finalTranscript = '';
+
+      const FALLBACK_TRANSCRIPT =
+        "Patient de 54 ans, vu en consultation de suivi. Se plaint de douleurs depuis trois semaines, " +
+        "d'intensité modérée, sans signe de gravité. L'examen clinique est rassurant, paramètres vitaux dans la norme. " +
+        "Je propose de poursuivre le traitement actuel, avec un contrôle biologique et une nouvelle consultation dans un mois.";
+
+      function fmtTime(s) {
+        const m = String(Math.floor(s / 60)).padStart(2, '0');
+        const ss = String(s % 60).padStart(2, '0');
+        return m + ':' + ss;
+      }
+
+      function startTimer() {
+        seconds = 0; recTimer.textContent = '00:00'; recTimer.classList.remove('hidden');
+        timerInt = setInterval(() => { seconds++; recTimer.textContent = fmtTime(seconds); }, 1000);
+      }
+      function stopTimer() { clearInterval(timerInt); }
+
+      function setRecordingUI(on) {
+        recording = on;
+        recBtn.classList.toggle('recording', on);
+        micIcon.classList.toggle('hidden', on);
+        stopIcon.classList.toggle('hidden', !on);
+        recStatus.textContent = on ? 'Enregistrement… parlez, puis appuyez pour arrêter' : 'Génération en cours…';
+      }
+
+      function startRecording() {
+        finalTranscript = '';
+        transcriptBox.textContent = '';
+        transcriptBox.classList.remove('hidden');
+        document.getElementById('letter-wrap').classList.add('hidden');
+        document.getElementById('onboarding-cta').classList.add('hidden');
+        setRecordingUI(true);
+        startTimer();
+        ph()?.capture?.('survey_demo_record_start', { specialty: answers.specialty });
+
+        if (SR) {
+          recognition = new SR();
+          recognition.lang = 'fr-FR';
+          recognition.continuous = true;
+          recognition.interimResults = true;
+          recognition.onresult = (e) => {
+            let interim = '';
+            for (let i = e.resultIndex; i < e.results.length; i++) {
+              const txt = e.results[i][0].transcript;
+              if (e.results[i].isFinal) finalTranscript += txt + ' ';
+              else interim += txt;
+            }
+            transcriptBox.textContent = (finalTranscript + interim).trim() || '…';
+          };
+          recognition.onerror = () => {};
+          try { recognition.start(); } catch (_) {}
+        } else {
+          transcriptBox.textContent = '🎙️ Reconnaissance vocale non disponible sur ce navigateur — un exemple sera utilisé.';
+        }
+      }
+
+      function stopRecording() {
+        stopTimer();
+        setRecordingUI(false);
+        if (recognition) { try { recognition.stop(); } catch (_) {} }
+        const transcript = (finalTranscript || '').trim() || FALLBACK_TRANSCRIPT;
+        setTimeout(() => generateLetter(transcript), 600);
+      }
+
+      recBtn.addEventListener('click', () => { recording ? stopRecording() : startRecording(); });
+
+      // ---------------- Letter generation (specialty-formatted) ----------------
+      function today() {
+        return new Date().toLocaleDateString('fr-CH', { day: '2-digit', month: 'long', year: 'numeric' });
+      }
+      function capitalize(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+
+      // surgical specialties get an operative-report flavour
+      const SURGICAL = new Set([
+        'visceral_and_digestive_surgery','orthopedic_and_trauma_surgery','cardiovascular_surgery',
+        'thoracic_surgery','neurosurgery','plastic_reconstructive_and_aesthetic_surgery',
+        'maxillofacial_surgery_and_stomatology','pediatric_surgery','vascular_surgery',
+        'bariatric_surgery','urology','gynecology','obstetrics',
+      ]);
+
+      function buildLetter(transcript) {
+        const spec = specLabel(answers.specialty);
+        const signature = [answers.firstName, answers.lastName].filter(Boolean).join(' ');
+        const drName = signature ? `Dr ${signature}` : 'Dr ___';
+        const body = capitalize(transcript.trim());
+        const isSurg = SURGICAL.has(answers.specialty);
+
+        const header =
+`${drName}
+Service de ${spec}
+${today()}
+
+`;
+        if (isSurg) {
+          return header +
+`COMPTE RENDU — ${spec.toUpperCase()}
+
+Indication
+${body}
+
+Examen / Geste
+Patient installé, conditions d'asepsie respectées. Déroulement conforme au plan opératoire, sans incident peropératoire. Hémostase contrôlée.
+
+Suites
+Surveillance rapprochée des paramètres vitaux. Antalgie adaptée. Reprise progressive selon protocole du service.
+
+Conclusion
+Évolution favorable attendue. Prochain contrôle à programmer.
+
+${drName}
+${spec}`;
+        }
+        return header +
+`OBJET : Compte rendu de consultation — ${spec}
+
+Cher Confrère, chère Consœur,
+
+J'ai revu ce jour en consultation de ${spec.toLowerCase()} le patient susnommé.
+
+Anamnèse / Motif
+${body}
+
+Examen clinique
+Patient en bon état général, paramètres vitaux dans les limites de la norme. Examen ciblé sans particularité notable à ce jour.
+
+Conclusion et conduite à tenir
+Au vu des éléments recueillis, je propose la prise en charge suivante, avec réévaluation lors d'une prochaine consultation. Le patient a été informé et adhère à la démarche.
+
+Je reste à votre disposition pour tout complément d'information.
+
+Confraternellement,
+${drName}
+${spec}`;
+      }
+
+      function generateLetter(transcript) {
+        const wrap = document.getElementById('letter-wrap');
+        const out = document.getElementById('letter-content');
+        const spinner = document.getElementById('letter-spinner');
+        const title = document.getElementById('letter-title');
+        recStatus.textContent = 'Lettre générée par DocNote';
+        title.textContent = `Lettre · ${specLabel(answers.specialty)}`;
+        wrap.classList.remove('hidden');
+        spinner.classList.remove('hidden');
+        out.textContent = '';
+
+        const full = buildLetter(transcript);
+        let i = 0;
+        const speed = full.length > 900 ? 6 : 12; // chars per tick
+        const typer = setInterval(() => {
+          i = Math.min(full.length, i + speed);
+          out.textContent = full.slice(0, i);
+          const box = out.closest('.overflow-y-auto');
+          if (box) box.scrollTop = box.scrollHeight;
+          if (i >= full.length) {
+            clearInterval(typer);
+            spinner.classList.add('hidden');
+            document.getElementById('onboarding-cta').classList.remove('hidden');
+            ph()?.capture?.('survey_demo_letter_generated', { specialty: answers.specialty });
+          }
+        }, 22);
+      }
+
+      // init
+      show(1);
+    })();
+  </script>
+</Layout>
