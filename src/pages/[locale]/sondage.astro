@@ -248,59 +248,62 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
             <div id="time-chart" class="w-full"></div>
           </div>
 
-          <!-- ===== DocNote live demo (app design) ===== -->
-          <div class="rounded-3xl bg-gray-50 border border-gray-100 p-6 sm:p-9 shadow-sm">
+          <!-- ===== DocNote live demo (metaFunnel app design — report in-screen) ===== -->
+          <div class="rounded-3xl bg-slate-50 border border-slate-100 p-6 sm:p-9 shadow-sm">
             <div class="text-center mb-7">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Et si ce rapport s'écrivait tout seul ?</h3>
-              <p class="text-gray-600">Appuyez, décrivez votre consultation à voix haute, et DocNote rédige la lettre au format <span id="demo-spec-label" class="font-semibold text-violet-600">de votre spécialité</span>.</p>
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Et si ce rapport s'écrivait tout seul ?</h3>
+              <p class="text-slate-600">Appuyez, décrivez votre consultation à voix haute, et DocNote rédige le rapport au format <span id="demo-spec-label" class="font-semibold text-blue-600">de votre spécialité</span>.</p>
             </div>
 
-            <!-- Phone frame with the DocNote record screen -->
-            <div class="mx-auto" style="max-width:300px;">
-              <div class="relative rounded-[2.5rem] bg-gray-900 p-2.5 shadow-2xl">
-                <div class="rounded-[2rem] bg-white overflow-hidden">
+            <!-- Phone frame: recorder and report share the SAME screen -->
+            <div class="mx-auto" style="max-width:340px;">
+              <div class="relative rounded-[2.5rem] bg-slate-900 p-2.5 shadow-2xl">
+                <div class="rounded-[2rem] bg-slate-50 overflow-hidden">
                   <!-- status bar -->
-                  <div class="flex items-center justify-between px-5 pt-3 pb-1 text-[11px] font-semibold text-gray-700">
+                  <div class="flex items-center justify-between px-5 pt-3 pb-2 text-[11px] font-semibold text-slate-700 bg-slate-50">
                     <span>9:41</span>
-                    <span class="flex items-center gap-1">
-                      <svg class="w-4 h-4 text-violet-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a2 2 0 00-2 2v.5A6 6 0 005 10v.5a2 2 0 104 0V10a2 2 0 014 0v.5a2 2 0 104 0V10a6 6 0 00-5-5.5V4a2 2 0 00-2-2z" opacity=".0"/></svg>
-                      <span class="text-gray-400">DocNote</span>
+                    <span class="flex items-center gap-1.5">
+                      <img src="/images/logo.png" alt="DocNote" class="h-4 w-auto" />
+                      <span class="text-slate-400">DocNote</span>
                     </span>
                   </div>
-                  <!-- record screen -->
-                  <div class="px-5 py-7 flex flex-col items-center" style="min-height:340px;">
-                    <div id="rec-stopwatch" class="font-mono text-3xl text-gray-500 mb-6 tabular-nums opacity-0 transition-opacity">00:00:00</div>
 
-                    <button id="rec-btn" type="button"
-                      class="relative flex flex-col items-center justify-center transition-colors duration-200 select-none"
-                      style="width:150px;height:150px;border-radius:32px;background:#3b82f6;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);">
-                      <span id="rec-icon" class="text-white"></span>
-                      <span id="rec-label" class="text-white mt-2 font-bold text-xl">Enregistrer</span>
-                    </button>
+                  <!-- screen body: fixed height, two stages -->
+                  <div class="px-5 pb-6 pt-2 flex flex-col" style="height:430px;">
+                    <p id="demo-consult-label" class="text-center text-xs text-slate-500 mb-3 shrink-0">Consultation en cours…</p>
 
-                    <div id="rec-waveform" class="flex items-end justify-center gap-[2px] mt-7 opacity-0 transition-opacity" style="height:48px;"></div>
+                    <!-- STAGE A: recorder -->
+                    <div id="rec-stage" class="flex-1 min-h-0 flex flex-col items-center justify-center">
+                      <div id="rec-waveform" class="flex items-center justify-center mb-9" style="height:52px;"></div>
 
-                    <button id="rec-stop" type="button" class="hidden w-full mt-7 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold text-base rounded-2xl px-6 py-4 transition-colors">
-                      Arrêter et générer la lettre
-                    </button>
-                    <p id="rec-hint" class="text-xs text-gray-400 mt-5 text-center">Appuyez sur le micro pour démarrer</p>
+                      <button id="rec-btn" type="button"
+                        class="record-btn-gradient flex flex-col items-center justify-center rounded-[32px] shadow-lg shadow-blue-500/30 transition-transform active:scale-95"
+                        style="width:170px;height:170px;">
+                        <span id="rec-icon" class="text-white"></span>
+                        <span id="rec-label" class="text-white mt-2.5 font-bold text-lg">Démarrer</span>
+                      </button>
+
+                      <p id="rec-hint" class="mt-6 text-center text-xs font-medium text-blue-600">Appuyez pour lancer l'enregistrement</p>
+                    </div>
+
+                    <!-- STAGE B: generated report (replaces recorder) -->
+                    <div id="report-stage" class="hidden flex-1 min-h-0 flex flex-col rounded-2xl border border-slate-200 bg-white p-4">
+                      <div class="mb-3 shrink-0 flex items-center justify-between">
+                        <p id="report-status" class="text-left text-sm font-medium text-blue-600">Génération du rapport…</p>
+                        <button id="report-restart" type="button" class="hidden items-center gap-1 text-xs font-medium text-slate-400 hover:text-blue-600 transition-colors">
+                          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h5M20 20v-5h-5M4 9a8 8 0 0114-3m2 9a8 8 0 01-14 3"/></svg>
+                          Recommencer
+                        </button>
+                      </div>
+                      <div class="min-h-0 flex-1 overflow-y-auto text-left">
+                        <div class="flex items-end gap-0.5">
+                          <div id="report-content" class="markdown-report text-[13px] leading-6 text-slate-800"></div>
+                          <span id="report-cursor" class="mb-1 inline-block text-blue-500">|</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- live transcript -->
-            <div id="transcript-box" class="hidden max-w-md mx-auto mt-6 bg-white border border-gray-200 rounded-xl p-4 text-sm text-gray-500 italic min-h-[3rem]"></div>
-
-            <!-- Generated letter (report card, app style) -->
-            <div id="letter-wrap" class="hidden mt-8">
-              <div class="flex items-center justify-center gap-2 text-gray-500 text-sm font-medium mb-3">
-                <svg class="w-4 h-4 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span id="letter-title">Lettre générée par DocNote</span>
-                <span id="letter-spinner" class="inline-block w-3 h-3 border-2 border-violet-200 border-t-violet-600 rounded-full animate-spin"></span>
-              </div>
-              <div class="max-w-xl mx-auto bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm max-h-[28rem] overflow-y-auto">
-                <pre id="letter-content" class="whitespace-pre-wrap font-sans text-[13px] leading-relaxed text-gray-800"></pre>
               </div>
             </div>
 
@@ -369,9 +372,23 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
     }
     .field-error { @apply border-red-400 ring-2 ring-red-200; }
     .group-error { @apply ring-2 ring-red-300; }
-    /* Recording button bounce */
-    @keyframes recbounce { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
-    #rec-btn.is-recording #rec-icon { animation: recbounce 1.1s ease-in-out infinite; display:inline-block; }
+    /* DocNote record button — animated blue gradient (from metaFunnel) */
+    @keyframes record-gradient-shift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .record-btn-gradient {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 35%, #2563eb 65%, #1d4ed8 100%);
+      background-size: 200% 200%;
+      animation: record-gradient-shift 5s ease-in-out infinite;
+    }
+    .record-btn-gradient:hover { background-image: linear-gradient(135deg, #93c5fd 0%, #3b82f6 35%, #2563eb 65%, #1e40af 100%); }
+    /* Report markdown styling (from metaFunnel) */
+    .markdown-report p { margin: 0 0 0.5rem; }
+    .markdown-report p:last-child { margin-bottom: 0; }
+    .markdown-report strong { font-weight: 700; color: #0f172a; }
+    .markdown-report h1, .markdown-report h2, .markdown-report h3 { margin: 0 0 0.6rem; font-size: 0.95rem; font-weight: 700; color: #0f172a; }
+    .markdown-report ul, .markdown-report ol { margin: 0 0 0.5rem; padding-left: 1.25rem; }
+    .markdown-report li { margin-bottom: 0.25rem; list-style: disc; }
+    .report-head { font-weight: 700; color: #0f172a; letter-spacing: .02em; margin-top: .7rem; }
+    .report-head:first-child { margin-top: 0; }
     /* Gaussian path draw-in */
     .gauss-line { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: gaussdraw 1.1s ease-out forwards; }
     @keyframes gaussdraw { to { stroke-dashoffset: 0; } }
@@ -631,11 +648,13 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
           'Indice de surcharge (/100)': score,
           'Percentile': `${percentile} %`,
         };
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(payload),
-        }).catch(() => {});
+        try {
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(payload),
+          }).catch(() => {});
+        } catch (_) {}
       }
 
       function buildOnboardingLinks() {
@@ -644,52 +663,41 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
         document.getElementById('cta-web').setAttribute('href', `${APP_WEB}?${q.toString()}`);
       }
 
-      // ================= DocNote recorder (app design) =================
+      // ================= DocNote recorder (metaFunnel design, report in-screen) =================
+      const recStage = document.getElementById('rec-stage');
+      const reportStage = document.getElementById('report-stage');
       const recBtn = document.getElementById('rec-btn');
       const recIcon = document.getElementById('rec-icon');
       const recLabel = document.getElementById('rec-label');
-      const recStop = document.getElementById('rec-stop');
       const recHint = document.getElementById('rec-hint');
-      const stopwatch = document.getElementById('rec-stopwatch');
       const waveform = document.getElementById('rec-waveform');
-      const transcriptBox = document.getElementById('transcript-box');
+      const consultLabel = document.getElementById('demo-consult-label');
+      const reportStatus = document.getElementById('report-status');
+      const reportContent = document.getElementById('report-content');
+      const reportCursor = document.getElementById('report-cursor');
+      const reportRestart = document.getElementById('report-restart');
 
-      const MIC_SVG = '<svg width="56" height="56" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-14 0M12 18.5V21m0-2.5a4 4 0 004-4V6a4 4 0 00-8 0v8.5a4 4 0 004 4z"/></svg>';
-      const PAUSE_SVG = '<svg width="56" height="56" fill="white" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg>';
-      const PLAY_SVG = '<svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 001.5.86l11-6.86a1 1 0 000-1.72l-11-6.86A1 1 0 008 5.14z"/></svg>';
+      const MIC_SVG = '<svg width="46" height="46" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-14 0M12 18.5V21m0-2.5a4 4 0 004-4V6a4 4 0 00-8 0v8.5a4 4 0 004 4z"/></svg>';
+      const STOP_SVG = '<svg width="38" height="38" fill="white" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2.5"/></svg>';
 
-      const COLOR = { idle: '#3b82f6', recording: '#ef4444', paused: '#f59e0b' };
-      let recState = 'idle'; // idle | recording | paused
-      let elapsed = 0, swTimer = null, swLast = 0;
+      let recState = 'idle'; // idle | recording | generating | done
       let wfTimer = null;
 
-      // Build waveform bars once
-      const WF_N = 44;
+      // Scrolling blue waveform (same look as the app)
+      const WF_N = 60;
       const wfHeights = new Array(WF_N).fill(2);
       const wfBars = [];
       for (let i = 0; i < WF_N; i++) {
         const b = document.createElement('div');
-        b.style.width = '2px'; b.style.height = '2px'; b.style.borderRadius = '2px'; b.style.background = '#d1d5db';
-        b.style.transition = 'height .08s linear';
+        b.style.width = '2px'; b.style.height = '2px'; b.style.borderRadius = '1px';
+        b.style.background = '#93c5fd'; b.style.marginRight = '2px';
+        b.style.transition = 'height .09s linear';
         waveform.appendChild(b); wfBars.push(b);
       }
-      function wfSample() { const r = Math.random(); if (r > 0.9) return 38 + Math.random() * 10; if (r > 0.65) return 20 + Math.random() * 16; return 4 + Math.random() * 12; }
+      function wfSample() { const r = Math.random(); if (r > 0.9) return 40 + Math.random() * 12; if (r > 0.65) return 22 + Math.random() * 16; return 5 + Math.random() * 12; }
       function wfApply() { for (let i = 0; i < WF_N; i++) wfBars[i].style.height = wfHeights[i] + 'px'; }
-      function wfStart() { waveform.classList.remove('opacity-0'); clearInterval(wfTimer); wfTimer = setInterval(() => { wfHeights.shift(); wfHeights.push(wfSample()); wfApply(); }, 90); }
-      function wfFreeze() { clearInterval(wfTimer); }
-      function wfReset() { clearInterval(wfTimer); wfHeights.fill(2); wfApply(); waveform.classList.add('opacity-0'); }
-
-      function fmtSW(ms) {
-        const m = Math.floor(ms / 60000), s = Math.floor((ms % 60000) / 1000), c = Math.floor((ms % 1000) / 10);
-        return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}:${String(c).padStart(2, '0')}`;
-      }
-      function swStart() {
-        stopwatch.classList.remove('opacity-0');
-        swLast = performance.now();
-        clearInterval(swTimer);
-        swTimer = setInterval(() => { const now = performance.now(); elapsed += now - swLast; swLast = now; stopwatch.textContent = fmtSW(elapsed); }, 50);
-      }
-      function swPause() { clearInterval(swTimer); }
+      function wfStart() { clearInterval(wfTimer); wfTimer = setInterval(() => { wfHeights.shift(); wfHeights.push(wfSample()); wfApply(); }, 90); }
+      function wfStop() { clearInterval(wfTimer); wfHeights.fill(2); wfApply(); }
 
       // Speech recognition
       const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -701,7 +709,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
         "avec une nouvelle consultation de contrôle dans deux semaines.";
 
       function startRecognition() {
-        if (!SR) { transcriptBox.classList.remove('hidden'); transcriptBox.textContent = '🎙️ Reconnaissance vocale non disponible sur ce navigateur — un exemple sera utilisé.'; return; }
+        if (!SR) return;
         recognition = new SR();
         recognition.lang = 'fr-FR'; recognition.continuous = true; recognition.interimResults = true;
         recognition.onresult = (e) => {
@@ -710,51 +718,51 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
             const txt = e.results[i][0].transcript;
             if (e.results[i].isFinal) finalTranscript += txt + ' '; else interim += txt;
           }
-          transcriptBox.classList.remove('hidden');
-          transcriptBox.textContent = (finalTranscript + interim).trim() || '…';
+          consultLabel.textContent = ((finalTranscript + interim).trim().slice(-60)) || 'Consultation en cours…';
         };
         recognition.onerror = () => {};
         try { recognition.start(); } catch (_) {}
       }
 
-      function setBtn() {
-        recBtn.style.background = COLOR[recState];
-        recBtn.classList.toggle('is-recording', recState === 'recording');
-        if (recState === 'idle') { recIcon.innerHTML = MIC_SVG; recLabel.classList.remove('hidden'); recLabel.textContent = 'Enregistrer'; }
-        else if (recState === 'recording') { recIcon.innerHTML = PAUSE_SVG; recLabel.classList.add('hidden'); }
-        else { recIcon.innerHTML = PLAY_SVG; recLabel.classList.add('hidden'); }
+      function renderIdle() {
+        recIcon.innerHTML = MIC_SVG;
+        recLabel.textContent = 'Démarrer'; recLabel.classList.remove('hidden');
+        recBtn.classList.add('record-btn-gradient'); recBtn.style.background = '';
+        recHint.textContent = 'Appuyez pour lancer l\'enregistrement';
+      }
+      function renderRecording() {
+        recIcon.innerHTML = STOP_SVG; recLabel.classList.add('hidden');
+        recBtn.classList.remove('record-btn-gradient'); recBtn.style.background = '#ef4444';
+        recHint.textContent = 'Appuyez pour arrêter';
       }
 
+      function startRecordingFlow() {
+        recState = 'recording'; renderRecording();
+        finalTranscript = '';
+        consultLabel.textContent = 'Consultation en cours…';
+        reportStage.classList.add('hidden'); recStage.classList.remove('hidden');
+        document.getElementById('onboarding-cta').classList.add('hidden');
+        wfStart(); startRecognition();
+        ph()?.capture?.('survey_demo_record_start', { specialty: answers.specialty });
+      }
+
+      reportRestart.addEventListener('click', startRecordingFlow);
+
       recBtn.addEventListener('click', () => {
-        if (recState === 'idle') {
-          recState = 'recording'; setBtn();
-          recStop.classList.remove('hidden');
-          recHint.textContent = 'Enregistrement en cours… appuyez pour mettre en pause';
-          finalTranscript = ''; transcriptBox.textContent = ''; elapsed = 0;
-          document.getElementById('letter-wrap').classList.add('hidden');
-          document.getElementById('onboarding-cta').classList.add('hidden');
-          swStart(); wfStart(); startRecognition();
-          ph()?.capture?.('survey_demo_record_start', { specialty: answers.specialty });
+        if (recState === 'idle' || recState === 'done') {
+          startRecordingFlow();
         } else if (recState === 'recording') {
-          recState = 'paused'; setBtn(); swPause(); wfFreeze();
-          recHint.textContent = 'En pause — appuyez pour reprendre';
-        } else {
-          recState = 'recording'; setBtn(); swStart(); wfStart();
-          recHint.textContent = 'Enregistrement en cours… appuyez pour mettre en pause';
+          recState = 'generating'; wfStop();
+          if (recognition) { try { recognition.stop(); } catch (_) {} }
+          const transcript = (finalTranscript || '').trim() || FALLBACK_TRANSCRIPT;
+          // switch to report stage in-screen
+          recStage.classList.add('hidden'); reportStage.classList.remove('hidden');
+          consultLabel.textContent = 'Rapport — ' + specLabel(answers.specialty);
+          setTimeout(() => generateLetter(transcript), 350);
         }
       });
 
-      recStop.addEventListener('click', () => {
-        swPause(); wfFreeze();
-        recState = 'idle'; setBtn();
-        recStop.classList.add('hidden');
-        recHint.textContent = 'Génération de la lettre…';
-        if (recognition) { try { recognition.stop(); } catch (_) {} }
-        const transcript = (finalTranscript || '').trim() || FALLBACK_TRANSCRIPT;
-        setTimeout(() => generateLetter(transcript), 500);
-      });
-
-      setBtn();
+      renderIdle();
 
       // ================= Letter generation (DocNote detailed-letter format) =================
       const lowerFirst = (s) => s ? s.charAt(0).toLowerCase() + s.slice(1) : s;
@@ -814,22 +822,43 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
         return out.join('\n\n');
       }
 
+      const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const isHeader = (line) => {
+        const l = line.trim();
+        return l.length >= 4 && /^[A-ZÀ-ÝŒ0-9 '’()\/.-]+$/.test(l) && /[A-ZÀ-ÝŒ]/.test(l) && !/[a-zà-ÿ]/.test(l);
+      };
+      // Render the (partial) letter to HTML: uppercase section titles -> bold heads.
+      function renderReportHtml(text) {
+        return text.split('\n').map((line) => {
+          if (!line.trim()) return '<div style="height:.45rem"></div>';
+          if (isHeader(line)) return `<div class="report-head">${escapeHtml(line.trim())}</div>`;
+          return `<p>${escapeHtml(line)}</p>`;
+        }).join('');
+      }
+
       function generateLetter(transcript) {
-        const wrap = document.getElementById('letter-wrap');
-        const outEl = document.getElementById('letter-content');
-        const spinner = document.getElementById('letter-spinner');
-        document.getElementById('letter-title').textContent = `Lettre · ${specLabel(answers.specialty)}`;
-        wrap.classList.remove('hidden'); spinner.classList.remove('hidden'); outEl.textContent = '';
-        recHint.textContent = 'Appuyez sur le micro pour recommencer';
+        recState = 'generating';
+        reportStatus.textContent = 'Génération du rapport…';
+        reportStatus.classList.remove('hidden', 'text-emerald-600');
+        reportStatus.classList.add('text-blue-600');
+        reportRestart.classList.add('hidden'); reportRestart.classList.remove('flex');
+        reportCursor.classList.remove('hidden');
+        reportContent.innerHTML = '';
 
         const full = buildLetter(transcript);
-        let i = 0; const speed = full.length > 900 ? 7 : 12;
+        let i = 0; const speed = full.length > 900 ? 6 : 10;
+        const scrollBox = reportContent.closest('.overflow-y-auto');
         const typer = setInterval(() => {
           i = Math.min(full.length, i + speed);
-          outEl.textContent = full.slice(0, i);
-          const box = outEl.closest('.overflow-y-auto'); if (box) box.scrollTop = box.scrollHeight;
+          reportContent.innerHTML = renderReportHtml(full.slice(0, i));
+          if (scrollBox) scrollBox.scrollTop = scrollBox.scrollHeight;
           if (i >= full.length) {
-            clearInterval(typer); spinner.classList.add('hidden');
+            clearInterval(typer);
+            recState = 'done';
+            reportStatus.textContent = 'Rapport généré';
+            reportStatus.classList.remove('text-blue-600'); reportStatus.classList.add('text-emerald-600');
+            reportCursor.classList.add('hidden');
+            reportRestart.classList.remove('hidden'); reportRestart.classList.add('flex');
             document.getElementById('onboarding-cta').classList.remove('hidden');
             ph()?.capture?.('survey_demo_letter_generated', { specialty: answers.specialty });
           }
