@@ -1,13 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import specialtiesData from '../../data/survey-specialties.json';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
 
-// LinkedIn lead-funnel survey — French campaign only.
+// LinkedIn lead-funnel survey — now available in fr / en / de.
 export function getStaticPaths() {
-  return [{ params: { locale: 'fr' } }];
+  return locales.map((locale) => ({ params: { locale } }));
 }
 
-const SPECIALTIES = specialtiesData as { value: string; label: string }[];
+const { locale } = Astro.params;
+if (!isValidLocale(locale)) return Astro.redirect('/en/sondage');
+const lang = locale as Locale;
+
+type SpecialtyRow = { value: string; fr: string; en: string; de: string };
+// Localized label for display; the French label is always kept for the lead email.
+const SPECIALTIES = (specialtiesData as SpecialtyRow[]).map((s) => ({
+  value: s.value,
+  label: s[lang],
+  fr: s.fr,
+}));
 
 // Same destinations as the header buttons.
 // Absolute prod URL so the button works on staging/preview too (relative /app
@@ -16,16 +27,256 @@ const APP_WEB = 'https://docnote.care/app';
 const APP_IOS = 'https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR';
 const APP_ANDROID = 'https://play.google.com/store/apps/details?id=app.docnote&pli=1';
 
-// FR tutorial video (same as the Tutoriel page) — replaces the interactive recorder demo.
-const TUTORIAL_VIDEO_ID = 'xnKpex2jtgs';
+// FR has its own tutorial video; en/de share the English one (no German video yet).
+const VIDEO_ID = lang === 'fr' ? 'xnKpex2jtgs' : 'DdQ_POkaaPE';
 
 // Web3Forms — emails each completed lead to contact@docnote.ch.
 // The access key is public by design (submit-only). Create one at
 // https://web3forms.com with contact@docnote.ch, then set PUBLIC_WEB3FORMS_KEY.
 const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e1-b144-b4f83418d5ae';
+
+// ---------------- UI strings ----------------
+const STRINGS = {
+  fr: {
+    metaTitle: 'Calculez votre indice de surcharge administrative',
+    badge: 'Sondage médecins · 2026',
+    h1: 'Calculez votre indice de surcharge administrative',
+    intro: 'Quelques questions sur votre charge et vos conditions de travail. Découvrez où vous vous situez par rapport aux autres médecins.',
+    twoMin: '2 minutes',
+    anonymous: '100 % anonyme',
+    start: 'Commencer',
+    profileTitle: 'Votre profil',
+    profileSub: 'Toujours 100 % anonyme.',
+    specialty: 'Spécialité',
+    specialtyPlaceholder: 'Sélectionnez votre spécialité…',
+    age: 'Âge',
+    agePlaceholder: 'Ex. 42',
+    gender: 'Genre',
+    genderMale: 'Homme',
+    genderFemale: 'Femme',
+    genderOther: 'Je ne souhaite pas préciser / autre',
+    position: 'Poste actuel',
+    posResident: 'Interne',
+    posChief: 'Chef de clinique',
+    posAttending: 'Adjoint',
+    posHead: 'Chef de service',
+    facility: "Type d'établissement",
+    facUniversity: 'Hôpital universitaire',
+    facRegional: 'Hôpital périphérique',
+    facPrivate: 'Hôpital privé / clinique',
+    facPractice: 'Cabinet',
+    errAll: 'Merci de répondre à toutes les questions pour continuer.',
+    back: 'Retour',
+    continue: 'Continuer',
+    burdenTitle: 'Votre charge administrative',
+    methodQ: 'Quelle est votre méthode habituelle pour rédiger vos rapports de consultation ?',
+    methodPaper: "Prise de note papier puis saisie à l'ordinateur après la consultation",
+    methodComputer: 'Prise de note directement sur ordinateur pendant la consultation',
+    methodNoteDictation: 'Prise de note puis dictée (Dragon / dictaphone)',
+    methodDictation: 'Dictée (Dragon / dictaphone) sans prise de note',
+    methodOther: 'Autre',
+    methodOtherPlaceholder: 'Précisez (optionnel)…',
+    timeQ: 'Combien de temps consacrez-vous, pour chaque consultation, à la rédaction du rapport administratif ?',
+    impactQ: "À quel point la gestion administrative impacte-t-elle votre travail (stress, charge mentale) ?",
+    impactNone: 'Aucun impact',
+    impactMajor: 'Impact majeur',
+    overtimeQ: "Heures supplémentaires liées à l'administratif (par semaine)",
+    seeResults: 'Voir mes résultats',
+    contactTitle: 'Où envoyer vos résultats ?',
+    contactSub: 'On vous prépare votre indice personnalisé et une comparaison avec les autres médecins.',
+    firstName: 'Prénom',
+    lastName: 'Nom',
+    emailLabel: 'Adresse e-mail',
+    emailPlaceholder: 'vous@exemple.com',
+    phoneLabel: 'Numéro de téléphone',
+    errContact: 'Merci de renseigner tous les champs, avec un e-mail et un numéro de téléphone valides.',
+    privacy: 'Vos données restent confidentielles et ne sont jamais revendues. Hébergement suisse, conforme nLPD / RGPD.',
+    revealIndex: 'Découvrir mon indice',
+    indexLabel: 'Votre indice de surcharge administrative',
+    whereStand: 'Où vous situez-vous ?',
+    timePerConsult: 'Temps de rédaction par consultation',
+    demoTitle: "Et si ce rapport s'écrivait tout seul ?",
+    demoPrefix: 'Découvrez en vidéo comment DocNote rédige un rapport complet au format ',
+    demoSpecDefault: 'de votre spécialité',
+    demoSuffix: ", à partir d'une simple dictée vocale.",
+    accountPreconfigured: 'Votre compte est déjà pré-configuré',
+    accountSub: 'Langue, spécialité et téléphone sont pré-remplis. Démarrez en un clic 👇',
+    launchWebApp: "Lancer l'application web",
+    videoTitle: 'DocNote — démonstration',
+    scoreCritical: 'Surcharge administrative critique',
+    scoreHigh: 'Surcharge administrative élevée',
+    scoreNotable: 'Surcharge administrative notable',
+    percentileTpl: 'Vous êtes plus surchargé·e que {pct} % des médecins déjà sondés.',
+    timeCaptionTpl: 'Vous y consacrez {min} min — plus que {pct} % des médecins.',
+    gaussYou: 'Vous',
+    gaussLowLoad: 'Peu surchargés',
+    gaussHighLoad: 'Très surchargés',
+    gaussFast: 'Rapide',
+    gaussTimeConsuming: 'Chronophage',
+    specialtyFallback: 'votre spécialité',
+  },
+  en: {
+    metaTitle: 'Calculate your administrative overload index',
+    badge: 'Physician survey · 2026',
+    h1: 'Calculate your administrative overload index',
+    intro: 'A few questions about your workload and working conditions. See where you stand compared with other physicians.',
+    twoMin: '2 minutes',
+    anonymous: '100% anonymous',
+    start: 'Start',
+    profileTitle: 'Your profile',
+    profileSub: 'Still 100% anonymous.',
+    specialty: 'Specialty',
+    specialtyPlaceholder: 'Select your specialty…',
+    age: 'Age',
+    agePlaceholder: 'e.g. 42',
+    gender: 'Gender',
+    genderMale: 'Male',
+    genderFemale: 'Female',
+    genderOther: 'Prefer not to say / other',
+    position: 'Current position',
+    posResident: 'Resident',
+    posChief: 'Chief resident',
+    posAttending: 'Attending physician',
+    posHead: 'Head of department',
+    facility: 'Type of facility',
+    facUniversity: 'University hospital',
+    facRegional: 'Regional hospital',
+    facPrivate: 'Private hospital / clinic',
+    facPractice: 'Private practice',
+    errAll: 'Please answer all questions to continue.',
+    back: 'Back',
+    continue: 'Continue',
+    burdenTitle: 'Your administrative burden',
+    methodQ: 'What is your usual method for writing your consultation reports?',
+    methodPaper: 'Paper notes, then typed into the computer after the consultation',
+    methodComputer: 'Notes taken directly on the computer during the consultation',
+    methodNoteDictation: 'Notes, then dictation (Dragon / dictaphone)',
+    methodDictation: 'Dictation (Dragon / dictaphone) without notes',
+    methodOther: 'Other',
+    methodOtherPlaceholder: 'Please specify (optional)…',
+    timeQ: 'How much time do you spend, per consultation, writing the administrative report?',
+    impactQ: 'How much does administrative work affect your work (stress, mental load)?',
+    impactNone: 'No impact',
+    impactMajor: 'Major impact',
+    overtimeQ: 'Overtime due to administrative work (per week)',
+    seeResults: 'See my results',
+    contactTitle: 'Where should we send your results?',
+    contactSub: "We're preparing your personalised index and a comparison with other physicians.",
+    firstName: 'First name',
+    lastName: 'Last name',
+    emailLabel: 'Email address',
+    emailPlaceholder: 'you@example.com',
+    phoneLabel: 'Phone number',
+    errContact: 'Please fill in all fields with a valid email and phone number.',
+    privacy: 'Your data stays confidential and is never sold. Swiss hosting, compliant with nFADP / GDPR.',
+    revealIndex: 'Reveal my index',
+    indexLabel: 'Your administrative overload index',
+    whereStand: 'Where do you stand?',
+    timePerConsult: 'Writing time per consultation',
+    demoTitle: 'What if this report wrote itself?',
+    demoPrefix: 'See in the video how DocNote writes a complete ',
+    demoSpecDefault: 'specialty-specific',
+    demoSuffix: ' report from a simple voice dictation.',
+    accountPreconfigured: 'Your account is already pre-configured',
+    accountSub: 'Language, specialty and phone are pre-filled. Start in one click 👇',
+    launchWebApp: 'Launch the web app',
+    videoTitle: 'DocNote — demo',
+    scoreCritical: 'Critical administrative overload',
+    scoreHigh: 'High administrative overload',
+    scoreNotable: 'Notable administrative overload',
+    percentileTpl: 'You are more overloaded than {pct}% of the physicians surveyed so far.',
+    timeCaptionTpl: 'You spend {min} min on it — more than {pct}% of physicians.',
+    gaussYou: 'You',
+    gaussLowLoad: 'Low load',
+    gaussHighLoad: 'High load',
+    gaussFast: 'Fast',
+    gaussTimeConsuming: 'Time-consuming',
+    specialtyFallback: 'your specialty',
+  },
+  de: {
+    metaTitle: 'Berechnen Sie Ihren Index der administrativen Überlastung',
+    badge: 'Ärzte-Umfrage · 2026',
+    h1: 'Berechnen Sie Ihren Index der administrativen Überlastung',
+    intro: 'Ein paar Fragen zu Ihrer Arbeitslast und Ihren Arbeitsbedingungen. Sehen Sie, wo Sie im Vergleich zu anderen Ärztinnen und Ärzten stehen.',
+    twoMin: '2 Minuten',
+    anonymous: '100 % anonym',
+    start: 'Starten',
+    profileTitle: 'Ihr Profil',
+    profileSub: 'Weiterhin 100 % anonym.',
+    specialty: 'Fachgebiet',
+    specialtyPlaceholder: 'Wählen Sie Ihr Fachgebiet…',
+    age: 'Alter',
+    agePlaceholder: 'z. B. 42',
+    gender: 'Geschlecht',
+    genderMale: 'Männlich',
+    genderFemale: 'Weiblich',
+    genderOther: 'Keine Angabe / andere',
+    position: 'Aktuelle Position',
+    posResident: 'Assistenzarzt/-ärztin',
+    posChief: 'Oberarzt/-ärztin',
+    posAttending: 'Leitende·r Arzt/Ärztin',
+    posHead: 'Chefarzt/-ärztin',
+    facility: 'Art der Einrichtung',
+    facUniversity: 'Universitätsspital',
+    facRegional: 'Regionalspital',
+    facPrivate: 'Privatklinik',
+    facPractice: 'Praxis',
+    errAll: 'Bitte beantworten Sie alle Fragen, um fortzufahren.',
+    back: 'Zurück',
+    continue: 'Weiter',
+    burdenTitle: 'Ihre administrative Belastung',
+    methodQ: 'Wie erstellen Sie üblicherweise Ihre Konsultationsberichte?',
+    methodPaper: 'Notizen auf Papier, danach nach der Konsultation am Computer erfasst',
+    methodComputer: 'Notizen direkt am Computer während der Konsultation',
+    methodNoteDictation: 'Notizen, dann Diktat (Dragon / Diktiergerät)',
+    methodDictation: 'Diktat (Dragon / Diktiergerät) ohne Notizen',
+    methodOther: 'Andere',
+    methodOtherPlaceholder: 'Bitte angeben (optional)…',
+    timeQ: 'Wie viel Zeit verwenden Sie pro Konsultation auf das Schreiben des administrativen Berichts?',
+    impactQ: 'Wie stark beeinträchtigt die Administration Ihre Arbeit (Stress, mentale Belastung)?',
+    impactNone: 'Kein Einfluss',
+    impactMajor: 'Grosser Einfluss',
+    overtimeQ: 'Überstunden durch Administration (pro Woche)',
+    seeResults: 'Meine Ergebnisse anzeigen',
+    contactTitle: 'Wohin sollen wir Ihre Ergebnisse senden?',
+    contactSub: 'Wir erstellen Ihren persönlichen Index und einen Vergleich mit anderen Ärztinnen und Ärzten.',
+    firstName: 'Vorname',
+    lastName: 'Nachname',
+    emailLabel: 'E-Mail-Adresse',
+    emailPlaceholder: 'sie@beispiel.com',
+    phoneLabel: 'Telefonnummer',
+    errContact: 'Bitte füllen Sie alle Felder mit einer gültigen E-Mail-Adresse und Telefonnummer aus.',
+    privacy: 'Ihre Daten bleiben vertraulich und werden nie verkauft. Hosting in der Schweiz, konform mit revDSG / DSGVO.',
+    revealIndex: 'Meinen Index entdecken',
+    indexLabel: 'Ihr Index der administrativen Überlastung',
+    whereStand: 'Wo stehen Sie?',
+    timePerConsult: 'Schreibzeit pro Konsultation',
+    demoTitle: 'Was, wenn sich dieser Bericht von selbst schriebe?',
+    demoPrefix: 'Sehen Sie im Video, wie DocNote aus einem einfachen Sprachdiktat einen vollständigen Bericht im Format ',
+    demoSpecDefault: 'Ihres Fachgebiets',
+    demoSuffix: ' erstellt.',
+    accountPreconfigured: 'Ihr Konto ist bereits vorkonfiguriert',
+    accountSub: 'Sprache, Fachgebiet und Telefon sind vorausgefüllt. Starten Sie mit einem Klick 👇',
+    launchWebApp: 'Web-App starten',
+    videoTitle: 'DocNote — Demo',
+    scoreCritical: 'Kritische administrative Überlastung',
+    scoreHigh: 'Hohe administrative Überlastung',
+    scoreNotable: 'Erhebliche administrative Überlastung',
+    percentileTpl: 'Sie sind stärker belastet als {pct} % der bisher befragten Ärztinnen und Ärzte.',
+    timeCaptionTpl: 'Sie verwenden dafür {min} Min. — mehr als {pct} % der Ärztinnen und Ärzte.',
+    gaussYou: 'Sie',
+    gaussLowLoad: 'Gering belastet',
+    gaussHighLoad: 'Stark belastet',
+    gaussFast: 'Schnell',
+    gaussTimeConsuming: 'Zeitraubend',
+    specialtyFallback: 'Ihr Fachgebiet',
+  },
+} as const;
+
+const S = STRINGS[lang];
 ---
 
-<Layout title="Calculez votre indice de surcharge administrative">
+<Layout title={S.metaTitle}>
   <div class="bg-gradient-to-b from-violet-50/60 via-white to-white min-h-screen">
     <!-- Progress bar -->
     <div id="survey-progress-wrap" class="fixed top-0 left-0 right-0 z-40 h-1 bg-violet-100 hidden">
@@ -43,26 +294,24 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-500 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-600"></span>
               </span>
-              Sondage médecins · 2026
+              {S.badge}
             </div>
             <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-6">
-              <span class="text-gradient">Calculez votre indice<br class="hidden sm:block" /> de surcharge administrative</span>
+              <span class="text-gradient">{S.h1}</span>
             </h1>
-            <p class="text-lg text-gray-600 mb-10 max-w-lg mx-auto">
-              Quelques questions sur votre charge et vos conditions de travail. Découvrez où vous vous situez par rapport aux autres médecins.
-            </p>
+            <p class="text-lg text-gray-600 mb-10 max-w-lg mx-auto">{S.intro}</p>
             <div class="flex flex-wrap items-center justify-center gap-6 text-gray-700 mb-10">
               <div class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span class="font-medium">2 minutes</span>
+                <span class="font-medium">{S.twoMin}</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <span class="font-medium">100 % anonyme</span>
+                <span class="font-medium">{S.anonymous}</span>
               </div>
             </div>
             <button type="button" data-next class="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-lg font-semibold rounded-full px-10 py-4 shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all">
-              Commencer
+              {S.start}
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
             </button>
           </div>
@@ -70,78 +319,78 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
 
         <!-- ============ SCREEN 2 — Profil ============ -->
         <div data-screen="2" class="survey-screen hidden transition-all duration-500 ease-out">
-          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Votre profil</h2>
-          <p class="text-gray-500 mb-8">Toujours 100 % anonyme.</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{S.profileTitle}</h2>
+          <p class="text-gray-500 mb-8">{S.profileSub}</p>
 
           <div class="space-y-7">
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Spécialité <span class="text-violet-500">*</span></label>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">{S.specialty} <span class="text-violet-500">*</span></label>
               <select data-answer="specialty" data-required class="field">
-                <option value="">Sélectionnez votre spécialité…</option>
+                <option value="">{S.specialtyPlaceholder}</option>
               </select>
             </div>
 
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Âge <span class="text-violet-500">*</span></label>
-              <input type="number" min="20" max="99" inputmode="numeric" data-answer="age" data-required placeholder="Ex. 42" class="field" />
+              <label class="block text-sm font-semibold text-gray-700 mb-2">{S.age} <span class="text-violet-500">*</span></label>
+              <input type="number" min="20" max="99" inputmode="numeric" data-answer="age" data-required placeholder={S.agePlaceholder} class="field" />
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-2">Genre <span class="text-violet-500">*</span></span>
+              <span class="block text-sm font-semibold text-gray-700 mb-2">{S.gender} <span class="text-violet-500">*</span></span>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-xl" data-group="gender" data-required>
-                <button type="button" data-value="homme" class="opt">Homme</button>
-                <button type="button" data-value="femme" class="opt">Femme</button>
-                <button type="button" data-value="autre" class="opt">Je ne souhaite pas préciser / autre</button>
+                <button type="button" data-value="homme" class="opt">{S.genderMale}</button>
+                <button type="button" data-value="femme" class="opt">{S.genderFemale}</button>
+                <button type="button" data-value="autre" class="opt">{S.genderOther}</button>
               </div>
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-2">Poste actuel <span class="text-violet-500">*</span></span>
+              <span class="block text-sm font-semibold text-gray-700 mb-2">{S.position} <span class="text-violet-500">*</span></span>
               <div class="grid grid-cols-2 gap-3 rounded-xl" data-group="position" data-required>
-                <button type="button" data-value="interne" class="opt">Interne</button>
-                <button type="button" data-value="chef_clinique" class="opt">Chef de clinique</button>
-                <button type="button" data-value="adjoint" class="opt">Adjoint</button>
-                <button type="button" data-value="chef_service" class="opt">Chef de service</button>
+                <button type="button" data-value="interne" class="opt">{S.posResident}</button>
+                <button type="button" data-value="chef_clinique" class="opt">{S.posChief}</button>
+                <button type="button" data-value="adjoint" class="opt">{S.posAttending}</button>
+                <button type="button" data-value="chef_service" class="opt">{S.posHead}</button>
               </div>
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-2">Type d'établissement <span class="text-violet-500">*</span></span>
+              <span class="block text-sm font-semibold text-gray-700 mb-2">{S.facility} <span class="text-violet-500">*</span></span>
               <div class="grid grid-cols-2 gap-3 rounded-xl" data-group="facility" data-required>
-                <button type="button" data-value="hopital_universitaire" class="opt">Hôpital universitaire</button>
-                <button type="button" data-value="hopital_peripherique" class="opt">Hôpital périphérique</button>
-                <button type="button" data-value="prive_clinique" class="opt">Hôpital privé / clinique</button>
-                <button type="button" data-value="cabinet" class="opt">Cabinet</button>
+                <button type="button" data-value="hopital_universitaire" class="opt">{S.facUniversity}</button>
+                <button type="button" data-value="hopital_peripherique" class="opt">{S.facRegional}</button>
+                <button type="button" data-value="prive_clinique" class="opt">{S.facPrivate}</button>
+                <button type="button" data-value="cabinet" class="opt">{S.facPractice}</button>
               </div>
             </div>
           </div>
 
-          <p data-error class="text-sm text-red-500 mt-6 hidden">Merci de répondre à toutes les questions pour continuer.</p>
+          <p data-error class="text-sm text-red-500 mt-6 hidden">{S.errAll}</p>
           <div class="flex items-center justify-between mt-8">
-            <button type="button" data-back class="btn-back">Retour</button>
-            <button type="button" data-next class="btn-next">Continuer</button>
+            <button type="button" data-back class="btn-back">{S.back}</button>
+            <button type="button" data-next class="btn-next">{S.continue}</button>
           </div>
         </div>
 
         <!-- ============ SCREEN 3 — Charge de travail ============ -->
         <div data-screen="3" class="survey-screen hidden transition-all duration-500 ease-out">
-          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Votre charge administrative</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">{S.burdenTitle}</h2>
 
           <div class="space-y-9">
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-3">Quelle est votre méthode habituelle pour rédiger vos rapports de consultation ? <span class="text-violet-500">*</span></span>
+              <span class="block text-sm font-semibold text-gray-700 mb-3">{S.methodQ} <span class="text-violet-500">*</span></span>
               <div class="space-y-3 rounded-xl" data-group="method" data-required>
-                <button type="button" data-value="papier_puis_ordi" class="opt opt-wide">Prise de note papier puis saisie à l'ordinateur après la consultation</button>
-                <button type="button" data-value="ordi_pendant" class="opt opt-wide">Prise de note directement sur ordinateur pendant la consultation</button>
-                <button type="button" data-value="note_puis_dictee" class="opt opt-wide">Prise de note puis dictée (Dragon / dictaphone)</button>
-                <button type="button" data-value="dictee_sans_note" class="opt opt-wide">Dictée (Dragon / dictaphone) sans prise de note</button>
-                <button type="button" data-value="autre" class="opt opt-wide">Autre</button>
+                <button type="button" data-value="papier_puis_ordi" class="opt opt-wide">{S.methodPaper}</button>
+                <button type="button" data-value="ordi_pendant" class="opt opt-wide">{S.methodComputer}</button>
+                <button type="button" data-value="note_puis_dictee" class="opt opt-wide">{S.methodNoteDictation}</button>
+                <button type="button" data-value="dictee_sans_note" class="opt opt-wide">{S.methodDictation}</button>
+                <button type="button" data-value="autre" class="opt opt-wide">{S.methodOther}</button>
               </div>
-              <input type="text" data-answer="methodOther" placeholder="Précisez (optionnel)…" class="mt-3 w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition hidden" data-other-for="method" />
+              <input type="text" data-answer="methodOther" placeholder={S.methodOtherPlaceholder} class="mt-3 w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition hidden" data-other-for="method" />
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-4">Combien de temps consacrez-vous, pour chaque consultation, à la rédaction du rapport administratif ?</span>
+              <span class="block text-sm font-semibold text-gray-700 mb-4">{S.timeQ}</span>
               <div class="px-1">
                 <input type="range" min="0" max="45" value="12" step="1" data-answer="time" class="survey-range" />
                 <div class="flex justify-between text-xs text-gray-400 mt-2">
@@ -153,19 +402,19 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-4">À quel point la gestion administrative impacte-t-elle votre travail (stress, charge mentale) ?</span>
+              <span class="block text-sm font-semibold text-gray-700 mb-4">{S.impactQ}</span>
               <div class="px-1">
                 <input type="range" min="0" max="10" value="5" data-answer="impact" class="survey-range" />
                 <div class="flex justify-between text-xs text-gray-400 mt-2">
-                  <span>Aucun impact</span>
+                  <span>{S.impactNone}</span>
                   <span id="impact-val" class="font-bold text-violet-600 text-base">5 / 10</span>
-                  <span>Impact majeur</span>
+                  <span>{S.impactMajor}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <span class="block text-sm font-semibold text-gray-700 mb-3">Heures supplémentaires liées à l'administratif (par semaine) <span class="text-violet-500">*</span></span>
+              <span class="block text-sm font-semibold text-gray-700 mb-3">{S.overtimeQ} <span class="text-violet-500">*</span></span>
               <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 rounded-xl" data-group="overtime" data-required>
                 <button type="button" data-value="0" class="opt">0 h</button>
                 <button type="button" data-value="1" class="opt">&lt; 2 h</button>
@@ -176,35 +425,35 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
             </div>
           </div>
 
-          <p data-error class="text-sm text-red-500 mt-6 hidden">Merci de répondre à toutes les questions pour continuer.</p>
+          <p data-error class="text-sm text-red-500 mt-6 hidden">{S.errAll}</p>
           <div class="flex items-center justify-between mt-8">
-            <button type="button" data-back class="btn-back">Retour</button>
-            <button type="button" data-next class="btn-next">Voir mes résultats</button>
+            <button type="button" data-back class="btn-back">{S.back}</button>
+            <button type="button" data-next class="btn-next">{S.seeResults}</button>
           </div>
         </div>
 
         <!-- ============ SCREEN 4 — Coordonnées ============ -->
         <div data-screen="4" class="survey-screen hidden transition-all duration-500 ease-out">
-          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Où envoyer vos résultats ?</h2>
-          <p class="text-gray-500 mb-8">On vous prépare votre indice personnalisé et une comparaison avec les autres médecins.</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{S.contactTitle}</h2>
+          <p class="text-gray-500 mb-8">{S.contactSub}</p>
 
           <div class="space-y-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Prénom <span class="text-violet-500">*</span></label>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">{S.firstName} <span class="text-violet-500">*</span></label>
                 <input type="text" data-answer="firstName" data-required autocomplete="given-name" class="field" />
               </div>
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Nom <span class="text-violet-500">*</span></label>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">{S.lastName} <span class="text-violet-500">*</span></label>
                 <input type="text" data-answer="lastName" data-required autocomplete="family-name" class="field" />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Adresse e-mail <span class="text-violet-500">*</span></label>
-              <input type="email" data-answer="email" data-required autocomplete="email" placeholder="vous@exemple.com" class="field" />
+              <label class="block text-sm font-semibold text-gray-700 mb-2">{S.emailLabel} <span class="text-violet-500">*</span></label>
+              <input type="email" data-answer="email" data-required autocomplete="email" placeholder={S.emailPlaceholder} class="field" />
             </div>
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Numéro de téléphone <span class="text-violet-500">*</span></label>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">{S.phoneLabel} <span class="text-violet-500">*</span></label>
               <div class="flex gap-3">
                 <select data-answer="phoneCode" class="w-28 rounded-xl border border-gray-200 bg-white px-3 py-3 text-gray-900 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition">
                   <option value="+41">🇨🇭 +41</option>
@@ -217,38 +466,38 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
                 <input type="tel" data-answer="phone" data-required autocomplete="tel" placeholder="79 123 45 67" class="field flex-1" />
               </div>
             </div>
-            <p data-error class="text-sm text-red-500 hidden">Merci de renseigner tous les champs, avec un e-mail et un numéro de téléphone valides.</p>
+            <p data-error class="text-sm text-red-500 hidden">{S.errContact}</p>
           </div>
 
           <p class="text-xs text-gray-400 mt-6 flex items-start gap-2">
             <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-            Vos données restent confidentielles et ne sont jamais revendues. Hébergement suisse, conforme nLPD / RGPD.
+            {S.privacy}
           </p>
 
           <div class="flex items-center justify-between mt-8">
-            <button type="button" data-back class="btn-back">Retour</button>
-            <button type="button" data-next class="btn-next">Découvrir mon indice</button>
+            <button type="button" data-back class="btn-back">{S.back}</button>
+            <button type="button" data-next class="btn-next">{S.revealIndex}</button>
           </div>
         </div>
 
         <!-- ============ SCREEN 5 — Résultats ============ -->
         <div data-screen="5" class="survey-screen hidden transition-all duration-500 ease-out">
           <div class="text-center mb-10">
-            <p class="text-sm font-semibold text-violet-600 uppercase tracking-wider mb-2">Votre indice de surcharge administrative</p>
+            <p class="text-sm font-semibold text-violet-600 uppercase tracking-wider mb-2">{S.indexLabel}</p>
             <div class="text-7xl font-bold text-gradient mb-2"><span id="score-value">0</span><span class="text-3xl text-gray-400">/100</span></div>
             <p id="score-label" class="text-lg text-gray-700 font-medium"></p>
           </div>
 
           <!-- Gaussian: surcharge positioning -->
           <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-6">
-            <h3 class="text-base font-semibold text-gray-900 mb-1">Où vous situez-vous ?</h3>
+            <h3 class="text-base font-semibold text-gray-900 mb-1">{S.whereStand}</h3>
             <p id="percentile-text" class="text-sm text-gray-500 mb-4"></p>
             <div id="gauss-chart" class="w-full"></div>
           </div>
 
           <!-- Gaussian: time per consultation -->
           <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-10">
-            <h3 class="text-base font-semibold text-gray-900 mb-1">Temps de rédaction par consultation</h3>
+            <h3 class="text-base font-semibold text-gray-900 mb-1">{S.timePerConsult}</h3>
             <p id="time-caption" class="text-sm text-gray-500 mb-4"></p>
             <div id="time-chart" class="w-full"></div>
           </div>
@@ -256,8 +505,8 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
           <!-- ===== DocNote demo (tutorial video) ===== -->
           <div class="rounded-3xl bg-slate-50 border border-slate-100 p-6 sm:p-9 shadow-sm">
             <div class="text-center mb-7">
-              <h3 class="text-2xl font-bold text-slate-900 mb-2">Et si ce rapport s'écrivait tout seul ?</h3>
-              <p class="text-slate-600">Découvrez en vidéo comment DocNote rédige un rapport complet au format <span id="demo-spec-label" class="font-semibold text-blue-600">de votre spécialité</span>, à partir d'une simple dictée vocale.</p>
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">{S.demoTitle}</h3>
+              <p class="text-slate-600">{S.demoPrefix}<span id="demo-spec-label" class="font-semibold text-blue-600">{S.demoSpecDefault}</span>{S.demoSuffix}</p>
             </div>
 
             <!-- Responsive 16:9 tutorial video — click to play -->
@@ -265,8 +514,8 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
               <div class="relative w-full" style="aspect-ratio:16/9;">
                 <iframe
                   class="absolute inset-0 h-full w-full"
-                  src={`https://www.youtube.com/embed/${TUTORIAL_VIDEO_ID}`}
-                  title="DocNote — démonstration"
+                  src={`https://www.youtube.com/embed/${VIDEO_ID}`}
+                  title={S.videoTitle}
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
@@ -277,12 +526,12 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
 
             <!-- Onboarding CTA -->
             <div id="onboarding-cta" class="mt-8 text-center">
-              <p class="text-gray-700 mb-1 font-medium">Votre compte est déjà pré-configuré</p>
-              <p class="text-gray-500 text-sm mb-5">Langue, spécialité et téléphone sont pré-remplis. Démarrez en un clic 👇</p>
+              <p class="text-gray-700 mb-1 font-medium">{S.accountPreconfigured}</p>
+              <p class="text-gray-500 text-sm mb-5">{S.accountSub}</p>
               <div class="flex flex-col sm:flex-row gap-3 justify-center">
                 <a id="cta-web" href={APP_WEB} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-full px-7 py-3.5 shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all">
                   <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
-                  Lancer l'application web
+                  {S.launchWebApp}
                 </a>
                 <a id="cta-ios" href={APP_IOS} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-700 font-semibold rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">App Store</a>
                 <a id="cta-android" href={APP_ANDROID} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-700 font-semibold rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">Google Play</a>
@@ -345,7 +594,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
     @keyframes gaussdraw { to { stroke-dashoffset: 0; } }
   </style>
 
-  <script define:vars={{ SPECIALTIES, APP_WEB, WEB3FORMS_KEY }}>
+  <script define:vars={{ SPECIALTIES, APP_WEB, WEB3FORMS_KEY, S, LANG: lang }}>
     (function () {
       // ---------------- State ----------------
       const answers = { time: 12, impact: 5, phoneCode: '+41' };
@@ -365,7 +614,9 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
         o.value = s.value; o.textContent = s.label;
         specSelect.appendChild(o);
       });
-      const specLabel = (val) => (SPECIALTIES.find((s) => s.value === val) || {}).label || 'votre spécialité';
+      const specRow = (val) => SPECIALTIES.find((s) => s.value === val) || {};
+      const specLabel = (val) => specRow(val).label || S.specialtyFallback; // localized display
+      const specLabelFr = (val) => specRow(val).fr || specRow(val).label || ''; // always French, for the email
 
       // ---------------- Inputs ----------------
       document.querySelectorAll('[data-answer]').forEach((el) => {
@@ -526,26 +777,25 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
         const iv = setInterval(() => { v = Math.min(displayScore, v + stepN); el.textContent = v; if (v >= displayScore) clearInterval(iv); }, 28);
 
         const label =
-          displayScore >= 75 ? 'Surcharge administrative critique' :
-          displayScore >= 60 ? 'Surcharge administrative élevée' :
-          'Surcharge administrative notable';
+          displayScore >= 75 ? S.scoreCritical :
+          displayScore >= 60 ? S.scoreHigh :
+          S.scoreNotable;
         document.getElementById('score-label').textContent = label;
-        document.getElementById('percentile-text').textContent =
-          `Vous êtes plus surchargé·e que ${pctFinal} % des médecins déjà sondés.`;
+        document.getElementById('percentile-text').textContent = S.percentileTpl.replace('{pct}', pctFinal);
 
         drawGauss('gauss-chart', {
           mean: S_MEAN, sd: S_SD, xMin: 0, xMax: 100, userX: displayScore,
-          userLabel: `Vous · ${displayScore}`, leftLabel: 'Peu surchargés', rightLabel: 'Très surchargés',
+          userLabel: `${S.gaussYou} · ${displayScore}`, leftLabel: S.gaussLowLoad, rightLabel: S.gaussHighLoad,
         });
 
         // time gaussian (population mean 15 min, sd 9)
         const minutes = Number(answers.time);
         const timePct = Math.round(cdf(minutes, 15, 9) * 100);
         document.getElementById('time-caption').textContent =
-          `Vous y consacrez ${minutes} min — plus que ${Math.max(2, Math.min(98, timePct))} % des médecins.`;
+          S.timeCaptionTpl.replace('{min}', minutes).replace('{pct}', Math.max(2, Math.min(98, timePct)));
         drawGauss('time-chart', {
           mean: 15, sd: 9, xMin: 0, xMax: 45, userX: minutes,
-          userLabel: `${minutes} min`, leftLabel: 'Rapide', rightLabel: 'Chronophage',
+          userLabel: `${minutes} min`, leftLabel: S.gaussFast, rightLabel: S.gaussTimeConsuming,
         });
 
         document.getElementById('demo-spec-label').textContent = specLabel(answers.specialty);
@@ -559,7 +809,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
           specialty: answers.specialty,
         });
         ph()?.capture?.('survey_completed', {
-          score: displayScore, percentile: pctFinal, specialty: answers.specialty,
+          score: displayScore, percentile: pctFinal, specialty: answers.specialty, locale: LANG,
           age: answers.age, gender: answers.gender, position: answers.position,
           facility: answers.facility, method: answers.method,
           time_minutes: answers.time, overtime: answers.overtime, impact: answers.impact,
@@ -567,6 +817,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
       }
 
       // Email each completed submission to contact@docnote.ch via Web3Forms.
+      // Labels stay French regardless of page language (the sales team reads them).
       const OVERTIME_LABEL = ['0 h', '< 2 h', '2–5 h', '5–10 h', '> 10 h'];
       const GENDER_LABEL = { homme: 'Homme', femme: 'Femme', autre: 'Non précisé' };
       const POSITION_LABEL = { interne: 'Interne', chef_clinique: 'Chef de clinique', adjoint: 'Adjoint', chef_service: 'Chef de service' };
@@ -582,12 +833,13 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
         const method = answers.method === 'autre' && answers.methodOther ? `Autre — ${answers.methodOther}` : (METHOD_LABEL[answers.method] || answers.method || '');
         const payload = {
           access_key: WEB3FORMS_KEY,
-          subject: `🩺 Nouveau lead sondage — ${fullName || 'Médecin'} (${specLabel(answers.specialty)})`,
+          subject: `🩺 Nouveau lead sondage — ${fullName || 'Médecin'} (${specLabelFr(answers.specialty)})`,
           from_name: 'Sondage surcharge administrative — DocNote',
+          'Langue de la page': LANG.toUpperCase(),
           'Nom complet': fullName,
           'E-mail': answers.email || '',
           'Téléphone': ((answers.phoneCode || '') + ' ' + (answers.phone || '')).trim(),
-          'Spécialité': specLabel(answers.specialty),
+          'Spécialité': specLabelFr(answers.specialty),
           'Âge': answers.age || '',
           'Genre': GENDER_LABEL[answers.gender] || answers.gender || '',
           'Poste': POSITION_LABEL[answers.position] || answers.position || '',
@@ -610,7 +862,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
 
       function buildOnboardingLinks() {
         const phoneFull = ((answers.phoneCode || '') + (answers.phone || '')).replace(/\s+/g, '');
-        const q = new URLSearchParams({ lang: 'fr', specialty: answers.specialty || '', dpi: 'none', phone: phoneFull, utm_source: 'sondage_linkedin' });
+        const q = new URLSearchParams({ lang: LANG, specialty: answers.specialty || '', dpi: 'none', phone: phoneFull, utm_source: 'sondage_linkedin' });
         // Trailing slash is required: /app?query 404s, /app/?query works.
         document.getElementById('cta-web').setAttribute('href', `${APP_WEB}/?${q.toString()}`);
       }
