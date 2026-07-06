@@ -10,7 +10,9 @@ export function getStaticPaths() {
 const SPECIALTIES = specialtiesData as { value: string; label: string }[];
 
 // Same destinations as the header buttons.
-const APP_WEB = '/app';
+// Absolute prod URL so the button works on staging/preview too (relative /app
+// only resolves on docnote.care, not on the *.workers.dev preview domain).
+const APP_WEB = 'https://docnote.care/app';
 const APP_IOS = 'https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR';
 const APP_ANDROID = 'https://play.google.com/store/apps/details?id=app.docnote&pli=1';
 
