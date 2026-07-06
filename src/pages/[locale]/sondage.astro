@@ -609,7 +609,8 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
       function buildOnboardingLinks() {
         const phoneFull = ((answers.phoneCode || '') + (answers.phone || '')).replace(/\s+/g, '');
         const q = new URLSearchParams({ lang: 'fr', specialty: answers.specialty || '', dpi: 'none', phone: phoneFull, utm_source: 'sondage_linkedin' });
-        document.getElementById('cta-web').setAttribute('href', `${APP_WEB}?${q.toString()}`);
+        // Trailing slash is required: /app?query 404s, /app/?query works.
+        document.getElementById('cta-web').setAttribute('href', `${APP_WEB}/?${q.toString()}`);
       }
 
       // init
