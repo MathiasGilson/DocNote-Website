@@ -8,6 +8,7 @@
 
 var SHEET_NAME = 'Candidatures';
 var CV_FOLDER_NAME = 'DocNote Candidatures CV';
+var SPREADSHEET_ID = '1luiy3hqfITzHHMk-_HHAKvnaMR1XQpDyLim7osNLyKg';
 
 var HEADERS = [
   'Timestamp',
@@ -45,7 +46,7 @@ var HEADERS = [
 ];
 
 function ensureSheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
   var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
