@@ -1,15 +1,15 @@
-// 1. Créez une Google Sheet "Candidatures DocNote"
-// 2. Extensions → Apps Script → collez ce fichier → Enregistrer
-// 3. Déployer → Nouveau déploiement → Type: Application Web
+// 1. Dans la Google Sheet → Extensions → Apps Script → remplace TOUT le code par ce fichier
+// 2. Enregistrer (Ctrl/Cmd+S)
+// 3. Déployer → Gérer les déploiements → Modifier (crayon)
+//    OU Nouveau déploiement → Application Web
 //    - Exécuter en tant que: Moi
 //    - Qui a accès: Tout le monde
-// 4. Copiez l'URL du déploiement dans PUBLIC_GOOGLE_SHEETS_CAREERS_URL (.env)
-// Les CV sont enregistrés dans Drive (dossier "DocNote Candidatures CV").
+// 4. Déployer / Nouvelle version → copier l'URL .../exec
 
-const SHEET_NAME = 'Candidatures';
-const CV_FOLDER_NAME = 'DocNote Candidatures CV';
+var SHEET_NAME = 'Candidatures';
+var CV_FOLDER_NAME = 'DocNote Candidatures CV';
 
-const HEADERS = [
+var HEADERS = [
   'Timestamp',
   'Score',
   'Prénom',
@@ -44,9 +44,9 @@ const HEADERS = [
   'Poste',
 ];
 
-const ensureSheet_ = () => {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = ss.getSheetByName(SHEET_NAME);
+function ensureSheet_() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
   }
@@ -56,34 +56,34 @@ const ensureSheet_ = () => {
     sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
   }
   return sheet;
-};
+}
 
-const ensureCvFolder_ = () => {
-  const folders = DriveApp.getFoldersByName(CV_FOLDER_NAME);
+function ensureCvFolder_() {
+  var folders = DriveApp.getFoldersByName(CV_FOLDER_NAME);
   if (folders.hasNext()) return folders.next();
   return DriveApp.createFolder(CV_FOLDER_NAME);
-};
+}
 
-const saveCv_ = (data) => {
+function saveCv_(data) {
   if (!data.cvBase64 || !data.cvFileName) return '';
-  const folder = ensureCvFolder_();
-  const safeName = String(data.cvFileName).replace(/[^\w.\- ()\[\]]+/g, '_');
-  const prefix = [data.firstName, data.lastName].filter(Boolean).join('_') || 'candidat';
-  const fileName = `${prefix}_${Date.now()}_${safeName}`;
-  const bytes = Utilities.base64Decode(data.cvBase64);
-  const blob = Utilities.newBlob(bytes, data.cvMimeType || 'application/pdf', fileName);
-  const file = folder.createFile(blob);
+  var folder = ensureCvFolder_();
+  var safeName = String(data.cvFileName).replace(/[^\w.\- ()\[\]]+/g, '_');
+  var prefix = [data.firstName, data.lastName].filter(Boolean).join('_') || 'candidat';
+  var fileName = prefix + '_' + Date.now() + '_' + safeName;
+  var bytes = Utilities.base64Decode(data.cvBase64);
+  var blob = Utilities.newBlob(bytes, data.cvMimeType || 'application/pdf', fileName);
+  var file = folder.createFile(blob);
   return file.getUrl();
-};
+}
 
-const doPost = (e) => {
+function doPost(e) {
   try {
-    const data = JSON.parse(e.postData.contents);
-    const cvUrl = saveCv_(data);
-    const sheet = ensureSheet_();
+    var data = JSON.parse(e.postData.contents);
+    var cvUrl = saveCv_(data);
+    var sheet = ensureSheet_();
     sheet.appendRow([
       data.timestamp || new Date().toISOString(),
-      data.score ?? '',
+      data.score != null ? data.score : '',
       data.firstName || '',
       data.lastName || '',
       data.email || '',
@@ -115,7 +115,7 @@ const doPost = (e) => {
       data.source || '',
       data.position || 'Stage Digital Marketing',
     ]);
-    return ContentService.createTextOutput(JSON.stringify({ ok: true, cvUrl })).setMimeType(
+    return ContentService.createTextOutput(JSON.stringify({ ok: true, cvUrl: cvUrl })).setMimeType(
       ContentService.MimeType.JSON
     );
   } catch (err) {
@@ -123,9 +123,10 @@ const doPost = (e) => {
       JSON.stringify({ ok: false, error: String(err) })
     ).setMimeType(ContentService.MimeType.JSON);
   }
-};
+}
 
-const doGet = () =>
-  ContentService.createTextOutput(
+function doGet() {
+  return ContentService.createTextOutput(
     JSON.stringify({ ok: true, message: 'DocNote careers endpoint ready' })
   ).setMimeType(ContentService.MimeType.JSON);
+}

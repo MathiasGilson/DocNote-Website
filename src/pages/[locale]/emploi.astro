@@ -10,7 +10,9 @@ const { locale } = Astro.params;
 if (!isValidLocale(locale)) return Astro.redirect('/fr/emploi');
 const lang = locale as Locale;
 
-const SHEETS_URL = import.meta.env.PUBLIC_GOOGLE_SHEETS_CAREERS_URL || '';
+const SHEETS_URL =
+  import.meta.env.PUBLIC_GOOGLE_SHEETS_CAREERS_URL ||
+  'https://script.google.com/macros/s/AKfycbxeict3gLPepxmJHo1-v5Upqb4G9krK6NcUQ-Ir2PYYHsOlw46CGQxaOaQ4g_wHTvOw/exec';
 
 const STRINGS = {
   fr: {
