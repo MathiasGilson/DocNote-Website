@@ -1,144 +1,1003 @@
 ---
 interface Props {
-  translations: any;
+  translations: any
 }
 
-const { translations: t } = Astro.props;
+const { translations: t } = Astro.props
+const s = t.specificities
 
-const cards = [
-  {
-    key: 'coding',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />`,
-    gradient: 'from-blue-500 to-indigo-600',
-  },
-  {
-    key: 'tardoc',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
-    gradient: 'from-emerald-500 to-teal-600',
-  },
-  {
-    key: 'ehr',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />`,
-    gradient: 'from-amber-500 to-orange-600',
-  },
-  {
-    key: 'templates',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />`,
-    gradient: 'from-violet-500 to-purple-600',
-  },
-  {
-    key: 'context',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />`,
-    gradient: 'from-pink-500 to-rose-600',
-  },
-  {
-    key: 'hospital',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />`,
-    gradient: 'from-cyan-500 to-sky-600',
-  },
-  {
-    key: 'sync',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />`,
-    gradient: 'from-fuchsia-500 to-pink-600',
-  },
-  {
-    key: 'dayHospital',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />`,
-    gradient: 'from-indigo-500 to-blue-600',
-  },
-];
+const keys = [
+  "coding",
+  "tardoc",
+  "ehr",
+  "templates",
+  "context",
+  "hospital",
+  "sync",
+  "dayHospital",
+] as const
 ---
 
-<section class="py-20 bg-gradient-to-b from-white via-violet-50/30 to-white">
+<section class="spec-section py-20 lg:py-24" data-specificities>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-4">
-      <span class="text-xs font-medium text-gray-400 uppercase tracking-widest">{t.specificities.badge}</span>
-    </div>
-    <div class="text-center mb-14">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 max-w-3xl mx-auto leading-snug">
-        {t.specificities.title}
+    <div class="mb-10 lg:mb-12 max-w-2xl">
+      <span class="text-xs font-semibold text-violet-600 uppercase tracking-widest">{s.badge}</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+        {s.title}
       </h2>
+      <p class="mt-3 text-base text-gray-500 leading-relaxed">{s.subtitle}</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {cards.map((card) => (
-        <div class="spec-card group" data-key={card.key}>
-          <div class="spec-card-inner">
-            <!-- Front face -->
-            <div class="spec-card-face spec-card-front bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col items-center justify-center text-center">
-              <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-5 shadow-md`}>
-                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={card.icon} />
-              </div>
-              <h3 class="text-base font-semibold text-gray-900 leading-snug tracking-tight">
-                {t.specificities[card.key].title}
-              </h3>
-            </div>
-            <!-- Back face -->
-            <div class={`spec-card-face spec-card-back bg-gradient-to-br ${card.gradient} rounded-2xl px-5 py-5 shadow-lg flex flex-col text-white overflow-auto`}>
-              <h3 class="text-sm font-semibold mb-2.5 tracking-tight">
-                {t.specificities[card.key].title}
-              </h3>
-              {card.key === 'coding' ? (
-                <p
-                  class="text-[0.8125rem] leading-[1.55] text-white/95 text-justify"
-                  data-coding-description
-                  data-description-ch={t.specificities.coding.descriptionCh}
-                  data-description-row={t.specificities.coding.descriptionRow}
-                >
-                  {t.specificities.coding.descriptionRow}
-                </p>
-              ) : (
-                <p class="text-[0.8125rem] leading-[1.55] text-white/95 text-justify">
-                  {t.specificities[card.key].description}
-                </p>
-              )}
+    <div class="spec-layout grid grid-cols-1 lg:grid-cols-[minmax(0,280px)_1fr] gap-6 lg:gap-8 items-stretch">
+      <div class="spec-list flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-1 lg:pb-0 -mx-1 px-1" role="tablist" aria-label={s.badge}>
+        {keys.map((key, i) => (
+          <button
+            type="button"
+            role="tab"
+            class:list={["spec-tab", i === 0 && "is-active"]}
+            data-spec-tab={key}
+            aria-selected={i === 0 ? "true" : "false"}
+            id={`spec-tab-${key}`}
+          >
+            <span class="spec-tab-dot" aria-hidden="true" />
+            <span>{s[key].title}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="spec-preview" role="tabpanel" id="spec-panel" aria-labelledby="spec-tab-coding" data-spec-preview>
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight" data-spec-title>
+          {s.coding.title}
+        </h3>
+
+        <div class="spec-impact mt-4">
+          <span class="spec-impact-label">{s.impactLabel}</span>
+          <p data-spec-impact>{s.coding.impact}</p>
+        </div>
+
+        <p
+          class="mt-3 text-sm sm:text-[0.9375rem] text-gray-500 leading-relaxed"
+          data-spec-description
+          data-description-ch={s.coding.descriptionCh}
+          data-description-row={s.coding.descriptionRow}
+          data-description-default={s.coding.description}
+        >
+          {s.coding.description}
+        </p>
+
+        <div class="spec-stage mt-5" data-spec-stage data-active="coding">
+          <div class="spec-stage-panel" data-stage="coding">
+            <div class="spec-stage-label">{s.coding.stageLabel}</div>
+            <p class="spec-sad-line" style="--d:0.05s">
+              {s.coding.line1Pre}<mark>{s.coding.line1Mark}</mark>{s.coding.line1Post}
+            </p>
+            <p class="spec-sad-line" style="--d:0.18s">
+              {s.coding.line2Pre}<mark>{s.coding.line2Mark}</mark>{s.coding.line2Post}
+            </p>
+            <p class="spec-sad-line" style="--d:0.31s">
+              {s.coding.line3Pre}<mark>{s.coding.line3Mark}</mark>{s.coding.line3Post}
+            </p>
+            <div class="spec-codes">
+              <span class="spec-code" style="--d:0.55s">E11.9</span>
+              <span class="spec-code" style="--d:0.7s">I10</span>
+              <span class="spec-code" style="--d:0.85s">Z86.7</span>
             </div>
           </div>
+
+          <div class="spec-stage-panel" data-stage="tardoc" hidden>
+            <div class="spec-stage-label">{s.tardoc.stageLabel}</div>
+            <div class="spec-dict-short">{s.tardoc.shortDictation}</div>
+            <div class="spec-dict-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              <span>{s.tardoc.expandLabel}</span>
+            </div>
+            <div class="spec-dict-full">{s.tardoc.fullDescription}</div>
+          </div>
+
+          <div class="spec-stage-panel" data-stage="ehr" hidden>
+            <div class="spec-stage-label">{s.ehr.stageLabel}</div>
+            <div class="spec-ehr-flow">
+              <div class="spec-ehr-doc">
+                <strong>{s.ehr.docReady}</strong>
+                <span>{s.ehr.docMeta}</span>
+              </div>
+              <div class="spec-ehr-arrow" aria-hidden="true">→</div>
+              <div class="spec-ehr-slots">
+                <div class="spec-ehr-slot" style="--d:0.35s">Mediway</div>
+                <div class="spec-ehr-slot" style="--d:0.55s">SOKLE</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-stage-panel" data-stage="templates" hidden>
+            <div class="spec-stage-label">{s.templates.stageLabel}</div>
+            <div class="spec-dropzone">
+              <div class="spec-file">DOCX</div>
+              <div>
+                <strong>{s.templates.fileName}</strong>
+                <span>{s.templates.dropHint}</span>
+              </div>
+            </div>
+            <div class="spec-letterhead">
+              <div class="spec-letterhead-brand">{s.templates.letterhead}</div>
+              <p>{s.templates.letterBody}</p>
+            </div>
+          </div>
+
+          <div class="spec-stage-panel" data-stage="context" hidden>
+            <div class="spec-stage-label">{s.context.stageLabel}</div>
+            <div class="spec-chips">
+              <span class="spec-chip" style="--d:0.08s">{s.context.chip1}</span>
+              <span class="spec-chip" style="--d:0.2s">{s.context.chip2}</span>
+              <span class="spec-chip" style="--d:0.32s">{s.context.chip3}</span>
+            </div>
+            <div class="spec-meter-label">{s.context.meterLabel}</div>
+            <div class="spec-meter"><span /></div>
+            <div class="spec-meter-note">{s.context.meterNote}</div>
+          </div>
+
+          <div class="spec-stage-panel" data-stage="hospital" hidden>
+            <div class="spec-stage-label">{s.hospital.stageLabel}</div>
+            <div class="spec-doc-types">
+              <div class="spec-doc-type" style="--i:0"><strong>{s.hospital.type1Title}</strong>{s.hospital.type1Sub}</div>
+              <div class="spec-doc-type" style="--i:1"><strong>{s.hospital.type2Title}</strong>{s.hospital.type2Sub}</div>
+              <div class="spec-doc-type" style="--i:2"><strong>{s.hospital.type3Title}</strong>{s.hospital.type3Sub}</div>
+            </div>
+          </div>
+
+          <div class="spec-stage-panel" data-stage="sync" hidden>
+            <div class="spec-stage-label">{s.sync.stageLabel}</div>
+            <div class="spec-sync-row">
+              <div class="spec-device">
+                {s.sync.phone}
+                <div class="spec-device-screen">{s.sync.recording}</div>
+              </div>
+              <div class="spec-sync-pulse" aria-hidden="true" />
+              <div class="spec-device">
+                {s.sync.desktop}
+                <div class="spec-device-screen">{s.sync.sameDraft}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-stage-panel" data-stage="dayHospital" hidden>
+            <div class="spec-stage-label">{s.dayHospital.stageLabel}</div>
+            <div class="spec-avatars" aria-hidden="true">
+              <span style="--d:0.05s" />
+              <span style="--d:0.18s" />
+              <span style="--d:0.3s" />
+              <span style="--d:0.42s" />
+            </div>
+            <div class="spec-merge-lines">
+              <div class="spec-merge-line" style="--d:0.5s;--w:72%"><span /></div>
+              <div class="spec-merge-line" style="--d:0.7s;--w:58%"><span /></div>
+              <div class="spec-merge-line" style="--d:0.9s;--w:88%"><span /></div>
+            </div>
+            <div class="spec-merge-result">{s.dayHospital.mergeResult}</div>
+          </div>
         </div>
-      ))}
+      </div>
     </div>
   </div>
 </section>
 
-<style>
-  .spec-card {
-    perspective: 1200px;
-    min-height: 280px;
-  }
-  .spec-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-  }
-  .spec-card:hover .spec-card-inner,
-  .spec-card:focus-within .spec-card-inner {
-    transform: rotateY(180deg);
-  }
-  .spec-card-face {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  .spec-card-back {
-    transform: rotateY(180deg);
-  }
-</style>
+<script
+  is:inline
+  type="application/json"
+  id="spec-copy"
+  set:html={JSON.stringify({
+    coding: {
+      title: s.coding.title,
+      impact: s.coding.impact,
+      description: s.coding.description,
+      descriptionCh: s.coding.descriptionCh,
+      descriptionRow: s.coding.descriptionRow,
+    },
+    tardoc: { title: s.tardoc.title, impact: s.tardoc.impact, description: s.tardoc.description },
+    ehr: { title: s.ehr.title, impact: s.ehr.impact, description: s.ehr.description },
+    templates: { title: s.templates.title, impact: s.templates.impact, description: s.templates.description },
+    context: { title: s.context.title, impact: s.context.impact, description: s.context.description },
+    hospital: { title: s.hospital.title, impact: s.hospital.impact, description: s.hospital.description },
+    sync: { title: s.sync.title, impact: s.sync.impact, description: s.sync.description },
+    dayHospital: {
+      title: s.dayHospital.title,
+      impact: s.dayHospital.impact,
+      description: s.dayHospital.description,
+    },
+  })}
+/>
 
 <script>
-  import { detectUserCurrency } from '../utils/currency';
+  import { detectUserCurrency } from "../utils/currency"
 
-  (async () => {
-    const el = document.querySelector<HTMLElement>('[data-coding-description]');
-    if (!el) return;
-    const currency = await detectUserCurrency();
-    const ch = el.dataset.descriptionCh || '';
-    const row = el.dataset.descriptionRow || '';
-    el.textContent = currency === 'CHF' ? ch : row;
-  })();
+  const copyEl = document.getElementById("spec-copy")
+  const root = document.querySelector("[data-specificities]")
+  if (copyEl && root) {
+    const copy = JSON.parse(copyEl.textContent || "{}")
+    const tabs = root.querySelectorAll("[data-spec-tab]")
+    const preview = root.querySelector("[data-spec-preview]")
+    const titleEl = root.querySelector("[data-spec-title]")
+    const impactEl = root.querySelector("[data-spec-impact]")
+    const descEl = root.querySelector("[data-spec-description]")
+    const stage = root.querySelector("[data-spec-stage]")
+    const panels = root.querySelectorAll("[data-stage]")
+    let currency = "EUR"
+
+    const resolveDescription = (key: string) => {
+      const item = copy[key]
+      if (!item) return ""
+      if (key === "coding") {
+        return currency === "CHF" ? item.descriptionCh : item.descriptionRow
+      }
+      return item.description
+    }
+
+    const replayStage = (key: string) => {
+      const panel = stage?.querySelector(`[data-stage="${key}"]`)
+      if (!panel) return
+      panel.classList.remove("is-playing")
+      void (panel as HTMLElement).offsetWidth
+      panel.classList.add("is-playing")
+    }
+
+    const select = (key: string | null) => {
+      if (!key) return
+      const item = copy[key]
+      if (!item) return
+
+      tabs.forEach((tab) => {
+        const active = tab.getAttribute("data-spec-tab") === key
+        tab.classList.toggle("is-active", active)
+        tab.setAttribute("aria-selected", active ? "true" : "false")
+      })
+
+      if (titleEl) titleEl.textContent = item.title
+      if (impactEl) impactEl.textContent = item.impact
+      if (descEl) descEl.textContent = resolveDescription(key)
+
+      panels.forEach((panel) => {
+        const match = panel.getAttribute("data-stage") === key
+        panel.toggleAttribute("hidden", !match)
+      })
+
+      stage?.setAttribute("data-active", key)
+      preview?.setAttribute("aria-labelledby", `spec-tab-${key}`)
+      preview?.classList.remove("is-swapping")
+      void (preview as HTMLElement | null)?.offsetWidth
+      preview?.classList.add("is-swapping")
+      replayStage(key)
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => select(tab.getAttribute("data-spec-tab")))
+    })
+
+    detectUserCurrency().then((c) => {
+      currency = c
+      if (stage?.getAttribute("data-active") === "coding" && descEl) {
+        descEl.textContent = resolveDescription("coding")
+      }
+    })
+
+    replayStage("coding")
+  }
 </script>
+
+<style>
+  .spec-section {
+    background:
+      radial-gradient(ellipse 70% 50% at 88% 12%, rgba(121, 81, 251, 0.11), transparent 55%),
+      linear-gradient(180deg, #f7f5fc 0%, #ffffff 72%);
+  }
+
+  .spec-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    min-width: max-content;
+    text-align: left;
+    padding: 0.7rem 0.85rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #3f3f46;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.35;
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .spec-tab:hover {
+    background: rgba(121, 81, 251, 0.06);
+  }
+
+  .spec-tab.is-active {
+    background: #fff;
+    border-color: #e6e2f0;
+    color: #5b3fd4;
+    box-shadow: 0 6px 20px rgba(91, 63, 212, 0.08);
+  }
+
+  .spec-tab-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 999px;
+    background: #cfc8e0;
+    flex-shrink: 0;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .spec-tab.is-active .spec-tab-dot {
+    background: #7951fb;
+    box-shadow: 0 0 0 3px rgba(121, 81, 251, 0.22);
+  }
+
+  .spec-preview {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e6e2f0;
+    border-radius: 1rem;
+    padding: 1.5rem 1.5rem 1.35rem;
+    box-shadow: 0 14px 40px rgba(91, 63, 212, 0.07);
+    overflow: hidden;
+  }
+
+  .spec-preview::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #7951fb, #5b3fd4);
+  }
+
+  .spec-preview.is-swapping {
+    animation: spec-fade-up 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .spec-impact {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    background: #f3effe;
+    border: 1px solid #e0d7fa;
+    border-radius: 0.75rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .spec-impact-label {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5b3fd4;
+  }
+
+  .spec-impact p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #1a1a1f;
+    font-weight: 600;
+  }
+
+  .spec-stage {
+    background: linear-gradient(145deg, #2a2438, #1a1528);
+    border-radius: 0.85rem;
+    padding: 1.1rem 1.15rem;
+    min-height: 13.5rem;
+    color: #e8e4f4;
+    overflow: hidden;
+  }
+
+  .spec-stage-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a89ad4;
+    margin-bottom: 0.85rem;
+  }
+
+  .spec-stage-panel[hidden] {
+    display: none !important;
+  }
+
+  @keyframes spec-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spec-rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spec-pop {
+    from {
+      opacity: 0;
+      transform: scale(0.82);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes spec-mark {
+    from {
+      background: rgba(121, 81, 251, 0.12);
+    }
+    to {
+      background: rgba(121, 81, 251, 0.48);
+    }
+  }
+
+  .spec-sad-line {
+    margin: 0 0 0.45rem;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    opacity: 0;
+  }
+
+  .spec-stage-panel.is-playing .spec-sad-line {
+    animation: spec-rise 0.45s ease forwards;
+    animation-delay: var(--d, 0s);
+  }
+
+  .spec-sad-line mark {
+    color: #fff;
+    border-radius: 0.2rem;
+    padding: 0 0.2rem;
+    background: rgba(121, 81, 251, 0.2);
+  }
+
+  .spec-stage-panel.is-playing .spec-sad-line mark {
+    animation: spec-mark 0.9s ease 0.45s forwards;
+  }
+
+  .spec-codes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.85rem;
+  }
+
+  .spec-code {
+    background: #7951fb;
+    color: #fff;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.4rem;
+    opacity: 0;
+    transform: scale(0.82);
+  }
+
+  .spec-stage-panel.is-playing .spec-code {
+    animation: spec-pop 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--d, 0s);
+  }
+
+  .spec-dict-short,
+  .spec-dict-full {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    border-radius: 0.55rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .spec-dict-short {
+    background: rgba(255, 255, 255, 0.08);
+    opacity: 0;
+  }
+
+  .spec-dict-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0.55rem 0;
+    color: #ab66ff;
+    font-size: 0.6875rem;
+    opacity: 0;
+  }
+
+  .spec-dict-full {
+    background: rgba(121, 81, 251, 0.22);
+    border: 1px solid rgba(171, 102, 255, 0.35);
+    opacity: 0;
+  }
+
+  .spec-stage-panel.is-playing .spec-dict-short {
+    animation: spec-rise 0.4s ease forwards;
+  }
+  .spec-stage-panel.is-playing .spec-dict-arrow {
+    animation: spec-rise 0.35s ease 0.28s forwards;
+  }
+  .spec-stage-panel.is-playing .spec-dict-full {
+    animation: spec-rise 0.5s ease 0.5s forwards;
+  }
+
+  .spec-ehr-flow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+  }
+
+  .spec-ehr-doc {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.55rem;
+    padding: 0.85rem;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    opacity: 0;
+  }
+
+  .spec-ehr-doc strong {
+    font-size: 0.8125rem;
+    color: #fff;
+  }
+
+  .spec-ehr-doc span {
+    opacity: 0.65;
+  }
+
+  .spec-ehr-arrow {
+    color: #ab66ff;
+    font-size: 1.15rem;
+    opacity: 0;
+  }
+
+  .spec-ehr-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 6.75rem;
+  }
+
+  .spec-ehr-slot {
+    background: rgba(121, 81, 251, 0.28);
+    border: 1px dashed rgba(171, 102, 255, 0.55);
+    border-radius: 0.4rem;
+    padding: 0.55rem 0.4rem;
+    font-size: 0.6875rem;
+    text-align: center;
+    opacity: 0;
+  }
+
+  .spec-stage-panel.is-playing .spec-ehr-doc {
+    animation: spec-rise 0.45s ease forwards;
+  }
+  .spec-stage-panel.is-playing .spec-ehr-arrow {
+    animation:
+      spec-rise 0.35s ease 0.2s forwards,
+      spec-nudge 1.1s ease 0.55s infinite;
+  }
+  .spec-stage-panel.is-playing .spec-ehr-slot {
+    animation: spec-slot-on 0.4s ease forwards;
+    animation-delay: var(--d, 0.35s);
+  }
+
+  @keyframes spec-nudge {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(4px);
+    }
+  }
+
+  @keyframes spec-slot-on {
+    to {
+      opacity: 1;
+      border-style: solid;
+      background: rgba(121, 81, 251, 0.5);
+    }
+  }
+
+  .spec-dropzone {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    border: 1.5px dashed rgba(171, 102, 255, 0.55);
+    border-radius: 0.7rem;
+    padding: 0.9rem;
+    background: rgba(121, 81, 251, 0.12);
+    opacity: 0;
+  }
+
+  .spec-dropzone strong {
+    display: block;
+    color: #fff;
+    font-size: 0.8125rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .spec-dropzone span {
+    font-size: 0.75rem;
+    opacity: 0.75;
+  }
+
+  .spec-file {
+    width: 2.35rem;
+    height: 2.85rem;
+    border-radius: 0.3rem;
+    background: #fff;
+    color: #5b3fd4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    padding-bottom: 0.35rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .spec-letterhead {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0.55rem;
+    padding: 0.75rem 0.85rem;
+    white-space: pre-line;
+    opacity: 0;
+  }
+
+  .spec-letterhead-brand {
+    color: #cbb8ff;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(171, 102, 255, 0.28);
+    padding-bottom: 0.35rem;
+  }
+
+  .spec-stage-panel.is-playing .spec-dropzone {
+    animation: spec-rise 0.5s ease forwards;
+  }
+  .spec-stage-panel.is-playing .spec-file {
+    animation: spec-float 1.7s ease 0.35s infinite;
+  }
+  .spec-stage-panel.is-playing .spec-letterhead {
+    animation: spec-rise 0.5s ease 0.4s forwards;
+  }
+
+  @keyframes spec-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  .spec-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .spec-chip {
+    font-size: 0.6875rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    padding: 0.35rem 0.65rem;
+    opacity: 0;
+  }
+
+  .spec-stage-panel.is-playing .spec-chip {
+    animation: spec-pop 0.35s ease forwards;
+    animation-delay: var(--d, 0s);
+  }
+
+  .spec-meter-label {
+    font-size: 0.625rem;
+    color: #a89ad4;
+    margin-bottom: 0.4rem;
+  }
+
+  .spec-meter {
+    height: 0.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+  }
+
+  .spec-meter span {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #7951fb, #ab66ff);
+  }
+
+  .spec-meter-note {
+    margin-top: 0.55rem;
+    font-size: 0.75rem;
+    color: #cbb8ff;
+    opacity: 0;
+  }
+
+  .spec-stage-panel.is-playing .spec-meter span {
+    animation: spec-fill-meter 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+  }
+  .spec-stage-panel.is-playing .spec-meter-note {
+    animation: spec-rise 0.4s ease 1.15s forwards;
+  }
+
+  @keyframes spec-fill-meter {
+    to {
+      width: 94%;
+    }
+  }
+
+  .spec-doc-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .spec-doc-type {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid transparent;
+    border-radius: 0.55rem;
+    padding: 0.85rem 0.5rem;
+    text-align: center;
+    font-size: 0.6875rem;
+    line-height: 1.35;
+    opacity: 0.45;
+  }
+
+  .spec-doc-type strong {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+    color: #fff;
+  }
+
+  .spec-stage-panel.is-playing .spec-doc-type {
+    animation: spec-type-select 2.6s ease infinite;
+    animation-delay: calc(var(--i, 0) * 0.85s);
+  }
+
+  @keyframes spec-type-select {
+    0%,
+    18% {
+      opacity: 0.45;
+      transform: scale(0.97);
+      border-color: transparent;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    28%,
+    48% {
+      opacity: 1;
+      transform: scale(1);
+      border-color: rgba(171, 102, 255, 0.7);
+      background: rgba(121, 81, 251, 0.3);
+    }
+    58%,
+    100% {
+      opacity: 0.45;
+      transform: scale(0.97);
+      border-color: transparent;
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .spec-sync-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .spec-device {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 0.55rem;
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    text-align: center;
+    opacity: 0;
+  }
+
+  .spec-device-screen {
+    margin-top: 0.55rem;
+    height: 3rem;
+    border-radius: 0.35rem;
+    background: rgba(121, 81, 251, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    color: #cbb8ff;
+  }
+
+  .spec-sync-pulse {
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 999px;
+    border: 2px solid #ab66ff;
+    position: relative;
+    opacity: 0;
+  }
+
+  .spec-sync-pulse::after {
+    content: "";
+    position: absolute;
+    inset: -0.4rem;
+    border-radius: 999px;
+    border: 2px solid rgba(171, 102, 255, 0.4);
+  }
+
+  .spec-stage-panel.is-playing .spec-device:first-child {
+    animation: spec-rise 0.4s ease forwards;
+  }
+  .spec-stage-panel.is-playing .spec-device:last-child {
+    animation: spec-rise 0.4s ease 0.15s forwards;
+  }
+  .spec-stage-panel.is-playing .spec-sync-pulse {
+    animation: spec-rise 0.35s ease 0.2s forwards;
+  }
+  .spec-stage-panel.is-playing .spec-sync-pulse::after {
+    animation: spec-ring 1.2s ease 0.35s infinite;
+  }
+
+  @keyframes spec-ring {
+    from {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.45);
+      opacity: 0;
+    }
+  }
+
+  .spec-avatars {
+    display: flex;
+    margin-bottom: 0.75rem;
+  }
+
+  .spec-avatars span {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    border: 2px solid #1a1528;
+    margin-left: -0.35rem;
+    opacity: 0;
+  }
+
+  .spec-avatars span:first-child {
+    margin-left: 0;
+    background: #7c6bb5;
+  }
+  .spec-avatars span:nth-child(2) {
+    background: #9b6cff;
+  }
+  .spec-avatars span:nth-child(3) {
+    background: #5456de;
+  }
+  .spec-avatars span:nth-child(4) {
+    background: #ab66ff;
+  }
+
+  .spec-stage-panel.is-playing .spec-avatars span {
+    animation: spec-pop 0.35s ease forwards;
+    animation-delay: var(--d, 0s);
+  }
+
+  .spec-merge-lines {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .spec-merge-line {
+    height: 0.625rem;
+    border-radius: 0.3rem;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+
+  .spec-merge-line span {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+  }
+
+  .spec-merge-line:nth-child(1) span {
+    background: #7c6bb5;
+  }
+  .spec-merge-line:nth-child(2) span {
+    background: #9b6cff;
+  }
+  .spec-merge-line:nth-child(3) span {
+    background: #5456de;
+  }
+
+  .spec-merge-result {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: #cbb8ff;
+    opacity: 0;
+  }
+
+  .spec-stage-panel.is-playing .spec-merge-line span {
+    animation: spec-fill-line 0.7s ease forwards;
+    animation-delay: var(--d, 0.5s);
+  }
+  .spec-stage-panel.is-playing .spec-merge-result {
+    animation: spec-rise 0.4s ease 1.35s forwards;
+  }
+
+  @keyframes spec-fill-line {
+    to {
+      width: var(--w, 70%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spec-preview.is-swapping,
+    .spec-stage-panel.is-playing .spec-sad-line,
+    .spec-stage-panel.is-playing .spec-sad-line mark,
+    .spec-stage-panel.is-playing .spec-code,
+    .spec-stage-panel.is-playing .spec-dict-short,
+    .spec-stage-panel.is-playing .spec-dict-arrow,
+    .spec-stage-panel.is-playing .spec-dict-full,
+    .spec-stage-panel.is-playing .spec-ehr-doc,
+    .spec-stage-panel.is-playing .spec-ehr-arrow,
+    .spec-stage-panel.is-playing .spec-ehr-slot,
+    .spec-stage-panel.is-playing .spec-dropzone,
+    .spec-stage-panel.is-playing .spec-file,
+    .spec-stage-panel.is-playing .spec-letterhead,
+    .spec-stage-panel.is-playing .spec-chip,
+    .spec-stage-panel.is-playing .spec-meter span,
+    .spec-stage-panel.is-playing .spec-meter-note,
+    .spec-stage-panel.is-playing .spec-doc-type,
+    .spec-stage-panel.is-playing .spec-device,
+    .spec-stage-panel.is-playing .spec-sync-pulse,
+    .spec-stage-panel.is-playing .spec-sync-pulse::after,
+    .spec-stage-panel.is-playing .spec-avatars span,
+    .spec-stage-panel.is-playing .spec-merge-line span,
+    .spec-stage-panel.is-playing .spec-merge-result {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .spec-stage-panel.is-playing .spec-meter span,
+    .spec-stage-panel.is-playing .spec-merge-line span {
+      width: var(--w, 90%);
+    }
+  }
+</style>

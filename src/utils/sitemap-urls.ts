@@ -1,7 +1,7 @@
 import { getCollection } from 'astro:content';
 import { locales } from './i18n';
 
-const STATIC_PAGES = ['/blog', '/contact', '/pricing', '/team', '/tutorial', '/gtc'];
+const STATIC_PAGES = ['/blog', '/contact', '/pricing', '/team', '/tutorial', '/gtc', '/privacy'];
 
 const buildUrls = (site: string, paths: string[]) => {
   const siteUrl = new URL('/', site);

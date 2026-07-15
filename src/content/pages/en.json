@@ -12,12 +12,14 @@
         "googlePlay": "Google Play"
     },
     "hero": {
-        "badge": "AI-Powered Medical Documentation",
-        "title": "Medical documentation",
-        "titleHighlight": "simplified by AI",
-        "subtitle": "Built for the complexity of hospital care.",
+        "badge": "Built by physicians · Swiss hosted",
+        "title": "Hospital documentation,",
+        "titleHighlight": "without the evenings lost to notes",
+        "subtitle": "DocNote turns consultations into discharge letters, ward-round notes, and operative reports. Built by doctors who still work in hospital care.",
         "cta": "Start for free",
-        "ctaSecondary": "Watch Demo",
+        "ctaSecondary": "Talk to our hospitals team",
+        "founders": "Dr. Vincent Tan · Dr. Alice Gilson",
+        "foundersRole": "Founders · HUG & La Tour",
         "trustedBy": "Trusted by leading healthcare providers"
     },
     "soapDemo": {
@@ -62,7 +64,9 @@
         "subtitle": "All the tools you need to speed up your documentation",
         "recording": {
             "title": "Smart Recording",
-            "description": "Record consultations with one tap. Our AI understands medical context and filters background noise."
+            "description": "Record consultations with one tap. Our AI understands medical context and filters background noise.",
+            "animStatus": "Recording",
+            "animWords": ["So", "the", "pain", "started", "about", "two", "weeks", "ago,", "mostly", "in", "the", "morning.", "I", "haven't", "had", "migraines", "before..."]
         },
         "transcription": {
             "title": "Accurate Transcription",
@@ -87,7 +91,12 @@
         },
         "integration": {
             "title": "EHR Integration",
-            "description": "Seamlessly integrate with your existing Electronic Health Record system."
+            "description": "Seamlessly integrate with your existing Electronic Health Record system.",
+            "animTitle": "EHR — Patient Record",
+            "animPatient": "Patient",
+            "animDob": "DOB",
+            "animNotes": "Notes",
+            "animNoReport": "No report"
         },
         "security": {
             "title": "Data Security",
@@ -104,61 +113,121 @@
         },
         "languages": {
             "title": "Multilingual Support",
-            "description": "Supports German, French, Italian, English, and 20+ other languages."
+            "description": "Supports French, English, Italian, Spanish, Arabic, and 20+ other languages."
         }
     },
     "specificities": {
         "badge": "Specificities",
-        "title": "Specificities you shouldn't miss",
-        "subtitle": "DocNote is built for the realities of Swiss and French healthcare. Hover a card to discover each specificity in detail.",
-        "clickToFlip": "Click to learn more",
-        "clickToFlipBack": "Flip back",
+        "title": "Built for how hospitals actually document",
+        "subtitle": "Each specificity changes what ends up in the record, not just another feature toggle.",
+        "impactLabel": "Impact",
+        "stageLabel": "In the product",
         "coding": {
             "title": "Medical coding & billing",
-            "teaser": "Coding suggestions built into your discharge letters.",
-            "description": "DocNote highlights significant associated diagnoses (SADs) in discharge letters and automatically provides medical coding suggestions at the end of each document.",
-            "descriptionCh": "DocNote highlights significant associated diagnoses (SADs) in discharge letters and automatically provides medical coding suggestions at the end of each document, aligned with Swiss DRG.",
-            "descriptionRow": "DocNote highlights significant associated diagnoses (SADs) in discharge letters and automatically provides medical coding suggestions at the end of each document, aligned with PMSI."
+            "impact": "Coding stops being a second documentation pass. The letter itself surfaces billable diagnoses: fewer missed SADs, less evening catch-up on coding.",
+            "description": "Significant associated diagnoses are highlighted in the discharge letter, with coding suggestions at the end of the document.",
+            "descriptionCh": "Significant associated diagnoses are highlighted in the discharge letter, with Swiss DRG coding suggestions at the end of the document.",
+            "descriptionRow": "Significant associated diagnoses are highlighted in the discharge letter, with PMSI coding suggestions at the end of the document.",
+            "stageLabel": "In the letter",
+            "line1Pre": "…history of ",
+            "line1Mark": "type 2 diabetes",
+            "line1Post": " with recent HbA1c elevation…",
+            "line2Pre": "…known ",
+            "line2Mark": "hypertension",
+            "line2Post": ", currently controlled…",
+            "line3Pre": "…prior ",
+            "line3Mark": "DVT",
+            "line3Post": " · anticoagulation discussed…"
         },
         "tardoc": {
             "title": "TARDOC compliance",
-            "teaser": "Turn dictated exams into billable descriptions.",
-            "description": "DocNote helps physicians meet TARDOC requirements by automatically transforming concisely dictated clinical examinations into complete, structured, and billable descriptions."
+            "impact": "A short bedside dictation becomes a complete, billable exam description. You document once for clinical care and for TARDOC, not twice.",
+            "description": "Concise dictated findings are expanded into the structured wording insurers and TARDOC expect, without rewriting the exam from scratch.",
+            "stageLabel": "Dictation to billable description",
+            "shortDictation": "“Abdomen soft, no rebound. BS present.”",
+            "expandLabel": "Expands to TARDOC-ready text",
+            "fullDescription": "Abdominal examination: abdomen soft and non-tender, no guarding or rebound tenderness. Bowel sounds present in all quadrants. No organomegaly palpated…"
         },
         "ehr": {
             "title": "EHR integration",
-            "teaser": "Send reports directly to Mediway and SOKLE.",
-            "description": "Send your reports directly into the patient's electronic health record. DocNote integrates with Mediway and SOKLE, with new integrations added regularly."
+            "impact": "Documentation is not finished when the note looks good. It is finished when it is in the record: no copy-paste gap, no version floating outside the EHR.",
+            "description": "Validated reports send directly into Mediway and SOKLE, so the clinical document and the patient file stay the same object.",
+            "stageLabel": "Validated note to patient file",
+            "docReady": "Discharge letter",
+            "docMeta": "validated · PDF ready"
         },
         "templates": {
             "title": "Custom Word templates",
-            "teaser": "Drag & drop your templates — DocNote handles the rest.",
-            "description": "Drag and drop your Word report templates: DocNote automatically recreates the report respecting your exact template and layout."
+            "impact": "You stop reformatting AI output to match hospital letterhead. Every report already is your document: layout, sections, signature. Review stays medical, not cosmetic.",
+            "description": "Drop your Word template once. DocNote recreates future reports with your exact structure and branding.",
+            "stageLabel": "Your template becomes the report",
+            "fileName": "Service letterhead.docx",
+            "dropHint": "Your sections · your margins · your signature",
+            "letterhead": "Hospital · Surgical service",
+            "letterBody": "Dear colleague,\nPlease find enclosed…"
         },
         "context": {
             "title": "Rich context input",
-            "teaser": "Add documents, photos, and files for greater accuracy.",
-            "description": "For complex consultations, give DocNote as much context as needed: drag and drop files, attach photos, include prior documents, and get reports of unmatched precision."
+            "impact": "The note reflects the full clinical picture, not only what was said aloud: fewer omissions, fewer “please add the lab result” corrections after the fact.",
+            "description": "Attach prior letters, labs, imaging, and photos. The model uses them when structuring the report.",
+            "stageLabel": "Audio plus file context to a stronger note",
+            "chip1": "Prior discharge",
+            "chip2": "Labs.pdf",
+            "chip3": "Wound photo",
+            "meterLabel": "Report completeness",
+            "meterNote": "Context included · fewer missing findings in the draft"
         },
         "hospital": {
             "title": "Hospital-specific documentation",
-            "teaser": "Discharge letters, ward-round notes, operative reports and more.",
-            "description": "DocNote supports hospital-specific documentation: discharge letters, progress notes during ward rounds, operative reports (OR reports), and many other formats."
+            "impact": "You do not force hospital work into an outpatient SOAP. The document type matches the workflow, so structure, length, and recipients are right the first time.",
+            "description": "Native formats for discharge letters, ward-round progress notes, operative reports, and other hospital documents.",
+            "stageLabel": "Right document for the moment",
+            "type1Title": "Discharge",
+            "type1Sub": "letter to GP",
+            "type2Title": "Ward round",
+            "type2Sub": "progress note",
+            "type3Title": "OR report",
+            "type3Sub": "operative"
         },
         "sync": {
             "title": "Phone & desktop in sync",
-            "teaser": "Work from your phone or your computer — seamlessly.",
-            "description": "Use DocNote on your phone while on the move and on your computer at your desk: both platforms stay synchronized in real time for a perfectly continuous workflow."
+            "impact": "Documentation stays one thread from bedside to desk. You do not re-enter or rebuild the note when you switch devices: the draft follows you.",
+            "description": "Record on the ward from your phone, then continue and validate on desktop. Same consultation, real-time sync.",
+            "stageLabel": "One note, two places",
+            "phone": "Phone",
+            "recording": "Recording…",
+            "desktop": "Desktop",
+            "sameDraft": "Same draft"
         },
         "dayHospital": {
             "title": "Collaborative day hospital",
-            "teaser": "A shared patient file across multiple caregivers, always structured.",
-            "description": "In day-hospital settings, multiple caregivers can share the same DocNote patient file locally, each contributing their own notes. The result is a single, structured, and reliable complete record no matter how many different professionals are involved."
+            "impact": "At the end of the day you have one structured patient file, not four partial notes to reconcile. Documentation quality scales with the team instead of fragmenting.",
+            "description": "Multiple caregivers contribute to the same local patient file. DocNote merges contributions into one reliable record.",
+            "stageLabel": "Several caregivers to one file",
+            "mergeResult": "Single structured day-hospital record"
         }
     },
     "specialties": {
         "title": "Supporting 50+ medical specialties",
-        "subtitle": "From general practice to specialized care"
+        "subtitle": "From general practice to specialized care",
+        "items": [
+            "General Practice",
+            "Internal Medicine",
+            "Cardiology",
+            "Dermatology",
+            "Endocrinology",
+            "Gastroenterology",
+            "Neurology",
+            "Oncology",
+            "Orthopedics",
+            "Pediatrics",
+            "Psychiatry",
+            "Pulmonology",
+            "Rheumatology",
+            "Surgery",
+            "Urology",
+            "Emergency Medicine"
+        ]
     },
     "testimonials": {
         "badge": "Testimonial",
@@ -208,8 +277,8 @@
         "protocolRbac": "Role-based access control (RBAC)",
         "protocolAudit": "Comprehensive audit trail logging",
         "swiss": {
-            "title": "Swiss Hosting",
-            "description": "All data stored exclusively on Swiss servers, ensuring full compliance with local healthcare regulations."
+            "title": "Swiss design & hosted",
+            "description": "Built and hosted in Switzerland. All data stays on Swiss servers, aligned with local healthcare regulations."
         },
         "hipaa": {
             "title": "HIPAA Compliant",
@@ -441,11 +510,13 @@
     },
     "contact": {
         "title": "Contact Us",
-        "subtitle": "Get in touch with our team to learn how DocNote can transform your clinical documentation workflow.",
+        "subtitle": "Talk to our hospitals team. Reach Vincent for Switzerland, or Alice for French healthcare organizations.",
         "emailLabel": "Email",
         "phoneLabel": "Phone",
         "locationLabel": "Location",
         "switzerland": "Switzerland",
-        "france": "France"
+        "france": "France",
+        "vincentName": "Dr. Vincent Tan",
+        "aliceName": "Dr. Alice Gilson"
     }
 }

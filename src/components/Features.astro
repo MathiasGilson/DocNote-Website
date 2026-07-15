@@ -79,11 +79,13 @@ const features = [
                 <div class="transcript-ui">
                   <div class="transcript-header">
                     <div class="transcript-dot recording"></div>
-                    <span class="transcript-status">Recording</span>
+                    <span class="transcript-status">{t.features.recording.animStatus}</span>
                     <span class="transcript-timer">0:12</span>
                   </div>
                   <div class="transcript-words">
-                    <span class="tw">So</span> <span class="tw">the</span> <span class="tw">pain</span> <span class="tw">started</span> <span class="tw">about</span> <span class="tw">two</span> <span class="tw">weeks</span> <span class="tw">ago,</span> <span class="tw">mostly</span> <span class="tw">in</span> <span class="tw">the</span> <span class="tw">morning.</span> <span class="tw">I</span> <span class="tw">haven't</span> <span class="tw">had</span> <span class="tw">migraines</span> <span class="tw">before...</span>
+                    {t.features.recording.animWords.map((word: string) => (
+                      <span class="tw">{word}</span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -162,22 +164,22 @@ const features = [
                     <div class="ehr-header-dots">
                       <span class="ehr-dot-r"></span><span class="ehr-dot-y"></span><span class="ehr-dot-g"></span>
                     </div>
-                    <span class="ehr-header-title">EHR — Patient Record</span>
+                    <span class="ehr-header-title">{t.features.integration.animTitle}</span>
                   </div>
                   <div class="ehr-body">
                     <div class="ehr-row">
-                      <div class="ehr-label">Patient</div>
+                      <div class="ehr-label">{t.features.integration.animPatient}</div>
                       <div class="ehr-value"><div class="ehr-bar w-20"></div></div>
                     </div>
                     <div class="ehr-row">
-                      <div class="ehr-label">DOB</div>
+                      <div class="ehr-label">{t.features.integration.animDob}</div>
                       <div class="ehr-value"><div class="ehr-bar w-14"></div></div>
                     </div>
                     <div class="ehr-divider"></div>
                     <div class="ehr-row">
-                      <div class="ehr-label">Notes</div>
+                      <div class="ehr-label">{t.features.integration.animNotes}</div>
                       <div class="ehr-value ehr-empty-slot">
-                        <span class="ehr-empty-text">No report</span>
+                        <span class="ehr-empty-text">{t.features.integration.animNoReport}</span>
                       </div>
                     </div>
                   </div>
@@ -242,9 +244,11 @@ const features = [
             <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="lang-card">
               <div class="lang-demo">
                 <div class="lang-tabs">
-                  <span class="lang-tab active">FR</span>
-                  <span class="lang-tab t-2">DE</span>
-                  <span class="lang-tab t-3">ZH</span>
+                  <span class="lang-tab is-active" data-lang-tab="fr">FR</span>
+                  <span class="lang-tab" data-lang-tab="en">EN</span>
+                  <span class="lang-tab" data-lang-tab="it">IT</span>
+                  <span class="lang-tab" data-lang-tab="es">ES</span>
+                  <span class="lang-tab" data-lang-tab="ar">AR</span>
                 </div>
                 <div class="lang-doc">
                   <div class="lang-doc-header">
@@ -254,9 +258,11 @@ const features = [
                       </svg>
                     </div>
                     <span class="lang-doc-title">
-                      <span class="lang-title-text t-fr">Rapport médical</span>
-                      <span class="lang-title-text t-de">Arztbericht</span>
-                      <span class="lang-title-text t-en">医疗报告</span>
+                      <span class="lang-title-text is-active" data-lang-title="fr">Rapport médical</span>
+                      <span class="lang-title-text" data-lang-title="en">Medical report</span>
+                      <span class="lang-title-text" data-lang-title="it">Referto medico</span>
+                      <span class="lang-title-text" data-lang-title="es">Informe médico</span>
+                      <span class="lang-title-text" data-lang-title="ar" dir="rtl">تقرير طبي</span>
                     </span>
                   </div>
                   <div class="lang-lines">
@@ -377,6 +383,7 @@ const features = [
     opacity: 0;
     transition: opacity 0.12s ease;
     position: relative;
+    margin-right: 0.25em;
   }
 
   .tw.visible {
@@ -1013,24 +1020,25 @@ const features = [
 
   .lang-tabs {
     position: absolute;
-    top: 12px;
-    right: 16px;
+    top: 10px;
+    right: 12px;
     display: flex;
-    gap: 4px;
+    gap: 2px;
+    z-index: 2;
   }
 
   .lang-tab {
     font-size: 7px;
     font-weight: 700;
     color: #d1d5db;
-    letter-spacing: 0.04em;
-    padding: 2px 6px;
+    letter-spacing: 0.03em;
+    padding: 2px 4px;
     border-radius: 3px;
     background: transparent;
-    transition: color 0.3s ease, background 0.3s ease;
+    transition: color 0.25s ease, background 0.25s ease;
   }
 
-  .lang-tab.active {
+  .lang-tab.is-active {
     color: #8B5CF6;
     background: rgba(139, 92, 246, 0.08);
   }
@@ -1080,7 +1088,7 @@ const features = [
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
-  .lang-title-text.t-fr {
+  .lang-title-text.is-active {
     opacity: 1;
     transform: translateY(0);
   }
@@ -1172,35 +1180,6 @@ const features = [
     transform: scale(1);
     transition: opacity 0.2s ease 0.9s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s;
   }
-
-  .group:hover .lang-tab.active {
-    color: #d1d5db;
-    background: transparent;
-    transition-delay: 0.5s;
-  }
-
-  .group:hover .lang-tab.t-2 {
-    color: #d1d5db;
-    background: transparent;
-  }
-
-  .group:hover .lang-tab.t-3 {
-    color: #8B5CF6;
-    background: rgba(139, 92, 246, 0.08);
-    transition-delay: 0.5s;
-  }
-
-  .group:hover .lang-title-text.t-fr {
-    opacity: 0;
-    transform: translateY(-3px);
-    transition-delay: 0.4s;
-  }
-
-  .group:hover .lang-title-text.t-en {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.55s;
-  }
 </style>
 
 <script>
@@ -1238,6 +1217,38 @@ const features = [
       words.forEach(w => {
         w.classList.remove('visible', 'active');
       });
+    });
+  }
+
+  const langCard = document.getElementById('lang-card');
+  if (langCard) {
+    const langs = ['fr', 'en', 'it', 'es', 'ar'];
+    let langIndex = 0;
+    let langTimer = 0;
+
+    const setLang = (code) => {
+      langCard.querySelectorAll('[data-lang-tab]').forEach((tab) => {
+        tab.classList.toggle('is-active', tab.getAttribute('data-lang-tab') === code);
+      });
+      langCard.querySelectorAll('[data-lang-title]').forEach((title) => {
+        title.classList.toggle('is-active', title.getAttribute('data-lang-title') === code);
+      });
+    };
+
+    langCard.addEventListener('mouseenter', () => {
+      langIndex = 0;
+      setLang(langs[0]);
+      window.clearInterval(langTimer);
+      langTimer = window.setInterval(() => {
+        langIndex = (langIndex + 1) % langs.length;
+        setLang(langs[langIndex]);
+      }, 700);
+    });
+
+    langCard.addEventListener('mouseleave', () => {
+      window.clearInterval(langTimer);
+      langIndex = 0;
+      setLang(langs[0]);
     });
   }
 </script>

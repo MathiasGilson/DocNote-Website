@@ -4,25 +4,7 @@ interface Props {
 }
 
 const { translations: t } = Astro.props
-
-const specialties = [
-    "General Practice",
-    "Internal Medicine",
-    "Cardiology",
-    "Dermatology",
-    "Endocrinology",
-    "Gastroenterology",
-    "Neurology",
-    "Oncology",
-    "Orthopedics",
-    "Pediatrics",
-    "Psychiatry",
-    "Pulmonology",
-    "Rheumatology",
-    "Surgery",
-    "Urology",
-    "Emergency Medicine"
-]
+const specialties: string[] = t.specialties.items ?? []
 ---
 
 <section class="py-16 bg-gradient-to-b from-indigo-50 to-white">

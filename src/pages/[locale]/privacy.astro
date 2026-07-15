@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/en/privacy');
+}
+
+const layoutTitle =
+  locale === 'fr'
+    ? 'Politique de confidentialité'
+    : locale === 'de'
+      ? 'Datenschutzrichtlinie'
+      : 'Privacy Policy';
+---
+
+<Layout title={`${layoutTitle} - DocNote`}>
+  <section class="pt-32 pb-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
+        {layoutTitle}
+      </h1>
+      <p class="text-center text-gray-500 mb-12">DocNote · Gilson GmbH</p>
+
+      <div class="privacy-content">
+        <h2>1. Objet de la présente politique de confidentialité du site internet</h2>
+        <p>
+          La société Gilson GmbH (« DocNote » ou « Nous ») attache une importance primordiale à la protection de votre vie privée et s'engage à assurer la sécurité et la confidentialité de vos données à caractère personnel.
+        </p>
+        <p>La présente Politique de Confidentialité a pour objet de vous informer, en qualité d'utilisateur ou de client potentiel, sur :</p>
+        <ul>
+          <li>Les modalités de collecte, d'utilisation, de protection et de gestion de vos données personnelles,</li>
+          <li>Vos droits en matière de protection des données,</li>
+          <li>Les garanties prévues par la législation applicable lorsque vous interagissez avec nos services.</li>
+        </ul>
+        <p>
+          Elle s'applique exclusivement aux traitements pour lesquels DocNote agit en qualité de responsable du traitement, au sens de la loi fédérale suisse sur la protection des données (LPD) et, le cas échéant, du Règlement Général sur la Protection des Données (RGPD – Règlement (UE) 2016/679).
+        </p>
+        <p>
+          Le Site ne collecte aucune donnée de santé. Les données de santé traitées par nos clients via la solution DocNote le sont pour leur compte, en qualité de sous-traitant, et font l'objet d'une documentation contractuelle distincte (accord de traitement des données).
+        </p>
+        <p>
+          La présente politique, conjointement avec nos Conditions d'Utilisation, régit votre utilisation du site internet accessible à l'adresse <a href="https://www.docnote.care">https://www.docnote.care</a> (également accessible via <a href="https://www.docnote.ch">https://www.docnote.ch</a>, qui redirige vers ce domaine) (le « Site »).
+        </p>
+
+        <h2>2. Responsable du traitement</h2>
+        <p>
+          Gilson GmbH, enregistrée auprès du registre du commerce suisse sous le numéro d'identification d'entreprise CH-170.4.018.382-0 et dont le siège social est situé à Baarermattstrasse 8B, 6340 Baar, Suisse, agit en qualité de responsable du traitement pour les opérations décrites dans le présent document.
+        </p>
+        <p>
+          Pour toute question relative au traitement de vos données personnelles ou pour exercer vos droits, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:privacy@docnote.ch">privacy@docnote.ch</a>.
+        </p>
+        <p>
+          La politique est revue régulièrement et peut être mise à jour. En cas de modification substantielle, nous publierons la nouvelle version sur notre Site et, le cas échéant, vous en informerons par courrier électronique.
+        </p>
+        <p>
+          Afin de maintenir vos informations exactes et à jour, nous vous invitons à nous signaler sans délai toute modification de vos données personnelles.
+        </p>
+
+        <h2>3. Liens vers des sites tiers</h2>
+        <p>
+          Le Site peut contenir des liens vers d'autres sites, notamment ceux de partenaires. Ces sites disposent de leurs propres politiques de confidentialité et pratiques de gestion des données. DocNote décline toute responsabilité quant à leurs pratiques. Nous vous invitons à consulter attentivement leurs politiques avant de communiquer vos données personnelles.
+        </p>
+
+        <h2>4. Données personnelles collectées</h2>
+        <p>
+          En fonction de votre utilisation du Site, DocNote peut être amené à collecter, stocker et traiter différents types de données à caractère personnel, notamment :
+        </p>
+        <ul>
+          <li><strong>Données d'identification :</strong> prénom, nom, fonction.</li>
+          <li><strong>Données de contact :</strong> adresse électronique, informations professionnelles, contenu des demandes de démonstration ou candidatures transmises via le Site.</li>
+          <li><strong>Données techniques :</strong> informations relatives à l'utilisation du Site (données de connexion, ressources consultées, schémas de navigation).</li>
+        </ul>
+        <p>
+          Des données agrégées (statistiques, démographiques) peuvent également être générées. Celles-ci ne constituent pas des données personnelles dès lors qu'elles ne permettent pas de vous identifier.
+        </p>
+
+        <h2>5. Modalités de collecte</h2>
+        <p>Les données sont collectées :</p>
+        <ul>
+          <li>Directement auprès de vous (ex. : demande de contact, candidature, formulaire),</li>
+          <li>Automatiquement via des cookies et technologies similaires (pour plus de détails, veuillez consulter notre politique en matière de cookies).</li>
+        </ul>
+
+        <h2>6. Finalités et bases légales du traitement</h2>
+        <p>Vos données personnelles ne sont traitées que lorsque la loi le permet, et sur les bases légales suivantes :</p>
+        <ul>
+          <li><strong>Consentement explicite :</strong> par exemple lors de l'inscription à notre newsletter ou du dépôt d'une candidature.</li>
+          <li><strong>Intérêts légitimes :</strong> pour assurer la bonne gestion de nos activités, garantir la sécurité du Site et améliorer nos services, sauf si vos droits prévalent.</li>
+          <li><strong>Exécution d'un contrat ou de mesures précontractuelles :</strong> pour répondre à vos demandes de contact ou de démonstration et gérer la relation commerciale.</li>
+          <li><strong>Obligations légales :</strong> lorsque la loi nous impose de réaliser certains traitements.</li>
+        </ul>
+        <p>
+          Vos données sont conservées pendant la durée nécessaire à ces finalités, et au maximum 3 ans après notre dernier contact pour les prospects.
+        </p>
+        <p>
+          Elles sont hébergées en Suisse pour nos clients suisses, et sur des serveurs dédiés OVHcloud situés en France pour nos clients européens, sans transfert hors de ces zones. Elles ne sont transmises qu'à des prestataires liés par des engagements contractuels de confidentialité.
+        </p>
+
+        <h2>7. Vos droits</h2>
+        <p>
+          Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données, ainsi que du droit de retirer votre consentement à tout moment. Pour les exercer, contactez-nous à <a href="mailto:privacy@docnote.ch">privacy@docnote.ch</a>.
+        </p>
+        <p>
+          Vous disposez également du droit d'introduire une réclamation auprès du Préposé fédéral à la protection des données et à la transparence (PFPDT) en Suisse, ou de la CNIL en France.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .privacy-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .privacy-content p {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+  .privacy-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .privacy-content li {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+  }
+  .privacy-content a {
+    color: #5b3fd4;
+    text-decoration: underline;
+  }
+  .privacy-content a:hover {
+    color: #4c35c4;
+  }
+</style>

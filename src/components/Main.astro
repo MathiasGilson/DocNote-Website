@@ -18,7 +18,10 @@ interface Props {
 
 const { locale = "en", variant = "default" } = Astro.props
 const entry = (await getEntry("pages", locale as "en" | "de" | "fr")) ?? (await getEntry("pages", "en"))
-const t = entry!
+if (!entry) {
+    throw new Error(`Missing pages content for locale "${locale}" (and fallback "en")`)
+}
+const t = entry
 ---
 
 <Hero translations={t.data} />

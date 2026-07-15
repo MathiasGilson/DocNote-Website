@@ -12,12 +12,14 @@
     "googlePlay": "Google Play"
   },
   "hero": {
-    "badge": "KI-gestützte medizinische Dokumentation",
-    "title": "Medizinische Dokumentation",
-    "titleHighlight": "vereinfacht durch KI",
-    "subtitle": "Entwickelt für die Komplexität der Krankenhausversorgung.",
+    "badge": "Von Ärztinnen und Ärzten gebaut · In der Schweiz gehostet",
+    "title": "Spitaldokumentation,",
+    "titleHighlight": "ohne Abende voller Notizen",
+    "subtitle": "DocNote macht aus Konsultationen Austrittsberichte, Visitennotizen und OP-Berichte. Gebaut von Ärztinnen und Ärzten, die noch im Spital arbeiten.",
     "cta": "Kostenlos testen",
-    "ctaSecondary": "Demo ansehen",
+    "ctaSecondary": "Mit dem Spital-Team sprechen",
+    "founders": "Dr. Vincent Tan · Dr. Alice Gilson",
+    "foundersRole": "Gründer · HUG & La Tour",
     "trustedBy": "Vertraut von führenden Gesundheitsdienstleistern"
   },
   "soapDemo": {
@@ -62,7 +64,9 @@
     "subtitle": "Alle Werkzeuge, die Sie brauchen, um Ihre Dokumentation zu beschleunigen",
     "recording": {
       "title": "Intelligente Aufnahme",
-      "description": "Konsultationen mit einem Fingertipp aufnehmen. Unsere KI versteht medizinischen Kontext und filtert Hintergrundgeräusche."
+      "description": "Konsultationen mit einem Fingertipp aufnehmen. Unsere KI versteht medizinischen Kontext und filtert Hintergrundgeräusche.",
+      "animStatus": "Aufnahme",
+      "animWords": ["Also", "die", "Schmerzen", "begannen", "vor", "etwa", "zwei", "Wochen,", "meist", "am", "Morgen.", "Ich", "hatte", "noch", "nie", "Migräne", "zuvor..."]
     },
     "transcription": {
       "title": "Präzise Transkription",
@@ -87,7 +91,12 @@
     },
     "integration": {
       "title": "KIS-Integration",
-      "description": "Nahtlose Integration mit Ihrem bestehenden Klinikinformationssystem."
+      "description": "Nahtlose Integration mit Ihrem bestehenden Klinikinformationssystem.",
+      "animTitle": "KIS — Patientenakte",
+      "animPatient": "Patient",
+      "animDob": "Geb.",
+      "animNotes": "Notizen",
+      "animNoReport": "Kein Bericht"
     },
     "security": {
       "title": "Datensicherheit",
@@ -104,61 +113,121 @@
     },
     "languages": {
       "title": "Mehrsprachige Unterstützung",
-      "description": "Unterstützt Deutsch, Französisch, Italienisch, Englisch und 20+ weitere Sprachen."
+      "description": "Unterstützt Französisch, Englisch, Italienisch, Spanisch, Arabisch und 20+ weitere Sprachen."
     }
   },
   "specificities": {
     "badge": "Besonderheiten",
-    "title": "Besonderheiten, die Sie nicht verpassen sollten",
-    "subtitle": "DocNote ist auf die Realitäten des schweizerischen und französischen Gesundheitswesens zugeschnitten. Bewegen Sie den Mauszeiger über eine Karte, um jede Besonderheit im Detail zu entdecken.",
-    "clickToFlip": "Zum Umdrehen klicken",
-    "clickToFlipBack": "Zurück",
+    "title": "Für die Dokumentation, wie Spitäler wirklich arbeiten",
+    "subtitle": "Jede Besonderheit verändert, was in der Akte landet, nicht nur eine weitere Option.",
+    "impactLabel": "Wirkung",
+    "stageLabel": "Im Produkt",
     "coding": {
       "title": "Medizinische Kodierung & Abrechnung",
-      "teaser": "Kodierungsvorschläge direkt in Ihren Austrittsberichten.",
-      "description": "DocNote hebt signifikante assoziierte Diagnosen (SADs) in Austrittsberichten hervor und liefert am Ende jedes Dokuments automatisch Vorschläge zur medizinischen Kodierung.",
-      "descriptionCh": "DocNote hebt signifikante assoziierte Diagnosen (SADs) in Austrittsberichten hervor und liefert am Ende jedes Dokuments automatisch Vorschläge zur medizinischen Kodierung gemäss Swiss DRG.",
-      "descriptionRow": "DocNote hebt signifikante assoziierte Diagnosen (SADs) in Austrittsberichten hervor und liefert am Ende jedes Dokuments automatisch Vorschläge zur medizinischen Kodierung gemäss PMSI."
+      "impact": "Kodierung ist kein zweiter Dokumentationsgang mehr. Der Bericht selbst macht abrechenbare Diagnosen sichtbar: weniger verpasste SADs, weniger Abend-Nacharbeit beim Kodieren.",
+      "description": "Signifikante assoziierte Diagnosen werden im Austrittsbericht hervorgehoben, mit Kodierungsvorschlägen am Ende des Dokuments.",
+      "descriptionCh": "Signifikante assoziierte Diagnosen werden im Austrittsbericht hervorgehoben, mit Swiss-DRG-Kodierungsvorschlägen am Ende des Dokuments.",
+      "descriptionRow": "Signifikante assoziierte Diagnosen werden im Austrittsbericht hervorgehoben, mit PMSI-Kodierungsvorschlägen am Ende des Dokuments.",
+      "stageLabel": "Im Bericht",
+      "line1Pre": "…Vorgeschichte mit ",
+      "line1Mark": "Typ-2-Diabetes",
+      "line1Post": " und kürzlich erhöhtem HbA1c…",
+      "line2Pre": "…bekannte ",
+      "line2Mark": "Hypertonie",
+      "line2Post": ", derzeit kontrolliert…",
+      "line3Pre": "…frühere ",
+      "line3Mark": "TVT",
+      "line3Post": " · Antikoagulation besprochen…"
     },
     "tardoc": {
       "title": "TARDOC-Konformität",
-      "teaser": "Verwandeln Sie diktierte Untersuchungen in abrechenbare Beschreibungen.",
-      "description": "DocNote unterstützt Ärztinnen und Ärzte dabei, die TARDOC-Anforderungen zu erfüllen, indem knapp diktierte klinische Untersuchungen automatisch in vollständige, strukturierte und abrechenbare Beschreibungen umgewandelt werden."
+      "impact": "Ein kurzes Diktat am Bett wird zu einer vollständigen, abrechenbaren Untersuchungsbeschreibung. Sie dokumentieren einmal für Klinik und TARDOC, nicht zweimal.",
+      "description": "Knapp diktierte Befunde werden in die strukturierte Formulierung erweitert, die Versicherer und TARDOC erwarten, ohne die Untersuchung neu zu schreiben.",
+      "stageLabel": "Diktat zur abrechenbaren Beschreibung",
+      "shortDictation": "„Abdomen weich, kein Rebound. DG vorhanden.“",
+      "expandLabel": "Wird zu TARDOC-tauglichem Text",
+      "fullDescription": "Abdomenuntersuchung: Abdomen weich und nicht druckdolent, keine Abwehrspannung, kein Rebound. Darmgeräusche in allen Quadranten vorhanden. Keine Organomegalie tastbar…"
     },
     "ehr": {
       "title": "KIS-Integration",
-      "teaser": "Direkter Versand an Mediway und SOKLE.",
-      "description": "Senden Sie Ihre Berichte direkt in die elektronische Patientenakte. DocNote ist mit Mediway und SOKLE integriert, und neue Integrationen werden regelmässig hinzugefügt."
+      "impact": "Dokumentation ist nicht fertig, wenn die Notiz gut aussieht. Sie ist fertig, wenn sie in der Akte ist: keine Copy-Paste-Lücke, keine Version ausserhalb des KIS.",
+      "description": "Validierte Berichte gehen direkt an Mediway und SOKLE, sodass klinisches Dokument und Patientenakte dasselbe Objekt bleiben.",
+      "stageLabel": "Validierte Notiz in die Patientenakte",
+      "docReady": "Austrittsbericht",
+      "docMeta": "validiert · PDF bereit"
     },
     "templates": {
       "title": "Individuelle Word-Vorlagen",
-      "teaser": "Ziehen Sie Ihre Vorlagen per Drag & Drop – den Rest erledigt DocNote.",
-      "description": "Ziehen Sie Ihre Word-Berichtsvorlagen einfach per Drag & Drop: DocNote erstellt den Bericht automatisch neu und übernimmt dabei Ihre exakte Vorlage und Ihr Layout."
+      "impact": "Sie formatieren KI-Output nicht mehr auf Spitalbriefkopf um. Jeder Bericht ist bereits Ihr Dokument: Layout, Abschnitte, Unterschrift. Die Prüfung bleibt medizinisch, nicht kosmetisch.",
+      "description": "Legen Sie Ihre Word-Vorlage einmal ab. DocNote erstellt künftige Berichte mit Ihrer exakten Struktur und Ihrem Branding.",
+      "stageLabel": "Ihre Vorlage wird der Bericht",
+      "fileName": "Dienst-Briefkopf.docx",
+      "dropHint": "Ihre Abschnitte · Ihre Ränder · Ihre Unterschrift",
+      "letterhead": "Spital · Chirurgische Klinik",
+      "letterBody": "Sehr geehrte Kollegin, sehr geehrter Kollege,\nanbei erhalten Sie…"
     },
     "context": {
       "title": "Umfangreicher Kontext",
-      "teaser": "Dokumente, Fotos und Dateien für mehr Präzision.",
-      "description": "Geben Sie DocNote bei komplexen Konsultationen so viel Kontext wie nötig: Ziehen Sie Dateien per Drag & Drop, fügen Sie Fotos hinzu, hängen Sie frühere Dokumente an und erhalten Sie Berichte von unübertroffener Präzision."
+      "impact": "Die Notiz spiegelt das gesamte klinische Bild, nicht nur das Gesprochene: weniger Auslassungen, weniger „bitte Labor nachtragen“ hinterher.",
+      "description": "Hängen Sie frühere Briefe, Labs, Bildgebung und Fotos an. Das Modell nutzt sie beim Strukturieren des Berichts.",
+      "stageLabel": "Audio plus Dateikontext für eine stärkere Notiz",
+      "chip1": "Früherer Austritt",
+      "chip2": "Labs.pdf",
+      "chip3": "Wundfoto",
+      "meterLabel": "Vollständigkeit des Berichts",
+      "meterNote": "Kontext einbezogen · weniger fehlende Befunde im Entwurf"
     },
     "hospital": {
       "title": "Spitalspezifische Dokumentation",
-      "teaser": "Austrittsberichte, Visitennotizen, OP-Berichte und mehr.",
-      "description": "DocNote unterstützt spitalspezifische Dokumentation: Austrittsberichte, Verlaufsnotizen während der Stationsvisite, Operationsberichte (OP-Berichte) und viele weitere Formate."
+      "impact": "Sie zwängen Spitalarbeit nicht in ein ambulantes SOAP. Der Dokumenttyp folgt dem Workflow: Struktur, Länge und Empfänger stimmen beim ersten Entwurf.",
+      "description": "Native Formate für Austrittsberichte, Visitenverlaufsnotizen, Operationsberichte und weitere Spitaldokumente.",
+      "stageLabel": "Das richtige Dokument im Moment",
+      "type1Title": "Austritt",
+      "type1Sub": "Brief an HA",
+      "type2Title": "Visite",
+      "type2Sub": "Verlaufsnotiz",
+      "type3Title": "OP-Bericht",
+      "type3Sub": "operativ"
     },
     "sync": {
       "title": "Handy & Computer synchronisiert",
-      "teaser": "Arbeiten Sie nahtlos auf Ihrem Handy oder Computer.",
-      "description": "Nutzen Sie DocNote unterwegs auf Ihrem Handy und im Büro auf Ihrem Computer: Beide Plattformen sind in Echtzeit synchronisiert – für einen perfekt nahtlosen Arbeitsablauf."
+      "impact": "Dokumentation bleibt ein Faden vom Bett zum Schreibtisch. Sie erfassen die Notiz beim Gerätewechsel nicht neu: der Entwurf folgt Ihnen.",
+      "description": "Nehmen Sie auf Station mit dem Handy auf, setzen Sie am Desktop fort und validieren Sie. Dieselbe Konsultation, Echtzeit-Sync.",
+      "stageLabel": "Eine Notiz, zwei Orte",
+      "phone": "Handy",
+      "recording": "Aufnahme…",
+      "desktop": "Desktop",
+      "sameDraft": "Gleicher Entwurf"
     },
     "dayHospital": {
       "title": "Kollaborative Tagesklinik",
-      "teaser": "Eine gemeinsame Patientenakte für mehrere Behandelnde, stets strukturiert.",
-      "description": "In der Tagesklinik können mehrere Behandelnde lokal dieselbe DocNote-Patientenakte teilen und ergänzen. Das Ergebnis ist eine einzige, strukturierte und zuverlässige Gesamtakte, unabhängig davon, wie viele verschiedene Fachpersonen beteiligt sind."
+      "impact": "Am Tagesende haben Sie eine strukturierte Patientenakte, nicht vier Teilnotizen zum Abgleichen. Dokumentationsqualität skaliert mit dem Team statt zu zerfallen.",
+      "description": "Mehrere Behandelnde tragen zur selben lokalen Patientenakte bei. DocNote führt die Beiträge zu einem zuverlässigen Datensatz zusammen.",
+      "stageLabel": "Mehrere Behandelnde, eine Akte",
+      "mergeResult": "Eine strukturierte Tagesklinik-Akte"
     }
   },
   "specialties": {
     "title": "Unterstützung für 50+ medizinische Fachgebiete",
-    "subtitle": "Von der Allgemeinmedizin bis zur Spezialversorgung"
+    "subtitle": "Von der Allgemeinmedizin bis zur Spezialversorgung",
+    "items": [
+      "Allgemeinmedizin",
+      "Innere Medizin",
+      "Kardiologie",
+      "Dermatologie",
+      "Endokrinologie",
+      "Gastroenterologie",
+      "Neurologie",
+      "Onkologie",
+      "Orthopädie",
+      "Pädiatrie",
+      "Psychiatrie",
+      "Pneumologie",
+      "Rheumatologie",
+      "Chirurgie",
+      "Urologie",
+      "Notfallmedizin"
+    ]
   },
   "testimonials": {
     "badge": "Erfahrungsbericht",
@@ -208,8 +277,8 @@
     "protocolRbac": "Rollenbasierte Zugriffskontrolle (RBAC)",
     "protocolAudit": "Umfassende Audit-Trail-Protokollierung",
     "swiss": {
-      "title": "Schweizer Hosting",
-      "description": "Alle Daten werden ausschliesslich auf Schweizer Servern gespeichert und gewährleisten die vollständige Einhaltung lokaler Gesundheitsvorschriften."
+      "title": "Schweizer Design & Hosting",
+      "description": "In der Schweiz entwickelt und gehostet. Alle Daten bleiben auf Schweizer Servern und erfüllen die lokalen Gesundheitsvorschriften."
     },
     "hipaa": {
       "title": "HIPAA-konform",
@@ -261,7 +330,7 @@
     "blog": "Blog",
     "careers": "Karriere",
     "contact": "Kontakt",
-    "privacy": "Datenschutz",
+    "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen",
     "gtc": "Allgemeine Geschäftsbedingungen",
     "gdpr": "DSGVO",
@@ -441,11 +510,13 @@
   },
   "contact": {
     "title": "Kontaktieren Sie uns",
-    "subtitle": "Nehmen Sie Kontakt mit unserem Team auf, um zu erfahren, wie DocNote Ihren klinischen Dokumentationsworkflow transformieren kann.",
+    "subtitle": "Sprechen Sie mit unserem Spital-Team. Vincent für die Schweiz, Alice für französische Einrichtungen.",
     "emailLabel": "E-Mail",
     "phoneLabel": "Telefon",
     "locationLabel": "Standort",
     "switzerland": "Schweiz",
-    "france": "Frankreich"
+    "france": "Frankreich",
+    "vincentName": "Dr. Vincent Tan",
+    "aliceName": "Dr. Alice Gilson"
   }
 }
