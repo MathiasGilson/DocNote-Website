@@ -1,0 +1,900 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+if (!isValidLocale(locale)) return Astro.redirect('/fr/emploi');
+const lang = locale as Locale;
+
+const SHEETS_URL = import.meta.env.PUBLIC_GOOGLE_SHEETS_CAREERS_URL || '';
+
+const STRINGS = {
+  fr: {
+    metaTitle: 'Emploi - Stage Digital Marketing | DocNote',
+    pageTitle: 'Emploi',
+    pageSub: 'Rejoignez DocNote pour accélérer l’acquisition auprès des médecins indépendants.',
+    openRoles: 'Poste ouvert',
+    applyCta: 'Postuler',
+    jobTitle: 'Stage Digital Marketing - Acquisition médecins indépendants',
+    location: 'Genève · Présence sur site à définir',
+    type: 'Stage · Évolution possible en CDI',
+    aboutTitle: 'À propos de DocNote',
+    aboutBody: `DocNote développe un outil d'IA qui transforme la dictée médicale en comptes-rendus cliniques structurés, prêts à l'emploi. Fondée par un médecin en exercice, l'entreprise s'attaque à un problème très concret : les médecins passent trop de temps sur l'administratif et pas assez sur le soin.
+
+Incubée à la FONGIT à Genève, DocNote travaille déjà avec des clients hospitaliers et ambulatoires en Suisse et en France, dont l'AP-HP et plusieurs groupes hospitaliers suisses.`,
+    contextTitle: 'Contexte du poste',
+    contextBody: `En parallèle de notre approche institutionnelle, on développe un axe d'acquisition directe auprès des médecins indépendants et petits cabinets, avec un cycle de décision plus court et une inscription en self-service. On cherche un ou une stagiaire pour construire et tester cette mécanique d'acquisition individuelle.`,
+    missionsTitle: 'Missions',
+    missions: [
+      "Construire un funnel d'auto-onboarding (landing page, essai gratuit) permettant à un médecin indépendant de s'inscrire sans passer par un processus commercial classique",
+      'Segmenter et cibler une base de contacts de médecins libéraux, distincte de la base institutionnelle existante, et adapter le message de prospection en conséquence',
+      'Piloter des campagnes de cold email via Reply.io sur ce segment, avec A/B testing systématique des messages et objets',
+      'Identifier et activer des canaux communautaires pertinents (groupes professionnels, forums médicaux, associations) pour générer de l’inscription à faible coût',
+      'Améliorer le système de parrainage entre médecins',
+      'Mettre en place un retargeting des inscriptions non finalisées (email de relance)',
+      'Construire un tableau de bord de suivi (Looker Studio) mesurant tout le funnel : contact → inscription → activation → conversion payante, par canal',
+      'Documenter et comparer les résultats de chaque test pour identifier les canaux et messages à plus fort ROI, en vue de les généraliser',
+    ],
+    profileTitle: 'Profil recherché',
+    profile: [
+      'Formation en marketing, communication ou école de commerce',
+      'Fluent avec les outils d’IA (ChatGPT/Claude pour la rédaction et l’idéation, outils d’automatisation type Reply.io ou Zapier)',
+      'Goût pour l’expérimentation et l’analyse de données (le poste est structuré autour de tests A/B et de mesure de résultats, pas de contenu one-shot)',
+      'Intérêt pour la santé, la tech ou les environnements B2B/B2C hybrides',
+      'Rigueur, autonomie',
+      'Bon niveau d’écrit en français indispensable, anglais un plus',
+    ],
+    conditionsTitle: 'Conditions',
+    conditions: [
+      'Stage à Genève, présence sur site à définir',
+      'Durée et rémunération à préciser',
+      'Forte possibilité d’évolution, avec potentiel de CDI à la clé pour la bonne personne',
+    ],
+    formTitle: 'Candidater',
+    formSub: 'Quelques questions structurées pour qu’on puisse comparer les profils rapidement. Comptez ~5 minutes.',
+    sectionIdentity: 'Identité',
+    sectionAvailability: 'Disponibilité',
+    sectionBackground: 'Formation',
+    sectionSkillsTools: 'Compétences : Outils',
+    sectionSkillsAcquisition: 'Compétences : Acquisition',
+    sectionSkillsAnalysis: 'Compétences : Analyse',
+    sectionMotivation: 'Motivation',
+    firstName: 'Prénom',
+    lastName: 'Nom',
+    email: 'E-mail',
+    phone: 'Téléphone',
+    linkedin: 'LinkedIn',
+    cvFile: 'CV (PDF ou Word)',
+    cvHint: 'Max. 5 Mo · PDF, DOC ou DOCX',
+    cvChosen: 'Fichier sélectionné',
+    genevaPresence: 'Présence possible à Genève',
+    genevaYes: 'Oui, sur site',
+    genevaPartial: 'Hybride / partiel',
+    genevaNo: 'À distance uniquement',
+    startDate: 'Disponible à partir de',
+    durationMonths: 'Durée souhaitée (mois)',
+    school: 'École / Université',
+    educationField: 'Filière',
+    educationLevel: 'Niveau d’études',
+    eduBachelor: 'Bachelor / Licence',
+    eduMaster: 'Master',
+    eduOther: 'Autre',
+    frenchLevel: 'Niveau de français écrit',
+    englishLevel: 'Niveau d’anglais',
+    levelNative: 'Natif / bilingue',
+    levelC2: 'C2',
+    levelC1: 'C1',
+    levelB2: 'B2',
+    levelB1: 'B1 ou moins',
+    aiTools: 'Aisance avec les outils d’IA (ChatGPT, Claude…)',
+    automationTools: 'Expérience Reply.io, Zapier ou équivalent',
+    autoNone: 'Non',
+    autoSome: 'Un peu',
+    autoYes: 'Oui',
+    lookerStudio: 'Expérience Looker Studio / dashboards',
+    coldEmail: 'Expérience cold email / prospection',
+    coldNone: 'Aucune',
+    coldBasics: 'Bases / découverte',
+    coldSolid: 'Expérience concrète',
+    copywriting: 'Aisance en copywriting / rédaction marketing',
+    funnelLanding: 'Expérience landing pages / funnels',
+    communities: 'Activation de communautés (groupes, forums, associations)',
+    linkedinVideo: 'Production vidéo pour LinkedIn',
+    abTesting: 'À l’aise avec l’A/B testing',
+    dataAnalysis: 'À l’aise avec l’analyse de données',
+    healthInterest: 'Intérêt pour la santé / healthtech',
+    scaleLow: 'Faible',
+    scaleHigh: 'Élevé',
+    motivation: 'En 3-5 phrases : pourquoi ce stage, et qu’est-ce que tu veux tester en premier ?',
+    campaignExample: 'Donne un exemple concret (cours, side-project, stage) où tu as mesuré un résultat marketing',
+    whyDocNote: 'Pourquoi DocNote plutôt qu’un autre stage marketing ?',
+    source: 'Comment as-tu trouvé cette offre ?',
+    sourceLinkedIn: 'LinkedIn',
+    sourceSchool: 'École / career center',
+    sourceReferral: 'Recommandation',
+    sourceWebsite: 'Site DocNote',
+    sourceOther: 'Autre',
+    submit: 'Envoyer ma candidature',
+    submitting: 'Envoi…',
+    successTitle: 'Candidature envoyée',
+    successBody: 'Merci, on a bien reçu ton dossier. On revient vers toi rapidement.',
+    errRequired: 'Merci de remplir tous les champs obligatoires.',
+    errEmail: 'Adresse e-mail invalide.',
+    errConfig: 'Le formulaire n’est pas encore configuré. Écris-nous à contact@docnote.ch.',
+    errNetwork: 'Erreur réseau. Réessaie ou écris à contact@docnote.ch.',
+    errCvRequired: 'Merci d’ajouter ton CV.',
+    errCvType: 'CV : PDF, DOC ou DOCX uniquement.',
+    errCvSize: 'CV trop volumineux (max. 5 Mo).',
+    selectPlaceholder: 'Choisir',
+    required: 'obligatoire',
+    optional: 'optionnel',
+  },
+  en: {
+    metaTitle: 'Careers - Digital Marketing Internship | DocNote',
+    pageTitle: 'Careers',
+    pageSub: 'Join DocNote to build acquisition for independent physicians.',
+    openRoles: 'Open role',
+    applyCta: 'Apply',
+    jobTitle: 'Digital Marketing Internship - Independent physician acquisition',
+    location: 'Geneva · On-site presence to be defined',
+    type: 'Internship · Potential full-time conversion',
+    aboutTitle: 'About DocNote',
+    aboutBody: `DocNote builds an AI tool that turns medical dictation into structured, ready-to-use clinical reports. Founded by a practicing physician, we tackle a concrete problem: doctors spend too much time on admin and not enough on care.
+
+Incubated at FONGIT in Geneva, DocNote already works with hospital and ambulatory clients in Switzerland and France, including AP-HP and several Swiss hospital groups.`,
+    contextTitle: 'Role context',
+    contextBody: `Alongside our institutional approach, we are building direct acquisition for independent physicians and small practices: shorter decision cycles and self-serve signup. We are looking for an intern to build and test this individual acquisition engine.`,
+    missionsTitle: 'Responsibilities',
+    missions: [
+      'Build a self-serve onboarding funnel (landing page, free trial) so an independent physician can sign up without a classic sales process',
+      'Segment and target a contact base of private-practice physicians, distinct from our institutional base, and adapt outreach messaging accordingly',
+      'Run cold-email campaigns via Reply.io on this segment, with systematic A/B testing of messages and subject lines',
+      'Identify and activate relevant community channels (professional groups, medical forums, associations) for low-cost signups',
+      'Improve the physician referral system',
+      'Set up retargeting for incomplete signups (follow-up email)',
+      'Build a Looker Studio dashboard covering the full funnel: contact → signup → activation → paid conversion, by channel',
+      'Document and compare every test to identify the highest-ROI channels and messages to scale',
+    ],
+    profileTitle: 'Who we’re looking for',
+    profile: [
+      'Background in marketing, communications, or business school',
+      'Fluent with AI tools (ChatGPT/Claude for writing and ideation; automation tools like Reply.io or Zapier)',
+      'Appetite for experimentation and data analysis (the role is built around A/B tests and measurement, not one-shot content)',
+      'Interest in health, tech, or hybrid B2B/B2C environments',
+      'Rigor and autonomy',
+      'Strong written French required; English is a plus',
+    ],
+    conditionsTitle: 'Terms',
+    conditions: [
+      'Internship in Geneva; on-site presence to be defined',
+      'Duration and compensation to be confirmed',
+      'Strong growth path, with potential full-time offer for the right person',
+    ],
+    formTitle: 'Apply',
+    formSub: 'Structured questions so we can compare profiles quickly. About 5 minutes.',
+    sectionIdentity: 'Identity',
+    sectionAvailability: 'Availability',
+    sectionBackground: 'Education',
+    sectionSkillsTools: 'Skills: Tools',
+    sectionSkillsAcquisition: 'Skills: Acquisition',
+    sectionSkillsAnalysis: 'Skills: Analysis',
+    sectionMotivation: 'Motivation',
+    firstName: 'First name',
+    lastName: 'Last name',
+    email: 'Email',
+    phone: 'Phone',
+    linkedin: 'LinkedIn',
+    cvFile: 'CV (PDF or Word)',
+    cvHint: 'Max. 5 MB · PDF, DOC or DOCX',
+    cvChosen: 'Selected file',
+    genevaPresence: 'Availability in Geneva',
+    genevaYes: 'Yes, on-site',
+    genevaPartial: 'Hybrid / partial',
+    genevaNo: 'Remote only',
+    startDate: 'Available from',
+    durationMonths: 'Preferred duration (months)',
+    school: 'School / University',
+    educationField: 'Field of study',
+    educationLevel: 'Education level',
+    eduBachelor: 'Bachelor',
+    eduMaster: 'Master',
+    eduOther: 'Other',
+    frenchLevel: 'Written French level',
+    englishLevel: 'English level',
+    levelNative: 'Native / bilingual',
+    levelC2: 'C2',
+    levelC1: 'C1',
+    levelB2: 'B2',
+    levelB1: 'B1 or below',
+    aiTools: 'Comfort with AI tools (ChatGPT, Claude…)',
+    automationTools: 'Experience with Reply.io, Zapier, or similar',
+    autoNone: 'No',
+    autoSome: 'Some',
+    autoYes: 'Yes',
+    lookerStudio: 'Experience with Looker Studio / dashboards',
+    coldEmail: 'Cold email / outreach experience',
+    coldNone: 'None',
+    coldBasics: 'Basics / discovery',
+    coldSolid: 'Hands-on experience',
+    copywriting: 'Comfort with copywriting / marketing writing',
+    funnelLanding: 'Landing page / funnel experience',
+    communities: 'Community activation (groups, forums, associations)',
+    linkedinVideo: 'Video production for LinkedIn',
+    abTesting: 'Comfort with A/B testing',
+    dataAnalysis: 'Comfort with data analysis',
+    healthInterest: 'Interest in health / healthtech',
+    scaleLow: 'Low',
+    scaleHigh: 'High',
+    motivation: 'In 3-5 sentences: why this internship, and what would you test first?',
+    campaignExample: 'Share a concrete example (course, side project, internship) where you measured a marketing result',
+    whyDocNote: 'Why DocNote rather than another marketing internship?',
+    source: 'How did you find this role?',
+    sourceLinkedIn: 'LinkedIn',
+    sourceSchool: 'School / career center',
+    sourceReferral: 'Referral',
+    sourceWebsite: 'DocNote website',
+    sourceOther: 'Other',
+    submit: 'Submit application',
+    submitting: 'Sending…',
+    successTitle: 'Application sent',
+    successBody: 'Thanks, we received your application. We’ll get back to you soon.',
+    errRequired: 'Please fill in all required fields.',
+    errEmail: 'Invalid email address.',
+    errConfig: 'The form is not configured yet. Email us at contact@docnote.ch.',
+    errNetwork: 'Network error. Please retry or email contact@docnote.ch.',
+    errCvRequired: 'Please upload your CV.',
+    errCvType: 'CV: PDF, DOC or DOCX only.',
+    errCvSize: 'CV is too large (max. 5 MB).',
+    selectPlaceholder: 'Select',
+    required: 'required',
+    optional: 'optional',
+  },
+  de: {
+    metaTitle: 'Karriere - Praktikum Digital Marketing | DocNote',
+    pageTitle: 'Karriere',
+    pageSub: 'Komm zu DocNote und baue die Akquise für niedergelassene Ärztinnen und Ärzte auf.',
+    openRoles: 'Offene Stelle',
+    applyCta: 'Bewerben',
+    jobTitle: 'Praktikum Digital Marketing - Akquise niedergelassener Ärzte',
+    location: 'Genf · Vor-Ort-Präsenz nach Absprache',
+    type: 'Praktikum · Mögliche Übernahme in Festanstellung',
+    aboutTitle: 'Über DocNote',
+    aboutBody: `DocNote entwickelt ein KI-Tool, das medizinische Diktate in strukturierte, einsatzbereite klinische Berichte verwandelt. Gegründet von einem praktizierenden Arzt, lösen wir ein konkretes Problem: Ärztinnen und Ärzte verbringen zu viel Zeit mit Administration und zu wenig mit der Patientenversorgung.
+
+Inkubiert bei der FONGIT in Genf arbeitet DocNote bereits mit Spital- und ambulanten Kunden in der Schweiz und in Frankreich, darunter die AP-HP und mehrere schweizerische Spitalgruppen.`,
+    contextTitle: 'Kontext der Stelle',
+    contextBody: `Neben unserem institutionellen Ansatz entwickeln wir die Direktakquise bei niedergelassenen Ärztinnen und Ärzten sowie kleinen Praxen: kürzere Entscheidungszyklen und Self-Service-Anmeldung. Wir suchen eine Praktikantin / einen Praktikanten, um diese individuelle Akquise-Maschine aufzubauen und zu testen.`,
+    missionsTitle: 'Aufgaben',
+    missions: [
+      'Einen Self-Onboarding-Funnel (Landingpage, kostenlose Testphase) aufbauen, damit sich niedergelassene Ärztinnen und Ärzte ohne klassischen Vertriebsprozess anmelden können',
+      'Eine Kontaktbasis freiberuflicher Ärztinnen und Ärzte segmentieren und ansprechen, getrennt von der institutionellen Basis, und die Ansprache entsprechend anpassen',
+      'Cold-Email-Kampagnen via Reply.io auf diesem Segment steuern, mit systematischem A/B-Testing von Nachrichten und Betreffzeilen',
+      'Relevante Community-Kanäle (Berufsgruppen, medizinische Foren, Verbände) identifizieren und für kostengünstige Anmeldungen aktivieren',
+      'Das Ärztinnen-/Ärzte-Empfehlungssystem verbessern',
+      'Retargeting für unvollständige Anmeldungen einrichten (Follow-up-E-Mail)',
+      'Ein Looker-Studio-Dashboard für den gesamten Funnel aufbauen: Kontakt → Anmeldung → Aktivierung → bezahlte Conversion, nach Kanal',
+      'Ergebnisse jedes Tests dokumentieren und vergleichen, um Kanäle und Botschaften mit dem höchsten ROI zu skalieren',
+    ],
+    profileTitle: 'Gesuchtes Profil',
+    profile: [
+      'Ausbildung in Marketing, Kommunikation oder Wirtschaft',
+      'Sicher im Umgang mit KI-Tools (ChatGPT/Claude für Text und Ideation; Automatisierung wie Reply.io oder Zapier)',
+      'Freude an Experimenten und Datenanalyse (die Stelle dreht sich um A/B-Tests und Messung, nicht um One-Shot-Content)',
+      'Interesse an Gesundheit, Tech oder hybriden B2B/B2C-Umfeldern',
+      'Sorgfalt und Eigenständigkeit',
+      'Gutes schriftliches Französisch erforderlich; Englisch von Vorteil',
+    ],
+    conditionsTitle: 'Konditionen',
+    conditions: [
+      'Praktikum in Genf; Vor-Ort-Präsenz nach Absprache',
+      'Dauer und Vergütung noch festzulegen',
+      'Starke Entwicklungsperspektive mit möglicher Festanstellung',
+    ],
+    formTitle: 'Bewerbung',
+    formSub: 'Strukturierte Fragen, damit wir Profile schnell vergleichen können. Ca. 5 Minuten.',
+    sectionIdentity: 'Persönliche Daten',
+    sectionAvailability: 'Verfügbarkeit',
+    sectionBackground: 'Ausbildung',
+    sectionSkillsTools: 'Kompetenzen: Tools',
+    sectionSkillsAcquisition: 'Kompetenzen: Akquise',
+    sectionSkillsAnalysis: 'Kompetenzen: Analyse',
+    sectionMotivation: 'Motivation',
+    firstName: 'Vorname',
+    lastName: 'Nachname',
+    email: 'E-Mail',
+    phone: 'Telefon',
+    linkedin: 'LinkedIn',
+    cvFile: 'Lebenslauf (PDF oder Word)',
+    cvHint: 'Max. 5 MB · PDF, DOC oder DOCX',
+    cvChosen: 'Ausgewählte Datei',
+    genevaPresence: 'Präsenz in Genf möglich',
+    genevaYes: 'Ja, vor Ort',
+    genevaPartial: 'Hybrid / teilweise',
+    genevaNo: 'Nur remote',
+    startDate: 'Verfügbar ab',
+    durationMonths: 'Gewünschte Dauer (Monate)',
+    school: 'Hochschule / Universität',
+    educationField: 'Studienrichtung',
+    educationLevel: 'Studienniveau',
+    eduBachelor: 'Bachelor',
+    eduMaster: 'Master',
+    eduOther: 'Andere',
+    frenchLevel: 'Schriftliches Französisch',
+    englishLevel: 'Englischkenntnisse',
+    levelNative: 'Muttersprache / bilingual',
+    levelC2: 'C2',
+    levelC1: 'C1',
+    levelB2: 'B2',
+    levelB1: 'B1 oder darunter',
+    aiTools: 'Umgang mit KI-Tools (ChatGPT, Claude…)',
+    automationTools: 'Erfahrung mit Reply.io, Zapier o. ä.',
+    autoNone: 'Nein',
+    autoSome: 'Etwas',
+    autoYes: 'Ja',
+    lookerStudio: 'Erfahrung mit Looker Studio / Dashboards',
+    coldEmail: 'Erfahrung mit Cold Email / Outreach',
+    coldNone: 'Keine',
+    coldBasics: 'Grundlagen',
+    coldSolid: 'Praktische Erfahrung',
+    copywriting: 'Sicherheit im Copywriting / Marketing-Texten',
+    funnelLanding: 'Erfahrung mit Landingpages / Funnels',
+    communities: 'Community-Aktivierung (Gruppen, Foren, Verbände)',
+    linkedinVideo: 'Videoproduktion für LinkedIn',
+    abTesting: 'Sicherheit mit A/B-Testing',
+    dataAnalysis: 'Sicherheit mit Datenanalyse',
+    healthInterest: 'Interesse an Health / Healthtech',
+    scaleLow: 'Niedrig',
+    scaleHigh: 'Hoch',
+    motivation: 'In 3-5 Sätzen: warum dieses Praktikum, und was würdest du zuerst testen?',
+    campaignExample: 'Konkretes Beispiel (Kurs, Side-Project, Praktikum), bei dem du ein Marketing-Ergebnis gemessen hast',
+    whyDocNote: 'Warum DocNote und nicht ein anderes Marketing-Praktikum?',
+    source: 'Wie hast du diese Stelle gefunden?',
+    sourceLinkedIn: 'LinkedIn',
+    sourceSchool: 'Hochschule / Career Center',
+    sourceReferral: 'Empfehlung',
+    sourceWebsite: 'DocNote Website',
+    sourceOther: 'Andere',
+    submit: 'Bewerbung senden',
+    submitting: 'Wird gesendet…',
+    successTitle: 'Bewerbung gesendet',
+    successBody: 'Danke, wir haben deine Bewerbung erhalten. Wir melden uns bald.',
+    errRequired: 'Bitte fülle alle Pflichtfelder aus.',
+    errEmail: 'Ungültige E-Mail-Adresse.',
+    errConfig: 'Das Formular ist noch nicht konfiguriert. Schreib an contact@docnote.ch.',
+    errNetwork: 'Netzwerkfehler. Bitte erneut versuchen oder contact@docnote.ch schreiben.',
+    errCvRequired: 'Bitte lade deinen Lebenslauf hoch.',
+    errCvType: 'Lebenslauf: nur PDF, DOC oder DOCX.',
+    errCvSize: 'Lebenslauf zu groß (max. 5 MB).',
+    selectPlaceholder: 'Auswählen',
+    required: 'pflicht',
+    optional: 'optional',
+  },
+} as const;
+
+const t = STRINGS[lang];
+
+const ratingScale = [1, 2, 3, 4, 5] as const;
+const experienceOptions = [
+  { value: 'Aucune', label: t.coldNone },
+  { value: 'Bases / découverte', label: t.coldBasics },
+  { value: 'Expérience concrète', label: t.coldSolid },
+] as const;
+const yesNoSomeOptions = [
+  { value: 'Non', label: t.autoNone },
+  { value: 'Un peu', label: t.autoSome },
+  { value: 'Oui', label: t.autoYes },
+] as const;
+---
+
+<Layout title={t.metaTitle}>
+  <section class="pt-28 pb-8 bg-gradient-to-b from-violet-50 via-white to-white">
+    <div class="max-w-3xl mx-auto px-6 sm:px-8">
+      <p class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-3">{t.openRoles}</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{t.pageTitle}</h1>
+      <p class="text-lg text-gray-600 leading-relaxed">{t.pageSub}</p>
+    </div>
+  </section>
+
+  <section class="pb-12">
+    <div class="max-w-3xl mx-auto px-6 sm:px-8">
+      <article class="border-t border-gray-200 pt-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{t.jobTitle}</h2>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 mb-8">
+          <span>{t.location}</span>
+          <span class="hidden sm:inline text-gray-300">|</span>
+          <span>{t.type}</span>
+        </div>
+        <a
+          href="#apply"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#7951fb] text-white font-semibold hover:bg-[#5b3fd4] transition-colors"
+        >
+          {t.applyCta}
+        </a>
+
+        <div class="mt-12 space-y-10 text-gray-700 leading-relaxed">
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{t.aboutTitle}</h3>
+            <p class="whitespace-pre-line">{t.aboutBody}</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{t.contextTitle}</h3>
+            <p>{t.contextBody}</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{t.missionsTitle}</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              {t.missions.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{t.profileTitle}</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              {t.profile.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{t.conditionsTitle}</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              {t.conditions.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="apply" class="py-16 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 sm:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">{t.formTitle}</h2>
+      <p class="text-gray-600 mb-10">{t.formSub}</p>
+
+      <div id="form-success" class="hidden rounded-xl bg-emerald-50 border border-emerald-200 p-8 text-center">
+        <h3 class="text-xl font-bold text-emerald-900 mb-2">{t.successTitle}</h3>
+        <p class="text-emerald-800">{t.successBody}</p>
+      </div>
+
+      <form id="careers-form" class="space-y-10" novalidate>
+        <fieldset class="space-y-4">
+          <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionIdentity}</legend>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.firstName} <span class="text-violet-600">*</span></span>
+              <input name="firstName" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.lastName} <span class="text-violet-600">*</span></span>
+              <input name="lastName" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.email} <span class="text-violet-600">*</span></span>
+              <input name="email" type="email" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.phone} <span class="text-violet-600">*</span></span>
+              <input name="phone" type="tel" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.linkedin} <span class="text-violet-600">*</span></span>
+              <input name="linkedin" type="url" placeholder="https://linkedin.com/in/…" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.cvFile} <span class="text-violet-600">*</span></span>
+              <input
+                id="cv-file"
+                name="cvFile"
+                type="file"
+                accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                required
+                class="mt-1.5 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-violet-50 file:text-violet-700 file:font-medium hover:file:bg-violet-100 cursor-pointer"
+              />
+              <span class="mt-1 block text-xs text-gray-400">{t.cvHint}</span>
+              <span id="cv-file-name" class="mt-1 hidden text-xs text-violet-700 font-medium"></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4">
+          <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionAvailability}</legend>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.genevaPresence} <span class="text-violet-600">*</span></span>
+              <select name="genevaPresence" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                <option value="Oui, sur site">{t.genevaYes}</option>
+                <option value="Hybride / partiel">{t.genevaPartial}</option>
+                <option value="À distance uniquement">{t.genevaNo}</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.startDate} <span class="text-violet-600">*</span></span>
+              <input name="startDate" type="date" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.durationMonths} <span class="text-violet-600">*</span></span>
+              <input name="durationMonths" type="number" min="1" max="12" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4">
+          <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionBackground}</legend>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.school} <span class="text-violet-600">*</span></span>
+              <input name="school" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.educationField} <span class="text-violet-600">*</span></span>
+              <input name="educationField" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent" />
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.educationLevel} <span class="text-violet-600">*</span></span>
+              <select name="educationLevel" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                <option value="Bachelor / Licence">{t.eduBachelor}</option>
+                <option value="Master">{t.eduMaster}</option>
+                <option value="Autre">{t.eduOther}</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.frenchLevel} <span class="text-violet-600">*</span></span>
+              <select name="frenchLevel" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                <option value="Natif / bilingue">{t.levelNative}</option>
+                <option value="C2">{t.levelC2}</option>
+                <option value="C1">{t.levelC1}</option>
+                <option value="B2">{t.levelB2}</option>
+                <option value="B1 ou moins">{t.levelB1}</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-gray-700">{t.englishLevel} <span class="text-violet-600">*</span></span>
+              <select name="englishLevel" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                <option value="Natif / bilingue">{t.levelNative}</option>
+                <option value="C2">{t.levelC2}</option>
+                <option value="C1">{t.levelC1}</option>
+                <option value="B2">{t.levelB2}</option>
+                <option value="B1 ou moins">{t.levelB1}</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-6">
+          <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionSkillsTools}</legend>
+          <div>
+            <p class="text-sm font-medium text-gray-700 mb-2">{t.aiTools} <span class="text-violet-600">*</span></p>
+            <div class="flex items-center gap-3">
+              <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+              <div class="flex flex-1 justify-between gap-1">
+                {ratingScale.map((n) => (
+                  <label class="flex-1">
+                    <input type="radio" name="aiTools" value={n} required class="peer sr-only" />
+                    <span class="block text-center py-2 rounded-lg border border-gray-300 text-sm font-medium cursor-pointer peer-checked:bg-[#7951fb] peer-checked:text-white peer-checked:border-[#7951fb] hover:border-violet-400 transition-colors">{n}</span>
+                  </label>
+                ))}
+              </div>
+              <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-x-4 gap-y-5 items-stretch">
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]">{t.automationTools} <span class="text-violet-600">*</span></span>
+              <select name="automationTools" required class="w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                {yesNoSomeOptions.map((o) => <option value={o.value}>{o.label}</option>)}
+              </select>
+            </label>
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]">{t.lookerStudio} <span class="text-violet-600">*</span></span>
+              <select name="lookerStudio" required class="w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                {yesNoSomeOptions.map((o) => <option value={o.value}>{o.label}</option>)}
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-6">
+          <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionSkillsAcquisition}</legend>
+          <div class="grid sm:grid-cols-2 gap-x-4 gap-y-5 items-stretch">
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]">{t.coldEmail} <span class="text-violet-600">*</span></span>
+              <select name="coldEmail" required class="w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                {experienceOptions.map((o) => <option value={o.value}>{o.label}</option>)}
+              </select>
+            </label>
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]">{t.funnelLanding} <span class="text-violet-600">*</span></span>
+              <select name="funnelLanding" required class="w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                {experienceOptions.map((o) => <option value={o.value}>{o.label}</option>)}
+              </select>
+            </label>
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]">{t.communities} <span class="text-violet-600">*</span></span>
+              <select name="communities" required class="w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                {experienceOptions.map((o) => <option value={o.value}>{o.label}</option>)}
+              </select>
+            </label>
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]">{t.linkedinVideo} <span class="text-violet-600">*</span></span>
+              <select name="linkedinVideo" required class="w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+                <option value="">{t.selectPlaceholder}</option>
+                {experienceOptions.map((o) => <option value={o.value}>{o.label}</option>)}
+              </select>
+            </label>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-700 mb-2">{t.copywriting} <span class="text-violet-600">*</span></p>
+            <div class="flex items-center gap-3">
+              <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+              <div class="flex flex-1 justify-between gap-1">
+                {ratingScale.map((n) => (
+                  <label class="flex-1">
+                    <input type="radio" name="copywriting" value={n} required class="peer sr-only" />
+                    <span class="block text-center py-2 rounded-lg border border-gray-300 text-sm font-medium cursor-pointer peer-checked:bg-[#7951fb] peer-checked:text-white peer-checked:border-[#7951fb] hover:border-violet-400 transition-colors">{n}</span>
+                  </label>
+                ))}
+              </div>
+              <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-6">
+          <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionSkillsAnalysis}</legend>
+          <div>
+            <p class="text-sm font-medium text-gray-700 mb-2">{t.abTesting} <span class="text-violet-600">*</span></p>
+            <div class="flex items-center gap-3">
+              <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+              <div class="flex flex-1 justify-between gap-1">
+                {ratingScale.map((n) => (
+                  <label class="flex-1">
+                    <input type="radio" name="abTesting" value={n} required class="peer sr-only" />
+                    <span class="block text-center py-2 rounded-lg border border-gray-300 text-sm font-medium cursor-pointer peer-checked:bg-[#7951fb] peer-checked:text-white peer-checked:border-[#7951fb] hover:border-violet-400 transition-colors">{n}</span>
+                  </label>
+                ))}
+              </div>
+              <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-700 mb-2">{t.dataAnalysis} <span class="text-violet-600">*</span></p>
+            <div class="flex items-center gap-3">
+              <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+              <div class="flex flex-1 justify-between gap-1">
+                {ratingScale.map((n) => (
+                  <label class="flex-1">
+                    <input type="radio" name="dataAnalysis" value={n} required class="peer sr-only" />
+                    <span class="block text-center py-2 rounded-lg border border-gray-300 text-sm font-medium cursor-pointer peer-checked:bg-[#7951fb] peer-checked:text-white peer-checked:border-[#7951fb] hover:border-violet-400 transition-colors">{n}</span>
+                  </label>
+                ))}
+              </div>
+              <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-700 mb-2">{t.healthInterest} <span class="text-violet-600">*</span></p>
+            <div class="flex items-center gap-3">
+              <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+              <div class="flex flex-1 justify-between gap-1">
+                {ratingScale.map((n) => (
+                  <label class="flex-1">
+                    <input type="radio" name="healthInterest" value={n} required class="peer sr-only" />
+                    <span class="block text-center py-2 rounded-lg border border-gray-300 text-sm font-medium cursor-pointer peer-checked:bg-[#7951fb] peer-checked:text-white peer-checked:border-[#7951fb] hover:border-violet-400 transition-colors">{n}</span>
+                  </label>
+                ))}
+              </div>
+              <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4">
+          <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionMotivation}</legend>
+          <label class="block">
+            <span class="text-sm font-medium text-gray-700">{t.motivation} <span class="text-violet-600">*</span></span>
+            <textarea name="motivation" rows="4" required maxlength="1200" class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"></textarea>
+          </label>
+          <label class="block">
+            <span class="text-sm font-medium text-gray-700">{t.campaignExample} <span class="text-violet-600">*</span></span>
+            <textarea name="campaignExample" rows="3" required maxlength="1200" class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"></textarea>
+          </label>
+          <label class="block">
+            <span class="text-sm font-medium text-gray-700">{t.whyDocNote} <span class="text-violet-600">*</span></span>
+            <textarea name="whyDocNote" rows="3" required maxlength="800" class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"></textarea>
+          </label>
+          <label class="block">
+            <span class="text-sm font-medium text-gray-700">{t.source} <span class="text-violet-600">*</span></span>
+            <select name="source" required class="mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent">
+              <option value="">{t.selectPlaceholder}</option>
+              <option value="LinkedIn">{t.sourceLinkedIn}</option>
+              <option value="École / career center">{t.sourceSchool}</option>
+              <option value="Recommandation">{t.sourceReferral}</option>
+              <option value="Site DocNote">{t.sourceWebsite}</option>
+              <option value="Autre">{t.sourceOther}</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <p id="form-error" class="hidden text-sm text-red-600"></p>
+
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#7951fb] text-white font-semibold hover:bg-[#5b3fd4] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {t.submit}
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<script define:vars={{ SHEETS_URL, strings: t, submitLabel: t.submit, submittingLabel: t.submitting, cvChosenLabel: t.cvChosen }}>
+  const form = document.getElementById('careers-form');
+  const errorEl = document.getElementById('form-error');
+  const successEl = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+  const cvInput = document.getElementById('cv-file');
+  const cvNameEl = document.getElementById('cv-file-name');
+
+  const MAX_CV_BYTES = 5 * 1024 * 1024;
+  const ALLOWED_EXT = ['.pdf', '.doc', '.docx'];
+  const ALLOWED_MIME = [
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  ];
+
+  const showError = (msg) => {
+    errorEl.textContent = msg;
+    errorEl.classList.remove('hidden');
+  };
+
+  const fileToBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = String(reader.result || '');
+        const base64 = result.includes(',') ? result.split(',')[1] : result;
+        resolve(base64);
+      };
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+
+  const isAllowedCv = (file) => {
+    const name = file.name.toLowerCase();
+    const extOk = ALLOWED_EXT.some((ext) => name.endsWith(ext));
+    const mimeOk = !file.type || ALLOWED_MIME.includes(file.type);
+    return extOk && mimeOk;
+  };
+
+  cvInput?.addEventListener('change', () => {
+    const file = cvInput.files?.[0];
+    if (!file) {
+      cvNameEl.classList.add('hidden');
+      cvNameEl.textContent = '';
+      return;
+    }
+    cvNameEl.textContent = `${cvChosenLabel}: ${file.name}`;
+    cvNameEl.classList.remove('hidden');
+  });
+
+  const computeScore = (data) => {
+    const num = (v) => Number(v) || 0;
+    const exp = (v) => (v === 'Expérience concrète' ? 6 : v === 'Bases / découverte' ? 3 : 0);
+    const yn = (v) => (v === 'Oui' ? 5 : v === 'Un peu' ? 2 : 0);
+    let score = 0;
+    score += num(data.aiTools) * 2;
+    score += num(data.copywriting) * 2;
+    score += num(data.abTesting) * 2;
+    score += num(data.dataAnalysis) * 2;
+    score += num(data.healthInterest);
+    score += exp(data.coldEmail);
+    score += exp(data.funnelLanding);
+    score += exp(data.communities);
+    score += exp(data.linkedinVideo);
+    score += yn(data.automationTools);
+    score += yn(data.lookerStudio);
+    if (data.genevaPresence === 'Oui, sur site') score += 5;
+    else if (data.genevaPresence === 'Hybride / partiel') score += 3;
+    if (data.frenchLevel === 'Natif / bilingue' || data.frenchLevel === 'C2') score += 5;
+    else if (data.frenchLevel === 'C1') score += 3;
+    else if (data.frenchLevel === 'B2') score += 1;
+    return score;
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.classList.add('hidden');
+
+    if (!SHEETS_URL) {
+      showError(strings.errConfig);
+      return;
+    }
+
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+    delete data.cvFile;
+
+    const required = [
+      'firstName', 'lastName', 'email', 'phone', 'linkedin', 'genevaPresence',
+      'startDate', 'durationMonths', 'school', 'educationField', 'educationLevel',
+      'frenchLevel', 'englishLevel', 'aiTools', 'automationTools', 'lookerStudio',
+      'coldEmail', 'funnelLanding', 'communities', 'linkedinVideo', 'copywriting',
+      'abTesting', 'dataAnalysis', 'healthInterest', 'motivation', 'campaignExample',
+      'whyDocNote', 'source',
+    ];
+
+    for (const key of required) {
+      if (!String(data[key] || '').trim()) {
+        showError(strings.errRequired);
+        return;
+      }
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email))) {
+      showError(strings.errEmail);
+      return;
+    }
+
+    const cvFile = cvInput?.files?.[0];
+    if (!cvFile) {
+      showError(strings.errCvRequired);
+      return;
+    }
+    if (!isAllowedCv(cvFile)) {
+      showError(strings.errCvType);
+      return;
+    }
+    if (cvFile.size > MAX_CV_BYTES) {
+      showError(strings.errCvSize);
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = submittingLabel;
+
+    try {
+      const cvBase64 = await fileToBase64(cvFile);
+      const payload = {
+        ...data,
+        timestamp: new Date().toISOString(),
+        score: computeScore(data),
+        position: 'Stage Digital Marketing',
+        cvFileName: cvFile.name,
+        cvMimeType: cvFile.type || 'application/octet-stream',
+        cvBase64,
+      };
+
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      });
+      form.classList.add('hidden');
+      successEl.classList.remove('hidden');
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch {
+      showError(strings.errNetwork);
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitLabel;
+    }
+  });
+</script>
