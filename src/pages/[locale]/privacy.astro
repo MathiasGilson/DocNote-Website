@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getPageMeta } from '../../utils/seo';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { locale } }));
@@ -9,18 +10,14 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 
 if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/privacy');
+  return Astro.redirect('/en/privacy/');
 }
 
-const layoutTitle =
-  locale === 'fr'
-    ? 'Politique de confidentialité'
-    : locale === 'de'
-      ? 'Datenschutzrichtlinie'
-      : 'Privacy Policy';
+const meta = getPageMeta('privacy', locale as Locale);
+const layoutTitle = meta.title;
 ---
 
-<Layout title={`${layoutTitle} - DocNote`}>
+<Layout title={meta.title} description={meta.description}>
   <section class="pt-32 pb-20 bg-white">
     <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">

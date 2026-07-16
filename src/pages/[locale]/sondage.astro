@@ -9,7 +9,7 @@ export function getStaticPaths() {
 }
 
 const { locale } = Astro.params;
-if (!isValidLocale(locale)) return Astro.redirect('/en/sondage');
+if (!isValidLocale(locale)) return Astro.redirect('/en/sondage/');
 const lang = locale as Locale;
 
 type SpecialtyRow = { value: string; fr: string; en: string; de: string };
@@ -39,6 +39,8 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
 const STRINGS = {
   fr: {
     metaTitle: 'Calculez votre indice de surcharge administrative',
+    metaDescription:
+      'Évaluez en quelques minutes votre charge administrative et découvrez comment DocNote peut vous faire gagner du temps sur la documentation médicale.',
     badge: 'Sondage médecins · 2026',
     h1: 'Calculez votre indice de surcharge administrative',
     intro: 'Quelques questions sur votre charge et vos conditions de travail. Découvrez où vous vous situez par rapport aux autres médecins.',
@@ -117,6 +119,8 @@ const STRINGS = {
   },
   en: {
     metaTitle: 'Calculate your administrative overload index',
+    metaDescription:
+      'Measure your administrative overload in a few minutes and see how DocNote can save time on clinical documentation.',
     badge: 'Physician survey · 2026',
     h1: 'Calculate your administrative overload index',
     intro: 'A few questions about your workload and working conditions. See where you stand compared with other physicians.',
@@ -195,6 +199,8 @@ const STRINGS = {
   },
   de: {
     metaTitle: 'Berechnen Sie Ihren Index der administrativen Überlastung',
+    metaDescription:
+      'Ermitteln Sie in wenigen Minuten Ihre administrative Belastung und sehen Sie, wie DocNote Zeit bei der klinischen Dokumentation spart.',
     badge: 'Ärzte-Umfrage · 2026',
     h1: 'Berechnen Sie Ihren Index der administrativen Überlastung',
     intro: 'Ein paar Fragen zu Ihrer Arbeitslast und Ihren Arbeitsbedingungen. Sehen Sie, wo Sie im Vergleich zu anderen Ärztinnen und Ärzten stehen.',
@@ -276,7 +282,7 @@ const STRINGS = {
 const S = STRINGS[lang];
 ---
 
-<Layout title={S.metaTitle}>
+<Layout title={S.metaTitle} description={S.metaDescription}>
   <div class="bg-gradient-to-b from-violet-50/60 via-white to-white min-h-screen">
     <!-- Progress bar -->
     <div id="survey-progress-wrap" class="fixed top-0 left-0 right-0 z-40 h-1 bg-violet-100 hidden">

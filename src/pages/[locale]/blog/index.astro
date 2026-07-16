@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import { locales, isValidLocale, getLocalizedPath, formatDate, type Locale } from '../../../utils/i18n';
 import { getEntry, getCollection } from 'astro:content';
+import { absoluteUrl, buildBreadcrumbLd, getPageMeta } from '../../../utils/seo';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { locale } }));
@@ -10,11 +11,16 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 
 if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/blog');
+  return Astro.redirect('/en/blog/');
 }
 
 const entry = await getEntry('pages', locale as Locale);
 const t = entry.data;
+const meta = getPageMeta('blog', locale as Locale);
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteUrl(`/${locale}/`) },
+  { name: meta.title, url: absoluteUrl(`/${locale}/blog/`) },
+]);
 
 const allPosts = await getCollection('blog', ({ id }) => id.startsWith(`${locale}/`));
 const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
@@ -30,9 +36,16 @@ const categoryColors: Record<string, string> = {
 };
 ---
 
-<Layout title={t.blog.title}>
+<Layout title={meta.title} description={meta.description} jsonLd={breadcrumbLd}>
+  <section class="pt-32 pb-6 bg-gradient-to-br from-violet-50 to-indigo-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">{meta.title}</h1>
+      <p class="mt-3 text-lg text-gray-600 max-w-2xl">{meta.description}</p>
+    </div>
+  </section>
+
   {newsPosts.length > 0 && (
-    <section class="pt-32 pb-16 bg-gradient-to-br from-violet-50 to-indigo-50">
+    <section class="pb-16 bg-gradient-to-br from-violet-50 to-indigo-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="news-heading" class="text-3xl font-bold text-gray-900 mb-10">{t.blog.categories.news}</h2>
       </div>
@@ -53,6 +66,10 @@ const categoryColors: Record<string, string> = {
                           <img
                             src={post.data.image}
                             alt={post.data.title}
+                            width="600"
+                            height="320"
+                            loading="lazy"
+                            decoding="async"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             style={`object-position: ${post.data.imagePosition ?? 'center'};`}
                           />
@@ -109,7 +126,7 @@ const categoryColors: Record<string, string> = {
   )}
 
   {researchPosts.length > 0 && (
-    <section class={`${newsPosts.length > 0 ? '' : 'pt-32'} py-16 bg-gradient-to-b from-gray-50 to-white`}>
+    <section class={`${newsPosts.length > 0 ? '' : 'pt-8'} py-16 bg-gradient-to-b from-gray-50 to-white`}>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-8">{t.blog.categories.ai}</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,6 +139,10 @@ const categoryColors: Record<string, string> = {
                     <img
                       src={post.data.image}
                       alt={post.data.title}
+                      width="600"
+                      height="320"
+                      loading="lazy"
+                      decoding="async"
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       style={`object-position: ${post.data.imagePosition ?? 'center'};`}
                     />
@@ -130,9 +151,9 @@ const categoryColors: Record<string, string> = {
                     <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
                       <span>{formatDate(post.data.date, locale as Locale)}</span>
                     </div>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-violet-600 transition-colors">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-violet-600 transition-colors">
                       {post.data.title}
-                    </h2>
+                    </h3>
                     <p class="text-gray-600 line-clamp-3">
                       {post.data.excerpt}
                     </p>

@@ -2,6 +2,9 @@
 import Layout from '../../../layouts/Layout.astro';
 import { locales, isValidLocale, getLocalizedPath, formatDate, type Locale } from '../../../utils/i18n';
 import { getEntry, getCollection, render } from 'astro:content';
+import { getBlogAlternateUrls } from '../../../utils/blog-translations';
+import { absoluteUrl, buildBreadcrumbLd, SITE_URL } from '../../../utils/seo';
+import { pillarNavLabel } from '../../../content/pillars';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -19,7 +22,7 @@ const { locale, slug } = Astro.params;
 const { post } = Astro.props;
 
 if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/blog');
+  return Astro.redirect('/en/blog/');
 }
 
 const entry = await getEntry('pages', locale as Locale);
@@ -32,9 +35,84 @@ const categoryColors: Record<string, string> = {
   documentation: 'bg-green-100 text-green-700',
   practice: 'bg-orange-100 text-orange-700',
 };
+
+const alternates = getBlogAlternateUrls(locale as Locale, slug as string);
+const postUrl = absoluteUrl(`/${locale}/blog/${slug}`);
+const postImage = post.data.image.startsWith('http')
+  ? post.data.image
+  : `${SITE_URL}${post.data.image}`;
+
+const blogPostingLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.excerpt,
+  image: postImage,
+  datePublished: post.data.date,
+  dateModified: post.data.date,
+  inLanguage: locale,
+  author: {
+    '@type': 'Person',
+    name: post.data.author,
+    jobTitle: post.data.authorRole,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'DocNote',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/images/logo.png`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': postUrl,
+  },
+  url: postUrl,
+};
+
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteUrl(`/${locale}/`) },
+  { name: t.blog.title, url: absoluteUrl(`/${locale}/blog/`) },
+  { name: post.data.title, url: postUrl },
+]);
+
+const related = {
+  en: {
+    title: 'Continue with DocNote',
+    pricing: 'See pricing',
+    tutorial: 'Watch the tutorial',
+    scribe: pillarNavLabel.en['ai-medical-scribe'],
+    hospital: pillarNavLabel.en['hospital-documentation'],
+    compliance: pillarNavLabel.en['clinical-compliance'],
+  },
+  fr: {
+    title: 'Aller plus loin avec DocNote',
+    pricing: 'Voir les tarifs',
+    tutorial: 'Voir le tutoriel',
+    scribe: pillarNavLabel.fr['ai-medical-scribe'],
+    hospital: pillarNavLabel.fr['hospital-documentation'],
+    compliance: pillarNavLabel.fr['clinical-compliance'],
+  },
+  de: {
+    title: 'Weiter mit DocNote',
+    pricing: 'Preise ansehen',
+    tutorial: 'Tutorial ansehen',
+    scribe: pillarNavLabel.de['ai-medical-scribe'],
+    hospital: pillarNavLabel.de['hospital-documentation'],
+    compliance: pillarNavLabel.de['clinical-compliance'],
+  },
+}[locale as Locale];
 ---
 
-<Layout title={post.data.title} description={post.data.excerpt}>
+<Layout
+  title={post.data.title}
+  description={post.data.excerpt}
+  alternates={alternates}
+  ogType="article"
+  ogImage={postImage}
+  jsonLd={[blogPostingLd, breadcrumbLd]}
+>
   <article class="pt-32 pb-20 bg-white">
     <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
       <a
@@ -63,7 +141,7 @@ const categoryColors: Record<string, string> = {
 
       {post.data.fullImage ? (
         <figure class="hero-image mb-12">
-          <img src={post.data.image} alt={post.data.title} />
+          <img src={post.data.image} alt={post.data.title} loading="eager" decoding="async" />
         </figure>
       ) : (
         <div id="photo-gallery" class="flex gap-4 mb-10">
@@ -72,6 +150,8 @@ const categoryColors: Record<string, string> = {
               src={post.data.image}
               alt={post.data.title}
               class="gallery-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -80,6 +160,18 @@ const categoryColors: Record<string, string> = {
       <div class="blog-content max-w-none">
         <Content />
       </div>
+
+      <aside class="mt-16 pt-10 border-t border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">{related.title}</h2>
+        <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/pricing', locale as Locale)}>{related.pricing}</a></li>
+          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/tutorial', locale as Locale)}>{related.tutorial}</a></li>
+          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/ai-medical-scribe', locale as Locale)}>{related.scribe}</a></li>
+          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/hospital-documentation', locale as Locale)}>{related.hospital}</a></li>
+          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/clinical-compliance', locale as Locale)}>{related.compliance}</a></li>
+          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/privacy', locale as Locale)}>{t.footer.privacy}</a></li>
+        </ul>
+      </aside>
 
     </div>
   </article>

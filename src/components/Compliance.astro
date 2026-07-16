@@ -79,7 +79,7 @@ const pillars = [
           </div>
         </div>
 
-        <div class="lg:col-span-5 compliance-marks p-6 sm:p-8 lg:p-10 flex flex-col justify-center gap-4 border-t lg:border-t-0 lg:border-l border-violet-100/80">
+        <div class="lg:col-span-5 compliance-marks p-6 sm:p-8 lg:p-10 flex flex-col justify-center gap-4 border-t lg:border-t-0 lg:border-l border-black/[0.06]">
           {pillars.map((pillar, i) => (
             <div class="compliance-mark" style={`--d:${0.08 + i * 0.1}s`} data-compliance-mark>
               <div class={`compliance-badge compliance-badge--${pillar.key}`} aria-hidden="true">
@@ -128,27 +128,19 @@ const pillars = [
 
   .compliance-shell {
     background: #fff;
-    border: 1px solid #e6e2f0;
-    border-radius: 1rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 0.875rem;
     overflow: hidden;
-    box-shadow: 0 14px 40px rgba(91, 63, 212, 0.06);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 18px 40px rgba(15, 23, 42, 0.05);
     position: relative;
   }
 
-  .compliance-shell::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(180deg, #7951fb, #5b3fd4);
-  }
-
   .compliance-protocol {
-    background: linear-gradient(165deg, #f7f5fc 0%, #f3effe 100%);
-    border: 1px solid #e0d7fa;
-    border-radius: 0.85rem;
+    background: #f8f8fa;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 0.75rem;
     padding: 1.15rem 1.2rem;
   }
 
@@ -186,9 +178,7 @@ const pillars = [
   }
 
   .compliance-marks {
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 30%, rgba(121, 81, 251, 0.1), transparent 60%),
-      linear-gradient(180deg, #faf8ff 0%, #f3effe 100%);
+    background: #f6f6f8;
   }
 
   .compliance-mark {
@@ -196,9 +186,9 @@ const pillars = [
     align-items: center;
     gap: 0.9rem;
     padding: 0.85rem 0.9rem;
-    border-radius: 0.85rem;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(230, 226, 240, 0.9);
+    border-radius: 0.75rem;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.07);
     opacity: 0;
     transform: translateY(10px);
     transition:

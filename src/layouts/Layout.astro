@@ -2,12 +2,27 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-import { getLocaleFromUrl, type Locale } from '../utils/i18n';
+import { getLocaleFromUrl, locales, type Locale } from '../utils/i18n';
 import { getEntry } from 'astro:content';
+import {
+  absoluteUrl,
+  formatPageTitle,
+  getDefaultAlternates,
+  getOgLocale,
+  OG_IMAGE,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_WIDTH,
+  SITE_URL,
+  withTrailingSlash,
+} from '../utils/seo';
 
 interface Props {
   title: string;
   description?: string;
+  alternates?: Partial<Record<Locale, string>>;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const DEFAULT_DESCRIPTIONS: Record<Locale, string> = {
@@ -17,12 +32,25 @@ const DEFAULT_DESCRIPTIONS: Record<Locale, string> = {
 };
 
 const locale = getLocaleFromUrl(Astro.url);
-const { title, description = DEFAULT_DESCRIPTIONS[locale] } = Astro.props;
+const {
+  title,
+  description = DEFAULT_DESCRIPTIONS[locale],
+  alternates: alternatesProp,
+  ogType = 'website',
+  ogImage = OG_IMAGE,
+  jsonLd,
+} = Astro.props;
 const t = await getEntry('pages', locale);
 
-const siteUrl = 'https://docnote.care';
-const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
-const ogImage = `${siteUrl}/images/og-image.png`;
+const pageTitle = formatPageTitle(title);
+const canonicalUrl = absoluteUrl(withTrailingSlash(Astro.url.pathname));
+const alternateUrls = { ...getDefaultAlternates(Astro.url.pathname), ...alternatesProp };
+const ogLocale = getOgLocale(locale);
+const extraJsonLd = jsonLd
+  ? Array.isArray(jsonLd)
+    ? jsonLd
+    : [jsonLd]
+  : [];
 
 // Site-wide Organization, WebSite, and SoftwareApplication structured data.
 // Helps Google rich results AND gives LLMs (ChatGPT, Claude, Perplexity, Gemini)
@@ -32,9 +60,9 @@ const organizationLd = {
   '@type': 'Organization',
   name: 'DocNote',
   legalName: 'Gilson GmbH',
-  url: siteUrl,
-  logo: `${siteUrl}/images/logo.png`,
-  description: DEFAULT_DESCRIPTIONS.en,
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo.png`,
+  description: DEFAULT_DESCRIPTIONS[locale],
   foundingDate: '2024',
   email: 'contact@docnote.care',
   address: {
@@ -74,7 +102,7 @@ const websiteLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'DocNote',
-  url: siteUrl,
+  url: SITE_URL,
   inLanguage: ['en', 'fr', 'de'],
   publisher: { '@type': 'Organization', name: 'DocNote' },
 };
@@ -86,9 +114,9 @@ const softwareApplicationLd = {
   applicationCategory: 'HealthApplication',
   applicationSubCategory: 'AI Medical Scribe',
   operatingSystem: 'iOS, Android, Web',
-  description: DEFAULT_DESCRIPTIONS.en,
-  url: siteUrl,
-  image: `${siteUrl}/images/logo.png`,
+  description: DEFAULT_DESCRIPTIONS[locale],
+  url: SITE_URL,
+  image: `${SITE_URL}/images/logo.png`,
   softwareVersion: '2026',
   inLanguage: ['en', 'fr', 'de', 'it'],
   audience: {
@@ -125,7 +153,7 @@ const softwareApplicationLd = {
         unitText: 'MONTH',
       },
       availability: 'https://schema.org/InStock',
-      url: `${siteUrl}/${locale}/pricing`,
+      url: absoluteUrl(`/${locale}/pricing`),
     },
     {
       '@type': 'Offer',
@@ -139,7 +167,7 @@ const softwareApplicationLd = {
         unitText: 'MONTH',
       },
       availability: 'https://schema.org/InStock',
-      url: `${siteUrl}/${locale}/pricing`,
+      url: absoluteUrl(`/${locale}/pricing`),
     },
   ],
   provider: { '@type': 'Organization', name: 'DocNote', legalName: 'Gilson GmbH' },
@@ -154,35 +182,45 @@ const softwareApplicationLd = {
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="author" content="DocNote — Gilson GmbH" />
+    {import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION && (
+      <meta name="google-site-verification" content={import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION} />
+    )}
     <meta name="keywords" content="AI medical scribe, scribe IA médical, KI medizinischer Schreibassistent, medical documentation AI, documentation médicale IA, DocNote, ambient AI scribe, clinical documentation, Swiss DRG, TARDOC, PMSI, FADP, nLPD, GDPR, HIPAA, ISO 27001, Mediway, SOKLE, discharge letter, lettre de sortie, Austrittsbericht, operative report, compte rendu opératoire, OP-Bericht, ward round notes, doctor productivity, physician burnout, ambient listening" />
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="en" href={`${siteUrl}/en${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
-    <link rel="alternate" hreflang="fr" href={`${siteUrl}/fr${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
-    <link rel="alternate" hreflang="de" href={`${siteUrl}/de${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${Astro.url.pathname.replace(/^\/(en|fr|de)/, '')}`} />
+    {locales.map((code) => (
+      alternateUrls[code] && <link rel="alternate" hreflang={code} href={alternateUrls[code]} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={alternateUrls.en || absoluteUrl('/en/')} />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="DocNote" />
-    <meta property="og:title" content={`${title} | DocNote`} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : locale === 'de' ? 'de_CH' : 'en_US'} />
+    <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
+    <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
+    <meta property="og:locale" content={ogLocale} />
+    {locales
+      .filter((code) => code !== locale)
+      .map((code) => (
+        <meta property="og:locale:alternate" content={getOgLocale(code)} />
+      ))}
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | DocNote`} />
+    <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
-    <title>{title} | DocNote</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <title>{pageTitle}</title>
 
-    <!-- Structured data: Organization, WebSite, SoftwareApplication -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(softwareApplicationLd)} />
+    {extraJsonLd.map((item) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
 
     <script is:inline>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ir init Br Zr Ci jr $r Lr capture calculateEventProperties Yr register register_once register_for_session unregister unregister_for_session Jr getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Kr identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Wr zr createPersonProfile setInternalOrTestUser Xr Or en opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Vr debug ki Gr getPageViewId captureTraceFeedback captureTraceMetric Nr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);

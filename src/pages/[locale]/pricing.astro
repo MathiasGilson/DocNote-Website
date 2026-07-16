@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { locales, isValidLocale, type Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
+import { absoluteUrl, buildBreadcrumbLd, getPageMeta } from '../../utils/seo';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { locale } }));
@@ -10,14 +11,19 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 
 if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/pricing');
+  return Astro.redirect('/en/pricing/');
 }
 
 const entry = await getEntry('pages', locale as Locale);
 const t = entry.data;
+const meta = getPageMeta('pricing', locale as Locale);
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteUrl(`/${locale}/`) },
+  { name: meta.title, url: absoluteUrl(`/${locale}/pricing/`) },
+]);
 ---
 
-<Layout title={t.nav.pricing}>
+<Layout title={meta.title} description={meta.description} jsonLd={breadcrumbLd}>
   <section class="pt-32 pb-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
@@ -84,7 +90,7 @@ const t = entry.data;
               </li>
             ))}
           </ul>
-          <a href={`/${locale}/contact`} class="block w-full py-3 text-center font-medium text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
+          <a href={`/${locale}/contact/`} class="block w-full py-3 text-center font-medium text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
             {t.pricing.enterprise.contact}
           </a>
         </div>

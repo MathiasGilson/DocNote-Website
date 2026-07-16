@@ -472,21 +472,13 @@ const keys = [
   .spec-preview {
     position: relative;
     background: #fff;
-    border: 1px solid #e6e2f0;
-    border-radius: 1rem;
-    padding: 1.5rem 1.5rem 1.35rem;
-    box-shadow: 0 14px 40px rgba(91, 63, 212, 0.07);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 0.875rem;
+    padding: 1.6rem 1.6rem 1.4rem;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 18px 40px rgba(15, 23, 42, 0.05);
     overflow: hidden;
-  }
-
-  .spec-preview::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(180deg, #7951fb, #5b3fd4);
   }
 
   .spec-preview.is-swapping {
@@ -494,21 +486,24 @@ const keys = [
   }
 
   .spec-impact {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    background: #f3effe;
-    border: 1px solid #e0d7fa;
-    border-radius: 0.75rem;
-    padding: 0.85rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.85rem 1rem;
+    align-items: start;
+    background: #f8f8fa;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 0.65rem;
+    padding: 0.9rem 1rem;
   }
 
   .spec-impact-label {
     flex-shrink: 0;
-    margin-top: 0.1rem;
+    margin-top: 0.15rem;
+    padding-right: 1rem;
+    border-right: 1px solid rgba(15, 23, 42, 0.1);
     font-size: 0.625rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #5b3fd4;
   }
@@ -517,17 +512,19 @@ const keys = [
     margin: 0;
     font-size: 0.875rem;
     line-height: 1.5;
-    color: #1a1a1f;
+    color: #18181b;
     font-weight: 600;
   }
 
   .spec-stage {
-    background: linear-gradient(145deg, #2a2438, #1a1528);
-    border-radius: 0.85rem;
-    padding: 1.1rem 1.15rem;
+    background: #14121c;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.75rem;
+    padding: 1.15rem 1.2rem;
     min-height: 13.5rem;
     color: #e8e4f4;
     overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .spec-stage-label {

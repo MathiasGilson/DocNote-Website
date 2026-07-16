@@ -12,51 +12,52 @@ const currentPath = Astro.url.pathname;
 
 function isActive(path: string) {
   const localized = getLocalizedPath(path, locale);
-  return currentPath === localized || currentPath === localized + '/';
+  const normalized = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+  return normalized === localized;
 }
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
-      <div class="flex items-center gap-10">
-        <a href={getLocalizedPath('/', locale)} class="flex items-center gap-2.5">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 gap-4">
+      <div class="flex items-center gap-5 min-w-0 2xl:gap-8">
+        <a href={getLocalizedPath('/', locale)} class="flex items-center gap-2.5 flex-shrink-0">
           <img src="/images/logo.png" alt="DocNote" class="h-9 w-auto" />
           <span class="text-xl font-semibold text-gray-900">DocNote</span>
         </a>
 
-        <div class="hidden xl:flex items-center gap-5">
-          <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-base whitespace-nowrap transition-colors", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+        <div class="hidden xl:flex items-center gap-3 2xl:gap-5">
+          <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.tutorial}
           </a>
-          <a href={getLocalizedPath('/pricing', locale)} class:list={["text-base whitespace-nowrap transition-colors", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/pricing', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.pricing}
           </a>
-          <a href={getLocalizedPath('/blog', locale)} class:list={["text-base whitespace-nowrap transition-colors", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/blog', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.blog}
           </a>
-          <a href={getLocalizedPath('/team', locale)} class:list={["text-base whitespace-nowrap transition-colors", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/team', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.team}
           </a>
-          <a href={getLocalizedPath('/emploi', locale)} class:list={["text-base whitespace-nowrap transition-colors", isActive('/emploi') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/emploi', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/emploi') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.joinUs}
           </a>
-          <a href={getLocalizedPath('/sondage', locale)} class:list={["text-base whitespace-nowrap transition-colors", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/sondage', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.survey}
           </a>
-          <a href={getLocalizedPath('/patient', locale)} class:list={["text-base whitespace-nowrap transition-colors", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/patient', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
             {t.nav.patient}
           </a>
         </div>
       </div>
 
-      <div class="flex items-center gap-2 flex-shrink-0">
+      <div class="flex items-center gap-1.5 2xl:gap-2 flex-shrink-0">
         <LanguageSwitcher locale={locale} />
         <a
           href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR"
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+          class="hidden sm:inline-flex items-center justify-center px-3.5 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
         >
           {t.nav.appStore}
         </a>
@@ -64,13 +65,13 @@ function isActive(path: string) {
           href="https://play.google.com/store/apps/details?id=app.docnote&pli=1"
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+          class="hidden sm:inline-flex items-center justify-center px-3.5 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
         >
           {t.nav.googlePlay}
         </a>
         <a
           href="https://docnote.care/app/"
-          class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
+          class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20 whitespace-nowrap"
         >
           {t.nav.webApp}
         </a>

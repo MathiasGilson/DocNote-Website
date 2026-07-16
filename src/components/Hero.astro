@@ -47,7 +47,19 @@ const stats = [
 
 <section class="hero-section relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <img src="/images/hero.jpeg" alt="" class="w-full h-full object-cover scale-105" />
+        <img
+            src="/images/hero.jpeg"
+            alt={locale === 'fr'
+                ? 'Médecin en consultation utilisant DocNote pour la documentation clinique'
+                : locale === 'de'
+                  ? 'Ärztin in der Konsultation mit DocNote für klinische Dokumentation'
+                  : 'Physician in consultation using DocNote for clinical documentation'}
+            width="1200"
+            height="880"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full h-full object-cover scale-105"
+        />
         <div class="absolute inset-0 hero-veil"></div>
     </div>
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -87,8 +99,8 @@ const stats = [
 
         <div class="hero-founders inline-flex items-center gap-3 px-3 py-2 rounded-full bg-white/70 border border-violet-100 backdrop-blur-sm">
             <div class="flex -space-x-2">
-                <img src="/images/dr_vincent_tan.jpg" alt="" class="w-9 h-9 rounded-full object-cover border-2 border-white" />
-                <img src="/images/dre_alice_gilson.jpg" alt="" class="w-9 h-9 rounded-full object-cover border-2 border-white" />
+                <img src="/images/dr_vincent_tan_sm.jpg" alt="Dr. Vincent Tan" width="36" height="36" class="w-9 h-9 rounded-full object-cover border-2 border-white" decoding="async" />
+                <img src="/images/dre_alice_gilson_sm.jpg" alt="Dr. Alice Gilson" width="36" height="36" class="w-9 h-9 rounded-full object-cover border-2 border-white" decoding="async" />
             </div>
             <div class="text-left pr-1">
                 <p class="text-sm font-semibold text-gray-900 leading-tight">{t.hero.founders}</p>

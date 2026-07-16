@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Main from '../../components/Main.astro';
 import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { getPageMeta } from '../../utils/seo';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { locale } }));
@@ -10,10 +11,12 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 
 if (!isValidLocale(locale)) {
-  return Astro.redirect('/en');
+  return Astro.redirect('/en/');
 }
+
+const meta = getPageMeta('home', locale as Locale);
 ---
 
-<Layout title="AI Medical Documentation">
+<Layout title={meta.title} description={meta.description}>
   <Main locale={locale as Locale} variant="locale" />
 </Layout>

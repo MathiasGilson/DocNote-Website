@@ -1,5 +1,5 @@
 ---
-import { locales, localeNames, getPathWithoutLocale, type Locale } from '../utils/i18n';
+import { locales, localeNames, getLocalizedPath, getPathWithoutLocale, type Locale } from '../utils/i18n';
 
 interface Props {
   locale: Locale;
@@ -7,11 +7,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const pathname = Astro.url.pathname;
-
-function getLocalizedPath(targetLocale: string) {
-  const basePath = getPathWithoutLocale(pathname);
-  return `/${targetLocale}${basePath === '/' ? '' : basePath}`;
-}
+const basePath = getPathWithoutLocale(pathname);
 ---
 
 <div class="relative" id="lang-switcher">
@@ -32,7 +28,7 @@ function getLocalizedPath(targetLocale: string) {
   <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
     {locales.map((code) => (
       <a
-        href={getLocalizedPath(code)}
+        href={getLocalizedPath(basePath, code)}
         class:list={[
           'block px-4 py-2 text-sm hover:bg-gray-50 transition-colors',
           code === locale ? 'text-primary-600 font-medium' : 'text-gray-700'

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { locales, isValidLocale, type Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
+import { getPageMeta } from '../../utils/seo';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { locale } }));
@@ -10,16 +11,16 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 
 if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/gtc');
+  return Astro.redirect('/en/gtc/');
 }
 
 const entry = await getEntry('pages', locale as Locale);
 const t = entry.data;
-
-const layoutTitle = locale === 'fr' ? 'Conditions Générales' : locale === 'de' ? 'Allgemeine Geschäftsbedingungen' : 'General Terms and Conditions';
+const meta = getPageMeta('gtc', locale as Locale);
+const layoutTitle = meta.title;
 ---
 
-<Layout title={layoutTitle}>
+<Layout title={meta.title} description={meta.description}>
   <section class="pt-32 pb-20 bg-white">
     <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">

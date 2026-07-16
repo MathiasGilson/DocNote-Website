@@ -5,7 +5,7 @@ export const defaultLocale: Locale = 'en';
 export const localeNames: Record<Locale, string> = {
   en: 'English',
   de: 'Deutsch',
-  fr: 'Francais',
+  fr: 'Français',
 };
 
 export function isValidLocale(locale: string): locale is Locale {
@@ -20,7 +20,9 @@ export function getLocaleFromUrl(url: URL): Locale {
 
 export function getLocalizedPath(path: string, locale: Locale): string {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  return `/${locale}${cleanPath === '/' ? '' : cleanPath}`;
+  if (cleanPath === '/') return `/${locale}/`;
+  const withSlash = cleanPath.endsWith('/') ? cleanPath : `${cleanPath}/`;
+  return `/${locale}${withSlash}`;
 }
 
 export function getPathWithoutLocale(pathname: string): string {

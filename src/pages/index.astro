@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Main from '../components/Main.astro';
+import { getPageMeta } from '../utils/seo';
+
+const meta = getPageMeta('home', 'en');
 ---
 
-<Layout title="AI Medical Documentation">
-  <Main />
+<Layout title={meta.title} description={meta.description}>
+  <Main locale="en" variant="default" />
 </Layout>

@@ -7,7 +7,7 @@ export function getStaticPaths() {
 }
 
 const { locale } = Astro.params;
-if (!isValidLocale(locale)) return Astro.redirect('/fr/emploi');
+if (!isValidLocale(locale)) return Astro.redirect('/fr/emploi/');
 const lang = locale as Locale;
 
 const SHEETS_URL =
@@ -392,7 +392,7 @@ const yesNoSomeOptions = [
 ] as const;
 ---
 
-<Layout title={t.metaTitle}>
+<Layout title={t.metaTitle} description={t.pageSub}>
   <section class="pt-28 pb-8 bg-gradient-to-b from-violet-50 via-white to-white">
     <div class="max-w-3xl mx-auto px-6 sm:px-8">
       <p class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-3">{t.openRoles}</p>

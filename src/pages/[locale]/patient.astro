@@ -10,14 +10,15 @@ export function getStaticPaths() {
 const { locale } = Astro.params
 
 if (!isValidLocale(locale)) {
-    return Astro.redirect("/fr/patient")
+    return Astro.redirect("/fr/patient/")
 }
 
 const entry = await getEntry("pages", locale as Locale)
 
 const content = {
     fr: {
-        pageTitle: "Pour les patients — DocNote",
+        pageTitle: "Pour les patients",
+        pageDescription: "Pourquoi votre soignant utilise DocNote : plus de présence en consultation, comptes-rendus fidèles, données hébergées en Suisse et sous votre contrôle.",
         hero: {
             title: "Et si votre médecin pouvait vous consacrer toute son attention ?",
             subtitle: "Pourquoi votre soignant utilise DocNote, et ce que ça change pour vous.",
@@ -64,7 +65,8 @@ const content = {
         contact: "Une question ? Parlez-en à votre soignant, ou écrivez-nous à",
     },
     en: {
-        pageTitle: "For patients — DocNote",
+        pageTitle: "For patients",
+        pageDescription: "Why your care provider uses DocNote: more presence in consultations, accurate notes, Swiss-hosted data, and you stay in control.",
         hero: {
             title: "What if your doctor could give you their full attention?",
             subtitle: "Why your care provider uses DocNote, and what it changes for you.",
@@ -111,7 +113,8 @@ const content = {
         contact: "A question? Talk to your care provider, or write to us at",
     },
     de: {
-        pageTitle: "Für Patienten — DocNote",
+        pageTitle: "Für Patienten",
+        pageDescription: "Warum Ihr Arzt DocNote verwendet: mehr Präsenz in der Konsultation, getreue Berichte, Daten in der Schweiz und Sie behalten die Kontrolle.",
         hero: {
             title: "Was wäre, wenn Ihr Arzt Ihnen seine volle Aufmerksamkeit widmen könnte?",
             subtitle: "Warum Ihr Arzt DocNote verwendet und was das für Sie bedeutet.",
@@ -162,7 +165,7 @@ const content = {
 const c = content[locale as keyof typeof content] ?? content.fr
 ---
 
-<Layout title={c.pageTitle}>
+<Layout title={c.pageTitle} description={c.pageDescription}>
     <section class="pt-32 pb-24">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
