@@ -10,6 +10,9 @@ const buildRobotsTxt = (site: string) => {
 User-agent: *
 Allow: /
 
+# Curated index for AI agents (not used by Google Search ranking)
+# https://docnote.care/llms.txt
+
 ${sitemaps}
 `;
 };
