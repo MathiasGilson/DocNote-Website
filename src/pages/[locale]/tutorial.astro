@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { locales, isValidLocale, type Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
 import { getPageMeta } from '../../utils/seo';
+import { DEMO_BOOKING_URL } from '../../utils/links';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { locale } }));
@@ -328,7 +329,9 @@ const step5VideoIdEdl = locale === 'fr' ? '8dA4j27XYPI' : null;
               {t.tutorial.cta.webApp}
             </a>
             <a
-              href={`/${locale}/contact/`}
+              href={DEMO_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
             >
               {t.tutorial.cta.getDemo}

@@ -1,5 +1,6 @@
 ---
 import { getLocaleFromUrl, getLocalizedPath } from "../utils/i18n"
+import { DEMO_BOOKING_URL } from "../utils/links"
 
 interface Props {
     translations: any
@@ -11,37 +12,31 @@ const locale = getLocaleFromUrl(Astro.url)
 const stats = [
     {
         label: t.stats.timeSaved,
-        value: t.stats.timeSavedValue,
         target: 2,
         startFrom: 0,
-        duration: 200,
+        duration: 900,
         suffix: t.stats.timeSavedSuffix,
         easing: "linear",
         desc: t.stats.timeSavedDesc,
-        icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />`
     },
     {
         label: t.stats.accuracy,
-        value: t.stats.accuracyValue,
         target: 99,
         startFrom: 0,
-        duration: 300,
+        duration: 1200,
         suffix: "%",
         easing: "expo",
         desc: t.stats.accuracyDesc,
-        icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />`
     },
     {
         label: t.stats.doctors,
-        value: t.stats.doctorsValue,
         target: 1000,
         startFrom: 0,
-        duration: 900,
+        duration: 1600,
         suffix: "+",
         easing: "expo",
         desc: t.stats.doctorsDesc,
-        icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />`
-    }
+    },
 ]
 ---
 
@@ -81,19 +76,29 @@ const stats = [
             {t.hero.subtitle}
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
-            <a
-                href={getLocalizedPath("/tutorial", locale)}
-                class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-white bg-[#7951fb] hover:bg-[#5b3fd4] rounded-lg transition-colors shadow-lg shadow-violet-500/25"
-            >
-                {t.hero.cta}
-            </a>
+        <div class="flex flex-col items-center gap-4 mb-8">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <a
+                    href={getLocalizedPath("/tutorial", locale)}
+                    class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-white bg-[#7951fb] hover:bg-[#5b3fd4] rounded-lg transition-colors shadow-lg shadow-violet-500/25"
+                >
+                    {t.hero.cta}
+                </a>
+                <a
+                    href={DEMO_BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-[#5b3fd4] bg-white/80 border border-[#7951fb]/40 hover:border-[#7951fb] hover:bg-white rounded-lg transition-colors"
+                >
+                    {t.contact.bookDemo}
+                </a>
+            </div>
             <a
                 href={getLocalizedPath("/contact", locale)}
-                class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-[#5b3fd4] hover:text-[#4c35c4] transition-colors"
+                class="hero-enterprise-link inline-flex items-center justify-center gap-1.5 text-base font-semibold text-[#5b3fd4] hover:text-[#4c35c4] transition-colors"
             >
                 {t.hero.ctaSecondary}
-                <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.25"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
             </a>
         </div>
 
@@ -464,34 +469,22 @@ const stats = [
         </div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-28">
-        <div class="grid md:grid-cols-3 gap-6">
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-28">
+        <div class="hero-stats grid md:grid-cols-3 gap-px bg-violet-200/50 rounded-2xl overflow-hidden border border-violet-100/80 shadow-lg shadow-violet-500/10">
             {
                 stats.map((stat, index) => (
                     <div
-                        class="stat-card bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/80 hover:shadow-md transition-shadow"
+                        class="stat-card bg-white/85 backdrop-blur-sm px-8 py-9 text-center"
                         data-target={stat.target}
                         data-start-from={stat.startFrom}
-                        data-duration={stat.duration ?? 900}
+                        data-duration={stat.duration ?? 1400}
                         data-easing={stat.easing}
                         data-suffix={stat.suffix}
+                        data-delay={index * 140}
                     >
-                        <svg
-                            class="w-10 h-10 text-primary-600 mb-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <Fragment set:html={stat.icon} />
-                        </svg>
-                        <p class="text-sm font-medium text-gray-500 mb-1">{stat.label}</p>
-                        <p class="text-4xl font-bold text-gray-900 mb-1">
-                            <>
-                                <span class="stat-value">
-                                    {stat.target >= 1000 ? stat.target.toLocaleString() : stat.target}
-                                </span>
-                                <span class="stat-suffix">{stat.suffix}</span>
-                            </>
+                        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#5b3fd4] mb-3">{stat.label}</p>
+                        <p class="stat-number text-5xl sm:text-[3.25rem] font-bold tracking-tight leading-none mb-2">
+                            <span class="stat-value text-gradient">0</span><span class="stat-suffix text-gradient">{stat.suffix}</span>
                         </p>
                         <p class="text-sm text-gray-500">{stat.desc}</p>
                     </div>
@@ -574,6 +567,45 @@ const stats = [
     animation-delay: 0.16s;
   }
 
+  .hero-enterprise-link {
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .hero-enterprise-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, #7951fb, #ab66ff);
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+    opacity: 0.7;
+  }
+
+  .hero-enterprise-link:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  .stat-card {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stat-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stat-number {
+    font-variant-numeric: tabular-nums;
+  }
+
   @keyframes hero-rise {
     from {
       opacity: 0;
@@ -588,8 +620,16 @@ const stats = [
   @media (prefers-reduced-motion: reduce) {
     .hero-title,
     .hero-founders,
-    .hero-eyebrow {
+    .hero-eyebrow,
+    .stat-card {
       animation: none;
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .hero-enterprise-link::after {
+      transform: scaleX(1);
     }
   }
 </style>
@@ -800,35 +840,49 @@ const stats = [
 
     animateSOAPNotes()
 
-    const easeInExpo = (t: number) => (t === 0 ? 0 : Math.pow(2, 10 * t - 10))
-    const linear = (t: number) => t
-    const formatNum = (n: number) => (n >= 1000 ? n.toLocaleString() : String(Math.floor(n)))
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3)
+    const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t))
+    const formatNum = (n: number) => (n >= 1000 ? Math.floor(n).toLocaleString() : String(Math.floor(n)))
 
-    document.querySelectorAll(".stat-card").forEach((card) => {
-        const valueEl = card.querySelector(".stat-value") as HTMLElement
-        const el = card as HTMLElement
-        const target = Number(el.dataset.target)
-        const startFrom = Number(el.dataset.startFrom ?? 0)
-        const duration = Number(el.dataset.duration ?? 900)
-        const easingFn = el.dataset.easing === "linear" ? linear : easeInExpo
+    const animateStat = (card: HTMLElement) => {
+        const valueEl = card.querySelector(".stat-value") as HTMLElement | null
+        if (!valueEl || card.dataset.animated === "1") return
 
-        const animate = (fromVal: number, toTarget: number) => {
+        card.dataset.animated = "1"
+        const target = Number(card.dataset.target)
+        const startFrom = Number(card.dataset.startFrom ?? 0)
+        const duration = Number(card.dataset.duration ?? 1400)
+        const delay = Number(card.dataset.delay ?? 0)
+        const easingFn = card.dataset.easing === "linear" ? easeOutCubic : easeOutExpo
+
+        window.setTimeout(() => {
+            card.classList.add("is-visible")
             const start = performance.now()
 
             const tick = (now: number) => {
-                const elapsed = now - start
-                const progress = Math.min(elapsed / duration, 1)
-                const eased = easingFn(progress)
-                const current = fromVal + (toTarget - fromVal) * eased
-                if (valueEl) valueEl.textContent = formatNum(current)
+                const progress = Math.min((now - start) / duration, 1)
+                const current = startFrom + (target - startFrom) * easingFn(progress)
+                valueEl.textContent = formatNum(current)
                 if (progress < 1) requestAnimationFrame(tick)
+                else valueEl.textContent = formatNum(target)
             }
             requestAnimationFrame(tick)
-        }
+        }, delay)
+    }
 
-        card.addEventListener("mouseenter", () => animate(startFrom, target))
-        card.addEventListener("mouseleave", () => {
-            if (valueEl) valueEl.textContent = formatNum(target)
-        })
-    })
+    const statCards = Array.from(document.querySelectorAll(".stat-card")) as HTMLElement[]
+    if (statCards.length) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        animateStat(entry.target as HTMLElement)
+                        observer.unobserve(entry.target)
+                    }
+                })
+            },
+            { threshold: 0.35 }
+        )
+        statCards.forEach((card) => observer.observe(card))
+    }
 </script>

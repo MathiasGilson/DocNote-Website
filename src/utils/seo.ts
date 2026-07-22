@@ -61,19 +61,19 @@ export const pageMeta: Record<
 > = {
   home: {
     en: {
-      title: 'AI Medical Documentation for Hospitals',
+      title: 'AI Medical Documentation for Swiss Hospitals',
       description:
-        'DocNote turns consultations into discharge letters, ward-round notes and operative reports. Swiss-hosted AI scribe for doctors and hospitals. FADP, GDPR, HIPAA and ISO 27001 compliant.',
+        'AI medical scribe for hospitals: turn consultations into discharge letters, ward notes and OR reports. Swiss-hosted. FADP, GDPR, HIPAA compliant.',
     },
     fr: {
       title: 'Documentation médicale IA pour les hôpitaux',
       description:
-        'DocNote transforme vos consultations en lettres de sortie, notes de visite et comptes rendus opératoires. Assistant IA hébergé en Suisse pour médecins et hôpitaux. Conforme nLPD, RGPD, HIPAA et ISO 27001.',
+        'Scribe IA médical hébergé en Suisse : lettres de sortie, notes de visite et comptes rendus opératoires pour médecins et hôpitaux.',
     },
     de: {
-      title: 'KI-Dokumentation für Spitäler und Ärztinnen',
+      title: 'KI-Dokumentation für Spitäler und Kliniken',
       description:
-        'DocNote macht aus Konsultationen Austrittsberichte, Visitennotizen und OP-Berichte. Schweizer KI-Schreibassistent für Ärztinnen, Ärzte und Spitäler. DSG-, DSGVO-, HIPAA- und ISO-27001-konform.',
+        'Schweizer KI-Schreibassistent für Spitäler: Austrittsberichte, Visitennotizen und OP-Berichte aus Konsultationen. DSG- und DSGVO-konform.',
     },
   },
   pricing: {

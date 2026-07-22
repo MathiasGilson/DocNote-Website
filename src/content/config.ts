@@ -434,6 +434,7 @@ const pagesCollection = defineCollection({
     contact: z.object({
       title: z.string(),
       subtitle: z.string(),
+      bookDemo: z.string(),
       emailLabel: z.string(),
       phoneLabel: z.string(),
       locationLabel: z.string(),
