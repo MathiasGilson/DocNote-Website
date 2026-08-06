@@ -1,9 +1,10 @@
-import { locales, type Locale } from './i18n';
+import { locales, type Locale, getLocalizedPath } from './i18n';
 import { absoluteUrl } from './seo';
 
-type Cluster = Record<Locale, string>;
+/** FR/DE may use localized slugs; every other locale uses the EN slug. */
+type ClusterSeed = { en: string; fr: string; de: string };
 
-const clusters: Cluster[] = [
+const seeds: ClusterSeed[] = [
   {
     en: 'less-time-documenting-ai-more-care',
     fr: 'moins-temps-documenter-ia-plus-soigner',
@@ -96,23 +97,47 @@ const clusters: Cluster[] = [
   },
 ];
 
-const bySlug = new Map<string, Cluster>();
-for (const cluster of clusters) {
+const expandCluster = (seed: ClusterSeed): Record<Locale, string> => {
+  const map = {} as Record<Locale, string>;
   for (const locale of locales) {
-    bySlug.set(cluster[locale], cluster);
+    if (locale === 'fr') map[locale] = seed.fr;
+    else if (locale === 'de') map[locale] = seed.de;
+    else map[locale] = seed.en;
+  }
+  return map;
+};
+
+const bySlug = new Map<string, Record<Locale, string>>();
+for (const seed of seeds) {
+  const cluster = expandCluster(seed);
+  for (const slug of new Set(Object.values(cluster))) {
+    bySlug.set(slug, cluster);
   }
 }
+
+const resolveCluster = (slug: string): Record<Locale, string> => {
+  const known = bySlug.get(slug);
+  if (known) return known;
+  return Object.fromEntries(locales.map((loc) => [loc, slug])) as Record<Locale, string>;
+};
+
+/** Relative localized paths for every locale (EN unprefixed). */
+export const getBlogAlternatePaths = (
+  _locale: Locale,
+  slug: string
+): Record<Locale, string> => {
+  const cluster = resolveCluster(slug);
+  return Object.fromEntries(
+    locales.map((loc) => [loc, getLocalizedPath(`/blog/${cluster[loc]}`, loc)])
+  ) as Record<Locale, string>;
+};
 
 export const getBlogAlternateUrls = (
   locale: Locale,
   slug: string
-): Partial<Record<Locale, string>> => {
-  const cluster = bySlug.get(slug) ?? ({ [locale]: slug } as Cluster);
-
-  const urls: Partial<Record<Locale, string>> = {};
-  for (const loc of locales) {
-    const s = cluster[loc];
-    if (s) urls[loc] = absoluteUrl(`/${loc}/blog/${s}`);
-  }
-  return urls;
+): Record<Locale, string> => {
+  const paths = getBlogAlternatePaths(locale, slug);
+  return Object.fromEntries(
+    locales.map((loc) => [loc, absoluteUrl(paths[loc])])
+  ) as Record<Locale, string>;
 };

@@ -15,6 +15,10 @@ const pagesCollection = defineCollection({
       webApp: z.string(),
       appStore: z.string(),
       googlePlay: z.string(),
+      /** Pillars + use-case landings */
+      solutions: z.string().optional(),
+      /** Specialty landings */
+      specialties: z.string().optional(),
     }),
     hero: z.object({
       badge: z.string(),
@@ -236,9 +240,25 @@ const pagesCollection = defineCollection({
       badge: z.string(),
       title: z.string(),
       subtitle: z.string(),
-      quote1: z.string(), author1: z.string(), role1: z.string(),
-      quote2: z.string(), author2: z.string(), role2: z.string(),
-      quote3: z.string(), author3: z.string(), role3: z.string(),
+      items: z
+        .array(
+          z.object({
+            quote: z.string(),
+            author: z.string(),
+            role: z.string(),
+            image: z.string(),
+          })
+        )
+        .optional(),
+      quote1: z.string(),
+      author1: z.string(),
+      role1: z.string(),
+      quote2: z.string(),
+      author2: z.string(),
+      role2: z.string(),
+      quote3: z.string(),
+      author3: z.string(),
+      role3: z.string(),
     }),
     cta: z.object({
       title: z.string(),
@@ -289,6 +309,25 @@ const pagesCollection = defineCollection({
         features: z.array(z.string()),
         contact: z.string(),
       }),
+      compare: z
+        .object({
+          title: z.string(),
+          subtitle: z.string().optional(),
+          feature: z.string(),
+          pro: z.string(),
+          enterprise: z.string(),
+          yes: z.string(),
+          no: z.string(),
+          custom: z.string(),
+          rows: z.array(
+            z.object({
+              label: z.string(),
+              pro: z.enum(['yes', 'no', 'custom']),
+              enterprise: z.enum(['yes', 'no', 'custom']),
+            })
+          ),
+        })
+        .optional(),
       faq: z.object({
         title: z.string(),
         q1: z.string(),
@@ -299,6 +338,18 @@ const pagesCollection = defineCollection({
         a3: z.string(),
         q4: z.string(),
         a4: z.string(),
+        q5: z.string().optional(),
+        a5: z.string().optional(),
+        q6: z.string().optional(),
+        a6: z.string().optional(),
+        q7: z.string().optional(),
+        a7: z.string().optional(),
+        q8: z.string().optional(),
+        a8: z.string().optional(),
+        q9: z.string().optional(),
+        a9: z.string().optional(),
+        q10: z.string().optional(),
+        a10: z.string().optional(),
       }),
     }),
     blog: z.object({
@@ -309,6 +360,16 @@ const pagesCollection = defineCollection({
       recentPosts: z.string(),
       minRead: z.string(),
       shareArticle: z.string(),
+      articles: z.string().optional(),
+      prev: z.string().optional(),
+      next: z.string().optional(),
+      viewAllArticles: z.string().optional(),
+      pageLabel: z.string().optional(),
+      onThisPage: z.string().optional(),
+      writtenBy: z.string().optional(),
+      share: z.string().optional(),
+      relatedArticles: z.string().optional(),
+      createdOn: z.string().optional(),
       categories: z.object({
         all: z.string(),
         news: z.string(),
@@ -321,6 +382,19 @@ const pagesCollection = defineCollection({
       aboutUs: z.string(),
       title: z.string(),
       subtitle: z.string(),
+      intro: z.string().optional(),
+      story: z.string().optional(),
+      highlightsTitle: z.string().optional(),
+      highlightsLead: z.string().optional(),
+      highlights: z
+        .array(
+          z.object({
+            title: z.string(),
+            body: z.string(),
+          })
+        )
+        .optional(),
+      highlightsClosing: z.string().optional(),
       members: z.object({
         vincentTan: z.object({
           name: z.string(),
@@ -442,6 +516,23 @@ const pagesCollection = defineCollection({
       france: z.string(),
       vincentName: z.string(),
       aliceName: z.string(),
+      vincentRole: z.string().optional(),
+      aliceRole: z.string().optional(),
+      vincentFocus: z.string().optional(),
+      aliceFocus: z.string().optional(),
+      vincentCity: z.string().optional(),
+      aliceCity: z.string().optional(),
+      writeEmail: z.string().optional(),
+      callPhone: z.string().optional(),
+      hoursLabel: z.string().optional(),
+      hoursValue: z.string().optional(),
+      responseLabel: z.string().optional(),
+      responseValue: z.string().optional(),
+      companyLabel: z.string().optional(),
+      companyValue: z.string().optional(),
+      generalEmailLabel: z.string().optional(),
+      generalEmail: z.string().optional(),
+      hostingNote: z.string().optional(),
     }),
   }),
 });
