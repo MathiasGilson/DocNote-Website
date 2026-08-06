@@ -1,0 +1,644 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import FaqAccordion from '../FaqAccordion.astro';
+import Features from '../Features.astro';
+import ZigZagBenefits from '../ZigZagBenefits.astro';
+import PageHero from '../ui/PageHero.astro';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import {
+  getLanding,
+  getLandingNavLabel,
+  landingMeta,
+  landingFeatureKeys,
+  landingZigZagSlugs,
+  isLandingSlug,
+  type LandingSlug,
+} from '../../content/landings';
+import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
+
+interface Props {
+  locale: Locale;
+  pillar: string;
+}
+
+const { locale, pillar } = Astro.props;
+const lang = locale;
+
+if (!isLandingSlug(pillar)) {
+  return Astro.redirect(getLocalizedPath('/', lang));
+}
+
+const slug = pillar as LandingSlug;
+const p = getLanding(slug, lang);
+const meta = landingMeta[slug];
+const pagesEntry = (await getEntry('pages', lang)) ?? (await getEntry('pages', 'en'));
+const pagesT = pagesEntry!.data;
+const featureKeys = landingFeatureKeys[slug];
+const useZigZagBenefits = landingZigZagSlugs.has(slug);
+
+const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
+const faqHeading =
+  lang === 'fr' ? 'Questions fréquentes' : lang === 'de' ? 'Häufige Fragen' : 'Frequently asked questions';
+const faqSubtitle =
+  lang === 'fr'
+    ? 'Réponses claires sur la confidentialité, la validation clinique et le fonctionnement au quotidien.'
+    : lang === 'de'
+      ? 'Klare Antworten zu Datenschutz, klinischer Validierung und dem täglichen Ablauf.'
+      : 'Straight answers on privacy, clinical validation, and how this fits your daily workflow.';
+const depthBadge =
+  lang === 'fr' ? 'En pratique' : lang === 'de' ? 'In der Praxis' : 'In practice';
+const depthTitle =
+  lang === 'fr'
+    ? 'Ce qu’il faut savoir avant de déployer'
+    : lang === 'de'
+      ? 'Was vor dem Rollout zählt'
+      : 'What to know before you roll out';
+
+const ctaHref = (key: typeof meta.primaryCta) => {
+  const map = {
+    tutorial: '/tutorial',
+    pricing: '/pricing',
+    contact: '/contact',
+    privacy: '/privacy',
+  } as const;
+  return getLocalizedPath(map[key], lang);
+};
+
+const primaryHref = ctaHref(meta.primaryCta);
+const secondaryHref = ctaHref(meta.secondaryCta);
+
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+  { name: p.title, url: absoluteLocalizedUrl(`/${slug}/`, lang) },
+]);
+
+const faqLd =
+  p.faq && p.faq.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: p.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      }
+    : null;
+
+const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
+
+const relatedSlugs = meta.related.filter((s) => s !== slug);
+---
+
+<Layout title={p.title} description={p.description} jsonLd={jsonLd}>
+  <div class="lp-crumb-bar pt-28 sm:pt-32">
+    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center justify-center gap-2">
+        <li>
+          <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li class="text-gray-900 font-medium">{p.navLabel || p.hero.title}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <PageHero
+    eyebrow={p.hero.badge}
+    title={p.hero.title}
+    subtitle={p.hero.subtitle}
+    lead={p.hero.lead}
+    compact
+  >
+    <a href={primaryHref} class="btn-primary btn-primary-sm">
+      {p.cta.primary}
+    </a>
+    <a
+      href={secondaryHref}
+      class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+    >
+      {p.cta.secondary}
+    </a>
+  </PageHero>
+
+  <!-- Story -->
+  <section class="relative py-14 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lp-shell reveal">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div class="lg:col-span-4">
+            <span class="lp-eyebrow">
+              <span class="lp-dot" aria-hidden="true"></span>
+              {p.story.badge}
+            </span>
+            <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+              {p.story.title}
+            </h2>
+          </div>
+          <div class="lg:col-span-8 space-y-4">
+            {p.story.paragraphs.map((para) => (
+              <p class="text-base sm:text-lg text-gray-600 leading-relaxed">{para}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Features
+    translations={pagesT}
+    keys={featureKeys}
+    sectionId={`features-${slug}`}
+    align="start"
+  />
+
+  {useZigZagBenefits ? (
+    <ZigZagBenefits
+      badge={p.benefits.badge}
+      title={p.benefits.title}
+      subtitle={p.benefits.subtitle}
+      items={p.benefits.items}
+    />
+  ) : (
+    <section class="relative py-14 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-10 sm:mb-14 reveal">
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {p.benefits.badge}
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.benefits.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.benefits.subtitle}</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
+          {p.benefits.items.map((item, i) => (
+            <article
+              class:list={[
+                'lp-card reveal',
+                i % 4 === 0 && 'reveal-delay-1',
+                i % 4 === 1 && 'reveal-delay-2',
+                i % 4 === 2 && 'reveal-delay-3',
+                i % 4 === 3 && 'reveal-delay-4',
+              ]}
+            >
+              <span class="lp-card-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="lp-card-title">{item.title}</h3>
+              <p class="lp-card-text">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Steps -->
+  <section class="py-14 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10 sm:mb-14 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.steps.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.steps.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.steps.subtitle}</p>
+      </div>
+
+      <ol class="lp-steps-grid">
+        {p.steps.items.map((step, i) => (
+          <li
+            class:list={[
+              'lp-step reveal',
+              i === 0 && 'reveal-delay-1',
+              i === 1 && 'reveal-delay-2',
+              i === 2 && 'reveal-delay-3',
+              i === 3 && 'reveal-delay-4',
+            ]}
+          >
+            <span class="lp-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="mt-4 text-lg font-semibold text-gray-900 tracking-tight">{step.title}</h3>
+            <p class="mt-2 text-sm sm:text-base text-gray-500 leading-relaxed">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Proof / trust -->
+  <section class="relative py-14 sm:py-20 overflow-hidden">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 max-w-2xl reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.proof.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.proof.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.proof.intro}</p>
+      </div>
+
+      <div class="lp-proof-shell reveal reveal-delay-1">
+        <div class="grid sm:grid-cols-2 gap-px bg-white/10">
+          {p.proof.points.map((point) => (
+            <article class="lp-proof-point">
+              <span class="lp-proof-check" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-base font-semibold text-white tracking-tight">{point.title}</h3>
+                <p class="mt-1.5 text-sm text-primary-100/75 leading-relaxed">{point.body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {p.sections && p.sections.length > 0 && (
+    <section class="relative py-14 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-8 sm:mb-10 reveal">
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {depthBadge}
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {depthTitle}
+          </h2>
+        </div>
+
+        <div class="lp-shell lp-depth reveal">
+          <ol class="lp-depth-list">
+            {p.sections.map((section, i) => (
+              <li class="lp-depth-item">
+                <span class="lp-card-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <div class="lp-depth-copy">
+                  <h3 class="lp-depth-heading">{section.heading}</h3>
+                  <p class="lp-depth-body">{section.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2">
+          {faqHeading}
+        </h2>
+        <p class="text-gray-500">{faqSubtitle}</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <FaqAccordion items={p.faq} />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-14 sm:py-20 overflow-hidden">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lp-cta-shell reveal">
+        <div class="max-w-xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.cta.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-600 leading-relaxed">{p.cta.body}</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href={primaryHref} class="btn-primary btn-primary-sm">{p.cta.primary}</a>
+            <a
+              href={secondaryHref}
+              class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+            >
+              {p.cta.secondary}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="py-14 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <aside class="pt-10 border-t border-gray-200 reveal">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-4">{p.relatedLabel}</h2>
+        <ul class="flex flex-wrap gap-x-8 gap-y-2">
+          {relatedSlugs.map((s) => (
+            <li>
+              <a
+                href={getLocalizedPath(`/${s}`, lang)}
+                class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+              >
+                {getLandingNavLabel(s, lang)}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href={getLocalizedPath('/pricing', lang)}
+              class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+            >
+              {lang === 'fr' ? 'Tarifs' : lang === 'de' ? 'Preise' : 'Pricing'}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath('/blog', lang)}
+              class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+            >
+              {lang === 'fr' ? 'Actualités' : lang === 'de' ? 'Neuigkeiten' : 'News & insights'}
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .lp-crumb-bar {
+    background: #fff;
+  }
+
+  .lp-crumb-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+
+  .lp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--dn-primary-ink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .lp-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.18);
+  }
+
+  .lp-shell {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 20px 48px rgba(15, 23, 42, 0.05);
+    padding: 1.75rem 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .lp-shell {
+      padding: 2.5rem 2.25rem;
+    }
+  }
+
+  .lp-card {
+    position: relative;
+    padding: 1.75rem 1.5rem;
+    border-radius: 1.1rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background:
+      radial-gradient(ellipse 70% 60% at 0% 0%, rgba(var(--dn-primary-rgb), 0.06), transparent 60%),
+      #ffffff;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 10px 28px rgba(var(--dn-primary-rgb), 0.04);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .lp-card:hover {
+    border-color: rgba(var(--dn-primary-rgb), 0.28);
+    box-shadow: 0 14px 32px rgba(var(--dn-primary-rgb), 0.1);
+    transform: translateY(-2px);
+  }
+
+  .lp-card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.1rem;
+    height: 2.1rem;
+    padding: 0 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--dn-primary-ink);
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.2);
+  }
+
+  .lp-card-title {
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .lp-card-text {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.65;
+  }
+
+  .lp-depth {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .lp-depth-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .lp-depth-item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem 1.25rem;
+    align-items: start;
+    padding: 1.35rem 0;
+  }
+
+  .lp-depth-item + .lp-depth-item {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .lp-depth-heading {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .lp-depth-body {
+    margin: 0.55rem 0 0;
+    max-width: 42rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.65;
+  }
+
+  @media (min-width: 640px) {
+    .lp-depth-item {
+      gap: 1.25rem 1.5rem;
+      padding: 1.6rem 0;
+    }
+
+    .lp-depth-heading {
+      font-size: 1.2rem;
+    }
+  }
+
+  .lp-steps-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .lp-steps-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lp-steps-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .lp-step {
+    position: relative;
+    height: 100%;
+    padding: 1.35rem 1.25rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 10px 28px rgba(var(--dn-primary-rgb), 0.04);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .lp-step:hover {
+    border-color: rgba(var(--dn-primary-rgb), 0.28);
+    box-shadow: 0 12px 32px rgba(var(--dn-primary-rgb), 0.1);
+    transform: translateY(-2px);
+  }
+
+  .lp-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 1.75rem;
+    padding: 0 0.55rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--dn-primary-ink);
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.2);
+  }
+
+  .lp-proof-shell {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(91, 63, 144, 0.22);
+    background:
+      radial-gradient(ellipse 80% 70% at 0% 0%, rgba(var(--dn-primary-mid-rgb), 0.14), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(var(--dn-primary-end-rgb), 0.1), transparent 50%),
+      linear-gradient(155deg, #0e0b16 0%, #161022 48%, #110e1a 100%);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 24px 56px rgba(15, 10, 35, 0.18);
+  }
+
+  .lp-proof-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.35rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .lp-proof-check {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 999px;
+    background: rgba(203, 184, 255, 0.16);
+    color: #d4c4ff;
+  }
+
+  .lp-cta-shell {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    padding: 2rem 1.5rem;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 20px 48px rgba(15, 23, 42, 0.06);
+  }
+
+  @media (min-width: 640px) {
+    .lp-cta-shell {
+      padding: 2.5rem 2.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lp-card:hover,
+    .lp-step:hover {
+      transform: none;
+    }
+  }
+</style>
