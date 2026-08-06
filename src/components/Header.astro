@@ -1,7 +1,26 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.astro';
-import { getLocalizedPath, type Locale } from '../utils/i18n';
+import StoreIcon from './StoreIcon.astro';
+import {
+  getLocalizedPath,
+  getSurveyPath,
+  isSurveyPath,
+  getCareersPath,
+  isCareersPath,
+  type Locale,
+} from '../utils/i18n';
 import { DEMO_BOOKING_URL } from '../utils/links';
+import {
+  navSolutionsSlugs,
+  navSpecialtiesSlugs,
+  navSolutionsColumns,
+  getLandingNavDesc,
+  getLandingNavLabel,
+  getNavGroupLabel,
+  getNavSolutionsColumnLabel,
+  type LandingSlug,
+} from '../content/landings';
+import { landingNavIconMarkup } from '../data/landing-nav-icons';
 
 interface Props {
   locale: Locale;
@@ -10,69 +29,222 @@ interface Props {
 
 const { locale, translations: t } = Astro.props;
 const currentPath = Astro.url.pathname;
+const surveyHref = getSurveyPath(locale);
+const surveyActive = isSurveyPath(currentPath);
+const careersHref = getCareersPath(locale);
+const careersActive = isCareersPath(currentPath);
 
 function isActive(path: string) {
   const localized = getLocalizedPath(path, locale);
   const normalized = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
   return normalized === localized;
 }
+
+function isSlugActive(slug: string) {
+  return isActive(`/${slug}`);
+}
+
+function groupActive(slugs: readonly string[]) {
+  return slugs.some((slug) => isSlugActive(slug));
+}
+
+function navItem(slug: LandingSlug) {
+  return {
+    slug,
+    href: getLocalizedPath(`/${slug}`, locale),
+    label: getLandingNavLabel(slug, locale),
+    desc: getLandingNavDesc(slug, locale),
+    active: isSlugActive(slug),
+    icon: landingNavIconMarkup(slug),
+  };
+}
+
+const solutionsLabel = t.nav.solutions || getNavGroupLabel('solutions', locale);
+const specialtiesLabel = t.nav.specialties || getNavGroupLabel('specialties', locale);
+
+const solutionsColumns = navSolutionsColumns.map((col) => ({
+  id: col.id,
+  title: getNavSolutionsColumnLabel(col.id, locale),
+  items: col.slugs.map(navItem),
+}));
+
+const specialtiesItems = navSpecialtiesSlugs.map(navItem);
+
+const solutionsOpen = groupActive(navSolutionsSlugs);
+const specialtiesOpen = groupActive(navSpecialtiesSlugs);
+
+const linkClass = (active: boolean) =>
+  [
+    'text-base 2xl:text-lg font-medium whitespace-nowrap transition-colors',
+    active ? 'nav-active' : 'text-gray-600 hover:text-gray-900',
+  ].join(' ');
+
+const mobileLinkClass = (active: boolean) =>
+  ['text-lg font-medium', active ? 'nav-active' : 'text-gray-600 hover:text-gray-900'].join(' ');
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+  <nav class="w-full px-4 md:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20 gap-4">
-      <div class="flex items-center gap-5 min-w-0 2xl:gap-8">
-        <a href={getLocalizedPath('/', locale)} class="flex items-center gap-2.5 flex-shrink-0">
-          <img src="/images/logo.png" alt="DocNote" class="h-9 w-auto" />
-          <span class="text-xl font-semibold text-gray-900">DocNote</span>
+      <div class="flex items-center gap-6 min-w-0 2xl:gap-10">
+        <a href={getLocalizedPath('/', locale)} class="flex items-center gap-1.5 flex-shrink-0 text-gray-900">
+          <img src="/images/logo-icon-black.png" alt="" aria-hidden="true" class="h-10 w-auto" width="35" height="40" />
+          <span class="text-2xl font-semibold text-gray-900">DocNote</span>
         </a>
 
-        <div class="hidden xl:flex items-center gap-3 2xl:gap-5">
-          <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+        <div class="hidden xl:flex items-center gap-5 2xl:gap-7">
+          <a href={getLocalizedPath('/tutorial', locale)} class={linkClass(isActive('/tutorial'))}>
             {t.nav.tutorial}
           </a>
-          <a href={getLocalizedPath('/pricing', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+
+          <div class:list={['nav-dd', solutionsOpen && 'is-current']} data-nav-dd>
+            <button
+              type="button"
+              class:list={['nav-dd-trigger', solutionsOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
+              aria-expanded="false"
+              aria-haspopup="true"
+              data-nav-dd-trigger
+            >
+              <span>{solutionsLabel}</span>
+              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="nav-dd-panel nav-dd-panel--mega" data-nav-dd-panel role="menu">
+              <div class="nav-mega">
+                {
+                  solutionsColumns.map((col) => (
+                    <div class="nav-mega-col">
+                      <p class="nav-mega-heading">{col.title}</p>
+                      <ul class="nav-mega-list">
+                        {col.items.map((item) => (
+                          <li>
+                            <a
+                              href={item.href}
+                              class:list={['nav-dd-item nav-dd-item--icon', item.active && 'is-active']}
+                              role="menuitem"
+                            >
+                              <span class="nav-dd-icon" aria-hidden="true">
+                                <svg
+                                  width="18"
+                                  height="18"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="1.75"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  set:html={item.icon}
+                                />
+                              </span>
+                              <span class="nav-dd-text">
+                                <span class="nav-dd-label">{item.label}</span>
+                                {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                              </span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class:list={['nav-dd', specialtiesOpen && 'is-current']} data-nav-dd>
+            <button
+              type="button"
+              class:list={['nav-dd-trigger', specialtiesOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
+              aria-expanded="false"
+              aria-haspopup="true"
+              data-nav-dd-trigger
+            >
+              <span>{specialtiesLabel}</span>
+              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="nav-dd-panel nav-dd-panel--specialties" data-nav-dd-panel role="menu">
+              <div class="nav-spec-grid">
+                {
+                  specialtiesItems.map((item) => (
+                    <a
+                      href={item.href}
+                      class:list={['nav-dd-item nav-dd-item--icon nav-dd-item--spec', item.active && 'is-active']}
+                      role="menuitem"
+                    >
+                      <span class="nav-dd-icon" aria-hidden="true">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          set:html={item.icon}
+                        />
+                      </span>
+                      <span class="nav-dd-text">
+                        <span class="nav-dd-label">{item.label}</span>
+                        {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                      </span>
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <a href={getLocalizedPath('/pricing', locale)} class={linkClass(isActive('/pricing'))}>
             {t.nav.pricing}
           </a>
-          <a href={getLocalizedPath('/blog', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
-            {t.nav.blog}
-          </a>
-          <a href={getLocalizedPath('/team', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/team', locale)} class={linkClass(isActive('/team'))}>
             {t.nav.team}
           </a>
-          <a href={getLocalizedPath('/emploi', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/emploi') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={careersHref} class={linkClass(careersActive)}>
             {t.nav.joinUs}
           </a>
-          <a href={getLocalizedPath('/sondage', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={surveyHref} class={linkClass(surveyActive)}>
             {t.nav.survey}
           </a>
-          <a href={getLocalizedPath('/patient', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/patient', locale)} class={linkClass(isActive('/patient'))}>
             {t.nav.patient}
+          </a>
+          <a
+            href={getLocalizedPath('/blog', locale)}
+            class={linkClass(isActive('/blog') || currentPath.includes('/blog/'))}
+          >
+            {t.nav.blog}
           </a>
         </div>
       </div>
 
-      <div class="flex items-center gap-1.5 2xl:gap-2 flex-shrink-0">
+      <div class="flex items-center gap-2 2xl:gap-2.5 flex-shrink-0">
         <LanguageSwitcher locale={locale} />
         <a
           href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR"
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-3.5 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
+          class="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-2.5 text-base font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
         >
+          <StoreIcon store="apple" class="w-5 h-5" />
           {t.nav.appStore}
         </a>
         <a
           href="https://play.google.com/store/apps/details?id=app.docnote&pli=1"
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-3.5 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
+          class="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-2.5 text-base font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
         >
+          <StoreIcon store="google" class="w-5 h-5" />
           {t.nav.googlePlay}
         </a>
         <a
           href="https://docnote.care/app/"
-          class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20 whitespace-nowrap"
+          class="btn-primary header-cta hidden sm:inline-flex whitespace-nowrap"
         >
           {t.nav.webApp}
         </a>
@@ -80,7 +252,7 @@ function isActive(path: string) {
           href={DEMO_BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-violet-700 bg-violet-50 border border-violet-200 rounded-full hover:bg-violet-100 transition-all whitespace-nowrap"
+          class="btn-soft header-cta hidden sm:inline-flex whitespace-nowrap"
         >
           {t.nav.demo}
         </a>
@@ -94,24 +266,401 @@ function isActive(path: string) {
     </div>
 
     <div id="mobile-menu" class="hidden xl:hidden py-6 border-t border-gray-100">
-      <div class="flex flex-col gap-6">
-        <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-lg", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.tutorial}</a>
-        <a href={getLocalizedPath('/pricing', locale)} class:list={["text-lg", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.pricing}</a>
-        <a href={getLocalizedPath('/blog', locale)} class:list={["text-lg", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.blog}</a>
-        <a href={getLocalizedPath('/team', locale)} class:list={["text-lg", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.team}</a>
-        <a href={getLocalizedPath('/emploi', locale)} class:list={["text-lg", isActive('/emploi') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.joinUs}</a>
-        <a href={getLocalizedPath('/sondage', locale)} class:list={["text-lg", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.survey}</a>
-        <a href={getLocalizedPath('/patient', locale)} class:list={["text-lg", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.patient}</a>
+      <div class="flex flex-col gap-5">
+        <a href={getLocalizedPath('/tutorial', locale)} class={mobileLinkClass(isActive('/tutorial'))}>{t.nav.tutorial}</a>
+
+        <div class:list={['nav-mgroup', solutionsOpen && 'is-open']} data-nav-mgroup>
+          <button type="button" class="nav-mgroup-trigger" data-nav-mgroup-trigger aria-expanded={solutionsOpen ? 'true' : 'false'}>
+            <span class:list={[solutionsOpen ? 'nav-active' : '']}>{solutionsLabel}</span>
+            <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="nav-mgroup-panel">
+            {
+              solutionsColumns.map((col) => (
+                <div class="nav-mgroup-section">
+                  <p class="nav-mega-heading">{col.title}</p>
+                  {col.items.map((item) => (
+                    <a href={item.href} class:list={[mobileLinkClass(item.active), 'nav-m-item']}>
+                      <span class="nav-dd-icon" aria-hidden="true">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          set:html={item.icon}
+                        />
+                      </span>
+                      <span class="nav-dd-text">
+                        <span class="nav-dd-label">{item.label}</span>
+                        {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class:list={['nav-mgroup', specialtiesOpen && 'is-open']} data-nav-mgroup>
+          <button type="button" class="nav-mgroup-trigger" data-nav-mgroup-trigger aria-expanded={specialtiesOpen ? 'true' : 'false'}>
+            <span class:list={[specialtiesOpen ? 'nav-active' : '']}>{specialtiesLabel}</span>
+            <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="nav-mgroup-panel">
+            {
+              specialtiesItems.map((item) => (
+                <a href={item.href} class:list={[mobileLinkClass(item.active), 'nav-m-item']}>
+                  <span class="nav-dd-icon" aria-hidden="true">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      set:html={item.icon}
+                    />
+                  </span>
+                  <span class="nav-dd-text">
+                    <span class="nav-dd-label">{item.label}</span>
+                    {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <a href={getLocalizedPath('/pricing', locale)} class={mobileLinkClass(isActive('/pricing'))}>{t.nav.pricing}</a>
+        <a href={getLocalizedPath('/team', locale)} class={mobileLinkClass(isActive('/team'))}>{t.nav.team}</a>
+        <a href={careersHref} class={mobileLinkClass(careersActive)}>{t.nav.joinUs}</a>
+        <a href={surveyHref} class={mobileLinkClass(surveyActive)}>{t.nav.survey}</a>
+        <a href={getLocalizedPath('/patient', locale)} class={mobileLinkClass(isActive('/patient'))}>{t.nav.patient}</a>
+        <a href={getLocalizedPath('/blog', locale)} class={mobileLinkClass(isActive('/blog') || currentPath.includes('/blog/'))}>{t.nav.blog}</a>
         <div class="flex flex-col gap-3 mt-2">
-          <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 text-center hover:bg-gray-200 transition-all">{t.nav.appStore}</a>
-          <a href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 text-center hover:bg-gray-200 transition-all">{t.nav.googlePlay}</a>
-          <a href="https://docnote.care/app/" class="text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full px-6 py-2.5 text-center">{t.nav.webApp}</a>
-          <a href={DEMO_BOOKING_URL} target="_blank" rel="noopener noreferrer" class="text-base font-medium text-violet-700 bg-violet-50 border border-violet-200 rounded-full px-6 py-2.5 text-center">{t.nav.demo}</a>
+          <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-lg font-medium text-gray-700 bg-gray-100 rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">
+            <StoreIcon store="apple" class="w-5 h-5" />
+            {t.nav.appStore}
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-lg font-medium text-gray-700 bg-gray-100 rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">
+            <StoreIcon store="google" class="w-5 h-5" />
+            {t.nav.googlePlay}
+          </a>
+          <a href="https://docnote.care/app/" class="btn-primary header-cta-mobile text-center">{t.nav.webApp}</a>
+          <a href={DEMO_BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn-soft header-cta-mobile text-center">{t.nav.demo}</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
+
+<style>
+  header a.header-cta {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  header a.header-cta-mobile {
+    padding: 0.875rem 1.75rem;
+    font-size: 1.125rem;
+  }
+
+  .nav-dd {
+    position: relative;
+    /* Hover bridge so the cursor can leave the label without closing the menu */
+    padding-bottom: 0.85rem;
+    margin-bottom: -0.85rem;
+  }
+
+  .nav-dd-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  @media (min-width: 1536px) {
+    .nav-dd-trigger {
+      font-size: 1.125rem;
+    }
+  }
+
+  .nav-dd-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-dd.is-open .nav-dd-chevron,
+  .nav-dd:hover .nav-dd-chevron,
+  .nav-dd:focus-within .nav-dd-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-dd-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 16.5rem;
+    max-height: min(70vh, 28rem);
+    overflow-y: auto;
+    overscroll-contain: contain;
+    padding: 0.4rem;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 0.85rem;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 18px 40px rgba(15, 23, 42, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.14s ease,
+      visibility 0.14s ease;
+    z-index: 60;
+  }
+
+  .nav-dd-panel--mega {
+    left: 0;
+    right: auto;
+    transform: none;
+    min-width: min(52rem, calc(100vw - 2rem));
+    width: min(56rem, calc(100vw - 2rem));
+    max-width: min(56rem, calc(100vw - 2rem));
+    max-height: none;
+    overflow: visible;
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .nav-dd-panel--specialties {
+    left: 0;
+    right: auto;
+    transform: none;
+    min-width: min(44rem, calc(100vw - 2rem));
+    width: max-content;
+    max-width: min(52rem, calc(100vw - 2rem));
+    padding: 0.65rem;
+  }
+
+  .nav-dd.is-open .nav-dd-panel,
+  .nav-dd:hover .nav-dd-panel,
+  .nav-dd:focus-within .nav-dd-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-dd.is-open .nav-dd-panel--mega,
+  .nav-dd:hover .nav-dd-panel--mega,
+  .nav-dd:focus-within .nav-dd-panel--mega,
+  .nav-dd.is-open .nav-dd-panel--specialties,
+  .nav-dd:hover .nav-dd-panel--specialties,
+  .nav-dd:focus-within .nav-dd-panel--specialties {
+    transform: none;
+  }
+
+  .nav-mega {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35rem 1.25rem;
+  }
+
+  .nav-mega-heading {
+    margin: 0 0 0.45rem;
+    padding: 0 0.55rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+  }
+
+  .nav-mega-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .nav-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(17.5rem, 1fr));
+    justify-content: start;
+    align-items: start;
+    column-gap: 0.35rem;
+    row-gap: 0.15rem;
+  }
+
+  .nav-dd-item {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.55rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #4b5563;
+    white-space: normal;
+    text-align: left;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .nav-dd-item--icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    padding: 0.55rem 0.7rem;
+  }
+
+  .nav-dd-item--spec {
+    min-width: 0;
+    max-width: 22rem;
+  }
+
+  .nav-dd-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .nav-dd-label {
+    display: block;
+    white-space: nowrap;
+    text-align: left;
+    color: inherit;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.25;
+  }
+
+  .nav-dd-desc {
+    display: block;
+    white-space: normal;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #9ca3af;
+  }
+
+  .nav-dd-item:hover .nav-dd-desc,
+  .nav-dd-item.is-active .nav-dd-desc {
+    color: #8b93a1;
+  }
+
+  .nav-dd-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.05rem;
+    border-radius: 0.55rem;
+    background: rgba(var(--dn-primary-rgb), 0.08);
+    color: var(--dn-primary-ink, #3b1f6e);
+  }
+
+  .nav-dd-item:hover,
+  .nav-dd-item.is-active {
+    background: rgba(var(--dn-primary-rgb), 0.07);
+    color: var(--dn-primary-ink, #3b1f6e);
+  }
+
+  .nav-dd-item:hover .nav-dd-icon,
+  .nav-dd-item.is-active .nav-dd-icon {
+    background: rgba(var(--dn-primary-rgb), 0.14);
+  }
+
+  .nav-mgroup-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #4b5563;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .nav-mgroup-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-mgroup.is-open .nav-mgroup-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-mgroup-panel {
+    display: none;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.85rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid rgba(var(--dn-primary-rgb), 0.18);
+  }
+
+  .nav-mgroup.is-open .nav-mgroup-panel {
+    display: flex;
+  }
+
+  .nav-mgroup-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .nav-mgroup-section + .nav-mgroup-section {
+    margin-top: 0.35rem;
+  }
+
+  .nav-m-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .nav-m-item .nav-dd-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-top: 0.1rem;
+  }
+
+  .nav-m-item .nav-dd-label {
+    white-space: normal;
+    font-size: 1rem;
+  }
+</style>
 
 <script>
   const menuBtn = document.getElementById('mobile-menu-btn');
@@ -119,5 +668,38 @@ function isActive(path: string) {
 
   menuBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
+  });
+
+  const closeDesktopDropdowns = (except?: HTMLElement | null) => {
+    document.querySelectorAll<HTMLElement>('[data-nav-dd]').forEach((dd) => {
+      if (except && dd === except) return;
+      dd.classList.remove('is-open');
+      dd.querySelector<HTMLButtonElement>('[data-nav-dd-trigger]')?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-nav-dd]').forEach((dd) => {
+    const trigger = dd.querySelector<HTMLButtonElement>('[data-nav-dd-trigger]');
+    trigger?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willOpen = !dd.classList.contains('is-open');
+      closeDesktopDropdowns(willOpen ? dd : null);
+      dd.classList.toggle('is-open', willOpen);
+      trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', () => closeDesktopDropdowns());
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDesktopDropdowns();
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-nav-mgroup]').forEach((group) => {
+    const trigger = group.querySelector<HTMLButtonElement>('[data-nav-mgroup-trigger]');
+    trigger?.addEventListener('click', () => {
+      const willOpen = !group.classList.contains('is-open');
+      group.classList.toggle('is-open', willOpen);
+      trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
   });
 </script>
