@@ -1,0 +1,20 @@
+---
+import PillarPage from '../../components/pages/PillarPage.astro';
+import { nonDefaultLocales, isValidLocale, type Locale } from '../../utils/i18n';
+import { landingSlugs, isLandingSlug } from '../../content/landings';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.flatMap((locale) =>
+    landingSlugs.map((landing) => ({
+      params: { locale, landing },
+    }))
+  );
+}
+
+const { locale, landing } = Astro.params;
+if (!isValidLocale(locale) || !landing || !isLandingSlug(landing)) {
+  return Astro.redirect('/');
+}
+---
+
+<PillarPage locale={locale as Locale} pillar={landing} />
