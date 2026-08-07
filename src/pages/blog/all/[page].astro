@@ -1,0 +1,18 @@
+---
+import BlogAllPage from '../../../components/pages/BlogAllPage.astro';
+import { defaultLocale } from '../../../utils/i18n';
+import { getCollection } from 'astro:content';
+import { BLOG_PAGE_SIZE, getBlogPageCount } from '../../../utils/blogPagination';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ id }) => id.startsWith('en/'));
+  const totalPages = getBlogPageCount(posts.length, BLOG_PAGE_SIZE);
+  return Array.from({ length: totalPages }, (_, i) => ({
+    params: { page: String(i + 1) },
+  }));
+}
+
+const page = Number(Astro.params.page);
+---
+
+<BlogAllPage locale={defaultLocale} page={page} />
