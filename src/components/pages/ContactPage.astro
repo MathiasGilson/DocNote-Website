@@ -1,0 +1,423 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../ui/PageHero.astro';
+import { type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+import { getPageMeta } from '../../utils/seo';
+import { DEMO_BOOKING_URL } from '../../utils/links';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry('pages', locale);
+const enEntry = locale === 'en' ? entry : await getEntry('pages', 'en');
+const t = entry!.data.contact;
+const en = enEntry!.data.contact;
+const meta = getPageMeta('contact', locale);
+
+const copy = {
+  ...en,
+  ...Object.fromEntries(Object.entries(t).filter(([, v]) => v != null && v !== '')),
+};
+
+const people = [
+  {
+    key: 'vincent',
+    name: copy.vincentName,
+    role: copy.vincentRole || en.vincentRole || '',
+    region: copy.switzerland,
+    focus: copy.vincentFocus || en.vincentFocus || '',
+    city: copy.vincentCity || en.vincentCity || '',
+    email: 'vincent.tan@docnote.ch',
+    phone: '+41 78 639 83 76',
+    tel: '+41786398376',
+    image: '/images/team/vincent-tan.jpg',
+    imageWidth: 896,
+    imageHeight: 1200,
+  },
+  {
+    key: 'alice',
+    name: copy.aliceName,
+    role: copy.aliceRole || en.aliceRole || '',
+    region: copy.france,
+    focus: copy.aliceFocus || en.aliceFocus || '',
+    city: copy.aliceCity || en.aliceCity || '',
+    email: 'alice.gilson@docnote.ch',
+    phone: '+33 6 95 28 84 85',
+    tel: '+33695288485',
+    image: '/images/team/alice-gilson.jpg',
+    imageWidth: 896,
+    imageHeight: 1200,
+  },
+];
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <PageHero eyebrow="DocNote" title={copy.title} subtitle={copy.subtitle} compact>
+    <a
+      href={DEMO_BOOKING_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary"
+    >
+      {copy.bookDemo}
+    </a>
+  </PageHero>
+
+  <section class="contact-page pb-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+        {
+          people.map((person, i) => (
+            <article class:list={['contact-card', 'reveal', i === 1 && 'reveal-delay-1']}>
+              <div class="contact-card__media">
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  width={person.imageWidth}
+                  height={person.imageHeight}
+                  sizes="(min-width: 1024px) 28vw, 90vw"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  class="contact-card__photo"
+                />
+              </div>
+
+              <div class="contact-card__body">
+                <div class="contact-card__head">
+                  <span class="contact-card__region">{person.region}</span>
+                  <h2 class="contact-card__name">{person.name}</h2>
+                  {person.role && <p class="contact-card__role">{person.role}</p>}
+                  {person.focus && <p class="contact-card__focus">{person.focus}</p>}
+                </div>
+
+                <dl class="contact-card__details">
+                  <div class="contact-row">
+                    <dt>
+                      <span class="contact-row__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </span>
+                      {copy.emailLabel}
+                    </dt>
+                    <dd>
+                      <a href={`mailto:${person.email}`}>{person.email}</a>
+                    </dd>
+                  </div>
+                  <div class="contact-row">
+                    <dt>
+                      <span class="contact-row__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.69l1.5 4.49a1 1 0 01-.5 1.21l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.49 1.5a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z" />
+                        </svg>
+                      </span>
+                      {copy.phoneLabel}
+                    </dt>
+                    <dd>
+                      <a href={`tel:${person.tel}`}>{person.phone}</a>
+                    </dd>
+                  </div>
+                  <div class="contact-row">
+                    <dt>
+                      <span class="contact-row__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </span>
+                      {copy.locationLabel}
+                    </dt>
+                    <dd>{person.city}</dd>
+                  </div>
+                </dl>
+
+                <div class="contact-card__actions">
+                  <a href={`mailto:${person.email}`} class="contact-btn contact-btn--primary">
+                    {copy.writeEmail || 'Email'}
+                  </a>
+                  <a href={`tel:${person.tel}`} class="contact-btn contact-btn--ghost">
+                    {copy.callPhone || 'Call'}
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <aside class="contact-meta reveal reveal-delay-2">
+        <div class="contact-meta__grid">
+          <div>
+            <p class="contact-meta__label">{copy.companyLabel || 'Company'}</p>
+            <p class="contact-meta__value">{copy.companyValue || 'DocNote'}</p>
+          </div>
+          <div>
+            <p class="contact-meta__label">{copy.generalEmailLabel || copy.emailLabel}</p>
+            <a class="contact-meta__value contact-meta__link" href={`mailto:${copy.generalEmail || 'hello@docnote.ch'}`}>
+              {copy.generalEmail || 'hello@docnote.ch'}
+            </a>
+          </div>
+          <div>
+            <p class="contact-meta__label">{copy.hoursLabel || 'Hours'}</p>
+            <p class="contact-meta__value">{copy.hoursValue || ''}</p>
+          </div>
+          <div>
+            <p class="contact-meta__label">{copy.responseLabel || 'Focus'}</p>
+            <p class="contact-meta__value">{copy.responseValue || ''}</p>
+          </div>
+        </div>
+        {
+          copy.hostingNote && (
+            <p class="contact-meta__note">{copy.hostingNote}</p>
+          )
+        }
+      </aside>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  }
+
+  .contact-card__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    max-height: 420px;
+    background: #eef2ff;
+    overflow: hidden;
+  }
+
+  .contact-card__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+  }
+
+  .contact-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    padding: 1.5rem 1.35rem 1.6rem;
+  }
+
+  @media (min-width: 640px) {
+    .contact-card__body {
+      padding: 1.75rem 1.75rem 1.85rem;
+    }
+  }
+
+  .contact-card__region {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.65rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid var(--dn-primary-soft-border);
+    background: rgba(var(--dn-primary-rgb), 0.08);
+    color: var(--dn-primary-ink);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .contact-card__name {
+    margin: 0;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    line-height: 1.2;
+  }
+
+  .contact-card__role {
+    margin: 0.35rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dn-primary-ink);
+  }
+
+  .contact-card__focus {
+    margin: 0.65rem 0 0;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: #475569;
+  }
+
+  .contact-card__details {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1rem 0 0;
+    border-top: 1px solid #eef2f7;
+  }
+
+  .contact-row dt {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0 0 0.2rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+
+  .contact-row dd {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    word-break: break-word;
+  }
+
+  .contact-row a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .contact-row a:hover {
+    color: var(--dn-primary-ink);
+  }
+
+  .contact-row__icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    color: var(--dn-primary-mid);
+  }
+
+  .contact-row__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-card__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    margin-top: auto;
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.85rem;
+    padding: 0.7rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .contact-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .contact-btn--primary {
+    color: #fff;
+    background-image: var(--dn-gradient);
+    box-shadow: var(--dn-glow-sm);
+  }
+
+  .contact-btn--ghost {
+    color: var(--dn-primary-ink);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.28);
+    background: #fff;
+  }
+
+  .contact-meta {
+    margin-top: 2rem;
+    padding: 1.5rem 1.35rem;
+    border-radius: 1.35rem;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+  }
+
+  @media (min-width: 640px) {
+    .contact-meta {
+      padding: 1.75rem 1.75rem;
+    }
+  }
+
+  .contact-meta__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  @media (min-width: 640px) {
+    .contact-meta__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .contact-meta__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .contact-meta__label {
+    margin: 0 0 0.3rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+
+  .contact-meta__value {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #0f172a;
+  }
+
+  .contact-meta__link {
+    color: var(--dn-primary-ink);
+    text-decoration: none;
+  }
+
+  .contact-meta__link:hover {
+    text-decoration: underline;
+  }
+
+  .contact-meta__note {
+    margin: 1.25rem 0 0;
+    padding-top: 1.1rem;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #64748b;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-btn {
+      transition: none;
+    }
+
+    .contact-btn:hover {
+      transform: none;
+    }
+  }
+</style>

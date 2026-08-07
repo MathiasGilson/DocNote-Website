@@ -1,102 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { locales, isValidLocale, type Locale } from '../../utils/i18n';
-import { getEntry } from 'astro:content';
-import { getPageMeta } from '../../utils/seo';
-import { DEMO_BOOKING_URL } from '../../utils/links';
+import ContactPage from '../../components/pages/ContactPage.astro';
+import { nonDefaultLocales, type Locale } from '../../utils/i18n';
 
 export function getStaticPaths() {
-  return locales.map((locale) => ({ params: { locale } }));
+  return nonDefaultLocales.map((locale) => ({ params: { locale } }));
 }
 
-const { locale } = Astro.params;
-
-if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/contact/');
-}
-
-const entry = await getEntry('pages', locale as Locale);
-const t = entry.data;
-const meta = getPageMeta('contact', locale as Locale);
+const { locale } = Astro.params as { locale: Locale };
 ---
 
-<Layout title={meta.title} description={meta.description}>
-  <section class="pt-32 pb-20 bg-white min-h-screen">
-    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-          {t.contact.title}
-        </h1>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          {t.contact.subtitle}
-        </p>
-        <a
-          href={DEMO_BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center mt-8 px-7 py-3 text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/20"
-        >
-          {t.contact.bookDemo}
-        </a>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-8 border border-violet-100">
-          <div class="flex items-center gap-4 mb-6">
-            <img
-              src="/images/dr_vincent_tan.jpg"
-              alt={t.contact.vincentName}
-              class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm"
-            />
-            <div>
-              <p class="text-sm font-semibold text-violet-600 uppercase tracking-wider">{t.contact.switzerland}</p>
-              <h2 class="text-xl font-semibold text-gray-900">{t.contact.vincentName}</h2>
-            </div>
-          </div>
-          <div class="space-y-5">
-            <div>
-              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">{t.contact.emailLabel}</h3>
-              <a href="mailto:vincent.tan@docnote.ch" class="text-lg font-medium text-gray-900 hover:text-violet-600 transition-colors break-all">
-                vincent.tan@docnote.ch
-              </a>
-            </div>
-            <div>
-              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">{t.contact.phoneLabel}</h3>
-              <a href="tel:+41786398376" class="text-lg font-medium text-gray-900 hover:text-violet-600 transition-colors">
-                +41 78 639 83 76
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-8 border border-violet-100">
-          <div class="flex items-center gap-4 mb-6">
-            <img
-              src="/images/dre_alice_gilson.jpg"
-              alt={t.contact.aliceName}
-              class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm"
-            />
-            <div>
-              <p class="text-sm font-semibold text-violet-600 uppercase tracking-wider">{t.contact.france}</p>
-              <h2 class="text-xl font-semibold text-gray-900">{t.contact.aliceName}</h2>
-            </div>
-          </div>
-          <div class="space-y-5">
-            <div>
-              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">{t.contact.emailLabel}</h3>
-              <a href="mailto:alice.gilson@docnote.ch" class="text-lg font-medium text-gray-900 hover:text-violet-600 transition-colors break-all">
-                alice.gilson@docnote.ch
-              </a>
-            </div>
-            <div>
-              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">{t.contact.phoneLabel}</h3>
-              <a href="tel:+33695288485" class="text-lg font-medium text-gray-900 hover:text-violet-600 transition-colors">
-                +33 6 95 28 84 85
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</Layout>
+<ContactPage locale={locale} />

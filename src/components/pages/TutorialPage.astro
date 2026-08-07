@@ -1,0 +1,626 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StoreIcon from '../StoreIcon.astro';
+import PageHero from '../ui/PageHero.astro';
+import { type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+import { getPageMeta } from '../../utils/seo';
+import { DEMO_BOOKING_URL } from '../../utils/links';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry('pages', locale);
+const t = entry!.data;
+const meta = getPageMeta('tutorial', locale);
+
+const tutorialVideoId = locale === 'fr' ? 'xnKpex2jtgs' : 'DdQ_POkaaPE';
+const step4VideoId = locale === 'fr' ? '2Qz-M7LPeAw' : null;
+const step5VideoId = locale === 'fr' ? 'TPkAZcxoqoI' : null;
+const step5VideoIdEdl = locale === 'fr' ? '8dA4j27XYPI' : null;
+
+const APP_IOS = 'https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204';
+const APP_ANDROID = 'https://play.google.com/store/apps/details?id=app.docnote&pli=1';
+const APP_WEB = 'https://docnote.care/app/';
+
+const STEP_LABELS: Record<string, string> = {
+  en: 'Step',
+  fr: 'Étape',
+  de: String.fromCharCode(83, 99, 104, 114, 105, 116, 116),
+  ru: 'Шаг',
+  es: 'Paso',
+  pt: 'Passo',
+  it: 'Passo',
+  nl: 'Stap',
+  sv: 'Steg',
+  no: 'Steg',
+};
+const STEP_LABEL = STEP_LABELS[locale] || STEP_LABELS.en;
+
+const models = [
+  t.tutorial.step3.models.dictation,
+  t.tutorial.step3.models.general,
+  t.tutorial.step3.models.specialist,
+  t.tutorial.step3.models.operative,
+  t.tutorial.step3.models.followUp,
+  t.tutorial.step3.models.discharge,
+];
+
+const downloads = [
+  {
+    href: APP_IOS,
+    store: 'apple' as const,
+    label: t.nav.appStore,
+    hint: t.tutorial.step1.ios,
+  },
+  {
+    href: APP_ANDROID,
+    store: 'google' as const,
+    label: t.nav.googlePlay,
+    hint: t.tutorial.step1.android,
+  },
+];
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <PageHero eyebrow="DocNote" title={t.tutorial.title} subtitle={t.tutorial.subtitle} compact />
+
+  <section class="tutorial-page pb-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ol class="tutorial-steps">
+        <!-- Step 1 -->
+        <li class="tutorial-step reveal">
+          <div class="tutorial-step__rail" aria-hidden="true">
+            <span class="tutorial-step__num">1</span>
+            <span class="tutorial-step__line"></span>
+          </div>
+          <div class="tutorial-step__body">
+            <p class="tutorial-step__label">{STEP_LABEL} 1</p>
+            <h2 class="tutorial-step__title">{t.tutorial.step1.title}</h2>
+            <p class="tutorial-step__desc">{t.tutorial.step1.description}</p>
+
+            <div class="tutorial-download-grid">
+              {
+                downloads.map((d) => (
+                  <a
+                    href={d.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="tutorial-download"
+                  >
+                    <StoreIcon store={d.store} class="w-6 h-6 shrink-0" />
+                    <span class="tutorial-download__text">
+                      <span class="tutorial-download__hint">{d.hint}</span>
+                      <span class="tutorial-download__label">{d.label}</span>
+                    </span>
+                  </a>
+                ))
+              }
+              <a href={APP_WEB} target="_blank" rel="noopener noreferrer" class="tutorial-download tutorial-download--primary">
+                <svg class="w-6 h-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+                <span class="tutorial-download__text">
+                  <span class="tutorial-download__hint">{locale === 'ru' ? 'Открыть в браузере' : 'Open in browser'}</span>
+                  <span class="tutorial-download__label">{t.nav.webApp}</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Step 2 -->
+        <li class="tutorial-step reveal reveal-delay-1">
+          <div class="tutorial-step__rail" aria-hidden="true">
+            <span class="tutorial-step__num">2</span>
+            <span class="tutorial-step__line"></span>
+          </div>
+          <div class="tutorial-step__body">
+            <p class="tutorial-step__label">{STEP_LABEL} 2</p>
+            <h2 class="tutorial-step__title">{t.tutorial.step2.title}</h2>
+            <p class="tutorial-step__desc">{t.tutorial.step2.description}</p>
+            <div class="tutorial-callout">
+              <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p>{t.tutorial.step2.trialInfo}</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- Step 3 -->
+        <li class="tutorial-step reveal reveal-delay-2">
+          <div class="tutorial-step__rail" aria-hidden="true">
+            <span class="tutorial-step__num">3</span>
+            {
+              (t.tutorial.step4 && step4VideoId) || (t.tutorial.step5 && step5VideoId) ? (
+                <span class="tutorial-step__line"></span>
+              ) : null
+            }
+          </div>
+          <div class="tutorial-step__body">
+            <p class="tutorial-step__label">{STEP_LABEL} 3</p>
+            <h2 class="tutorial-step__title">{t.tutorial.step3.title}</h2>
+            <p class="tutorial-step__desc">{t.tutorial.step3.description}</p>
+
+            <div class="tutorial-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${tutorialVideoId}`}
+                title="DocNote Tutorial"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <h3 class="tutorial-models__heading">{t.tutorial.step3.chooseModel}</h3>
+            <div class="tutorial-models">
+              {
+                models.map((model, i) => (
+                  <article class="tutorial-model" style={`--i: ${i}`}>
+                    <span class="tutorial-model__index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                    <h4 class="tutorial-model__title">{model.title}</h4>
+                    <p class="tutorial-model__desc">{model.description}</p>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </li>
+
+        {
+          t.tutorial.step4 && step4VideoId && (
+            <li class="tutorial-step reveal">
+              <div class="tutorial-step__rail" aria-hidden="true">
+                <span class="tutorial-step__num">4</span>
+                {t.tutorial.step5 && step5VideoId ? <span class="tutorial-step__line"></span> : null}
+              </div>
+              <div class="tutorial-step__body">
+                <p class="tutorial-step__label">{STEP_LABEL} 4</p>
+                <h2 class="tutorial-step__title">{t.tutorial.step4.title}</h2>
+                <p class="tutorial-step__desc">{t.tutorial.step4.description}</p>
+                <div class="tutorial-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${step4VideoId}`}
+                    title="DocNote — Templates"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </li>
+          )
+        }
+
+        {
+          t.tutorial.step5 && step5VideoId && (
+            <li class="tutorial-step reveal">
+              <div class="tutorial-step__rail" aria-hidden="true">
+                <span class="tutorial-step__num">5</span>
+              </div>
+              <div class="tutorial-step__body">
+                <p class="tutorial-step__label">{STEP_LABEL} 5</p>
+                <h2 class="tutorial-step__title">{t.tutorial.step5.title}</h2>
+                <p class="tutorial-step__desc">{t.tutorial.step5.description}</p>
+                <p class="tutorial-video-caption">SOKLE</p>
+                <div class="tutorial-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${step5VideoId}`}
+                    title="DocNote — SOKLE"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                {step5VideoIdEdl && (
+                  <>
+                    <p class="tutorial-video-caption">EDL</p>
+                    <div class="tutorial-video">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${step5VideoIdEdl}`}
+                        title="DocNote — EDL"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </>
+                )}
+              </div>
+            </li>
+          )
+        }
+      </ol>
+
+      <div class="tutorial-cta reveal">
+        <div class="tutorial-cta__inner">
+          <h3 class="tutorial-cta__title">{t.tutorial.cta.title}</h3>
+          <p class="tutorial-cta__subtitle">{t.tutorial.cta.subtitle}</p>
+          <div class="tutorial-cta__actions">
+            <a href={APP_IOS} target="_blank" rel="noopener noreferrer" class="tutorial-cta__btn tutorial-cta__btn--dark">
+              <StoreIcon store="apple" class="w-5 h-5" />
+              {t.tutorial.cta.appStore}
+            </a>
+            <a href={APP_ANDROID} target="_blank" rel="noopener noreferrer" class="tutorial-cta__btn tutorial-cta__btn--dark">
+              <StoreIcon store="google" class="w-5 h-5" />
+              {t.tutorial.cta.googlePlay}
+            </a>
+            <a href={APP_WEB} class="tutorial-cta__btn tutorial-cta__btn--primary">
+              {t.tutorial.cta.webApp}
+            </a>
+            <a href={DEMO_BOOKING_URL} target="_blank" rel="noopener noreferrer" class="tutorial-cta__btn tutorial-cta__btn--ghost">
+              {t.tutorial.cta.getDemo}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .tutorial-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tutorial-step {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 640px) {
+    .tutorial-step {
+      grid-template-columns: 3.5rem 1fr;
+      gap: 1.75rem;
+    }
+  }
+
+  .tutorial-step__rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.15rem;
+  }
+
+  .tutorial-step__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background-image: var(--dn-gradient);
+    box-shadow: var(--dn-glow-sm);
+    flex-shrink: 0;
+  }
+
+  .tutorial-step__line {
+    flex: 1;
+    width: 2px;
+    min-height: 2.5rem;
+    margin-top: 0.65rem;
+    background: linear-gradient(
+      180deg,
+      rgba(var(--dn-primary-mid-rgb), 0.35),
+      rgba(var(--dn-primary-mid-rgb), 0.08)
+    );
+    border-radius: 9999px;
+  }
+
+  .tutorial-step__body {
+    padding-bottom: 2.75rem;
+    min-width: 0;
+  }
+
+  .tutorial-step:last-of-type .tutorial-step__body {
+    padding-bottom: 0;
+  }
+
+  .tutorial-step__label {
+    margin: 0 0 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dn-primary-ink);
+  }
+
+  .tutorial-step__title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: #0f172a;
+  }
+
+  .tutorial-step__desc {
+    margin: 0 0 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #475569;
+  }
+
+  .tutorial-download-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .tutorial-download-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .tutorial-download {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 4.25rem;
+    padding: 0.85rem 1.1rem;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    background: #0f172a;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+
+  .tutorial-download:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+  }
+
+  .tutorial-download--primary {
+    background-image: var(--dn-gradient);
+    border-color: transparent;
+    box-shadow: var(--dn-glow-sm);
+  }
+
+  .tutorial-download--primary:hover {
+    box-shadow: var(--dn-glow);
+  }
+
+  .tutorial-download__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .tutorial-download__hint {
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.72;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .tutorial-download__label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .tutorial-callout {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1rem 1.15rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.22);
+    background: rgba(var(--dn-primary-rgb), 0.08);
+    color: var(--dn-primary-ink);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .tutorial-callout p {
+    margin: 0;
+  }
+
+  .tutorial-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1.15rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    background: #0f172a;
+    margin-bottom: 1.75rem;
+  }
+
+  .tutorial-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .tutorial-video-caption {
+    margin: 0 0 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
+  .tutorial-models__heading {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.45;
+  }
+
+  .tutorial-models {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .tutorial-models {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .tutorial-model {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-height: 100%;
+    padding: 1.15rem 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .tutorial-model:hover {
+    border-color: rgba(var(--dn-primary-mid-rgb), 0.35);
+    box-shadow: 0 10px 24px rgba(var(--dn-primary-mid-rgb), 0.08);
+    transform: translateY(-1px);
+  }
+
+  .tutorial-model__index {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--dn-primary-ink);
+    opacity: 0.75;
+  }
+
+  .tutorial-model__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .tutorial-model__desc {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #64748b;
+  }
+
+  .tutorial-cta {
+    margin-top: 3rem;
+  }
+
+  .tutorial-cta__inner {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--dn-primary-soft-border);
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(var(--dn-primary-mid-rgb), 0.06);
+  }
+
+  @media (min-width: 640px) {
+    .tutorial-cta__inner {
+      padding: 2.5rem 2rem;
+    }
+  }
+
+  .tutorial-cta__title {
+    margin: 0 0 0.6rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+  }
+
+  .tutorial-cta__subtitle {
+    margin: 0 auto 1.5rem;
+    max-width: 32rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #475569;
+  }
+
+  .tutorial-cta__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .tutorial-cta__actions {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .tutorial-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.15rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  }
+
+  .tutorial-cta__btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .tutorial-cta__btn--dark {
+    background: #0f172a;
+    color: #fff;
+  }
+
+  .tutorial-cta__btn--primary {
+    color: #fff;
+    background-image: var(--dn-gradient);
+    box-shadow: var(--dn-glow-sm);
+  }
+
+  .tutorial-cta__btn--ghost {
+    color: var(--dn-primary-ink);
+    background: #fff;
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.28);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tutorial-download,
+    .tutorial-model,
+    .tutorial-cta__btn {
+      transition: none;
+    }
+
+    .tutorial-download:hover,
+    .tutorial-model:hover,
+    .tutorial-cta__btn:hover {
+      transform: none;
+    }
+  }
+</style>
