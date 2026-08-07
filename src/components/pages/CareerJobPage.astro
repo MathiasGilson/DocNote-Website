@@ -1,0 +1,947 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCareersAlternatePaths, getCareersPath, type Locale } from '../../utils/i18n';
+import { getCareersCopy, getCareerVacancy } from '../../utils/careers';
+
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+
+const { locale, slug } = Astro.props;
+
+const SHEETS_URL =
+  import.meta.env.PUBLIC_GOOGLE_SHEETS_CAREERS_URL ||
+  'https://script.google.com/macros/s/AKfycbxeict3gLPepxmJHo1-v5Upqb4G9krK6NcUQ-Ir2PYYHsOlw46CGQxaOaQ4g_wHTvOw/exec';
+
+const t = getCareersCopy(locale);
+const job = getCareerVacancy(t, slug)!;
+const careersHref = getCareersPath(locale);
+const alternates = getCareersAlternatePaths(slug);
+
+const applyModalTitle = t.applyModalTitle.replace('{role}', job.shortLabel);
+
+const ratingScale = [1, 2, 3, 4, 5] as const;
+const experienceOptions = [
+  { value: 'Aucune', label: t.coldNone },
+  { value: 'Bases / découverte', label: t.coldBasics },
+  { value: 'Expérience concrète', label: t.coldSolid },
+] as const;
+const yesNoSomeOptions = [
+  { value: 'Non', label: t.autoNone },
+  { value: 'Un peu', label: t.autoSome },
+  { value: 'Oui', label: t.autoYes },
+] as const;
+
+const selectFields = [
+  {
+    name: 'genevaPresence',
+    label: t.genevaPresence,
+    options: [
+      { value: 'Oui, sur site', label: t.genevaYes },
+      { value: 'Hybride / partiel', label: t.genevaPartial },
+      { value: 'À distance uniquement', label: t.genevaNo },
+    ],
+  },
+  {
+    name: 'educationLevel',
+    label: t.educationLevel,
+    options: [
+      { value: 'Bachelor / Licence', label: t.eduBachelor },
+      { value: 'Master', label: t.eduMaster },
+      { value: 'Autre', label: t.eduOther },
+    ],
+  },
+  {
+    name: 'frenchLevel',
+    label: t.frenchLevel,
+    options: [
+      { value: 'Natif / bilingue', label: t.levelNative },
+      { value: 'C2', label: t.levelC2 },
+      { value: 'C1', label: t.levelC1 },
+      { value: 'B2', label: t.levelB2 },
+      { value: 'B1 ou moins', label: t.levelB1 },
+    ],
+  },
+  {
+    name: 'englishLevel',
+    label: t.englishLevel,
+    options: [
+      { value: 'Natif / bilingue', label: t.levelNative },
+      { value: 'C2', label: t.levelC2 },
+      { value: 'C1', label: t.levelC1 },
+      { value: 'B2', label: t.levelB2 },
+      { value: 'B1 ou moins', label: t.levelB1 },
+    ],
+  },
+  {
+    name: 'automationTools',
+    label: t.automationTools,
+    options: yesNoSomeOptions,
+  },
+  {
+    name: 'lookerStudio',
+    label: t.lookerStudio,
+    options: yesNoSomeOptions,
+  },
+  {
+    name: 'coldEmail',
+    label: t.coldEmail,
+    options: experienceOptions,
+  },
+  {
+    name: 'funnelLanding',
+    label: t.funnelLanding,
+    options: experienceOptions,
+  },
+  {
+    name: 'communities',
+    label: t.communities,
+    options: experienceOptions,
+  },
+  {
+    name: 'linkedinVideo',
+    label: t.linkedinVideo,
+    options: experienceOptions,
+  },
+  {
+    name: 'source',
+    label: t.source,
+    options: [
+      { value: 'LinkedIn', label: t.sourceLinkedIn },
+      { value: 'École / career center', label: t.sourceSchool },
+      { value: 'Recommandation', label: t.sourceReferral },
+      { value: 'Site DocNote', label: t.sourceWebsite },
+      { value: 'Autre', label: t.sourceOther },
+    ],
+  },
+] as const;
+
+const fieldClass =
+  'dn-field mt-1.5 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 shadow-sm transition focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200';
+
+const metaTitle = `${job.shortLabel} | DocNote Careers`;
+const metaDescription = `${job.title}. ${job.location}. ${job.type}.`;
+---
+
+<Layout title={metaTitle} description={metaDescription} alternates={alternates}>
+  <section class="pt-28 pb-10 bg-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <a
+        href={careersHref}
+        class="inline-flex items-center gap-2 text-sm font-medium text-violet-700 hover:text-violet-900 mb-6 reveal"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        {t.backToCareers}
+      </a>
+
+      <article class="reveal reveal-delay-1 rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+        <div class="bg-gradient-to-r from-violet-600 via-indigo-600 to-violet-700 px-6 sm:px-10 py-8 text-white">
+          <p class="text-xs font-semibold uppercase tracking-wider text-violet-100 mb-2">{t.currentRole}</p>
+          <h1 class="text-2xl sm:text-3xl font-bold leading-tight">{job.title}</h1>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur px-3 py-1.5 text-sm">
+              <svg class="w-3.5 h-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              {job.location}
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur px-3 py-1.5 text-sm">
+              <svg class="w-3.5 h-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {job.type}
+            </span>
+          </div>
+          <button
+            type="button"
+            data-open-apply
+            class="mt-6 inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-violet-700 shadow-sm transition hover:bg-violet-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            {t.applyCta}
+          </button>
+        </div>
+
+        <div class="px-6 sm:px-10 py-10 space-y-10 text-gray-700 leading-relaxed">
+          <div>
+            <h2 class="text-lg font-bold text-gray-900 mb-3">{job.aboutTitle}</h2>
+            <p class="whitespace-pre-line">{job.aboutBody}</p>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-gray-900 mb-3">{job.contextTitle}</h2>
+            <p>{job.contextBody}</p>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-gray-900 mb-3">{job.missionsTitle}</h2>
+            <ul class="space-y-2.5">
+              {job.missions.map((item) => (
+                <li class="flex gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0" aria-hidden="true"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-gray-900 mb-3">{job.profileTitle}</h2>
+            <ul class="space-y-2.5">
+              {job.profile.map((item) => (
+                <li class="flex gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" aria-hidden="true"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-100 p-6">
+            <h2 class="text-lg font-bold text-gray-900 mb-3">{job.conditionsTitle}</h2>
+            <ul class="space-y-2.5">
+              {job.conditions.map((item) => (
+                <li class="flex gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-violet-500 shrink-0" aria-hidden="true"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="pt-2">
+            <button
+              type="button"
+              data-open-apply
+              class="btn-primary font-semibold"
+            >
+              {t.applyCta}
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div
+    id="careers-apply-modal"
+    class="fixed inset-0 z-[80] hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="apply-modal-title"
+    aria-hidden="true"
+  >
+    <div data-modal-overlay class="absolute inset-0 bg-gray-900/55 backdrop-blur-sm"></div>
+    <div class="relative z-10 flex min-h-full items-end sm:items-center justify-center px-0 pt-20 pb-0 sm:p-6 sm:pt-24">
+      <div
+        data-modal-panel
+        tabindex="-1"
+        class="dn-modal-panel relative flex max-h-[calc(100dvh-6.5rem)] sm:max-h-[min(78vh,calc(100dvh-7.5rem))] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl sm:rounded-3xl border border-gray-200 bg-white shadow-2xl outline-none"
+      >
+        <div class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-gray-100 bg-white px-5 sm:px-8 py-4">
+          <div class="min-w-0">
+            <h2 id="apply-modal-title" class="text-xl font-bold text-gray-900 truncate">{applyModalTitle}</h2>
+            <p class="text-sm text-gray-500 mt-1">{t.formSub}</p>
+          </div>
+          <button
+            type="button"
+            data-close-apply
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition hover:bg-gray-50 hover:text-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+            aria-label={t.closeModal}
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="overflow-y-auto px-5 sm:px-8 py-6">
+          <div id="form-success" class="hidden rounded-2xl bg-emerald-50 border border-emerald-200 p-8 text-center">
+            <h3 class="text-xl font-bold text-emerald-900 mb-2">{t.successTitle}</h3>
+            <p class="text-emerald-800">{t.successBody}</p>
+            <button type="button" data-close-apply class="mt-6 btn-primary font-semibold">{t.closeModal}</button>
+          </div>
+
+          <form id="careers-form" class="space-y-10" novalidate>
+            <input type="hidden" name="positionId" id="position-id" value={job.id} />
+
+            <fieldset class="space-y-4">
+              <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionIdentity}</legend>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.firstName} <span class="text-violet-600">*</span></span>
+                  <input name="firstName" required autocomplete="given-name" class={fieldClass} />
+                </label>
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.lastName} <span class="text-violet-600">*</span></span>
+                  <input name="lastName" required autocomplete="family-name" class={fieldClass} />
+                </label>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.email} <span class="text-violet-600">*</span></span>
+                  <input name="email" type="email" required autocomplete="email" class={fieldClass} />
+                </label>
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.phone} <span class="text-violet-600">*</span></span>
+                  <input name="phone" type="tel" required autocomplete="tel" class={fieldClass} />
+                </label>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.linkedin} <span class="text-violet-600">*</span></span>
+                  <input name="linkedin" type="url" placeholder="https://linkedin.com/in/…" required class={fieldClass} />
+                </label>
+                <div class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.cvFile} <span class="text-violet-600">*</span></span>
+                  <label
+                    id="cv-dropzone"
+                    for="cv-file"
+                    class="dn-dropzone mt-1.5 flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-violet-200 bg-violet-50/40 px-4 py-6 text-center cursor-pointer transition hover:border-violet-400 hover:bg-violet-50 focus-within:ring-2 focus-within:ring-primary-200"
+                  >
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-violet-100 text-violet-600 shadow-sm">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                      </svg>
+                    </span>
+                    <span class="text-sm text-gray-700">
+                      {t.cvDrop}
+                      <span class="font-semibold text-violet-700 underline decoration-violet-300 underline-offset-2">{t.cvBrowse}</span>
+                    </span>
+                    <span class="text-xs text-gray-400">{t.cvHint}</span>
+                    <input
+                      id="cv-file"
+                      name="cvFile"
+                      type="file"
+                      accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      required
+                      class="sr-only"
+                    />
+                  </label>
+                  <span id="cv-file-name" class="mt-2 hidden text-xs text-violet-700 font-medium"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="space-y-4">
+              <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionAvailability}</legend>
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div class="block" data-select-wrap>
+                  <span class="text-sm font-medium text-gray-700" id="label-genevaPresence">{selectFields[0].label} <span class="text-violet-600">*</span></span>
+                  <div class="dn-select mt-1.5" data-select data-name="genevaPresence" data-required="true" aria-labelledby="label-genevaPresence">
+                    <button type="button" class="dn-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="dn-select-value text-gray-400">{t.selectPlaceholder}</span>
+                      <svg class="dn-select-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <ul class="dn-select-menu hidden" role="listbox" tabindex="-1">
+                      {selectFields[0].options.map((o) => (
+                        <li role="option" data-value={o.value} class="dn-select-option" aria-selected="false">{o.label}</li>
+                      ))}
+                    </ul>
+                    <input type="hidden" name="genevaPresence" value="" required />
+                  </div>
+                </div>
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.startDate} <span class="text-violet-600">*</span></span>
+                  <input name="startDate" type="date" required class={fieldClass} />
+                </label>
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.durationMonths} <span class="text-violet-600">*</span></span>
+                  <input name="durationMonths" type="number" min="1" max="12" required class={fieldClass} />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="space-y-4">
+              <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionBackground}</legend>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.school} <span class="text-violet-600">*</span></span>
+                  <input name="school" required class={fieldClass} />
+                </label>
+                <label class="block">
+                  <span class="text-sm font-medium text-gray-700">{t.educationField} <span class="text-violet-600">*</span></span>
+                  <input name="educationField" required class={fieldClass} />
+                </label>
+              </div>
+              <div class="grid sm:grid-cols-3 gap-4">
+                {selectFields.slice(1, 4).map((field) => (
+                  <div class="block" data-select-wrap>
+                    <span class="text-sm font-medium text-gray-700" id={`label-${field.name}`}>{field.label} <span class="text-violet-600">*</span></span>
+                    <div class="dn-select mt-1.5" data-select data-name={field.name} data-required="true" aria-labelledby={`label-${field.name}`}>
+                      <button type="button" class="dn-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="dn-select-value text-gray-400">{t.selectPlaceholder}</span>
+                        <svg class="dn-select-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                      </button>
+                      <ul class="dn-select-menu hidden" role="listbox" tabindex="-1">
+                        {field.options.map((o) => (
+                          <li role="option" data-value={o.value} class="dn-select-option" aria-selected="false">{o.label}</li>
+                        ))}
+                      </ul>
+                      <input type="hidden" name={field.name} value="" required />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </fieldset>
+
+            <fieldset class="space-y-6">
+              <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionSkillsTools}</legend>
+              <div>
+                <p class="text-sm font-medium text-gray-700 mb-2">{t.aiTools} <span class="text-violet-600">*</span></p>
+                <div class="flex items-center gap-3">
+                  <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+                  <div class="flex flex-1 justify-between gap-1.5">
+                    {ratingScale.map((n) => (
+                      <label class="flex-1">
+                        <input type="radio" name="aiTools" value={n} required class="peer sr-only" />
+                        <span class="dn-rating block text-center py-2.5 rounded-full border border-gray-200 bg-white text-sm font-medium cursor-pointer shadow-sm transition peer-checked:bg-brand-gradient peer-checked:text-white peer-checked:border-transparent peer-focus-visible:ring-2 peer-focus-visible:ring-primary-300 hover:border-violet-300">{n}</span>
+                      </label>
+                    ))}
+                  </div>
+                  <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-x-4 gap-y-5 items-stretch">
+                {selectFields.slice(4, 6).map((field) => (
+                  <div class="flex flex-col gap-1.5" data-select-wrap>
+                    <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]" id={`label-${field.name}`}>{field.label} <span class="text-violet-600">*</span></span>
+                    <div class="dn-select" data-select data-name={field.name} data-required="true" aria-labelledby={`label-${field.name}`}>
+                      <button type="button" class="dn-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="dn-select-value text-gray-400">{t.selectPlaceholder}</span>
+                        <svg class="dn-select-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                      </button>
+                      <ul class="dn-select-menu hidden" role="listbox" tabindex="-1">
+                        {field.options.map((o) => (
+                          <li role="option" data-value={o.value} class="dn-select-option" aria-selected="false">{o.label}</li>
+                        ))}
+                      </ul>
+                      <input type="hidden" name={field.name} value="" required />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </fieldset>
+
+            <fieldset class="space-y-6">
+              <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionSkillsAcquisition}</legend>
+              <div class="grid sm:grid-cols-2 gap-x-4 gap-y-5 items-stretch">
+                {selectFields.slice(6, 10).map((field) => (
+                  <div class="flex flex-col gap-1.5" data-select-wrap>
+                    <span class="text-sm font-medium text-gray-700 min-h-[2.75rem]" id={`label-${field.name}`}>{field.label} <span class="text-violet-600">*</span></span>
+                    <div class="dn-select" data-select data-name={field.name} data-required="true" aria-labelledby={`label-${field.name}`}>
+                      <button type="button" class="dn-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="dn-select-value text-gray-400">{t.selectPlaceholder}</span>
+                        <svg class="dn-select-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                      </button>
+                      <ul class="dn-select-menu hidden" role="listbox" tabindex="-1">
+                        {field.options.map((o) => (
+                          <li role="option" data-value={o.value} class="dn-select-option" aria-selected="false">{o.label}</li>
+                        ))}
+                      </ul>
+                      <input type="hidden" name={field.name} value="" required />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-700 mb-2">{t.copywriting} <span class="text-violet-600">*</span></p>
+                <div class="flex items-center gap-3">
+                  <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+                  <div class="flex flex-1 justify-between gap-1.5">
+                    {ratingScale.map((n) => (
+                      <label class="flex-1">
+                        <input type="radio" name="copywriting" value={n} required class="peer sr-only" />
+                        <span class="dn-rating block text-center py-2.5 rounded-full border border-gray-200 bg-white text-sm font-medium cursor-pointer shadow-sm transition peer-checked:bg-brand-gradient peer-checked:text-white peer-checked:border-transparent peer-focus-visible:ring-2 peer-focus-visible:ring-primary-300 hover:border-violet-300">{n}</span>
+                      </label>
+                    ))}
+                  </div>
+                  <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="space-y-6">
+              <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionSkillsAnalysis}</legend>
+              {(['abTesting', 'dataAnalysis', 'healthInterest'] as const).map((name) => (
+                <div>
+                  <p class="text-sm font-medium text-gray-700 mb-2">{t[name]} <span class="text-violet-600">*</span></p>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-gray-400 w-12">{t.scaleLow}</span>
+                    <div class="flex flex-1 justify-between gap-1.5">
+                      {ratingScale.map((n) => (
+                        <label class="flex-1">
+                          <input type="radio" name={name} value={n} required class="peer sr-only" />
+                          <span class="dn-rating block text-center py-2.5 rounded-full border border-gray-200 bg-white text-sm font-medium cursor-pointer shadow-sm transition peer-checked:bg-brand-gradient peer-checked:text-white peer-checked:border-transparent peer-focus-visible:ring-2 peer-focus-visible:ring-primary-300 hover:border-violet-300">{n}</span>
+                        </label>
+                      ))}
+                    </div>
+                    <span class="text-xs text-gray-400 w-12 text-right">{t.scaleHigh}</span>
+                  </div>
+                </div>
+              ))}
+            </fieldset>
+
+            <fieldset class="space-y-4">
+              <legend class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-2">{t.sectionMotivation}</legend>
+              <label class="block">
+                <span class="text-sm font-medium text-gray-700">{t.motivation} <span class="text-violet-600">*</span></span>
+                <textarea name="motivation" rows="4" required maxlength="1200" class={`${fieldClass} resize-y min-h-[7rem]`}></textarea>
+              </label>
+              <label class="block">
+                <span class="text-sm font-medium text-gray-700">{t.campaignExample} <span class="text-violet-600">*</span></span>
+                <textarea name="campaignExample" rows="3" required maxlength="1200" class={`${fieldClass} resize-y min-h-[6rem]`}></textarea>
+              </label>
+              <label class="block">
+                <span class="text-sm font-medium text-gray-700">{t.whyDocNote} <span class="text-violet-600">*</span></span>
+                <textarea name="whyDocNote" rows="3" required maxlength="800" class={`${fieldClass} resize-y min-h-[6rem]`}></textarea>
+              </label>
+              <div class="block" data-select-wrap>
+                <span class="text-sm font-medium text-gray-700" id="label-source">{selectFields[10].label} <span class="text-violet-600">*</span></span>
+                <div class="dn-select mt-1.5" data-select data-name="source" data-required="true" aria-labelledby="label-source">
+                  <button type="button" class="dn-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="dn-select-value text-gray-400">{t.selectPlaceholder}</span>
+                    <svg class="dn-select-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                  </button>
+                  <ul class="dn-select-menu hidden" role="listbox" tabindex="-1">
+                    {selectFields[10].options.map((o) => (
+                      <li role="option" data-value={o.value} class="dn-select-option" aria-selected="false">{o.label}</li>
+                    ))}
+                  </ul>
+                  <input type="hidden" name="source" value="" required />
+                </div>
+              </div>
+            </fieldset>
+
+            <p id="form-error" class="hidden text-sm text-red-600" role="alert"></p>
+
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn-primary w-full sm:w-auto font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {t.submit}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .dn-select {
+    position: relative;
+  }
+  .dn-select-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #111827;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .dn-select-trigger:hover {
+    border-color: #c4b5fd;
+  }
+  .dn-select.is-open .dn-select-trigger,
+  .dn-select-trigger:focus-visible {
+    outline: none;
+    border-color: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-mid-rgb), 0.2);
+  }
+  .dn-select-chevron {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: #9ca3af;
+    flex-shrink: 0;
+    transition: transform 0.15s;
+  }
+  .dn-select.is-open .dn-select-chevron {
+    transform: rotate(180deg);
+    color: var(--dn-primary-mid);
+  }
+  .dn-select-menu {
+    position: absolute;
+    z-index: 40;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    max-height: 15rem;
+    overflow-y: auto;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    padding: 0.35rem;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  }
+  .dn-select-option {
+    border-radius: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.925rem;
+    color: #1f2937;
+    cursor: pointer;
+  }
+  .dn-select-option:hover,
+  .dn-select-option.is-active {
+    background: var(--dn-primary-soft);
+    color: var(--dn-primary-ink);
+  }
+  .dn-select-option[aria-selected='true'] {
+    background: linear-gradient(135deg, rgba(79, 138, 245, 0.12), rgba(122, 69, 224, 0.12));
+    color: var(--dn-primary-ink);
+    font-weight: 600;
+  }
+  .dn-dropzone.is-dragover {
+    border-color: var(--dn-primary);
+    background: var(--dn-primary-soft);
+  }
+  #careers-form.is-validated .dn-field:invalid:not(:focus) {
+    border-color: #fca5a5;
+  }
+  body.dn-modal-open {
+    overflow: hidden;
+  }
+</style>
+
+<script define:vars={{
+  SHEETS_URL,
+  strings: t,
+  submitLabel: t.submit,
+  submittingLabel: t.submitting,
+  cvChosenLabel: t.cvChosen,
+  jobTitle: job.title,
+  jobId: job.id,
+}}>
+  const modal = document.getElementById('careers-apply-modal');
+  const panel = modal?.querySelector('[data-modal-panel]');
+  const overlay = modal?.querySelector('[data-modal-overlay]');
+  const openButtons = document.querySelectorAll('[data-open-apply]');
+  const closeButtons = document.querySelectorAll('[data-close-apply]');
+  const form = document.getElementById('careers-form');
+  const errorEl = document.getElementById('form-error');
+  const successEl = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+  const cvInput = document.getElementById('cv-file');
+  const cvNameEl = document.getElementById('cv-file-name');
+  const cvDropzone = document.getElementById('cv-dropzone');
+
+  const MAX_CV_BYTES = 5 * 1024 * 1024;
+  const ALLOWED_EXT = ['.pdf', '.doc', '.docx'];
+  const ALLOWED_MIME = [
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  ];
+
+  let lastFocus = null;
+
+  const getFocusable = () => {
+    if (!panel) return [];
+    return Array.from(
+      panel.querySelectorAll(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true' && el.offsetParent !== null);
+  };
+
+  const openModal = () => {
+    if (!modal) return;
+    lastFocus = document.activeElement;
+    form?.classList.remove('is-validated');
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('dn-modal-open');
+    const focusable = getFocusable();
+    (focusable[0] || panel)?.focus?.();
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('dn-modal-open');
+    closeAllSelects();
+    lastFocus?.focus?.();
+  };
+
+  openButtons.forEach((btn) => btn.addEventListener('click', openModal));
+  closeButtons.forEach((btn) => btn.addEventListener('click', closeModal));
+  overlay?.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (modal?.classList.contains('hidden')) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeModal();
+      return;
+    }
+    if (e.key === 'Tab' && panel) {
+      const focusable = getFocusable();
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  if (new URLSearchParams(window.location.search).get('apply') === '1') {
+    openModal();
+  }
+
+  const showError = (msg) => {
+    errorEl.textContent = msg;
+    errorEl.classList.remove('hidden');
+  };
+
+  const fileToBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = String(reader.result || '');
+        const base64 = result.includes(',') ? result.split(',')[1] : result;
+        resolve(base64);
+      };
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+
+  const isAllowedCv = (file) => {
+    const name = file.name.toLowerCase();
+    const extOk = ALLOWED_EXT.some((ext) => name.endsWith(ext));
+    const mimeOk = !file.type || ALLOWED_MIME.includes(file.type);
+    return extOk && mimeOk;
+  };
+
+  const setCvFileName = (file) => {
+    if (!file) {
+      cvNameEl.classList.add('hidden');
+      cvNameEl.textContent = '';
+      return;
+    }
+    cvNameEl.textContent = `${cvChosenLabel}: ${file.name}`;
+    cvNameEl.classList.remove('hidden');
+  };
+
+  cvInput?.addEventListener('change', () => setCvFileName(cvInput.files?.[0]));
+
+  ;['dragenter', 'dragover'].forEach((evt) => {
+    cvDropzone?.addEventListener(evt, (e) => {
+      e.preventDefault();
+      cvDropzone.classList.add('is-dragover');
+    });
+  });
+  ;['dragleave', 'drop'].forEach((evt) => {
+    cvDropzone?.addEventListener(evt, (e) => {
+      e.preventDefault();
+      cvDropzone.classList.remove('is-dragover');
+    });
+  });
+  cvDropzone?.addEventListener('drop', (e) => {
+    const file = e.dataTransfer?.files?.[0];
+    if (!file || !cvInput) return;
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    cvInput.files = dt.files;
+    setCvFileName(file);
+  });
+
+  const closeAllSelects = (except) => {
+    document.querySelectorAll('[data-select].is-open').forEach((sel) => {
+      if (sel === except) return;
+      sel.classList.remove('is-open');
+      sel.querySelector('.dn-select-menu')?.classList.add('hidden');
+      sel.querySelector('.dn-select-trigger')?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  document.querySelectorAll('[data-select]').forEach((root) => {
+    const trigger = root.querySelector('.dn-select-trigger');
+    const menu = root.querySelector('.dn-select-menu');
+    const valueEl = root.querySelector('.dn-select-value');
+    const hidden = root.querySelector('input[type="hidden"]');
+    const options = Array.from(root.querySelectorAll('.dn-select-option'));
+
+    const open = () => {
+      closeAllSelects(root);
+      root.classList.add('is-open');
+      menu?.classList.remove('hidden');
+      trigger?.setAttribute('aria-expanded', 'true');
+      const selected = options.find((o) => o.getAttribute('aria-selected') === 'true') || options[0];
+      options.forEach((o) => o.classList.toggle('is-active', o === selected));
+      selected?.focus?.();
+    };
+
+    const close = () => {
+      root.classList.remove('is-open');
+      menu?.classList.add('hidden');
+      trigger?.setAttribute('aria-expanded', 'false');
+    };
+
+    const choose = (option) => {
+      options.forEach((o) => o.setAttribute('aria-selected', o === option ? 'true' : 'false'));
+      const value = option.getAttribute('data-value') || '';
+      const label = option.textContent || '';
+      if (hidden) hidden.value = value;
+      if (valueEl) {
+        valueEl.textContent = label;
+        valueEl.classList.remove('text-gray-400');
+        valueEl.classList.add('text-gray-900');
+      }
+      close();
+      trigger?.focus();
+    };
+
+    trigger?.addEventListener('click', () => {
+      if (root.classList.contains('is-open')) close();
+      else open();
+    });
+
+    trigger?.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
+
+    options.forEach((option, idx) => {
+      option.setAttribute('tabindex', '-1');
+      option.addEventListener('click', () => choose(option));
+      option.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          choose(option);
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          (options[idx + 1] || options[0]).focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          (options[idx - 1] || options[options.length - 1]).focus();
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          close();
+          trigger?.focus();
+        }
+      });
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-select]')) closeAllSelects();
+  });
+
+  const computeScore = (data) => {
+    const num = (v) => Number(v) || 0;
+    const exp = (v) => (v === 'Expérience concrète' ? 6 : v === 'Bases / découverte' ? 3 : 0);
+    const yn = (v) => (v === 'Oui' ? 5 : v === 'Un peu' ? 2 : 0);
+    let score = 0;
+    score += num(data.aiTools) * 2;
+    score += num(data.copywriting) * 2;
+    score += num(data.abTesting) * 2;
+    score += num(data.dataAnalysis) * 2;
+    score += num(data.healthInterest);
+    score += exp(data.coldEmail);
+    score += exp(data.funnelLanding);
+    score += exp(data.communities);
+    score += exp(data.linkedinVideo);
+    score += yn(data.automationTools);
+    score += yn(data.lookerStudio);
+    if (data.genevaPresence === 'Oui, sur site') score += 5;
+    else if (data.genevaPresence === 'Hybride / partiel') score += 3;
+    if (data.frenchLevel === 'Natif / bilingue' || data.frenchLevel === 'C2') score += 5;
+    else if (data.frenchLevel === 'C1') score += 3;
+    else if (data.frenchLevel === 'B2') score += 1;
+    return score;
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.classList.add('hidden');
+    form.classList.add('is-validated');
+
+    if (!SHEETS_URL) {
+      showError(strings.errConfig);
+      return;
+    }
+
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+    delete data.cvFile;
+
+    const required = [
+      'firstName', 'lastName', 'email', 'phone', 'linkedin', 'genevaPresence',
+      'startDate', 'durationMonths', 'school', 'educationField', 'educationLevel',
+      'frenchLevel', 'englishLevel', 'aiTools', 'automationTools', 'lookerStudio',
+      'coldEmail', 'funnelLanding', 'communities', 'linkedinVideo', 'copywriting',
+      'abTesting', 'dataAnalysis', 'healthInterest', 'motivation', 'campaignExample',
+      'whyDocNote', 'source',
+    ];
+
+    for (const key of required) {
+      if (!String(data[key] || '').trim()) {
+        showError(strings.errRequired);
+        return;
+      }
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email))) {
+      showError(strings.errEmail);
+      return;
+    }
+
+    const cvFile = cvInput?.files?.[0];
+    if (!cvFile) {
+      showError(strings.errCvRequired);
+      return;
+    }
+    if (!isAllowedCv(cvFile)) {
+      showError(strings.errCvType);
+      return;
+    }
+    if (cvFile.size > MAX_CV_BYTES) {
+      showError(strings.errCvSize);
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = submittingLabel;
+
+    try {
+      const cvBase64 = await fileToBase64(cvFile);
+      const payload = {
+        ...data,
+        positionId: jobId,
+        timestamp: new Date().toISOString(),
+        score: computeScore(data),
+        position: jobTitle,
+        cvFileName: cvFile.name,
+        cvMimeType: cvFile.type || 'application/octet-stream',
+        cvBase64,
+      };
+
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      });
+      form.classList.add('hidden');
+      successEl.classList.remove('hidden');
+    } catch {
+      showError(strings.errNetwork);
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitLabel;
+    }
+  });
+</script>

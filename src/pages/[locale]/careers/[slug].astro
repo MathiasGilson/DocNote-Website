@@ -1,0 +1,15 @@
+---
+import CareerJobPage from '../../../components/pages/CareerJobPage.astro';
+import { nonDefaultLocales, type Locale } from '../../../utils/i18n';
+import { CAREER_JOB_SLUGS } from '../../../utils/careers';
+
+export function getStaticPaths() {
+  return nonDefaultLocales
+    .filter((locale) => locale !== 'fr')
+    .flatMap((locale) => CAREER_JOB_SLUGS.map((slug) => ({ params: { locale, slug } })));
+}
+
+const { locale, slug } = Astro.params as { locale: Locale; slug: string };
+---
+
+<CareerJobPage locale={locale} slug={slug} />
