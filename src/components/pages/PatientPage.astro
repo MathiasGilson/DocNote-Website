@@ -1,0 +1,550 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FaqAccordion from '../FaqAccordion.astro';
+import PageHero from '../ui/PageHero.astro';
+import ZigZagBenefits from '../ZigZagBenefits.astro';
+import { type Locale, getLocalizedPath } from '../../utils/i18n';
+import { patientCopy, getInline } from '../../utils/inline-content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const c = getInline(patientCopy, locale) as {
+  pageTitle: string;
+  pageDescription: string;
+  hero: { badge: string; title: string; subtitle: string; lead: string };
+  story: { badge: string; title: string; paragraphs: string[] };
+  benefits: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    items: { title: string; body: string }[];
+  };
+  steps: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    items: { title: string; body: string }[];
+  };
+  quote: { text: string; attribution: string };
+  privacy: {
+    badge: string;
+    title: string;
+    intro: string;
+    points: { title: string; body: string }[];
+    linkLabel?: string;
+  };
+  control: { badge: string; title: string; body: string };
+  faq: {
+    title: string;
+    subtitle: string;
+    items: { q: string; a: string }[];
+  };
+  cta: { title: string; body: string; contact: string };
+};
+
+const privacyHref = getLocalizedPath('/privacy', locale);
+
+---
+
+<Layout title={c.pageTitle} description={c.pageDescription}>
+  <PageHero
+    eyebrow={c.hero.badge}
+    title={c.hero.title}
+    subtitle={c.hero.subtitle}
+    lead={c.hero.lead}
+  />
+
+  <!-- Story -->
+  <section class="patient-story relative py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="patient-story-shell reveal">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div class="lg:col-span-4">
+            <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+              <span class="patient-badge-dot" aria-hidden="true"></span>
+              {c.story.badge}
+            </span>
+            <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+              {c.story.title}
+            </h2>
+          </div>
+          <div class="lg:col-span-8 space-y-4">
+            {c.story.paragraphs.map((p) => (
+              <p class="text-base sm:text-lg text-gray-600 leading-relaxed">{p}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ZigZagBenefits
+    badge={c.benefits.badge}
+    title={c.benefits.title}
+    subtitle={c.benefits.subtitle}
+    items={c.benefits.items}
+  />
+
+  <!-- Steps -->
+  <section class="patient-steps py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12 sm:mb-14 reveal">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+          <span class="patient-badge-dot" aria-hidden="true"></span>
+          {c.steps.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {c.steps.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{c.steps.subtitle}</p>
+      </div>
+
+      <ol class="patient-steps-grid">
+        {c.steps.items.map((step, i) => (
+          <li
+            class:list={[
+              'patient-step reveal',
+              i === 0 && 'reveal-delay-1',
+              i === 1 && 'reveal-delay-2',
+              i === 2 && 'reveal-delay-3',
+              i === 3 && 'reveal-delay-4',
+            ]}
+          >
+            <span class="patient-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="mt-4 text-lg font-semibold text-gray-900 tracking-tight">{step.title}</h3>
+            <p class="mt-2 text-sm sm:text-base text-gray-500 leading-relaxed">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="patient-quote relative py-16 sm:py-20 overflow-hidden">
+    <div class="patient-quote-bg" aria-hidden="true"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <svg class="patient-quote-mark mx-auto mb-6" width="36" height="28" viewBox="0 0 36 28" fill="none" aria-hidden="true">
+        <path d="M0 28V16.8C0 7.2 5.4 1.6 14.4 0l1.8 3.6C11.4 5.2 8.4 8.4 8.4 14.4H14.4V28H0zm21.6 0V16.8c0-9.6 5.4-15.2 14.4-16.8l1.8 3.6c-4.8 1.6-7.8 4.8-7.8 10.8h6V28H21.6z" fill="currentColor"/>
+      </svg>
+      <blockquote class="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 leading-snug tracking-tight">
+        &ldquo;{c.quote.text}&rdquo;
+      </blockquote>
+      <p class="mt-6 text-sm font-medium text-primary-600 tracking-wide">{c.quote.attribution}</p>
+    </div>
+  </section>
+
+  <!-- Privacy callout -->
+  <section class="patient-privacy relative py-16 sm:py-24 overflow-hidden" data-patient-privacy>
+    <div class="patient-atmosphere patient-atmosphere--soft" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-2xl reveal">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+          <span class="patient-badge-dot" aria-hidden="true"></span>
+          {c.privacy.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {c.privacy.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{c.privacy.intro}</p>
+      </div>
+
+      <div class="patient-privacy-shell reveal reveal-delay-1">
+        <div class="grid sm:grid-cols-2 gap-px bg-white/10">
+          {c.privacy.points.map((point, i) => (
+            <article class="patient-privacy-point" style={`--d:${0.08 + i * 0.07}s`} data-privacy-point>
+              <span class="patient-privacy-check" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-base font-semibold text-white tracking-tight">{point.title}</h3>
+                <p class="mt-1.5 text-sm text-primary-100/75 leading-relaxed">{point.body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      {c.privacy.linkLabel && (
+        <p class="mt-6 text-sm text-gray-500 reveal reveal-delay-2">
+          <a href={privacyHref} class="text-primary-600 font-medium hover:underline">
+            {c.privacy.linkLabel}
+          </a>
+        </p>
+      )}
+    </div>
+  </section>
+
+  <!-- Control -->
+  <section class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="patient-control reveal">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+          <span class="patient-badge-dot" aria-hidden="true"></span>
+          {c.control.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {c.control.title}
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl">
+          {c.control.body}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="patient-faq py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2">
+          {c.faq.title}
+        </h2>
+        <p class="text-gray-500">{c.faq.subtitle}</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <FaqAccordion items={c.faq.items} />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="patient-cta relative py-16 sm:py-24 overflow-hidden">
+    <div class="patient-atmosphere" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="patient-cta-shell reveal">
+        <div class="max-w-xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {c.cta.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-600 leading-relaxed">{c.cta.body}</p>
+          <p class="mt-6 text-sm text-gray-500">
+            {c.cta.contact}{' '}
+            <a href="mailto:contact@docnote.app" class="text-primary-600 font-medium hover:underline">
+              contact@docnote.app
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const privacyRoot = document.querySelector('[data-patient-privacy]')
+  if (privacyRoot) {
+    const points = privacyRoot.querySelectorAll('[data-privacy-point]')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            points.forEach((el) => el.classList.add('is-visible'))
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+    observer.observe(privacyRoot)
+  }
+
+</script>
+
+<style>
+  .patient-atmosphere,
+  .patient-atmosphere--soft {
+    display: none;
+  }
+
+  .patient-badge-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.18);
+  }
+
+  .patient-hero {
+    background: #fff;
+  }
+
+  .patient-story-shell {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 20px 48px rgba(15, 23, 42, 0.05);
+    padding: 1.75rem 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .patient-story-shell {
+      padding: 2.5rem 2.25rem;
+    }
+  }
+
+  .patient-steps-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .patient-steps-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .patient-steps-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .patient-step {
+    position: relative;
+    height: 100%;
+    padding: 1.35rem 1.25rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 10px 28px rgba(var(--dn-primary-rgb), 0.04);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .patient-step:hover {
+    border-color: rgba(var(--dn-primary-rgb), 0.28);
+    box-shadow: 0 12px 32px rgba(var(--dn-primary-rgb), 0.1);
+    transform: translateY(-2px);
+  }
+
+  .patient-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 1.75rem;
+    padding: 0 0.55rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--dn-primary-ink);
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.2);
+  }
+
+  .patient-quote {
+    background: #fff;
+  }
+
+  .patient-quote-bg {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 50%, rgba(var(--dn-primary-rgb), 0.08), transparent 70%);
+  }
+
+  .patient-quote-mark {
+    color: rgba(var(--dn-primary-rgb), 0.35);
+  }
+
+  .patient-privacy-shell {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(91, 63, 144, 0.22);
+    background:
+      radial-gradient(ellipse 80% 70% at 0% 0%, rgba(var(--dn-primary-mid-rgb), 0.14), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(var(--dn-primary-end-rgb), 0.1), transparent 50%),
+      linear-gradient(155deg, #0e0b16 0%, #161022 48%, #110e1a 100%);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 24px 56px rgba(15, 10, 35, 0.18);
+  }
+
+  .patient-privacy-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.35rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--d, 0s);
+  }
+
+  .patient-privacy-point.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .patient-privacy-check {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 999px;
+    background: rgba(203, 184, 255, 0.16);
+    color: #d4c4ff;
+  }
+
+  .patient-control {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background:
+      linear-gradient(180deg, #f8f6fc 0%, #ffffff 100%);
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 10px 28px rgba(var(--dn-primary-rgb), 0.05);
+  }
+
+  @media (min-width: 640px) {
+    .patient-control {
+      padding: 2.25rem 2.25rem;
+    }
+  }
+
+  .patient-cta-shell {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    padding: 2rem 1.5rem;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 20px 48px rgba(15, 23, 42, 0.06);
+  }
+
+  @media (min-width: 640px) {
+    .patient-cta-shell {
+      padding: 2.5rem 2.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .patient-privacy-point,
+    .patient-step:hover,
+    .patient-benefit:hover .patient-benefit-visual {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .pb-present-glow,
+    .pb-eye,
+    .pb-gaze,
+    .pb-pulse-ring,
+    .pb-bubble,
+    .pb-check-live,
+    .pb-clock-hand--h,
+    .pb-clock-hand--m,
+    .pb-time-wave span,
+    .pb-note-section,
+    .pb-note-bar,
+    .pb-note-check,
+    .pb-check-line {
+      animation: none !important;
+    }
+
+    .patient-benefit.is-active .pb-present-glow,
+    .patient-benefit:hover .pb-present-glow {
+      opacity: 0.85;
+    }
+
+    .patient-benefit.is-active .pb-gaze,
+    .patient-benefit:hover .pb-gaze {
+      opacity: 0.85;
+    }
+
+    .pb-pulse-ring {
+      opacity: 0.25;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    .pb-pulse-ring.r2 {
+      display: none;
+    }
+
+    .pb-bubble {
+      opacity: 1;
+      transform: none;
+    }
+
+    .patient-benefit.is-active .pb-check-box,
+    .patient-benefit:hover .pb-check-box {
+      background: rgba(var(--dn-primary-rgb), 0.12);
+      border-color: rgba(var(--dn-primary-rgb), 0.45);
+      color: var(--dn-primary-ink);
+      transition: none;
+    }
+
+    .patient-benefit.is-active .pb-check-box svg,
+    .patient-benefit:hover .pb-check-box svg {
+      opacity: 1;
+      transform: scale(1);
+      transition: none;
+    }
+
+    .patient-benefit.is-active .pb-check-line,
+    .patient-benefit:hover .pb-check-line {
+      background: rgba(var(--dn-primary-rgb), 0.18);
+      transform: none;
+    }
+
+    .patient-benefit.is-active .pb-clock-face,
+    .patient-benefit:hover .pb-clock-face {
+      transform: none;
+      opacity: 1;
+    }
+
+    .pb-clock-hand--h { transform: rotate(40deg); }
+    .pb-clock-hand--m { transform: rotate(120deg); }
+
+    .patient-benefit.is-active .pb-time-reclaim,
+    .patient-benefit:hover .pb-time-reclaim {
+      opacity: 1;
+      transform: none;
+    }
+
+    .pb-time-wave span {
+      opacity: 0.55;
+      transform: none;
+    }
+
+    .patient-benefit.is-active .pb-note-section,
+    .patient-benefit:hover .pb-note-section {
+      opacity: 1;
+      transform: none;
+    }
+
+    .patient-benefit.is-active .pb-note-bar,
+    .patient-benefit:hover .pb-note-bar {
+      transform: scaleX(1);
+    }
+
+    .patient-benefit.is-active .pb-note-check,
+    .patient-benefit:hover .pb-note-check {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
