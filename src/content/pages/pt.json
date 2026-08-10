@@ -1,0 +1,780 @@
+{
+  "nav": {
+    "tutorial": "Tutorial",
+    "pricing": "Preços",
+    "blog": "Blog",
+    "team": "Equipe",
+    "survey": "Pesquisa",
+    "patient": "Pacientes",
+    "joinUs": "Junte-se a nós",
+    "demo": "Solicitar Demonstração",
+    "webApp": "Aplicativo Web",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "solutions": "Soluções",
+    "specialties": "Especialidades"
+  },
+  "hero": {
+    "badge": "Desenvolvido por médicos · Hospedado na Suíça",
+    "title": "Documentação hospitalar,",
+    "titleHighlight": "sem as noites perdidas com anotações",
+    "subtitle": "O DocNote transforma consultas em cartas de alta, notas de visita e relatórios operatórios. Desenvolvido por médicos que ainda atuam em hospitais.",
+    "cta": "Comece gratuitamente",
+    "ctaSecondary": "Para clínicas e hospitais",
+    "founders": "Dr. Vincent Tan · Dra. Alice Gilson",
+    "foundersRole": "Fundadores · HUG & La Tour",
+    "trustedBy": "Confiança de principais provedores de saúde"
+  },
+  "soapDemo": {
+    "consultations": "Consultas",
+    "patients": "Pacientes",
+    "templates": "Modelos",
+    "settings": "Configurações",
+    "consultationTitle": "Consulta — Paciente #1247",
+    "consultationDate": "Hoje, 14:30 · Clínica Geral",
+    "recording": "Gravação",
+    "soapNoteGenerated": "Nota SOAP Gerada",
+    "soapNote": "Nota SOAP",
+    "savedToEHR": "Salvo no EHR",
+    "justNow": "Agora mesmo",
+    "patientId": "Paciente #1247",
+    "generalPractice": "Clínica Geral",
+    "liveTranscript": "Transcrição ao vivo",
+    "soapS": "Paciente relata dor de cabeça persistente há 3 dias, piorando à noite. Avalia dor como 6/10, pressão bilateral. Nega náusea ou fotofobia.",
+    "soapO": "PA 120/80, FC 72, Temp 36.8°C. Alerta e orientado. Leve sensibilidade no trapézio bilateral. Nervos cranianos II-XII intactos.",
+    "soapA": "Cefaleia tipo tensão, provavelmente relacionada ao estresse. Sem sinais de alerta para cefaleia secundária.",
+    "soapP": "Ibuprofeno 400mg conforme necessidade. Orientação sobre higiene do sono. Retorno em 2 semanas se não houver melhora.",
+    "phoneSoapS": "Dor de cabeça persistente há 3 dias, 6/10, pressão bilateral.",
+    "phoneSoapO": "PA 120/80, FC 72. Sensibilidade no trapézio. Nervos cranianos intactos.",
+    "phoneSoapA": "Cefaleia tipo tensão, relacionada ao estresse.",
+    "phoneSoapP": "Ibuprofeno 400mg conforme necessidade. Retorno em 2 semanas."
+  },
+  "stats": {
+    "timeSaved": "Tempo de documentação economizado",
+    "timeSavedValue": "2+ horas",
+    "timeSavedSuffix": "+ horas",
+    "timeSavedDesc": "por dia em média",
+    "accuracy": "Precisão de transcrição",
+    "accuracyValue": "99%",
+    "accuracyDesc": "terminologia médica",
+    "doctors": "Médicos ativos",
+    "doctorsValue": "1.000+",
+    "doctorsDesc": "em toda a Europa"
+  },
+  "features": {
+    "badge": "Recursos e Benefícios",
+    "title": "Adaptável a todas as tarefas administrativas",
+    "subtitle": "Todas as ferramentas que você precisa para agilizar sua documentação",
+    "recording": {
+      "title": "Gravação Inteligente",
+      "description": "Grave consultas com um toque. Nossa IA entende o contexto médico e filtra ruídos de fundo.",
+      "animStatus": "Gravando",
+      "animWords": [
+        "Então",
+        "a",
+        "dor",
+        "começou",
+        "há",
+        "cerca",
+        "de",
+        "duas",
+        "semanas,",
+        "principalmente",
+        "pela",
+        "manhã.",
+        "Eu",
+        "nunca",
+        "tive",
+        "enxaquecas",
+        "antes..."
+      ]
+    },
+    "transcription": {
+      "title": "Transcrição Precisa",
+      "description": "Transcrição em tempo real com 99% de precisão para terminologia médica em vários idiomas.",
+      "animLine1": "Paciente apresenta",
+      "animLine2Pre": "sintomas de ",
+      "animWrong1": "diabetis",
+      "animRight1": "diabetes",
+      "animLine2Post": ",",
+      "animLine3Pre": "níveis de ",
+      "animWrong2": "glicemia",
+      "animRight2": "glicemia",
+      "animLine3Post": " elevados observados."
+    },
+    "summaries": {
+      "title": "Resumos Estruturados",
+      "description": "Gere automaticamente notas de consulta, cartas de alta e relatórios de consulta.",
+      "animTitle": "Resumo da Consulta",
+      "animSection1": "Diagnóstico",
+      "animSection2": "Tratamento",
+      "animSection3": "Acompanhamento"
+    },
+    "integration": {
+      "title": "Integração com EHR",
+      "description": "Integre-se perfeitamente ao seu sistema de Prontuário Eletrônico de Saúde existente.",
+      "animTitle": "EHR — Registro do Paciente",
+      "animPatient": "Paciente",
+      "animDob": "Data de Nascimento",
+      "animNotes": "Notas",
+      "animNoReport": "Sem relatório"
+    },
+    "security": {
+      "title": "Segurança de Dados",
+      "description": "Seus dados permanecem na Suíça. Compatível com HIPAA, certificado ISO 27001.",
+      "animLabel1": "Paciente",
+      "animLabel2": "Data de Nascimento",
+      "animLabel3": "Diagnóstico",
+      "animLabel4": "Notas",
+      "animValue1": "Marie Dupont",
+      "animValue2": "12.03.1987",
+      "animValue3": "Diabetes tipo 2",
+      "animValue4": "HbA1c elevada",
+      "animNoReport": "Sem relatório"
+    },
+    "languages": {
+      "title": "Suporte Multilíngue",
+      "description": "Suporta francês, inglês, italiano, espanhol, árabe e mais de 20 outros idiomas."
+    }
+  },
+  "specificities": {
+    "badge": "Especificidades",
+    "title": "Desenvolvido para como os hospitais realmente documentam",
+    "subtitle": "Cada especificidade altera o que acaba no registro, não apenas mais um recurso opcional.",
+    "impactLabel": "Impacto",
+    "stageLabel": "No produto",
+    "coding": {
+      "title": "Codificação médica e faturamento",
+      "impact": "A codificação deixa de ser uma segunda etapa de documentação. A própria carta destaca diagnósticos faturaveis: menos SADs perdidos, menos trabalho noturno de codificação.",
+      "description": "Diagnósticos associados significativos são destacados na carta de alta, com sugestões de codificação no final do documento.",
+      "descriptionCh": "Diagnósticos associados significativos são destacados na carta de alta, com sugestões de codificação Swiss DRG no final do documento.",
+      "descriptionRow": "Diagnósticos associados significativos são destacados na carta de alta, com sugestões de codificação PMSI no final do documento.",
+      "stageLabel": "Na carta",
+      "line1Pre": "…histórico de ",
+      "line1Mark": "diabetes tipo 2",
+      "line1Post": " com elevação recente de HbA1c…",
+      "line2Pre": "…hipertensão ",
+      "line2Mark": "conhecida",
+      "line2Post": ", atualmente controlada…",
+      "line3Pre": "…TVP ",
+      "line3Mark": "prévio",
+      "line3Post": " · anticoagulação discutida…"
+    },
+    "tardoc": {
+      "title": "Conformidade TARDOC",
+      "impact": "Uma breve ditação à beira do leito se torna uma descrição completa e faturavel do exame. Você documenta uma vez para o cuidado clínico e para o TARDOC, não duas vezes.",
+      "description": "Achados ditados concisos são expandidos para a redação estruturada que seguradoras e TARDOC esperam, sem reescrever o exame do zero.",
+      "stageLabel": "Ditação para descrição faturavel",
+      "shortDictation": "“Abdômen mole, sem rebote. Ruídos hidroaéreos presentes.”",
+      "expandLabel": "Expande para texto pronto para TARDOC",
+      "fullDescription": "Exame abdominal: abdômen mole e não doloroso, sem defesa ou dor à descompressão. Ruídos hidroaéreos presentes em todos os quadrantes. Nenhuma organomegalia palpada…"
+    },
+    "ehr": {
+      "title": "Integração com EHR",
+      "impact": "A documentação não termina quando a nota parece boa. Termina quando está no registro: sem lacuna de copiar e colar, sem versão flutuando fora do EHR.",
+      "description": "Relatórios validados são enviados diretamente para Mediway e SOKLE, para que o documento clínico e o arquivo do paciente permaneçam o mesmo objeto.",
+      "stageLabel": "Nota validada para arquivo do paciente",
+      "docReady": "Carta de alta",
+      "docMeta": "validada · PDF pronto"
+    },
+    "templates": {
+      "title": "Modelos personalizados em Word",
+      "impact": "Você para de reformatar a saída da IA para corresponder ao papel timbrado do hospital. Todo relatório já é seu documento: layout, seções, assinatura. A revisão permanece médica, não cosmética.",
+      "description": "Envie seu modelo do Word uma vez. O DocNote recria relatórios futuros com sua estrutura e identidade visual exatas.",
+      "stageLabel": "Seu modelo se torna o relatório",
+      "fileName": "Papel timbrado do serviço.docx",
+      "dropHint": "Suas seções · suas margens · sua assinatura",
+      "letterhead": "Hospital · Serviço cirúrgico",
+      "letterBody": "Prezado colega,\nSegue em anexo…"
+    },
+    "context": {
+      "title": "Entrada de contexto rico",
+      "impact": "A nota reflete o quadro clínico completo, não apenas o que foi dito em voz alta: menos omissões, menos correções de \"por favor adicione o resultado do laboratório\" depois do fato.",
+      "description": "Anexe cartas anteriores, exames laboratoriais, imagens e fotos. O modelo os usa ao estruturar o relatório.",
+      "stageLabel": "Áudio mais contexto de arquivo para uma nota mais forte",
+      "chip1": "Alta anterior",
+      "chip2": "Exames.pdf",
+      "chip3": "Foto da ferida",
+      "meterLabel": "Completude do relatório",
+      "meterNote": "Contexto incluído · menos achados ausentes no rascunho"
+    },
+    "hospital": {
+      "title": "Documentação específica para hospitais",
+      "impact": "Você não força o trabalho hospitalar em um SOAP ambulatorial. O tipo de documento corresponde ao fluxo de trabalho, para que estrutura, extensão e destinatários estejam corretos na primeira vez.",
+      "description": "Formatos nativos para cartas de alta, notas de evolução de visita, relatórios operatórios e outros documentos hospitalares.",
+      "stageLabel": "Documento certo para o momento",
+      "type1Title": "Alta",
+      "type1Sub": "carta para clínico geral",
+      "type2Title": "Visita",
+      "type2Sub": "nota de evolução",
+      "type3Title": "Relatório",
+      "type3Sub": "operatório"
+    },
+    "sync": {
+      "title": "Telefone e desktop sincronizados",
+      "impact": "A documentação permanece um único fluxo da beira do leito à mesa. Você não reinsere ou reconstrói a nota ao alternar dispositivos: o rascunho segue você.",
+      "description": "Grave no leito do paciente pelo telefone e continue e valide no desktop. Mesma consulta, sincronização em tempo real.",
+      "stageLabel": "Uma nota, dois lugares",
+      "phone": "Telefone",
+      "recording": "Gravando…",
+      "desktop": "Desktop",
+      "sameDraft": "Mesmo rascunho"
+    },
+    "dayHospital": {
+      "title": "Hospital-dia colaborativo",
+      "impact": "No final do dia, você tem um arquivo de paciente estruturado, não quatro notas parciais para reconciliar. A qualidade da documentação escala com a equipe em vez de fragmentar.",
+      "description": "Vários cuidadores contribuem para o mesmo arquivo local do paciente. O DocNote mescla contribuições em um registro confiável.",
+      "stageLabel": "Vários cuidadores para um arquivo",
+      "mergeResult": "Registro único estruturado de hospital-dia"
+    }
+  },
+  "specialties": {
+    "title": "Apoiando mais de 50 especialidades médicas",
+    "subtitle": "Da clínica geral ao cuidado especializado",
+    "items": [
+      "Clínica Geral",
+      "Medicina Interna",
+      "Cardiologia",
+      "Dermatologia",
+      "Endocrinologia",
+      "Gastroenterologia",
+      "Neurologia",
+      "Oncologia",
+      "Ortopedia",
+      "Pediatria",
+      "Psiquiatria",
+      "Pneumologia",
+      "Reumatologia",
+      "Cirurgia",
+      "Urologia",
+      "Medicina de Emergência"
+    ]
+  },
+  "testimonials": {
+    "badge": "Depoimento",
+    "title": "Amado por médicos",
+    "subtitle": "Veja o que os profissionais de saúde dizem sobre o DocNote",
+    "quote1": "O DocNote realmente mudou meu dia no departamento de emergência, permitindo que eu me concentrasse nos meus pacientes e voltasse a aproveitar minhas consultas.",
+    "author1": "Dra. Perrot",
+    "role1": "Médica Residente em Emergência",
+    "quote2": "Desde que comecei a usar o DocNote, preparar e acompanhar consultas se tornou um processo rápido e eficiente.",
+    "author2": "Dr. Patel",
+    "role2": "Médico Residente em Cirurgia Geral",
+    "quote3": "Eu sempre disse que pagaria por um assistente em tempo integral quando me tornasse bilionário, mas agora nem preciso ser bilionário.",
+    "author3": "Prof. Ris",
+    "role3": "Chefe de Cirurgia Colorretal",
+    "items": [
+      {
+        "quote": "O DocNote realmente transformou meu dia no departamento de emergência, permitindo que eu me concentre nos meus pacientes e volte a aproveitar minhas consultas.",
+        "author": "Dre Perrot",
+        "role": "Médica Residente em Departamento de Emergência",
+        "image": "/images/testimonials/perrot.jpg"
+      },
+      {
+        "quote": "Desde que comecei a usar o DocNote, preparar e acompanhar consultas se tornou um processo rápido e eficiente.",
+        "author": "Dr Patel",
+        "role": "Médico Residente em Cirurgia Geral",
+        "image": "/images/testimonials/patel.jpg"
+      },
+      {
+        "quote": "Eu sempre disse que pagaria por um assistente em tempo integral quando me tornasse bilionário, mas agora nem preciso ser bilionário.",
+        "author": "Pr Ris",
+        "role": "Chefe de Cirurgia Colorretal",
+        "image": "/images/testimonials/ris.jpg"
+      },
+      {
+        "quote": "As cartas de alta costumavam roubar minhas noites. Agora valido um rascunho estruturado antes de sair do hospital — e ainda soa como eu.",
+        "author": "Dr Moreau",
+        "role": "Internista, Hospital Universitário",
+        "image": "/images/testimonials/moreau.jpg"
+      },
+      {
+        "quote": "Em cardiologia, cada detalhe importa. O DocNote captura as nuances da consulta sem me forçar a usar um modelo genérico de ambulatório.",
+        "author": "Dr Keller",
+        "role": "Cardiologista",
+        "image": "/images/testimonials/keller.jpg"
+      },
+      {
+        "quote": "Os relatórios cirúrgicos finalmente são escritos enquanto o caso ainda está fresco. Minha equipe revisa menos e o registro está pronto para o próximo turno.",
+        "author": "Dr Rossi",
+        "role": "Cirurgião Ortopédico",
+        "image": "/images/testimonials/rossi.jpg"
+      },
+      {
+        "quote": "Entre clínicas e enfermarias, eu costumava perder o fio da meada de cada consulta. O DocNote mantém a documentação contínua sem atrasar o atendimento.",
+        "author": "Dr Nguyen",
+        "role": "Pediatra",
+        "image": "/images/testimonials/nguyen.jpg"
+      },
+      {
+        "quote": "As notas de anestesia precisam ser precisas e rápidas. O DocNote acompanha o ritmo da sala de cirurgia sem comprometer a linguagem clínica.",
+        "author": "Dr Berg",
+        "role": "Anestesiologista",
+        "image": "/images/testimonials/berg.jpg"
+      },
+      {
+        "quote": "Posso ditar achados e obter um relatório que já corresponde à forma como os radiologistas realmente escrevem — não um resumo vago de IA.",
+        "author": "Dr Dubois",
+        "role": "Radiologista",
+        "image": "/images/testimonials/dubois.jpg"
+      },
+      {
+        "quote": "As consultas de neurologia são densas. O DocNote as estrutura de forma clara para que a equipe de referência receba uma nota utilizável, não uma parede de texto.",
+        "author": "Dr Hoffmann",
+        "role": "Neurologista",
+        "image": "/images/testimonials/hoffmann.jpg"
+      },
+      {
+        "quote": "Como médico de família, vejo volume todos os dias. O DocNote me devolve os minutos que costumavam desaparecer no preenchimento de prontuários.",
+        "author": "Dr Silva",
+        "role": "Clínico Geral",
+        "image": "/images/testimonials/silva.jpg"
+      },
+      {
+        "quote": "As clínicas de ORL são rápidas. Com o DocNote, a nota está pronta quando o paciente sai da sala — e as dicas de codificação já estão lá.",
+        "author": "Dr Andersson",
+        "role": "Especialista em ORL",
+        "image": "/images/testimonials/andersson.jpg"
+      },
+      {
+        "quote": "A documentação psiquiátrica precisa de nuance e confidencialidade. O DocNote respeita ambos enquanto remove o arrasto administrativo.",
+        "author": "Dr Lefevre",
+        "role": "Psiquiatra",
+        "image": "/images/testimonials/lefevre.jpg"
+      },
+      {
+        "quote": "Na terapia intensiva, as passagens de plantão dependem de notas claras. O DocNote nos ajuda a manter o registro preciso mesmo nas noites mais movimentadas.",
+        "author": "Dr Kowalski",
+        "role": "Médico de UTI",
+        "image": "/images/testimonials/kowalski.jpg"
+      },
+      {
+        "quote": "Os acompanhamentos de oncologia são complexos. O DocNote transforma uma longa conversa em uma atualização estruturada em que meus colegas podem confiar.",
+        "author": "Dr Yamamoto",
+        "role": "Oncologista",
+        "image": "/images/testimonials/yamamoto.jpg"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto para economizar 2+ horas diárias?",
+    "subtitle": "Junte-se a centenas de médicos que transformaram seu fluxo de trabalho de documentação.",
+    "button": "Comece Gratuitamente",
+    "noCard": "Sem necessidade de cartão de crédito"
+  },
+  "valueProp": {
+    "title": "Documentação Médica Simplificada",
+    "subtitle": "Unifique seu fluxo de trabalho de documentação, economize horas todos os dias e foque no que mais importa — seus pacientes.",
+    "card1": {
+      "title": "Comece rapidamente",
+      "description": "Comece instantaneamente. Qualquer médico da sua equipe pode gravar, transcrever e compartilhar notas clínicas em minutos."
+    },
+    "card2": {
+      "title": "Sincronize com seu EHR",
+      "description": "Unifique suas ferramentas. Conecte dados de qualquer lugar com integrações perfeitas de EHR e fluxos de trabalho automatizados."
+    },
+    "card3": {
+      "title": "Perfeito em todos os dispositivos",
+      "description": "Mantenha-se conectado, onde quer que trabalhe. O DocNote funciona perfeitamente em qualquer dispositivo — celular, tablet ou desktop."
+    }
+  },
+  "compliance": {
+    "badge": "Confidencialidade",
+    "title": "Segurança adaptada aos requisitos médicos",
+    "subtitle": "Nossa infraestrutura cumpre altos padrões de proteção de dados, especificamente adaptados aos requisitos do setor médico.",
+    "cardTitle": "Estrutura de Proteção de Dados",
+    "cardDescription": "O DocNote implementa segurança de nível empresarial com criptografia de ponta a ponta, controles de acesso rigorosos e registro de auditoria abrangente para proteger dados sensíveis de pacientes.",
+    "protocolTitle": "Protocolo de Segurança DocNote",
+    "protocolEncryption": "Criptografia de ponta a ponta: TLS 1.3 (em trânsito) & AES-256 (em repouso)",
+    "protocolRetention": "Nenhum dado armazenado além de 7 dias",
+    "protocolRbac": "Controle de acesso baseado em função (RBAC)",
+    "protocolAudit": "Registro abrangente de trilha de auditoria",
+    "swiss": {
+      "title": "Design e hospedagem suíços",
+      "description": "Construído e hospedado na Suíça. Todos os dados permanecem em servidores suíços, alinhados com regulamentações locais de saúde."
+    },
+    "hipaa": {
+      "title": "Conformidade com HIPAA",
+      "description": "Totalmente compatível com padrões de privacidade de saúde, garantindo proteção de dados do paciente em todos os níveis."
+    },
+    "iso": {
+      "title": "ISO 27001",
+      "description": "Gestão de segurança da informação certificada com auditorias regulares e monitoramento contínuo."
+    }
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "subtitle": "Tudo o que médicos e hospitais perguntam antes de adotar o DocNote. Ainda tem uma dúvida? ",
+    "contactUs": "Fale conosco",
+    "q1": "O que é o DocNote e como ele funciona?",
+    "a1": "O DocNote é um assistente de documentação clínica e escriba médico com IA projetado para médicos, cirurgiões e hospitais na Suíça, França e em toda a Europa. Durante uma consulta, o DocNote grava com segurança a conversa entre o médico e o paciente, transcreve em tempo real e gera automaticamente um relatório médico estruturado (nota de consulta, carta de alta, relatório operatório, nota de visita, etc.) que o médico revisa e valida antes de enviar para o prontuário eletrônico do paciente.",
+    "q2": "Por que escolher o DocNote em vez de outros escribas médicos com IA?",
+    "a2": "O DocNote é construído especificamente para a saúde europeia e suíça, não adaptado de um produto dos EUA. Diferenciais principais: (1) todos os dados são hospedados na Suíça e nunca usados para treinar modelos de IA, (2) conformidade total com a Lei Federal Suíça de Proteção de Dados (FADP), GDPR, HIPAA e ISO 27001, (3) sugestões automáticas de codificação médica alinhadas com Swiss DRG e PMSI, (4) suporte nativo ao TARDOC para transformar exames ditados em descrições faturaveis, (5) integração direta com EHR com Mediway e SOKLE, (6) sincronização real entre celular e desktop e (7) documentação específica para hospitais, incluindo cartas de alta, relatórios operatórios e arquivos colaborativos de hospital-dia.",
+    "a2Ch": "O DocNote é construído especificamente para a saúde suíça, não adaptado de um produto dos EUA. Diferenciais principais: (1) todos os dados são hospedados na Suíça e nunca usados para treinar modelos de IA, (2) conformidade total com a Lei Federal Suíça de Proteção de Dados (FADP / nLPD), HIPAA e ISO 27001, (3) sugestões automáticas de codificação médica alinhadas com Swiss DRG, (4) suporte nativo ao TARDOC para transformar exames ditados em descrições faturaveis, (5) integração direta com EHR com Mediway e SOKLE, (6) sincronização real entre celular e desktop e (7) documentação específica para hospitais, incluindo cartas de alta, relatórios operatórios e arquivos colaborativos de hospital-dia.",
+    "a2Row": "O DocNote é construído especificamente para a saúde francesa e europeia, não adaptado de um produto dos EUA. Diferenciais principais: (1) todos os dados são hospedados na França e nunca usados para treinar modelos de IA, (2) conformidade total com o GDPR europeu, HIPAA e ISO 27001, (3) sugestões automáticas de codificação médica alinhadas com o PMSI francês, (4) integração direta com EHR com principais sistemas de informação hospitalar, (5) sincronização real entre celular e desktop e (6) documentação específica para hospitais, incluindo cartas de alta, relatórios operatórios e arquivos colaborativos de hospital-dia.",
+    "q3": "O DocNote é seguro e compatível com regulamentações de dados de saúde?",
+    "a3": "Sim. O DocNote aplica criptografia de ponta a ponta (AES-256 em repouso, TLS 1.3 em trânsito), hospeda todos os dados de saúde exclusivamente na Suíça e cumpre a FADP suíça, o GDPR europeu, HIPAA e ISO 27001. O DocNote atua como pessoa auxiliar do médico sob o Artigo 321 do Código Penal Suíço (sigilo médico). Dados de saúde são automaticamente e irreversivelmente excluídos em até 7 dias após o processamento. O DocNote nunca retém cópias permanentes de áudio, transcrições ou relatórios médicos.",
+    "a3Ch": "Sim. O DocNote aplica criptografia de ponta a ponta (AES-256 em repouso, TLS 1.3 em trânsito), hospeda todos os dados de saúde exclusivamente na Suíça e cumpre a Lei Federal Suíça de Proteção de Dados (FADP / nLPD), HIPAA e ISO 27001. O DocNote atua como pessoa auxiliar do médico sob o Artigo 321 do Código Penal Suíço (sigilo médico). Dados de saúde são automaticamente e irreversivelmente excluídos em até 7 dias após o processamento. O DocNote nunca retém cópias permanentes de áudio, transcrições ou relatórios médicos.",
+    "a3Row": "Sim. O DocNote aplica criptografia de ponta a ponta (AES-256 em repouso, TLS 1.3 em trânsito), hospeda todos os dados de saúde exclusivamente na França em data centers certificados HDS (Hébergeur de Données de Santé), e cumpre o GDPR europeu, HIPAA e ISO 27001. O DocNote está vinculado ao sigilo médico francês sob o Artigo 226-13 do Código Penal Francês e Artigo L1110-4 do Código de Saúde Pública. Dados de saúde são automaticamente e irreversivelmente excluídos em até 7 dias após o processamento. O DocNote nunca retém cópias permanentes de áudio, transcrições ou relatórios médicos.",
+    "q4": "Quais especialidades médicas o DocNote suporta?",
+    "a4": "O DocNote suporta mais de 50 especialidades médicas, incluindo clínica geral, medicina interna, cardiologia, cirurgia (geral, ortopédica, colorretal, vascular), ginecologia, pediatria, psiquiatria, dermatologia, oftalmologia, otorrinolaringologia, neurologia, oncologia, anestesiologia, medicina de emergência e radiologia. Os relatórios são adaptados à terminologia e estrutura esperadas para cada especialidade.",
+    "q5": "Quais idiomas o DocNote suporta?",
+    "a5": "O DocNote entende e produz relatórios em francês, alemão, italiano, inglês e mais de 20 outros idiomas. Ele lida corretamente com terminologia médica específica da Suíça e alternância de código durante consultas (por exemplo, um paciente falando suíço-alemão enquanto o médico dita em francês).",
+    "q6": "Quanto tempo o DocNote economiza por consulta?",
+    "a6": "Em média, médicos usando o DocNote economizam mais de 2 horas de trabalho administrativo por dia. Uma nota de consulta que antes levava de 5 a 10 minutos para ser escrita é gerada em segundos, deixando apenas uma rápida revisão médica antes da validação. Isso significa mais tempo com os pacientes, menos noites gastas com papelada e menos burnout.",
+    "q7": "O DocNote integra com prontuários eletrônicos de saúde (EHR)?",
+    "a7": "Sim. O DocNote integra diretamente com Mediway e SOKLE, com novas integrações de EHR adicionadas regularmente. Você também pode arrastar e soltar seus próprios modelos de relatório em Word: o DocNote recria automaticamente o relatório respeitando seu layout exato e exporta para PDF ou copia/cola em qualquer outro sistema.",
+    "q8": "Quanto custa o DocNote e há um teste gratuito?",
+    "a8": "O DocNote oferece um teste gratuito de 30 consultas com acesso total a todos os recursos profissionais, sem necessidade de cartão de crédito. O plano Professional custa CHF 109 por mês (ou CHF 99 por mês cobrado anualmente) para usuários na Suíça, com preço equivalente em EUR para o resto da Europa. Hospitais e grandes organizações têm um plano Enterprise personalizado disponível sob consulta.",
+    "a8Ch": "O DocNote oferece um teste gratuito de 30 consultas com acesso total a todos os recursos profissionais, sem necessidade de cartão de crédito. O plano Professional custa CHF 109 por mês (ou CHF 99 por mês cobrado anualmente). Hospitais e grandes organizações têm um plano Enterprise personalizado disponível sob consulta.",
+    "a8Row": "O DocNote oferece um teste gratuito de 30 consultas com acesso total a todos os recursos profissionais, sem necessidade de cartão de crédito. O plano Professional custa €89 por mês (ou €79 por mês cobrado anualmente). Hospitais e grandes organizações têm um plano Enterprise personalizado disponível sob consulta.",
+    "q9": "O que torna o DocNote diferente para documentação hospitalar e de hospital-dia (HDJ)?",
+    "a9": "O DocNote é o primeiro escriba médico com IA construído especificamente para a complexidade hospitalar, não apenas consultas ambulatoriais. Três diferenciais se destacam. (1) Arquivos colaborativos de hospital-dia: em fluxos de trabalho de HDJ onde vários cuidadores (médicos, residentes, enfermeiros, anestesistas) veem sucessivamente o mesmo paciente, o DocNote permite que cada cuidador contribua para o mesmo arquivo compartilhado do paciente e mescla automaticamente todas as contribuições em um registro estruturado, confiável e auditável. Nenhum outro escriba médico com IA no mercado europeu oferece isso atualmente. (2) Contexto rico de consulta: o DocNote permite que o médico enriqueça qualquer consulta arrastando e soltando documentos anteriores (resultados de laboratório, relatórios de imagem, cartas de alta anteriores), anexando fotos (feridas, lesões, ECGs, radiografias) ou colando texto livre. A IA então incorpora esse contexto rico na saída estruturada, produzindo relatórios de precisão incomparável. (3) Modelos personalizados em Word: arraste e solte seu próprio documento Word com sua formatação exata, assinatura, papel timbrado do hospital e estrutura de seções. O DocNote recria cada relatório futuro respeitando seu modelo e layout exatos. Nenhum outro escriba com IA oferece esse nível de personalização por médico."
+  },
+  "footer": {
+    "description": "Documentação médica com IA para fluxos de trabalho hospitalares.",
+    "product": "Produto",
+    "company": "Empresa",
+    "legal": "Jurídico",
+    "features": "Recursos",
+    "pricing": "Preços",
+    "integrations": "Integrações",
+    "about": "Sobre Nós",
+    "blog": "Blog",
+    "careers": "Carreiras",
+    "contact": "Contato",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "gtc": "Termos e Condições Gerais",
+    "gdpr": "GDPR",
+    "rights": "Todos os direitos reservados."
+  },
+  "pricing": {
+    "title": "De clínicos individuais a grandes organizações",
+    "subtitle": "Escolha o plano que se adapta à sua prática",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "save": "Economize 15%",
+    "perMonth": "/mês",
+    "getStarted": "Começar",
+    "subscription": "Assinatura",
+    "freeTrial": "30 consultas gratuitas, depois",
+    "professional": {
+      "name": "Consultórios e médicos individuais",
+      "description": "Para médicos individuais e pequenas práticas",
+      "price": "79",
+      "monthlyPrice": "89",
+      "features": [
+        "Consultas ilimitadas",
+        "Suporte prioritário",
+        "Acesso ao aplicativo móvel e webapp",
+        "Modelos personalizados sob solicitação",
+        "Possível integração pela equipe DocNote"
+      ],
+      "popular": "Mais Popular"
+    },
+    "enterprise": {
+      "name": "Hospitais e clínicas",
+      "description": "Para hospitais e grandes clínicas",
+      "price": "Personalizado",
+      "features": [
+        "Tudo no Professional",
+        "Gerente de conta dedicado",
+        "Integrações personalizadas",
+        "Implantações on-premise",
+        "Garantia de SLA",
+        "Treinamento e integração"
+      ],
+      "contact": "Fale com Vendas"
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "q1": "Como funciona o teste gratuito?",
+      "a1": "Comece com 30 consultas gratuitas com acesso total aos recursos do Professional. Sem necessidade de cartão de crédito.",
+      "q2": "Posso mudar de plano depois?",
+      "a2": "Sim, você pode atualizar ou rebaixar seu plano a qualquer momento. As alterações entram em vigor no próximo ciclo de faturamento.",
+      "q3": "Meus dados estão seguros?",
+      "a3": "Absolutamente. Todos os dados são criptografados e armazenados na Suíça. Somos compatíveis com HIPAA e certificados ISO 27001.",
+      "q4": "Com quais sistemas EHR vocês integram?",
+      "a4": "Integramos com a maioria dos principais sistemas EHR, incluindo Epic, Cerner e sistemas suíços locais como Sokle ou Mediway.",
+      "q5": "Qual é a diferença entre Profissional e Empresarial?",
+      "a5": "O Profissional é feito para médicos individuais e pequenas clínicas: consultas ilimitadas, acesso móvel e web, modelos e suporte prioritário. O Empresarial adiciona implantação multi-usuário, gerenciamento de conta dedicado, trabalho personalizado com EHR, implantação opcional on-premise, SLA e treinamento estruturado para hospitais e clínicas.",
+      "q6": "Posso pagar mensalmente ou anualmente?",
+      "a6": "Sim. Você pode escolher cobrança mensal ou anual com cerca de 15% de economia. Os preços são mostrados em sua moeda local quando disponível (CHF, EUR ou USD).",
+      "q7": "Vocês oferecem faturas para clínicas e hospitais?",
+      "a7": "Sim. As assinaturas Profissionais são cobradas via Stripe com faturas para download. Os contratos Empresariais podem ser faturados através do seu processo de compra com termos de cobrança personalizados.",
+      "q8": "Há algum compromisso ou taxa de cancelamento?",
+      "a8": "Não há bloqueio de longo prazo no plano Profissional. Você pode cancelar antes do próximo ciclo de cobrança. Os acordos Empresariais seguem os termos definidos em seu contrato.",
+      "q9": "Quanto tempo leva a integração?",
+      "a9": "A maioria dos clínicos individuais começa no mesmo dia após o teste gratuito. As implantações em hospitais e clínicas geralmente levam algumas semanas, dependendo da integração com EHR, cronograma de treinamento e revisão interna de TI.",
+      "q10": "Vários médicos em uma clínica podem compartilhar uma conta?",
+      "a10": "Pequenas clínicas podem começar no Profissional por clínico. Para departamentos compartilhados, funções administrativas ou acesso hospitalar amplo, o plano Empresarial é o mais adequado — entre em contato com vendas e dimensionaremos com você."
+    },
+    "compare": {
+      "title": "Compare os planos",
+      "subtitle": "Veja o que está incluído para clínicos individuais versus hospitais e clínicas.",
+      "feature": "Recurso",
+      "pro": "Profissional",
+      "enterprise": "Empresarial",
+      "yes": "Incluído",
+      "no": "—",
+      "custom": "Personalizado",
+      "rows": [
+        {
+          "label": "Consultas ilimitadas",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Aplicativo móvel e acesso web",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Relatórios adaptados por especialidade",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Modelos personalizados",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Suporte prioritário",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Dados hospedados na Suíça e criptografia",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Integrações com EHR (Mediway, SOKLE, …)",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Multi-usuário / implantação por departamento",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Gerente de conta dedicado",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "On-premise ou nuvem privada",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Garantia de SLA",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Treinamento e integração",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SSO / console administrativo",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Fluxos de trabalho colaborativos em hospital-dia",
+          "pro": "no",
+          "enterprise": "yes"
+        }
+      ]
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Insights sobre IA na saúde, documentação médica e gestão de prática",
+    "readMore": "Leia Mais",
+    "backToBlog": "Voltar ao Blog",
+    "recentPosts": "Posts Recentes",
+    "minRead": "min de leitura",
+    "shareArticle": "Compartilhe este artigo:",
+    "categories": {
+      "all": "Todos",
+      "news": "Notícias",
+      "ai": "Pesquisa e Insights",
+      "documentation": "Pesquisa e Insights",
+      "practice": "Pesquisa e Insights"
+    },
+    "onThisPage": "Nesta página",
+    "writtenBy": "Escrito por",
+    "share": "Partilhar",
+    "relatedArticles": "Artigos relacionados",
+    "createdOn": "Publicado",
+    "articles": "Artigos",
+    "prev": "Anterior",
+    "next": "Próximo",
+    "viewAllArticles": "Todos os artigos",
+    "pageLabel": "Página"
+  },
+  "team": {
+    "aboutUs": "Sobre Nós",
+    "title": "Desenvolvido por médicos, construído por engenheiros de IA",
+    "subtitle": "Uma equipe clínica e técnica trabalhando lado a lado para devolver tempo aos médicos.",
+    "intro": "O DocNote começou nos corredores do hospital, não em um pitch deck. Nossos fundadores ainda praticam medicina, então cada decisão do produto é avaliada por sua utilidade em uma rotina hospitalar agitada.",
+    "story": "Hoje, clínicos, engenheiros e equipes de mercado compartilham uma missão: transformar consultas em documentos clínicos confiáveis em segundos, com privacidade hospedada na Suíça como princípio fundamental. Construímos com as pessoas que usarão o produto amanhã.",
+    "members": {
+      "vincentTan": {
+        "name": "Dr. Vincent Tan",
+        "role": "Médico & Diretor Geral",
+        "bio": "Médico com experiência no Hôpital de la Tour em Genebra. Lidera o DocNote com foco em fluxos de trabalho hospitalares reais e confiança clínica."
+      },
+      "aliceGilson": {
+        "name": "Dra. Alice Gilson",
+        "role": "Médica & Diretora Geral",
+        "bio": "Especialista em cirurgia com experiência no HUG (Genebra). Molda o produto em torno de relatórios operatórios, cartas de alta e a realidade clínica diária."
+      },
+      "mathiasGilson": {
+        "name": "Mathias Gilson",
+        "role": "Diretor Técnico",
+        "bio": "Responsável pela visão técnica do DocNote, arquitetura da plataforma de IA e pelo padrão de confiabilidade do software clínico."
+      },
+      "jeremyYvinec": {
+        "name": "Jeremy Yvinec",
+        "role": "Engenheiro Fullstack Sênior",
+        "bio": "Formado pelo IUT Aix-Marseille, desenvolve experiências web e React Native que mantêm a documentação rápida em qualquer dispositivo."
+      },
+      "hugoRoussel": {
+        "name": "Hugo Roussel",
+        "role": "Líder de Engenharia",
+        "bio": "Formado pela ETH Zurich, lidera a entrega de engenharia com foco em sistemas escaláveis e arquitetura limpa."
+      },
+      "ericWei": {
+        "name": "Eric Wei",
+        "role": "Engenheiro Frontend Sênior",
+        "bio": "Formado pela EPFL, cria as interfaces nas quais os clínicos confiam, com atenção à clareza, velocidade e artesanato frontend moderno."
+      },
+      "nedimAmer": {
+        "name": "Nedim Amer",
+        "role": "Vendas",
+        "bio": "Ajuda clínicas e hospitais a avaliar o DocNote, mapear fluxos de trabalho e passar da primeira demonstração para uma implantação confiante."
+      },
+      "valeryDemunck": {
+        "name": "Valery Demunck",
+        "role": "Vendas",
+        "bio": "Parceiro de organizações de saúde em diversos mercados para alinhar o DocNote às suas necessidades e prazos de documentação."
+      },
+      "julietteKristanek": {
+        "name": "Juliette Kristanek",
+        "role": "Marketing & Comunicação",
+        "bio": "Define como o DocNote se apresenta para médicos e parceiros, desde a narrativa do produto até comunidade e eventos."
+      }
+    },
+    "highlightsTitle": "Como trabalhamos",
+    "highlightsLead": "O DocNote não começou como um pitch deck. Começou nos corredores dos hospitais — entre rodadas de enfermaria, listas cirúrgicas e noites gastas reescrevendo notas que deveriam ter se escrito sozinhas. Essa origem ainda molda cada contratação, cada lançamento e cada conversa que temos com uma clínica.",
+    "highlights": [
+      {
+        "title": "Médicos praticantes no centro",
+        "body": "Nossos fundadores ainda praticam medicina. Isso não é um slogan para a página Sobre — é o filtro para decisões de produto. Se um recurso não sobreviver a uma rodada de enfermaria movimentada, uma baia de emergência barulhenta ou uma clínica de sexta-feira à tarde, ele não é lançado.\n\nLinguagem clínica, estrutura por especialidade e o ritmo real da documentação hospitalar vêm primeiro. Projetamos para cartas de alta, relatórios cirúrgicos, arquivos colaborativos de hospital-dia e os momentos difíceis em que três cuidadores atendem o mesmo paciente em uma tarde.\n\nQuando os clínicos nos dizem que algo parece errado, tratamos isso como entrada de engenharia — não como um comentário de UX opcional."
+      },
+      {
+        "title": "Privacidade hospedada na Suíça por padrão",
+        "body": "Dados de saúde não são um corpus de treinamento. O DocNote hospeda informações clínicas na Suíça, criptografa em trânsito e em repouso, e aplica regras de retenção que correspondem às expectativas europeias para sigilo médico.\n\nConstruímos para as realidades da FADP / nLPD, GDPR, HIPAA e ISO 27001 — revisões de TI hospitalar, questionários de compras e a pergunta silenciosa que todo médico faz: onde os dados do meu paciente realmente estão?\n\nNada na documentação ambiental vale a pena corroer a confiança. A privacidade é parte da arquitetura do produto, não um apêndice legal."
+      },
+      {
+        "title": "Clínicos e engenheiros em um único ciclo",
+        "body": "Especialistas médicos, engenheiros de IA e colegas de produto estão no mesmo ciclo. Os modelos de relatório não são inventados isoladamente e depois \"adaptados\" para hospitais — são co-desenhados com pessoas que ainda escrevem esses relatórios à mão hoje.\n\nÉ por isso que o DocNote pode passar de ditado livre para notas estruturadas por especialidade, relatórios cirúrgicos, notas de acompanhamento e resumos de alta sem forçar os médicos a usar um modelo genérico de ambulatório dos EUA.\n\nA qualidade de engenharia aparece como velocidade, confiabilidade e interfaces calmas. A qualidade clínica aparece como vocabulário, estrutura e respeito por como as equipes de atendimento realmente trabalham."
+      },
+      {
+        "title": "Do primeiro demo à implantação hospitalar",
+        "body": "Um bom demo de escriba ambiental é fácil. Uma implantação hospitalar confiável não é. Nossas equipes de vendas, integração e suporte ajudam as clínicas a mapear fluxos de trabalho, escolher os modelos de relatório certos, conectar caminhos de EHR quando necessário e treinar equipes sem interromper o atendimento.\n\nFicamos através de pilotos, compras e o meio confuso — exceções por especialidade, preferências de modelo, enfermarias multilíngues e a lista de verificação de TI que ninguém coloca no site de marketing.\n\nO objetivo é simples: mais tempo com os pacientes, menos noites perdidas com notas e um sistema de documentação que os clínicos estão dispostos a defender para seus colegas."
+      }
+    ],
+    "highlightsClosing": "Hoje a equipe abrange liderança clínica, engenharia profunda, estratégia de mercado e comunicação — unidos por uma missão: transformar consultas em documentos clínicos confiáveis em segundos, com privacidade hospedada na Suíça no centro. Construímos com as pessoas que usarão o produto amanhã."
+  },
+  "tutorial": {
+    "title": "Começando com o DocNote",
+    "subtitle": "Siga estas etapas simples para transformar seu fluxo de trabalho de documentação médica",
+    "step1": {
+      "title": "Baixe o aplicativo móvel ou conecte-se ao aplicativo web",
+      "description": "Baixe o aplicativo móvel DocNote na loja de aplicativos do seu telefone ou acesse diretamente pelo nosso aplicativo web:",
+      "ios": "Disponível na App Store",
+      "android": "Disponível no Google Play"
+    },
+    "step2": {
+      "title": "Crie sua conta",
+      "description": "Crie sua conta inserindo seu e-mail profissional. Enviaremos um código de ativação.",
+      "trialInfo": "Seu teste de 30 consultas começará assim que você receber e inserir seu código de ativação."
+    },
+    "step3": {
+      "title": "Tela principal",
+      "description": "Comece a usar nossa solução para melhorar sua carga administrativa e voltar a aproveitar seu trabalho. Você pode assistir ao tutorial abaixo para entender nossos principais recursos.",
+      "chooseModel": "Na página inicial, você pode selecionar o modelo de relatório que melhor atende às suas necessidades:",
+      "models": {
+        "dictation": {
+          "title": "Ditação",
+          "description": "Ditação de texto livre com estruturação automática"
+        },
+        "general": {
+          "title": "Consulta de Clínico Geral",
+          "description": "Notas clinicamente estruturadas e concisas projetadas para cuidados primários"
+        },
+        "specialist": {
+          "title": "Consulta Especialista",
+          "description": "Consulta detalhada de especialista estruturada como carta formal para o médico referenciador"
+        },
+        "operative": {
+          "title": "Relatório Operatório",
+          "description": "Relatório estruturado de procedimento cirúrgico"
+        },
+        "followUp": {
+          "title": "Notas de Acompanhamento de Visita Médica",
+          "description": "Notas de evolução diária padronizadas para pacientes hospitalizados"
+        },
+        "discharge": {
+          "title": "Carta de Alta",
+          "description": "Resumo consolidado de alta integrando todos os documentos criados durante a hospitalização"
+        }
+      }
+    },
+    "cta": {
+      "title": "Pronto para começar?",
+      "subtitle": "Baixe o aplicativo e inicie seu teste de 30 consultas hoje.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "webApp": "Aplicativo Web",
+      "getDemo": "Agendar demonstração"
+    }
+  },
+  "contact": {
+    "title": "Fale Conosco",
+    "subtitle": "Fale com nossa equipe de hospitais. Entre em contato com Vincent para a Suíça ou Alice para organizações de saúde francesas.",
+    "bookDemo": "Agendar demonstração",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefone",
+    "locationLabel": "Localização",
+    "switzerland": "Suíça",
+    "france": "França",
+    "vincentName": "Dr. Vincent Tan",
+    "aliceName": "Dra. Alice Gilson",
+    "vincentRole": "Médico & Diretor Administrativo",
+    "aliceRole": "Médica & Diretora Administrativa",
+    "vincentFocus": "Hospitais e clínicas na Suíça — demos, pilotos e implantação de EHR.",
+    "aliceFocus": "Organizações de saúde francesas — hospitais, clínicas e conversas de compras.",
+    "vincentCity": "Genebra, Suíça",
+    "aliceCity": "França",
+    "writeEmail": "Enviar e-mail",
+    "callPhone": "Ligar",
+    "hoursLabel": "Disponibilidade",
+    "hoursValue": "Seg–Sex · resposta em um dia útil",
+    "responseLabel": "Melhor para",
+    "responseValue": "Demos hospitalares, preços e perguntas sobre integração",
+    "companyLabel": "Empresa",
+    "companyValue": "DocNote · IA clínica hospedada na Suíça",
+    "generalEmailLabel": "Consultas gerais",
+    "generalEmail": "hello@docnote.ch",
+    "hostingNote": "Os dados de saúde são hospedados na Suíça. Nunca treinamos modelos em suas consultas."
+  }
+}

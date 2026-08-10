@@ -2,7 +2,7 @@
   "nav": {
     "tutorial": "Anleitung",
     "pricing": "Preise",
-    "blog": "Neuigkeiten",
+    "blog": "Blog",
     "team": "Team",
     "survey": "Umfrage",
     "patient": "Patienten",
@@ -10,7 +10,9 @@
     "demo": "Demo anfordern",
     "webApp": "Web-App",
     "appStore": "App Store",
-    "googlePlay": "Google Play"
+    "googlePlay": "Google Play",
+    "solutions": "Lösungen",
+    "specialties": "Fachgebiete"
   },
   "hero": {
     "badge": "Von Ärztinnen und Ärzten gebaut · In der Schweiz gehostet",
@@ -67,12 +69,30 @@
       "title": "Intelligente Aufnahme",
       "description": "Konsultationen mit einem Fingertipp aufnehmen. Unsere KI versteht medizinischen Kontext und filtert Hintergrundgeräusche.",
       "animStatus": "Aufnahme",
-      "animWords": ["Also", "die", "Schmerzen", "begannen", "vor", "etwa", "zwei", "Wochen,", "meist", "am", "Morgen.", "Ich", "hatte", "noch", "nie", "Migräne", "zuvor..."]
+      "animWords": [
+        "Also",
+        "die",
+        "Schmerzen",
+        "begannen",
+        "vor",
+        "etwa",
+        "zwei",
+        "Wochen,",
+        "meist",
+        "am",
+        "Morgen.",
+        "Ich",
+        "hatte",
+        "noch",
+        "nie",
+        "Migräne",
+        "zuvor..."
+      ]
     },
     "transcription": {
       "title": "Präzise Transkription",
       "description": "Echtzeit-Transkription mit 99% Genauigkeit für medizinische Terminologie in mehreren Sprachen.",
-      "animLine1": "Patient stellt sich vor mit",
+      "animLine1": "Patient kommt mit",
       "animLine2Pre": "wiederkehrendem ",
       "animWrong1": "Diabetis",
       "animRight1": "Diabetes",
@@ -242,7 +262,99 @@
     "role2": "Assistenzarzt in der Allgemeinchirurgie",
     "quote3": "Ich habe immer gesagt, ich würde mir einen Vollzeitassistenten leisten, wenn ich Milliardär wäre, aber jetzt muss ich nicht einmal Milliardär sein.",
     "author3": "Pr Ris",
-    "role3": "Chefarzt der Kolorektalchirurgie"
+    "role3": "Chefarzt der Kolorektalchirurgie",
+    "items": [
+      {
+        "quote": "DocNote hat meinen Arbeitsalltag in der Notaufnahme wirklich verändert. Ich kann mich wieder auf meine Patienten konzentrieren und meine Konsultationen genießen.",
+        "author": "Dre Perrot",
+        "role": "Assistenzarzt in der Notaufnahme",
+        "image": "/images/testimonials/perrot.jpg"
+      },
+      {
+        "quote": "Seit ich DocNote verwende, ist die Vor- und Nachbereitung von Konsultationen ein schneller und effizienter Prozess geworden.",
+        "author": "Dr Patel",
+        "role": "Assistenzarzt in der Allgemeinchirurgie",
+        "image": "/images/testimonials/patel.jpg"
+      },
+      {
+        "quote": "Ich sagte immer, ich würde mir eine Vollzeit-Assistenz leisten, wenn ich Milliardär wäre. Jetzt muss ich nicht einmal Milliardär sein.",
+        "author": "Pr Ris",
+        "role": "Leiter der Kolorektalchirurgie",
+        "image": "/images/testimonials/ris.jpg"
+      },
+      {
+        "quote": "Entlassungsbriefe haben mir früher meine Abende gestohlen. Jetzt validiere ich einen strukturierten Entwurf, bevor ich die Station verlasse – und es klingt immer noch wie ich.",
+        "author": "Dr Moreau",
+        "role": "Internist, Universitätsklinikum",
+        "image": "/images/testimonials/moreau.jpg"
+      },
+      {
+        "quote": "In der Kardiologie zählt jedes Detail. DocNote erfasst die Nuancen der Konsultation, ohne mich in eine generische Vorlagestruktur zu zwingen.",
+        "author": "Dr Keller",
+        "role": "Kardiologe",
+        "image": "/images/testimonials/keller.jpg"
+      },
+      {
+        "quote": "Operationsberichte werden endlich geschrieben, während der Fall noch frisch ist. Mein Team muss weniger überprüfen, und die Aufzeichnung ist für die nächste Schicht bereit.",
+        "author": "Dr Rossi",
+        "role": "Orthopädische Chirurgin",
+        "image": "/images/testimonials/rossi.jpg"
+      },
+      {
+        "quote": "Zwischen Klinik und Station habe ich früher den Faden jedes Besuchs verloren. DocNote hält die Dokumentation kontinuierlich, ohne die Versorgung zu verlangsamen.",
+        "author": "Dr Nguyen",
+        "role": "Kinderärztin",
+        "image": "/images/testimonials/nguyen.jpg"
+      },
+      {
+        "quote": "Narkoseberichte müssen präzise und schnell sein. DocNote hält mit dem Tempo des OP-Saals Schritt, ohne die klinische Sprache zu kompromittieren.",
+        "author": "Dr Berg",
+        "role": "Anästhesist",
+        "image": "/images/testimonials/berg.jpg"
+      },
+      {
+        "quote": "Ich kann Befunde diktieren und erhalte einen Bericht, der bereits so klingt, wie Radiologen tatsächlich schreiben – keine vage KI-Zusammenfassung.",
+        "author": "Dr Dubois",
+        "role": "Radiologe",
+        "image": "/images/testimonials/dubois.jpg"
+      },
+      {
+        "quote": "Neurologische Konsultationen sind komplex. DocNote strukturiert sie klar, sodass das überweisende Team eine brauchbare Notiz erhält, keine Textwand.",
+        "author": "Dr Hoffmann",
+        "role": "Neurologe",
+        "image": "/images/testimonials/hoffmann.jpg"
+      },
+      {
+        "quote": "Als Hausarzt sehe ich täglich viele Patienten. DocNote gibt mir die Minuten zurück, die früher in die Dokumentation verschwunden sind.",
+        "author": "Dr Silva",
+        "role": "Allgemeinmediziner",
+        "image": "/images/testimonials/silva.jpg"
+      },
+      {
+        "quote": "HNO-Kliniken arbeiten schnell. Mit DocNote ist die Notiz fertig, wenn der Patient den Raum verlässt – und die Kodierungshinweise sind bereits enthalten.",
+        "author": "Dr Andersson",
+        "role": "HNO-Spezialist",
+        "image": "/images/testimonials/andersson.jpg"
+      },
+      {
+        "quote": "Psychiatrische Dokumentation braucht Nuancen und Vertraulichkeit. DocNote respektiert beides und entfernt gleichzeitig den administrativen Ballast.",
+        "author": "Dr Lefevre",
+        "role": "Psychiater",
+        "image": "/images/testimonials/lefevre.jpg"
+      },
+      {
+        "quote": "In der Intensivmedizin hängen Übergaben von klaren Notizen ab. DocNote hilft uns, die Aufzeichnungen auch in den hektischsten Nächten präzise zu halten.",
+        "author": "Dr Kowalski",
+        "role": "Intensivmediziner",
+        "image": "/images/testimonials/kowalski.jpg"
+      },
+      {
+        "quote": "Onkologische Nachsorgen sind komplex. DocNote verwandelt ein langes Gespräch in eine strukturierte Aktualisierung, der meine Kollegen vertrauen können.",
+        "author": "Dr Yamamoto",
+        "role": "Onkologe",
+        "image": "/images/testimonials/yamamoto.jpg"
+      }
+    ]
   },
   "cta": {
     "title": "Bereit, täglich 2+ Stunden zu sparen?",
@@ -384,7 +496,101 @@
       "q3": "Sind meine Daten sicher?",
       "a3": "Absolut. Alle Daten werden verschlüsselt und in der Schweiz gespeichert. Wir sind HIPAA-konform und ISO 27001 zertifiziert.",
       "q4": "Mit welchen KIS-Systemen integrieren Sie?",
-      "a4": "Wir integrieren mit den meisten grossen KIS-Systemen einschliesslich Epic, Cerner und lokalen Schweizer Systemen wie Sokle oder Mediway."
+      "a4": "Wir integrieren mit den meisten grossen KIS-Systemen einschliesslich Epic, Cerner und lokalen Schweizer Systemen wie Sokle oder Mediway.",
+      "q5": "Was ist der Unterschied zwischen Professional und Enterprise?",
+      "a5": "Professional ist für einzelne Ärzte und kleine Praxen konzipiert: unbegrenzte Konsultationen, mobiler und Web-Zugang, Vorlagen und priorisierter Support. Enterprise fügt Multi-User-Rollout, dediziertes Account-Management, individuelle EHR-Anpassungen, optionale On-Premise-Bereitstellung, SLA und strukturierte Schulungen für Krankenhäuser und Kliniken hinzu.",
+      "q6": "Kann ich monatlich oder jährlich zahlen?",
+      "a6": "Ja. Sie können zwischen monatlicher Abrechnung oder jährlicher Abrechnung mit etwa 15% Ersparnis wählen. Die Preise werden in Ihrer lokalen Währung angezeigt, sofern verfügbar (CHF, EUR oder USD).",
+      "q7": "Bieten Sie Rechnungen für Kliniken und Krankenhäuser an?",
+      "a7": "Ja. Professional-Abonnements werden über Stripe abgerechnet mit herunterladbaren Rechnungen. Enterprise-Verträge können über Ihren Beschaffungsprozess mit individuellen Zahlungsbedingungen abgerechnet werden.",
+      "q8": "Gibt es eine Vertragsbindung oder Stornogebühren?",
+      "a8": "Es gibt keine langfristige Bindung beim Professional-Plan. Sie können vor dem nächsten Abrechnungszyklus kündigen. Enterprise-Vereinbarungen folgen den in Ihrem Vertrag definierten Bedingungen.",
+      "q9": "Wie lange dauert das Onboarding?",
+      "a9": "Die meisten Einzelärzte starten noch am selben Tag nach der kostenlosen Testphase. Die Einführung in Krankenhäusern und Kliniken dauert in der Regel einige Wochen, abhängig von der EHR-Integration, dem Schulungsplan und der internen IT-Prüfung.",
+      "q10": "Können mehrere Ärzte einer Praxis ein Konto teilen?",
+      "a10": "Kleine Praxen können mit Professional pro Arzt beginnen. Für gemeinsame Abteilungen, Admin-Rollen oder Krankenhausweiten Zugriff ist der Enterprise-Plan die richtige Wahl – kontaktieren Sie den Vertrieb, und wir werden gemeinsam die passende Lösung finden."
+    },
+    "compare": {
+      "title": "Pläne vergleichen",
+      "subtitle": "Sehen Sie, was für einzelne Ärzte versus Krankenhäuser und Kliniken enthalten ist.",
+      "feature": "Funktion",
+      "pro": "Professional",
+      "enterprise": "Enterprise",
+      "yes": "Inklusive",
+      "no": "—",
+      "custom": "Individuell",
+      "rows": [
+        {
+          "label": "Unbegrenzte Konsultationen",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Mobile App und Web-Zugang",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Fachgebietsspezifische Berichte",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Individuelle Vorlagen",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Priorisierter Support",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Schweizer Hosting & Verschlüsselung",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "EHR-Integrationen (Mediway, SOKLE, …)",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Multi-User / Abteilungsrollout",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Dedizierter Account Manager",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "On-Premise oder Private Cloud",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SLA-Garantie",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Schulung & Onboarding",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SSO / Admin-Konsole",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Kollaborative Tagesklinik-Workflows",
+          "pro": "no",
+          "enterprise": "yes"
+        }
+      ]
     }
   },
   "blog": {
@@ -401,59 +607,92 @@
       "ai": "Forschung & Einblicke",
       "documentation": "Forschung & Einblicke",
       "practice": "Forschung & Einblicke"
-    }
+    },
+    "onThisPage": "Auf dieser Seite",
+    "writtenBy": "Geschrieben von",
+    "share": "Teilen",
+    "relatedArticles": "Verwandte Artikel",
+    "createdOn": "Veröffentlicht",
+    "articles": "Artikel",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "viewAllArticles": "Alle Artikel",
+    "pageLabel": "Seite"
   },
   "team": {
     "aboutUs": "Über uns",
-    "title": "Von Ärzten konzipiert, von KI-Ingenieuren entwickelt",
-    "subtitle": "",
+    "title": "Entworfen von Ärzten, gebaut von KI-Ingenieuren",
+    "subtitle": "Ein klinisches und technisches Team, das Hand in Hand arbeitet, um Ärzten ihre Zeit zurückzugeben.",
+    "intro": "DocNote begann in Krankenhausfluren, nicht in einer Präsentation. Unsere Gründer praktizieren immer noch Medizin, daher wird jede Produktentscheidung danach beurteilt, ob sie eine stressige Visite übersteht.",
+    "story": "Heute teilen Kliniker, Ingenieure und Go-to-Market-Teammitglieder eine Mission: Konsultationen in Sekundenschnelle in zuverlässige klinische Dokumente verwandeln, mit Schweizer Datenschutz im Kern. Wir entwickeln mit den Menschen, die das Produkt morgen nutzen werden.",
     "members": {
       "vincentTan": {
         "name": "Dr. Vincent Tan",
         "role": "Arzt & Geschäftsführer",
-        "bio": "Erfahrener Arzt mit Erfahrung am Hôpital de la Tour in Genf, der tiefgreifende Einblicke in das Gesundheitswesen zu DocNote bringt."
+        "bio": "Arzt mit Erfahrung am Hôpital de la Tour in Genf. Führt DocNote mit Fokus auf echte Krankenhausabläufe und das Vertrauen der Kliniker."
       },
       "aliceGilson": {
         "name": "Dr. Alice Gilson",
         "role": "Ärztin & Geschäftsführerin",
-        "bio": "Chirurgische Spezialistin mit Erfahrung am Universitätsspital Genf (HUG), engagiert für die Verbesserung klinischer Arbeitsabläufe."
+        "bio": "Chirurgische Spezialistin mit Erfahrung am HUG (Genf). Gestaltet das Produkt rund um Operationsberichte, Entlassungsbriefe und den klinischen Alltag."
       },
       "mathiasGilson": {
         "name": "Mathias Gilson",
-        "role": "Chief Technical Officer",
-        "bio": "Leitet die technische Vision und Innovation hinter DocNotes KI-gestützter Plattform."
+        "role": "Technischer Leiter",
+        "bio": "Verantwortlich für die technische Vision von DocNote, die Architektur der KI-Plattform und die Zuverlässigkeitsstandards für klinische Software."
       },
       "jeremyYvinec": {
         "name": "Jeremy Yvinec",
-        "role": "Senior Fullstack Engineer",
-        "bio": "Absolvent der IUT Aix-Marseille mit umfangreicher Erfahrung in React Native und modernen Webtechnologien."
+        "role": "Senior Fullstack-Ingenieur",
+        "bio": "Absolvent der IUT Aix-Marseille, der Web- und React Native-Anwendungen entwickelt, um die Dokumentation auf jedem Gerät schnell zu halten."
       },
       "hugoRoussel": {
         "name": "Hugo Roussel",
-        "role": "Team Lead Engineer",
-        "bio": "EPFZ-Absolvent, der das Ingenieurteam mit Expertise in skalierbaren Systemen und Architektur leitet."
+        "role": "Teamleiter Ingenieurwesen",
+        "bio": "Absolvent der ETH Zürich, der die technische Umsetzung leitet, mit Fokus auf skalierbare Systeme und saubere Architektur."
       },
       "ericWei": {
         "name": "Eric Wei",
-        "role": "Senior Frontend Engineer",
-        "bio": "EPFL-Absolvent, spezialisiert auf die Schaffung aussergewöhnlicher Benutzererfahrungen und moderner Frontend-Architekturen."
+        "role": "Senior Frontend-Ingenieur",
+        "bio": "Absolvent der EPFL, der die Schnittstellen gestaltet, auf die Kliniker angewiesen sind, mit Augenmerk auf Klarheit, Geschwindigkeit und modernes Frontend-Handwerk."
       },
       "nedimAmer": {
         "name": "Nedim Amer",
         "role": "Vertrieb",
-        "bio": ""
+        "bio": "Hilft Kliniken und Krankenhäusern, DocNote zu evaluieren, Arbeitsabläufe zu planen und von der ersten Demo zur sicheren Einführung zu gelangen."
       },
       "valeryDemunck": {
         "name": "Valery Demunck",
         "role": "Vertrieb",
-        "bio": ""
+        "bio": "Arbeitet mit Pflegeeinrichtungen in verschiedenen Märkten zusammen, um DocNote an ihre Dokumentationsbedürfnisse und Zeitpläne anzupassen."
       },
       "julietteKristanek": {
         "name": "Juliette Kristanek",
         "role": "Marketing & Kommunikation",
-        "bio": ""
+        "bio": "Gestaltet, wie DocNote für Ärzte und Partner präsent ist, von der Produktkommunikation über Community bis hin zu Veranstaltungen."
       }
-    }
+    },
+    "highlightsTitle": "Wie wir arbeiten",
+    "highlightsLead": "DocNote begann nicht als Pitch-Deck. Es begann in Krankenhausfluren – zwischen Visiten, OP-Listen und Abenden, die mit dem Neuschreiben von Notizen verbracht wurden, die sich eigentlich von selbst hätten schreiben sollen. Dieser Ursprung prägt noch heute jede Einstellung, jedes Release und jedes Gespräch mit einer Klinik.",
+    "highlights": [
+      {
+        "title": "Praktizierende Ärzte im Kern",
+        "body": "Unsere Gründer praktizieren weiterhin Medizin. Das ist kein Slogan für die Über-uns-Seite – es ist der Filter für Produktentscheidungen. Wenn ein Feature eine hektische Visite, eine laute Notaufnahme oder eine Freitagnachmittag-Sprechstunde nicht übersteht, wird es nicht veröffentlicht.\n\nKlinische Sprache, Fachgebietsspezifische Struktur und der echte Rhythmus der Krankenhausdokumentation stehen an erster Stelle. Wir entwerfen für Entlassungsbriefe, OP-Berichte, kollaborative Tagesklinik-Akten und die unangenehmen Momente, wenn drei Pflegekräfte denselben Patienten an einem Nachmittag betreuen.\n\nWenn Kliniker uns sagen, dass sich etwas falsch anfühlt, behandeln wir das als technische Rückmeldung – nicht als nettes UX-Kommentar."
+      },
+      {
+        "title": "Schweizer Hosting & Datenschutz standardmäßig",
+        "body": "Gesundheitsdaten sind kein Trainingskorpus. DocNote hostet klinische Informationen in der Schweiz, verschlüsselt sie während der Übertragung und im Ruhezustand und wendet Aufbewahrungsregeln an, die den europäischen Erwartungen an ärztliche Schweigepflicht entsprechen.\n\nWir bauen für FADP / nLPD, GDPR, HIPAA und ISO 27001 – Krankenhaus-IT-Prüfungen, Beschaffungsfragebögen und die stille Frage, die sich jeder Arzt stellt: Wo leben die Daten meines Patienten wirklich?\n\nNichts an ambulanter Dokumentation ist es wert, Vertrauen zu untergraben. Datenschutz ist Teil der Produktarchitektur, kein juristischer Anhang."
+      },
+      {
+        "title": "Kliniker und Ingenieure in einer Schleife",
+        "body": "Medizinspezialisten, KI-Ingenieure und Produktteammitglieder sitzen in derselben Feedbackschleife. Berichtsmodelle werden nicht isoliert erfunden und dann für Krankenhäuser „angepasst“ – sie werden mit Menschen gemeinsam entworfen, die diese Berichte heute noch von Hand schreiben.\n\nDeshalb kann DocNote von freier Diktation zu strukturierten Fachberichten, OP-Berichten, Nachsorgenotizen und Entlassungszusammenfassungen wechseln, ohne Ärzte in eine generische US-Ambulanzvorlage zu zwingen.\n\nTechnische Qualität zeigt sich in Geschwindigkeit, Zuverlässigkeit und ruhigen Schnittstellen. Klinische Qualität zeigt sich in Wortschatz, Struktur und Respekt für die tatsächliche Arbeitsweise von Behandlungsteams."
+      },
+      {
+        "title": "Von der ersten Demo zum Krankenhaus-Rollout",
+        "body": "Eine gute Demo eines ambienten Schreibassistenten ist einfach. Ein vertrauenswürdiger Krankenhaus-Rollout ist es nicht. Unsere Vertriebs-, Onboarding- und Support-Teams helfen Kliniken, Workflows abzubilden, die richtigen Berichtsmodelle auszuwählen, EHR-Pfade bei Bedarf zu verbinden und Teams zu schulen, ohne die Versorgung zu unterbrechen.\n\nWir bleiben durch Pilotphasen, Beschaffung und das chaotische Mittelfeld – Fachgebietsausnahmen, Vorlagenpräferenzen, mehrsprachige Stationen und die IT-Checkliste, die niemand auf die Marketingseite schreibt.\n\nDas Ziel ist einfach: Mehr Zeit mit Patienten, weniger Abende, die mit Notizen verloren gehen, und ein Dokumentationssystem, das Kliniker ihren Kollegen gegenüber verteidigen würden."
+      }
+    ],
+    "highlightsClosing": "Heute umfasst das Team klinische Führung, tiefgehendes Engineering, Go-to-Market und Kommunikation – vereint durch eine Mission: Konsultationen in Sekundenschnelle in zuverlässige klinische Dokumente verwandeln, mit Schweizer Datenschutz im Kern. Wir bauen mit den Menschen, die das Produkt morgen nutzen werden."
   },
   "tutorial": {
     "title": "Erste Schritte mit DocNote",
@@ -519,6 +758,23 @@
     "switzerland": "Schweiz",
     "france": "Frankreich",
     "vincentName": "Dr. Vincent Tan",
-    "aliceName": "Dr. Alice Gilson"
+    "aliceName": "Dr. Alice Gilson",
+    "vincentRole": "Arzt & Geschäftsführer",
+    "aliceRole": "Ärztin & Geschäftsführerin",
+    "vincentFocus": "Krankenhäuser und Kliniken in der Schweiz – Demos, Pilotprojekte und EHR-Rollout.",
+    "aliceFocus": "Französische Gesundheitsorganisationen – Krankenhäuser, Kliniken und Beschaffungsgespräche.",
+    "vincentCity": "Genf, Schweiz",
+    "aliceCity": "Frankreich",
+    "writeEmail": "E-Mail schreiben",
+    "callPhone": "Anrufen",
+    "hoursLabel": "Erreichbarkeit",
+    "hoursValue": "Mo–Fr · Antwort innerhalb eines Werktags",
+    "responseLabel": "Am besten für",
+    "responseValue": "Krankenhaus-Demos, Preise und Integrationsfragen",
+    "companyLabel": "Firma",
+    "companyValue": "DocNote · Schweizer-hostete klinische KI",
+    "generalEmailLabel": "Allgemeine Anfragen",
+    "generalEmail": "hello@docnote.ch",
+    "hostingNote": "Gesundheitsdaten werden in der Schweiz gehostet. Wir trainieren niemals Modelle mit Ihren Konsultationen."
   }
 }

@@ -1,0 +1,779 @@
+{
+  "nav": {
+    "tutorial": "Tutorial",
+    "pricing": "Prezzi",
+    "blog": "Blog",
+    "team": "Team",
+    "survey": "Sondaggio",
+    "patient": "Pazienti",
+    "joinUs": "Unisciti a noi",
+    "demo": "Richiedi una demo",
+    "webApp": "Web App",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "solutions": "Soluzioni",
+    "specialties": "Specialità"
+  },
+  "hero": {
+    "badge": "Creato da medici · Hosting in Svizzera",
+    "title": "Documentazione ospedaliera,",
+    "titleHighlight": "senza le serate perse a scrivere note",
+    "subtitle": "DocNote trasforma le consultazioni in lettere di dimissione, note di reparto e referti operatori. Creato da medici che lavorano ancora in ambito ospedaliero.",
+    "cta": "Inizia gratuitamente",
+    "ctaSecondary": "Per cliniche e ospedali",
+    "founders": "Dr. Vincent Tan · Dr. Alice Gilson",
+    "foundersRole": "Fondatori · HUG & La Tour",
+    "trustedBy": "Fiducia dei principali fornitori di servizi sanitari"
+  },
+  "soapDemo": {
+    "consultations": "Consultazioni",
+    "patients": "Pazienti",
+    "templates": "Modelli",
+    "settings": "Impostazioni",
+    "consultationTitle": "Consultazione — Paziente #1247",
+    "consultationDate": "Oggi, 14:30 · Medicina Generale",
+    "recording": "Registrazione",
+    "soapNoteGenerated": "Nota SOAP Generata",
+    "soapNote": "Nota SOAP",
+    "savedToEHR": "Salvato in EHR",
+    "justNow": "Proprio ora",
+    "patientId": "Paziente #1247",
+    "generalPractice": "Medicina Generale",
+    "liveTranscript": "Trascrizione live",
+    "soapS": "Il paziente riferisce cefalea persistente da 3 giorni, peggiora alla sera. Valuta il dolore 6/10, pressione bilaterale. Nega nausea o fotofobia.",
+    "soapO": "PA 120/80, FC 72, Temp 36.8°C. Vigile e orientato. Lieve dolorabilità trapezio bilaterale. Nervi cranici II-XII integri.",
+    "soapA": "Cefalea di tipo tensivo, probabilmente correlata a stress. Nessun segnale di allarme per cefalea secondaria.",
+    "soapP": "Ibuprofene 400mg al bisogno. Consulenza igiene del sonno. Controllo in 2 settimane se nessun miglioramento.",
+    "phoneSoapS": "Cefalea persistente 3 giorni, 6/10, pressione bilaterale.",
+    "phoneSoapO": "PA 120/80, FC 72. Dolorabilità trapezio. Nervi cranici integri.",
+    "phoneSoapA": "Cefalea di tipo tensivo, correlata a stress.",
+    "phoneSoapP": "Ibuprofene 400mg al bisogno. Controllo tra 2 sett."
+  },
+  "stats": {
+    "timeSaved": "Tempo risparmiato nella documentazione",
+    "timeSavedValue": "2+ ore",
+    "timeSavedSuffix": "+ ore",
+    "timeSavedDesc": "in media al giorno",
+    "accuracy": "Accuratezza trascrizione",
+    "accuracyValue": "99%",
+    "accuracyDesc": "terminologia medica",
+    "doctors": "Medici attivi",
+    "doctorsValue": "1.000+",
+    "doctorsDesc": "in tutta Europa"
+  },
+  "features": {
+    "badge": "Funzionalità e vantaggi",
+    "title": "Adattabile a tutti i compiti amministrativi",
+    "subtitle": "Tutti gli strumenti per velocizzare la tua documentazione",
+    "recording": {
+      "title": "Registrazione Intelligente",
+      "description": "Registra le consultazioni con un tocco. La nostra IA comprende il contesto medico e filtra il rumore di fondo.",
+      "animStatus": "Registrazione",
+      "animWords": [
+        "Dunque",
+        "il",
+        "dolore",
+        "è iniziato",
+        "circa",
+        "due",
+        "settimane",
+        "fa,",
+        "soprattutto",
+        "al",
+        "mattino.",
+        "Non ho",
+        "mai avuto",
+        "emicranie",
+        "prima...",
+        "migraines"
+      ]
+    },
+    "transcription": {
+      "title": "Trascrizione Precisa",
+      "description": "Trascrizione in tempo reale con il 99% di accuratezza per la terminologia medica in più lingue.",
+      "animLine1": "Il paziente presenta",
+      "animLine2Pre": "sintomi di ",
+      "animWrong1": "diabete",
+      "animRight1": "diabete",
+      "animLine2Post": " ricorrenti,",
+      "animLine3Pre": "livelli di ",
+      "animWrong2": "glicemia",
+      "animRight2": "glicemia",
+      "animLine3Post": " elevati riscontrati."
+    },
+    "summaries": {
+      "title": "Riassunti Strutturati",
+      "description": "Genera automaticamente note di visita medica, lettere di dimissione e referti di consultazione.",
+      "animTitle": "Riassunto Consultazione",
+      "animSection1": "Diagnosi",
+      "animSection2": "Trattamento",
+      "animSection3": "Follow-up"
+    },
+    "integration": {
+      "title": "Integrazione EHR",
+      "description": "Integrazione senza soluzione di continuità con il tuo sistema di Cartella Clinica Elettronica esistente.",
+      "animTitle": "EHR — Cartella Paziente",
+      "animPatient": "Paziente",
+      "animDob": "Data di nascita",
+      "animNotes": "Note",
+      "animNoReport": "Nessun referto"
+    },
+    "security": {
+      "title": "Sicurezza dei Dati",
+      "description": "I tuoi dati rimangono in Svizzera. Conforme HIPAA, certificato ISO 27001.",
+      "animLabel1": "Paziente",
+      "animLabel2": "Data di nascita",
+      "animLabel3": "Diagnosi",
+      "animLabel4": "Note",
+      "animValue1": "Marie Dupont",
+      "animValue2": "12.03.1987",
+      "animValue3": "Diabete di tipo 2",
+      "animValue4": "HbA1c elevata",
+      "animNoReport": "Nessun referto"
+    },
+    "languages": {
+      "title": "Supporto Multilingue",
+      "description": "Supporta francese, inglese, italiano, spagnolo, arabo e altre 20+ lingue."
+    }
+  },
+  "specificities": {
+    "badge": "Specificità",
+    "title": "Progettato per come gli ospedali documentano realmente",
+    "subtitle": "Ogni specificità cambia ciò che finisce nella cartella, non è solo un'altra opzione da attivare.",
+    "impactLabel": "Impatto",
+    "stageLabel": "Nel prodotto",
+    "coding": {
+      "title": "Codifica medica e fatturazione",
+      "impact": "La codifica non è più un secondo passaggio di documentazione. La lettera stessa evidenzia le diagnosi fatturabili: meno SAD mancati, meno recupero serale della codifica.",
+      "description": "Le diagnosi associate significative sono evidenziate nella lettera di dimissione, con suggerimenti di codifica alla fine del documento.",
+      "descriptionCh": "Le diagnosi associate significative sono evidenziate nella lettera di dimissione, con suggerimenti di codifica Swiss DRG alla fine del documento.",
+      "descriptionRow": "Le diagnosi associate significative sono evidenziate nella lettera di dimissione, con suggerimenti di codifica PMSI alla fine del documento.",
+      "stageLabel": "Nella lettera",
+      "line1Pre": "…storia di ",
+      "line1Mark": "diabete di tipo 2",
+      "line1Post": " con recente elevazione di HbA1c…",
+      "line2Pre": "…nota ",
+      "line2Mark": "ipertensione",
+      "line2Post": ", attualmente controllata…",
+      "line3Pre": "…pregresso ",
+      "line3Mark": "TVP",
+      "line3Post": " · discussa anticoagulazione…"
+    },
+    "tardoc": {
+      "title": "Conformità TARDOC",
+      "impact": "Una breve dettatura al letto del paziente diventa una descrizione completa e fatturabile dell'esame. Documenti una volta per la cura clinica e per TARDOC, non due.",
+      "description": "I reperti dettati in modo conciso vengono espansi nel testo strutturato che gli assicuratori e TARDOC si aspettano, senza riscrivere l'esame da zero.",
+      "stageLabel": "Dettatura a descrizione fatturabile",
+      "shortDictation": "“Addome soffice, no rebound. Peristalsi presente.”",
+      "expandLabel": "Si espande in testo pronto per TARDOC",
+      "fullDescription": "Esame addominale: addome soffice e non dolorabile, no difesa o dolorabilità al rebound. Rumori intestinali presenti in tutti i quadranti. Nessuna organomegalia palpabile…"
+    },
+    "ehr": {
+      "title": "Integrazione EHR",
+      "impact": "La documentazione non è finita quando la nota sembra buona. È finita quando è nella cartella: nessun gap di copia-incolla, nessuna versione fluttuante fuori dall'EHR.",
+      "description": "I referti validati vengono inviati direttamente in Mediway e SOKLE, così il documento clinico e la cartella del paziente rimangono lo stesso oggetto.",
+      "stageLabel": "Nota validata a cartella paziente",
+      "docReady": "Lettera di dimissione",
+      "docMeta": "validata · PDF pronto"
+    },
+    "templates": {
+      "title": "Modelli Word personalizzati",
+      "impact": "Smetti di riformattare l'output dell'IA per adattarlo alla carta intestata dell'ospedale. Ogni referto è già il tuo documento: layout, sezioni, firma. La revisione rimane medica, non estetica.",
+      "description": "Carica il tuo modello Word una volta. DocNote ricrea i futuri referti con la tua struttura e branding esatti.",
+      "stageLabel": "Il tuo modello diventa il referto",
+      "fileName": "Carta intestata servizio.docx",
+      "dropHint": "Le tue sezioni · i tuoi margini · la tua firma",
+      "letterhead": "Ospedale · Servizio chirurgico",
+      "letterBody": "Gentile collega,\nIn allegato troverai…"
+    },
+    "context": {
+      "title": "Input di contesto ricco",
+      "impact": "La nota riflette il quadro clinico completo, non solo ciò che è stato detto ad alta voce: meno omissioni, meno correzioni \"per favore aggiungi il risultato del laboratorio\" dopo il fatto.",
+      "description": "Allega lettere precedenti, esami di laboratorio, immagini e foto. Il modello li utilizza quando struttura il referto.",
+      "stageLabel": "Audio più contesto file per una nota più forte",
+      "chip1": "Dimissione precedente",
+      "chip2": "Esami.pdf",
+      "chip3": "Foto ferita",
+      "meterLabel": "Completezza referto",
+      "meterNote": "Contesto incluso · meno reperti mancanti nella bozza"
+    },
+    "hospital": {
+      "title": "Documentazione specifica per ospedale",
+      "impact": "Non costringi il lavoro ospedaliero in un SOAP ambulatoriale. Il tipo di documento corrisponde al flusso di lavoro, quindi struttura, lunghezza e destinatari sono corretti al primo tentativo.",
+      "description": "Formati nativi per lettere di dimissione, note di progressione in reparto, referti operatori e altri documenti ospedalieri.",
+      "stageLabel": "Documento giusto per il momento",
+      "type1Title": "Dimissione",
+      "type1Sub": "lettera al MMG",
+      "type2Title": "Giro reparto",
+      "type2Sub": "nota di progressione",
+      "type3Title": "Referto OR",
+      "type3Sub": "operatorio"
+    },
+    "sync": {
+      "title": "Telefono e desktop sincronizzati",
+      "impact": "La documentazione rimane un unico filo dal letto del paziente alla scrivania. Non reinserisci o ricostruisci la nota quando cambi dispositivo: la bozza ti segue.",
+      "description": "Registra in reparto dal tuo telefono, poi continua e convalida su desktop. Stessa consultazione, sincronizzazione in tempo reale.",
+      "stageLabel": "Una nota, due posti",
+      "phone": "Telefono",
+      "recording": "Registrazione…",
+      "desktop": "Desktop",
+      "sameDraft": "Stessa bozza"
+    },
+    "dayHospital": {
+      "title": "Day hospital collaborativo",
+      "impact": "Alla fine della giornata hai una cartella paziente strutturata, non quattro note parziali da riconciliare. La qualità della documentazione scala con il team invece di frammentarsi.",
+      "description": "Più operatori sanitari contribuiscono alla stessa cartella paziente locale. DocNote unisce i contributi in un unico record affidabile.",
+      "stageLabel": "Diversi operatori a un file",
+      "mergeResult": "Singolo record strutturato day hospital"
+    }
+  },
+  "specialties": {
+    "title": "Supporto per 50+ specialità mediche",
+    "subtitle": "Dalla medicina generale alle cure specialistiche",
+    "items": [
+      "Medicina Generale",
+      "Medicina Interna",
+      "Cardiologia",
+      "Dermatologia",
+      "Endocrinologia",
+      "Gastroenterologia",
+      "Neurologia",
+      "Oncologia",
+      "Ortopedia",
+      "Pediatria",
+      "Psichiatria",
+      "Pneumologia",
+      "Reumatologia",
+      "Chirurgia",
+      "Urologia",
+      "Medicina d'Urgenza"
+    ]
+  },
+  "testimonials": {
+    "badge": "Testimonianza",
+    "title": "Amato dai medici",
+    "subtitle": "Scopri cosa dicono i professionisti sanitari di DocNote",
+    "quote1": "DocNote ha davvero cambiato la mia giornata in pronto soccorso, permettendomi di concentrarmi sui pazienti e godermi nuovamente le consultazioni.",
+    "author1": "Dre Perrot",
+    "role1": "Medico residente in Pronto Soccorso",
+    "quote2": "Da quando uso DocNote, preparare e seguire le consultazioni è diventato un processo rapido ed efficiente.",
+    "author2": "Dr Patel",
+    "role2": "Medico residente in Chirurgia Generale",
+    "quote3": "Dicevo sempre che avrei pagato un assistente a tempo pieno quando sarei diventato miliardario, ma ora non ho nemmeno bisogno di essere miliardario.",
+    "author3": "Pr Ris",
+    "role3": "Primario di Chirurgia Colorettale",
+    "items": [
+      {
+        "quote": "DocNote ha davvero cambiato la mia giornata nel pronto soccorso, permettendomi di concentrarmi sui pazienti e godermi di nuovo le visite.",
+        "author": "Dre Perrot",
+        "role": "Medico residente in Pronto Soccorso",
+        "image": "/images/testimonials/perrot.jpg"
+      },
+      {
+        "quote": "Da quando uso DocNote, preparare e seguire le visite è diventato un processo rapido ed efficiente.",
+        "author": "Dr Patel",
+        "role": "Medico residente in Chirurgia Generale",
+        "image": "/images/testimonials/patel.jpg"
+      },
+      {
+        "quote": "Dicevo sempre che avrei pagato un assistente a tempo pieno quando fossi diventato miliardario, ma ora non ho nemmeno bisogno di esserlo.",
+        "author": "Pr Ris",
+        "role": "Primario di Chirurgia Colorettale",
+        "image": "/images/testimonials/ris.jpg"
+      },
+      {
+        "quote": "Le lettere di dimissione mi rubavano le serate. Ora valido una bozza strutturata prima di lasciare il reparto — e sembra ancora scritta da me.",
+        "author": "Dr Moreau",
+        "role": "Internista, Ospedale Universitario",
+        "image": "/images/testimonials/moreau.jpg"
+      },
+      {
+        "quote": "In cardiologia, ogni dettaglio conta. DocNote cattura le sfumature della visita senza costringermi in un modello generico ambulatoriale.",
+        "author": "Dr Keller",
+        "role": "Cardiologo",
+        "image": "/images/testimonials/keller.jpg"
+      },
+      {
+        "quote": "Le note operatorie sono finalmente scritte quando il caso è ancora fresco. Il mio team revisiona meno e la documentazione è pronta per il turno successivo.",
+        "author": "Dr Rossi",
+        "role": "Chirurgo Ortopedico",
+        "image": "/images/testimonials/rossi.jpg"
+      },
+      {
+        "quote": "Tra ambulatori e reparti, perdevo il filo di ogni visita. DocNote mantiene la documentazione continua senza rallentare l'assistenza.",
+        "author": "Dr Nguyen",
+        "role": "Pediatra",
+        "image": "/images/testimonials/nguyen.jpg"
+      },
+      {
+        "quote": "Le note di anestesia devono essere precise e veloci. DocNote tiene il passo della sala operatoria senza compromettere il linguaggio clinico.",
+        "author": "Dr Berg",
+        "role": "Anestesista",
+        "image": "/images/testimonials/berg.jpg"
+      },
+      {
+        "quote": "Posso dettare i reperti e ottenere un rapporto che corrisponde già a come scrivono i radiologi — non un vago riassunto AI.",
+        "author": "Dr Dubois",
+        "role": "Radiologo",
+        "image": "/images/testimonials/dubois.jpg"
+      },
+      {
+        "quote": "Le visite neurologiche sono dense. DocNote le struttura in modo chiaro così che il team di riferimento riceva una nota utilizzabile, non un muro di testo.",
+        "author": "Dr Hoffmann",
+        "role": "Neurologo",
+        "image": "/images/testimonials/hoffmann.jpg"
+      },
+      {
+        "quote": "Come medico di famiglia, vedo molti pazienti ogni giorno. DocNote mi restituisce i minuti che prima sparivano nella compilazione.",
+        "author": "Dr Silva",
+        "role": "Medico di Medicina Generale",
+        "image": "/images/testimonials/silva.jpg"
+      },
+      {
+        "quote": "Gli ambulatori ORL si muovono velocemente. Con DocNote, la nota è pronta quando il paziente lascia la stanza — e gli spunti per la codifica sono già lì.",
+        "author": "Dr Andersson",
+        "role": "Specialista ORL",
+        "image": "/images/testimonials/andersson.jpg"
+      },
+      {
+        "quote": "La documentazione psichiatrica richiede sfumature e riservatezza. DocNote rispetta entrambe rimuovendo il peso amministrativo.",
+        "author": "Dr Lefevre",
+        "role": "Psichiatra",
+        "image": "/images/testimonials/lefevre.jpg"
+      },
+      {
+        "quote": "In terapia intensiva, i passaggi dipendono da note chiare. DocNote ci aiuta a mantenere la documentazione accurata anche nelle notti più impegnative.",
+        "author": "Dr Kowalski",
+        "role": "Medico di Terapia Intensiva",
+        "image": "/images/testimonials/kowalski.jpg"
+      },
+      {
+        "quote": "I follow-up oncologici sono complessi. DocNote trasforma una lunga conversazione in un aggiornamento strutturato di cui i miei colleghi si possono fidare.",
+        "author": "Dr Yamamoto",
+        "role": "Oncologo",
+        "image": "/images/testimonials/yamamoto.jpg"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto a risparmiare 2+ ore al giorno?",
+    "subtitle": "Unisciti a centinaia di medici che hanno trasformato il loro flusso di lavoro documentale.",
+    "button": "Inizia Gratuitamente",
+    "noCard": "Nessuna carta di credito richiesta"
+  },
+  "valueProp": {
+    "title": "Documentazione Medica Semplificata",
+    "subtitle": "Unifica il tuo flusso di lavoro documentale, risparmia ore ogni giorno e concentrati su ciò che conta davvero - i tuoi pazienti.",
+    "card1": {
+      "title": "Inizia rapidamente",
+      "description": "Inizia all'istante. Qualsiasi medico del tuo team può registrare, trascrivere e condividere note cliniche in pochi minuti."
+    },
+    "card2": {
+      "title": "Sincronizzazione con il tuo EHR",
+      "description": "Unifica i tuoi strumenti. Connetti i dati da qualsiasi luogo con integrazioni EHR senza soluzione di continuità e flussi di lavoro automatizzati."
+    },
+    "card3": {
+      "title": "Senza soluzione di continuità tra dispositivi",
+      "description": "Rimani connesso, ovunque lavori. DocNote funziona senza sforzo su qualsiasi dispositivo - mobile, tablet o desktop."
+    }
+  },
+  "compliance": {
+    "badge": "Riservatezza",
+    "title": "Sicurezza su misura per le esigenze mediche",
+    "subtitle": "La nostra infrastruttura è conforme agli elevati standard di protezione dei dati, specificamente progettati per i requisiti del settore medico.",
+    "cardTitle": "Quadro di Protezione Dati",
+    "cardDescription": "DocNote implementa una sicurezza di livello enterprise con crittografia end-to-end, controlli di accesso rigorosi e registrazione di audit completa per proteggere i dati sensibili dei pazienti.",
+    "protocolTitle": "Protocollo di Sicurezza DocNote",
+    "protocolEncryption": "Crittografia end-to-end: TLS 1.3 (in transito) & AES-256 (a riposo)",
+    "protocolRetention": "Nessun dato conservato oltre 7 giorni",
+    "protocolRbac": "Controllo di accesso basato sui ruoli (RBAC)",
+    "protocolAudit": "Registrazione completa del tracciamento di audit",
+    "swiss": {
+      "title": "Progettazione e hosting svizzero",
+      "description": "Costruito e ospitato in Svizzera. Tutti i dati rimangono su server svizzeri, allineati con le normative sanitarie locali."
+    },
+    "hipaa": {
+      "title": "Conforme HIPAA",
+      "description": "Completamente conforme agli standard di privacy sanitaria, garantendo la protezione dei dati dei pazienti a ogni livello."
+    },
+    "iso": {
+      "title": "ISO 27001",
+      "description": "Gestione della sicurezza delle informazioni certificata con audit regolari e monitoraggio continuo."
+    }
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "subtitle": "Tutto ciò che medici e ospedali chiedono prima di adottare DocNote. Hai ancora una domanda? ",
+    "contactUs": "Contattaci",
+    "q1": "Cos'è DocNote e come funziona?",
+    "a1": "DocNote è un assistente di documentazione clinica e trascrittore medico alimentato da IA progettato per medici, chirurghi e ospedali in Svizzera, Francia e in tutta Europa. Durante una consultazione, DocNote registra in modo sicuro la conversazione tra il medico e il paziente, la trascrive in tempo reale e genera automaticamente un referto medico strutturato (nota di consultazione, lettera di dimissione, referto operatorio, nota di reparto, ecc.) che il medico rivede e convalida prima di inviare alla cartella clinica elettronica del paziente.",
+    "q2": "Perché scegliere DocNote rispetto ad altri trascrittori medici con IA?",
+    "a2": "DocNote è costruito specificamente per l'assistenza sanitaria europea e svizzera, non adattato da un prodotto statunitense. Differenziatori chiave: (1) tutti i dati sono ospitati in Svizzera e mai utilizzati per addestrare modelli di IA, (2) piena conformità con la Legge federale svizzera sulla protezione dei dati (FADP), GDPR, HIPAA e ISO 27001, (3) suggerimenti automatici di codifica medica allineati con Swiss DRG e PMSI, (4) supporto nativo TARDOC per trasformare esami dettati in descrizioni fatturabili, (5) integrazione diretta EHR con Mediway e SOKLE, (6) sincronizzazione reale tra mobile e desktop, e (7) documentazione specifica per ospedale inclusi lettere di dimissione, referti operatori e file collaborativi di day hospital.",
+    "a2Ch": "DocNote è costruito specificamente per l'assistenza sanitaria svizzera, non adattato da un prodotto statunitense. Differenziatori chiave: (1) tutti i dati sono ospitati in Svizzera e mai utilizzati per addestrare modelli di IA, (2) piena conformità con la Legge federale svizzera sulla protezione dei dati (FADP / nLPD), HIPAA e ISO 27001, (3) suggerimenti automatici di codifica medica allineati con Swiss DRG, (4) supporto nativo TARDOC per trasformare esami dettati in descrizioni fatturabili, (5) integrazione diretta EHR con Mediway e SOKLE, (6) sincronizzazione reale tra mobile e desktop, e (7) documentazione specifica per ospedale inclusi lettere di dimissione, referti operatori e file collaborativi di day hospital.",
+    "a2Row": "DocNote è costruito specificamente per l'assistenza sanitaria francese ed europea, non adattato da un prodotto statunitense. Differenziatori chiave: (1) tutti i dati sono ospitati in Francia e mai utilizzati per addestrare modelli di IA, (2) piena conformità con il GDPR europeo, HIPAA e ISO 27001, (3) suggerimenti automatici di codifica medica allineati con il PMSI francese, (4) integrazione diretta EHR con i principali sistemi informativi ospedalieri, (5) sincronizzazione reale tra mobile e desktop, e (6) documentazione specifica per ospedale inclusi lettere di dimissione, referti operatori e file collaborativi di day hospital.",
+    "q3": "DocNote è sicuro e conforme alle normative sui dati sanitari?",
+    "a3": "Sì. DocNote applica crittografia end-to-end (AES-256 a riposo, TLS 1.3 in transito), ospita tutti i dati sanitari esclusivamente in Svizzera e rispetta la FADP svizzera, il GDPR europeo, HIPAA e ISO 27001. DocNote agisce come persona ausiliaria al medico ai sensi dell'articolo 321 del Codice penale svizzero (segreto medico). I dati sanitari vengono automaticamente e irreversibilmente cancellati entro 7 giorni dall'elaborazione. DocNote non conserva mai copie permanenti di audio, trascrizioni o referti medici.",
+    "a3Ch": "Sì. DocNote applica crittografia end-to-end (AES-256 a riposo, TLS 1.3 in transito), ospita tutti i dati sanitari esclusivamente in Svizzera e rispetta la Legge federale svizzera sulla protezione dei dati (FADP / nLPD), HIPAA e ISO 27001. DocNote agisce come persona ausiliaria al medico ai sensi dell'articolo 321 del Codice penale svizzero (segreto medico). I dati sanitari vengono automaticamente e irreversibilmente cancellati entro 7 giorni dall'elaborazione. DocNote non conserva mai copie permanenti di audio, trascrizioni o referti medici.",
+    "a3Row": "Sì. DocNote applica crittografia end-to-end (AES-256 a riposo, TLS 1.3 in transito), ospita tutti i dati sanitari esclusivamente in Francia in data center certificati HDS (Hébergeur de Données de Santé), e rispetta il GDPR europeo, HIPAA e ISO 27001. DocNote è vincolato dal segreto medico francese ai sensi dell'articolo 226-13 del Codice penale francese e dell'articolo L1110-4 del Codice della sanità pubblica. I dati sanitari vengono automaticamente e irreversibilmente cancellati entro 7 giorni dall'elaborazione. DocNote non conserva mai copie permanenti di audio, trascrizioni o referti medici.",
+    "q4": "Quali specialità mediche supporta DocNote?",
+    "a4": "DocNote supporta più di 50 specialità mediche, tra cui medicina generale, medicina interna, cardiologia, chirurgia (generale, ortopedica, colorettale, vascolare), ginecologia, pediatria, psichiatria, dermatologia, oftalmologia, ORL, neurologia, oncologia, anestesiologia, medicina d'urgenza e radiologia. I referti sono adattati alla terminologia e struttura previste per ogni specialità.",
+    "q5": "Quali lingue supporta DocNote?",
+    "a5": "DocNote comprende e produce referti in francese, tedesco, italiano, inglese e oltre 20 altre lingue. Gestisce correttamente la terminologia medica specifica svizzera e il code-switching durante le consultazioni (ad esempio un paziente che parla svizzero tedesco mentre il medico detta in francese).",
+    "q6": "Quanto tempo risparmia DocNote per consultazione?",
+    "a6": "In media, i medici che usano DocNote risparmiano più di 2 ore di lavoro amministrativo al giorno. Una nota di consultazione che prima richiedeva 5-10 minuti per essere scritta viene generata in pochi secondi, lasciando solo una rapida revisione medica prima della convalida. Ciò significa più tempo con i pazienti, meno serate dedicate alla burocrazia e riduzione del burnout.",
+    "q7": "DocNote si integra con le cartelle cliniche elettroniche (EHR)?",
+    "a7": "Sì. DocNote si integra direttamente con Mediway e SOKLE, con nuove integrazioni EHR aggiunte regolarmente. Puoi anche trascinare e rilasciare i tuoi modelli Word: DocNote ricrea automaticamente il referto rispettando il tuo layout esatto, poi esporta in PDF o copia/incolla in qualsiasi altro sistema.",
+    "q8": "Quanto costa DocNote e c'è una prova gratuita?",
+    "a8": "DocNote offre una prova gratuita di 30 consultazioni con accesso completo a tutte le funzionalità professionali, senza richiedere carta di credito. Il piano Professional costa CHF 109 al mese (o CHF 99 al mese fatturato annualmente) per gli utenti in Svizzera, con prezzi equivalenti in EUR per il resto d'Europa. Ospedali e grandi organizzazioni hanno un piano Enterprise personalizzato disponibile su richiesta.",
+    "a8Ch": "DocNote offre una prova gratuita di 30 consultazioni con accesso completo a tutte le funzionalità professionali, senza richiedere carta di credito. Il piano Professional costa CHF 109 al mese (o CHF 99 al mese fatturato annualmente). Ospedali e grandi organizzazioni hanno un piano Enterprise personalizzato disponibile su richiesta.",
+    "a8Row": "DocNote offre una prova gratuita di 30 consultazioni con accesso completo a tutte le funzionalità professionali, senza richiedere carta di credito. Il piano Professional costa €89 al mese (o €79 al mese fatturato annualmente). Ospedali e grandi organizzazioni hanno un piano Enterprise personalizzato disponibile su richiesta.",
+    "q9": "Cosa rende DocNote diverso per la documentazione ospedaliera e di day hospital (HDJ)?",
+    "a9": "DocNote è il primo trascrittore medico con IA costruito appositamente per la complessità ospedaliera, non solo per consultazioni ambulatoriali. Tre differenziatori spiccano. (1) File collaborativi di day hospital: nei flussi di lavoro HDJ dove più operatori (medici, residenti, infermieri, anestesisti) vedono successivamente lo stesso paziente, DocNote permette a ogni operatore di contribuire alla stessa cartella paziente condivisa e unisce automaticamente tutti i contributi in un unico record strutturato, affidabile e verificabile. Nessun altro trascrittore ambientale con IA sul mercato europeo offre attualmente questo. (2) Contesto ricco di consultazione: DocNote permette al medico di arricchire qualsiasi consultazione trascinando documenti precedenti (risultati di laboratorio, referti di imaging, precedenti lettere di dimissione), allegando foto (ferite, lesioni, ECG, radiografie) o incollando testo libero. L'IA incorpora poi questo contesto ricco nell'output strutturato, producendo referti di precisione senza pari. (3) Modelli Word personali: trascina e rilascia il tuo documento Word con il tuo formato esatto, firma, carta intestata dell'ospedale e struttura delle sezioni. DocNote ricrea ogni futuro referto rispettando il tuo modello e layout esatti. Nessun altro trascrittore con IA offre questo livello di personalizzazione per medico."
+  },
+  "footer": {
+    "description": "Documentazione medica alimentata da IA per flussi di lavoro ospedalieri.",
+    "product": "Prodotto",
+    "company": "Azienda",
+    "legal": "Legale",
+    "features": "Funzionalità",
+    "pricing": "Prezzi",
+    "integrations": "Integrazioni",
+    "about": "Chi siamo",
+    "blog": "Blog",
+    "careers": "Carriere",
+    "contact": "Contatti",
+    "privacy": "Privacy Policy",
+    "terms": "Termini di Servizio",
+    "gtc": "Termini e Condizioni Generali",
+    "gdpr": "GDPR",
+    "rights": "Tutti i diritti riservati."
+  },
+  "pricing": {
+    "title": "Dai clinici singoli alle grandi organizzazioni",
+    "subtitle": "Scegli il piano che si adatta alla tua pratica",
+    "monthly": "Mensile",
+    "yearly": "Annuale",
+    "save": "Risparmia 15%",
+    "perMonth": "/mese",
+    "getStarted": "Inizia",
+    "subscription": "Abbonamento",
+    "freeTrial": "30 consultazioni gratuite, poi",
+    "professional": {
+      "name": "Cabinet e medici individuali",
+      "description": "Per medici individuali e piccoli studi",
+      "price": "79",
+      "monthlyPrice": "89",
+      "features": [
+        "Consultazioni illimitate",
+        "Supporto prioritario",
+        "Accesso app mobile e webapp",
+        "Modelli personalizzati su richiesta",
+        "Possibile integrazione dal team DocNote"
+      ],
+      "popular": "Più Popolare"
+    },
+    "enterprise": {
+      "name": "Ospedali e cliniche",
+      "description": "Per ospedali e grandi cliniche",
+      "price": "Personalizzato",
+      "features": [
+        "Tutto incluso in Professional",
+        "Account manager dedicato",
+        "Integrazioni personalizzate",
+        "Deploy on-premise",
+        "Garanzia SLA",
+        "Formazione & onboarding"
+      ],
+      "contact": "Contatta Vendite"
+    },
+    "faq": {
+      "title": "Domande Frequenti",
+      "q1": "Come funziona la prova gratuita?",
+      "a1": "Inizia con 30 consultazioni gratuite con accesso completo alle funzionalità Professional. Nessuna carta di credito richiesta.",
+      "q2": "Posso cambiare piano in seguito?",
+      "a2": "Sì, puoi aggiornare o ridimensionare il tuo piano in qualsiasi momento. Le modifiche hanno effetto al tuo prossimo ciclo di fatturazione.",
+      "q3": "I miei dati sono sicuri?",
+      "a3": "Assolutamente. Tutti i dati sono crittografati e archiviati in Svizzera. Siamo conformi HIPAA e certificati ISO 27001.",
+      "q4": "Con quali sistemi EHR vi integrate?",
+      "a4": "Ci integriamo con la maggior parte dei principali sistemi EHR inclusi Epic, Cerner e sistemi locali svizzeri come Sokle o Mediway.",
+      "q5": "Qual è la differenza tra Professional e Enterprise?",
+      "a5": "Professional è pensato per medici singoli e piccoli studi: visite illimitate, accesso mobile e web, modelli e supporto prioritario. Enterprise aggiunge rollout multi-utente, gestione account dedicata, integrazioni EHR personalizzate, opzione di deployment on-premise, SLA e formazione strutturata per ospedali e cliniche.",
+      "q6": "Posso pagare mensilmente o annualmente?",
+      "a6": "Sì. Puoi scegliere fatturazione mensile o annuale con un risparmio del 15%. I prezzi sono mostrati nella tua valuta locale quando disponibile (CHF, EUR o USD).",
+      "q7": "Offrite fatture per cliniche e ospedali?",
+      "a7": "Sì. Gli abbonamenti Professional sono fatturati tramite Stripe con fatture scaricabili. I contratti Enterprise possono essere fatturati tramite il vostro processo di procurement con termini personalizzati.",
+      "q8": "C'è un impegno o una penale per la cancellazione?",
+      "a8": "Non c'è vincolo a lungo termine sul piano Professional. Puoi cancellarti prima del prossimo ciclo di fatturazione. Gli accordi Enterprise seguono i termini definiti nel contratto.",
+      "q9": "Quanto tempo richiede l'onboarding?",
+      "a9": "La maggior parte dei clinici singoli inizia lo stesso giorno dopo il trial gratuito. I rollout per ospedali e cliniche richiedono di solito qualche settimana, a seconda dell'integrazione EHR, del programma di formazione e della revisione IT interna.",
+      "q10": "Più medici in uno studio possono condividere un account?",
+      "a10": "Piccoli studi possono iniziare con Professional per clinico. Per reparti condivisi, ruoli amministrativi o accesso ospedaliero, il piano Enterprise è la scelta giusta — contatta il team vendite e lo dimensioneremo insieme."
+    },
+    "compare": {
+      "title": "Confronta i piani",
+      "subtitle": "Scopri cosa è incluso per i clinici singoli rispetto a ospedali e cliniche.",
+      "feature": "Funzionalità",
+      "pro": "Professional",
+      "enterprise": "Enterprise",
+      "yes": "Incluso",
+      "no": "—",
+      "custom": "Personalizzato",
+      "rows": [
+        {
+          "label": "Visite illimitate",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "App mobile e accesso web",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Report adattati alla specialità",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Modelli personalizzati",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Supporto prioritario",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Dati ospitati in Svizzera e crittografati",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Integrazioni EHR (Mediway, SOKLE, …)",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Rollout multi-utente / dipartimentale",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Account manager dedicato",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "On-premise o cloud privato",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Garanzia SLA",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Formazione e onboarding",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SSO / console di amministrazione",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Flussi di lavoro collaborativi per day-hospital",
+          "pro": "no",
+          "enterprise": "yes"
+        }
+      ]
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Approfondimenti su IA in sanità, documentazione medica e gestione della pratica",
+    "readMore": "Leggi di più",
+    "backToBlog": "Torna al Blog",
+    "recentPosts": "Post Recenti",
+    "minRead": "min lettura",
+    "shareArticle": "Condividi questo articolo:",
+    "categories": {
+      "all": "Tutti",
+      "news": "News",
+      "ai": "Ricerca & Approfondimenti",
+      "documentation": "Ricerca & Approfondimenti",
+      "practice": "Ricerca & Approfondimenti"
+    },
+    "onThisPage": "In questa pagina",
+    "writtenBy": "Scritto da",
+    "share": "Condividi",
+    "relatedArticles": "Articoli correlati",
+    "createdOn": "Pubblicato",
+    "articles": "Articoli",
+    "prev": "Precedente",
+    "next": "Successivo",
+    "viewAllArticles": "Tutti gli articoli",
+    "pageLabel": "Pagina"
+  },
+  "team": {
+    "aboutUs": "Chi Siamo",
+    "title": "Progettato da medici, costruito da ingegneri dell'IA",
+    "subtitle": "Un team clinico e tecnico che lavora fianco a fianco per restituire tempo ai medici.",
+    "intro": "DocNote è nato nei corridoi degli ospedali, non in una presentazione. I nostri fondatori esercitano ancora la medicina, quindi ogni decisione sul prodotto viene valutata in base alla sua efficacia in un reparto affollato.",
+    "story": "Oggi clinici, ingegneri e team commerciali condividono una missione: trasformare le consultazioni in documenti clinici affidabili in pochi secondi, con la privacy ospitata in Svizzera al centro. Costruiamo con le persone che useranno il prodotto domani.",
+    "members": {
+      "vincentTan": {
+        "name": "Dr. Vincent Tan",
+        "role": "Medico & Direttore Generale",
+        "bio": "Medico con esperienza all'Hôpital de la Tour di Ginevra. Guida DocNote con un focus sui flussi di lavoro ospedalieri reali e la fiducia dei clinici."
+      },
+      "aliceGilson": {
+        "name": "Dr. Alice Gilson",
+        "role": "Medico & Direttore Generale",
+        "bio": "Specialista in chirurgia con esperienza all'HUG (Ginevra). Plasma il prodotto intorno a referti operatori, lettere di dimissione e realtà clinica quotidiana."
+      },
+      "mathiasGilson": {
+        "name": "Mathias Gilson",
+        "role": "Direttore Tecnico",
+        "bio": "Responsabile della visione tecnica di DocNote, dell'architettura della piattaforma IA e degli standard di affidabilità per software di livello clinico."
+      },
+      "jeremyYvinec": {
+        "name": "Jeremy Yvinec",
+        "role": "Ingegnere Fullstack Senior",
+        "bio": "Laureato all'IUT Aix-Marseille che sviluppa esperienze web e React Native per mantenere veloce la documentazione su ogni dispositivo."
+      },
+      "hugoRoussel": {
+        "name": "Hugo Roussel",
+        "role": "Team Lead Engineer",
+        "bio": "Laureato all'ETH Zurich che guida lo sviluppo ingegneristico, con un focus su sistemi scalabili e architetture pulite."
+      },
+      "ericWei": {
+        "name": "Eric Wei",
+        "role": "Ingegnere Frontend Senior",
+        "bio": "Laureato all'EPFL che progetta le interfacce su cui si affidano i clinici, con attenzione a chiarezza, velocità e moderno design frontend."
+      },
+      "nedimAmer": {
+        "name": "Nedim Amer",
+        "role": "Vendite",
+        "bio": "Aiuta cliniche e ospedali a valutare DocNote, mappare i flussi di lavoro e passare dalla prima demo a un'implementazione sicura."
+      },
+      "valeryDemunck": {
+        "name": "Valery Demunck",
+        "role": "Vendite",
+        "bio": "Collabora con organizzazioni sanitarie in diversi mercati per adattare DocNote alle loro esigenze documentali e tempistiche."
+      },
+      "julietteKristanek": {
+        "name": "Juliette Kristanek",
+        "role": "Marketing & Comunicazione",
+        "bio": "Definisce come DocNote si presenta a medici e partner, dalla narrazione del prodotto alla comunità e agli eventi."
+      }
+    },
+    "highlightsTitle": "Come lavoriamo",
+    "highlightsLead": "DocNote non è nato come una presentazione. È nato nei corridoi degli ospedali — tra i turni in reparto, le liste operatorie e le serate passate a riscrivere note che avrebbero dovuto scriversi da sole. Quell'origine influenza ancora ogni assunzione, ogni rilascio e ogni conversazione con una clinica.",
+    "highlights": [
+      {
+        "title": "Medici praticanti al centro",
+        "body": "I nostri fondatori esercitano ancora la medicina. Non è uno slogan per la pagina Chi siamo — è il filtro per le decisioni di prodotto. Se una funzionalità non sopravvive a un turno impegnativo, a un pronto soccorso rumoroso o a un ambulatorio del venerdì pomeriggio, non viene rilasciata.\n\nIl linguaggio clinico, la struttura per specialità e il ritmo reale della documentazione ospedaliera vengono prima. Progettiamo per lettere di dimissione, referti operatori, file collaborativi di day-hospital e i momenti imbarazzanti in cui tre operatori toccano lo stesso paziente in un pomeriggio.\n\nQuando i clinici ci dicono che qualcosa non va, lo trattiamo come input ingegneristico — non come un commento UX opzionale."
+      },
+      {
+        "title": "Privacy svizzera di default",
+        "body": "I dati sanitari non sono un corpus di addestramento. DocNote ospita le informazioni cliniche in Svizzera, le crittografa in transito e a riposo, e applica regole di conservazione che rispettano le aspettative europee sul segreto medico.\n\nCostruiamo per le realtà FADP / nLPD, GDPR, HIPAA e ISO 27001 — revisioni IT ospedaliere, questionari di procurement e la domanda silenziosa che ogni medico si fa: dove vivono davvero i dati dei miei pazienti?\n\nNiente nella documentazione ambientale vale l'erosione della fiducia. La privacy è parte dell'architettura del prodotto, non un'appendice legale."
+      },
+      {
+        "title": "Clinici e ingegneri nello stesso ciclo",
+        "body": "Specialisti medici, ingegneri AI e team di prodotto lavorano nello stesso ciclo. I modelli di report non sono inventati in isolamento e poi \"adattati\" per gli ospedali — sono co-progettati con chi oggi scrive ancora quei report a mano.\n\nEcco perché DocNote può passare dalla dettatura libera a note strutturate per specialità, referti operatori, note di follow-up e riassunti di dimissione senza costringere i medici in un modello generico ambulatoriale statunitense.\n\nLa qualità ingegneristica si vede in velocità, affidabilità e interfacce tranquille. La qualità clinica si vede nel vocabolario, nella struttura e nel rispetto per come lavorano davvero i team."
+      },
+      {
+        "title": "Dal primo demo al rollout ospedaliero",
+        "body": "Un buon demo di scriba ambientale è facile. Un rollout ospedaliero affidabile non lo è. I nostri team di vendita, onboarding e supporto aiutano le cliniche a mappare i flussi, scegliere i modelli di report giusti, connettere i percorsi EHR dove necessario e formare i team senza interrompere l'assistenza.\n\nRestiamo durante i pilot, il procurement e il caos intermedio — eccezioni per specialità, preferenze sui modelli, reparti multilingue e la checklist IT che nessuno mette nel sito marketing.\n\nL'obiettivo è semplice: più tempo con i pazienti, meno serate perse nelle note e un sistema di documentazione che i clinici sono disposti a difendere con i colleghi."
+      }
+    ],
+    "highlightsClosing": "Oggi il team comprende leadership clinica, ingegneria avanzata, go-to-market e comunicazione — uniti da una missione: trasformare le visite in documenti clinici affidabili in pochi secondi, con la privacy svizzera al centro. Costruiamo con chi userà il prodotto domani."
+  },
+  "tutorial": {
+    "title": "Iniziare con DocNote",
+    "subtitle": "Segui questi semplici passi per trasformare il tuo flusso di lavoro di documentazione medica",
+    "step1": {
+      "title": "Scarica l'applicazione mobile o connettiti alla Web App",
+      "description": "Scarica l'applicazione mobile DocNote dallo store del tuo telefono, o accedi direttamente via la nostra web app:",
+      "ios": "Disponibile su App Store",
+      "android": "Disponibile su Google Play"
+    },
+    "step2": {
+      "title": "Crea il tuo account",
+      "description": "Crea il tuo account inserendo la tua email professionale. Ti invieremo un codice di attivazione.",
+      "trialInfo": "La tua prova di 30 consultazioni inizierà una volta ricevuto e inserito il codice di attivazione."
+    },
+    "step3": {
+      "title": "Schermata principale",
+      "description": "Inizia a usare la nostra soluzione per migliorare il tuo carico amministrativo e ricominciare a goderti il tuo lavoro. Puoi guardare il tutorial qui sotto per aiutarti a capire le nostre principali funzionalità.",
+      "chooseModel": "Dalla pagina iniziale, puoi selezionare il modello di referto più adatto alle tue esigenze:",
+      "models": {
+        "dictation": {
+          "title": "Dettatura",
+          "description": "Dettatura a testo libero con strutturazione automatica"
+        },
+        "general": {
+          "title": "Consultazione Medico Generale",
+          "description": "Note clinicamente strutturate e concise progettate per cure primarie"
+        },
+        "specialist": {
+          "title": "Consultazione Specialistica",
+          "description": "Consultazione specialistica dettagliata strutturata come lettera formale al medico referente"
+        },
+        "operative": {
+          "title": "Referto Operatorio",
+          "description": "Referto strutturato di procedura chirurgica"
+        },
+        "followUp": {
+          "title": "Note di Follow-up Visita Medica",
+          "description": "Note di progressione giornaliere standardizzate per pazienti ospedalizzati"
+        },
+        "discharge": {
+          "title": "Lettera di Dimissione",
+          "description": "Riassunto di dimissione consolidato che integra tutti i documenti creati durante il ricovero"
+        }
+      }
+    },
+    "cta": {
+      "title": "Pronto a iniziare?",
+      "subtitle": "Scarica l'app e inizia oggi la tua prova di 30 consultazioni.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "webApp": "Web App",
+      "getDemo": "Prenota una demo"
+    }
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Parla con il nostro team ospedali. Contatta Vincent per la Svizzera, o Alice per le organizzazioni sanitarie francesi.",
+    "bookDemo": "Prenota una demo",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefono",
+    "locationLabel": "Posizione",
+    "switzerland": "Svizzera",
+    "france": "Francia",
+    "vincentName": "Dr. Vincent Tan",
+    "aliceName": "Dr. Alice Gilson",
+    "vincentRole": "Medico & Managing Director",
+    "aliceRole": "Medico & Managing Director",
+    "vincentFocus": "Ospedali e cliniche in Svizzera — demo, pilot e rollout EHR.",
+    "aliceFocus": "Organizzazioni sanitarie francesi — ospedali, cliniche e conversazioni di procurement.",
+    "vincentCity": "Ginevra, Svizzera",
+    "aliceCity": "Francia",
+    "writeEmail": "Scrivi un'email",
+    "callPhone": "Chiama",
+    "hoursLabel": "Disponibilità",
+    "hoursValue": "Lun–Ven · risposta entro un giorno lavorativo",
+    "responseLabel": "Ideale per",
+    "responseValue": "Demo ospedaliere, prezzi e domande su integrazioni",
+    "companyLabel": "Azienda",
+    "companyValue": "DocNote · AI clinica ospitata in Svizzera",
+    "generalEmailLabel": "Richieste generali",
+    "generalEmail": "hello@docnote.ch",
+    "hostingNote": "I dati sanitari sono ospitati in Svizzera. Non addestriamo mai modelli sulle tue visite."
+  }
+}
