@@ -1,0 +1,128 @@
+{
+  "ai-medical-scribe": {
+    "navLabel": "KI-Schreibassistent",
+    "title": "KI-Schreibassistent für Ärztinnen und Ärzte",
+    "description": "DocNote ist ein KI-Schreibassistent für Ärztinnen, Ärzte und Spitäler in der Schweiz und Europa. Konsultationen in strukturierte Notizen verwandeln. In der Schweiz gehostet, DSG-/DSGVO-konform.",
+    "h1": "KI-Schreibassistent für den echten Klinikalltag",
+    "intro": "DocNote hört während der Konsultation zu, transkribiert sicher und entwirft das klinische Dokument, das Sie brauchen — Konsultationsnotiz, Austrittsbericht, Visitennotiz oder OP-Bericht — damit Sie weniger tippen und mehr Zeit für Patientinnen und Patienten haben.",
+    "sections": [
+      {
+        "heading": "Was ein medizinischer KI-Schreibassistent leisten muss",
+        "body": "Ein nützlicher Schreibassistent ist kein generisches Transkript. Er muss klinische Struktur, Fachsprache und die Dokumente verstehen, die Ihre Praxis oder Ihr Spital wirklich ausstellt. DocNote ist dafür gebaut: einmal erfassen, den richtigen Notiztyp erzeugen, dann ärztlich validieren, bevor etwas ins KIS geht."
+      },
+      {
+        "heading": "Für die Schweiz und Europa gebaut",
+        "body": "Anders als US-first Ambient-Tools, die nachträglich angepasst werden, richtet sich DocNote nach schweizerischen und europäischen Dokumentationsgewohnheiten, mehrsprachigen Konsultationen und strengen Gesundheitsdatenregeln. Hosting in der Schweiz. Gesundheitsdaten werden nicht zum Trainieren von Foundation Models genutzt."
+      },
+      {
+        "heading": "Von der Stimme zur validierten Notiz",
+        "body": "Starten Sie die Aufnahme auf Mobile oder Web, beenden Sie die Konsultation und prüfen Sie in Sekunden einen strukturierten Entwurf. Korrigieren, freigeben und in Ihren üblichen Prozess überführen — inkl. Mediway und SOKLE wo verfügbar, oder Word-Vorlagen mit Ihrem Briefkopf."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Was ist ein KI-Schreibassistent?",
+        "a": "Ein KI-Schreibassistent hört eine klinische Konsultation ab oder verarbeitet sie und entwirft eine strukturierte Notiz, die die Behandlerin oder der Behandler prüft und validiert, bevor sie in die Patientenakte gelangt."
+      },
+      {
+        "q": "Schreibt DocNote automatisch ins KIS?",
+        "a": "Nein. Ärztinnen und Ärzte bleiben dafür verantwortlich, jedes Dokument zu prüfen und freizugeben."
+      },
+      {
+        "q": "Wo werden Gesundheitsdaten gehostet?",
+        "a": "DocNote ist für Hosting in der Schweiz ausgelegt, im Rahmen des Arztgeheimnisses und der europäischen Datenschutzerwartungen."
+      },
+      {
+        "q": "Werden Konsultationsdaten zum Trainieren von KI-Modellen genutzt?",
+        "a": "Nein. Konsultationen werden genutzt, um Ihre Dokumente zu erstellen, nicht um Foundation Models zu trainieren."
+      }
+    ],
+    "ctaPrimary": "Kostenlos testen",
+    "ctaSecondary": "Preise ansehen",
+    "relatedLabel": "Verwandte Guides"
+  },
+  "hospital-documentation": {
+    "navLabel": "Spitaldokumentation",
+    "title": "Spitaldokumentation mit KI",
+    "description": "KI für Spitaldokumentation: Austrittsberichte, OP-Berichte, Visitennotizen und Tagesklinik-Akten. DocNote beschleunigt die Dokumentation bei Schweizer Hosting und Arztgeheimnis.",
+    "h1": "Spitaldokumentation ohne Abendstau",
+    "intro": "Spitalarbeit ist nicht nur eine ambulante SOAP-Notiz. DocNote unterstützt die Dokumente, die den Abend wirklich füllen: Austrittsberichte, OP-Berichte, Visitennotizen und gemeinsame Tagesklinik-Akten.",
+    "sections": [
+      {
+        "heading": "Dokumente, die Spitäler wirklich brauchen",
+        "body": "Erzeugen Sie strukturierte Entwürfe für hochvolumige Spitaldokumente und validieren Sie sie vor dem Eintrag in die Patientenakte. Eigene Word-Vorlagen behalten Layout, Signaturblock und Abschnittsreihenfolge Ihrer Institution."
+      },
+      {
+        "heading": "Zusammenarbeit in der Tagesklinik",
+        "body": "Wenn mehrere Fachpersonen denselben Patienten nacheinander sehen, kann DocNote eine gemeinsame Akte unterstützen, damit Beiträge zu einem kohärenten Bericht werden statt zu fragmentierten Notizen."
+      },
+      {
+        "heading": "KIS-taugliche Abläufe",
+        "body": "Integrieren Sie Mediway und SOKLE oder exportieren Sie in Ihren bestehenden Spitalprozess. Die Ärztin oder der Arzt bleibt für das final validierte Dokument verantwortlich."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Welche Spitaldokumente kann DocNote entwerfen?",
+        "a": "Entlassungsberichte, OP-Berichte, Visitennotizen, Konsultationsnotizen und weitere hochvolumige klinische Dokumente, abhängig von Ihren Vorlagen."
+      },
+      {
+        "q": "Können wir unseren institutionellen Briefkopf behalten?",
+        "a": "Ja. Individuelle Word-Vorlagen erhalten Layout, Signaturblock und Abschnittsreihenfolge."
+      },
+      {
+        "q": "Ersetzt die KI die ärztliche Unterschrift?",
+        "a": "Nein. Behandelnde validieren jedes Dokument, bevor es Teil der Akte wird."
+      },
+      {
+        "q": "Ist das nur für ambulante SOAP-Notizen?",
+        "a": "Nein. Spitaldokumenttypen sind ein zentraler Bestandteil von DocNote."
+      }
+    ],
+    "ctaPrimary": "Für Kliniken und Spitäler",
+    "ctaSecondary": "Tutorial ansehen",
+    "relatedLabel": "Verwandte Guides"
+  },
+  "clinical-compliance": {
+    "navLabel": "Klinische Compliance",
+    "title": "Klinische KI-Compliance (DSG, DSGVO, HIPAA)",
+    "description": "So erfüllt DocNote klinische KI-Compliance: Hosting in der Schweiz, Verschlüsselung, kurze Audio-Aufbewahrung, Arztgeheimnis, DSG, DSGVO, HIPAA und ISO 27001 für Spitäler und Praxen.",
+    "h1": "Klinische KI, die einem Compliance-Review standhält",
+    "intro": "Spitäler wählen Ambient-Dokumentation nicht nur nach Features. DocNote ist so gebaut, dass Sicherheit, Aufbewahrung und Arztgeheimnis Teil des Produkts sind — nicht nur einer Folie.",
+    "sections": [
+      {
+        "heading": "Schweizer Hosting und Verschlüsselung",
+        "body": "Gesundheitsdaten werden in der Schweiz gehostet und stark verschlüsselt übertragen und gespeichert. DocNote ist auf die Erwartungen des Arztgeheimnisses für ärztliche Hilfspersonen ausgelegt."
+      },
+      {
+        "heading": "Kurze Aufbewahrung by design",
+        "body": "Audio zur Erstellung der Dokumentation wird nach der Verarbeitung automatisch innerhalb eines kurzen Fensters gelöscht. Das dauerhafte Dokument ist der ärztlich validierte Bericht in Ihren Systemen."
+      },
+      {
+        "heading": "Standards, die Einkäufer prüfen",
+        "body": "DocNote richtet sich nach DSG, DSGVO, HIPAA und ISO 27001 — den Punkten in Security-Fragebögen — und veröffentlicht eine klare Datenschutzrichtlinie für Patientinnen, Patienten und Institutionen."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Ist DocNote DSGVO- und DSG-konform?",
+        "a": "DocNote ist so gebaut, dass es sich an den DSG- und DSGVO-Erwartungen orientiert, die Einkäufer während der Beschaffung prüfen. Details finden Sie in unserer Datenschutzrichtlinie."
+      },
+      {
+        "q": "Wie lange wird Audio aufbewahrt?",
+        "a": "Audio zur Erstellung der Dokumentation wird nach der Verarbeitung automatisch innerhalb eines kurzen Zeitfensters gelöscht."
+      },
+      {
+        "q": "Werden Patientendaten verkauft oder für Werbung genutzt?",
+        "a": "Nein. Klinische Konsultationen sind kein Werbeprodukt, und die Daten werden nicht zum Trainieren von Foundation Models genutzt."
+      },
+      {
+        "q": "Wo kann ich die vollständige Datenschutzrichtlinie lesen?",
+        "a": "Auf der Datenschutzseite von DocNote, verlinkt im Footer der Website und bei Compliance-CTAs."
+      }
+    ],
+    "ctaPrimary": "Datenschutz lesen",
+    "ctaSecondary": "Kontakt",
+    "relatedLabel": "Verwandte Guides"
+  }
+}

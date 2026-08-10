@@ -1,0 +1,128 @@
+{
+  "ai-medical-scribe": {
+    "navLabel": "AI medical scribe",
+    "title": "AI medical scribe for doctors",
+    "description": "DocNote is an AI medical scribe for physicians and hospitals in Switzerland and Europe. Turn consultations into structured clinical notes in seconds. Swiss-hosted, FADP/GDPR compliant.",
+    "h1": "AI medical scribe built for real clinical work",
+    "intro": "DocNote listens during the consultation, transcribes securely, and drafts the clinical document you need — consultation notes, discharge letters, ward-round notes or operative reports — so you spend less time typing and more time with patients.",
+    "sections": [
+      {
+        "heading": "What an AI medical scribe should do",
+        "body": "A useful medical scribe is not a generic transcript. It must understand clinical structure, specialty language, and the documents your hospital or practice actually ships. DocNote is designed for that workflow: capture once, generate the right note type, then let the physician validate before anything reaches the EHR."
+      },
+      {
+        "heading": "Built for Switzerland and Europe",
+        "body": "Unlike US-first ambient tools bolted onto European practice, DocNote is built around Swiss and European documentation habits, multilingual consultations, and strict health-data rules. Hosting stays in Switzerland. Health data is not used to train foundation models."
+      },
+      {
+        "heading": "From voice to validated note",
+        "body": "Start a recording on mobile or web, finish the encounter, and review a structured draft in seconds. Edit, approve, and push into your usual process — including Mediway and SOKLE integrations where available, or Word templates that match your letterhead."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is an AI medical scribe?",
+        "a": "An AI medical scribe listens to or processes a clinical encounter and drafts a structured note for the clinician to review and validate before it enters the medical record."
+      },
+      {
+        "q": "Does DocNote write into the EHR automatically?",
+        "a": "No. Physicians remain responsible for reviewing and approving every document."
+      },
+      {
+        "q": "Where is health data hosted?",
+        "a": "DocNote is designed for Swiss hosting under medical secrecy and European data-protection expectations."
+      },
+      {
+        "q": "Is visit data used to train AI models?",
+        "a": "No. Visits are used to produce your documents, not to train foundation models."
+      }
+    ],
+    "ctaPrimary": "Start free trial",
+    "ctaSecondary": "See pricing",
+    "relatedLabel": "Related guides"
+  },
+  "hospital-documentation": {
+    "navLabel": "Hospital documentation",
+    "title": "Hospital documentation with AI",
+    "description": "Hospital documentation AI for discharge letters, operative reports, ward rounds and day-hospital files. DocNote helps care teams document faster without leaving Swiss hosting or medical secrecy.",
+    "h1": "Hospital documentation without the evening backlog",
+    "intro": "Hospital work is not a single ambulatory SOAP note. DocNote supports the documents that actually fill a clinician’s evening: discharge letters, operative reports, ward-round notes, and shared day-hospital files across caregivers.",
+    "sections": [
+      {
+        "heading": "Documents hospitals actually need",
+        "body": "Generate structured drafts for high-volume hospital outputs, then review and validate before they enter the patient record. Custom Word templates keep your institutional layout, signature block and section order."
+      },
+      {
+        "heading": "Day-hospital collaboration",
+        "body": "When several professionals see the same patient in sequence, DocNote can support a shared file so contributions become one coherent record instead of fragmented notes."
+      },
+      {
+        "heading": "EHR-ready workflows",
+        "body": "Integrate with systems such as Mediway and SOKLE, or export into your existing hospital process. The physician remains responsible for the final validated document."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which hospital documents can DocNote draft?",
+        "a": "Discharge letters, operative reports, ward-round notes, consultation notes, and other high-volume clinical documents depending on your templates."
+      },
+      {
+        "q": "Can we keep our institutional letterhead?",
+        "a": "Yes. Custom Word templates preserve layout, signature block, and section order."
+      },
+      {
+        "q": "Does AI replace the physician’s signature?",
+        "a": "No. Clinicians validate every document before it becomes part of the record."
+      },
+      {
+        "q": "Is this only for ambulatory SOAP notes?",
+        "a": "No. Hospital document types are a first-class part of DocNote."
+      }
+    ],
+    "ctaPrimary": "For clinics and hospitals",
+    "ctaSecondary": "Watch tutorial",
+    "relatedLabel": "Related guides"
+  },
+  "clinical-compliance": {
+    "navLabel": "Clinical compliance",
+    "title": "Clinical AI compliance (FADP, GDPR, HIPAA)",
+    "description": "How DocNote handles clinical AI compliance: Swiss hosting, encryption, short audio retention, medical secrecy, FADP/nFADP, GDPR, HIPAA and ISO 27001 controls for hospitals and practices.",
+    "h1": "Clinical AI that can survive a compliance review",
+    "intro": "Hospitals do not adopt ambient documentation on features alone. DocNote is built so security, retention and medical secrecy are part of the product story — not an afterthought slide.",
+    "sections": [
+      {
+        "heading": "Swiss hosting and encryption",
+        "body": "Health data is hosted in Switzerland with strong encryption in transit and at rest. DocNote is designed to operate under medical secrecy expectations applicable to clinical auxiliaries."
+      },
+      {
+        "heading": "Short retention by design",
+        "body": "Audio used to produce documentation is deleted automatically within a short window after processing. The lasting record is the physician-validated clinical document in your own systems."
+      },
+      {
+        "heading": "Standards that matter to buyers",
+        "body": "DocNote aligns with FADP/nFADP, GDPR, HIPAA and ISO 27001 expectations buyers ask about in security questionnaires — and publishes a clear privacy policy for patients and institutions."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is DocNote compliant with GDPR and FADP?",
+        "a": "DocNote is designed to align with FADP/nFADP and GDPR expectations buyers review during procurement. See our privacy policy for details."
+      },
+      {
+        "q": "How long is audio retained?",
+        "a": "Audio used to produce documentation is deleted automatically within a short window after processing."
+      },
+      {
+        "q": "Is patient data sold or used for ads?",
+        "a": "No. Clinical visits are not a product for advertising, and data is not used to train foundation models."
+      },
+      {
+        "q": "Where can I read the full privacy policy?",
+        "a": "On the DocNote privacy policy page, linked from the site footer and compliance CTAs."
+      }
+    ],
+    "ctaPrimary": "Read privacy policy",
+    "ctaSecondary": "Contact us",
+    "relatedLabel": "Related guides"
+  }
+}

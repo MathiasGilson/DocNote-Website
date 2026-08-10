@@ -1,0 +1,128 @@
+{
+  "ai-medical-scribe": {
+    "title": "AI-medicinsk skribent för läkare",
+    "description": "DocNote är en AI-medicinsk skribent för läkare och sjukhus i Schweiz och Europa. Omvandla konsultationer till strukturerade kliniska anteckningar på några sekunder. Värd i Schweiz, FADP/GDPR-kompatibel.",
+    "h1": "AI-medicinsk skribent byggd för verkligt kliniskt arbete",
+    "intro": "DocNote lyssnar under konsultationen, transkriberar säkert och skisserar det kliniska dokument du behöver — konsultationsanteckningar, utskrivningsbrev, vårdrundanteckningar eller operationsrapporter — så du spenderar mindre tid på att skriva och mer tid med patienter.",
+    "sections": [
+      {
+        "heading": "Vad en AI-medicinsk skribent bör göra",
+        "body": "En användbar medicinsk skribent är inte en generisk transkription. Den måste förstå klinisk struktur, specialspråk och de dokument som ditt sjukhus eller din praktik faktiskt använder. DocNote är designad för det arbetsflödet: fånga en gång, generera rätt anteckningstyp, låt sedan läkaren validera innan något når EHR."
+      },
+      {
+        "heading": "Byggd för Schweiz och Europa",
+        "body": "Till skillnad från amerikanska ambient-verktyg som anpassas till europeisk praxis, är DocNote byggd kring schweiziska och europeiska dokumentationsvanor, flerspråkiga konsultationer och strikta hälsodataregler. Hosting finns kvar i Schweiz. Hälsodata används inte för att träna grundmodeller."
+      },
+      {
+        "heading": "Från röst till validerad anteckning",
+        "body": "Starta en inspelning på mobil eller webb, avsluta mötet och granska en strukturerad utkast på några sekunder. Redigera, godkänn och skicka in i din vanliga process — inklusive Mediway och SOKLE-integrationer där tillgängliga, eller Word-mallar som matchar ditt brevpapper."
+      }
+    ],
+    "ctaPrimary": "Starta gratis provperiod",
+    "ctaSecondary": "Se priser",
+    "relatedLabel": "Relaterade guider",
+    "navLabel": "AI-medicinsk skribent",
+    "faq": [
+      {
+        "q": "Vad är en AI-medicinsk skribent?",
+        "a": "En AI-medicinsk skribent lyssnar på eller bearbetar en klinisk konsultation och skapar ett strukturerat utkast för läkaren att granska och godkänna innan det läggs till i journalen."
+      },
+      {
+        "q": "Skriver DocNote automatiskt till journalsystemet?",
+        "a": "Nej. Läkare ansvarar fortfarande för att granska och godkänna varje dokument."
+      },
+      {
+        "q": "Var lagras hälsodata?",
+        "a": "DocNote är designad för schweizisk hosting under tystnadsplikt och europeiska dataskyddsförväntningar."
+      },
+      {
+        "q": "Används besöksdata för att träna AI-modeller?",
+        "a": "Nej. Besök används endast för att skapa dina dokument, inte för att träna grundmodeller."
+      }
+    ]
+  },
+  "hospital-documentation": {
+    "title": "Sjukhusdokumentation med AI",
+    "description": "AI för sjukhusdokumentation av utskrivningsbrev, operationsrapporter, vårdrundor och dag-sjukhusfiler. DocNote hjälper vårdteam att dokumentera snabbare utan att lämna schweizisk hosting eller medicinsk sekretess.",
+    "h1": "Sjukhusdokumentation utan kvällsefterarbete",
+    "intro": "Sjukhusarbete är inte en enda ambulatorisk SOAP-anteckning. DocNote stöder de dokument som faktiskt fyller en klinikers kväll: utskrivningsbrev, operationsrapporter, vårdrundanteckningar och delade dag-sjukhusfiler mellan vårdgivare.",
+    "sections": [
+      {
+        "heading": "Dokument som sjukhus faktiskt behöver",
+        "body": "Generera strukturerade utkast för högvolymssjukhusutdata, granska och validera sedan innan de går in i patientjournalen. Anpassade Word-mallar behåller din institutionella layout, signaturblock och sektionsordning."
+      },
+      {
+        "heading": "Dag-sjukhus samarbete",
+        "body": "När flera professionella ser samma patient i följd kan DocNote stödja en delad fil så bidragen blir en sammanhängande journal istället för fragmenterade anteckningar."
+      },
+      {
+        "heading": "EHR-rediga arbetsflöden",
+        "body": "Integrera med system som Mediway och SOKLE, eller exportera till ditt befintliga sjukhusprocess. Läkaren förblir ansvarig för det slutliga validerade dokumentet."
+      }
+    ],
+    "ctaPrimary": "För kliniker och sjukhus",
+    "ctaSecondary": "Titta på handledning",
+    "relatedLabel": "Relaterade guider",
+    "navLabel": "Sjukhusdokumentation",
+    "faq": [
+      {
+        "q": "Vilka sjukhusdokument kan DocNote skapa?",
+        "a": "Utskrivningsbrev, operationsrapporter, vårdrundanteckningar, konsultationsanteckningar och andra kliniska dokument med hög volym beroende på dina mallar."
+      },
+      {
+        "q": "Kan vi behålla vårt institutionella brevpapper?",
+        "a": "Ja. Anpassade Word-mallar bevarar layout, signaturblock och sektionsordning."
+      },
+      {
+        "q": "Ersätter AI läkarens underskrift?",
+        "a": "Nej. Kliniker validerar varje dokument innan det blir en del av journalen."
+      },
+      {
+        "q": "Är detta bara för öppenvårds-SOAP-anteckningar?",
+        "a": "Nej. Sjukhusdokumenttyper är en central del av DocNote."
+      }
+    ]
+  },
+  "clinical-compliance": {
+    "title": "Klinisk AI-efterlevnad (FADP, GDPR, HIPAA)",
+    "description": "Hur DocNote hanterar klinisk AI-efterlevnad: schweizisk hosting, kryptering, kort ljudkvarhållning, medicinsk sekretess, FADP/nFADP, GDPR, HIPAA och ISO 27001-kontroller för sjukhus och praktiker.",
+    "h1": "Klinisk AI som kan överleva en efterlevnadsgranskning",
+    "intro": "Sjukhus antar inte ambient dokumentation enbart på funktioner. DocNote är byggd så säkerhet, kvarhållning och medicinsk sekretess är en del av produktberättelsen — inte en eftertanke.",
+    "sections": [
+      {
+        "heading": "Schweizisk hosting och kryptering",
+        "body": "Hälsodata hostas i Schweiz med stark kryptering under överföring och i vila. DocNote är designad att fungera under medicinsk sekretess som gäller för kliniska hjälpmedel."
+      },
+      {
+        "heading": "Kort kvarhållning som standard",
+        "body": "Ljud som används för att producera dokumentation raderas automatiskt inom en kort tidsram efter bearbetning. Den bestående journalen är det läkare-validerade kliniska dokumentet i dina egna system."
+      },
+      {
+        "heading": "Standarder som betyder något för köpare",
+        "body": "DocNote följer FADP/nFADP, GDPR, HIPAA och ISO 27001-förväntningar som köpare frågar om i säkerhetsenkäter — och publicerar en tydlig integritetspolicy för patienter och institutioner."
+      }
+    ],
+    "ctaPrimary": "Läs integritetspolicy",
+    "ctaSecondary": "Kontakta oss",
+    "relatedLabel": "Relaterade guider",
+    "navLabel": "Klinisk efterlevnad",
+    "faq": [
+      {
+        "q": "Är DocNote kompatibel med GDPR och FADP?",
+        "a": "DocNote är utformad för att följa FADP/nFADP och GDPR-förväntningar som köpare granskar vid upphandling. Se vår integritetspolicy för detaljer."
+      },
+      {
+        "q": "Hur länge sparas ljudinspelningar?",
+        "a": "Ljud som används för att skapa dokumentation raderas automatiskt inom en kort tidsperiod efter bearbetning."
+      },
+      {
+        "q": "Säljs patientdata eller används för reklam?",
+        "a": "Nej. Kliniska besök är inte en produkt för reklam, och data används inte för att träna grundmodeller."
+      },
+      {
+        "q": "Var kan jag läsa hela integritetspolicyn?",
+        "a": "På DocNotes integritetspolicysida, länkad från sidfoten och efterlevnads-CTA:er."
+      }
+    ]
+  }
+}

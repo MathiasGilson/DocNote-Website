@@ -1,0 +1,128 @@
+{
+  "ai-medical-scribe": {
+    "title": "Assistente médico por IA para médicos",
+    "description": "DocNote é um assistente médico por IA para médicos e hospitais na Suíça e Europa. Transforme consultas em notas clínicas estruturadas em segundos. Hospedado na Suíça, em conformidade com FADP/GDPR.",
+    "h1": "Assistente médico por IA criado para trabalho clínico real",
+    "intro": "DocNote escuta durante a consulta, transcreve com segurança e redige o documento clínico que você precisa — notas de consulta, cartas de alta, registros de visita hospitalar ou relatórios cirúrgicos — para que você gaste menos tempo digitando e mais tempo com os pacientes.",
+    "sections": [
+      {
+        "heading": "O que um assistente médico por IA deve fazer",
+        "body": "Um assistente médico útil não é uma transcrição genérica. Ele deve entender a estrutura clínica, a linguagem especializada e os documentos que seu hospital ou consultório realmente utiliza. DocNote foi projetado para esse fluxo de trabalho: capturar uma vez, gerar o tipo de nota correto e permitir que o médico valide antes que qualquer informação chegue ao EHR."
+      },
+      {
+        "heading": "Criado para a Suíça e Europa",
+        "body": "Diferente de ferramentas ambientes desenvolvidas primeiro para os EUA e adaptadas para a prática europeia, DocNote é construído em torno dos hábitos de documentação suíços e europeus, consultas multilíngues e regras rígidas de dados de saúde. A hospedagem permanece na Suíça. Dados de saúde não são usados para treinar modelos base."
+      },
+      {
+        "heading": "Da voz à nota validada",
+        "body": "Inicie uma gravação no celular ou web, termine o atendimento e revise um rascunho estruturado em segundos. Edite, aprove e envie para o seu processo usual — incluindo integrações com Mediway e SOKLE onde disponível, ou modelos de Word que correspondam ao seu cabeçalho."
+      }
+    ],
+    "ctaPrimary": "Iniciar teste gratuito",
+    "ctaSecondary": "Ver preços",
+    "relatedLabel": "Guias relacionados",
+    "navLabel": "Assistente médico por IA",
+    "faq": [
+      {
+        "q": "O que é um assistente médico por IA?",
+        "a": "Um assistente médico por IA escuta ou processa um encontro clínico e redige uma nota estruturada para o médico revisar e validar antes que seja incluída no prontuário médico."
+      },
+      {
+        "q": "O DocNote escreve automaticamente no EHR?",
+        "a": "Não. Os médicos permanecem responsáveis por revisar e aprovar cada documento."
+      },
+      {
+        "q": "Onde os dados de saúde são hospedados?",
+        "a": "O DocNote foi projetado para hospedagem na Suíça, sob sigilo médico e em conformidade com as expectativas de proteção de dados europeias."
+      },
+      {
+        "q": "Os dados das consultas são usados para treinar modelos de IA?",
+        "a": "Não. As consultas são usadas para produzir seus documentos, não para treinar modelos base."
+      }
+    ]
+  },
+  "hospital-documentation": {
+    "title": "Documentação hospitalar com IA",
+    "description": "IA para documentação hospitalar de cartas de alta, relatórios cirúrgicos, visitas hospitalares e arquivos de hospital-dia. DocNote ajuda equipes de saúde a documentar mais rápido sem sair da hospedagem suíça ou do sigilo médico.",
+    "h1": "Documentação hospitalar sem acúmulo noturno",
+    "intro": "O trabalho hospitalar não é uma única nota SOAP ambulatorial. DocNote suporta os documentos que realmente preenchem a noite de um clínico: cartas de alta, relatórios cirúrgicos, notas de visita hospitalar e arquivos compartilhados de hospital-dia entre cuidadores.",
+    "sections": [
+      {
+        "heading": "Documentos que hospitais realmente precisam",
+        "body": "Gere rascunhos estruturados para saídas hospitalares de alto volume, revise e valide antes que entrem no prontuário do paciente. Modelos personalizados de Word mantêm o layout institucional, bloco de assinatura e ordem de seções."
+      },
+      {
+        "heading": "Colaboração em hospital-dia",
+        "body": "Quando vários profissionais atendem o mesmo paciente em sequência, DocNote pode suportar um arquivo compartilhado para que as contribuições se tornem um registro coerente em vez de notas fragmentadas."
+      },
+      {
+        "heading": "Fluxos de trabalho prontos para EHR",
+        "body": "Integre com sistemas como Mediway e SOKLE, ou exporte para seu processo hospitalar existente. O médico permanece responsável pelo documento final validado."
+      }
+    ],
+    "ctaPrimary": "Para clínicas e hospitais",
+    "ctaSecondary": "Assistir tutorial",
+    "relatedLabel": "Guias relacionados",
+    "navLabel": "Documentação hospitalar",
+    "faq": [
+      {
+        "q": "Quais documentos hospitalares o DocNote pode redigir?",
+        "a": "Cartas de alta, relatórios operatórios, notas de rodízio, notas de consulta e outros documentos clínicos de alto volume, dependendo de seus modelos."
+      },
+      {
+        "q": "Podemos manter o cabeçalho institucional?",
+        "a": "Sim. Modelos personalizados do Word preservam layout, bloco de assinatura e ordem das seções."
+      },
+      {
+        "q": "A IA substitui a assinatura do médico?",
+        "a": "Não. Os médicos validam cada documento antes que ele se torne parte do prontuário."
+      },
+      {
+        "q": "Isso é apenas para notas SOAP ambulatoriais?",
+        "a": "Não. Tipos de documentos hospitalares são uma parte essencial do DocNote."
+      }
+    ]
+  },
+  "clinical-compliance": {
+    "title": "Conformidade clínica de IA (FADP, GDPR, HIPAA)",
+    "description": "Como DocNote trata a conformidade clínica de IA: hospedagem suíça, criptografia, retenção curta de áudio, sigilo médico, FADP/nFADP, GDPR, HIPAA e controles ISO 27001 para hospitais e consultórios.",
+    "h1": "IA clínica que sobrevive a uma revisão de conformidade",
+    "intro": "Hospitais não adotam documentação ambiente apenas por recursos. DocNote é construído para que segurança, retenção e sigilo médico sejam parte da história do produto — não um slide de última hora.",
+    "sections": [
+      {
+        "heading": "Hospedagem suíça e criptografia",
+        "body": "Dados de saúde são hospedados na Suíça com forte criptografia em trânsito e em repouso. DocNote é projetado para operar sob as expectativas de sigilo médico aplicáveis a auxiliares clínicos."
+      },
+      {
+        "heading": "Retenção curta por design",
+        "body": "Áudio usado para produzir documentação é excluído automaticamente dentro de uma janela curta após o processamento. O registro duradouro é o documento clínico validado pelo médico em seus próprios sistemas."
+      },
+      {
+        "heading": "Padrões que importam para compradores",
+        "body": "DocNote está alinhado com as expectativas FADP/nFADP, GDPR, HIPAA e ISO 27001 que os compradores perguntam em questionários de segurança — e publica uma política de privacidade clara para pacientes e instituições."
+      }
+    ],
+    "ctaPrimary": "Ler política de privacidade",
+    "ctaSecondary": "Contate-nos",
+    "relatedLabel": "Guias relacionados",
+    "navLabel": "Conformidade clínica",
+    "faq": [
+      {
+        "q": "O DocNote está em conformidade com o GDPR e o FADP?",
+        "a": "O DocNote foi projetado para alinhar-se com as expectativas do FADP/nFADP e GDPR que os compradores revisam durante a aquisição. Consulte nossa política de privacidade para detalhes."
+      },
+      {
+        "q": "Por quanto tempo o áudio é retido?",
+        "a": "O áudio usado para produzir documentação é excluído automaticamente dentro de um curto período após o processamento."
+      },
+      {
+        "q": "Os dados dos pacientes são vendidos ou usados para publicidade?",
+        "a": "Não. As consultas clínicas não são um produto para publicidade, e os dados não são usados para treinar modelos base."
+      },
+      {
+        "q": "Onde posso ler a política de privacidade completa?",
+        "a": "Na página da política de privacidade do DocNote, vinculada no rodapé do site e nos CTAs de conformidade."
+      }
+    ]
+  }
+}
