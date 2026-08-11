@@ -2,9 +2,9 @@
 title: "DocNote präsentiert an der SGAIM-Jahreskonferenz"
 excerpt: "DocNote wurde der Schweizerischen Gesellschaft für Allgemeine Innere Medizin (SGAIM) vorgestellt und zeigte, wie KI die medizinische Dokumentation in der Primärversorgung transformieren kann."
 category: "news"
-author: "DocNote Team"
-authorRole: "Unternehmensnachrichten"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Arzt & Geschäftsführer"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/remise-prix-lumiere-2023.png"
 date: "2025-05-20"
 readTime: 3

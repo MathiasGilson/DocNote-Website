@@ -2,9 +2,9 @@
 title: "DocNote in Les Echos unter Europas führenden Akteuren der KI im Gesundheitswesen genannt"
 excerpt: "Die französische Wirtschaftszeitung Les Echos hat den europäischen Markt der KI-Gesundheitsassistenten kartiert und nennt DocNote unter den Schlüsselakteuren der medizinischen Transkription und Dokumentenerstellung."
 category: "news"
-author: "DocNote Team"
-authorRole: "Unternehmensnachrichten"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Arzt & Geschäftsführer"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/lesechos_06.26.png"
 fullImage: true
 date: "2026-06-17"

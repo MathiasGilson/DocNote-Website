@@ -2,9 +2,9 @@
 title: "DocNote stellt am CHU HealthTech Connexion Day in Bordeaux aus"
 excerpt: "DocNote präsentierte seine KI-Dokumentationsplattform am CHU HealthTech Connexion Day in Bordeaux und vernetzte sich mit französischen Gesundheitsinnovatoren und Krankenhausadministratoren."
 category: "news"
-author: "DocNote Team"
-authorRole: "Unternehmensnachrichten"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Arzt & Geschäftsführer"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/bordeaux_12.25.jpg"
 date: "2025-12-08"
 readTime: 4

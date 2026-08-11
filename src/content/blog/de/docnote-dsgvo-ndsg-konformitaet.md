@@ -2,9 +2,9 @@
 title: "DSGVO- und revDSG-Konformität von DocNote bestätigt"
 excerpt: "Nach einer eingehenden Prüfung durch die Datenschutzbehörde des Kantons Waadt wurde die Datenverwaltung von DocNote als konform mit der DSGVO, dem Schweizer revDSG und dem Waadtländer LPrD bestätigt."
 category: "news"
-author: "DocNote Team"
-authorRole: "Unternehmensnachrichten"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Arzt & Geschäftsführer"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/rgpd_nlpd_02.26.jpg"
 date: "2026-02-20"
 readTime: 2

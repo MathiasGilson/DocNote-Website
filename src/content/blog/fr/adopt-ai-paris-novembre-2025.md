@@ -2,9 +2,9 @@
 title: "DocNote à Adopt AI Paris : Le sommet européen de l'IA en santé"
 excerpt: "DocNote a présenté sa plateforme de documentation médicale alimentée par l'IA à Adopt AI, la plus grande conférence européenne sur l'IA en santé à Paris."
 category: "news"
-author: "Équipe DocNote"
-authorRole: "Actualités de l'entreprise"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Médecin & Directeur général"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/adopt_ai_11.25.jpg"
 date: "2025-11-26"
 readTime: 4

@@ -2,9 +2,9 @@
 title: "La Dre Alice Gilson intervient sur l'avenir de la chirurgie et l'IA au Congrès du Swiss College of Surgeons à Lucerne"
 excerpt: "Au congrès annuel du SCS à Lucerne, la Dre Alice Gilson, co-fondatrice de DocNote, explore comment l'intelligence artificielle redéfinit le rôle du chirurgien, lors d'une session de l'Association for Research in Surgery."
 category: "news"
-author: "Équipe DocNote"
-authorRole: "Actualités de l'entreprise"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Médecin & Directeur général"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/scs_lucerne_06.26.jpg"
 date: "2026-06-15"
 readTime: 4

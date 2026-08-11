@@ -2,9 +2,9 @@
 title: "DocNote sélectionné pour l'Initial Startup Support de la FONGIT"
 excerpt: "DocNote a été sélectionné pour le programme Initial Startup Support de la FONGIT, principal incubateur technologique de Genève, pour accompagner sa croissance au sein de l'écosystème des startups suisses."
 category: "news"
-author: "Équipe DocNote"
-authorRole: "Actualités de l'entreprise"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Médecin & Directeur général"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/fongit_03.26.jpg"
 date: "2026-03-15"
 readTime: 2

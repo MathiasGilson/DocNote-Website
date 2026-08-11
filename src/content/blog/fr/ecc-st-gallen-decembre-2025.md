@@ -2,9 +2,9 @@
 title: "Dre Alice Gilson parle de l'IA en chirurgie à l'ECC St. Gallen"
 excerpt: "La cofondatrice de DocNote, Dre Alice Gilson, a présenté une conférence remarquable sur les applications de l'IA au bloc opératoire et en dehors lors du congrès européen de cardiologie à St. Gallen."
 category: "news"
-author: "Dre Alice Gilson"
-authorRole: "Médecin & Directrice générale"
-authorImage: "/images/dre_alice_gilson.jpg"
+author: "Dr. Vincent Tan"
+authorRole: "Médecin & Directeur général"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/st_gallen_12.25.jpg"
 date: "2025-12-01"
 readTime: 4

@@ -3,7 +3,7 @@ title: "Moins de temps consacré à la documentation grâce à l'IA, plus de tem
 excerpt: "En février 2025, une étude publiée dans JAMA Network Open a apporté des preuves convaincantes du rôle croissant de l'intelligence artificielle dans la lutte contre l'épuisement professionnel des cliniciens et la surcharge documentaire."
 category: "ai"
 author: "Dr. Vincent Tan"
-authorRole: "Medical Director"
+authorRole: "Médecin & Directeur général"
 authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/University of Pennsylvania.avif"
 date: "2026-02-01"

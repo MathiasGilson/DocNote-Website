@@ -2,9 +2,9 @@
 title: "DocNote cité dans Les Echos parmi les principaux acteurs européens de l'IA en santé"
 excerpt: "Le quotidien Les Echos a cartographié le marché européen des assistants IA en santé et place DocNote parmi les acteurs clés du scribe médical et de la génération de documents."
 category: "news"
-author: "Équipe DocNote"
-authorRole: "Actualités de l'entreprise"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Médecin & Directeur général"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/lesechos_06.26.png"
 fullImage: true
 date: "2026-06-17"

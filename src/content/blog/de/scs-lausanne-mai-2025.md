@@ -2,9 +2,9 @@
 title: "Dr. Alice Gilson spricht über KI in der Dokumentation am Swiss College of Surgeons Kongress in Lausanne"
 excerpt: "DocNote nahm am prestigeträchtigen SCS-Jahreskongress an der EPFL in Lausanne teil und vernetzte sich mit den führenden Chirurgen der Schweiz."
 category: "news"
-author: "DocNote Team"
-authorRole: "Unternehmensnachrichten"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Arzt & Geschäftsführer"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/scs_lausanne_05.25.jpg"
 date: "2025-05-21"
 readTime: 4
