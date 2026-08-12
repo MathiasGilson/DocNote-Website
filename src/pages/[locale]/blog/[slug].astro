@@ -1,12 +1,13 @@
 ---
 import BlogPostPage from '../../../components/pages/BlogPostPage.astro';
-import { nonDefaultLocales, isValidLocale, type Locale } from '../../../utils/i18n';
+import { isValidLocale, type Locale } from '../../../utils/i18n';
+import { isCanonicalBlogPostId } from '../../../utils/blog-translations';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts
-    .filter((post) => !post.id.startsWith('en/'))
+    .filter((post) => !post.id.startsWith('en/') && isCanonicalBlogPostId(post.id))
     .map((post) => {
       const cleanId = post.id.replace(/\.mdx?$/, '');
       const [locale, ...slugParts] = cleanId.split('/');

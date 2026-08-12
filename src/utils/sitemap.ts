@@ -13,7 +13,7 @@ import {
   getCareersPath,
   getCareersJobPath,
 } from './i18n';
-import { getBlogAlternateUrls } from './blog-translations';
+import { getBlogAlternateUrls, isCanonicalBlogPostId } from './blog-translations';
 import { CAREER_JOB_SLUGS } from './careers';
 import { landingSlugs } from '../content/landings';
 import { SITE_URL } from './seo';
@@ -156,6 +156,7 @@ export const buildBlogUrlset = async (): Promise<string> => {
   >();
 
   for (const post of posts) {
+    if (!isCanonicalBlogPostId(post.id)) continue;
     const cleanId = post.id.replace(/\.mdx?$/, '');
     const [locale, ...slugParts] = cleanId.split('/');
     if (!locales.includes(locale as Locale)) continue;

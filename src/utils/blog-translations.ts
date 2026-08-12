@@ -121,6 +121,38 @@ const resolveCluster = (slug: string): Record<Locale, string> => {
   return Object.fromEntries(locales.map((loc) => [loc, slug])) as Record<Locale, string>;
 };
 
+/**
+ * FR/DE content folders keep EN-slug copies alongside localized slugs.
+ * Those EN-slug pages must not be built/listed — they break reciprocal hreflang.
+ */
+export const isSupersededBlogSlug = (locale: string, slug: string): boolean => {
+  if (locale !== 'fr' && locale !== 'de') return false;
+  for (const seed of seeds) {
+    if (slug === seed.en && seed[locale] !== seed.en) return true;
+  }
+  return false;
+};
+
+export const isCanonicalBlogPostId = (id: string): boolean => {
+  const cleanId = id.replace(/\.mdx?$/, '');
+  const [locale, ...slugParts] = cleanId.split('/');
+  return !isSupersededBlogSlug(locale, slugParts.join('/'));
+};
+
+/** Permanent redirects: /{fr|de}/blog/{en-slug}/ → localized slug (when different). */
+export const getBlogSlugRedirects = (): Record<string, string> => {
+  const redirects: Record<string, string> = {};
+  for (const seed of seeds) {
+    if (seed.fr !== seed.en) {
+      redirects[`/fr/blog/${seed.en}/`] = `/fr/blog/${seed.fr}/`;
+    }
+    if (seed.de !== seed.en) {
+      redirects[`/de/blog/${seed.en}/`] = `/de/blog/${seed.de}/`;
+    }
+  }
+  return redirects;
+};
+
 /** Relative localized paths for every locale (EN unprefixed). */
 export const getBlogAlternatePaths = (
   _locale: Locale,

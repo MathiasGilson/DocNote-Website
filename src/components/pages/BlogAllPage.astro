@@ -7,6 +7,7 @@ import { getEntry, getCollection } from 'astro:content';
 import { buildBreadcrumbLd, getPageMeta, absoluteLocalizedUrl } from '../../utils/seo';
 import { CATEGORY_META, FALLBACK_META, type BlogCategory } from '../../utils/blogCategories';
 import { BLOG_PAGE_SIZE, paginateItems } from '../../utils/blogPagination';
+import { isCanonicalBlogPostId } from '../../utils/blog-translations';
 
 interface Props {
   locale: Locale;
@@ -35,7 +36,10 @@ const pageLabel =
   (enBlog as { pageLabel?: string }).pageLabel ||
   'Page';
 
-const allPosts = await getCollection('blog', ({ id }) => id.startsWith(`${locale}/`));
+const allPosts = await getCollection(
+  'blog',
+  ({ id }) => id.startsWith(`${locale}/`) && isCanonicalBlogPostId(id)
+);
 const sorted = allPosts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );

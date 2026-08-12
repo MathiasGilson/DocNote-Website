@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import '../../styles/article-prose.css';
 import { getLocalizedPath, formatDate, type Locale } from '../../utils/i18n';
 import { getEntry, getCollection, render } from 'astro:content';
-import { getBlogAlternateUrls } from '../../utils/blog-translations';
+import { getBlogAlternateUrls, isCanonicalBlogPostId } from '../../utils/blog-translations';
 import { buildBreadcrumbLd, SITE_URL, absoluteLocalizedUrl } from '../../utils/seo';
 import { getLandingNavLabel } from '../../content/landings';
 
@@ -75,7 +75,7 @@ const breadcrumbLd = buildBreadcrumbLd([
   { name: post.data.title, url: postUrl },
 ]);
 
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog', ({ id }) => isCanonicalBlogPostId(id));
 const relatedPosts = allPosts
   .filter((p) => {
     const [loc, ...rest] = p.id.replace(/\.mdx?$/, '').split('/');

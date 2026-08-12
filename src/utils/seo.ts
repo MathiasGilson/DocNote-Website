@@ -64,9 +64,11 @@ export const buildBreadcrumbLd = (items: { name: string; url: string }[]) => ({
 
 const getBlogPostCountByLocale = async (): Promise<Partial<Record<Locale, number>>> => {
   const { getCollection } = await import('astro:content');
+  const { isCanonicalBlogPostId } = await import('./blog-translations');
   const posts = await getCollection('blog');
   const countByLocale: Partial<Record<Locale, number>> = {};
   for (const post of posts) {
+    if (!isCanonicalBlogPostId(post.id)) continue;
     const [loc] = post.id.split('/');
     if (locales.includes(loc as Locale)) {
       countByLocale[loc as Locale] = (countByLocale[loc as Locale] ?? 0) + 1;

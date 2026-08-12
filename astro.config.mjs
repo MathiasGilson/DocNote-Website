@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import rehypeFixInternalLinks from './scripts/rehype-fix-internal-links.mjs';
+import { getBlogSlugRedirects } from './src/utils/blog-translations.ts';
 
 export default defineConfig({
   site: (process.env.PUBLIC_SITE_URL || 'https://docnote.care').replace(/\/+$/, ''),
@@ -35,6 +36,7 @@ export default defineConfig({
     },
   },
   redirects: {
+    ...getBlogSlugRedirects(),
     '/en': '/',
     '/en/': '/',
     '/en/pricing/': '/pricing/',

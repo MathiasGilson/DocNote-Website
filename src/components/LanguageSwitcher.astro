@@ -67,13 +67,12 @@ const hrefByLocale = blogAllMatch
       >
         <img
           src={flagSrcs[code]}
-          alt=""
+          alt={localeNames[code]}
           width={20}
           height={14}
           loading="lazy"
           decoding="async"
           class="w-5 h-3.5 object-cover rounded-[2px] flex-shrink-0"
-          aria-hidden="true"
         />
         <span>{localeNames[code]}</span>
       </a>

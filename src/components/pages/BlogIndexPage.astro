@@ -6,6 +6,7 @@ import { getLocalizedPath, type Locale } from '../../utils/i18n';
 import { getEntry, getCollection } from 'astro:content';
 import { buildBreadcrumbLd, getPageMeta, absoluteLocalizedUrl } from '../../utils/seo';
 import { CATEGORY_META, FALLBACK_META, type BlogCategory } from '../../utils/blogCategories';
+import { isCanonicalBlogPostId } from '../../utils/blog-translations';
 
 interface Props {
   locale: Locale;
@@ -27,7 +28,10 @@ const breadcrumbLd = buildBreadcrumbLd([
   { name: meta.title, url: absoluteLocalizedUrl('/blog/', locale) },
 ]);
 
-const allPosts = await getCollection('blog', ({ id }) => id.startsWith(`${locale}/`));
+const allPosts = await getCollection(
+  'blog',
+  ({ id }) => id.startsWith(`${locale}/`) && isCanonicalBlogPostId(id)
+);
 const posts = allPosts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
