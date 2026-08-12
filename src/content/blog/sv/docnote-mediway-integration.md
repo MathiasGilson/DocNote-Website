@@ -21,7 +21,7 @@ Många AI-dokumentationsverktyg fungerar bra i en sandlåda. Utkastet ser snyggt
 
 Den sista milen avgör om ett verktyg blir en del av vardagen eller en kort experiment. För Mediway-användare tar enklicksimport bort den friktionen. Konsultationen stannar i miljön de redan öppnar mellan patienter. DocNote blir en del av avslutningen, inte en sidapplikation som skapar föräldralösa filer.
 
-Detta är viktigt för ambulanta och sjukhusgrupper som utvärderar en [AI-medicinsk skrivare](/ai-medicinsk-skrivare/). Tal-till-struktur är användbart. Tal-till-struktur-i-EHR är vad som förändrar dagen.
+Detta är viktigt för ambulanta och sjukhusgrupper som utvärderar en [AI-medicinsk skrivare](/ai-medical-scribe/). Tal-till-struktur är användbart. Tal-till-struktur-i-EHR är vad som förändrar dagen.
 
 ## Hur DocNote och Mediway-arbetsflödet fungerar
 
@@ -55,7 +55,7 @@ Det produktvalet har kliniska och operativa konsekvenser:
 - Granskning och journalinspektion sker fortfarande där compliance-team förväntar sig det
 - Kollegor som täcker upp öppnar samma Mediway-post som alltid
 
-För organisationer som standardiserar [sjukhusdokumentation](/sjukhusdokumentation/) över avdelningar är EHR-integrering av AI-utkast ofta ett upphandlingskrav, inte en bonus. Mediway-användare har nu ett konkret svar på det kravet.
+För organisationer som standardiserar [sjukhusdokumentation](/hospital-documentation/) över avdelningar är EHR-integrering av AI-utkast ofta ett upphandlingskrav, inte en bonus. Mediway-användare har nu ett konkret svar på det kravet.
 
 Vi tackar Mediway för att de utvecklat denna funktion med oss. Partnerskap som detta är hur hälsoteknik går från powerpoint till verkliga kliniker.
 
@@ -90,7 +90,7 @@ Föreslagen lansering:
 
 Under piloten, håll supportvägarna tydliga. Läkare bör veta vem de kontaktar för Mediway-frågor versus DocNote-frågor. Otydligt ansvar är en vanlig anledning till att integrationer stannar efter lanseringen.
 
-Om din organisation också väger sekretess och schweiziska eller EU-krav, para ihop arbetsflödespiloten med compliance-läsning i [DocNote GDPR och nFADP-efterlevnad](/blog/docnote-gdpr-nfadp-compliance/). För utmattnings- och dokumentationsbelastningskontext, se [minska läkarutmattning](/blog/minska-lakarutmattning/) och [mindre tid på dokumentation med AI](/blog/mindre-tid-pa-dokumentation-ai-mer-vard/).
+Om din organisation också väger sekretess och schweiziska eller EU-krav, para ihop arbetsflödespiloten med compliance-läsning i [DocNote GDPR och nFADP-efterlevnad](/blog/docnote-gdpr-nfadp-compliance/). För utmattnings- och dokumentationsbelastningskontext, se [minska läkarutmattning](/blog/reducing-physician-burnout/) och [mindre tid på dokumentation med AI](/blog/less-time-documenting-ai-more-care/).
 
 ### Förändringsledning utan teater
 
@@ -114,7 +114,7 @@ Utvärderingschecklista för första veckan:
 - Kan du avsluta fler journaler innan du lämnar kliniken?
 - Skulle du behålla arbetsflödet om piloten avslutades imorgon?
 
-Om svaren är positiva, involvera din mottagningschef eller sjukhus-IT tidigt så skalning inte beror på informella lösningar. Plan- och kommersiella alternativ sammanfattas på [prissättning](/prissättning/). Produktkontext för skrivare och sjukhusanvändning finns på [AI-medicinsk skrivare](/ai-medicinsk-skrivare/) och [sjukhusdokumentation](/sjukhusdokumentation/) sidor.
+Om svaren är positiva, involvera din mottagningschef eller sjukhus-IT tidigt så skalning inte beror på informella lösningar. Plan- och kommersiella alternativ sammanfattas på [prissättning](/pricing/). Produktkontext för skrivare och sjukhusanvändning finns på [AI-medicinsk skrivare](/ai-medical-scribe/) och [sjukhusdokumentation](/hospital-documentation/) sidor.
 
 För organisationer som jämför dokumentations-AI bredare efter en EHR-implementation, håll den kliniska frågan central: stängs besöket snabbare med lika eller bättre anteckningskvalitet? Mediway-import hjälper den frågan bli besvarbar, eftersom arbetsflödet inte längre slutar i ett sidodokument som aldrig når journalen.
 
@@ -154,4 +154,4 @@ För organisationer som jämför dokumentations-AI bredare efter en EHR-implemen
 
 DocNotes Mediway-integration är en tyst typ av framsteg. Den ber inte läkare bli EHR-experter. Den ber mindre av dem: spela in, strukturera, importera, granska. Det är så dokumentationsteknik förtjänar en permanent plats i kliniken.
 
-Om du arbetar i Mediway idag är detta tillfället att testa om enklicksimport tar bort omskrivningskostnaden från dina eftermiddagar. Utforska DocNote, granska [prissättning](/prissättning/) och se hur strukturerade rapporter kan landa direkt i journalen du redan litar på.
+Om du arbetar i Mediway idag är detta tillfället att testa om enklicksimport tar bort omskrivningskostnaden från dina eftermiddagar. Utforska DocNote, granska [prissättning](/pricing/) och se hur strukturerade rapporter kan landa direkt i journalen du redan litar på.

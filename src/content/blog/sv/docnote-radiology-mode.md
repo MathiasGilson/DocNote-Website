@@ -142,4 +142,4 @@ Håll också uppsikt över rättvisa över fallsvårighet. Om läget bara skiner
 
 DocNote Radiology mode finns för att bilddokumentation är ett specialitetsproblem, inte ett generellt anteckningsproblem. När struktur kommer automatiskt och väntetid minskar, får radiologer något mer värdefullt än rå hastighet: utrymme att tänka på undersökningen framför dem.
 
-Om din avdelning kämpar med rapporteringsefterarbete, kvällsinkasso eller inkonsekventa mallar, är Radiology mode en konkret plats att börja. Utforska [AI-medicinsk skrivaröversikt](/ai-medicinsk-skrivare/), granska [sjukhusdokumentationsanvändningsfall](/hospital-documentation/) och kolla [prissättning](/pricing/) för att planera en fokuserad pilot med dina egna modaliteter och standarder.
+Om din avdelning kämpar med rapporteringsefterarbete, kvällsinkasso eller inkonsekventa mallar, är Radiology mode en konkret plats att börja. Utforska [AI-medicinsk skrivaröversikt](/ai-medical-scribe/), granska [sjukhusdokumentationsanvändningsfall](/hospital-documentation/) och kolla [prissättning](/pricing/) för att planera en fokuserad pilot med dina egna modaliteter och standarder.

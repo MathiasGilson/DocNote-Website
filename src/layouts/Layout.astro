@@ -45,7 +45,7 @@ const t = (await getEntry('pages', locale)) ?? (await getEntry('pages', 'en'));
 
 const pageTitle = formatPageTitle(title);
 const canonicalUrl = absoluteUrl(withTrailingSlash(Astro.url.pathname));
-const alternateUrls = { ...getDefaultAlternates(Astro.url.pathname), ...alternatesProp };
+const alternateUrls = { ...(await getDefaultAlternates(Astro.url.pathname)), ...alternatesProp };
 const ogLocale = getOgLocale(locale);
 const extraJsonLd = jsonLd
   ? Array.isArray(jsonLd)

@@ -122,7 +122,7 @@ AI förstärker både bra och dåliga mallar. Rensa sektionsförväntningar inna
 
 Utvärdera roadmap-seriösitet kring specialitetsdjup, efterlevnadsdokumentation och integration, inte bara demonstrationsflyt.
 
-DocNote bygger mot praktisk klinisk infrastruktur: ambient insamling, strukturerade utkast, klinikergranskning och distributionsmönster anpassade till verkliga vårdmiljöer. Produktriktningen prioriterar användbarhet i dagliga konsultationer och sjukhusdokumentationssammanhang snarare än nymodighet för dess egen skull. Team som förbereder införande kan utforska nuvarande funktioner via sidan [AI-medicinsk skrivare](/ai-medicinsk-skrivare/), jämföra alternativ på [prissättning](/pricing/) och komma igång med [självstudien](/tutorial/). Det nära målet är tydligt: minska dokumentationsfriktion samtidigt som kliniskt ägande av journalen bevaras.
+DocNote bygger mot praktisk klinisk infrastruktur: ambient insamling, strukturerade utkast, klinikergranskning och distributionsmönster anpassade till verkliga vårdmiljöer. Produktriktningen prioriterar användbarhet i dagliga konsultationer och sjukhusdokumentationssammanhang snarare än nymodighet för dess egen skull. Team som förbereder införande kan utforska nuvarande funktioner via sidan [AI-medicinsk skrivare](/ai-medical-scribe/), jämföra alternativ på [prissättning](/pricing/) och komma igång med [självstudien](/tutorial/). Det nära målet är tydligt: minska dokumentationsfriktion samtidigt som kliniskt ägande av journalen bevaras.
 
 ### En realistisk tidslinje
 

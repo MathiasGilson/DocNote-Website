@@ -16,8 +16,9 @@ import {
 import { getBlogAlternateUrls } from './blog-translations';
 import { CAREER_JOB_SLUGS } from './careers';
 import { landingSlugs } from '../content/landings';
+import { SITE_URL } from './seo';
 
-export const SITE = 'https://docnote.care';
+export const SITE = SITE_URL;
 
 const toAbs = (path: string) => new URL(path, `${SITE}/`).href;
 

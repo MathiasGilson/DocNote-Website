@@ -140,4 +140,4 @@ Begivenhetsnærhet er også viktig for team som skanner den franske innovasjonsk
 
 CHU HealthTech Connexion Day i Bordeaux understreket en moden sykehuskjøperholdning. AI-dokumentasjon er velkommen når den dekker virkelige dokumenttyper, kobles til EHR og møter personvernforventninger under arbeidsstyrkepress. Kun-polikliniske historier sliter i det rommet. Sykehusvide, vurderingssentrerte arbeidsflyter tjener et andre møte.
 
-Hvis ditt CHU eller sykehusgruppe planlegger det andre møtet, start fra klinisk prosesssmerte, ikke modellhype. Utforsk DocNotes [AI-medisinsk skriver](/ai-medisinsk-skriver/), kartlegg dokumentdekning via [sykehusdokumentasjon](/sykehusdokumentasjon/), og saml interessenter ved å bruke [priser](/priser/) mens du designer en styrt pilot.
+Hvis ditt CHU eller sykehusgruppe planlegger det andre møtet, start fra klinisk prosesssmerte, ikke modellhype. Utforsk DocNotes [AI-medisinsk skriver](/ai-medical-scribe/), kartlegg dokumentdekning via [sykehusdokumentasjon](/hospital-documentation/), og saml interessenter ved å bruke [priser](/pricing/) mens du designer en styrt pilot.

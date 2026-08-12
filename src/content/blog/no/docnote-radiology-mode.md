@@ -142,4 +142,4 @@ Vær også oppmerksom på rettferdighet på tvers av sakens vanskelighetsgrad. H
 
 DocNote Radiology-modus eksisterer fordi bilde-dokumentasjon er et spesialitetsproblem, ikke et generelt notatproblem. Når struktur kommer automatisk og ventetid minsker, får radiologer noe mer verdifullt enn rå hastighet: rom til å tenke på undersøkelsen foran dem.
 
-Hvis din avdeling kjemper mot rapporteringsetterslep, ettermiddagsinnhenting eller inkonsistente maler, er Radiology-modus et konkret sted å starte. Utforsk [AI-medisinsk skriver](/ai-medisinsk-skriver/) oversikten, gjennomgå [sykehusdokumentasjons](/hospital-documentation/) brukstilfeller og sjekk [priser](/pricing/) for å planlegge en fokusert pilot med dine egne modaliteter og standarder.
+Hvis din avdeling kjemper mot rapporteringsetterslep, ettermiddagsinnhenting eller inkonsistente maler, er Radiology-modus et konkret sted å starte. Utforsk [AI-medisinsk skriver](/ai-medical-scribe/) oversikten, gjennomgå [sykehusdokumentasjons](/hospital-documentation/) brukstilfeller og sjekk [priser](/pricing/) for å planlegge en fokusert pilot med dine egne modaliteter og standarder.

@@ -140,4 +140,4 @@ Evenemangsnärhet spelar också roll för team som skannar den franska innovatio
 
 CHU HealthTech Connexion Day i Bordeaux underströk en mogen sjukhusköparhållning. AI-dokumentation är välkommen när den täcker verkliga dokumenttyper, kopplas till EHR och möter dataskyddsförväntningar under personalpress. Öppenvårdsberättelser kämpar i det rummet. Sjukhusomfattande, granskningscentrerade arbetsflöden förtjänar ett andra möte.
 
-Om ditt CHU eller sjukhusgrupp planerar det andra mötet, börja från klinisk väg-smärta, inte modellhype. Utforska DocNotes [AI-medicinsk skrivare](/ai-medicinsk-skrivare/), kartlägg dokumenttäckning via [sjukhusdokumentation](/hospital-documentation/) och sammanställ intressenter med hjälp av [prissättning](/pricing/) när du designar en styrd pilot.
+Om ditt CHU eller sjukhusgrupp planerar det andra mötet, börja från klinisk väg-smärta, inte modellhype. Utforska DocNotes [AI-medicinsk skrivare](/ai-medical-scribe/), kartlägg dokumenttäckning via [sjukhusdokumentation](/hospital-documentation/) och sammanställ intressenter med hjälp av [prissättning](/pricing/) när du designar en styrd pilot.

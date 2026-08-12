@@ -180,4 +180,4 @@ Om du träffade teamet i Paris är nästa användbara steg inte ytterligare en b
 
 Adopt AI Paris underströk en läxa DocNote bygger kring varje dag. Sjukhus-AI lyckas när styrning, interoperabilitet, cybersäkerhet och klinikerförtroende behandlas som produktkrav. Dokumentation är en av de tydligaste platserna att applicera den läxan, eftersom smärtan är daglig och påverkan mätbar.
 
-Om din institution lämnade Paris redo att gå bortom oändliga piloter, börja med anteckningarna som stjäl klinisk tid. Se [AI-medicinsk skrivare](/ai-medicinsk-skrivare/), [sjukhusdokumentation](/sjukhusdokumentation/) och [prissättning](/prissättning/), designa sedan en adoptionsväg dina läkare skulle känna igen som respektfull för verkligt vårdliv.
+Om din institution lämnade Paris redo att gå bortom oändliga piloter, börja med anteckningarna som stjäl klinisk tid. Se [AI-medicinsk skrivare](/ai-medical-scribe/), [sjukhusdokumentation](/hospital-documentation/) och [prissättning](/pricing/), designa sedan en adoptionsväg dina läkare skulle känna igen som respektfull för verkligt vårdliv.

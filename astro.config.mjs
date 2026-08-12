@@ -1,11 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import rehypeFixInternalLinks from './scripts/rehype-fix-internal-links.mjs';
 
 export default defineConfig({
   site: (process.env.PUBLIC_SITE_URL || 'https://docnote.care').replace(/\/+$/, ''),
   trailingSlash: 'always',
   integrations: [tailwind()],
+  markdown: {
+    rehypePlugins: [rehypeFixInternalLinks],
+  },
   i18n: {
     defaultLocale: 'en',
     locales: [

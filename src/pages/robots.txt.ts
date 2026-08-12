@@ -2,9 +2,9 @@
  * Tasksboard-style robots.txt:
  * Allow all, single sitemap index, Content-Signal for AI crawlers.
  */
-export const prerender = true;
+import { SITE_URL as SITE } from '../utils/seo';
 
-const SITE = 'https://docnote.care';
+export const prerender = true;
 
 const body = `User-agent: *
 Allow: /

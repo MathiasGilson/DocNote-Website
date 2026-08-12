@@ -1,7 +1,13 @@
 import { defaultLocale, locales, type Locale, pickLocale, getLocalizedPath } from './i18n';
 import { seoCopy } from './inline-content';
+import { BLOG_PAGE_SIZE, getBlogPageCount } from './blogPagination';
 
-export const SITE_URL = 'https://docnote.care';
+const DEFAULT_SITE_URL = 'https://docnote.care';
+
+/** Canonical site origin for SEO (canonical, hreflang, sitemap, robots). Prefer PUBLIC_SITE_URL in CI/preview. */
+export const SITE_URL = String(
+  import.meta.env.PUBLIC_SITE_URL || import.meta.env.SITE || DEFAULT_SITE_URL
+).replace(/\/+$/, '');
 export const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
@@ -56,12 +62,36 @@ export const buildBreadcrumbLd = (items: { name: string; url: string }[]) => ({
   })),
 });
 
-export const getDefaultAlternates = (pathname: string): Record<Locale, string> => {
+/** `/blog/all/:page` alternates must clamp to each locale's own page count, or they 404. */
+const getBlogAllAlternates = async (requestedPage: number): Promise<Record<Locale, string>> => {
+  const { getCollection } = await import('astro:content');
+  const posts = await getCollection('blog');
+  const countByLocale: Partial<Record<Locale, number>> = {};
+  for (const post of posts) {
+    const [loc] = post.id.split('/');
+    if (locales.includes(loc as Locale)) {
+      countByLocale[loc as Locale] = (countByLocale[loc as Locale] ?? 0) + 1;
+    }
+  }
+  return Object.fromEntries(
+    locales.map((locale) => {
+      const totalPages = getBlogPageCount(countByLocale[locale] ?? 0, BLOG_PAGE_SIZE);
+      const page = Math.min(Math.max(1, requestedPage), totalPages);
+      return [locale, absoluteLocalizedUrl(`/blog/all/${page}`, locale)];
+    })
+  ) as Record<Locale, string>;
+};
+
+export const getDefaultAlternates = async (pathname: string): Promise<Record<Locale, string>> => {
   const segments = pathname.split('/').filter(Boolean);
   const rest =
     segments.length > 0 && locales.includes(segments[0] as Locale)
       ? segments.slice(1).join('/')
       : segments.join('/');
+
+  const blogAllMatch = rest.match(/^blog\/all\/(\d+)$/);
+  if (blogAllMatch) return getBlogAllAlternates(Number(blogAllMatch[1]));
+
   const suffix = rest ? `/${rest}` : '/';
   return Object.fromEntries(
     locales.map((locale) => [locale, absoluteLocalizedUrl(suffix, locale)])
