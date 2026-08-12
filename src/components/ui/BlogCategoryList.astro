@@ -1,0 +1,115 @@
+---
+import BlogCard from './BlogCard.astro';
+import { groupPostsByCategory, CATEGORY_META, FALLBACK_META, type BlogCategory } from '../../utils/blogCategories';
+import type { Locale } from '../../utils/i18n';
+
+interface PostCard {
+  href: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  imagePosition?: string;
+  date: string;
+  category: string;
+  categoryLabel: string;
+  categoryClass: string;
+}
+
+interface Props {
+  posts: PostCard[];
+  locale: Locale;
+  readMore: string;
+  articlesLabel?: string;
+  prevLabel?: string;
+  nextLabel?: string;
+}
+
+const {
+  posts,
+  locale,
+  readMore,
+  articlesLabel = 'Articles',
+  prevLabel = 'Previous',
+  nextLabel = 'Next',
+} = Astro.props;
+
+const categoryGroups = groupPostsByCategory(posts);
+const ctrlClass =
+  'inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-slate-300 hover:bg-slate-50';
+---
+
+<section class="pb-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">
+    {categoryGroups.map(({ category, posts: list }) => {
+      const meta = CATEGORY_META[category as BlogCategory] ?? FALLBACK_META;
+      const label = list[0]?.categoryLabel ?? category;
+      return (
+        <div class="mt-12 first:mt-4" data-carousel>
+          <div class="mb-5 flex items-end justify-between gap-4">
+            <div>
+              <p class:list={['text-xs font-semibold uppercase tracking-widest mb-1', meta.eyebrow]}>
+                {list.length} {articlesLabel}
+              </p>
+              <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">{label}</h2>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <button type="button" data-prev aria-label={prevLabel} class={ctrlClass}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button type="button" data-next aria-label={nextLabel} class={ctrlClass}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            data-track
+            class="no-scrollbar flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2"
+          >
+            {list.map((post) => (
+              <BlogCard
+                href={post.href}
+                title={post.title}
+                excerpt={post.excerpt}
+                image={post.image}
+                imagePosition={post.imagePosition}
+                date={post.date}
+                locale={locale}
+                categoryLabel={post.categoryLabel}
+                categoryClass={post.categoryClass || meta.badge}
+                readMore={readMore}
+                class="snap-start shrink-0 basis-full sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)]"
+              />
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<script is:inline>
+  (function () {
+    function setup(root) {
+      var track = root.querySelector('[data-track]');
+      var prev = root.querySelector('[data-prev]');
+      var next = root.querySelector('[data-next]');
+      if (!track) return;
+      var step = function () { return track.clientWidth + 24; };
+      if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    }
+    var roots = document.querySelectorAll('[data-carousel]');
+    for (var i = 0; i < roots.length; i++) setup(roots[i]);
+  })();
+</script>
