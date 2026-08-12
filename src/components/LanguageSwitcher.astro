@@ -12,6 +12,7 @@ import {
   type Locale,
 } from '../utils/i18n';
 import { getBlogAlternatePaths } from '../utils/blog-translations';
+import { getBlogAllAlternatePaths } from '../utils/seo';
 
 interface Props {
   locale: Locale;
@@ -20,15 +21,18 @@ interface Props {
 const { locale } = Astro.props;
 const pathname = Astro.url.pathname;
 const basePath = getPathWithoutLocale(pathname);
-const blogSlug = basePath.match(/^\/blog\/([^/]+)\/$/)?.[1];
+const blogAllMatch = basePath.match(/^\/blog\/all\/(\d+)\/?$/);
+const blogSlug = !blogAllMatch ? basePath.match(/^\/blog\/([^/]+)\/$/)?.[1] : undefined;
 const careersJobSlug = basePath.match(/^\/(?:careers|emploi)\/([^/]+)\/$/)?.[1];
-const hrefByLocale = blogSlug
-  ? getBlogAlternatePaths(locale, blogSlug)
-  : isSurveyPath(pathname)
-    ? getSurveyAlternatePaths()
-    : isCareersPath(pathname)
-      ? getCareersAlternatePaths(careersJobSlug)
-      : null;
+const hrefByLocale = blogAllMatch
+  ? await getBlogAllAlternatePaths(Number(blogAllMatch[1]))
+  : blogSlug
+    ? getBlogAlternatePaths(locale, blogSlug)
+    : isSurveyPath(pathname)
+      ? getSurveyAlternatePaths()
+      : isCareersPath(pathname)
+        ? getCareersAlternatePaths(careersJobSlug)
+        : null;
 ---
 
 <div class="relative lang-switcher">

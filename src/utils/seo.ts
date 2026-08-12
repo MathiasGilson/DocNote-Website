@@ -62,8 +62,7 @@ export const buildBreadcrumbLd = (items: { name: string; url: string }[]) => ({
   })),
 });
 
-/** `/blog/all/:page` alternates must clamp to each locale's own page count, or they 404. */
-const getBlogAllAlternates = async (requestedPage: number): Promise<Record<Locale, string>> => {
+const getBlogPostCountByLocale = async (): Promise<Partial<Record<Locale, number>>> => {
   const { getCollection } = await import('astro:content');
   const posts = await getCollection('blog');
   const countByLocale: Partial<Record<Locale, number>> = {};
@@ -73,16 +72,42 @@ const getBlogAllAlternates = async (requestedPage: number): Promise<Record<Local
       countByLocale[loc as Locale] = (countByLocale[loc as Locale] ?? 0) + 1;
     }
   }
+  return countByLocale;
+};
+
+/**
+ * Hreflang for `/blog/all/:page` — only locales that actually have that page.
+ * Clamping to another page number breaks reciprocal return links.
+ */
+const getBlogAllAlternates = async (
+  requestedPage: number
+): Promise<Partial<Record<Locale, string>>> => {
+  const countByLocale = await getBlogPostCountByLocale();
+  const page = Math.max(1, requestedPage);
+  return Object.fromEntries(
+    locales
+      .filter((locale) => getBlogPageCount(countByLocale[locale] ?? 0, BLOG_PAGE_SIZE) >= page)
+      .map((locale) => [locale, absoluteLocalizedUrl(`/blog/all/${page}`, locale)])
+  );
+};
+
+/** Language switcher paths: clamp to each locale's last valid page (never 404). */
+export const getBlogAllAlternatePaths = async (
+  requestedPage: number
+): Promise<Record<Locale, string>> => {
+  const countByLocale = await getBlogPostCountByLocale();
   return Object.fromEntries(
     locales.map((locale) => {
       const totalPages = getBlogPageCount(countByLocale[locale] ?? 0, BLOG_PAGE_SIZE);
       const page = Math.min(Math.max(1, requestedPage), totalPages);
-      return [locale, absoluteLocalizedUrl(`/blog/all/${page}`, locale)];
+      return [locale, getLocalizedPath(`/blog/all/${page}`, locale)];
     })
   ) as Record<Locale, string>;
 };
 
-export const getDefaultAlternates = async (pathname: string): Promise<Record<Locale, string>> => {
+export const getDefaultAlternates = async (
+  pathname: string
+): Promise<Partial<Record<Locale, string>>> => {
   const segments = pathname.split('/').filter(Boolean);
   const rest =
     segments.length > 0 && locales.includes(segments[0] as Locale)
