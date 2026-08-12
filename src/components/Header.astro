@@ -382,16 +382,24 @@ const mobileLinkClass = (active: boolean) =>
   }
 
   .header-left {
-    flex: 1 1 auto;
-    overflow: hidden;
+    flex: 1 1 0;
+    min-width: 0;
+    /* Keep mega-menus visible; never let this cluster paint over CTAs */
+    overflow: visible;
   }
 
   .header-primary {
     flex-wrap: nowrap;
+    max-width: 100%;
   }
 
   .header-right {
-    margin-left: 0.5rem;
+    flex: 0 0 auto;
+    margin-left: 0.75rem;
+    padding-left: 0.25rem;
+    background: #fff;
+    position: relative;
+    z-index: 2;
   }
 
   .nav-primary-link {
