@@ -12,7 +12,7 @@ const locale = getLocaleFromUrl(Astro.url);
 <section class="bg-gradient-to-b from-white to-indigo-50 py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 items-end">
-            <div class="pb-4">
+            <div class="pb-4 reveal">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 leading-snug">
                     {t.cta.title}
                 </h2>
@@ -21,13 +21,13 @@ const locale = getLocaleFromUrl(Astro.url);
                 </p>
                 <a
                     href={getLocalizedPath('/tutorial', locale)}
-                    class="inline-flex items-center justify-center px-7 py-3 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/20"
+                    class="btn-primary btn-primary-sm"
                 >
                     {t.cta.button}
                 </a>
             </div>
 
-            <div class="relative" id="cta-card-wrapper" data-locale={locale}>
+            <div class="relative reveal reveal-delay-2" id="cta-card-wrapper" data-locale={locale}>
                 <div
                     id="cta-card"
                     class="bg-white backdrop-blur-sm rounded-xl border border-gray-200/60 shadow-xl p-6 transform transition-all duration-500 max-w-[600px] overflow-hidden"
@@ -55,7 +55,7 @@ const locale = getLocaleFromUrl(Astro.url);
 
                     <div class="flex items-center gap-2 mt-4">
                         <div class="flex-1 h-8 bg-gray-100 rounded-md"></div>
-                        <div class="w-20 h-8 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-md flex items-center justify-center">
+                        <div class="w-20 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-brand-glow-sm">
                             <span class="text-xs text-white font-medium">Save</span>
                         </div>
                     </div>
