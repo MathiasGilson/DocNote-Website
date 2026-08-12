@@ -31,10 +31,10 @@ const hrefByLocale = blogSlug
       : null;
 ---
 
-<div class="relative" id="lang-switcher">
+<div class="relative lang-switcher">
   <button
     type="button"
-    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-base font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
+    class="lang-switcher-btn inline-flex items-center justify-center gap-2 px-5 py-2.5 text-base font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
     aria-label="Select language"
     aria-haspopup="listbox"
     aria-expanded="false"
@@ -48,7 +48,7 @@ const hrefByLocale = blogSlug
     </svg>
   </button>
 
-  <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-44 max-h-72 overflow-y-auto overscroll-contain bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50" role="listbox" aria-label="Languages">
+  <div class="lang-dropdown hidden absolute right-0 mt-2 w-44 max-h-72 overflow-y-auto overscroll-contain bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50" role="listbox" aria-label="Languages">
     {locales.map((code) => (
       <a
         href={hrefByLocale ? hrefByLocale[code] : getLocalizedPath(basePath, code)}
@@ -78,19 +78,22 @@ const hrefByLocale = blogSlug
 </div>
 
 <script>
-  const switcher = document.getElementById('lang-switcher');
-  const dropdown = document.getElementById('lang-dropdown');
-  const button = switcher?.querySelector('button');
+  const switchers = document.querySelectorAll<HTMLElement>('.lang-switcher');
 
-  button?.addEventListener('click', () => {
-    const open = dropdown?.classList.toggle('hidden') === false;
-    button.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+  switchers.forEach((switcher) => {
+    const dropdown = switcher.querySelector<HTMLElement>('.lang-dropdown');
+    const button = switcher.querySelector<HTMLButtonElement>('.lang-switcher-btn');
 
-  document.addEventListener('click', (e) => {
-    if (!switcher?.contains(e.target as Node)) {
-      dropdown?.classList.add('hidden');
-      button?.setAttribute('aria-expanded', 'false');
-    }
+    button?.addEventListener('click', () => {
+      const open = dropdown?.classList.toggle('hidden') === false;
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!switcher.contains(e.target as Node)) {
+        dropdown?.classList.add('hidden');
+        button?.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
 </script>

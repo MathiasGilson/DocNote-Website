@@ -223,7 +223,9 @@ const mobileLinkClass = (active: boolean) =>
       </div>
 
       <div class="flex items-center gap-2 2xl:gap-2.5 flex-shrink-0">
-        <LanguageSwitcher locale={locale} />
+        <div class="hidden xl:block">
+          <LanguageSwitcher locale={locale} />
+        </div>
         <a
           href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR"
           target="_blank"
@@ -244,7 +246,7 @@ const mobileLinkClass = (active: boolean) =>
         </a>
         <a
           href="https://docnote.care/app/"
-          class="btn-primary header-cta hidden sm:inline-flex whitespace-nowrap"
+          class="btn-primary header-cta inline-flex whitespace-nowrap"
         >
           {t.nav.webApp}
         </a>
@@ -267,6 +269,9 @@ const mobileLinkClass = (active: boolean) =>
 
     <div id="mobile-menu" class="hidden xl:hidden py-6 border-t border-gray-100">
       <div class="flex flex-col gap-5">
+        <div class="nav-m-lang">
+          <LanguageSwitcher locale={locale} />
+        </div>
         <a href={getLocalizedPath('/tutorial', locale)} class={mobileLinkClass(isActive('/tutorial'))}>{t.nav.tutorial}</a>
 
         <div class:list={['nav-mgroup', solutionsOpen && 'is-open']} data-nav-mgroup>
@@ -357,7 +362,6 @@ const mobileLinkClass = (active: boolean) =>
             <StoreIcon store="google" class="w-5 h-5" />
             {t.nav.googlePlay}
           </a>
-          <a href="https://docnote.care/app/" class="btn-primary header-cta-mobile text-center">{t.nav.webApp}</a>
           <a href={DEMO_BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn-soft header-cta-mobile text-center">{t.nav.demo}</a>
         </div>
       </div>
@@ -371,9 +375,31 @@ const mobileLinkClass = (active: boolean) =>
     font-size: 1rem;
   }
 
+  @media (max-width: 639px) {
+    header a.header-cta {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.875rem;
+    }
+  }
+
   header a.header-cta-mobile {
     padding: 0.875rem 1.75rem;
     font-size: 1.125rem;
+  }
+
+  .nav-m-lang :global(.lang-switcher) {
+    width: 100%;
+  }
+
+  .nav-m-lang :global(.lang-switcher-btn) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-m-lang :global(.lang-dropdown) {
+    left: 0;
+    right: 0;
+    width: 100%;
   }
 
   .nav-dd {
