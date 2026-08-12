@@ -28,16 +28,17 @@ const membersData = Object.fromEntries(
   })
 ) as Record<string, { name: string; role: string }>;
 
+// Same assets as live docnote.ch/en/team/ (original portraits, not AI studio regenerations).
 const members = [
-  { key: 'vincentTan', image: '/images/team/vincent-tan.jpg' },
-  { key: 'aliceGilson', image: '/images/team/alice-gilson.jpg' },
-  { key: 'mathiasGilson', image: '/images/team/mathias-gilson.jpg' },
-  { key: 'jeremyYvinec', image: '/images/team/jeremy-yvinec.jpg' },
-  { key: 'hugoRoussel', image: '/images/team/hugo-roussel.jpg' },
-  { key: 'ericWei', image: '/images/team/eric-wei.jpg' },
-  { key: 'nedimAmer', image: '/images/team/nedim-amer.jpg' },
-  { key: 'valeryDemunck', image: '/images/team/valery-demunck.jpg' },
-  { key: 'julietteKristanek', image: '/images/team/juliette-kristanek.jpg' },
+  { key: 'vincentTan', image: '/images/dr_vincent_tan.jpg' },
+  { key: 'aliceGilson', image: '/images/dre_alice_gilson.jpg' },
+  { key: 'mathiasGilson', image: '/images/mathias_gilson.png' },
+  { key: 'jeremyYvinec', image: '/images/jeremy_yvinec.jpg' },
+  { key: 'hugoRoussel', image: '/images/hugo_roussel.jpg' },
+  { key: 'ericWei', image: '/images/eric_wei.jpg' },
+  { key: 'nedimAmer', image: '/images/nedim_amer.jpg' },
+  { key: 'valeryDemunck', image: '/images/valery_demunck.jpg' },
+  { key: 'julietteKristanek', image: '/images/juliette_kristanek.jpg' },
 ] as const;
 
 const marqueeItems = [...members, ...members];

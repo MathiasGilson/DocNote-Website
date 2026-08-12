@@ -148,9 +148,9 @@ Attire: ${member.attire}.
 Composition: vertical 3:4 head-and-shoulders framing, subject centered, looking at camera, friendly professional expression.
 Background: soft muted dusty blue-grey studio backdrop with subtle texture (match DocNote medical brand look).
 Lighting: soft even studio lighting, natural catchlights, no harsh shadows.
-Style: high-end LinkedIn/medical startup photography, photorealistic, ultra-sharp facial detail, clean color grading, high dynamic range without noise.
+Style: real handheld DSLR / mirrorless corporate photo — NOT an AI beauty filter, NOT a stock-avatar look. Visible natural skin pores and slight uneven tone, subtle under-eye texture, realistic hair flyaways, fabric wrinkles, mild asymmetric smile. Prefer documentary realism over glamour retouching.
 
-CRITICAL anatomy (must be correct): perfectly symmetric eyes with matching size/shape/height, clear circular pupils and crisp iris detail, natural eyelids with no melting or asymmetry, natural mouth with individually defined teeth (not a mushy white block), clean gum line, anatomically correct nose and lips, natural skin micro-texture (not plastic), five fingers only if hands appear. No melted features, no warped smile, no extra fingers, no distorted eye shape.
+CRITICAL: avoid waxy/plastic skin, over-symmetric faces, porcelain smoothing, CGI catchlights, or uncanny “LinkedIn AI headshot” look. Keep likeness locked to the reference person.
 Strict: no text, no watermark, no logo, no name overlay, no props besides attire accessories already described.`;
 }
 

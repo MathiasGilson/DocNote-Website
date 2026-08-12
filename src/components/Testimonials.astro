@@ -16,25 +16,26 @@ const legacyFallback: Item[] = [
     quote: t.testimonials.quote1,
     author: t.testimonials.author1,
     role: t.testimonials.role1,
-    image: '/images/testimonials/perrot.jpg',
+    image: '/images/perrot.png',
   },
   {
     quote: t.testimonials.quote2,
     author: t.testimonials.author2,
     role: t.testimonials.role2,
-    image: '/images/testimonials/patel.jpg',
+    image: '/images/patel.jpg',
   },
   {
     quote: t.testimonials.quote3,
     author: t.testimonials.author3,
     role: t.testimonials.role3,
-    image: '/images/testimonials/ris.jpg',
+    image: '/images/ris.png',
   },
 ];
 
 const locItems = (t.testimonials.items || []) as Item[];
+// Prefer curated items (live site uses 3 real clinician quotes); avoid AI-expanded sets.
 const testimonials: Item[] =
-  locItems.length >= 15 ? locItems : enItems.length >= 15 ? enItems : legacyFallback;
+  locItems.length >= 3 ? locItems.slice(0, 3) : enItems.length >= 3 ? enItems.slice(0, 3) : legacyFallback;
 ---
 
 <section class="py-20">
