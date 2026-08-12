@@ -1,31 +1,538 @@
 ---
+import {
+  specialtyIconMarkup,
+  specialtyKeyAt,
+} from '../data/specialty-icons'
+import { specialtySlugByKey } from '../content/landings'
+import { getLocalizedPath, type Locale } from '../utils/i18n'
+
 interface Props {
-    translations: any
+  translations: any
+  locale?: string
 }
 
-const { translations: t } = Astro.props
-const specialties: string[] = t.specialties.items ?? []
+const { translations: t, locale = 'en' } = Astro.props
+const lang = locale as Locale
+const labels: string[] = t.specialties.items ?? []
+const mid = Math.ceil(labels.length / 2)
+
+const chips = labels.map((label, i) => {
+  const key = specialtyKeyAt(i)
+  const landingSlug = key ? specialtySlugByKey[key] : undefined
+  return {
+    label,
+    key,
+    icon: specialtyIconMarkup(key),
+    delay: `${0.08 + i * 0.04}s`,
+    href: landingSlug ? getLocalizedPath(`/${landingSlug}`, lang) : undefined,
+  }
+})
+
+const rowA = chips.slice(0, mid)
+const rowB = chips.slice(mid)
 ---
 
-<section class="py-16 bg-gradient-to-b from-indigo-50 to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                {t.specialties.title}
+<section id="specialties" class="specialties-section py-20 lg:py-28 scroll-mt-24" data-specialties>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="specialties-shell" data-specialties-shell>
+      <div class="specialties-intro" data-specialties-intro>
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+          <div class="min-w-0 max-w-2xl">
+            <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+              <span class="specialties-badge-dot" aria-hidden="true"></span>
+              <span class="tabular-nums tracking-wider">50+</span>
+            </span>
+            <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+              {t.specialties.title}
             </h2>
-            <p class="text-lg text-gray-600">
-                {t.specialties.subtitle}
+            <p class="mt-3 text-base text-gray-500 leading-relaxed">
+              {t.specialties.subtitle}
             </p>
+          </div>
+          <div class="specialties-count" aria-hidden="true">
+            <span class="specialties-count-num">50+</span>
+          </div>
         </div>
+      </div>
 
-        <div class="flex flex-wrap justify-center gap-3">
-            {
-                specialties.map((specialty) => (
-                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-colors cursor-default">
-                        {specialty}
-                    </span>
-                ))
-            }
+      <div class="specialties-stage" data-specialties-stage>
+        <div class="specialties-fade specialties-fade--left" aria-hidden="true"></div>
+        <div class="specialties-fade specialties-fade--right" aria-hidden="true"></div>
+
+        {/* Accessible list — visible under reduced motion; screen-reader source otherwise */}
+        <ul class="specialties-static">
+          {chips.map((c, i) => (
+            <li>
+              {c.href ? (
+                <a
+                  href={c.href}
+                  class="specialty-chip specialty-chip--link"
+                  style={`--d:${0.06 + i * 0.03}s`}
+                  data-specialty-chip
+                  data-specialty={c.key}
+                >
+                  <svg
+                    class="specialty-icon"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    set:html={c.icon}
+                  />
+                  {c.label}
+                </a>
+              ) : (
+                <span
+                  class="specialty-chip"
+                  style={`--d:${0.06 + i * 0.03}s`}
+                  data-specialty-chip
+                  data-specialty={c.key}
+                >
+                  <svg
+                    class="specialty-icon"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    set:html={c.icon}
+                  />
+                  {c.label}
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <div class="specialties-marquee" data-marquee aria-hidden="true">
+          <div class="specialties-track specialties-track--a" style="--dur: 42s">
+            {[0, 1].map(() => (
+              <ul class="specialties-lane">
+                {rowA.map((c) => (
+                  <li>
+                    {c.href ? (
+                      <a
+                        href={c.href}
+                        class="specialty-chip specialty-chip--link"
+                        style={`--d:${c.delay}`}
+                        data-specialty-chip
+                        data-specialty={c.key}
+                        tabindex="-1"
+                      >
+                        <svg
+                          class="specialty-icon"
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          set:html={c.icon}
+                        />
+                        {c.label}
+                      </a>
+                    ) : (
+                      <span
+                        class="specialty-chip"
+                        style={`--d:${c.delay}`}
+                        data-specialty-chip
+                        data-specialty={c.key}
+                      >
+                        <svg
+                          class="specialty-icon"
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          set:html={c.icon}
+                        />
+                        {c.label}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+
+          <div class="specialties-track specialties-track--b" style="--dur: 48s">
+            {[0, 1].map(() => (
+              <ul class="specialties-lane">
+                {rowB.map((c, i) => (
+                  <li>
+                    {c.href ? (
+                      <a
+                        href={c.href}
+                        class="specialty-chip specialty-chip--link"
+                        style={`--d:${0.14 + i * 0.04}s`}
+                        data-specialty-chip
+                        data-specialty={c.key}
+                        tabindex="-1"
+                      >
+                        <svg
+                          class="specialty-icon"
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          set:html={c.icon}
+                        />
+                        {c.label}
+                      </a>
+                    ) : (
+                      <span
+                        class="specialty-chip"
+                        style={`--d:${0.14 + i * 0.04}s`}
+                        data-specialty-chip
+                        data-specialty={c.key}
+                      >
+                        <svg
+                          class="specialty-icon"
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          set:html={c.icon}
+                        />
+                        {c.label}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<script>
+  const root = document.querySelector("[data-specialties]")
+  if (root) {
+    const targets = root.querySelectorAll(
+      "[data-specialties-intro], [data-specialties-shell], [data-specialty-chip]"
+    )
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            root.classList.add("is-inview")
+            targets.forEach((el) => el.classList.add("is-visible"))
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.18 }
+    )
+    observer.observe(root)
+  }
+</script>
+
+<style>
+  .specialties-section {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .specialties-badge-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.18);
+  }
+
+  .specialties-shell {
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 20px 48px rgba(15, 23, 42, 0.06);
+    background: #ffffff;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .specialties-shell.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .specialties-intro {
+    padding: 1.75rem 1.5rem 1.25rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s,
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
+  }
+
+  @media (min-width: 640px) {
+    .specialties-intro {
+      padding: 2.25rem 2.25rem 1.5rem;
+    }
+  }
+
+  .specialties-intro.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .specialties-count {
+    flex-shrink: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 1rem;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(var(--dn-primary-mid-rgb), 0.22), transparent 55%),
+      linear-gradient(155deg, #1a1528 0%, #241a3d 55%, #1c1630 100%);
+    border: 1px solid rgba(203, 184, 255, 0.22);
+    box-shadow: 0 10px 28px rgba(49, 30, 110, 0.18);
+  }
+
+  @media (min-width: 640px) {
+    .specialties-count {
+      display: inline-flex;
+    }
+  }
+
+  .specialties-count-num {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #e8ddff;
+  }
+
+  .specialties-stage {
+    position: relative;
+    padding: 0.25rem 0 1.75rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+    background: #ffffff;
+  }
+
+  @media (min-width: 640px) {
+    .specialties-stage {
+      padding-bottom: 2.15rem;
+    }
+  }
+
+  .specialties-fade {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(2rem, 8vw, 4.5rem);
+    z-index: 2;
+  }
+
+  .specialties-fade--left {
+    left: 0;
+    background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+  }
+
+  .specialties-fade--right {
+    right: 0;
+    background: linear-gradient(270deg, #ffffff 0%, transparent 100%);
+  }
+
+  .specialties-marquee {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+    overflow: hidden;
+  }
+
+  .specialties-track {
+    display: flex;
+    width: max-content;
+    gap: 0.65rem;
+    will-change: transform;
+  }
+
+  .specialties-section.is-inview .specialties-track--a {
+    animation: specialties-scroll var(--dur, 42s) linear infinite;
+  }
+
+  .specialties-section.is-inview .specialties-track--b {
+    animation: specialties-scroll-rev var(--dur, 48s) linear infinite;
+  }
+
+  .specialties-marquee:hover .specialties-track {
+    animation-play-state: paused;
+  }
+
+  .specialties-lane {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Default: marquee visible; static list clipped for AT only */
+  .specialties-static {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    list-style: none;
+  }
+
+  .specialty-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #374151;
+    white-space: nowrap;
+    cursor: default;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease,
+      color 0.25s ease;
+    transition-delay: var(--d, 0s);
+  }
+
+  a.specialty-chip--link {
+    cursor: pointer;
+  }
+
+  .specialty-chip.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .specialty-chip:hover {
+    border-color: rgba(var(--dn-primary-rgb), 0.35);
+    background: rgba(var(--dn-primary-rgb), 0.06);
+    color: #1f1635;
+    box-shadow: 0 8px 22px rgba(var(--dn-primary-rgb), 0.1);
+    transform: translateY(-2px);
+  }
+
+  .specialty-icon {
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    color: var(--dn-primary, currentColor);
+  }
+
+  .specialty-chip:hover .specialty-icon {
+    color: var(--dn-primary-ink, var(--dn-primary, currentColor));
+  }
+
+  @keyframes specialties-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes specialties-scroll-rev {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .specialties-shell,
+    .specialties-intro,
+    .specialty-chip {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .specialty-chip:hover {
+      transform: none;
+    }
+
+    .specialties-marquee,
+    .specialties-fade {
+      display: none;
+    }
+
+    .specialties-static {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 1.25rem 1.25rem 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+    }
+
+    .specialties-section.is-inview .specialties-track--a,
+    .specialties-section.is-inview .specialties-track--b {
+      animation: none;
+    }
+  }
+</style>
