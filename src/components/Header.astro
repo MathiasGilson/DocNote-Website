@@ -75,8 +75,6 @@ const specialtiesOpen = groupActive(navSpecialtiesSlugs);
 
 const blogActive = isActive('/blog') || currentPath.includes('/blog/');
 const moreItems = [
-  { href: getLocalizedPath('/team', locale), label: t.nav.team, active: isActive('/team') },
-  { href: careersHref, label: t.nav.joinUs, active: careersActive },
   { href: surveyHref, label: t.nav.survey, active: surveyActive },
   { href: getLocalizedPath('/patient', locale), label: t.nav.patient, active: isActive('/patient') },
   { href: getLocalizedPath('/blog', locale), label: t.nav.blog, active: blogActive },
@@ -103,7 +101,7 @@ const mobileLinkClass = (active: boolean) =>
           <span class="text-xl 2xl:text-2xl font-semibold text-gray-900">DocNote</span>
         </a>
 
-        <div class="header-primary hidden xl:flex items-center gap-3 2xl:gap-5 min-w-0">
+        <div class="header-primary hidden xl:flex items-center gap-2.5 2xl:gap-4 min-w-0">
           <a href={getLocalizedPath('/tutorial', locale)} class={linkClass(isActive('/tutorial'))}>
             {t.nav.tutorial}
           </a>
@@ -212,6 +210,12 @@ const mobileLinkClass = (active: boolean) =>
           <a href={getLocalizedPath('/pricing', locale)} class={linkClass(isActive('/pricing'))}>
             {t.nav.pricing}
           </a>
+          <a href={getLocalizedPath('/team', locale)} class={linkClass(isActive('/team'))}>
+            {t.nav.team}
+          </a>
+          <a href={careersHref} class={linkClass(careersActive)}>
+            {t.nav.joinUs}
+          </a>
 
           <div class:list={['nav-dd', moreOpen && 'is-current']} data-nav-dd>
             <button
@@ -261,7 +265,7 @@ const mobileLinkClass = (active: boolean) =>
           href={DEMO_BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-soft header-cta header-cta-demo hidden xl:inline-flex whitespace-nowrap"
+          class="btn-soft header-cta header-cta-demo hidden 2xl:inline-flex whitespace-nowrap"
         >
           {t.nav.demo}
         </a>
