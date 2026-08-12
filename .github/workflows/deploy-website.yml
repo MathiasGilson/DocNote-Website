@@ -53,12 +53,26 @@ jobs:
           PUBLIC_SITE_URL: ${{ steps.preview-name.outputs.site_url }}
         run: npm run build
 
+      # Workers `wrangler deploy` fails if pages_build_output_dir is present (Pages project).
+      - name: Remove Pages-only wrangler keys
+        run: |
+          node -e '
+            const fs = require("fs");
+            const p = "wrangler.jsonc";
+            const j = JSON.parse(fs.readFileSync(p, "utf8").replace(/^\s*\/\/.*$/gm, ""));
+            delete j.pages_build_output_dir;
+            fs.writeFileSync(p, JSON.stringify(j, null, 2) + "\n");
+          '
+
       - name: Deploy Preview
         id: deploy-preview
         run: |
           set -o pipefail
           npx wrangler@latest deploy --name "${{ steps.preview-name.outputs.worker_name }}" 2>&1 | tee deploy.log
           PREVIEW_URL=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' deploy.log | tail -1)
+          if [ -z "$PREVIEW_URL" ]; then
+            PREVIEW_URL="https://${{ steps.preview-name.outputs.worker_name }}.qualtir.workers.dev"
+          fi
           echo "preview_url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
           echo "Preview URL: $PREVIEW_URL"
         env:
