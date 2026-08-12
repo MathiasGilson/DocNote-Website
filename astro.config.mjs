@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://docnote.care',
+  site: (process.env.PUBLIC_SITE_URL || 'https://docnote.care').replace(/\/+$/, ''),
   trailingSlash: 'always',
   integrations: [tailwind()],
   i18n: {
