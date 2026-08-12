@@ -1,7 +1,9 @@
-# English no longer uses /en/ — keep bookmarks working (Cloudflare Pages)
+# Static exact rules MUST come before any /* splat rules.
+# Cloudflare counts every rule after the first dynamic/splat as dynamic (max 100).
+
+# English no longer uses /en/
 /en              /                301
 /en/             /                301
-/en/*            /:splat          301
 
 # Blog all-articles index → page 1
 /blog/all        /blog/all/1/     301
@@ -40,10 +42,8 @@
 # Survey: EN + non-FR → /survey/; FR keeps /fr/sondage/
 /sondage         /survey/         301
 /sondage/        /survey/         301
-/sondage/*       /survey/:splat   301
 /fr/survey       /fr/sondage/     301
 /fr/survey/      /fr/sondage/     301
-/fr/survey/*     /fr/sondage/:splat 301
 /zh/sondage      /zh/survey/      301
 /zh/sondage/     /zh/survey/      301
 /es/sondage      /es/survey/      301
@@ -76,49 +76,54 @@
 # Careers: EN + non-FR → /careers/; FR keeps /fr/emploi/
 /emploi          /careers/        301
 /emploi/         /careers/        301
-/emploi/*        /careers/:splat  301
 /fr/careers      /fr/emploi/      301
 /fr/careers/     /fr/emploi/      301
-/fr/careers/*    /fr/emploi/:splat 301
 /zh/emploi       /zh/careers/     301
 /zh/emploi/      /zh/careers/     301
-/zh/emploi/*     /zh/careers/:splat 301
 /es/emploi       /es/careers/     301
 /es/emploi/      /es/careers/     301
-/es/emploi/*     /es/careers/:splat 301
 /ar/emploi       /ar/careers/     301
 /ar/emploi/      /ar/careers/     301
-/ar/emploi/*     /ar/careers/:splat 301
 /pt/emploi       /pt/careers/     301
 /pt/emploi/      /pt/careers/     301
-/pt/emploi/*     /pt/careers/:splat 301
 /ja/emploi       /ja/careers/     301
 /ja/emploi/      /ja/careers/     301
-/ja/emploi/*     /ja/careers/:splat 301
 /ru/emploi       /ru/careers/     301
 /ru/emploi/      /ru/careers/     301
-/ru/emploi/*     /ru/careers/:splat 301
 /de/emploi       /de/careers/     301
 /de/emploi/      /de/careers/     301
-/de/emploi/*     /de/careers/:splat 301
 /ko/emploi       /ko/careers/     301
 /ko/emploi/      /ko/careers/     301
-/ko/emploi/*     /ko/careers/:splat 301
 /it/emploi       /it/careers/     301
 /it/emploi/      /it/careers/     301
-/it/emploi/*     /it/careers/:splat 301
 /hi/emploi       /hi/careers/     301
 /hi/emploi/      /hi/careers/     301
-/hi/emploi/*     /hi/careers/:splat 301
 /nl/emploi       /nl/careers/     301
 /nl/emploi/      /nl/careers/     301
-/nl/emploi/*     /nl/careers/:splat 301
 /th/emploi       /th/careers/     301
 /th/emploi/      /th/careers/     301
-/th/emploi/*     /th/careers/:splat 301
 /sv/emploi       /sv/careers/     301
 /sv/emploi/      /sv/careers/     301
-/sv/emploi/*     /sv/careers/:splat 301
 /no/emploi       /no/careers/     301
 /no/emploi/      /no/careers/     301
+
+# Dynamic splat rules last (budget ≤100)
+/en/*            /:splat          301
+/sondage/*       /survey/:splat   301
+/fr/survey/*     /fr/sondage/:splat 301
+/emploi/*        /careers/:splat  301
+/fr/careers/*    /fr/emploi/:splat 301
+/zh/emploi/*     /zh/careers/:splat 301
+/es/emploi/*     /es/careers/:splat 301
+/ar/emploi/*     /ar/careers/:splat 301
+/pt/emploi/*     /pt/careers/:splat 301
+/ja/emploi/*     /ja/careers/:splat 301
+/ru/emploi/*     /ru/careers/:splat 301
+/de/emploi/*     /de/careers/:splat 301
+/ko/emploi/*     /ko/careers/:splat 301
+/it/emploi/*     /it/careers/:splat 301
+/hi/emploi/*     /hi/careers/:splat 301
+/nl/emploi/*     /nl/careers/:splat 301
+/th/emploi/*     /th/careers/:splat 301
+/sv/emploi/*     /sv/careers/:splat 301
 /no/emploi/*     /no/careers/:splat 301
