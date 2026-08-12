@@ -354,8 +354,19 @@ export const footerLandingSlugs: LandingSlug[] = [
 /** Header dropdown 1 — pillars + category / use-case landings */
 export const navSolutionsSlugs: LandingSlug[] = [...pillarSlugs, ...usecaseSlugs]
 
-/** Header dropdown 2 — specialty landings */
-export const navSpecialtiesSlugs: LandingSlug[] = [...specialtyLandingSlugs]
+/**
+ * @deprecated Header Specialties nav now uses specialty family hubs
+ * (`specialtyFamilySlugs` in specialty-families.ts). Kept for any legacy imports.
+ */
+export const navSpecialtiesSlugs: LandingSlug[] = [
+  'ai-scribe-general-practice',
+  'ai-scribe-psychiatry',
+  'ai-scribe-cardiology',
+  'ai-scribe-pediatrics',
+  'ai-scribe-emergency-medicine',
+  'ai-scribe-surgery',
+  'ai-scribe-neurology',
+]
 
 export type NavSolutionsColumnId = 'platform' | 'documents' | 'careTrust'
 

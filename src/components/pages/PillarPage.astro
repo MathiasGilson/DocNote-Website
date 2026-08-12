@@ -14,7 +14,13 @@ import {
   landingZigZagSlugs,
   isLandingSlug,
   type LandingSlug,
+  type SpecialtyLandingSlug,
 } from '../../content/landings';
+import {
+  familyBySpecialtyLanding,
+  getSpecialtyFamily,
+  getSpecialtyFamilyPath,
+} from '../../content/specialty-families';
 import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
 
 interface Props {
@@ -92,6 +98,14 @@ const faqLd =
 const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
 
 const relatedSlugs = meta.related.filter((s) => s !== slug);
+const parentFamilySlug =
+  meta.type === 'specialty' ? familyBySpecialtyLanding[slug as SpecialtyLandingSlug] : undefined;
+const parentFamily = parentFamilySlug ? getSpecialtyFamily(parentFamilySlug, lang) : null;
+const parentFamilyHref = parentFamilySlug
+  ? getLocalizedPath(getSpecialtyFamilyPath(parentFamilySlug), lang)
+  : null;
+const familyHubLabel =
+  lang === 'fr' ? 'Famille de spécialités' : lang === 'de' ? 'Fachfamilie' : 'Specialty family';
 ---
 
 <Layout title={p.title} description={p.description} jsonLd={jsonLd}>
@@ -337,7 +351,25 @@ const relatedSlugs = meta.related.filter((s) => s !== slug);
   <!-- Related -->
   <section class="py-14 sm:py-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <aside class="pt-10 border-t border-gray-200 reveal">
+      {parentFamily && parentFamilyHref && (
+        <aside class="pt-10 border-t border-gray-200 reveal mb-8">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-4">
+            {familyHubLabel}
+          </h2>
+          <p class="text-base text-gray-600 mb-3">
+            {lang === 'fr'
+              ? 'Voir toutes les spécialités de cette famille :'
+              : 'See all specialties in this family:'}
+          </p>
+          <a
+            href={parentFamilyHref}
+            class="text-base font-medium text-gray-900 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+          >
+            {parentFamily.navLabel} — {parentFamily.hero.title}
+          </a>
+        </aside>
+      )}
+      <aside class:list={[!parentFamily && 'pt-10 border-t border-gray-200', 'reveal']}>
         <h2 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-4">{p.relatedLabel}</h2>
         <ul class="flex flex-wrap gap-x-8 gap-y-2">
           {relatedSlugs.map((s) => (

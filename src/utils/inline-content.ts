@@ -23,6 +23,10 @@ const landingsModules = import.meta.glob('../content/inline/landings/*.json', { 
   string,
   JsonModule
 >;
+const specialtyFamiliesModules = import.meta.glob(
+  '../content/inline/specialty-families/*.json',
+  { eager: true }
+) as Record<string, JsonModule>;
 const pillarNavModules = import.meta.glob('../content/inline/pillar-nav/*.json', { eager: true }) as Record<
   string,
   JsonModule
@@ -52,6 +56,9 @@ export const emploiCopy = mapModules<Record<string, unknown>>(emploiModules);
 export const pillarsCopy = mapModules<Record<string, unknown>>(pillarsModules);
 export const landingsCopy = Object.keys(landingsModules).length
   ? mapModules<Record<string, unknown>>(landingsModules)
+  : ({ en: {} } as Partial<Record<Locale, Record<string, unknown>>> & { en: Record<string, unknown> });
+export const specialtyFamiliesCopy = Object.keys(specialtyFamiliesModules).length
+  ? mapModules<Record<string, unknown>>(specialtyFamiliesModules)
   : ({ en: {} } as Partial<Record<Locale, Record<string, unknown>>> & { en: Record<string, unknown> });
 export const pillarNavCopy = mapModules<Record<string, string>>(pillarNavModules);
 export const seoCopy = mapModules<Record<string, { title: string; description: string }>>(seoModules);

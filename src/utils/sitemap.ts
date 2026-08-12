@@ -16,6 +16,7 @@ import {
 import { getBlogAlternateUrls, isCanonicalBlogPostId } from './blog-translations';
 import { CAREER_JOB_SLUGS } from './careers';
 import { landingSlugs } from '../content/landings';
+import { specialtyFamilySlugs, getSpecialtyFamilyPath } from '../content/specialty-families';
 import { SITE_URL } from './seo';
 
 export const SITE = SITE_URL;
@@ -59,6 +60,9 @@ const getSitemapMeta = (page: string): { priority: string; changefreq: string } 
     return { priority: '0.8', changefreq: 'monthly' };
   }
   if (landingSlugs.some((slug) => page === slug || page === `${slug}/`)) {
+    return { priority: '0.8', changefreq: 'monthly' };
+  }
+  if (page.startsWith('specialties/')) {
     return { priority: '0.8', changefreq: 'monthly' };
   }
   return { priority: '0.5', changefreq: 'monthly' };
@@ -143,9 +147,16 @@ export const buildStaticUrlset = (): string => {
   return wrapUrlset(parts.join('\n'));
 };
 
-/** SEO landing pages only. */
-export const buildLandingsUrlset = (): string =>
-  wrapUrlset(pageEntries([...landingSlugs], locales, { priority: '0.8', changefreq: 'monthly' }).join('\n'));
+/** SEO landing pages + specialty family hubs. */
+export const buildLandingsUrlset = (): string => {
+  const familyPages = specialtyFamilySlugs.map((slug) => getSpecialtyFamilyPath(slug).replace(/^\//, ''));
+  return wrapUrlset(
+    pageEntries([...landingSlugs, ...familyPages], locales, {
+      priority: '0.8',
+      changefreq: 'monthly',
+    }).join('\n')
+  );
+};
 
 /** Blog posts — one <url> per existing locale translation, reciprocal hreflang. */
 export const buildBlogUrlset = async (): Promise<string> => {

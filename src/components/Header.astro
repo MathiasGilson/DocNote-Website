@@ -12,7 +12,6 @@ import {
 import { DEMO_BOOKING_URL } from '../utils/links';
 import {
   navSolutionsSlugs,
-  navSpecialtiesSlugs,
   navSolutionsColumns,
   getLandingNavDesc,
   getLandingNavLabel,
@@ -20,6 +19,14 @@ import {
   getNavSolutionsColumnLabel,
   type LandingSlug,
 } from '../content/landings';
+import {
+  specialtyFamilySlugs,
+  getSpecialtyFamilyNavLabel,
+  getSpecialtyFamilyNavDesc,
+  getSpecialtyFamilyPath,
+  specialtyFamilyIconMarkup,
+  type SpecialtyFamilySlug,
+} from '../content/specialty-families';
 import { landingNavIconMarkup } from '../data/landing-nav-icons';
 
 interface Props {
@@ -59,6 +66,18 @@ function navItem(slug: LandingSlug) {
   };
 }
 
+function familyNavItem(slug: SpecialtyFamilySlug) {
+  const path = getSpecialtyFamilyPath(slug);
+  return {
+    slug,
+    href: getLocalizedPath(path, locale),
+    label: getSpecialtyFamilyNavLabel(slug, locale),
+    desc: getSpecialtyFamilyNavDesc(slug, locale),
+    active: isActive(path),
+    icon: specialtyFamilyIconMarkup(slug),
+  };
+}
+
 const solutionsLabel = t.nav.solutions || getNavGroupLabel('solutions', locale);
 const specialtiesLabel = t.nav.specialties || getNavGroupLabel('specialties', locale);
 
@@ -68,10 +87,10 @@ const solutionsColumns = navSolutionsColumns.map((col) => ({
   items: col.slugs.map(navItem),
 }));
 
-const specialtiesItems = navSpecialtiesSlugs.map(navItem);
+const specialtiesItems = specialtyFamilySlugs.map(familyNavItem);
 
 const solutionsOpen = groupActive(navSolutionsSlugs);
-const specialtiesOpen = groupActive(navSpecialtiesSlugs);
+const specialtiesOpen = specialtiesItems.some((item) => item.active);
 
 const blogActive = isActive('/blog') || currentPath.includes('/blog/');
 const moreItems = [
@@ -554,9 +573,9 @@ const mobileLinkClass = (active: boolean) =>
     left: 0;
     right: auto;
     transform: none;
-    min-width: min(44rem, calc(100vw - 2rem));
+    min-width: min(36rem, calc(100vw - 2rem));
     width: max-content;
-    max-width: min(52rem, calc(100vw - 2rem));
+    max-width: min(42rem, calc(100vw - 2rem));
     padding: 0.65rem;
   }
 
@@ -604,7 +623,7 @@ const mobileLinkClass = (active: boolean) =>
 
   .nav-spec-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(17.5rem, 1fr));
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
     justify-content: start;
     align-items: start;
     column-gap: 0.35rem;
