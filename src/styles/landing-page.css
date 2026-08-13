@@ -7,9 +7,15 @@
 .lp-crumb-inner {
   max-width: 44rem;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0.65rem 1.25rem 0;
   font-size: 0.875rem;
   color: #6b7280;
+}
+
+@media (min-width: 640px) {
+  .lp-crumb-inner {
+    padding: 0.75rem 1.5rem 0;
+  }
 }
 
 .lp-eyebrow {
@@ -270,14 +276,20 @@
   line-height: 1.5;
   color: #9ca3af;
   letter-spacing: 0.01em;
-  padding: 0 1rem;
-  margin: -0.5rem 0 0.25rem;
+  padding: 0 1.25rem;
+  margin: 0 auto 1.25rem;
+  max-width: 40rem;
 }
 
 @media (min-width: 640px) {
   .lp-stats-line {
     font-size: 0.875rem;
+    margin-bottom: 1.5rem;
   }
+}
+
+.dn-page-hero + .lp-stats-line {
+  margin-top: 0;
 }
 
 .lp-spec-list {

@@ -225,6 +225,11 @@
     outline-offset: 3px;
   }
 
+  .btn-secondary-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
   .btn-soft {
     display: inline-flex;
     align-items: center;
@@ -416,6 +421,21 @@
   padding-bottom: 1.75rem;
 }
 
+/* Breadcrumb bar already clears the fixed header — don't double the top pad */
+.lp-crumb-bar + .dn-page-hero {
+  padding-top: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .lp-crumb-bar + .dn-page-hero {
+    padding-top: 1.5rem;
+  }
+}
+
+.dn-page-hero:has(+ .lp-stats-line) {
+  padding-bottom: 1rem;
+}
+
 .dn-page-hero__inner {
   max-width: 44rem;
   margin: 0 auto;
@@ -433,7 +453,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin: 0 0 1rem;
+  margin: 0 0 0.875rem;
   padding: 0.35rem 0.85rem 0.35rem 0.55rem;
   border-radius: 9999px;
   border: 1px solid var(--dn-primary-soft-border);
@@ -474,7 +494,7 @@
 }
 
 .dn-page-hero__lead {
-  margin: 0.85rem auto 0;
+  margin: 0.75rem auto 0;
   max-width: 34rem;
   font-size: 1rem;
   line-height: 1.65;
@@ -491,5 +511,20 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .dn-page-hero__actions:not(:empty) {
+    gap: 0.875rem;
+    margin-top: 1.75rem;
+  }
+}
+
+/* Normalize hero CTAs to design-system pill sizes */
+.dn-page-hero__actions .btn-primary,
+.dn-page-hero__actions .btn-secondary {
+  min-height: 2.75rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
 }
