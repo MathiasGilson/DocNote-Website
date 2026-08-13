@@ -25,9 +25,9 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
     recipe: 'pathway',
     image: '/images/CHUV.webp',
     imageAlt: {
-      en: 'Hospital corridor and clinical setting',
-      fr: 'Couloir d’hôpital et environnement clinique',
-      de: 'Krankenhausflur und klinisches Umfeld',
+      en: 'Modern university hospital campus with terrace gardens',
+      fr: 'Campus d’hôpital universitaire moderne avec jardins en terrasse',
+      de: 'Moderner Universitätsklinik-Campus mit Terrassengärten',
     },
     mediaCaption: {
       en: 'Theatre → ward → coded discharge — one continuous pathway.',
@@ -37,11 +37,11 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
   },
   'medical-surgical': {
     recipe: 'split-duo',
-    image: '/images/visite-medicale.jpg',
+    image: '/images/University of Pennsylvania.avif',
     imageAlt: {
-      en: 'Clinician with patient during a consultation',
-      fr: 'Médecin avec un patient en consultation',
-      de: 'Arzt und Patient während einer Konsultation',
+      en: 'Historic academic medical campus buildings in autumn',
+      fr: 'Bâtiments historiques d’un campus médical universitaire en automne',
+      de: 'Historischer akademischer Medizin-Campus im Herbst',
     },
     mediaCaption: {
       en: 'Outpatient volume first — operative report ready when scheduled.',
@@ -52,11 +52,11 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
   },
   medical: {
     recipe: 'vocab',
-    image: '/images/visite-medicale.jpg',
+    image: '/images/remise-prix-lumiere-2023.jpg',
     imageAlt: {
-      en: 'Medical consultation in practice',
-      fr: 'Consultation médicale en cabinet',
-      de: 'Ärztliche Konsultation in der Praxis',
+      en: 'Clinicians at a general internal medicine award ceremony',
+      fr: 'Cliniciens lors d’une cérémonie de prix en médecine interne générale',
+      de: 'Ärztinnen und Ärzte bei einer Preisverleihung der Allgemeinen Inneren Medizin',
     },
     mediaCaption: {
       en: 'Specialty vocabulary in the report, letter, and follow-up — not a generic note.',
@@ -68,9 +68,9 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
     recipe: 'pace',
     image: '/images/visite-medicale.jpg',
     imageAlt: {
-      en: 'Clinician with patient during a practice visit',
-      fr: 'Clinicien avec un patient en consultation de cabinet',
-      de: 'Behandelnde Person mit Patientin in der Praxis',
+      en: 'Clinician reviewing a bedside monitor with a patient',
+      fr: 'Clinicien examinant un moniteur au lit avec un patient',
+      de: 'Behandelnde Person zeigt einer Patientin einen Monitor am Bett',
     },
     mediaCaption: {
       en: 'Finished before the next patient — concise note, certificate, letter.',
@@ -81,11 +81,11 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
   },
   'acute-care': {
     recipe: 'unit',
-    image: '/images/CHUV.webp',
+    image: '/images/Chinese nurses.jpg',
     imageAlt: {
-      en: 'Hospital unit environment',
-      fr: 'Environnement d’unité hospitalière',
-      de: 'Krankenhausstation',
+      en: 'Nursing team reviewing a chart together on the unit',
+      fr: 'Équipe infirmière consultant ensemble un dossier dans l’unité',
+      de: 'Pflegeteam bespricht gemeinsam eine Akte auf der Station',
     },
     mediaCaption: {
       en: 'Unit handoffs, triage, and ICU notes — documents that match how the floor runs.',
@@ -112,9 +112,9 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
     recipe: 'pricing',
     image: '/images/CHU Bordeaux.jpg',
     imageAlt: {
-      en: 'Hospital and practice campus exterior',
-      fr: 'Campus hospitalier et de cabinet — vue extérieure',
-      de: 'Krankenhaus- und Praxiscampus von außen',
+      en: 'Hospital campus exterior with clinical buildings',
+      fr: 'Extérieur d’un campus hospitalier avec bâtiments cliniques',
+      de: 'Krankenhauscampus von außen mit Klinikgebäuden',
     },
     mediaCaption: {
       en: 'Named for the job — including dental act pricing where it matters.',
