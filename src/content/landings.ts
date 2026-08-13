@@ -390,6 +390,11 @@ export const landingZigZagSlugs = new Set<LandingSlug>([
   'ai-scribe-general-practice',
   'ai-scribe-psychiatry',
   'ai-scribe-pediatrics',
+  'ai-scribe-surgery',
+  'ai-scribe-cardiology',
+  'ai-scribe-neurology',
+  'ai-scribe-dermatology',
+  'ai-scribe-emergency-medicine',
 ])
 
 export const landingFeatureKeys: Record<LandingSlug, LandingFeatureKey[]> = {
