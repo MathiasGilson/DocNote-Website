@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCategoryList from '../ui/BlogCategoryList.astro';
+import PageHero from '../ui/PageHero.astro';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getEntry, getCollection } from 'astro:content';
+import { buildBreadcrumbLd, getPageMeta, absoluteLocalizedUrl } from '../../utils/seo';
+import { CATEGORY_META, FALLBACK_META, type BlogCategory } from '../../utils/blogCategories';
+import { isCanonicalBlogPostId } from '../../utils/blog-translations';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props as Props;
+
+const entry = await getEntry('pages', locale);
+const enEntry = locale === 'en' ? entry : await getEntry('pages', 'en');
+const t = entry!.data;
+const meta = getPageMeta('blog', locale);
+const viewAllArticles =
+  (t.blog as { viewAllArticles?: string }).viewAllArticles?.trim() ||
+  (enEntry!.data.blog as { viewAllArticles?: string }).viewAllArticles ||
+  'All articles';
+const allArticlesHref = getLocalizedPath('/blog/all/1', locale);
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteLocalizedUrl('/', locale) },
+  { name: meta.title, url: absoluteLocalizedUrl('/blog/', locale) },
+]);
+
+const allPosts = await getCollection(
+  'blog',
+  ({ id }) => id.startsWith(`${locale}/`) && isCanonicalBlogPostId(id)
+);
+const posts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const postCards = posts.map((post) => {
+  const slug = post.id.replace(`${locale}/`, '').replace(/\.mdx?$/, '');
+  const cat = post.data.category as BlogCategory;
+  const metaStyle = CATEGORY_META[cat] ?? FALLBACK_META;
+  return {
+    href: getLocalizedPath(`/blog/${slug}`, locale),
+    title: post.data.title,
+    excerpt: post.data.excerpt,
+    image: post.data.image,
+    imagePosition: post.data.imagePosition,
+    date: post.data.date,
+    category: post.data.category,
+    categoryLabel:
+      t.blog.categories[post.data.category as keyof typeof t.blog.categories] ??
+      post.data.category,
+    categoryClass: metaStyle.badge,
+  };
+});
+---
+
+<Layout title={meta.title} description={meta.description} jsonLd={breadcrumbLd}>
+  <PageHero
+    eyebrow="DocNote"
+    title={meta.title}
+    subtitle={t.blog.subtitle || meta.description}
+    compact
+  />
+
+  <div class="bg-white pb-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+      <a href={allArticlesHref} class="btn-primary inline-flex items-center gap-2 font-semibold">
+        {viewAllArticles}
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path
+            d="M2.625 7H11.375M11.375 7L7.875 3.5M11.375 7L7.875 10.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <BlogCategoryList
+    posts={postCards}
+    locale={locale}
+    readMore={t.blog.readMore}
+    articlesLabel={t.blog.articles ?? 'Articles'}
+    prevLabel={t.blog.prev ?? 'Previous'}
+    nextLabel={t.blog.next ?? 'Next'}
+  />
+</Layout>

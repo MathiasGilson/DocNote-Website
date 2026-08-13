@@ -1,0 +1,318 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FaqAccordion from '../FaqAccordion.astro';
+import PageHero from '../ui/PageHero.astro';
+import { type Locale, getLocalizedPath } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+import { buildBreadcrumbLd, getPageMeta, absoluteLocalizedUrl } from '../../utils/seo';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry('pages', locale);
+const enEntry = locale === 'en' ? entry : await getEntry('pages', 'en');
+const t = entry!.data;
+const enPricing = enEntry!.data.pricing;
+const meta = getPageMeta('pricing', locale);
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteLocalizedUrl('/', locale) },
+  { name: meta.title, url: absoluteLocalizedUrl('/pricing/', locale) },
+]);
+
+type CompareCell = 'yes' | 'no' | 'custom';
+type CompareBlock = {
+  title: string;
+  subtitle?: string;
+  feature: string;
+  pro: string;
+  enterprise: string;
+  yes: string;
+  no: string;
+  custom: string;
+  rows: { label: string; pro: CompareCell; enterprise: CompareCell }[];
+};
+
+const compare = (t.pricing.compare ?? enPricing.compare) as CompareBlock;
+
+const faqSource = { ...enPricing.faq, ...t.pricing.faq };
+const pricingFaqItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  .map((n) => {
+    const q = faqSource[`q${n}` as keyof typeof faqSource];
+    const a = faqSource[`a${n}` as keyof typeof faqSource];
+    if (!q || !a) return null;
+    return { q: String(q), a: String(a) };
+  })
+  .filter(Boolean) as { q: string; a: string }[];
+
+const cellLabel = (value: CompareCell) => {
+  if (value === 'yes') return compare.yes;
+  if (value === 'custom') return compare.custom;
+  return compare.no;
+};
+---
+
+<Layout title={meta.title} description={meta.description} jsonLd={breadcrumbLd}>
+  <PageHero eyebrow="DocNote" title={t.pricing.title} subtitle={t.pricing.subtitle} compact />
+
+  <section class="pb-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center mb-12 reveal">
+        <div class="relative inline-flex items-center border border-gray-200 rounded-full p-1 bg-gray-50" id="toggle-wrapper">
+          <div class="absolute top-1 bottom-1 rounded-full bg-white shadow-sm border border-gray-200 transition-all duration-300 ease-out" id="toggle-bg"></div>
+          <button class="relative z-10 px-6 py-2.5 text-sm font-medium rounded-full transition-colors duration-300 text-gray-400" id="monthly-btn">
+            {t.pricing.monthly}
+          </button>
+          <button class="relative z-10 px-6 py-2.5 text-sm font-medium rounded-full transition-colors duration-300 text-gray-900 flex items-center gap-2" id="yearly-btn">
+            {t.pricing.yearly}
+            <span class="text-[10px] font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full leading-none">{t.pricing.save}</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
+        <div class="pricing-card-gradient-border p-8 sm:p-10 flex flex-col relative shadow-xl reveal">
+          <div class="chip-primary absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 text-sm font-medium">
+            {t.pricing.professional.popular}
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
+          <p class="text-gray-600 mb-8 text-base leading-relaxed">{t.pricing.professional.description}</p>
+          <div class="mb-8">
+            <span
+              class="text-5xl font-bold text-gray-900 tracking-tight"
+              id="pro-price"
+              data-monthly-usd={t.pricing.professional.monthlyPrice}
+              data-yearly-usd={t.pricing.professional.price}
+              data-monthly-chf="109"
+              data-yearly-chf="99"
+              data-monthly-eur="89"
+              data-yearly-eur="79"
+              data-monthly-fr="79"
+              data-yearly-fr="69"
+            >{t.pricing.professional.price}</span>
+            <span class="text-gray-500 text-lg">{t.pricing.perMonth}</span>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            {t.pricing.professional.features.map((feature: string) => (
+              <li class="flex items-start gap-3 text-gray-700 text-base">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f"
+            id="subscription-btn"
+            data-yearly-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f"
+            data-monthly-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e"
+            data-yearly-chf-url="https://buy.stripe.com/bJe8wQchhdZe1sA8JK8g00m"
+            data-monthly-chf-url="https://buy.stripe.com/7sYdRa3KL4oE6MU6BC8g00n"
+            data-yearly-eur-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f"
+            data-monthly-eur-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e"
+            data-yearly-fr-url="https://buy.stripe.com/7sY8wQbdd8EUc7e6BC8g00o"
+            data-monthly-fr-url="https://buy.stripe.com/fZu28sa99dZe0ow9NO8g00g"
+            class="btn-primary w-full text-center text-base py-3.5"
+          >
+            {t.pricing.getStarted}
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200 hover:border-primary-300 transition-colors flex flex-col shadow-sm reveal reveal-delay-1">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">{t.pricing.enterprise.name}</h3>
+          <p class="text-gray-600 mb-8 text-base leading-relaxed">{t.pricing.enterprise.description}</p>
+          <div class="mb-8">
+            <span class="text-5xl font-bold text-gray-900 tracking-tight">{t.pricing.enterprise.price}</span>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            {t.pricing.enterprise.features.map((feature: string) => (
+              <li class="flex items-start gap-3 text-gray-700 text-base">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href={getLocalizedPath('/contact/', locale)} class="btn-secondary w-full text-center border-primary-600 text-base py-3.5">
+            {t.pricing.enterprise.contact}
+          </a>
+        </div>
+      </div>
+
+      {
+        compare && (
+          <div class="mt-20 sm:mt-24 reveal">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">{compare.title}</h2>
+              {compare.subtitle && (
+                <p class="mt-3 text-lg text-gray-600 leading-relaxed">{compare.subtitle}</p>
+              )}
+            </div>
+
+            <div class="pricing-compare overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <table class="w-full min-w-[720px] text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-200 bg-slate-50/80">
+                    <th scope="col" class="px-5 sm:px-6 py-4 text-sm font-semibold text-slate-500 w-[42%]">
+                      {compare.feature}
+                    </th>
+                    <th scope="col" class="px-5 sm:px-6 py-4 text-sm font-semibold text-slate-900 text-center">
+                      {compare.pro}
+                    </th>
+                    <th scope="col" class="px-5 sm:px-6 py-4 text-sm font-semibold text-slate-900 text-center">
+                      {compare.enterprise}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {compare.rows.map((row) => (
+                    <tr class="border-b border-slate-100 last:border-0">
+                      <th scope="row" class="px-5 sm:px-6 py-4 text-sm sm:text-base font-medium text-slate-800">
+                        {row.label}
+                      </th>
+                      <td class="px-5 sm:px-6 py-4 text-center" data-cell={row.pro}>
+                        <span class:list={['pricing-cell', `pricing-cell--${row.pro}`]}>
+                          {row.pro === 'yes' ? (
+                            <svg class="w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M5 13l4 4L19 7" />
+                            </svg>
+                          ) : null}
+                          <span class={row.pro === 'yes' ? 'sr-only' : ''}>{cellLabel(row.pro)}</span>
+                        </span>
+                      </td>
+                      <td class="px-5 sm:px-6 py-4 text-center" data-cell={row.enterprise}>
+                        <span class:list={['pricing-cell', `pricing-cell--${row.enterprise}`]}>
+                          {row.enterprise === 'yes' ? (
+                            <svg class="w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M5 13l4 4L19 7" />
+                            </svg>
+                          ) : null}
+                          <span class={row.enterprise === 'yes' ? 'sr-only' : ''}>{cellLabel(row.enterprise)}</span>
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )
+      }
+
+      <div class="mt-20 sm:mt-24 max-w-3xl mx-auto reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center tracking-tight">{t.pricing.faq.title}</h2>
+        <FaqAccordion items={pricingFaqItems} />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .pricing-compare table tbody tr:nth-child(even) {
+    background: rgba(248, 250, 252, 0.7);
+  }
+
+  .pricing-cell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .pricing-cell--yes {
+    color: #16a34a;
+  }
+
+  .pricing-cell--no {
+    color: #94a3b8;
+    font-weight: 500;
+  }
+
+  .pricing-cell--custom {
+    color: var(--dn-primary-ink);
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.18);
+    font-size: 0.8rem;
+  }
+</style>
+
+<script>
+  import { detectUserCurrency, detectUserCountry, formatPrice, type Currency } from '../../utils/currency';
+
+  const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
+  const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
+  const toggleBg = document.getElementById('toggle-bg') as HTMLElement;
+  const proPrice = document.getElementById('pro-price');
+  const subscriptionBtn = document.getElementById('subscription-btn') as HTMLAnchorElement;
+
+  let currentCurrency: Currency = 'USD';
+  let yearlyPriceValue = parseInt(proPrice?.dataset.yearlyUsd || '79');
+  let monthlyPriceValue = parseInt(proPrice?.dataset.monthlyUsd || '89');
+  let yearlyPrice = '';
+  let monthlyPrice = '';
+  let yearlyUrl = subscriptionBtn?.dataset.yearlyUrl || '';
+  let monthlyUrl = subscriptionBtn?.dataset.monthlyUrl || '';
+
+  async function initializePricing() {
+    currentCurrency = await detectUserCurrency();
+    const country = await detectUserCountry();
+
+    if (country === 'FR') {
+      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyFr || '69');
+      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyFr || '79');
+      yearlyUrl = subscriptionBtn?.dataset.yearlyFrUrl || yearlyUrl;
+      monthlyUrl = subscriptionBtn?.dataset.monthlyFrUrl || monthlyUrl;
+    } else if (currentCurrency === 'CHF') {
+      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyChf || '99');
+      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyChf || '109');
+      yearlyUrl = subscriptionBtn?.dataset.yearlyChfUrl || yearlyUrl;
+      monthlyUrl = subscriptionBtn?.dataset.monthlyChfUrl || monthlyUrl;
+    } else if (currentCurrency === 'EUR') {
+      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyEur || '79');
+      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyEur || '89');
+      yearlyUrl = subscriptionBtn?.dataset.yearlyEurUrl || yearlyUrl;
+      monthlyUrl = subscriptionBtn?.dataset.monthlyEurUrl || monthlyUrl;
+    }
+
+    yearlyPrice = formatPrice(yearlyPriceValue, currentCurrency);
+    monthlyPrice = formatPrice(monthlyPriceValue, currentCurrency);
+
+    if (proPrice) proPrice.textContent = yearlyPrice;
+    if (subscriptionBtn) subscriptionBtn.href = yearlyUrl;
+  }
+
+  const moveBgTo = (btn: HTMLElement) => {
+    toggleBg.style.left = `${btn.offsetLeft}px`;
+    toggleBg.style.width = `${btn.offsetWidth}px`;
+  };
+
+  const selectYearly = () => {
+    moveBgTo(yearlyBtn);
+    yearlyBtn.classList.replace('text-gray-400', 'text-gray-900');
+    monthlyBtn.classList.replace('text-gray-900', 'text-gray-400');
+    if (proPrice) proPrice.textContent = yearlyPrice;
+    if (subscriptionBtn) subscriptionBtn.href = yearlyUrl;
+  };
+
+  const selectMonthly = () => {
+    moveBgTo(monthlyBtn);
+    monthlyBtn.classList.replace('text-gray-400', 'text-gray-900');
+    yearlyBtn.classList.replace('text-gray-900', 'text-gray-400');
+    if (proPrice) proPrice.textContent = monthlyPrice;
+    if (subscriptionBtn) subscriptionBtn.href = monthlyUrl;
+  };
+
+  moveBgTo(yearlyBtn);
+  yearlyBtn.addEventListener('click', selectYearly);
+  monthlyBtn.addEventListener('click', selectMonthly);
+
+  initializePricing();
+</script>

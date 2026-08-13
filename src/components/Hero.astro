@@ -13,31 +13,30 @@ const stats = [
     {
         label: t.stats.timeSaved,
         target: 2,
-        startFrom: 0,
-        duration: 900,
+        duration: 1100,
         suffix: t.stats.timeSavedSuffix,
-        easing: "linear",
         desc: t.stats.timeSavedDesc,
     },
     {
         label: t.stats.accuracy,
         target: 99,
-        startFrom: 0,
-        duration: 1200,
+        duration: 1400,
         suffix: "%",
-        easing: "expo",
         desc: t.stats.accuracyDesc,
     },
     {
         label: t.stats.doctors,
         target: 1000,
-        startFrom: 0,
-        duration: 1600,
+        duration: 1700,
         suffix: "+",
-        easing: "expo",
         desc: t.stats.doctorsDesc,
     },
 ]
+
+const badgeParts = String(t.hero.badge || "")
+    .split(/\s*[·•|]\s*/)
+    .map((part) => part.trim())
+    .filter(Boolean)
 ---
 
 <section class="hero-section relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
@@ -56,9 +55,45 @@ const stats = [
             class="w-full h-full object-cover scale-105"
         />
         <div class="absolute inset-0 hero-veil"></div>
+        <div class="hero-atmosphere dn-bg-grid" aria-hidden="true"></div>
     </div>
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="hero-eyebrow mb-5">{t.hero.badge}</p>
+        <div class="hero-eyebrow mb-5" role="group" aria-label={t.hero.badge}>
+            {
+                badgeParts.length >= 2 ? (
+                    <>
+                        <span class="hero-eyebrow-chip">
+                            <span class="hero-eyebrow-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 20.1a7.5 7.5 0 0115 0" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18.5 11.5v2.25m0 0v2.25m0-2.25h2.25m-2.25 0h-2.25" />
+                                </svg>
+                            </span>
+                            <span>{badgeParts[0]}</span>
+                        </span>
+                        <span class="hero-eyebrow-divider" aria-hidden="true"></span>
+                        <span class="hero-eyebrow-chip">
+                            <span class="hero-eyebrow-flag" aria-hidden="true">
+                                <img src="/images/flags/ch.svg" alt="Switzerland" width="14" height="14" />
+                            </span>
+                            <span>{badgeParts[1]}</span>
+                        </span>
+                    </>
+                ) : (
+                    <span class="hero-eyebrow-chip">
+                        <span class="hero-eyebrow-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 20.1a7.5 7.5 0 0115 0" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18.5 11.5v2.25m0 0v2.25m0-2.25h2.25m-2.25 0h-2.25" />
+                            </svg>
+                        </span>
+                        <span>{t.hero.badge}</span>
+                    </span>
+                )
+            }
+        </div>
 
         <h1 class="hero-title text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.12] mb-5 tracking-tight">
             <span class="font-bold text-gray-900">{t.hero.title}</span>
@@ -80,7 +115,7 @@ const stats = [
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <a
                     href={getLocalizedPath("/tutorial", locale)}
-                    class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-white bg-[#7951fb] hover:bg-[#5b3fd4] rounded-lg transition-colors shadow-lg shadow-violet-500/25"
+                    class="btn-primary"
                 >
                     {t.hero.cta}
                 </a>
@@ -88,24 +123,24 @@ const stats = [
                     href={DEMO_BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-[#5b3fd4] bg-white/80 border border-[#7951fb]/40 hover:border-[#7951fb] hover:bg-white rounded-lg transition-colors"
+                    class="btn-secondary"
                 >
                     {t.contact.bookDemo}
                 </a>
             </div>
             <a
                 href={getLocalizedPath("/contact", locale)}
-                class="hero-enterprise-link inline-flex items-center justify-center gap-1.5 text-base font-semibold text-[#5b3fd4] hover:text-[#4c35c4] transition-colors"
+                class="hero-enterprise-link inline-flex items-center justify-center gap-1.5 text-base font-semibold text-primary-700 hover:text-primary-800 transition-colors"
             >
                 {t.hero.ctaSecondary}
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.25"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
             </a>
         </div>
 
-        <div class="hero-founders inline-flex items-center gap-3 px-3 py-2 rounded-full bg-white/70 border border-violet-100 backdrop-blur-sm">
+        <div class="hero-founders inline-flex items-center gap-3 px-3 py-2 rounded-full bg-white/70 border border-primary-100 backdrop-blur-sm">
             <div class="flex -space-x-2">
                 <img src="/images/dr_vincent_tan_sm.jpg" alt="Dr. Vincent Tan" width="36" height="36" class="w-9 h-9 rounded-full object-cover border-2 border-white" decoding="async" />
-                <img src="/images/dre_alice_gilson_sm.jpg" alt="Dr. Alice Gilson" width="36" height="36" class="w-9 h-9 rounded-full object-cover border-2 border-white" decoding="async" />
+                <img src="/images/dre_alice_gilson_sm.jpg" alt="Dr. Alice Gilson" width="72" height="72" class="w-9 h-9 rounded-full object-cover border-2 border-white" decoding="async" />
             </div>
             <div class="text-left pr-1">
                 <p class="text-sm font-semibold text-gray-900 leading-tight">{t.hero.founders}</p>
@@ -118,7 +153,7 @@ const stats = [
         <div class="relative">
             <!-- Desktop web app mockup -->
             <div
-                class="hidden sm:block relative bg-white rounded-xl shadow-2xl shadow-violet-200/50 border border-violet-100/80 overflow-hidden"
+                class="hidden sm:block relative bg-white rounded-xl shadow-2xl shadow-primary-200/50 border border-primary-100/80 overflow-hidden"
             >
                 <div class="bg-gray-50 border-b border-gray-200 px-3 py-2 flex items-center gap-2">
                     <div class="flex gap-1.5">
@@ -138,7 +173,7 @@ const stats = [
                 <div class="flex min-h-[260px] sm:min-h-[420px]">
                     <div class="hidden sm:block w-36 bg-gray-50 border-r border-gray-200 p-3 flex-shrink-0">
                         <div class="flex items-center gap-1.5 mb-4">
-                            <img src="/images/logo.png" alt="DocNote" class="w-5 h-5" />
+                            <img src="/images/logo.png" alt="DocNote" class="w-5 h-5" width="20" height="20" />
                             <span class="text-[10px] font-semibold text-gray-900">DocNote</span>
                         </div>
                         <nav class="space-y-0.5">
@@ -452,7 +487,7 @@ const stats = [
                     <div class="px-4 pb-4 pt-1 flex-shrink-0">
                         <div
                             id="phone-mic-btn"
-                            class="w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-indigo-500/30 opacity-0"
+                            class="w-12 h-12 bg-brand-gradient-br rounded-full flex items-center justify-center mx-auto shadow-brand-glow-sm opacity-0"
                         >
                             <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 ><path
@@ -470,23 +505,25 @@ const stats = [
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-28">
-        <div class="hero-stats grid md:grid-cols-3 gap-px bg-violet-200/50 rounded-2xl overflow-hidden border border-violet-100/80 shadow-lg shadow-violet-500/10">
+        <div
+            class="hero-stats grid md:grid-cols-3 gap-px bg-primary-200/50 rounded-2xl overflow-hidden border border-primary-100/80 shadow-lg shadow-primary-500/10"
+            data-hero-stats
+        >
             {
                 stats.map((stat, index) => (
                     <div
                         class="stat-card bg-white/85 backdrop-blur-sm px-8 py-9 text-center"
                         data-target={stat.target}
-                        data-start-from={stat.startFrom}
-                        data-duration={stat.duration ?? 1400}
-                        data-easing={stat.easing}
+                        data-duration={stat.duration}
                         data-suffix={stat.suffix}
-                        data-delay={index * 140}
+                        data-delay={index * 160}
                     >
-                        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#5b3fd4] mb-3">{stat.label}</p>
+                        <p class="stat-label text-xs font-semibold uppercase tracking-[0.14em] text-primary-700 mb-3">{stat.label}</p>
                         <p class="stat-number text-5xl sm:text-[3.25rem] font-bold tracking-tight leading-none mb-2">
-                            <span class="stat-value text-gradient">0</span><span class="stat-suffix text-gradient">{stat.suffix}</span>
+                            <span class="stat-value text-gradient">0</span>
+                            <span class="stat-suffix text-gradient">{stat.suffix}</span>
                         </p>
-                        <p class="text-sm text-gray-500">{stat.desc}</p>
+                        <p class="stat-desc text-sm text-gray-500">{stat.desc}</p>
                     </div>
                 ))
             }
@@ -494,8 +531,8 @@ const stats = [
     </div>
 </section>
 
-<div id="video-modal" class="fixed inset-0 z-50 hidden">
-    <div id="modal-overlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+<div id="video-modal" class="fixed inset-0 z-50 hidden overscroll-contain">
+    <div id="modal-overlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overscroll-contain">
         <div id="modal-content" class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
             <button
                 id="close-modal-btn"
@@ -541,16 +578,105 @@ const stats = [
   .hero-veil {
     background:
       linear-gradient(180deg, rgba(247, 245, 252, 0.88) 0%, rgba(255, 255, 255, 0.82) 45%, rgba(247, 245, 252, 0.92) 100%),
-      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(121, 81, 251, 0.14), transparent 60%);
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(var(--dn-primary-rgb), 0.14), transparent 60%);
+  }
+
+  .hero-atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero-atmosphere.dn-bg-grid::before {
+    background-size: 36px 36px;
+    background-image:
+      linear-gradient(to right, rgba(15, 23, 42, 0.032) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.032) 1px, transparent 1px);
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.32) 35%,
+      rgba(0, 0, 0, 0.1) 65%,
+      transparent 92%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.32) 35%,
+      rgba(0, 0, 0, 0.1) 65%,
+      transparent 92%
+    );
   }
 
   .hero-eyebrow {
-    display: inline-block;
-    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: var(--dn-primary-ink);
+  }
+
+  .hero-eyebrow-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #5b3fd4;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .hero-eyebrow-icon,
+  .hero-eyebrow-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.55rem;
+    height: 1.55rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+
+  .hero-eyebrow-icon {
+    color: #fff;
+    background: var(--dn-gradient);
+    box-shadow: var(--dn-glow-sm);
+  }
+
+  .hero-eyebrow-icon svg {
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+
+  .hero-eyebrow-flag {
+    background: #fff;
+    border: 1px solid rgba(213, 43, 30, 0.18);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+
+  .hero-eyebrow-flag img {
+    width: 0.85rem;
+    height: 0.85rem;
+    display: block;
+    border-radius: 2px;
+  }
+
+  .hero-eyebrow-divider {
+    width: 1px;
+    height: 1.1rem;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(var(--dn-primary-mid-rgb), 0.35),
+      transparent
+    );
+    flex-shrink: 0;
   }
 
   .hero-title,
@@ -579,7 +705,7 @@ const stats = [
     right: 0;
     bottom: 0;
     height: 1.5px;
-    background: linear-gradient(90deg, #7951fb, #ab66ff);
+    background: var(--dn-gradient);
     transform: scaleX(0.35);
     transform-origin: left;
     transition: transform 0.25s ease;
@@ -591,10 +717,25 @@ const stats = [
     opacity: 1;
   }
 
+  .hero-stats {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hero-stats.is-ready {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
   .stat-card {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(22px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .stat-card.is-visible {
@@ -602,8 +743,70 @@ const stats = [
     transform: translateY(0);
   }
 
+  .stat-label,
+  .stat-desc {
+    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stat-card:not(.is-visible) .stat-label,
+  .stat-card:not(.is-visible) .stat-desc {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
   .stat-number {
     font-variant-numeric: tabular-nums;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.05em;
+  }
+
+  .stat-value {
+    display: inline-block;
+    transform: scale(0.88);
+    filter: blur(3px);
+    opacity: 0.55;
+    transition:
+      transform 0.55s cubic-bezier(0.34, 1.45, 0.64, 1),
+      filter 0.45s ease,
+      opacity 0.35s ease;
+  }
+
+  .stat-card.is-counting .stat-value {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  .stat-card.is-done .stat-value {
+    animation: stat-settle 0.55s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+  }
+
+  .stat-suffix {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.35em);
+    transition:
+      opacity 0.4s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stat-card.is-done .stat-suffix {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes stat-settle {
+    0% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   @keyframes hero-rise {
@@ -621,10 +824,16 @@ const stats = [
     .hero-title,
     .hero-founders,
     .hero-eyebrow,
-    .stat-card {
+    .hero-stats,
+    .stat-card,
+    .stat-value,
+    .stat-suffix,
+    .stat-label,
+    .stat-desc {
       animation: none;
       opacity: 1;
       transform: none;
+      filter: none;
       transition: none;
     }
 
@@ -840,49 +1049,88 @@ const stats = [
 
     animateSOAPNotes()
 
-    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3)
-    const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t))
-    const formatNum = (n: number) => (n >= 1000 ? Math.floor(n).toLocaleString() : String(Math.floor(n)))
+    const easeOutQuint = (t: number) => 1 - Math.pow(1 - t, 5)
+    const formatNum = (n: number) =>
+        n >= 1000 ? Math.floor(n).toLocaleString() : String(Math.floor(n))
+
+    const prefersReducedMotion = () =>
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
     const animateStat = (card: HTMLElement) => {
         const valueEl = card.querySelector(".stat-value") as HTMLElement | null
         if (!valueEl || card.dataset.animated === "1") return
-
         card.dataset.animated = "1"
+
         const target = Number(card.dataset.target)
-        const startFrom = Number(card.dataset.startFrom ?? 0)
         const duration = Number(card.dataset.duration ?? 1400)
         const delay = Number(card.dataset.delay ?? 0)
-        const easingFn = card.dataset.easing === "linear" ? easeOutCubic : easeOutExpo
+
+        if (prefersReducedMotion()) {
+            card.classList.add("is-visible", "is-counting", "is-done")
+            valueEl.textContent = formatNum(target)
+            return
+        }
 
         window.setTimeout(() => {
             card.classList.add("is-visible")
-            const start = performance.now()
+            window.setTimeout(() => card.classList.add("is-counting"), 40)
+
+            const scrambleMs = Math.min(320, duration * 0.22)
+            const countMs = duration - scrambleMs
+            const scrambleStart = performance.now()
+            let phase: "scramble" | "count" = "scramble"
+            let countStart = 0
 
             const tick = (now: number) => {
-                const progress = Math.min((now - start) / duration, 1)
-                const current = startFrom + (target - startFrom) * easingFn(progress)
-                valueEl.textContent = formatNum(current)
-                if (progress < 1) requestAnimationFrame(tick)
-                else valueEl.textContent = formatNum(target)
+                if (phase === "scramble") {
+                    const p = Math.min((now - scrambleStart) / scrambleMs, 1)
+                    const span = Math.max(target, 10)
+                    valueEl.textContent = formatNum(Math.floor(Math.random() * (span + 1)))
+                    if (p < 1) {
+                        requestAnimationFrame(tick)
+                        return
+                    }
+                    phase = "count"
+                    countStart = now
+                }
+
+                const progress = Math.min((now - countStart) / countMs, 1)
+                valueEl.textContent = formatNum(target * easeOutQuint(progress))
+
+                if (progress < 1) {
+                    requestAnimationFrame(tick)
+                    return
+                }
+
+                valueEl.textContent = formatNum(target)
+                card.classList.add("is-done")
             }
+
             requestAnimationFrame(tick)
         }, delay)
     }
 
+    const statsRoot = document.querySelector("[data-hero-stats]") as HTMLElement | null
     const statCards = Array.from(document.querySelectorAll(".stat-card")) as HTMLElement[]
-    if (statCards.length) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        animateStat(entry.target as HTMLElement)
-                        observer.unobserve(entry.target)
-                    }
-                })
-            },
-            { threshold: 0.35 }
-        )
-        statCards.forEach((card) => observer.observe(card))
+
+    if (statsRoot && statCards.length) {
+        const run = () => {
+            statsRoot.classList.add("is-ready")
+            statCards.forEach((card) => animateStat(card))
+        }
+
+        if (prefersReducedMotion()) {
+            run()
+        } else {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    if (!entries.some((e) => e.isIntersecting)) return
+                    run()
+                    observer.disconnect()
+                },
+                { threshold: 0.4 }
+            )
+            observer.observe(statsRoot)
+        }
     }
 </script>

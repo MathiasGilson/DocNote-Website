@@ -1,0 +1,209 @@
+---
+export interface FaqAccordionItem {
+    q: string
+    a: string
+    locationAware?: boolean
+    aCh?: string
+    aRow?: string
+}
+
+interface Props {
+    items: FaqAccordionItem[]
+    /** Slightly denser type for nested pages (e.g. patient) */
+    compact?: boolean
+}
+
+const { items, compact = false } = Astro.props
+const uid = `faq-${compact ? "c" : "d"}-${items.length}`
+---
+
+<div class="faq-accordion divide-y divide-gray-200 border-t border-gray-200" data-faq-accordion>
+    {
+        items.map((item, index) => {
+            const panelId = `${uid}-panel-${index}`
+            const btnId = `${uid}-btn-${index}`
+            return (
+                <div class="faq-item" data-faq-item>
+                    <button
+                        type="button"
+                        id={btnId}
+                        class:list={[
+                            "faq-toggle flex items-center justify-between w-full text-left group",
+                            compact ? "py-3.5" : "py-4",
+                        ]}
+                        aria-expanded="false"
+                        aria-controls={panelId}
+                    >
+                        <span
+                            class:list={[
+                                "font-medium text-gray-900 pr-4",
+                                compact ? "text-sm sm:text-base" : "text-base",
+                            ]}
+                        >
+                            {item.q}
+                        </span>
+                        <svg
+                            class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </button>
+                    <div
+                        id={panelId}
+                        class="faq-panel"
+                        role="region"
+                        aria-labelledby={btnId}
+                        hidden
+                    >
+                        <div class="faq-panel-inner">
+                            <div class:list={["faq-answer pr-8", compact ? "pb-3.5" : "pb-4"]}>
+                                {item.locationAware ? (
+                                    <p
+                                        class:list={[
+                                            "text-gray-500 leading-relaxed",
+                                            compact ? "text-sm" : "text-base",
+                                        ]}
+                                        data-faq-location-aware
+                                        data-answer-ch={item.aCh}
+                                        data-answer-row={item.aRow}
+                                    >
+                                        {item.a}
+                                    </p>
+                                ) : (
+                                    <p
+                                        class:list={[
+                                            "text-gray-500 leading-relaxed",
+                                            compact ? "text-sm" : "text-base",
+                                        ]}
+                                    >
+                                        {item.a}
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        })
+    }
+</div>
+
+<style>
+    .faq-chevron {
+        transition: transform 0.28s ease;
+    }
+
+    .faq-item.is-open .faq-chevron {
+        transform: rotate(180deg);
+    }
+
+    .faq-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        transition:
+            grid-template-rows 0.32s ease,
+            opacity 0.28s ease;
+    }
+
+    .faq-panel.is-open {
+        grid-template-rows: 1fr;
+        opacity: 1;
+    }
+
+    .faq-panel-inner {
+        overflow: hidden;
+        min-height: 0;
+    }
+
+    .faq-answer {
+        transition: transform 0.32s ease;
+        transform: translateY(-4px);
+    }
+
+    .faq-panel.is-open .faq-answer {
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .faq-chevron,
+        .faq-panel,
+        .faq-answer {
+            transition: none;
+        }
+
+        .faq-answer {
+            transform: none;
+        }
+    }
+</style>
+
+<script>
+    const initFaqAccordions = () => {
+        document.querySelectorAll<HTMLElement>("[data-faq-accordion]").forEach((root) => {
+            if (root.dataset.faqReady === "1") return
+            root.dataset.faqReady = "1"
+
+            const items = Array.from(root.querySelectorAll<HTMLElement>("[data-faq-item]"))
+
+            const reduceMotion = () =>
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+            const setOpen = (item: HTMLElement, open: boolean) => {
+                const btn = item.querySelector<HTMLButtonElement>(".faq-toggle")
+                const panel = item.querySelector<HTMLElement>(".faq-panel")
+                if (!btn || !panel) return
+
+                btn.setAttribute("aria-expanded", open ? "true" : "false")
+
+                if (open) {
+                    panel.hidden = false
+                    item.classList.add("is-open")
+                    if (reduceMotion()) {
+                        panel.classList.add("is-open")
+                    } else {
+                        requestAnimationFrame(() => {
+                            panel.classList.add("is-open")
+                        })
+                    }
+                } else {
+                    item.classList.remove("is-open")
+                    panel.classList.remove("is-open")
+                    if (reduceMotion()) {
+                        panel.hidden = true
+                    } else {
+                        const onEnd = (e: TransitionEvent) => {
+                            if (e.propertyName !== "grid-template-rows") return
+                            if (!panel.classList.contains("is-open")) panel.hidden = true
+                            panel.removeEventListener("transitionend", onEnd)
+                        }
+                        panel.addEventListener("transitionend", onEnd)
+                    }
+                }
+            }
+
+            items.forEach((item) => {
+                const btn = item.querySelector<HTMLButtonElement>(".faq-toggle")
+                btn?.addEventListener("click", () => {
+                    const willOpen = !item.classList.contains("is-open")
+                    items.forEach((other) => {
+                        if (other !== item) setOpen(other, false)
+                    })
+                    setOpen(item, willOpen)
+                })
+            })
+        })
+    }
+
+    initFaqAccordions()
+    document.addEventListener("astro:page-load", initFaqAccordions)
+</script>

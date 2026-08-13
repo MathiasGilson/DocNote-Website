@@ -1,0 +1,284 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../ui/PageHero.astro';
+import LpSettingCard from '../ui/LpSettingCard.astro';
+import FamilyMediaBand from '../family/FamilyMediaBand.astro';
+import FamilyLeadVariant from '../family/FamilyLeadVariant.astro';
+import '../../styles/landing-page.css';
+import '../../styles/family-landings.css';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getLandingNavLabel } from '../../content/landings';
+import {
+  getSpecialtyFamily,
+  getSpecialtyFamilyPath,
+  isSpecialtyFamilySlug,
+  specialtyFamilyMeta,
+  type SpecialtyFamilySlug,
+} from '../../content/specialty-families';
+import { getFamilyVisual } from '../../content/family-visuals';
+import { SPECIALTIES_HUB_PATH } from '../../content/hubs';
+import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
+
+interface Props {
+  locale: Locale;
+  family: string;
+}
+
+const { locale, family } = Astro.props;
+const lang = locale;
+
+if (!isSpecialtyFamilySlug(family)) {
+  return Astro.redirect(getLocalizedPath('/', lang));
+}
+
+const slug = family as SpecialtyFamilySlug;
+const p = getSpecialtyFamily(slug, lang);
+const meta = specialtyFamilyMeta[slug];
+const visual = getFamilyVisual(slug);
+
+const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
+const specialtiesCrumb =
+  lang === 'fr' ? 'Spécialités' : lang === 'de' ? 'Fachgebiete' : 'Specialties';
+
+const primaryHref = getLocalizedPath('/tutorial', lang);
+const secondaryUrl = /contact|contacter/i.test(p.cta.secondary)
+  ? getLocalizedPath('/contact', lang)
+  : getLocalizedPath('/pricing', lang);
+
+const familyPath = getSpecialtyFamilyPath(slug);
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+  { name: specialtiesCrumb, url: absoluteLocalizedUrl(SPECIALTIES_HUB_PATH, lang) },
+  { name: p.navLabel, url: absoluteLocalizedUrl(familyPath, lang) },
+]);
+
+const deepLinks = meta.deepLandings;
+const relatedLinks = meta.relatedLandings;
+
+const mediaBadge =
+  lang === 'fr' ? 'Sur le terrain' : lang === 'de' ? 'Im Alltag' : 'In the field';
+const mediaTitle = p.hero.subtitle;
+const mediaBody = p.hero.lead;
+
+const useMosaicSpecs = visual.recipe === 'vocab' || visual.recipe === 'pathway';
+const toolkitSoft = visual.recipe === 'unit' || visual.recipe === 'dictation';
+---
+
+<Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>
+  <div class="lp-crumb-bar pt-28 sm:pt-32">
+    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center justify-center gap-2">
+        <li>
+          <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li>
+          <a href={getLocalizedPath(SPECIALTIES_HUB_PATH, lang)} class="hover:text-gray-900 transition-colors">
+            {specialtiesCrumb}
+          </a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li class="text-gray-900 font-medium">{p.navLabel}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <PageHero
+    eyebrow={p.hero.badge}
+    title={p.hero.title}
+    subtitle={p.hero.subtitle}
+    lead={p.hero.lead}
+    compact
+  >
+    <a href={primaryHref} class="btn-primary">{p.cta.primary}</a>
+    <a href={secondaryUrl} class="btn-secondary">{p.cta.secondary}</a>
+  </PageHero>
+
+  <p class="lp-stats-line">{p.statsLine}</p>
+
+  <FamilyMediaBand
+    locale={lang}
+    visual={visual}
+    badge={mediaBadge}
+    title={mediaTitle}
+    body={mediaBody}
+  />
+
+  <!-- Toolkit -->
+  <section class:list={['relative py-14 sm:py-20', toolkitSoft ? 'lp-section-soft' : 'bg-white']}>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10 sm:mb-12 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.toolkit.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.toolkit.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.toolkit.subtitle}</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-5 sm:gap-6">
+        {p.toolkit.layers.map((layer, i) => (
+          <article
+            class:list={[
+              'lp-card reveal',
+              i === 0 && 'reveal-delay-1',
+              i === 1 && 'reveal-delay-2',
+              i === 2 && 'reveal-delay-3',
+            ]}
+          >
+            <span class="lp-card-num" aria-hidden="true">{layer.count}</span>
+            <h3 class="lp-card-title">{layer.title}</h3>
+            <p class="lp-card-text">{layer.body}</p>
+          </article>
+        ))}
+      </div>
+
+      <p class="mt-8 text-sm sm:text-base text-gray-600 leading-relaxed max-w-3xl reveal">
+        {p.toolkit.readyNote}
+      </p>
+    </div>
+  </section>
+
+  <FamilyLeadVariant
+    locale={lang}
+    recipe={visual.recipe}
+    badge={p.leadWith.badge}
+    title={p.leadWith.title}
+    items={p.leadWith.items}
+    specialtyNames={p.specialties.items}
+  />
+
+  {p.highlight && (
+    <section class="relative py-14 sm:py-20 lp-section-soft">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class:list={['lp-shell reveal', visual.recipe === 'pricing' && 'fm-highlight-pricing']}>
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {p.highlight.badge}
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.highlight.title}
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl">
+            {p.highlight.body}
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Specialty list -->
+  <section class:list={['relative py-14 sm:py-20', useMosaicSpecs ? 'lp-section-soft' : 'bg-white']}>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-8 sm:mb-10 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.specialties.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.specialties.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.specialties.subtitle}</p>
+      </div>
+
+      {useMosaicSpecs ? (
+        <ul class="fm-spec-mosaic">
+          {p.specialties.items.map((item, i) => (
+            <li
+              class:list={[
+                'fm-spec-tile reveal',
+                `reveal-delay-${(i % 4) + 1}`,
+              ]}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul class="lp-spec-list reveal">
+          {p.specialties.items.map((item) => (
+            <li class="lp-spec-chip">{item}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  {p.setting && (
+    <section class="relative py-14 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <LpSettingCard
+          badge={p.setting.badge}
+          title={p.setting.title}
+          body={p.setting.body}
+          variant={meta.setting}
+        />
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="relative py-14 sm:py-20 overflow-hidden lp-section-soft">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lp-cta-shell reveal">
+        <div class="max-w-xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.cta.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-600 leading-relaxed">{p.cta.body}</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href={primaryHref} class="btn-primary">{p.cta.primary}</a>
+            <a href={secondaryUrl} class="btn-secondary">{p.cta.secondary}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep + related -->
+  <section class="py-14 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      {deepLinks.length > 0 && (
+        <aside class="pt-10 border-t border-gray-200 reveal">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-4">
+            {p.deepLinksLabel}
+          </h2>
+          <ul class="flex flex-wrap gap-x-8 gap-y-2">
+            {deepLinks.map((s) => (
+              <li>
+                <a
+                  href={getLocalizedPath(`/${s}`, lang)}
+                  class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+                >
+                  {getLandingNavLabel(s, lang)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+
+      {relatedLinks.length > 0 && (
+        <aside class:list={[deepLinks.length === 0 && 'pt-10 border-t border-gray-200', 'reveal']}>
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-4">
+            {p.relatedLabel}
+          </h2>
+          <ul class="flex flex-wrap gap-x-8 gap-y-2">
+            {relatedLinks.map((s) => (
+              <li>
+                <a
+                  href={getLocalizedPath(`/${s}`, lang)}
+                  class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+                >
+                  {getLandingNavLabel(s, lang)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,2825 @@
+{
+  "ai-medical-scribe": {
+    "navLabel": "AI medische assistent",
+    "title": "AI medische scribe voor artsen",
+    "description": "DocNote is een AI medische scribe voor artsen en ziekenhuizen in Zwitserland en Europa. Verander consultaties in gestructureerde klinische notities in seconden. Gehost in Zwitserland, conform FADP/GDPR.",
+    "hero": {
+      "badge": "AI medische scribe",
+      "title": "AI medische scribe gebouwd voor echt klinisch werk",
+      "subtitle": "DocNote luistert tijdens het consult, maakt een conceptnotitie en laat u teruggaan naar de patiënt.",
+      "lead": "Artsen in Zwitserland en heel Europa gebruiken DocNote om gesproken ontmoetingen om te zetten in gestructureerde klinische documenten — consultnotities, ontslagbrieven, verpleegnotities en operatierapporten — in seconden, niet in avonden."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Eén assistent, elk document dat uw praktijk daadwerkelijk produceert",
+      "paragraphs": [
+        "De meeste ambient scribes zijn gebouwd rond een enkele Amerikaanse poliklinische SOAP-sjabloon. DocNote is anders: het is ontworpen in Zwitserland door een arts die 's avonds geen papierwerk meer wilde doen, dus het omvat de documenten die Europese clinici en ziekenhuizen dagelijks produceren.",
+        "Start een opname op mobiel of web tijdens het consult. Wanneer het bezoek eindigt, zet DocNote het gesprek om in een gestructureerd concept dat overeenkomt met het door u geselecteerde notitietype — consultnotitie, ontslagbrief, verpleegnotitie of operatierapport.",
+        "U leest het concept, corrigeert wat nodig is en valideert het. Alleen de versie die u goedkeurt, wordt onderdeel van het medisch dossier — dezelfde verantwoordelijkheid die u al draagt, maar met veel minder typwerk."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom clinici overstappen",
+      "title": "Minder typen, meer geneeskunde",
+      "subtitle": "DocNote is gebouwd rond de realiteit van een volledige klinische dag, niet een demo.",
+      "items": [
+        {
+          "title": "Gebouwd voor Zwitserse en Europese praktijk",
+          "body": "Meertalige consultaties, Zwitserse datahosting en documentatiegewoonten die aansluiten bij hoe Europese clinici daadwerkelijk schrijven — geen Amerikaans poliklinisch sjabloon dat voor export is aangepast."
+        },
+        {
+          "title": "Dekt ook ziekenhuisdocumenten",
+          "body": "Consultnotities zijn slechts een deel van het werk. DocNote maakt ook concepten van ontslagbrieven, verpleegnotities en operatierapporten, zodat diensten geen tweede leverancier nodig hebben voor klinisch werk."
+        },
+        {
+          "title": "U blijft de auteur",
+          "body": "Elk concept is een startpunt. U bewerkt, corrigeert klinische details en valideert voordat iets het dossier bereikt — DocNote schrijft nooit onbegeleid naar de EHR."
+        },
+        {
+          "title": "Past bij uw bestaande stack",
+          "body": "Stuur gevalideerde notities naar Mediway of SOKLE waar geconfigureerd, of exporteer naar een Word-sjabloon die overeenkomt met uw briefhoofd en sectievolgorde."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van consult naar gevalideerde notitie",
+      "subtitle": "Vier stappen, het meeste werk gebeurt terwijl u met de patiënt praat.",
+      "items": [
+        {
+          "title": "Start de opname",
+          "body": "Open DocNote op mobiel of web en begin met het vastleggen van het consult met toestemming van de patiënt."
+        },
+        {
+          "title": "Voltooi de ontmoeting",
+          "body": "Praat, onderzoek en beslis zoals gewoonlijk. DocNote luistert op de achtergrond; u blijft gefocust op de persoon voor u."
+        },
+        {
+          "title": "Bekijk het concept",
+          "body": "Binnen seconden na het beëindigen van de opname is een gestructureerde notitie klaar — georganiseerd door het door u geselecteerde documenttype."
+        },
+        {
+          "title": "Bewerk en valideer",
+          "body": "Corrigeer wat nodig is, keur dan goed. Het gevalideerde document komt in uw dossier — nooit het ruwe concept."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Gebouwd om vertrouwd te worden",
+      "title": "Beveiliging die een ziekenhuisreview overleeft",
+      "intro": "Kopers adopteren klinische AI niet alleen op basis van functies. DocNote is zo ontworpen dat hosting, retentie en medische geheimhouding vanaf dag één deel uitmaken van het product.",
+      "points": [
+        {
+          "title": "Zwitserse datahosting",
+          "body": "Gezondheidsgegevens worden gehost in Zwitserland en verwerkt volgens medische geheimhoudingsverwachtingen — niet doorgestuurd via een standaard Amerikaanse cloudregio."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio gebruikt om een document te produceren wordt automatisch verwijderd binnen een kort venster na verwerking. Het blijvende record is de notitie die u valideert."
+        },
+        {
+          "title": "Nooit gebruikt om AI te trainen",
+          "body": "Uw consulten worden alleen gebruikt om uw documenten te produceren. Ze worden nooit gebruikt om basismodellen te trainen."
+        },
+        {
+          "title": "FADP, GDPR en HIPAA conform",
+          "body": "DocNote is gebouwd om te voldoen aan de FADP/nFADP, GDPR en HIPAA-verwachtingen die naar voren komen in ziekenhuisbeveiligingsvragenlijsten."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Wat te evalueren in een AI medische scribe",
+        "body": "Woordfoutenpercentage is niet het hele verhaal. Kijk of het tool klinische structuur en specialismetaal begrijpt, of het de documenttypen dekt die uw dienst daadwerkelijk produceert, en of hosting en retentie voldoen aan uw compliance-eisen voordat u iets ondertekent."
+      },
+      {
+        "heading": "DocNote uitrollen over een praktijk of dienst",
+        "body": "De meeste teams beginnen met één clinicus of één dienstlijn, passen sjablonen aan om lokale vocabulaire en briefhoofden te matchen, en breiden uit zodra de workflow is gevalideerd. De review-en-goedkeurstap verandert nooit, ongeacht hoeveel clinici meedoen."
+      },
+      {
+        "heading": "AI medische scribe vs. traditioneel dicteren",
+        "body": "Dicteren vereist nog steeds een transcripteur of een aparte typbeurt na het bezoek. Een AI medische scribe combineert dit tot één stap: het gestructureerde concept is klaar tegen de tijd dat u klaar bent met de ontmoeting, en u bewerkt direct in plaats van te wachten op een transcript."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Wat is een AI medische scribe?",
+        "a": "Een AI medische scribe luistert naar of verwerkt een klinische ontmoeting en maakt een gestructureerde notitie voor de clinicus om te reviewen en valideren voordat het in het medisch dossier komt."
+      },
+      {
+        "q": "Schrijft DocNote automatisch in de EHR?",
+        "a": "Nee. Artsen blijven verantwoordelijk voor het reviewen en goedkeuren van elk document."
+      },
+      {
+        "q": "Waar worden gezondheidsgegevens gehost?",
+        "a": "DocNote is ontworpen voor Zwitserse hosting onder medische geheimhouding en Europese gegevensbeschermingsverwachtingen."
+      },
+      {
+        "q": "Wordt bezoeksdata gebruikt om AI-modellen te trainen?",
+        "a": "Nee. Bezoeken worden alleen gebruikt om uw documenten te produceren, niet om basismodellen te trainen."
+      },
+      {
+        "q": "Welke documenttypen ondersteunt DocNote?",
+        "a": "Consultnotities, ontslagbrieven, verpleegnotities, operatierapporten en specialismesjablonen — de scribe past zich aan aan het door u geselecteerde notitietype."
+      },
+      {
+        "q": "Hoe lang duurt het om een concept te krijgen?",
+        "a": "De meeste concepten zijn binnen seconden na het beëindigen van de opname klaar, afhankelijk van de duur van de ontmoeting."
+      }
+    ],
+    "cta": {
+      "title": "Zie DocNote in uw eigen consulten",
+      "body": "Start een gratis proefperiode of praat met ons team over het uitrollen van DocNote over uw praktijk of ziekenhuisdienst.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Luistert tijdens het consult, maakt de notitie."
+  },
+  "hospital-documentation": {
+    "navLabel": "Ziekenhuisdocumentatie",
+    "title": "Ziekenhuisdocumentatie met AI",
+    "description": "Ziekenhuisdocumentatie AI voor ontslagbrieven, operatierapporten, verpleegnotities en dagziekenhuisdossiers. DocNote helpt zorgteams sneller te documenteren zonder Zwitserse hosting of medische geheimhouding te verlaten.",
+    "hero": {
+      "badge": "Ziekenhuisdocumentatie",
+      "title": "Ziekenhuisdocumentatie zonder de avondachterstand",
+      "subtitle": "Ontslagbrieven, operatierapporten en verpleegnotities — opgesteld vanuit de ontmoeting, gevalideerd door de arts.",
+      "lead": "Ziekenhuiswerk is niet één poliklinische SOAP-notitie. DocNote ondersteunt de documenten die daadwerkelijk een avond van een clinicus vullen over afdelingen, operatiekamers en dagziekenhuisdiensten, terwijl hosting binnen Zwitserland blijft."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Gebouwd voor afdelingen, niet alleen poliklinieken",
+      "paragraphs": [
+        "Een ziekenhuisdag produceert meer dan consultnotities: ontslagbrieven aan het einde van een opname, operatierapporten na de operatiekamer, verpleegnotities elke ochtend en gedeelde dagziekenhuisdossiers die door meerdere zorgverleners worden aangeraakt. DocNote behandelt al deze als eersteklas documenttypen, niet als een bijzaak gekoppeld aan een poliklinisch tool.",
+        "Leg de ontmoeting, verpleegronde of operatienabespreking vast en laat DocNote een concept opstellen naar de structuur die uw dienst al gebruikt — diagnoses, verloop, behandeling, follow-up, in de volgorde die uw instelling verwacht.",
+        "De behandelend arts beoordeelt het concept, corrigeert klinische details en valideert het voordat het onderdeel wordt van het dossier. Aangepaste Word-sjablonen behouden uw briefhoofd, handtekeningblok en sectievolgorde zodat de output lijkt alsof het altijd intern is geschreven."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom ziekenhuizen het adopteren",
+      "title": "Documenten die aansluiten bij hoe uw dienst daadwerkelijk werkt",
+      "subtitle": "Geen demo gebouwd rond één poliklinisch bezoek.",
+      "items": [
+        {
+          "title": "Ontslagbrieven die het volledige verloop dragen",
+          "body": "Diagnoses, behandeling, complicaties en follow-up landen in de structuur die uw instelling verwacht, zodat de behandelend arts klinische waarheid bewerkt in plaats van opmaak."
+        },
+        {
+          "title": "Operatierapporten met chirurgische structuur",
+          "body": "Indicatie, bevindingen, procedurestappen en postoperatief plan volgen een duidelijke volgorde, zodat concepten lezen als een operatierapport in plaats van een transcript geplakt in een brief."
+        },
+        {
+          "title": "Gedeelde dagziekenhuisdossiers",
+          "body": "Wanneer meerdere professionals dezelfde patiënt in volgorde zien, ondersteunt DocNote één coherent dossier in plaats van gefragmenteerde, losse notities."
+        },
+        {
+          "title": "Institutionele sjablonen, geen generieke",
+          "body": "Aangepaste Word-sjablonen behouden uw sectievolgorde, briefhoofd en handtekeningblok zodat uitrollen geen nieuwe huisstijl aan uw dienst opleggen."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van afdeling of operatiekamer naar een gevalideerd document",
+      "subtitle": "Dezelfde review-en-valideerdiscipline die uw dienst al volgt.",
+      "items": [
+        {
+          "title": "Leg de ontmoeting vast",
+          "body": "Neem het consult, de verpleegronde of de operatienabespreking op mobiel of web op als onderdeel van uw normale routine."
+        },
+        {
+          "title": "Selecteer het documenttype",
+          "body": "Kies ontslagbrief, operatierapport, verpleegnotitie of een ander ondersteund sjabloon voor die dienst."
+        },
+        {
+          "title": "Bekijk het gestructureerde concept",
+          "body": "Een concept dat overeenkomt met uw institutionele structuur is binnen seconden klaar, met uw bestaande sectievolgorde."
+        },
+        {
+          "title": "Valideer en archiveer",
+          "body": "De verantwoordelijke arts corrigeert en keurt het document goed, waarna het naar uw EHR of exportproces gaat — Mediway en SOKLE waar geconfigureerd."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Gebouwd voor institutionele review",
+      "title": "Beveiliging die uw IT- en medische directeuren kunnen goedkeuren",
+      "intro": "Ziekenhuizen adopteren AI-documentatie na een beveiligingsvragenlijst, niet een demo. DocNote is ontworpen om die vragen duidelijk te beantwoorden.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens blijven gehost in Zwitserland en verwerkt onder medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt alleen kort bewaard om het document te produceren, daarna automatisch verwijderd."
+        },
+        {
+          "title": "Artsvalidatie, altijd",
+          "body": "Geen document bereikt het dossier zonder dat een clinicus het eerst beoordeelt en goedkeurt."
+        },
+        {
+          "title": "Mediway en SOKLE integraties",
+          "body": "Waar geconfigureerd, stromen gevalideerde documenten naar de systemen die uw ziekenhuis al draait."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "DocNote uitrollen over een instelling",
+        "body": "Het gebruikelijke pad begint met één documenttype en één afdeling of dienst. Sjablonen worden gevalideerd tegen echte gevallen voordat de uitbreiding naar andere afdelingen plaatsvindt. IT- en medische directeuren reviewen hosting, retentie en integraties parallel — dezelfde structuur die geldt voor elke andere klinische softwareaanschaf."
+      },
+      {
+        "heading": "Wanneer meerdere diensten hetzelfde dossier delen",
+        "body": "Dagziekenhuizen en multidisciplinaire afdelingen profiteren het meest van consistente structuur, omdat meerdere professionals bijdragen aan hetzelfde patiëntdossier tijdens een opname. DocNote houdt sectievolgorde consistent over specialismen heen zodat het dossier leesbaar blijft, ongeacht wie het laatst documenteerde."
+      },
+      {
+        "heading": "Waarin ziekenhuisdocumentatie verschilt van poliklinische notities",
+        "body": "Een poliklinische consultnotitie en een ontslagbrief dragen verschillende informatie en verschillende doelgroepen — de verwijzende huisarts, de verzekeraar, de patiënt. DocNote behandelt elk documenttype als zijn eigen structuur in plaats van één sjabloon te forceren voor elk doel, zodat de brief die de afdeling verlaat ook daadwerkelijk als een brief leest."
+      },
+      {
+        "heading": "Omgaan met een gemengde afdeling met meerdere specialismen",
+        "body": "Algemene interne geneeskunde-afdelingen hosten vaak patiënten onder meerdere specialismen tegelijk. Consistente documentstructuur is hier nog belangrijker, omdat een waarnemend arts die de patiënt niet heeft opgenomen snel het verloop moet begrijpen vanuit het geschreven dossier alleen. DocNote's ziekenhuissjablonen zijn ontworpen om leesbaar te zijn voor iemand die de casus voor het eerst tegenkomt, niet alleen voor het team dat het vanaf opname heeft gevolgd."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Welke ziekenhuisdocumenten kan DocNote opstellen?",
+        "a": "Ontslagbrieven, operatierapporten, verpleegnotities, consultnotities en andere hoogvolume klinische documenten afhankelijk van uw sjablonen."
+      },
+      {
+        "q": "Kunnen we ons institutionele briefhoofd behouden?",
+        "a": "Ja. Aangepaste Word-sjablonen behouden lay-out, handtekeningblok en sectievolgorde."
+      },
+      {
+        "q": "Vervangt AI de handtekening van de arts?",
+        "a": "Nee. Clinici valideren elk document voordat het onderdeel wordt van het dossier."
+      },
+      {
+        "q": "Is dit alleen voor poliklinische SOAP-notities?",
+        "a": "Nee. Ziekenhuisdocumenttypen zijn een eersteklas onderdeel van DocNote."
+      },
+      {
+        "q": "Hoe delen dagziekenhuisteams één dossier?",
+        "a": "Meerdere zorgverleners kunnen bijdragen aan hetzelfde patiëntdossier tijdens een dagziekenhuisopname, zodat het dossier coherent blijft in plaats van gefragmenteerd over aparte notities."
+      },
+      {
+        "q": "Hoe lang duurt uitrol voor een ziekenhuisdienst?",
+        "a": "De meeste diensten beginnen met één documenttype en één afdeling of eenheid, valideren sjablonen en breiden dan uit — typisch een kwestie van weken, niet maanden."
+      }
+    ],
+    "cta": {
+      "title": "Breng DocNote naar uw afdeling of dienst",
+      "body": "Praat met ons team over een pilot voor uw ziekenhuis, inclusief sjabloonopzet en EHR-integratie.",
+      "primary": "Contacteer ons team",
+      "secondary": "Bekijk tutorial"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Ontslag, OK en zaalronde vanuit het consult."
+  },
+  "clinical-compliance": {
+    "navLabel": "Klinische compliance",
+    "title": "Klinische AI compliance (FADP, GDPR, HIPAA)",
+    "description": "Hoe DocNote omgaat met klinische AI compliance: Zwitserse hosting, encryptie, korte audioretentie, medische geheimhouding, FADP/nFADP, GDPR, HIPAA en ISO 27001 controles voor ziekenhuizen en praktijken.",
+    "hero": {
+      "badge": "Klinische AI compliance",
+      "title": "Klinische AI die een compliancereview kan overleven",
+      "subtitle": "Zwitserse hosting, korte retentie en medische geheimhouding — ingebouwd in het product, niet een slide.",
+      "lead": "Ziekenhuizen adopteren ambient documentatie niet alleen op basis van functies. DocNote is ontworpen zodat beveiliging, dataresidency en klinische verantwoordelijkheid standhouden onder een echte aanschafreview."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Compliance als een functie, niet een bijzaak",
+      "paragraphs": [
+        "Veel ambient scribes worden eerst gebouwd, dan gepatcht met een privacypagina zodra kopers vragen gaan stellen. DocNote is in tegenovergestelde volgorde ontworpen: Zwitserse hosting, korte audioretentie en artsvalidatie maakten deel uit van de eerste versie, omdat het product is gebouwd door een arts die medische geheimhouding van binnenuit begreep.",
+        "Dat betekent dat de antwoorden op een ziekenhuisbeveiligingsvragenlijst niet geïmproviseerd zijn. Dataresidency, retentievakken en toegangscontrole zijn gedocumenteerd, consistent en hetzelfde voor elke instelling — geen speciale uitzondering per deal onderhandeld.",
+        "Compliance beschermt ook de mensen die het product gebruiken. Clinici blijven de enige auteur van elk gevalideerd document, wat aansprakelijkheid houdt waar het al zit — bij de arts — in plaats van het te verplaatsen naar een ondoorzichtig model."
+      ]
+    },
+    "benefits": {
+      "badge": "Wat kopers eerst controleren",
+      "title": "De vragen die uw beveiligingsteam zal stellen — beantwoord",
+      "subtitle": "Gebouwd om aan te sluiten bij wat ziekenhuis- en praktijkkopers daadwerkelijk reviewen voor ondertekening.",
+      "items": [
+        {
+          "title": "Dataresidency",
+          "body": "Gezondheidsgegevens worden gehost in Zwitserland, niet doorgestuurd via een standaard Amerikaanse cloudregio, en verwerkt onder medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Encryptie onderweg en in rust",
+          "body": "Opnames en documenten zijn beschermd met sterke encryptie door de hele pipeline, van vastlegging tot gevalideerde notitie."
+        },
+        {
+          "title": "Retentie die u aan een patiënt kunt uitleggen",
+          "body": "Audio gebruikt voor documentatie wordt automatisch verwijderd binnen een kort venster — een beleid eenvoudig genoeg om in een toestemmingsgesprek te vermelden."
+        },
+        {
+          "title": "Geen training op klinische bezoeken",
+          "body": "Consulten worden alleen gebruikt om uw documenten te produceren. Ze worden nooit gebruikt om basismodellen te trainen, en nooit verkocht of gebruikt voor advertenties."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe compliance in de praktijk werkt",
+      "title": "Van ontmoeting naar een verdedigbaar record",
+      "subtitle": "Elke stap sluit aan op een vraag die een compliancereviewer zal stellen.",
+      "items": [
+        {
+          "title": "Vastleggen onder toestemming",
+          "body": "Opname start alleen met toestemming van de patiënt, volgens het toestemmingsproces van uw instelling."
+        },
+        {
+          "title": "Verwerken onder Zwitserse hosting",
+          "body": "Audio en concepten worden verwerkt binnen Zwitserse infrastructuur, conform FADP/nFADP en GDPR-verwachtingen."
+        },
+        {
+          "title": "Valideren onder artsverantwoordelijkheid",
+          "body": "De clinicus beoordeelt, corrigeert en keurt goed — dezelfde aansprakelijkheidsstructuur die ziekenhuizen al gebruiken voor papier en dictee."
+        },
+        {
+          "title": "Audio automatisch verwijderen",
+          "body": "Zodra het document is geproduceerd, wordt de bronaudio verwijderd op een kort, vast retentievak."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Standaarden waar kopers naar vragen",
+      "title": "FADP, GDPR, HIPAA en ISO 27001 conformiteit",
+      "intro": "DocNote is gebouwd om aan te sluiten bij de frameworks die herhaaldelijk naar voren komen in ziekenhuis- en praktijkbeveiligingsreviews.",
+      "points": [
+        {
+          "title": "FADP / nFADP",
+          "body": "Zwitserse gegevensbeschermingsverwachtingen zijn by design aangepakt — hostinglocatie, retentie en toegangscontrole."
+        },
+        {
+          "title": "GDPR",
+          "body": "Europese gegevensbeschermingsprincipes gelden over het platform voor instellingen die onder GDPR opereren."
+        },
+        {
+          "title": "HIPAA-conforme controles",
+          "body": "Beveiliging en toegangscontroles zijn gebouwd om aan te sluiten bij HIPAA-verwachtingen voor organisaties die dit nodig hebben."
+        },
+        {
+          "title": "ISO 27001-conforme praktijken",
+          "body": "Informatiebeveiligingspraktijken volgen ISO 27001-conforme controles waar kopers naar vragen in vragenlijsten."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Wat een beveiligingsvragenlijst daadwerkelijk vraagt",
+        "body": "Complianceteams vragen zelden over marketingclaims. Ze vragen over hostinglocatie, retentievakken, toegangslogs en wie verantwoordelijk is voor een gevalideerd document. DocNote beantwoordt deze vragen consistent omdat de antwoorden deel uitmaken van de architectuur — niet een apart complianceteam dat achteraf een product probeert uit te leggen."
+      },
+      {
+        "heading": "Verantwoordelijkheid blijft bij de clinicus",
+        "body": "Geen AI-systeem neemt de juridische verantwoordelijkheid voor een klinische beslissing. DocNote maakt concepten, de arts valideert — en die scheiding is precies wat instellingen in staat stelt het product in hun bestaande aansprakelijkheids- en governancestructuren te passen zonder nieuwe vragen op te werpen."
+      },
+      {
+        "heading": "Voorbereiden op een aanschafreview",
+        "body": "De meeste instellingen laten AI-documentatietools door dezelfde review gaan als voor elke klinische software: dataresidency, retentie, encryptie, toegangscontrole en leveranciersaansprakelijkheid. Duidelijke, geschreven antwoorden op elk van deze voor de eerste meeting verkort aanschaf aanzienlijk vergeleken met het onderhandelen van uitzonderingen deal per deal."
+      },
+      {
+        "heading": "Wat DocNote niet claimt",
+        "body": "Een leverancier die elke certificering claimt, verkoopt meestal te veel. DocNote is expliciet over waar het aan voldoet — FADP/nFADP, GDPR, HIPAA-conforme controles, ISO 27001-conforme praktijken — en claimt geen certificeringen die het niet heeft verkregen. Vraag ons direct naar de huidige status van elke specifieke standaard die uw instelling vereist."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is DocNote conform GDPR en FADP?",
+        "a": "DocNote is ontworpen om aan te sluiten bij FADP/nFADP en GDPR-verwachtingen die kopers reviewen tijdens aanschaf. Zie ons privacybeleid voor details."
+      },
+      {
+        "q": "Hoe lang wordt audio bewaard?",
+        "a": "Audio gebruikt voor documentatie wordt automatisch verwijderd binnen een kort venster na verwerking."
+      },
+      {
+        "q": "Worden patiëntgegevens verkocht of gebruikt voor advertenties?",
+        "a": "Nee. Klinische bezoeken zijn geen product voor advertenties, en gegevens worden niet gebruikt om basismodellen te trainen."
+      },
+      {
+        "q": "Waar kan ik het volledige privacybeleid lezen?",
+        "a": "Op de DocNote privacybeleidpagina, gelinkt vanuit de sitefooter en compliance-CTA's."
+      },
+      {
+        "q": "Vervangt DocNote ons bestaande beveiligingsreviewproces?",
+        "a": "Nee. DocNote biedt documentatie en antwoorden voor uw bestaande aanschaf- en beveiligingsreview — het vervangt niet het eigen goedkeuringsproces van uw instelling."
+      },
+      {
+        "q": "Wie is verantwoordelijk voor het gevalideerde document?",
+        "a": "De clinicus die het beoordeelt en valideert — DocNote maakt concepten, maar archiveert nooit iets onbegeleid in het dossier."
+      }
+    ],
+    "cta": {
+      "title": "Breng uw compliancevragen naar ons",
+      "body": "Lees het volledige privacybeleid of praat met ons team over uw instellingsspecifieke beveiligingsreview.",
+      "primary": "Lees privacybeleid",
+      "secondary": "Contacteer ons"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Zwitserse hosting, korte retentie, beroepsgeheim."
+  },
+  "ambient-clinical-documentation": {
+    "navLabel": "Passieve klinische documentatie",
+    "title": "Ambient klinische documentatie AI | DocNote",
+    "description": "Ambient klinische documentatie die luistert tijdens de ontmoeting en gestructureerde notities opstelt voor artsreview. Zwitserse-hosted AI voor ziekenhuizen en praktijken in Europa.",
+    "hero": {
+      "badge": "Ambient documentatie",
+      "title": "Ambient klinische documentatie die bij u in de kamer blijft",
+      "subtitle": "Passieve vastlegging tijdens het bezoek, een gestructureerd concept direct erna — geen typwerk tussendoor.",
+      "lead": "Ambient klinische documentatie legt het natuurlijke gesprek tussen clinicus en patiënt vast, en maakt dan de notitie die u anders na het bezoek zou typen. DocNote is gebouwd voor die workflow — zonder gezondheidsgegevens uit Zwitserland te sturen of een Amerikaans poliklinisch sjabloon op Europese zorgteams te forceren."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Luisteren op de achtergrond, concepten op de voorgrond",
+      "paragraphs": [
+        "Ambient AI luistert terwijl u een normaal consult, verpleegronde of procedurenabespreking uitvoert. Het vervangt niet uw klinische oordeel — het maakt een gestructureerd document zodat u reviewt en valideert in plaats van vanaf een lege pagina te beginnen. Het blijvende record is de notitie die u goedkeurt, niet de ruwe audio.",
+        "Veel ambient tools optimaliseren voor één poliklinische SOAP-notitie. Echte Europese documentatie omvat ontslagbrieven, collaboratieve dagziekenhuisdossiers, meertalige ontmoetingen en institutionele briefhoofden — allemaal ondersteund door DocNote."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom teams voor ambient capture kiezen",
+      "title": "Gebouwd voor ziekenhuizen en klinieken, niet demo's",
+      "subtitle": "Ambient luisteren verdient alleen zijn plaats als het een echte, rumoerige klinische dag overleeft.",
+      "items": [
+        {
+          "title": "Aanwezig tijdens het bezoek",
+          "body": "U houdt oogcontact en volgt het gesprek in plaats van aandacht te splitsen met een toetsenbord, omdat de notitie na, niet tijdens, de ontmoeting wordt gemaakt."
+        },
+        {
+          "title": "Van vastlegging naar gevalideerde notitie",
+          "body": "Start opname op mobiel of web, voltooi de ontmoeting en review een concept binnen seconden — bewerk dan terminologie, scherp het plan aan en keur goed."
+        },
+        {
+          "title": "Dekt ziekenhuisdocumenttypen",
+          "body": "Naast poliklinische notities maakt DocNote ook concepten van ontslagbrieven, operatierapporten en verpleegnotities vanuit dezelfde ambient capture."
+        },
+        {
+          "title": "Compliance ingebouwd, niet aangeplakt",
+          "body": "Audio gebruikt voor documentatie wordt alleen kort bewaard, dan verwijderd. Gezondheidsgegevens worden niet gebruikt om basismodellen te trainen."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van ambient capture naar een gevalideerd document",
+      "subtitle": "Vier stappen, het meeste werk gebeurt terwijl u met de patiënt praat.",
+      "items": [
+        {
+          "title": "Start vastlegging",
+          "body": "Begin met opnemen op mobiel of web aan het begin van het consult, de verpleegronde of de procedurenabespreking."
+        },
+        {
+          "title": "Voer de ontmoeting normaal uit",
+          "body": "Praat, onderzoek en beslis zoals altijd — de assistent luistert op de achtergrond zonder de flow te onderbreken."
+        },
+        {
+          "title": "Bekijk het gestructureerde concept",
+          "body": "Binnen seconden na het beëindigen van de vastlegging is een concept georganiseerd per documenttype klaar voor uw review."
+        },
+        {
+          "title": "Bewerk, keur goed en stuur door",
+          "body": "Corrigeer terminologie of details, valideer en stuur dan naar uw gebruikelijke proces — inclusief Mediway en SOKLE waar beschikbaar."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Compliance is deel van het product",
+      "title": "Een privacyverhaal dat u daadwerkelijk kunt uitleggen",
+      "intro": "Kopers krijgen een duidelijk verhaal voor FADP/nFADP, GDPR en institutionele beveiligingsvragenlijsten — geen slide die zegt 'we nemen privacy serieus.'",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Verwerking blijft conform Zwitserse en Europese gezondheidsgegevensverwachtingen in plaats van standaard Amerikaanse cloudregio's."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio gebruikt voor documentatie wordt alleen kort bewaard, dan automatisch verwijderd."
+        },
+        {
+          "title": "Nooit gebruikt om AI te trainen",
+          "body": "Gezondheidsgegevens worden niet gebruikt om basismodellen te trainen — bezoeken bestaan alleen om uw documenten te produceren."
+        },
+        {
+          "title": "Artsvalidatie, altijd",
+          "body": "Een arts of geautoriseerde clinicus beoordeelt en valideert het concept voordat het onderdeel wordt van het medisch dossier."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Wat ambient documentatie echt betekent",
+        "body": "Ambient AI luistert op de achtergrond terwijl u een normaal consult, verpleegronde of procedurenabespreking uitvoert. Het vervangt niet uw klinische oordeel. Het maakt een gestructureerd document — consultnotitie, ontslagbrief, operatierapport of specialismesjabloon — zodat u reviewt en goedkeurt in plaats van vanaf een lege pagina te beginnen. Het blijvende record is de notitie die u valideert, niet de ruwe opname."
+      },
+      {
+        "heading": "Van ambient capture naar een gevalideerde notitie",
+        "body": "Start de opname op mobiel of web, voltooi het consult en review een concept binnen seconden. Pas terminologie aan, scherp het plan aan, keur goed en verplaats het naar uw gebruikelijke proces — inclusief Mediway en SOKLE waar beschikbaar, of Word-sjablonen die overeenkomen met uw briefhoofd."
+      },
+      {
+        "heading": "Ambient documentatie over een volledige klinische dag",
+        "body": "De waarde stapelt zich op over een volledige dag, niet slechts één bezoek. Een clinicus die meerdere minuten per ontmoeting bespaart over een dozijn of meer consulten krijgt die tijd terug voor patiënten in plaats van voor typwerk — wat meestal de echte reden is dat teams ambient capture adopteren."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is ambient klinische documentatie hetzelfde als een AI medische scribe?",
+        "a": "Ze overlappen. \"Ambient klinische documentatie\" benadrukt passieve vastlegging tijdens het bezoek; \"AI medische scribe\" is de bredere categorie tools die notities opstellen voor artsreview. DocNote dekt beide."
+      },
+      {
+        "q": "Schrijft de AI automatisch in de EHR?",
+        "a": "Nee. Een arts of geautoriseerde clinicus beoordeelt en valideert het concept voordat het onderdeel wordt van het medisch dossier."
+      },
+      {
+        "q": "Waar wordt ambient audio verwerkt?",
+        "a": "DocNote is ontworpen voor Zwitserse hosting. Verwerking blijft conform Zwitserse en Europese gezondheidsgegevensverwachtingen in plaats van standaard Amerikaanse cloudregio's."
+      },
+      {
+        "q": "Kan ambient documentatie ziekenhuisdocumenttypen aan?",
+        "a": "Ja. Naast poliklinische notities ondersteunt DocNote ontslagbrieven, operatierapporten, verpleegnotities en andere hoogvolume ziekenhuisoutputs."
+      },
+      {
+        "q": "Kan DocNote werken in een rumoerige meerbeddenafdeling?",
+        "a": "Ambient capture is gekoppeld aan het apparaat en workflow die u kiest. We helpen een praktische opzet voor afdelingen en gedeelde kamers in kaart te brengen tijdens onboarding."
+      },
+      {
+        "q": "Moeten patiënten toestemming geven voor ambient opname?",
+        "a": "Volg uw lokale wettelijke en institutionele regels. DocNote ondersteunt transparante, privacybewuste workflows; uw organisatie definieert het toestemmingsproces."
+      }
+    ],
+    "cta": {
+      "title": "Probeer ambient documentatie bij uw volgende consult",
+      "body": "Start een gratis proefperiode of praat met ons team over het uitrollen van ambient capture over uw dienst.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Passieve opname, daarna gestructureerd concept."
+  },
+  "ai-clinical-documentation": {
+    "navLabel": "AI klinische documentatie",
+    "title": "AI klinische documentatie software | DocNote",
+    "description": "AI klinische documentatie voor artsen en ziekenhuizen: gestructureerde notities van consulten, ontslagbrieven en operatieverslagen. Gehost in Zwitserland, gebouwd voor Europa.",
+    "hero": {
+      "badge": "AI klinische documentatie",
+      "title": "AI klinische documentatie zonder de avondachterstand",
+      "subtitle": "Gestructureerde concepten van consulten en afdelingswerk, beoordeeld door de behandelend arts.",
+      "lead": "Klinische documentatie is waar zorgteams hun avonden verliezen. DocNote zet consulten en afdelingswerk om in gestructureerde concepten — zodat artsen minder tijd besteden aan typen en meer tijd hebben voor patiënten, terwijl ze voldoen aan Zwitserse hosting- en medische geheimhoudingsregels."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Documentatie die aansluit bij hoe uw dienst werkt",
+      "paragraphs": [
+        "Generieke notitiegenerators maken elke specialisatie plat tot één Amerikaans poliklinisch formaat. DocNote past zich aan aan de documenten die uw dienst daadwerkelijk gebruikt: consultnotities, vervolgafspraken, ontslagsamenvattingen, operatieverslagen en gezamenlijke dagziekenhuisdossiers.",
+        "AI maakt concepten; artsen beslissen. Die verdeling houdt aansprakelijkheid en medische geheimhouding intact terwijl het typen dat tot burn-out leidt, wordt verminderd."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom teams overstappen",
+      "title": "Gebouwd voor inkopers en klinische voorstanders",
+      "subtitle": "IT en medisch directeuren geven om hosting en adoptie net zo veel als artsen om snelheid.",
+      "items": [
+        {
+          "title": "Doorstaat een security-vragenlijst",
+          "body": "Duidelijke Zwitserse hosting, korte audioretentie en artsenvalidatie voordat iets in het dossier komt — het verhaal dat IT en medisch directeuren nodig hebben."
+        },
+        {
+          "title": "Past bij elk documenttype dat u gebruikt",
+          "body": "Niet alleen poliklinische SOAP-notities — ontslagsamenvattingen, operatieverslagen en dagziekenhuisdossiers zijn volwaardig ondersteund."
+        },
+        {
+          "title": "Dezelfde klinische verantwoordelijkheid als nu",
+          "body": "AI maakt concepten, de arts valideert — het aansprakelijkheidsmodel waar uw instelling al op vertrouwt, blijft precies hetzelfde."
+        },
+        {
+          "title": "Sluit aan op uw bestaande systeem",
+          "body": "Stuur gevalideerde notities naar Mediway of SOKLE waar geconfigureerd, of exporteer naar een Word-sjabloon dat past bij uw instellingsstructuur."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van consult tot een document waar uw team op vertrouwt",
+      "subtitle": "Een workflow die klinische voorstanders in één slide aan IT kunnen uitleggen.",
+      "items": [
+        {
+          "title": "Leg het consult vast",
+          "body": "Neem het consult of afdelingsinteractie op via mobiel of web als onderdeel van het normale bezoek."
+        },
+        {
+          "title": "Kies het documenttype",
+          "body": "Selecteer consultnotitie, ontslagsamenvatting, operatieverslag of een ander ondersteund sjabloon."
+        },
+        {
+          "title": "Bekijk het gestructureerde concept",
+          "body": "Binnen seconden is een concept klaar dat aansluit bij uw documentatiegewoontes."
+        },
+        {
+          "title": "Valideer en archiveer",
+          "body": "Corrigeer en keur goed, stuur dan naar uw EHR-pad of exportproces."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Gebouwd om inkoop te doorstaan",
+      "title": "Het compliance-verhaal dat inkopers echt vragen",
+      "intro": "Een pilot wordt alleen een uitrol als security en medisch directeuren akkoord gaan.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens worden gehost en verwerkt in Zwitserland, in lijn met medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt automatisch kort na het produceren van het document verwijderd."
+        },
+        {
+          "title": "Geen training op uw consulten",
+          "body": "Consulten worden alleen gebruikt om uw documenten te produceren, nooit om basismodellen te trainen."
+        },
+        {
+          "title": "Altijd artsenvalidatie",
+          "body": "Elk document wordt beoordeeld en goedgekeurd door een arts voordat het onderdeel wordt van het dossier."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Documentatie die aansluit bij hoe uw dienst werkt",
+        "body": "Generieke notitiegenerators maken elke specialisatie plat tot één Amerikaans poliklinisch formaat. DocNote past zich aan aan de documenten die uw dienst daadwerkelijk gebruikt: consultnotities, vervolgafspraken, ontslagsamenvattingen, operatieverslagen en gezamenlijke dagziekenhuisdossiers."
+      },
+      {
+        "heading": "Voor inkopers en klinische voorstanders",
+        "body": "Een pilot overtuigt klinische teams snel. Een uitrol over een hele instelling vereist ook een duidelijk antwoord voor IT en medisch directeuren — het exacte antwoord dat DocNote vanaf het begin biedt, in plaats van het achteraf te moeten improviseren."
+      },
+      {
+        "heading": "Kiezen tussen een pilot en een volledige uitrol",
+        "body": "De meeste diensten beginnen met één documenttype met hoog volume en een kleine groep artsen, voeren dit een paar weken uit en beslissen dan pas over een bredere uitrol. Die volgorde geeft medisch directeuren echt bewijs in plaats van een functiedemo, en geeft artsen inspraak in hoe sjablonen worden aangepast voordat iedereen erop vertrouwt."
+      },
+      {
+        "heading": "AI klinische documentatie versus een gewone ambient scribe",
+        "body": "Sommige tools stoppen bij het produceren van tekst die klinkt als een notitie. AI klinische documentatie, zoals DocNote het bouwt, betekent dat de uitvoer gestructureerd is in de secties die uw dienst daadwerkelijk archiveert — gecodeerde velden, koppen en terminologie die aansluiten bij uw bestaande dossier — niet alleen vloeiende tekst die nog handmatig moet worden gereorganiseerd voordat het bruikbaar is."
+      },
+      {
+        "heading": "Eerlijk adoptie meten",
+        "body": "Het duidelijkste teken dat een documentatietool werkt, is dat artsen het blijven gebruiken nadat de nieuwigheid is verdwenen, niet de demo-reactie op dag één. Houd bij hoeveel concepten zwaar worden herschreven versus licht worden bewerkt in de eerste maand — die trend vertelt u meer over de match dan welke functievergelijking dan ook."
+      },
+      {
+        "heading": "IT vroeg betrekken, niet aan het eind",
+        "body": "Uitrollen die IT pas betrekken nadat artsen al hebben toegezegd, lopen vaak vast op vragen die weken eerder hadden kunnen worden beantwoord. IT en security-review naast de klinische pilot betrekken, in plaats van erna, houdt de uiteindelijke uitroltermijn realistisch."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Voor wie is AI klinische documentatie?",
+        "a": "Zelfstandige artsen, groepspraktijken en ziekenhuisdiensten die snellere gestructureerde notities willen zonder klinische validatie of Europese gegevensregels op te geven."
+      },
+      {
+        "q": "Hoe verschilt dit van spraak-naar-tekst?",
+        "a": "Spraak-naar-tekst geeft u woorden. DocNote structureert een klinisch document — koppen, specialismetaal en het notitietype dat u heeft geselecteerd — klaar voor beoordeling."
+      },
+      {
+        "q": "Is DocNote alleen voor poliklinische SOAP-notities?",
+        "a": "Nee. Ziekenhuisdocumenttypen zijn een volwaardig onderdeel van het product, geen bijzaak."
+      },
+      {
+        "q": "Kunnen we eerst met één specialisatie een pilot doen?",
+        "a": "Ja. Veel teams beginnen met een dienst met hoog volume, valideren sjablonen en breiden dan uit."
+      },
+      {
+        "q": "Wat houdt onboarding in?",
+        "a": "Sjabloonkoppeling aan uw documenten, een korte pilot met echte consulten en feedback van artsen voor een bredere uitrol."
+      },
+      {
+        "q": "Kunnen niet-artsen DocNote gebruiken?",
+        "a": "Ja, binnen het kader dat uw instelling definieert — validatieverantwoordelijkheid volgt uw bestaande klinische governance."
+      }
+    ],
+    "cta": {
+      "title": "Breng AI klinische documentatie naar uw dienst",
+      "body": "Start een gratis proefperiode of praat met ons team over een pilot voor uw praktijk of ziekenhuis.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Gestructureerde concepten die jij goedkeurt."
+  },
+  "ai-soap-notes": {
+    "navLabel": "AI SOAP-notities",
+    "title": "AI SOAP-notities voor artsen | DocNote",
+    "description": "Genereer AI SOAP-notities van consulten voor artsenbeoordeling. Gestructureerde Subjectieve, Objectieve, Beoordeling en Plan — met Zwitserse hosting en Europese klinische workflows.",
+    "hero": {
+      "badge": "AI SOAP-notities",
+      "title": "AI SOAP-notities die nog steeds klinken als uw kliniek",
+      "subtitle": "Subjectief, Objectief, Beoordeling en Plan — opgesteld vanuit het bezoek, niet een generiek sjabloon.",
+      "lead": "SOAP blijft de ruggengraat van veel poliklinische notities. DocNote maakt concepten van Subjectief, Objectief, Beoordeling en Plan vanuit het consult, zodat u kunt bewerken en ondertekenen in plaats van de notitie na elk bezoek opnieuw op te bouwen."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Gestructureerde SOAP zonder robotachtige taal",
+      "paragraphs": [
+        "Een nuttige AI SOAP-notitie behoudt klinische nuance: de eigen woorden van de patiënt waar ze ertoe doen, bevindingen die daadwerkelijk zijn vermeld, en een Beoordeling/Plan die uw redenering weerspiegelt — niet een generieke samenvatting die bij elke patiënt zou kunnen horen.",
+        "Als uw dag vooral poliklinische SOAP is, begin daar. Wanneer u ook ontslagbrieven of specialismeverlagen nodig heeft, dezelfde DocNote-werkruimte dekt die documenttypen zonder van leverancier te wisselen."
+      ]
+    },
+    "benefits": {
+      "badge": "Wat artsen opvalt",
+      "title": "SOAP-notities die standhouden bij beoordeling",
+      "subtitle": "Structuur zonder de details te verliezen die ertoe doen voor continuïteit en codering.",
+      "items": [
+        {
+          "title": "Behoudt uw klinische stem",
+          "body": "Concepten behouden de eigen woorden van de patiënt waar relevant en de bevindingen die u daadwerkelijk noemde — niet een afgevlakt overzicht."
+        },
+        {
+          "title": "Beoordeling voor het dossier",
+          "body": "Pas een differentiaal aan, voeg een coderingsrelevant detail toe, verwijder small talk die het model te zwaar woog — keur dan goed."
+        },
+        {
+          "title": "Eén werkruimte voor meer dan SOAP",
+          "body": "Voeg later ontslagbrieven of specialismeverlagen toe zonder naar een tweede leverancier over te stappen."
+        },
+        {
+          "title": "Privacy voor elk gesprek",
+          "body": "Bezoekaudio wordt verwerkt om de notitie te produceren, dan verwijderd binnen een kort retentiewindow."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van consult naar een ondertekende SOAP-notitie",
+      "subtitle": "Snel genoeg voor aaneengesloten poliklinische afspraken.",
+      "items": [
+        {
+          "title": "Leg het bezoek vast",
+          "body": "Neem het consult op via mobiel of web met toestemming van de patiënt."
+        },
+        {
+          "title": "Selecteer SOAP als notitietype",
+          "body": "Kies het SOAP- (of consult-)sjabloon voor dat consult."
+        },
+        {
+          "title": "Bekijk Subjectief, Objectief, Beoordeling, Plan",
+          "body": "Binnen seconden is een gestructureerd concept klaar, georganiseerd in de vier SOAP-secties."
+        },
+        {
+          "title": "Bewerk en onderteken",
+          "body": "Pas formulering of detail aan, keur dan goed — de gevalideerde notitie komt in het dossier."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy voor patiëntgesprekken",
+      "title": "Hetzelfde vertrouwensverhaal voor elk bezoek",
+      "intro": "SOAP-notities bevatten elke dag gevoelige details — het privacyverhaal moet elke keer standhouden, niet alleen bij de pilot.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gegevens blijven in Zwitserland en worden niet gebruikt om basismodellen te trainen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Bezoekaudio wordt binnen een kort retentiewindow verwijderd nadat de notitie is geproduceerd."
+        },
+        {
+          "title": "Altijd artsenbeoordeling",
+          "body": "Elk SOAP-concept blijft onder artsencontrole voordat het het dossier bereikt."
+        },
+        {
+          "title": "Gebouwd voor Europese praktijk",
+          "body": "Meertalige consulten en Europese documentatiegewoontes, niet een alleen-voor-Amerika-sjabloon."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "SOAP-sjablonen aanpassen aan uw specialisatie",
+        "body": "SOAP is een startstructuur, geen rigide formaat. Tijdens onboarding passen teams sectiekoppen en nadruk aan zodat de notitie weerspiegelt hoe uw dienst zorg documenteert — van huisartsenpraktijk tot gespecialiseerde poliklinieken."
+      },
+      {
+        "heading": "SOAP gebruiken naast andere documenttypen",
+        "body": "Veel praktijken beginnen met SOAP-notities voor de poliklinische dag en breiden later uit naar ontslagbrieven of specialismeverlagen zodra patiënten worden opgenomen. Dezelfde werkruimte dekt beide gevallen zonder van leverancier te wisselen."
+      },
+      {
+        "heading": "Wat een SOAP-concept nuttig maakt, niet alleen snel",
+        "body": "Een snelle SOAP-notitie die klinische nuance verliest, kost meer tijd dan het bespaart, omdat u de Beoordeling en Plan toch opnieuw moet schrijven. DocNote is gebouwd om de redenering die ertoe doet te behouden — overwogen differentiëlen, waarom een plan veranderde — zodat bewerken verfijnen betekent, niet herbouwen."
+      },
+      {
+        "heading": "SOAP-notities en coderingsnauwkeurigheid",
+        "body": "Codering vertrouwt op specifieke, goed gedocumenteerde details — de exacte reden voor een bezoek, de complexiteit van besluitvorming, tijd besteed aan voorlichting waar relevant. Een SOAP-concept dat deze afvlakt tot generieke formulering maakt codering moeilijker, niet makkelijker. DocNote's concepten beogen precies de details te behouden die nauwkeurige codering ondersteunen, waarbij de coderingsbeslissing zelf aan u blijft."
+      },
+      {
+        "heading": "SOAP voor vervolgbezoeken versus eerste bezoeken",
+        "body": "Een SOAP-notitie voor een vervolgbezoek moet verwijzen naar wat is veranderd sinds het laatste bezoek, niet de volledige geschiedenis herhalen. DocNote kan eerdere notities als context gebruiken zodat een vervolgconcept zich richt op het intervalverloop en planaanpassingen, in plaats van elke keer een onnodig lange Subjectieve sectie te reproduceren."
+      },
+      {
+        "heading": "SOAP-notities dezelfde dag ondertekenen",
+        "body": "Een SOAP-notitie die 's nachts open blijft, wordt vaker vergeten, gehaast ondertekend of met minder aandacht de volgende ochtend. Het grootste deel van het opstellen voor het einde van de dag doen, zelfs als de definitieve ondertekening later gebeurt, houdt het dossier dichter bij wat er daadwerkelijk tijdens het bezoek gebeurde."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan DocNote SOAP-notities genereren vanuit ambient listening?",
+        "a": "Ja. Leg het consult vast, selecteer het SOAP- (of consult-)model en bekijk het gestructureerde concept."
+      },
+      {
+        "q": "Werken SOAP-notities voor mijn specialisatie?",
+        "a": "SOAP is een startstructuur. Specialismeterminologie en sjablonen kunnen worden aangepast zodat de notitie aansluit bij hoe uw dienst zorg documenteert."
+      },
+      {
+        "q": "Is dit alleen voor Amerikaanse klinieken?",
+        "a": "Nee. DocNote is gebouwd voor Zwitserland en Europa, inclusief meertalige consulten en Europese documentatiegewoontes."
+      },
+      {
+        "q": "Hoe lang duurt het opstellen?",
+        "a": "De meeste concepten zijn binnen seconden na het einde van de opname klaar, afhankelijk van de duur van het consult en netwerkcondities."
+      },
+      {
+        "q": "Kan ik het SOAP-sjabloon aanpassen?",
+        "a": "Sectiekoppen en nadruk kunnen tijdens onboarding worden aangepast aan hoe uw praktijk zorg documenteert."
+      },
+      {
+        "q": "Suggereert DocNote coderingsrelevante details?",
+        "a": "Concepten beogen klinisch relevante details vast te leggen; coderingsbeslissingen blijven bij de arts."
+      }
+    ],
+    "cta": {
+      "title": "Stel uw volgende SOAP-notitie op in seconden",
+      "body": "Start een gratis proefperiode en zie hoe DocNote uw volgende poliklinische dag aanpakt.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "SOAP uit het bezoek, geen leeg sjabloon."
+  },
+  "ai-medical-transcription": {
+    "navLabel": "AI medische transcriptie",
+    "title": "AI medische transcriptie die een klinische notitie wordt | DocNote",
+    "description": "AI medische transcriptie geüpgraded: verander klinische spraak in gestructureerde notities, niet alleen ruwe tekst. Zwitsers gehoste DocNote voor artsen en ziekenhuizen.",
+    "hero": {
+      "badge": "AI medische transcriptie",
+      "title": "AI medische transcriptie die niet stopt bij het transcript",
+      "subtitle": "Spraak wordt een gestructureerd klinisch document, niet alleen ruwe tekst om te bewerken.",
+      "lead": "Traditionele medische transcriptie geeft u tekst. Artsen moeten die tekst nog steeds omzetten in een bruikbare notitie. DocNote begint bij spraak en maakt het gestructureerde klinische document dat u nodig heeft — zodat transcriptie documentatie wordt, niet nog een bewerkingsklus."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Voorbij spraak-naar-tekst",
+      "paragraphs": [
+        "Een transcript is een startpunt, geen medisch dossier. DocNote zet gesproken inhoud om in de secties, terminologie en documenttypen die uw praktijk of ziekenhuis verwacht, en laat de uiteindelijke formulering aan de arts over.",
+        "Veel inkopers gebruiken \"AI medische transcriptie\" voor ambient scribes en notitiegenerators. Als uw doel minder avondtypen is, evalueer dan gestructureerde output, specialismefit, hostlocatie en validatieworkflow — niet alleen woordfoutpercentage."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom transcriptie alleen niet genoeg is",
+      "title": "Van woorden naar een bruikbaar klinisch document",
+      "subtitle": "Transcriptie is het makkelijke deel. Structuur bespaart de avond.",
+      "items": [
+        {
+          "title": "Gestructureerd, niet alleen getranscribeerd",
+          "body": "Gesproken inhoud wordt gemapt naar secties en terminologie die passen bij uw documenttype — geen aparte bewerkingsronde nodig."
+        },
+        {
+          "title": "Minder transcriptie-uren",
+          "body": "Veel teams verminderen of elimineren routine-transcriptie voor ondersteunde notitietypen, met menselijke controle voor uitzonderingsgevallen."
+        },
+        {
+          "title": "Gebouwd voor meertalige klinieken",
+          "body": "DocNote is ontworpen voor de meertalige klinische omgevingen die gebruikelijk zijn in Zwitserland en Europa."
+        },
+        {
+          "title": "Veilig van opname tot concept",
+          "body": "Gezondheidsgesprekken blijven in Zwitserse hosting, met korte audioretentie in de hele pipeline."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van spraak naar een gestructureerde notitie",
+      "subtitle": "Eén opname, geen aparte transcriptiestap.",
+      "items": [
+        {
+          "title": "Leg het consult vast",
+          "body": "Neem het consult op via mobiel of web als onderdeel van uw normale bezoek."
+        },
+        {
+          "title": "DocNote structureert de inhoud",
+          "body": "Gesproken inhoud wordt gemapt naar de secties en terminologie die uw documenttype verwacht."
+        },
+        {
+          "title": "Bekijk het concept",
+          "body": "Een gestructureerde notitie — geen ruw transcript — is binnen seconden klaar voor uw beoordeling."
+        },
+        {
+          "title": "Bewerk en valideer",
+          "body": "Pas formulering aan, keur dan goed. De gevalideerde notitie wordt onderdeel van uw dossier."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Veilig ontworpen",
+      "title": "Gevoelige gesprekken, strikte grenzen",
+      "intro": "Gezondheidsgesprekken verdienen meer bescherming dan een generieke transcriptieleverancier meestal biedt.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Hosting blijft in Zwitserland, wat de afstand tussen opname en compliance verkort."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt alleen kort bewaard om het document te produceren, dan verwijderd."
+        },
+        {
+          "title": "Geen training op uw consulten",
+          "body": "Uw consulten worden nooit gebruikt om basismodellen te trainen."
+        },
+        {
+          "title": "Past bij Europese documentatie",
+          "body": "Van consultnotities tot ontslagbrieven en operatieverslagen — niet alleen één poliklinisch SOAP-sjabloon."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Transcriptie evalueren voorbij foutpercentage",
+        "body": "Twee leveranciers met een vergelijkbaar woordfoutpercentage kunnen zeer verschillende resultaten opleveren voor uw praktijk als slechts één de taal daadwerkelijk structureert. Vraag of de output een afgeronde documentstructuur is of alleen ruwe tekst die u nog zelf moet organiseren."
+      },
+      {
+        "heading": "Transcriptiewerk geleidelijk verminderen",
+        "body": "De meeste praktijken vervangen transcriptie niet in één keer. Een typisch pad begint met één documenttype met hoog volume, beoordeelt resultaten over een paar weken en breidt dan uit naar meer sjablonen terwijl menselijke transcriptie beschikbaar blijft voor complexe gevallen."
+      },
+      {
+        "heading": "Waar transcriptie nog tekortschiet",
+        "body": "Zware accenten, overlappende spraak en zeer gespecialiseerd jargon blijven de moeilijkste gevallen voor elke spraaktechnologie. DocNote's review-en-valideerstap bestaat precies zodat deze uitzonderingsgevallen door een arts worden opgemerkt voordat ze het dossier bereiken, in plaats van zo te worden verstuurd."
+      },
+      {
+        "heading": "Transcriptieleveranciers vergelijken op meer dan nauwkeurigheid",
+        "body": "Vergelijk AI medische transcriptieleveranciers op outputstructuur, hostlocatie en audioretentie naast nauwkeurigheidscijfers. Een leverancier met een lager geadverteerd foutpercentage maar alleen ruwe tekst en onduidelijke hosting kan uw team meer bewerkingstijd en meer compliancerisico kosten dan een gestructureerd, Zwitsers gehost alternatief."
+      },
+      {
+        "heading": "Migreren van een oude transcriptiecontract",
+        "body": "Praktijken die een langlopend transcriptiecontract verlaten, laten beide systemen meestal een paar weken parallel lopen in plaats van in één keer over te stappen. Die overlap laat een team de kwaliteit van concepten direct op dezelfde consulten vergelijken voordat de oude workflow volledig wordt stopgezet, wat het risico op een kwaliteitskloof in documentatie tijdens de overgang verkleint."
+      },
+      {
+        "heading": "Wat gebeurt er met oude gedicteerde opnames",
+        "body": "Van tool wisselen vereist niet het opnieuw verwerken van jaren oude dictaten. De meeste teams houden gearchiveerde transcripten toegankelijk in hun bestaande systeem terwijl nieuwe consulten naar DocNote gaan, waardoor een kostbare en onnodige migratie wordt vermeden. Oude transcripten blijven doorzoekbaar in hun originele archief."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is DocNote een medische transcriptiedienst?",
+        "a": "DocNote is een AI-documentatieplatform. Het kan veel van de transcriptieworkflow vervangen door gestructureerde notities op te stellen voor artsenbeoordeling."
+      },
+      {
+        "q": "Hebben we nog menselijke transcriptiemedewerkers nodig?",
+        "a": "Veel teams verminderen of elimineren routine-transcriptie voor ondersteunde notitietypen. Complexe of medisch-juridische uitzonderingsgevallen hebben nog steeds baat bij artsencontrole — wat DocNote altijd vereist."
+      },
+      {
+        "q": "Welke talen worden ondersteund?",
+        "a": "DocNote is ontworpen voor de meertalige klinische omgevingen die gebruikelijk zijn in Zwitserland en Europa. Vraag ons team naar uw taalmix tijdens onboarding."
+      },
+      {
+        "q": "Waar gaat de audio naartoe?",
+        "a": "Verwerking is in lijn met Zwitserse hosting. Audio wordt alleen kort bewaard om het document te produceren, dan verwijderd."
+      },
+      {
+        "q": "Kan DocNote zware accenten of snelle spraak aan?",
+        "a": "Herkenningskwaliteit varieert met audiocondities; teams beoordelen concepten en kunnen consulten markeren voor nadere review tijdens onboarding."
+      },
+      {
+        "q": "Is een ruw transcript nog beschikbaar als ik het wil?",
+        "a": "De focus is een gestructureerd document; vraag ons team naar uw specifieke workflowbehoeften."
+      }
+    ],
+    "cta": {
+      "title": "Vervang transcript-only workflows",
+      "body": "Start een gratis proefperiode en zie het verschil tussen een transcript en een gevalideerd klinisch document.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Van spraak naar een gestructureerd klinisch document."
+  },
+  "ai-discharge-summary": {
+    "navLabel": "AI ontslagsamenvatting",
+    "title": "AI ontslagsamenvatting & ontslagbrief | DocNote",
+    "description": "Doe concepten van AI ontslagsamenvattingen en ziekenhuisontslagbrieven sneller. Gestructureerde, beoordeelbare documenten met Zwitserse hosting — gebouwd voor Europese ziekenhuisworkflows.",
+    "hero": {
+      "badge": "AI ontslagsamenvatting",
+      "title": "AI ontslagsamenvattingen zonder de late avondachterstand",
+      "subtitle": "Diagnoses, beloop, behandeling en vervolg — opgesteld voordat de brief urgent wordt.",
+      "lead": "Ontslagbrieven zijn hoog risico en hoog volume. DocNote helpt ziekenhuisteams gestructureerde ontslagsamenvattingen op te stellen vanuit klinische context zodat artsen een complete brief valideren in plaats van deze onder tijdsdruk opnieuw op te bouwen."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Documenten die ziekenhuizen daadwerkelijk versturen",
+      "paragraphs": [
+        "Een ontslagsamenvatting moet diagnoses, beloop, behandelingen, vervolg en de toon bevatten die uw instelling verwacht. DocNote maakt concepten naar die structuur zodat de behandelend arts klinische waarheid bewerkt, niet opmaak.",
+        "Afdelingritme, gedeelde dagziekenhuisdossiers en meertalige teams zijn normaal in Zwitserland en Europa. DocNote is ontworpen rond die beperkingen — inclusief Zwitserse hosting en medische geheimhouding — niet een Amerikaanse kliniekdemo."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom ziekenhuisteams overstappen",
+      "title": "Veiligere, snellere overdrachten",
+      "subtitle": "Ontslagbrieven zijn hoog risico en hoog volume — beide moeten worden gerespecteerd.",
+      "items": [
+        {
+          "title": "Volledig beloop, niet alleen een samenvatting",
+          "body": "Diagnoses, behandelingen, complicaties en vervolg komen in de structuur die uw instelling verwacht."
+        },
+        {
+          "title": "Van consult naar brief",
+          "body": "Gebruik consult- of afdelingscontext om het ontslagconcept te starten, pas dan uw Word-sjabloon of institutionele secties toe."
+        },
+        {
+          "title": "Vroegere poliklinische overdrachten",
+          "body": "Snellere brieven betekenen vroegere overdrachten naar poliklinische zorg — zonder de artsenvalidatiestap over te slaan."
+        },
+        {
+          "title": "Gebouwd voor Europees afdelingsritme",
+          "body": "Gedeelde dagziekenhuisdossiers en meertalige teams zijn het normale geval, niet de uitzondering."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van opnamecontext naar een gevalideerde brief",
+      "subtitle": "Ontworpen voor het moment dat ontslagplanning begint, niet alleen het laatste uur.",
+      "items": [
+        {
+          "title": "Start het concept vanuit context",
+          "body": "Gebruik consultnotities of afdelingscontext verzameld tijdens de opname om het ontslagconcept te starten."
+        },
+        {
+          "title": "Pas uw institutioneel sjabloon toe",
+          "body": "DocNote maakt concepten naar uw Word-sjabloon of institutionele sectievolgorde."
+        },
+        {
+          "title": "Bekijk voor ontslag",
+          "body": "De behandelend arts beoordeelt diagnoses, beloop en vervolg op nauwkeurigheid."
+        },
+        {
+          "title": "Valideer en verstuur",
+          "body": "Keur de brief goed zodat deze op tijd de dienst verlaat, met de verantwoordelijkheid van de arts intact."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Gebouwd voor Europese ziekenhuisrealiteit",
+      "title": "Compliance die past bij afdeldruk",
+      "intro": "Ontslagbrieven gaan snel onder tijdsdruk — het compliance-verhaal moet bijblijven.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens gehost en verwerkt onder Zwitserse verwachtingen, niet een Amerikaanse kliniekdemo."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio gebruikt om het concept te starten wordt kort na verwerking automatisch verwijderd."
+        },
+        {
+          "title": "Geen training op patiëntgegevens",
+          "body": "Consulten worden gebruikt om uw documenten te produceren, niet om basismodellen te trainen."
+        },
+        {
+          "title": "Mediway en SOKLE waar geconfigureerd",
+          "body": "Integraties zijn beschikbaar waar ingesteld; anders export naar uw bestaand ziekenhuisproces."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Ontslagplanning eerder starten",
+        "body": "Veel teams wachten tot de laatste dag om de brief te schrijven, hoewel de klinische context er al dagen is. Wanneer consult- en visite-notities al in structuur zijn vastgelegd, kan het ontslagconcept eerder starten — waardoor de behandelend arts op de laatste dag kan beoordelen en detail toevoegen in plaats van vanaf nul te schrijven."
+      },
+      {
+        "heading": "Sjablonen per afdeling, niet één formaat voor allen",
+        "body": "Chirurgische, interne geneeskunde en pediatrische diensten verwachten verschillende secties en detailniveaus in een ontslagbrief. DocNote mapt deze verschillen via institutionele sjablonen, zodat elke afdeling zijn gebruikelijke structuur behoudt in plaats van zich aan te passen aan een generiek formaat."
+      },
+      {
+        "heading": "Heropnamerisico verminderen door duidelijkere brieven",
+        "body": "Een ontslagbrief die diagnoses, medicatiewijzigingen en vervolginstructies duidelijk scheidt, is makkelijker voor poliklinische teams en patiënten om op te acteren. Structuur alleen voorkomt geen heropnames, maar een brief die verloren gaat in dichte alinea's maakt vervolgfouten waarschijnlijker."
+      },
+      {
+        "heading": "Complexe, multi-dienst ontslagen aanpakken",
+        "body": "Een patiënt die door meerdere diensten is gezien tijdens een lange opname heeft een ontslagsamenvatting nodig die het hele beloop samenbrengt, niet alleen de laatste dagen. DocNote kan het concept starten vanuit consult- en visite-notities vastgelegd tijdens de hele opname, zodat de uiteindelijke brief het volledige beloop weerspiegelt in plaats van alleen wat het ontslagteam zich herinnert."
+      },
+      {
+        "heading": "De brief coördineren met het poliklinische team",
+        "body": "Een ontslagbrief is alleen nuttig als hij de huisarts of specialist die de zorg voortzet op tijd bereikt om erop te acteren. Snellere opstelling verkort de kloft tussen ontslag en een complete brief bij het poliklinische team, wat het meest telt voor patiënten met een smal vervolgvenster."
+      },
+      {
+        "heading": "Ontslagbrieven voor oudere en multimorbide patiënten",
+        "body": "Een ontslagsamenvatting voor een oudere patiënt met meerdere chronische aandoeningen moet meestal meer medicatiewijzigingen en meer vervolgafspraken dekken dan de brief van een jongere patiënt. DocNote's structuur schaalt naar die complexiteit zonder een kortbezoek-sjabloon op te leggen aan een lange, gecompliceerde opname voor een kwetsbare patiënt die zorgvuldige, ondubbelzinnige overdracht nodig heeft."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan DocNote ons ziekenhuisontslag-sjabloon matchen?",
+        "a": "Ja. Aangepaste Word-sjablonen en sectievolgordes zijn een kernonderdeel van ziekenhuisuitrollen."
+      },
+      {
+        "q": "Wie ondertekent de ontslagbrief?",
+        "a": "De verantwoordelijke arts. DocNote maakt concepten; artsen valideren en blijven verantwoordelijk voor het dossier."
+      },
+      {
+        "q": "Werkt dit met ons EHR?",
+        "a": "Integraties zoals Mediway en SOKLE zijn beschikbaar waar geconfigureerd; anders export naar uw bestaand proces."
+      },
+      {
+        "q": "Worden patiëntgegevens gebruikt om AI-modellen te trainen?",
+        "a": "Nee. Consulten worden gebruikt om uw documenten te produceren, niet om basismodellen te trainen."
+      },
+      {
+        "q": "Kan DocNote het concept starten voordat de patiënt vertrekt?",
+        "a": "Ja. Afdelingscontext verzameld tijdens de opname kan het ontslagconcept starten voor de laatste beoordeling."
+      },
+      {
+        "q": "Wat gebeurt er als de brief dringend moet worden bewerkt?",
+        "a": "De behandelend arts kan vrij bewerken voor validatie — niets wordt automatisch gearchiveerd."
+      }
+    ],
+    "cta": {
+      "title": "Verminder de late avondontslagachterstand",
+      "body": "Praat met ons team over een pilot voor uw afdeling of ontslagplanningsworkflow.",
+      "primary": "Praat met ons team",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Diagnoses, beloop en plan vóór ontslag."
+  },
+  "operative-report-ai": {
+    "navLabel": "AI operatieverslag",
+    "title": "AI operatierapport voor chirurgen | DocNote",
+    "description": "Maak AI-concepten van operatierapporten en chirurgische notities voor beoordeling door chirurgen. Gestructureerde operatiedocumentatie met Zwitserse hosting voor ziekenhuisoperaties.",
+    "hero": {
+      "badge": "AI operatierapport",
+      "title": "AI operatierapporten die de chirurgische structuur respecteren",
+      "subtitle": "Indicatie, bevindingen, procedure en plan — in de volgorde die een operatierapport daadwerkelijk nodig heeft.",
+      "lead": "Operatierapporten zijn precies, repetitief onder tijdsdruk en juridisch belangrijk. DocNote helpt chirurgische teams gestructureerde operatienotities op te stellen, zodat chirurgen technische details en bevindingen kunnen verfijnen in plaats van te beginnen met een leeg sjabloon aan het einde van een lange lijst."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Chirurgische documentatie, geen generieke notitie",
+      "paragraphs": [
+        "Indicatie, bevindingen, procedurestappen, implantaten, complicaties en postoperatief plan horen in een duidelijke volgorde. DocNote richt zich op die structuur, zodat het concept leest als een operatierapport — niet als een gesprekstranscript dat in een brief is geplakt.",
+        "Wanneer de casus eindigt, concurreert documentatie nog steeds met de volgende patiënt. Een goed concept verkort die kloof terwijl de chirurg verantwoordelijk blijft voor de definitieve formulering."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom chirurgische teams het adopteren",
+      "title": "Minder tijd voor een lege pagina na een lange lijst",
+      "subtitle": "Precisie onder tijdsdruk, zonder controle van de chirurg te verliezen.",
+      "items": [
+        {
+          "title": "Structuur die past bij een operatierapport",
+          "body": "Indicatie, bevindingen, stappen, implantaten en complicaties komen in de volgorde die chirurgen en coders verwachten."
+        },
+        {
+          "title": "Past bij de overdracht van OK naar verpleegafdeling",
+          "body": "Een concept dat kort na de casus klaar is, verkort de kloof tussen de laatste incisie en een afgerond rapport."
+        },
+        {
+          "title": "Werkt naast ontslag- en verpleegnotities",
+          "body": "Hetzelfde platform dat operatierapporten opstelt, behandelt ook ontslagbrieven, zodat teams niet met meerdere AI-leveranciers hoeven te jongleren."
+        },
+        {
+          "title": "Ziekenhuiscontroles doorlopend",
+          "body": "Zwitserse hosting, korte audiobewaring en chirurgvalidatie zijn gebouwd voor diensten die aan compliance moeten voldoen."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van casusnabespreking naar een gevalideerd operatierapport",
+      "subtitle": "Gebouwd voor het moment direct na de casus, niet een avond later.",
+      "items": [
+        {
+          "title": "Bespreking van de casus",
+          "body": "Neem de operatieve nabespreking op — indicatie, bevindingen, stappen en plan — direct na de procedure."
+        },
+        {
+          "title": "DocNote structureert het rapport",
+          "body": "Een concept geordend volgens operatierapportsecties is binnen enkele seconden klaar."
+        },
+        {
+          "title": "Beoordeling van techniek en bevindingen",
+          "body": "De chirurg verfijnt bevindingen, implantaten en complicaties voor precisie."
+        },
+        {
+          "title": "Valideren voor archivering",
+          "body": "Keur het rapport goed zodat het onder verantwoordelijkheid van de chirurg in het dossier komt."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Ziekenhuiscontroles",
+      "title": "Gebouwd voor chirurgische diensten onder compliance",
+      "intro": "Operatierapporten zijn juridisch belangrijk — de controles erachter moeten dat gewicht evenaren.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens worden gehost en verwerkt volgens Zwitserse verwachtingen van medisch beroepsgeheim."
+        },
+        {
+          "title": "Korte audiobewaring",
+          "body": "Audio van de nabespreking wordt automatisch verwijderd kort na het produceren van het rapport."
+        },
+        {
+          "title": "Chirurgvalidatie, altijd",
+          "body": "Geen enkel operatierapport wordt automatisch gearchiveerd — de chirurg beoordeelt en keurt elk rapport goed."
+        },
+        {
+          "title": "Institutionele sjablonen",
+          "body": "Sectievolgorde en terminologie passen bij het bestaande operatierapportsjabloon van uw dienst."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Van de laatste hechting naar een afgerond rapport",
+        "body": "Het grootste tijdsverlies rond operatierapporten is meestal niet dicteren — het is wachten tot de avond om een rapport te typen waarvan niemand de details nog herinnert. Een concept dat direct na de nabespreking klaar is, houdt de details vers en verkort de tijd tot archivering aanzienlijk."
+      },
+      {
+        "heading": "Meerdere specialismen, één gedeeld formaat",
+        "body": "Orthopedie, algemene chirurgie en andere lijnen hebben verschillende rapportvormen. DocNote brengt deze in kaart via specialisme-specifieke sjablonen, zodat elk team zijn gebruikelijke structuur gebruikt terwijl de instelling consistent blijft."
+      },
+      {
+        "heading": "Waarom structuur belangrijker is in operatierapporten dan elders",
+        "body": "Een operatierapport wordt gelezen door coders, verwijzende artsen en soms advocaten jaren na de casus, vaak zonder dat de chirurg beschikbaar is om te verduidelijken. Een duidelijk, consistent geordend rapport vermindert ambiguïteit voor al die lezers, daarom behandelt DocNote sectievolgorde als een eerste-klas beperking in plaats van een cosmetische keuze."
+      },
+      {
+        "heading": "Implantaten en materialen nauwkeurig registreren",
+        "body": "Implantatenregistratie is vaak een wettelijke vereiste, geen optionele luxe. Benamingen, lotnummers en plaatsingsdetails moeten consistent in de juiste sectie terechtkomen, zodat ze later kunnen worden opgehaald — tijdens een recall, audit of vervolgprocedure. DocNote's operatiesjablonen behouden een speciale plek voor deze details in plaats van ze terloops te vermelden."
+      },
+      {
+        "heading": "Complicaties eerlijk nabespreken",
+        "body": "Een eerlijke, precies gedocumenteerde complicatie is later beter verdedigbaar dan een vage — en nuttiger voor het team dat de patiënt daarna behandelt. DocNote's sjablonen behouden een duidelijke sectie voor complicaties in plaats van ze in een algemeen verhaal te verwerken waar ze gemakkelijk worden onderschat of begraven."
+      },
+      {
+        "heading": "Operatierapporten voor opleidingsziekenhuizen",
+        "body": "In opleidingsziekenhuizen moet een operatierapport mogelijk de rollen van de supervisor en een stagiair die deel van de procedure uitvoert, onderscheiden. DocNote's sjablonen kunnen dat onderscheid accommoderen waar uw instelling dat vereist, in plaats van een enkele-chirurgstructuur aan te nemen van begin tot eind."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kunnen we het operatierapportsjabloon van onze dienst gebruiken?",
+        "a": "Ja. Institutionele sjablonen en sectievoorkeuren maken deel uit van de ziekenhuisonboarding."
+      },
+      {
+        "q": "Wordt het operatierapport automatisch gearchiveerd?",
+        "a": "Nee. De chirurg of geautoriseerde clinicus beoordeelt en valideert voordat het in het dossier komt."
+      },
+      {
+        "q": "Begrijpt DocNote chirurgische terminologie?",
+        "a": "Rapporten zijn aangepast aan specialismetaal. Teams verfijnen formuleringen tijdens pilots zodat concepten lokale vocabulaire weerspiegelen."
+      },
+      {
+        "q": "Hoe beginnen we met één OK of specialisme?",
+        "a": "De meeste chirurgische implementaties beginnen met één dienstlijn, valideren sjablonen en breiden dan uit."
+      },
+      {
+        "q": "Kunnen we gebruikte implantaten en materialen volgen?",
+        "a": "Sectiestructuur volgt uw sjabloon, en implantaten- of materialenregistratie kan worden opgenomen waar uw dienst het documenteert."
+      },
+      {
+        "q": "Vertraagt dit de omschakeling tussen casussen?",
+        "a": "Nabespreking duurt minuten en gebeurt naast de normale postoperatieve routine — het is ontworpen om de omschakeltijd te verkorten, niet te verlengen."
+      }
+    ],
+    "cta": {
+      "title": "Sluit operatierapporten sneller af",
+      "body": "Praat met ons team over een pilot voor uw OK of chirurgische dienst.",
+      "primary": "Praat met ons team",
+      "secondary": "Bekijk tutorial"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Van indicatie tot plan, in OK-volgorde."
+  },
+  "ai-consultation-notes": {
+    "navLabel": "AI consultverslagen",
+    "title": "AI consultnotities voor artsen | DocNote",
+    "description": "AI consultnotities van het bezoek — gestructureerde concepten voor artsenbeoordeling. Gebouwd voor Europese poliklinische en ziekenhuisconsulten met Zwitserse hosting.",
+    "hero": {
+      "badge": "AI consultnotities",
+      "title": "AI consultnotities klaar voor uw beoordeling",
+      "subtitle": "Anamnese, bevindingen, beoordeling en plan — opgesteld in de volgorde die uw dienst verwacht.",
+      "lead": "Consultnotities zijn de dagelijkse valuta van poliklinische en specialistische zorg. DocNote stelt ze op vanuit het consult, zodat u de kamer verlaat met een gestructureerde notitie om te valideren — geen avond typen."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Consult-first workflows",
+      "paragraphs": [
+        "Leg het bezoek vast, kies het consultmodel en beoordeel een concept dat anamnese, bevindingen, beoordeling en plan weerspiegelt in de volgorde die uw dienst verwacht.",
+        "Veel Europese clinici zoeken naar consultnotities in plaats van Amerikaans SOAP-jargon. DocNote ondersteunt beide denkmodellen terwijl het gericht blijft op Zwitserse en Europese documentatiegewoonten, inclusief meertalige consulten."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom clinici het de hele dag openhouden",
+      "title": "Een notitie klaar wanneer het bezoek eindigt",
+      "subtitle": "Gebouwd voor poliklinische en specialistische consulten gedurende een volledige kliniekdag.",
+      "items": [
+        {
+          "title": "Europese formulering, niet alleen SOAP-jargon",
+          "body": "Consultnotities volgen lokale sjablonen in plaats van een enkel Amerikaans denkmodel aan elk specialisme op te leggen."
+        },
+        {
+          "title": "Meertalige consulten",
+          "body": "Consulten wisselen vaak van taal — DocNote is ontworpen voor meertalige klinische omgevingen die gebruikelijk zijn in Zwitserland en grensoverschrijdende zorg."
+        },
+        {
+          "title": "Specialismetaal in 61 velden",
+          "body": "Terminologie en sjablonen zijn aangepast zodat concepten passen bij hoe uw specialisme zorg documenteert."
+        },
+        {
+          "title": "Een privacyverhaal dat patiënten begrijpen",
+          "body": "Korte audiobewaring, Zwitserse hosting en geen training op uw consulten — hetzelfde verhaal dat u aan patiënten en complianceteams kunt uitleggen."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van bezoek naar een beoordeelde consultnotitie",
+      "subtitle": "Verlaat de kamer met een concept klaar om te valideren.",
+      "items": [
+        {
+          "title": "Leg het consult vast",
+          "body": "Neem het bezoek op via mobiel of web, volgens het toestemmingsproces van uw instelling."
+        },
+        {
+          "title": "Kies het consultmodel",
+          "body": "Selecteer het consultsjabloon dat past bij uw specialisme en dienst."
+        },
+        {
+          "title": "Beoordeel anamnese, bevindingen, plan",
+          "body": "Een gestructureerd concept met anamnese, bevindingen, beoordeling en plan is binnen enkele seconden klaar."
+        },
+        {
+          "title": "Bewerk veel of weinig en onderteken",
+          "body": "Het concept is altijd een startpunt onder uw klinische verantwoordelijkheid."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy die patiënten en complianceteams begrijpen",
+      "title": "Hetzelfde vertrouwensverhaal, elk consult",
+      "intro": "Consultnotities zijn de dagelijkse valuta van poliklinische zorg — het privacyverhaal moet eenvoudig genoeg zijn om elke dag te herhalen.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens blijven gehost en verwerkt onder Zwitserse verwachtingen."
+        },
+        {
+          "title": "Korte audiobewaring",
+          "body": "Audiobestanden van het bezoek worden kort na het produceren van de notitie verwijderd."
+        },
+        {
+          "title": "Geen training op consulten",
+          "body": "Consulten worden alleen gebruikt om uw document te produceren, nooit om basismodellen te trainen."
+        },
+        {
+          "title": "Specialistklaar sjablonen",
+          "body": "Specialismetaal en sjablonen maken deel uit van hoe DocNote is ontworpen voor vele medische velden."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Consultnotities versus SOAP",
+        "body": "Veel Europese praktijken documenteren met lokale consultsjablonen in plaats van de Amerikaanse SOAP-structuur. DocNote ondersteunt beide denkmodellen tegelijk, zodat een praktijk met gemengde achtergronden niet vastzit aan één formaat."
+      },
+      {
+        "heading": "Van een eerste bezoek naar een vervolg",
+        "body": "Een duidelijk gestructureerde eerste notitie maakt elk volgend vervolg sneller voor te bereiden, omdat anamnese en eerdere beoordeling direct vindbaar zijn in plaats van verspreid over ongestructureerde vrije tekst."
+      },
+      {
+        "heading": "Consultnotities voor specialisten, niet alleen huisartsen",
+        "body": "Specialistische consulten hebben vaak een andere balans van anamnese, bevindingen en redenering nodig dan een huisartsbezoek. DocNote past sjablonen per specialisme aan in plaats van aan te nemen dat elke consultnotitie er hetzelfde uitziet, zodat een cardiologievervolg en een dermatologie-eerste bezoek geen structuur delen die geen van beide goed past."
+      },
+      {
+        "heading": "Consultnotities als ruggengraat van het dossier",
+        "body": "Gedurende een langdurige zorgrelatie zijn consultnotities wat een nieuwe clinicus eerst leest om de geschiedenis van een patiënt te begrijpen. Een reeks duidelijke, gestructureerde notities maakt die geschiedenis jaren later gemakkelijk te volgen; een reeks gehaaste, inconsistente notities maakt elk toekomstig bezoek langzamer voor te bereiden, ongeacht hoe goed een enkele notitie destijds was."
+      },
+      {
+        "heading": "Consultnotities voor overname en waarnemers",
+        "body": "Een clinicus die voor een collega invalt of als waarnemer werkt, heeft geen persoonlijke herinnering aan de patiënt om op terug te vallen. Duidelijke, consistent gestructureerde consultnotities maken overname veilig — DocNote's structuur is ontworpen met die lezer in gedachten, niet alleen de clinicus die de notitie schreef."
+      },
+      {
+        "heading": "Consultnotities beknopt houden zonder inhoud te verliezen",
+        "body": "Een lange notitie is niet automatisch een grondige, en een korte notitie is niet automatisch incompleet. DocNote's concepten streven naar het detailniveau dat uw documenttype daadwerkelijk nodig heeft, zodat bewerken meestal betekent schrappen of een specifiek punt toevoegen in plaats van de hele notitie vanaf nul te herstructureren."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zijn AI consultnotities hetzelfde als SOAP-notities?",
+        "a": "SOAP is één veelvoorkomende structuur. Consultnotities kunnen lokale sjablonen volgen. DocNote maakt het concept van de structuur die u selecteert."
+      },
+      {
+        "q": "Kunnen specialisten dit ook gebruiken?",
+        "a": "Ja. Specialismetaal en sjablonen maken deel uit van hoe DocNote is ontworpen voor 61 specialismen."
+      },
+      {
+        "q": "Moeten patiënten toestemming geven voor opname?",
+        "a": "Volg uw lokale wettelijke en institutionele regels. DocNote ondersteunt transparante, privacyvriendelijke documentatiepraktijken; uw organisatie bepaalt het toestemmingsproces."
+      },
+      {
+        "q": "Kan ik veel bewerken voor ondertekening?",
+        "a": "Altijd. Het concept is een startpunt onder uw klinische verantwoordelijkheid."
+      },
+      {
+        "q": "Kunnen consultnotities mijn eigen lokale sjabloon volgen?",
+        "a": "Ja. Lokale sjablonen en sectievoorkeuren kunnen tijdens onboarding worden toegepast."
+      },
+      {
+        "q": "Hoe helpt dit bij vervolgbezoeken?",
+        "a": "Een duidelijke gestructureerde notitie vanaf het eerste bezoek maakt het volgende vervolg sneller voor te bereiden en te beoordelen."
+      }
+    ],
+    "cta": {
+      "title": "Verlaat elk consult met een notitie klaar om te beoordelen",
+      "body": "Start een gratis proefperiode en zie hoe DocNote uw consultlast aanpakt.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Van anamnese tot plan, in jullie volgorde."
+  },
+  "multilingual-ai-medical-scribe": {
+    "navLabel": "Meertalige AI-assistent",
+    "title": "Meertalige AI medische scribe | DocNote",
+    "description": "Meertalige AI medische scribe voor Zwitserse en Europese klinieken. Documenteer consulten in meerdere talen met Zwitserse hosting en medisch beroepsgeheim.",
+    "hero": {
+      "badge": "Meertalige AI-scribe",
+      "title": "Meertalige AI medische scribe voor echte Europese klinieken",
+      "subtitle": "Documenteer consulten in meerdere talen zonder gezondheidsgegevens naar een alleen-VS-stack te sturen.",
+      "lead": "Zorg in Zwitserland en Europa is zelden eentalig. DocNote is een AI medische scribe ontworpen voor meertalige consulten — zodat teams documenteren in de talen waarin ze daadwerkelijk werken, zonder gezondheidsgegevens naar een alleen-VS-ambient-stack te sturen."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Gebouwd waar taalwisseling normaal is",
+      "paragraphs": [
+        "Een enkele kliniekdag kan Frans, Duits, Engels, Italiaans of andere talen omvatten. Documentatietools die één taal aannemen, breken die realiteit. DocNote is vanaf het begin gericht op meertalig klinisch werk.",
+        "Meertalige zorg vereist nog steeds strikte datagrenzen. Hosting in Zwitserland, korte audiobewaring en geen training op consulten maken deel uit van hoe DocNote vertrouwen verdient bij ziekenhuizen en patiënten in alle taalgroepen."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom meertalige teams voor DocNote kiezen",
+      "title": "Eén scribe, vele talen, één workflow",
+      "subtitle": "Gebouwd voor grensoverschrijdende en internationale zorg, geen eentalige demo.",
+      "items": [
+        {
+          "title": "Handelt echte kliniekdagtaalmix",
+          "body": "Frans, Duits, Engels, Italiaans of andere talen op dezelfde dag — documentatie houdt bij zonder van tool te wisselen."
+        },
+        {
+          "title": "Zelfde scribe, vele documenttypen",
+          "body": "Of u nu consultnotities, ontslagbrieven of specialismerapporten nodig heeft, meertalige opname voedt dezelfde review-en-valideer-workflow."
+        },
+        {
+          "title": "Zwitserse hosting in elke taal",
+          "body": "Datagrenzen verslappen niet alleen omdat het consult halverwege van taal wisselt."
+        },
+        {
+          "title": "Gebouwd voor internationale patiëntendiensten",
+          "body": "Privéklinieken, academische centra en grensoverschrijdende teams hebben documentatie nodig die het tempo van taaldiversiteit bijhoudt zonder compliance op te offeren."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van een meertalig consult naar één duidelijke notitie",
+      "subtitle": "Taalwisseling onderbreekt de workflow niet.",
+      "items": [
+        {
+          "title": "Leg het consult vast zoals gesproken",
+          "body": "Neem het consult op zoals het gebeurt, in welke taal of mix van talen het bezoek ook gebruikt."
+        },
+        {
+          "title": "DocNote structureert de inhoud",
+          "body": "Gesproken inhoud wordt gemapt naar het documenttype en de structuur die uw dienst verwacht."
+        },
+        {
+          "title": "Beoordeel in uw voorkeurstaal",
+          "body": "Praat met ons over uw voorkeurstaal en sjablonen voor uw team."
+        },
+        {
+          "title": "Valideer zoals gewoonlijk",
+          "body": "De clinicus beoordeelt en keurt goed — dezelfde verantwoordelijkheid als bij elk ander consult."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Zwitserse hosting als productfeature",
+      "title": "Vertrouwen dat niet afhangt van de gesproken taal",
+      "intro": "Meertalige zorg vereist nog steeds strikte, consistente datagrenzen.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Hosting in Zwitserland geldt voor elk consult, ongeacht de taal."
+        },
+        {
+          "title": "Korte audiobewaring",
+          "body": "Audio wordt automatisch verwijderd kort na het produceren van het document."
+        },
+        {
+          "title": "Geen training op consulten",
+          "body": "Meertalige consulten worden nooit gebruikt om basismodellen te trainen."
+        },
+        {
+          "title": "Geen alleen-VS-ambient-stack",
+          "body": "Verwerking en hosting sluiten aan bij Zwitserse en Europese verwachtingen, een kernverschil met veel VS-tools."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Wanneer een consult halverwege van taal wisselt",
+        "body": "In de praktijk wisselen patiënten en clinici vaak van taal binnen hetzelfde consult, vooral in grensregio's en internationale centra. DocNote is ontworpen om deze wisselingen te hanteren zonder aparte per-taalconfiguratie, in plaats van opname te onderbreken bij elke taalwisseling."
+      },
+      {
+        "heading": "Uitvoertaal apart van het bezoek configureren",
+        "body": "Een team kan in één taal documenteren en in een andere uitvoeren als dat bij de institutionele standaard past. Dit wordt per team tijdens onboarding geconfigureerd, niet per individueel consult."
+      },
+      {
+        "heading": "Meertalige documentatie voor internationale patiëntendiensten",
+        "body": "Privéklinieken en academische centra die patiënten uit het buitenland zien, hebben vaak documentatie nodig die meer talen bijhoudt dan een typische regionale praktijk. DocNote is vanaf het begin rond die realiteit gebouwd, in plaats van extra talen als een add-on te behandelen."
+      },
+      {
+        "heading": "Waarom generieke ambient-tools worstelen met taalwisseling",
+        "body": "De meeste ambient-scribes zijn getraind en afgestemd op één primaire taal, met andere talen als bijzaak. Dat uit zich in nauwkeurigheidsdaling precies wanneer een consult halverwege van taal wisselt — vaak het moment waarop een patiënt zijn belangrijkste symptoom uitlegt. DocNote's meertalige focus is een ontwerpkeuze, geen vertaallaag."
+      },
+      {
+        "heading": "Ondersteuning voor consulten met tolk",
+        "body": "Sommige consulten hebben een professionele tolk in plaats van een tweetalige clinicus die direct met de patiënt praat. DocNote kan deze driehoeksgesprekken ook vastleggen en structureren; praat met ons team over uw specifieke patroon voor tolkondersteunde consulten tijdens onboarding."
+      },
+      {
+        "heading": "Meertalige documentatie uitrollen over een groep",
+        "body": "Een kliniekgroep die in meerdere taalregio's opereert, standaardiseert meestal eerst op gedeelde sjablonen, laat individuele locaties dan hun voorkeurstaal en uitvoertalen configureren. Die volgorde houdt de dossierstructuur vergelijkbaar over de groep terwijl lokale taalbehoeften per locatie worden gerespecteerd."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Welke talen kan DocNote aan?",
+        "a": "DocNote is ontworpen voor meertalige Zwitserse en Europese omgevingen. Bevestig uw taalmix met ons team tijdens onboarding."
+      },
+      {
+        "q": "Kan de notitie in een andere taal worden geproduceerd dan het bezoek?",
+        "a": "Workflows variëren per organisatie. Praat met ons over uw voorkeurstaal en sjablonen."
+      },
+      {
+        "q": "Is meertalige ondersteuning alleen voor poliklinische zorg?",
+        "a": "Nee. Ziekenhuisdocumenttypen worden ondersteund naast consultnotities."
+      },
+      {
+        "q": "Verlaat meertalige verwerking Zwitserland?",
+        "a": "DocNote is ontworpen zodat gezondheidsgegevenshosting en -verwerking aansluiten bij Zwitserse verwachtingen — een kernverschil met veel VS-ambient-tools."
+      },
+      {
+        "q": "Moeten clinici elke ondersteunde taal spreken?",
+        "a": "Nee. DocNote is gebouwd om de taal te hanteren die patiënt en clinicus daadwerkelijk gebruiken, inclusief gemengde consulten."
+      },
+      {
+        "q": "Kunnen verschillende klinieken in dezelfde groep verschillende uitvoertalen gebruiken?",
+        "a": "Ja, uitvoertaal en sjablonen kunnen per team tijdens onboarding worden geconfigureerd."
+      }
+    ],
+    "cta": {
+      "title": "Documenteer zorg in de talen waarin u daadwerkelijk werkt",
+      "body": "Start een gratis proefperiode of praat met ons team over uw taalmix.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Meertalige notities op Zwitserse infrastructuur."
+  },
+  "ai-scribe-general-practice": {
+    "navLabel": "AI-assistent voor huisartsen",
+    "title": "AI medische scribe voor huisartsen | DocNote",
+    "description": "AI medische scribe voor huisartsen en huisartsgeneeskunde. Snellere consultnotities en vervolgafspraken met Zwitserse hosting — gebouwd voor drukke huisartspraktijken.",
+    "hero": {
+      "badge": "AI-scribe voor huisartsen",
+      "title": "AI medische scribe voor huisartsen",
+      "subtitle": "Bescherm face-to-facetijd in opeenvolgende consulten zonder kwaliteit van het dossier te verliezen.",
+      "lead": "Huisartsgeneeskunde draait om hoge volumes en korte tijdslots. DocNote maakt concepten van consult- en vervolgnotities vanuit het bezoek, zodat huisartsen face-to-facetijd beschermen zonder de kwaliteit van het dossier op te offeren."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Gebouwd voor huisartsritme",
+      "paragraphs": [
+        "Opeenvolgende consulten, multimorbiditeit en administratieve vervolgacties laten weinig ruimte voor typen. Ambient-opname plus een gestructureerd concept verkort de kloof tussen de laatste patiënt en een afgeronde notitie.",
+        "Consultnotities, verwijsbrieven en vervolgplannen — niet alleen een demo-SOAP. Sjablonen passen aan hoe uw praktijk zorg documenteert, of u nu solo werkt of naast andere clinici in dezelfde praktijk."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom huisartsen het adopteren",
+      "title": "Documenten die huisartsen daadwerkelijk schrijven",
+      "subtitle": "Gebouwd voor korte slots en hoge volumes, niet het rustige tempo van een specialist.",
+      "items": [
+        {
+          "title": "Past bij korte consultslots",
+          "body": "Een gestructureerd concept binnen enkele seconden houdt het tempo bij van opeenvolgende afspraken."
+        },
+        {
+          "title": "Dekt ook verwijsbrieven",
+          "body": "Naast consultnotities maakt DocNote concepten van verwijsbrieven en vervolgplannen voor huisartsen."
+        },
+        {
+          "title": "Privacy voor huisartspraktijk",
+          "body": "Patiënten vertrouwen hun huisarts gevoelige verhalen toe — Zwitserse hosting en korte audiobewaring ondersteunen dat vertrouwen."
+        },
+        {
+          "title": "Consistent in de hele praktijk",
+          "body": "Wanneer meerdere clinici een praktijk delen, houdt consistente notitiestructuur het dossier coherent voor iedereen."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van consult naar een afgeronde notitie voor de volgende patiënt",
+      "subtitle": "Ontworpen voor het tempo van een volledige huisartsdag.",
+      "items": [
+        {
+          "title": "Leg het consult vast",
+          "body": "Neem het consult op via mobiel of web tussen patiënten door, volgens uw toestemmingsproces."
+        },
+        {
+          "title": "Beoordeel het concept",
+          "body": "Een gestructureerde notitie is binnen enkele seconden na het einde van de opname klaar."
+        },
+        {
+          "title": "Pas snel aan",
+          "body": "Bewerk tussen patiënten door — de meeste concepten hebben slechts kleine correcties nodig."
+        },
+        {
+          "title": "Valideer en ga verder",
+          "body": "Keur de notitie goed zodat deze is afgerond voordat de volgende patiënt binnenkomt."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy voor huisartspraktijk",
+      "title": "Het vertrouwen dat uw patiënten u al geven",
+      "intro": "Huisartspraktijk draait op langdurig vertrouwen — het documentatietool moet zijn plek in die relatie verdienen.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gegevens blijven gehost en verwerkt onder Zwitserse verwachtingen."
+        },
+        {
+          "title": "Korte audiobewaring",
+          "body": "Audio wordt automatisch verwijderd kort na het produceren van de notitie."
+        },
+        {
+          "title": "Geen training op consulten",
+          "body": "Consulten worden alleen gebruikt om uw notities te produceren, nooit om basismodellen te trainen."
+        },
+        {
+          "title": "Werkt voor solo- en groeppraktijken",
+          "body": "Zelfstandige artsen zijn een kernpubliek naast grotere praktijken en klinieken."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Multimorbiditeit documenteren zonder eindeloos kopiëren",
+        "body": "Oudere patiënten met meerdere chronische aandoeningen hebben notities nodig die rekening houden met het verloop zonder alles elke keer opnieuw te typen. DocNote helpt het huidige bezoek duidelijk te structureren terwijl eerdere notities als referentie beschikbaar blijven."
+      },
+      {
+        "heading": "Schaalbaar van solo naar groeppraktijk",
+        "body": "Veel huisartsen beginnen solo en sluiten zich later aan bij een groeppraktijk of nemen collega's in dienst. Consistente sjablonen vanaf het begin maken die overgang gemakkelijker, omdat de dossierstructuur hetzelfde blijft ongeacht de praktijkgrootte."
+      },
+      {
+        "heading": "Huisartsverwijsbrieven die worden gelezen",
+        "body": "Een verwijsbrief concurreert om de aandacht van een specialist met tientallen anderen. DocNote maakt concepten van verwijsbrieven met dezelfde gestructureerde aanpak als consultnotities — reden voor verwijzing, relevante anamnese en de specifieke vraag die u beantwoord wilt hebben — zodat de brief meer kans heeft op een nuttig antwoord."
+      },
+      {
+        "heading": "Waarom huisartsen hun eigen sjablonen nodig hebben",
+        "body": "Een generiek poliklinisch sjabloon gebouwd voor specialistische vervolgconsulten past niet bij de mix van acute klachten, chronische ziektebeheer en preventieve zorg van een huisarts op dezelfde middag. DocNote's huisartssjablonen zijn afgestemd op die mix in plaats van geleend van een enkel-specialisme-tool."
+      },
+      {
+        "heading": "Ondersteuning voor huisbezoeken en avond- en weekenddiensten",
+        "body": "Huisartsgeneeskunde stopt niet bij de praktijkdeur — huisbezoeken en avond- en weekenddiensten zijn onderdeel van de routine van veel huisartsen. Mobiele opname betekent dat dezelfde gestructureerde workflow geldt of het consult nu in een behandelkamer of aan de keukentafel van een patiënt plaatsvindt, zonder apart proces voor bezoeken buiten de praktijk."
+      },
+      {
+        "heading": "Preventieve zorg documenteren zonder extra klikken",
+        "body": "Vaccinatiestatus, screeningsherinneringen en leefstijladvies zijn gemakkelijk over te slaan bij documenteren als een bezoek al achterloopt. Omdat DocNote concepten maakt vanuit wat daadwerkelijk is besproken, worden preventieve zorgitems die tijdens het consult zijn genoemd vastgelegd zonder een aparte checklist achteraf in te vullen."
+      },
+      {
+        "heading": "Een notitie die hetzelfde leest voor elke patiënt in de praktijk",
+        "body": "Wanneer meerdere huisartsen een patiëntenlijst delen, is consistente notitiestructuur net zo belangrijk als snelheid. Een collega die uw lijst op korte termijn overneemt, moet de laatste relevante afspraak snel kunnen vinden en begrijpen, wat alleen mogelijk is als iedereen in de praktijk volgens dezelfde structuur documenteert."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is DocNote geschikt voor solo-huisartspraktijken?",
+        "a": "Ja. Zelfstandige artsen zijn een kernpubliek naast grotere klinieken."
+      },
+      {
+        "q": "Kunnen we het gebruiken voor telefonische of videoconsulten?",
+        "a": "Ondersteunde workflows hangen af van uw setup — vraag tijdens onboarding naar telehealth-opname."
+      },
+      {
+        "q": "Hoe helpt dit bij avonddocumentatie?",
+        "a": "Concepten maken tijdens of direct na het bezoek vermindert pyjamatijd-documentatie voor veel clinici."
+      },
+      {
+        "q": "Vervangt dit mijn EHR?",
+        "a": "Nee. DocNote helpt de notitie te produceren; uw EHR blijft het bronsysteem."
+      },
+      {
+        "q": "Kan DocNote helpen bij chronische ziektevervolgconsulten?",
+        "a": "Ja — terugkerende vervolgstructuren kunnen worden aangepast zodat multimorbiditeitsbezoeken georganiseerd blijven over afspraken heen."
+      },
+      {
+        "q": "Is er een leercurve voor solo-huisartsen?",
+        "a": "De meeste clinici zijn comfortabel binnen de eerste paar consulten; onboarding omvat begeleide setup voor uw sjablonen."
+      }
+    ],
+    "cta": {
+      "title": "Bescherm uw face-to-facetijd",
+      "body": "Start een gratis proefperiode en zie hoe DocNote past in uw huisartsdag.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Bescherm face-to-face tijd bij volle spreekuren."
+  },
+  "ai-scribe-psychiatry": {
+    "navLabel": "AI-assistent voor psychiatrie",
+    "title": "AI medisch schrijver voor psychiatrie | DocNote",
+    "description": "AI medisch schrijver voor psychiatrie en geestelijke gezondheidsconsulten. Gestructureerde notities met verhoogde privacy — Zwitserse hosting en medisch beroepsgeheim.",
+    "hero": {
+      "badge": "AI-schrijver voor psychiatrie",
+      "title": "AI medisch schrijver voor psychiatrie",
+      "subtitle": "Gestructureerde sessienotities met verhoogde privacy, zonder verlies van narratieve nuance.",
+      "lead": "Psychiatrische documentatie is narratief zwaar en diep gevoelig. DocNote helpt psychiaters gestructureerde consultnotities op te stellen vanuit de sessie, met Zwitserse hosting, korte audioretentie en klinische validatie centraal."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Notities die psychiatrische nuance respecteren",
+      "paragraphs": [
+        "Mentale status, risico, medicatiewijzigingen en therapeutische context vragen zorgvuldige formulering. DocNote maakt een gestructureerd startpunt; de psychiater houdt volledige controle over wat in het dossier komt.",
+        "Psychiatrische gesprekken vereisen strikte grenzen. DocNote gebruikt bezoeken niet om basis-modellen te trainen, host in Zwitserland en verwijdert audio binnen een kort retentietermijn — dezelfde verwachtingen die patiënten hebben bij elk geestelijke gezondheidscontact."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom psychiaters het vertrouwen",
+      "title": "Privacy is hier niet onderhandelbaar",
+      "subtitle": "Gebouwd voor de gevoeligheid van geestelijke gezondheidsdocumentatie, in privépraktijk of ziekenhuisdiensten.",
+      "items": [
+        {
+          "title": "Mentale status en risico, zorgvuldig opgesteld",
+          "body": "Gestructureerde startpunten voor mentale status, risico en medicatiewijzigingen — altijd onder volledige controle van de clinicus."
+        },
+        {
+          "title": "Striktere privacy standaard",
+          "body": "Geen training op bezoeken, Zwitserse hosting en korte audioretentie — de grenzen die psychiatrische zorg vereist."
+        },
+        {
+          "title": "Ambulante en institutionele settings",
+          "body": "Van privépraktijk tot ziekenhuispsychiatrie, dezelfde review-en-valideer workflow geldt."
+        },
+        {
+          "title": "Gebouwd voor meertalige patiënten",
+          "body": "Geestelijke gezondheidszorg overschrijdt vaak talen — DocNote is ontworpen voor meertalige Europese klinische omgevingen."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van sessie naar een noot die de psychiater volledig controleert",
+      "subtitle": "Ambiente opname alleen waar klinisch gepast.",
+      "items": [
+        {
+          "title": "Beslis of ambiente opname past",
+          "body": "Klinisch oordeel, toestemming en lokale regels bepalen wanneer opname gepast is."
+        },
+        {
+          "title": "Leg de sessie vast",
+          "body": "Neem op waar gepast, volgens het toestemmingsprotocol van uw dienst."
+        },
+        {
+          "title": "Bekijk het gestructureerde concept",
+          "body": "Een concept dat mentale status, risico en plan dekt, is klaar voor zorgvuldige review."
+        },
+        {
+          "title": "Bewerk vrij voor validatie",
+          "body": "Concepten worden nooit automatisch ingediend — de psychiater bewerkt en keurt elke noot goed."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy is niet onderhandelbaar",
+      "title": "Grenzen gebouwd voor geestelijke gezondheidszorg",
+      "intro": "Psychiatrische gesprekken vereisen de strengste versie van elke privacy-toezegging die DocNote maakt.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Sessiegegevens worden gehost en verwerkt onder Zwitserse medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt automatisch verwijderd binnen een kort termijn na productie van de noot."
+        },
+        {
+          "title": "Nooit gebruikt om AI te trainen",
+          "body": "Sessies worden alleen gebruikt om de noot te produceren, nooit om basis-modellen te trainen."
+        },
+        {
+          "title": "Volledige controle door clinicus",
+          "body": "De psychiater beoordeelt, bewerkt en valideert elk concept voordat het in het dossier komt."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Wanneer ambiente opname zinvol is in psychiatrie",
+        "body": "Niet elke sessie leent zich voor ambiente opname. Emotioneel intense eerste sessies, crisisspreken of bijzonder gevoelige inhoud zijn vaak beter gediend met traditionele documentatie. DocNote ondersteunt die beslissing in plaats van deze op te leggen — klinisch oordeel blijft altijd bij de clinicus."
+      },
+      {
+        "heading": "Documenteren over meerdere sessies",
+        "body": "Voor langere behandeltrajecten helpt consistente structuur om veranderingen in mentale status over tijd te volgen. DocNote houdt de sectiestructuur stabiel over opeenvolgende sessies terwijl de psychiater zelf de klinische continuïteit beoordeelt."
+      },
+      {
+        "heading": "Waarom psychiatrie strengere standaarden nodig heeft",
+        "body": "Dossiers over geestelijke gezondheid brengen bijzonder stigmatiseringsrisico met zich mee als ze lekken of onzorgvuldig worden behandeld. DocNote's strengere standaarden — geen training op bezoeken, korte retentie, Zwitserse hosting — zijn geen speciale toevoeging voor psychiatrie; het zijn dezelfde toezeggingen die het platform overal maakt, toegepast op een specialisme waar patiënten de inzet het scherpst voelen."
+      },
+      {
+        "heading": "Samenwerken met bestaande psychotherapie-notities",
+        "body": "Veel psychiaters houden al aparte procesnotities bij voor therapie-inhoud die buiten het formele medisch dossier blijft. DocNote maakt het gestructureerde klinische noot — mentale status, risico, plan — zonder dat u uw aanpak van die aparte procesnotities hoeft te veranderen."
+      },
+      {
+        "heading": "Risico-inschatting consistent documenteren",
+        "body": "Risico-inschatting is een van de meest juridisch gevoelige delen van een psychiatrische noot, en moet aanwezig en duidelijk zijn zelfs bij een drukke caseload. Een toegewijde, consistent geplaatste risicosectie in elk concept vermindert de kans dat een risico-inschatting verloren gaat in narratieve tekst of wordt overgeslagen onder tijdsdruk."
+      },
+      {
+        "heading": "Institutionele psychiatrie versus privépraktijk",
+        "body": "Een ziekenhuispsychiatriedienst en een solo privépraktijk hebben verschillende documentatieverplichtingen — institutionele sjablonen, verzekeringseisen en rapportageplichten kunnen allemaal verschillen. DocNote's sjablonen worden per setting geconfigureerd tijdens onboarding in plaats van één vorm voor beide contexten aan te nemen."
+      },
+      {
+        "heading": "Medicatiewijzigingen volgen over een lange behandelperiode",
+        "body": "Psychiatrisch medicatiebeheer omvat vaak geleidelijke aanpassingen over vele sessies in plaats van een enkele beslissing. Een consistent gestructureerde medicatiesectie over bezoeken maakt het gemakkelijker om het volledige traject van wijzigingen in één oogopslag te zien, in plaats van dit te reconstrueren uit verspreide narratieve notities over vele eerdere sessies en afspraken in de loop van de tijd."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is ambiente opname gepast in psychiatrie?",
+        "a": "Dat hangt af van klinisch oordeel, toestemming en lokale regels. DocNote ondersteunt privacy-bewuste workflows; uw dienst bepaalt wanneer opname gepast is."
+      },
+      {
+        "q": "Kunnen gevoelige zinnen worden uitgesloten van concepten?",
+        "a": "Clinici kunnen vrij bewerken voor validatie. Concepten worden nooit automatisch ingediend."
+      },
+      {
+        "q": "Waar worden gegevens gehost?",
+        "a": "DocNote is ontworpen voor Zwitserse hosting onder medische geheimhoudingsverwachtingen."
+      },
+      {
+        "q": "Vervangt DocNote de noot van de psychiater?",
+        "a": "Nee. Het maakt concepten; de psychiater blijft verantwoordelijk voor het definitieve document."
+      },
+      {
+        "q": "Kan therapie-inhoud worden uitgesloten van documentatieconcepten?",
+        "a": "Clinici bepalen precies wat wordt opgenomen voor validatie — niets wordt ingediend zonder review."
+      },
+      {
+        "q": "Werkt dit voor psychiatrische ziekenhuisafdelingen?",
+        "a": "Ja, naast privépraktijk — institutionele sjablonen en workflows passen dezelfde reviewdiscipline toe."
+      }
+    ],
+    "cta": {
+      "title": "Breng zorgvuldige documentatie naar uw praktijk",
+      "body": "Start een gratis proefperiode of praat met ons team over psychiatrie-specifieke sjablonen.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Sessienotities met privacy en nuance."
+  },
+  "ai-scribe-cardiology": {
+    "navLabel": "AI-assistent voor cardiologie",
+    "title": "AI medisch schrijver voor cardiologie | DocNote",
+    "description": "AI medisch schrijver voor cardiologieklinieken en ziekenhuisdiensten. Gestructureerde consult- en follow-updocumentatie met Zwitserse hosting.",
+    "hero": {
+      "badge": "AI-schrijver voor cardiologie",
+      "title": "AI medisch schrijver voor cardiologie",
+      "subtitle": "Specialisme-bewuste concepten voor dichte consulten en procedurefollow-ups.",
+      "lead": "Cardiologie combineert dichte data, procedurefollow-ups en hoge documentatielast. DocNote maakt gestructureerde notities van consulten, zodat cardiologen minder tijd besteden aan typen en meer aan klinische beslissingen."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Specialistische taal die ertoe doet",
+      "paragraphs": [
+        "Symptomen, bevindingen, beeldvormingscontext en planwijzigingen hebben cardiologievocabulaire nodig. DocNote richt zich op specialisme-bewuste concepten, zodat cardiologen minder tijd besteden aan typen en meer aan klinische beslissingen.",
+        "Poliklinische follow-ups en klinische documentatie kunnen in dezelfde AI-documentatiestack leven — inclusief routes naar ontslagbrieven bij opname."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom cardiologiediensten het adopteren",
+      "title": "Snellere afgesloten notities, dezelfde klinische strengheid",
+      "subtitle": "Gebouwd voor dichte data en hoge documentatielast.",
+      "items": [
+        {
+          "title": "Cardiologie-bewust vocabulaire",
+          "body": "Symptomen, bevindingen, beeldvormingscontext en planwijzigingen worden opgesteld met specialisme-bewuste taal."
+        },
+        {
+          "title": "Kliniek- en ziekenhuiscontinuïteit",
+          "body": "Poliklinische follow-ups en klinische documentatie delen dezelfde stack, inclusief routes naar ontslagbrieven."
+        },
+        {
+          "title": "Compliance voor hartdiensten",
+          "body": "Zwitserse hosting en korte audioretentie helpen ziekenhuiscardiologiediensten security- en privacyreview te doorstaan."
+        },
+        {
+          "title": "Snellere afgesloten notities",
+          "body": "Maak concepten tijdens of na het consult, valideer en houd het dossier lopend zonder avondachterstand."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van consult naar een specialisme-klare noot",
+      "subtitle": "Gebouwd voor dichte bezoeken en procedurefollow-ups.",
+      "items": [
+        {
+          "title": "Leg het consult of de follow-up vast",
+          "body": "Neem het bezoek op via mobiel of web, inclusief procedurefollow-upbesprekingen."
+        },
+        {
+          "title": "DocNote past cardiologiestructuur toe",
+          "body": "Symptomen, bevindingen en planwijzigingen worden georganiseerd met specialisme-bewuste taal."
+        },
+        {
+          "title": "Bekijk het concept",
+          "body": "Een gestructureerde noot is binnen seconden klaar voor uw review."
+        },
+        {
+          "title": "Valideer en ga verder",
+          "body": "Keur de noot goed; de verantwoordelijke clinicus tekent altijd af."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Compliance voor hartdiensten",
+      "title": "Beveiliging die inkoop ondersteunt",
+      "intro": "Ziekenhuiscardiologiediensten hebben een duidelijk compliance-antwoord nodig, geen functielijst.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens gehost en verwerkt onder Zwitserse medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt automatisch kort na productie van de noot verwijderd."
+        },
+        {
+          "title": "Geen training op bezoeken",
+          "body": "Consulten worden alleen gebruikt om documenten te produceren, nooit om basis-modellen te trainen."
+        },
+        {
+          "title": "Mediway en SOKLE waar geconfigureerd",
+          "body": "Integraties zijn beschikbaar waar ingesteld, ter ondersteuning van ziekenhuiscardiologieworkflows."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Van een follow-upbezoek naar een opname",
+        "body": "Wanneer een poliklinische cardiologiepatiënt wordt opgenomen, moet documentatie naadloos doorgaan. Omdat DocNote hetzelfde platform gebruikt voor consultnotities en ontslagbrieven, gaat klinische context niet verloren bij de overgang van poliklinische naar klinische zorg."
+      },
+      {
+        "heading": "Dichte data leesbaar houden",
+        "body": "Cardiologieconsulten stoppen vaak veel metingen, medicatiewijzigingen en verloopvergelijkingen in een kort bezoek. Een gestructureerd sjabloon helpt die dichtheid leesbaar te houden in plaats van te verliezen in een lange lap vrije tekst."
+      },
+      {
+        "heading": "Procedurefollow-ups duidelijk documenteren",
+        "body": "Een follow-upbezoek na een catheterisatie, ablatie of device-implant moet de procedure duidelijk refereren terwijl het focust op huidige symptomen en volgende stappen. DocNote's cardiologiesjablonen houden die link expliciet, zodat de noot leest als een voortzetting van het geval in plaats van een losstaand bezoek."
+      },
+      {
+        "heading": "Waarom cardiologievocabulaire ertoe doet voor adoptie",
+        "body": "Een schrijver die cardiologiespecifieke termen verkeerd hoort of structureert — NYHA-klasse, ejectiefractie, specifieke aritmietypen — creëert meer correctiewerk dan het bespaart. DocNote's specialisme-bewuste taal maakt het verschil tussen een tool die clinici tolereren en een die ze de hele dag openhouden."
+      },
+      {
+        "heading": "Poliklinische cardiologie verbinden met klinische zorg",
+        "body": "Hartfalen- en aritmiepatiënten bewegen vaak tussen kliniekfollow-ups en ziekenhuisopnames over maanden of jaren. Omdat DocNote zowel poliklinische consultnotities als klinische ontslagbrieven dekt, blijft de documentatielijn verbonden over die heen-en-weer in plaats van bij elke nieuwe setting te resetten."
+      },
+      {
+        "heading": "Medicatiewijzigingen precies volgen",
+        "body": "Cardiologiebezoeken omvatten vaak dosisaanpassingen en medicijnsubstituties die eenduidig moeten zijn voor de volgende clinicus die de noot leest, inclusief apothekers die op interacties controleren. DocNote houdt medicatiewijzigingen op een consistente, duidelijk gelabelde plek in het concept in plaats van gemengd in een algemeen verhaal."
+      },
+      {
+        "heading": "Risicofactoren consistent documenteren",
+        "body": "Cardiovasculaire risicofactoren — roken, familiegeschiedenis, lipide- en bloeddruk trends — moeten zichtbaar zijn over bezoeken, niet begraven in een enkel consult. DocNote's cardiologiesjablonen houden een consistente plek voor deze factoren, zodat ze leesbaar doorlopen in plaats van elke keer opnieuw te moeten worden vastgesteld."
+      },
+      {
+        "heading": "Voorbereiden op multidisciplinaire hartteambesprekingen",
+        "body": "Complexe cardiologiegevallen worden vaak besproken in een multidisciplinair hartteamoverleg voor een grote beslissing. Een duidelijke, gestructureerde noot maakt het sneller voor het team om op snelheid te komen met het geval aan het begin van dat overleg, in plaats van de eerste minuten samen de geschiedenis te reconstrueren en eerdere bezoeken te controleren."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kunnen cardiologieprocedurenotities worden ondersteund?",
+        "a": "Documenttypes hangen af van uw sjablonen. Veel diensten beginnen met consult- en follow-upnotities, dan uitbreiden."
+      },
+      {
+        "q": "Integreert DocNote met ziekenhuissystemen?",
+        "a": "Integraties zoals Mediway en SOKLE zijn beschikbaar waar geconfigureerd."
+      },
+      {
+        "q": "Is dit alleen voor privéklinieken?",
+        "a": "Nee. Ziekenhuisdiensten zijn een primaire use case."
+      },
+      {
+        "q": "Wie valideert de cardiologienoot?",
+        "a": "De verantwoordelijke clinicus — altijd."
+      },
+      {
+        "q": "Kunnen beeldvormingsbevindingen worden opgenomen in het concept?",
+        "a": "Bevindingen besproken tijdens het consult kunnen worden vastgelegd; beeldvormingsrapporten zelf blijven in hun eigen systemen."
+      },
+      {
+        "q": "Ondersteunt DocNote procedurefollow-upbezoeken?",
+        "a": "Ja — poliklinische follow-ups na procedures zijn een veelvoorkomende use case naast eerste consulten."
+      }
+    ],
+    "cta": {
+      "title": "Breng specialisme-bewuste notities naar uw cardiologiedienst",
+      "body": "Start een gratis proefperiode en zie hoe DocNote uw consultlast aanpakt.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Dichte consulten en procedure-follow-ups."
+  },
+  "ai-scribe-pediatrics": {
+    "navLabel": "AI-assistent voor kindergeneeskunde",
+    "title": "AI medisch schrijver voor pediatrie | DocNote",
+    "description": "AI medisch schrijver voor pediatrie: gestructureerde consultnotities voor pediatrieklinieken met Zwitserse hosting en zorgvuldige privacystandaarden.",
+    "hero": {
+      "badge": "AI-schrijver voor pediatrie",
+      "title": "AI medisch schrijver voor pediatrie",
+      "subtitle": "Leg groei, symptomen en plannen vast zonder aandacht voor het kind en verzorgers te verliezen.",
+      "lead": "Pediatrische bezoeken zijn snel, gezinsgericht en documentatiezwaar. DocNote helpt kinderartsen consultnotities op te stellen vanuit het consult, zodat groei, symptomen en plannen worden vastgelegd zonder aandacht van het kind en verzorgers te stelen."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Notities die passen bij pediatrische bezoeken",
+      "paragraphs": [
+        "Anamnese van verzorgers, bevindingen, anticiperende begeleiding en follow-up — opgesteld in een structuur die u snel kunt bewerken tussen patiënten door.",
+        "Verzorgers spreken mogelijk een andere taal dan de notitietaal, en bezoeken zijn gezinsgericht en snel. DocNote is gebouwd voor meertalige Europese klinieken en het specifieke ritme van pediatrische zorg."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom pediatrieklinieken het adopteren",
+      "title": "Privacy voor kinderen en gezinnen, snelheid voor drukke klinieken",
+      "subtitle": "Gebouwd voor gezinsgerichte, snelle bezoeken.",
+      "items": [
+        {
+          "title": "Legt verzorgersanamnese duidelijk vast",
+          "body": "Anamnese van ouders of voogden, bevindingen en anticiperende begeleiding komen in een structuur die u snel kunt bewerken."
+        },
+        {
+          "title": "Verhoogde privacy standaard",
+          "body": "Zwitserse hosting, korte audioretentie en geen training op bezoeken ondersteunen de verhoogde privacyverwachtingen van pediatrische zorg."
+        },
+        {
+          "title": "Consistente overdrachten tussen huisarts en specialist",
+          "body": "Consistente AI-documentatiegewoonten verminderen wrijving wanneer kinderen tussen huisartsen en pediatrie bewegen."
+        },
+        {
+          "title": "Gebouwd voor meertalige gezinnen",
+          "body": "Verzorgers spreken mogelijk een andere taal dan de noot — DocNote is gebouwd voor meertalige Europese klinieken."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van een gezinsbezoek naar een duidelijke noot",
+      "subtitle": "Snel genoeg tussen korte, hoogverloop afspraken.",
+      "items": [
+        {
+          "title": "Leg het bezoek vast",
+          "body": "Neem het consult met verzorgers op via mobiel of web, volgens toestemmingsregels."
+        },
+        {
+          "title": "Bekijk het concept",
+          "body": "Een gestructureerde noot over anamnese, onderzoek en plan is binnen seconden klaar."
+        },
+        {
+          "title": "Controleer leeftijdsspecifieke details",
+          "body": "Clinici controleren op groei, veiligheidskritieke en leeftijdsspecifieke nauwkeurigheid."
+        },
+        {
+          "title": "Valideer en ga verder",
+          "body": "Keur de noot goed tussen patiënten door zonder tempo te verliezen."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy voor kinderen en gezinnen",
+      "title": "Het verhoogde vertrouwen dat pediatrische zorg vereist",
+      "intro": "Documentatie voor kinderen draagt extra gewicht — het privacyverhaal moet daarbij passen.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens gehost en verwerkt onder Zwitserse medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt automatisch kort na productie van de noot verwijderd."
+        },
+        {
+          "title": "Geen training op bezoeken",
+          "body": "Gezinsconsulten worden nooit gebruikt om basis-modellen te trainen."
+        },
+        {
+          "title": "Gezinsgerichte workflow",
+          "body": "Documentatie ondersteunt het bezoek zonder aandacht van het kind en verzorgers te stelen."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Gezonde-kindbezoeken consistent documenteren",
+        "body": "Routine gezonde-kindcontroles volgen vaak een terugkerend patroon van groeigegevens, ontwikkelingsvragen en vaccinatiestatus. Een consistent sjabloon maakt deze bezoeken gemakkelijker te vergelijken over afspraken, zonder alles elke keer opnieuw in te voeren."
+      },
+      {
+        "heading": "Wanneer verzorgers en de noot verschillende talen gebruiken",
+        "body": "In meertalige gezinnen gebeurt het consult vaak in één taal terwijl de instelling in een andere documenteert. DocNote ondersteunt die scheiding zodat de taaldiversiteit van het gezin de kwaliteit van het dossier niet beïnvloedt."
+      },
+      {
+        "heading": "Aandacht houden bij het kind, niet het scherm",
+        "body": "Pediatrische bezoeken hangen af van snel contact maken met een kind dat mogelijk al angstig is voor de afspraak. Een clinicus die de hele afspraak typt, verliest een deel van die verbinding. Ambiente opname is ontworpen om oogcontact en lichaamstaal gericht te houden op het kind en verzorger."
+      },
+      {
+        "heading": "Anticiperende begeleiding consistent documenteren",
+        "body": "Anticiperende begeleiding — veiligheidsadvies, ontwikkelingsmijlpalen om op te letten, wanneer zorg te zoeken — is gemakkelijk over te slaan als een bezoek uitloopt. Een gestructureerd sjabloon houdt een plek voor deze begeleiding in elke noot, waardoor het gemakkelijker is te bevestigen dat het daadwerkelijk is besproken in plaats van aangenomen."
+      },
+      {
+        "heading": "Werken met gescheiden verzorgers",
+        "body": "Gezinssituaties die beïnvloeden wie informatie ontvangt of beslissingen neemt, komen vaak voor in pediatrische praktijk. DocNote's notitiestructuur bepaalt niet wie ouderlijk gezag heeft, maar een duidelijke, goed georganiseerde registratie maakt het gemakkelijker voor de praktijk om haar beleid consistent toe te passen bij vragen."
+      },
+      {
+        "heading": "School- en kinderopvangnotities efficiënt documenteren",
+        "body": "Naast de klinische noot zelf hebben pediatrische praktijken vaak korte administratieve brieven nodig — voor school, sportvrijstelling of kinderopvang — die verwijzen naar hetzelfde bezoek. Omdat het onderliggende bezoek al gestructureerd is, kost het genereren van deze kortere documenten minder herwerk dan elke keer vanuit een ongestructureerde noot te beginnen."
+      },
+      {
+        "heading": "Groei en ontwikkeling over jaren volgen",
+        "body": "Het dossier van een kind wordt over vele jaren gelezen door clinici die het gezin mogelijk nooit hebben ontmoet. Consistente structuur over bezoeken maakt het gemakkelijker om groeitrends en ontwikkelingsmijlpalen over tijd te volgen, in plaats van die geschiedenis elke keer bij een nieuwe vraag uit inconsistente oude notities te reconstrueren."
+      },
+      {
+        "heading": "Ondersteuning van waarnemende en roterende pediatrische staf",
+        "body": "Pediatrische praktijken vertrouwen vaak op waarnemende clinici of roterende stagiaires die een kind voor het eerst zien zonder een langdurige relatie met het gezin. Een goed gestructureerde eerdere noot geeft die clinicus de context die ze nodig hebben in een fractie van de tijd die het zou kosten om jaren los georganiseerde vrije tekst door te lezen."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kunnen ouders opname weigeren?",
+        "a": "Toestemming en lokale regels bepalen opname. DocNote verandert uw verplichting om deze te volgen niet."
+      },
+      {
+        "q": "Worden gezonde-kindbezoeken ondersteund?",
+        "a": "Ja — consultachtige notities voor routine- en acute bezoeken kunnen uw voorkeurssjablonen gebruiken."
+      },
+      {
+        "q": "Is DocNote alleen voor ziekenhuizen?",
+        "a": "Nee. Pediatrieklinieken en gemengde praktijken vallen binnen het bereik."
+      },
+      {
+        "q": "Hoe nauwkeurig zijn pediatrische concepten?",
+        "a": "Concepten zijn startpunten. Clinici controleren altijd op leeftijdsspecifieke details en veiligheidskritieke informatie."
+      },
+      {
+        "q": "Kunnen groeicurves of metingen in de noot worden opgenomen?",
+        "a": "Metingen besproken tijdens het bezoek kunnen in de noot worden vastgelegd; grafieksystemen blijven in hun eigen tools."
+      },
+      {
+        "q": "Hanteert DocNote gezonde-kind- en acute bezoeken anders?",
+        "a": "Ja — verschillende sjablonen kunnen worden geselecteerd afhankelijk van het bezoektype."
+      }
+    ],
+    "cta": {
+      "title": "Houd aandacht bij het kind, niet het toetsenbord",
+      "body": "Start een gratis proefperiode en zie hoe DocNote past bij uw pediatriekliniek.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Groei, symptomen, plan — aandacht bij het kind."
+  },
+  "ai-scribe-emergency-medicine": {
+    "navLabel": "AI-assistent voor spoedeisende hulp",
+    "title": "AI-medische scribe voor spoedeisende hulp | DocNote",
+    "description": "AI-medische scribe voor spoedeisende hulp en acute zorg. Snellere gestructureerde notities in hoogtempo-omgevingen — gehost in Zwitserland voor ziekenhuisteams.",
+    "hero": {
+      "badge": "AI-scribe voor spoedeisende hulp",
+      "title": "AI-medische scribe voor spoedeisende hulp",
+      "subtitle": "Gestructureerde notities die het tempo bijhouden, zonder validatie over te slaan.",
+      "lead": "Spoedeisende hulpafdelingen draaien op onvolledige informatie en een meedogenloos tempo. DocNote helpt SEH-teams gestructureerde notities op te stellen, zodat de documentatie het tempo bijhoudt zonder klinische validatie achterwege te laten."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Snelheid zonder het dossier over te slaan",
+      "paragraphs": [
+        "Hoofdklacht, tijdlijn, onderzoek, werkdiagnose en beleid moeten in het dossier terechtkomen. Een goede conceptnotitie verkort de afhandelingstijd terwijl de clinicus verantwoordelijk blijft.",
+        "Spoedeisende zorg is luidruchtig, onvolledig en taalkundig gemengd. DocNote is ontworpen voor echte behandelkamers — niet stille demoruimtes — en sluit aan op hetzelfde ziekenhuisdocumentatiesysteem dat gebruikt wordt voor opname en ontslag."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom SEH-teams het adopteren",
+      "title": "Documentatie die het tempo bijhoudt",
+      "subtitle": "Gebouwd voor onvolledige informatie en meedogenloze doorlooptijden.",
+      "items": [
+        {
+          "title": "Houdt het tempo bij",
+          "body": "Hoofdklacht, tijdlijn, onderzoek, werkdiagnose en beleid komen sneller in het dossier, waardoor de afhandelingstijd verkort wordt."
+        },
+        {
+          "title": "Ontworpen voor lawaaierige, echte omgevingen",
+          "body": "Gemaakt voor luidruchtige, taalkundig gemengde behandelkamers — niet een stille demoruimte."
+        },
+        {
+          "title": "Sluit aan op het ziekenhuisdocumentatiesysteem",
+          "body": "SEH-notities staan naast opname-, ontslag- en specialistenconsultdocumentatie in hetzelfde platform."
+        },
+        {
+          "title": "Veiligheid voor acute zorg-aankopen",
+          "body": "Zwitserse hosting en korte audioretentie helpen SEH-leiderschap bij privacyvragen tijdens aankoop."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van een snel bewegend geval naar een afgesloten notitie",
+      "subtitle": "Gebouwd om te voorkomen dat documentatie achterloopt op triage.",
+      "items": [
+        {
+          "title": "Vastleggen terwijl je bezig bent",
+          "body": "Leg belangrijke momenten van het contact vast terwijl ze gebeuren, zelfs met onvolledige informatie."
+        },
+        {
+          "title": "DocNote maakt een conceptnotitie",
+          "body": "Hoofdklacht, onderzoek, werkdiagnose en beleid worden binnen seconden georganiseerd in een concept."
+        },
+        {
+          "title": "Beoordelen voor beleid",
+          "body": "De behandelend clinicus controleert het concept tegen het werkelijke zorgverloop."
+        },
+        {
+          "title": "Valideren en afsluiten",
+          "body": "Keur de notitie goed zodat de documentatie het patiëntenverloop bijhoudt."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Veiligheid voor acute zorg",
+      "title": "Compliance die een aankoop overleeft, niet alleen een proefdienst",
+      "intro": "SEH-leiderschap heeft een duidelijk privacy- en veiligheidsantwoord nodig voorafgaand aan een uitrol.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens gehost en verwerkt onder Zwitserse medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt automatisch kort na het produceren van de notitie verwijderd."
+        },
+        {
+          "title": "Geen training op bezoeken",
+          "body": "Contacten worden alleen gebruikt om documentatie te produceren, nooit om basismodellen te trainen."
+        },
+        {
+          "title": "De behandelend clinicus bezit de notitie",
+          "body": "De behandelend clinicus of gemachtigde ondertekenaar bezit altijd de definitieve SEH-notitie."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Piloten op geselecteerde diensten",
+        "body": "Een volledige uitrol over een hele spoedeisende hulpafdeling is zelden de eerste stap. De meeste diensten beginnen met geselecteerde diensten en een beperkt documenttype, verzamelen feedback van verpleegkundigen en artsen, en breiden pas daarna uit naar volledige dekking."
+      },
+      {
+        "heading": "Omgaan met onderbroken contacten",
+        "body": "Op de SEH wordt documentatie zelden in één keer afgerond — onderbrekingen door nieuwe gevallen zijn normaal. DocNote vat samen wat daadwerkelijk is vastgelegd en laat het aan de behandelend clinicus over om hiaten tijdens de beoordeling in te vullen, in plaats van uit te gaan van ononderbroken vastlegging."
+      },
+      {
+        "heading": "Verkorten van de afhandelingstijd zonder concessies",
+        "body": "Spoedeisende hulpafdelingen worden vaak gemeten op hoe snel een zaak na beleid wordt afgesloten, naast klinische kwaliteitsmetrieken. Een sneller concept verkort die kloof, maar de validatiestap verdwijnt nooit — DocNote is gebouwd om het typen te versnellen, niet om de laatste controle van de clinicus te verwijderen."
+      },
+      {
+        "heading": "Passen in triage-naar-ontslag-werkstromen",
+        "body": "Een SEH-contact kan binnen dezelfde dienst van triage naar opname, ontslag of overplaatsing gaan, elk met verschillende documentatiebehoeften. DocNote's SEH-sjablonen zijn ontworpen om aan te sluiten op welk pad het geval ook volgt, in plaats van uit te gaan van elk bezoek dat op dezelfde manier eindigt."
+      },
+      {
+        "heading": "Documenteren onder echte tijdsdruk",
+        "body": "Spoedeisende hulp is een van de weinige settings waar documentatie echt concurreert met het volgende kritieke besluit, niet alleen met de volgende patiënt. Een concept dat na vastlegging grotendeels correct is en alleen correctie nodig heeft in plaats van compositie, is wat hier daadwerkelijk tijd bespaart — schrijven vanaf een lege pagina tijdens een drukke dienst is zelden realistisch."
+      },
+      {
+        "heading": "SEH-notities koppelen aan specialistische consulten",
+        "body": "Veel SEH-gevallen omvatten een specialistisch consult middenin het bezoek — cardiologie, chirurgie, psychiatrie — dat duidelijk moet worden weerspiegeld in de definitieve notitie naast de eigen bevindingen van het SEH-team. Omdat DocNote's ziekenhuisbrede platform betekent dat een specialistisch consultnotitie en de SEH-notitie hetzelfde geval consistent kunnen refereren in plaats van in losgekoppelde systemen te staan."
+      },
+      {
+        "heading": "Piloten zonder een live afdeling te verstoren",
+        "body": "Een SEH-pilot loopt meestal op een subset van diensten met een duidelijk afgebakend documenttype, zodat de rest van de afdeling haar bestaande proces ongehinderd voortzet. Dit beperkt het risico terwijl er nog steeds genoeg echte gevallen worden geproduceerd om te beoordelen of de werkstroom past voordat wordt toegezegd aan volledige dekking."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan DocNote het SEH-tempo bijhouden?",
+        "a": "Concepten zijn ontworpen om snel na vastlegging te zijn. Teams piloten meestal op geselecteerde diensten voor volledige uitrol."
+      },
+      {
+        "q": "Hoe zit het met trauma- of kritieke resuscitatienotities?",
+        "a": "Begin met ondersteunde notitietypen die uw dienst valideert. Hoog-acute randgevallen kunnen volledig handmatig blijven tot sjablonen volwassen zijn."
+      },
+      {
+        "q": "Integreert dit met ziekenhuis-EHR-paden?",
+        "a": "Waar integraties zijn geconfigureerd, ja; anders export naar uw bestaande SEH-documentatieproces."
+      },
+      {
+        "q": "Wie bezit de definitieve SEH-notitie?",
+        "a": "De behandelend clinicus of gemachtigde ondertekenaar — nooit het model alleen."
+      },
+      {
+        "q": "Kan DocNote omgaan met onderbroken of onvolledige contacten?",
+        "a": "Ja — concepten reflecteren wat is vastgelegd, en clinici vullen hiaten aan of corrigeren deze tijdens beoordeling."
+      },
+      {
+        "q": "Hoe piloten we dit zonder een dienst te verstoren?",
+        "a": "De meeste teams beginnen met geselecteerde diensten en een beperkt notitietype voordat ze uitbreiden naar volledige SEH-dekking."
+      }
+    ],
+    "cta": {
+      "title": "Houd documentatie op SEH-snelheid",
+      "body": "Praat met ons team over een pilot voor geselecteerde diensten in uw afdeling.",
+      "primary": "Praat met ons team",
+      "secondary": "Bekijk tutorial"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Notities die het SEH-tempo bijhouden."
+  },
+  "ai-scribe-surgery": {
+    "navLabel": "AI-assistent voor chirurgie",
+    "title": "AI-medische scribe voor chirurgie | DocNote",
+    "description": "AI-medische scribe voor chirurgische diensten: operatieve verslagen, vervolgafspraken en ziekenhuisdocumentatie met Zwitserse hosting.",
+    "hero": {
+      "badge": "AI-scribe voor chirurgie",
+      "title": "AI-medische scribe voor chirurgie",
+      "subtitle": "Operatieve verslagen, kliniekvervolgafspraken en ontslagpapieren in één perioperatieve stack.",
+      "lead": "Chirurgische diensten verdrinken in operatieve verslagen, kliniekvervolgafspraken en ontslagpapieren. DocNote maakt gestructureerde chirurgische documentatie op zodat chirurgen klinische details verfijnen in plaats van te vechten tegen lege sjablonen na een lange lijst."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Operatieve en kliniekdocumentatie samen",
+      "paragraphs": [
+        "Chirurgische diensten verdrinken in operatieve verslagen, kliniekvervolgafspraken en ontslagpapieren. DocNote maakt gestructureerde chirurgische documentatie op zodat chirurgen klinische details verfijnen in plaats van te vechten tegen lege sjablonen na een lange lijst.",
+        "Orthopedie, algemene chirurgie en andere lijnen hebben verschillende verslagvormen. Onboarding koppelt DocNote aan de sjablonen die uw theater al vertrouwt, en behandelt het hele perioperatieve traject in één stack."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom chirurgische diensten het adopteren",
+      "title": "Minder avondpapierwerk over het hele traject",
+      "subtitle": "Eén stack voor operatieve verslagen, klinieknotities en ontslag.",
+      "items": [
+        {
+          "title": "Operatieve en kliniekdocumentatie samen",
+          "body": "Gebruik DocNote voor operatieve verslagconcepten en poliklinische chirurgische consultaties — één stack voor het perioperatieve traject."
+        },
+        {
+          "title": "Sjablonen die bij uw dienst passen",
+          "body": "Onboarding koppelt DocNote aan de verslagvormen die uw theater en kliniek al vertrouwen, per specialismelijn."
+        },
+        {
+          "title": "Minder inhalen van documentatie",
+          "body": "Concepten zijn klaar aan het einde van de ingreep of kliniek en besparen tijd die anders verloren gaat aan avondpapierwerk."
+        },
+        {
+          "title": "Ziekenhuiscompliance door het hele traject",
+          "body": "Zwitserse hosting, korte audioretentie en artsenvalidatie zijn gebouwd voor chirurgische afdelingen onder medische geheimhouding."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van ingreep of kliniek naar een gevalideerd document",
+      "subtitle": "Eén werkstroom voor operatieve verslagen en klinieknotities.",
+      "items": [
+        {
+          "title": "Vastleggen van de ingreep of het bezoek",
+          "body": "Neem het operatieve debrief of kliniekconsult op via mobiel of web."
+        },
+        {
+          "title": "DocNote past uw sjabloon toe",
+          "body": "Sectiestructuur volgt het operatieve verslag of consultatiesjabloon dat uw dienst gebruikt."
+        },
+        {
+          "title": "Techniek en details beoordelen",
+          "body": "Chirurgen verfijnen bevindingen, implantaten en plan voor precisie."
+        },
+        {
+          "title": "Valideren en archiveren",
+          "body": "Keur het document goed; het komt in het dossier onder verantwoordelijkheid van de chirurg."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Ziekenhuiscompliance",
+      "title": "Gebouwd voor chirurgische afdelingen onder medische geheimhouding",
+      "intro": "Chirurgische documentatie draagt juridisch gewicht over het hele traject, niet alleen het operatieve verslag.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens gehost en verwerkt onder Zwitserse medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt automatisch kort na elk document verwijderd."
+        },
+        {
+          "title": "Altijd chirurgische validatie",
+          "body": "Elk operatief verslag en klinieknotitie wordt beoordeeld en goedgekeurd door de chirurg."
+        },
+        {
+          "title": "Sjablonen per specialismelijn",
+          "body": "Verslagvormen worden tijdens onboarding gekoppeld aan orthopedie, algemene chirurgie en andere lijnen."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Het hele perioperatieve traject dekken",
+        "body": "Een chirurgisch geval genereert documentatie voor, tijdens en na de ingreep — van het pre-op kliniekbezoek tot de post-op controle. Omdat hetzelfde platform al deze stappen behandelt, hoeft geen team tussen meerdere tools te schakelen om hetzelfde geval te volgen."
+      },
+      {
+        "heading": "Consistentie over meerdere chirurgen",
+        "body": "Wanneer een dienst meerdere clinici omvat met iets verschillende documentatiegewoonten, helpt een gedeeld sjabloon per specialismelijn om het dossier leesbaar en vergelijkbaar te houden over het hele team."
+      },
+      {
+        "heading": "Kliniekvervolgafspraken koppelen aan het originele operatieve verslag",
+        "body": "Een post-op kliniekbezoek leest beter wanneer het duidelijk kan verwijzen naar de originele ingreep — wat is gedaan, welke complicaties zijn opgemerkt, wat het plan was. Omdat DocNote beide documenttypen behandelt, is die continuïteit gemakkelijker te behouden dan wanneer klinieknotities en operatieve verslagen in losgekoppelde systemen staan."
+      },
+      {
+        "heading": "Onboarding van een chirurgische afdeling per specialismelijn",
+        "body": "Orthopedische, algemene en andere chirurgische lijnen delen zelden identieke documentatiegewoonten, zelfs binnen hetzelfde ziekenhuis. Een afdelingsbrede uitrol koppelt eerst elke lijn aan bestaande sjablonen, traint dan op echte gevallen en breidt pas daarna uit — dezelfde volgorde die werkt voor elk specialisme."
+      },
+      {
+        "heading": "Een volledig chirurgisch episode documenteren, van begin tot eind",
+        "body": "Een chirurgische episode omvat een pre-op beoordeling, het operatieve verslag en een of meer post-op vervolgafspraken, vaak weken uit elkaar. Deze documenten op één platform houden betekent dat een chirurg die de post-op notitie beoordeelt snel kan verwijzen naar precies wat gepland en gedaan is ten tijde van de operatie, zonder te moeten zoeken in losse systemen."
+      },
+      {
+        "heading": "Omgaan met spoed versus electieve ingrepen",
+        "body": "Een spoedingreep laat zelden tijd voor dezelfde pre-op documentatie als een electieve. DocNote's sjablonen houden rekening met dat verschil, zodat een urgent geval niet door dezelfde meerstapsdocumentatiestroom wordt gedwongen die is gebouwd voor een geplande operatie."
+      },
+      {
+        "heading": "Passen in een druk theaterschema",
+        "body": "Tussen gevallen op een volle lijst is er zelden meer dan een paar minuten om te documenteren voordat de volgende patiënt klaar is. Een debrief die die paar minuten neemt in plaats van een langere zit te vereisen, maakt same-day documentatie realistisch over een hele operatielijst, niet alleen het eerste geval op een veeleisende dag."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kunnen we beginnen met alleen operatieve verslagen?",
+        "a": "Ja. Veel chirurgische teams beginnen met één documenttype en voegen later klinieknotities toe."
+      },
+      {
+        "q": "Is de chirurg nog steeds verantwoordelijk voor het verslag?",
+        "a": "Altijd. DocNote maakt concepten; chirurgen valideren."
+      },
+      {
+        "q": "Ondersteunt u implantaten- en bevindingensecties?",
+        "a": "Sectiestructuur volgt uw sjabloon. Teams finetunen dit tijdens pilots."
+      },
+      {
+        "q": "Hoe betrekken we de hele chirurgische dienst?",
+        "a": "Rol uit per theaterteam of specialismelijn met gedeelde sjablonen en training."
+      },
+      {
+        "q": "Kunnen we beginnen met klinieknotities voor operatieve verslagen?",
+        "a": "Ja — teams kunnen beginnen met een van beide documenttypen en het andere toevoegen zodra de werkstroom is gevalideerd."
+      },
+      {
+        "q": "Hoe delen meerdere chirurgen in één dienst sjablonen?",
+        "a": "Gedeelde sjablonen en training worden per specialismelijn ingesteld zodat de hele dienst consistent documenteert."
+      }
+    ],
+    "cta": {
+      "title": "Dek het hele perioperatieve traject",
+      "body": "Praat met ons team over een pilot voor uw theater of chirurgische kliniek.",
+      "primary": "Praat met ons team",
+      "secondary": "Bekijk tutorial"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "OK, poli en ontslag in één systeem."
+  },
+  "ai-scribe-dermatology": {
+    "navLabel": "AI-assistent voor dermatologie",
+    "title": "AI-medische scribe voor dermatologie | DocNote",
+    "description": "AI-medische scribe voor dermatologieklinieken. Gestructureerde consultnotities voor hoogvolume dermatologie met Zwitserse hosting.",
+    "hero": {
+      "badge": "AI-scribe voor dermatologie",
+      "title": "AI-medische scribe voor dermatologie",
+      "subtitle": "Houd visuele aandacht bij de patiënt terwijl documentatie toch gebeurt.",
+      "lead": "Dermatologieklinieken bewegen snel over veel korte contacten. DocNote maakt gestructureerde consultnotities op zodat dermatologen visuele aandacht bij de patiënt houden terwijl documentatie toch gebeurt."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Hoog volume, duidelijke notities",
+      "paragraphs": [
+        "Laesiebeschrijvingen, beoordelingen, procedures en plannen moeten nauwkeurig landen. Een specialisme-bewust concept vermindert repetitief typen tussen korte, snel bewegende contacten.",
+        "Leg het bezoek vast, beoordeel het dermatologiegerichte concept, valideer en ga verder — zonder aparte transcriptieleverancier of het ritme van een hoogvolume kliniek te breken."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom dermatologieklinieken het adopteren",
+      "title": "Documentatie die het kamertempo bijhoudt",
+      "subtitle": "Gebouwd voor veel korte contacten, niet één lang consult.",
+      "items": [
+        {
+          "title": "Nauwkeurige laesiedocumentatie",
+          "body": "Laesiebeschrijvingen, beoordelingen, procedures en plannen worden nauwkeurig opgesteld voor snelle beoordeling."
+        },
+        {
+          "title": "Eén werkstroom, geen aparte leverancier",
+          "body": "Vastleggen, beoordelen, valideren — zonder aparte transcriptieleverancier die de kliniek vertraagt."
+        },
+        {
+          "title": "Privacy voor zichtbare, gevoelige aandoeningen",
+          "body": "Zwitserse hosting en korte audioretentie ondersteunen patiëntvertrouwen in dermatologie en esthetisch-gerelateerde zorg."
+        },
+        {
+          "title": "Duidelijke overdrachten naar verwijzende huisartsen",
+          "body": "Duidelijke consultnotities verbeteren overdrachten terug naar huisartsenpraktijk en andere specialisten."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van een kort bezoek naar een duidelijke notitie",
+      "subtitle": "Snel genoeg voor hoogvolume dermatologieklinieken.",
+      "items": [
+        {
+          "title": "Leg het bezoek vast",
+          "body": "Neem het consult op via mobiel of web tussen kamers."
+        },
+        {
+          "title": "Beoordeel het dermatologiegerichte concept",
+          "body": "Laesiebevindingen, beoordeling en plan worden georganiseerd in een gestructureerd concept."
+        },
+        {
+          "title": "Pas laesiebeschrijvingen aan",
+          "body": "De dermatoloog bewerkt beschrijvingen en plandetails voor goedkeuring."
+        },
+        {
+          "title": "Valideer en ga naar de volgende kamer",
+          "body": "Keur de notitie goed zonder het kliniekritme te breken."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy voor zichtbare aandoeningen",
+      "title": "Vertrouwen voor gevoelige en zichtbare zorg",
+      "intro": "Dermatologie en esthetisch-gerelateerde zorg hebben hun eigen privacygevoeligheden.",
+      "points": [
+        {
+          "title": "Zwitserse hosting",
+          "body": "Gezondheidsgegevens gehost en verwerkt onder Zwitserse medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audioretentie",
+          "body": "Audio wordt automatisch kort na het produceren van de notitie verwijderd."
+        },
+        {
+          "title": "Geen training op bezoeken",
+          "body": "Consulten worden alleen gebruikt om uw notities te produceren, nooit om basismodellen te trainen."
+        },
+        {
+          "title": "Duidelijke verwijzingsdocumentatie",
+          "body": "Gestructureerde notities ondersteunen duidelijke overdrachten naar en van huisartsenpraktijk."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Procedurenotities naast consultnotities",
+        "body": "Veel dermatologieklinieken voeren zowel consulten als kleine procedures uit in dezelfde afspraak. DocNote ondersteunt beide documenttypen, zodat een biopsie of excisie direct na het consult kan worden gedocumenteerd zonder over te schakelen naar een apart formulier."
+      },
+      {
+        "heading": "Multikamer klinieken met snelle omloop",
+        "body": "Wanneer meerdere behandelkamers parallel lopen, helpt snelle per-kamer vastlegging om de wachttijd tussen patiënten kort te houden. De praktische opstelling per kamer wordt samen met uw team in kaart gebracht tijdens onboarding."
+      },
+      {
+        "heading": "Visuele bevindingen in woorden documenteren",
+        "body": "Dermatologie leunt zwaar op visuele beoordeling, maar het geschreven verslag moet laesies nauwkeurig beschrijven — grootte, morfologie, distributie, evolutie — voor continuïteit en latere vergelijking. DocNote's sjablonen houden ruimte voor die beschrijving gestructureerd, in plaats van het als een bijzaak in een algemene notitie achter te laten."
+      },
+      {
+        "heading": "Ondersteuning van esthetisch-gerelateerde consulten",
+        "body": "Veel dermatologiepraktijken zien ook esthetisch-gerelateerde bezoeken naast medische dermatologie. Documentatiebehoeften en privacygevoeligheden kunnen iets verschillen tussen beide; praat met ons team over het in kaart brengen van beide bezoektypen tijdens onboarding zodat elk de structuur krijgt die het nodig heeft."
+      },
+      {
+        "heading": "Laesies volgen over vervolgbezoeken",
+        "body": "Veel dermatologiegevallen vereisen het vergelijken van het uiterlijk van een laesie over meerdere bezoeken maanden uit elkaar — een moedervlek die wordt gevolgd, een behandeling die wordt beoordeeld op respons. Consistente gestructureerde notities maken die vergelijking gemakkelijker omdat dezelfde details elke keer op dezelfde plek worden vastgelegd, in plaats van te vertrouwen op geheugen of verspreide vrije tekst."
+      },
+      {
+        "heading": "Documentatie voor doorverwezen en zelfverwezen patiënten",
+        "body": "Dermatologie ziet zowel huisartsverwijzingen als zelfverwezen patiënten, elk met een andere hoeveelheid voorafgaande context. DocNote's consultsjablonen leggen de verwijzingsreden en relevante geschiedenis duidelijk vast ongeacht het instappunt, zodat de notitie consistent leesbaar is."
+      },
+      {
+        "heading": "Balans tussen snelheid en beschrijvende precisie",
+        "body": "Een snel dermatologieconcept dat een laesie te losjes beschrijft, creëert ambiguïteit voor de volgende bezoekvergelijking. DocNote's sjablonen vragen om de specifieke beschrijvende velden die ertoe doen — grootte, kleur, randen, distributie — in plaats van die precisie over te laten aan wat de dermatoloog toevallig hardop zegt in een snel, druk bezoek."
+      },
+      {
+        "heading": "Coördinatie met pathologieresultaten",
+        "body": "Wanneer een biopsie naar pathologie wordt gestuurd, moeten de consultnotitie en het uiteindelijke pathologieresultaat duidelijk verbonden zijn voor het volgende bezoek. DocNote houdt de originele klinische indruk nauwkeurig gedocumenteerd, zodat vergelijken met het pathologierapport later eenvoudig is in plaats van alleen op geheugen te vertrouwen."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kunnen procedurenotities ook worden opgesteld?",
+        "a": "Ja waar uw sjablonen ze bevatten. Veel klinieken beginnen met consultnotities."
+      },
+      {
+        "q": "Werkt ambient listening in multikamer klinieken?",
+        "a": "Vastleggen is gekoppeld aan het apparaat en de werkstroom die u kiest. We helpen een praktische kameropstelling in kaart brengen tijdens onboarding."
+      },
+      {
+        "q": "Is DocNote alleen voor medische dermatologie?",
+        "a": "Medische documentatie is de focus; praat met ons over uw mix van bezoektypen."
+      },
+      {
+        "q": "Wie bewerkt laesiebeschrijvingen?",
+        "a": "De dermatoloog — concepten zijn altijd bewerkbaar voor validatie."
+      },
+      {
+        "q": "Kunnen procedurenotities verwijzen naar specifieke technieken?",
+        "a": "Ja, waar uw sjablonen proceduresecties bevatten — veel klinieken beginnen met consultnotities en voegen deze later toe."
+      },
+      {
+        "q": "Werkt DocNote in multikamer klinieken met snelle omloop?",
+        "a": "Vastleggen is gekoppeld aan het apparaat en de werkstroom die u kiest; we helpen een praktische multikameropstelling in kaart brengen tijdens onboarding."
+      }
+    ],
+    "cta": {
+      "title": "Houd tempo zonder documentatiekwaliteit te verliezen",
+      "body": "Start een gratis proef en zie hoe DocNote past in een hoogvolume dermatologiedag.",
+      "primary": "Start gratis proef",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Aandacht bij de patiënt; de notitie komt er toch."
+  },
+  "ai-scribe-neurology": {
+    "navLabel": "AI-assistent voor neurologie",
+    "title": "AI-medisch schrijver voor neurologie | DocNote",
+    "description": "AI-medisch schrijver voor neurologie: gestructureerde consult- en vervolgnotities met hosting in Zwitserland voor klinieken en ziekenhuisdiensten.",
+    "hero": {
+      "badge": "AI-schrijver voor neurologie",
+      "title": "AI-medisch schrijver voor neurologie",
+      "subtitle": "Anamnese en onderzoek subtiel vastgelegd zonder elke regel zelf te hoeven schrijven.",
+      "lead": "Neurologische notities zijn gedetailleerd en tijdrovend. DocNote maakt gestructureerde consult- en vervolgdocumentatie op, zodat neurologen anamnese en onderzoek subtiel kunnen vastleggen zonder elke regel zelf te hoeven schrijven."
+    },
+    "story": {
+      "badge": "In het kort",
+      "title": "Detail zonder lege pagina",
+      "paragraphs": [
+        "Anamnese, neurologisch onderzoek, indruk en behandelplan profiteren van een gestructureerd concept dat de neurolog kan aanscherpen voor precisie.",
+        "Poliklinische neurologie en klinische consulten kunnen hetzelfde AI-documentatieplatform delen dat gebruikt wordt voor bredere ziekenhuisdocumenten, en complexe anamneses die in meer dan één taal aankomen worden vanaf het begin ondersteund."
+      ]
+    },
+    "benefits": {
+      "badge": "Waarom neurologische diensten het adopteren",
+      "title": "Gestructureerd detail voor complexe anamneses",
+      "subtitle": "Ontwikkeld voor de lengte en precisie die neurologische notities vereisen.",
+      "items": [
+        {
+          "title": "Gestructureerde anamnese en onderzoek",
+          "body": "Anamnese en neurologische bevindingen komen terecht in een gestructureerd concept dat klaar is voor precisiebewerking."
+        },
+        {
+          "title": "Kliniek- en ziekenhuisconsulten, één platform",
+          "body": "Poliklinische neurologie en klinische consulten delen hetzelfde AI-documentatieplatform dat gebruikt wordt voor ziekenhuisdocumenten."
+        },
+        {
+          "title": "Verwerkt langere consulten",
+          "body": "Langere consulten produceren langere concepten; clinici kunnen selectief inkorten en prioriteren wat in het dossier thuishoort."
+        },
+        {
+          "title": "Meertalige anamneses",
+          "body": "Complexe anamneses die in meer dan één taal aankomen worden vanaf het begin ondersteund."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hoe het werkt",
+      "title": "Van gedetailleerde anamnese naar precieze notitie",
+      "subtitle": "Ontwikkeld voor de diepte die neurologische consulten vereisen.",
+      "items": [
+        {
+          "title": "Leg het consult vast",
+          "body": "Neem de anamnese en het onderzoek op via mobiel of web, inclusief langere of complexe consulten."
+        },
+        {
+          "title": "Bekijk het gestructureerde concept",
+          "body": "Anamnese, onderzoek, indruk en behandelplan worden binnen seconden georganiseerd in een concept."
+        },
+        {
+          "title": "Scherp aan voor precisie",
+          "body": "De neurolog verfijnt de formulering en bepaalt wat in het uiteindelijke dossier thuishoort."
+        },
+        {
+          "title": "Valideer en ga verder",
+          "body": "Keur de notitie goed; deze komt onder verantwoordelijkheid van de neurolog in het dossier terecht."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Compliance en hosting",
+      "title": "Ontwikkeld voor neurologische afdelingen in ziekenhuizen",
+      "intro": "Complianceverwachtingen voor neurologische ziekenhuisdiensten komen overeen met de rest van de ziekenhuisdocumentatiestack.",
+      "points": [
+        {
+          "title": "Hosting in Zwitserland",
+          "body": "Gezondheidsgegevens worden gehost en verwerkt volgens Zwitserse medische geheimhoudingsverwachtingen."
+        },
+        {
+          "title": "Korte audiobewaring",
+          "body": "Audio wordt automatisch kort na het aanmaken van de notitie verwijderd."
+        },
+        {
+          "title": "Geen training op consulten",
+          "body": "Consulten worden alleen gebruikt om documenten te produceren, nooit om basismodellen te trainen."
+        },
+        {
+          "title": "Altijd klinische validatie",
+          "body": "De neurolog controleert en keurt elk concept goed voordat het in het dossier terechtkomt."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Lange anamneses inkorten zonder detail te verliezen",
+        "body": "Eerste neurologische consulten produceren vaak zeer lange concepten omdat de anamnese veel details bevat. DocNote structureert die details zodat de neurolog doelgericht kan inkorten, zonder per ongeluk relevante bevindingen te verliezen."
+      },
+      {
+        "heading": "Consulten tussen afdelingen",
+        "body": "Een neurologisch consult op een andere afdeling volgt vaak een andere structuur dan een poliklinisch consult. DocNote past het sjabloon aan de context aan terwijl de onderliggende documentatielogica consistent blijft in beide situaties."
+      },
+      {
+        "heading": "Een gedetailleerd neurologisch onderzoek structureren",
+        "body": "Een volledig neurologisch onderzoek omvat hersenzenuwen, motoriek, sensibel, reflexen, coördinatie en gang — veel discrete bevindingen die gemakkelijk verloren gaan in vrije tekst. DocNote houdt elke categorie apart in het concept, zodat een normale en een afwijkende bevinding even gemakkelijk te vinden zijn bij controle."
+      },
+      {
+        "heading": "Follow-up van chronische aandoeningen in de tijd",
+        "body": "Aandoeningen zoals migraine, epilepsie of multiple sclerose worden over meerdere consulten gevolgd in plaats van in één keer opgelost. Een consistente structuur over die consulten heen maakt het gemakkelijker te zien wat er sinds het laatste consult daadwerkelijk is veranderd, in plaats van elke keer een volledige anamnese te moeten herlezen."
+      },
+      {
+        "heading": "Neurologische consulten koppelen aan beeldvorming en EMG",
+        "body": "Neurologische beoordeling hangt vaak af van beeldvormings- of EMG-resultaten die in aparte systemen staan. DocNote's notitie legt vast wat er tijdens het consult over die bevindingen is besproken, terwijl de bronrapporten zelf in hun eigen systemen blijven — de twee zijn bedoeld om elkaar aan te vullen, niet om samen te smelten in één tool."
+      },
+      {
+        "heading": "Ondersteuning van complexe differentiële diagnose",
+        "body": "Neurologie omvat vaak een brede differentiële diagnose die zich over meerdere consulten en tests vernauwt. Een gestructureerde beoordelingssectie die de neurolog consult voor consult kan herzien, maakt die evoluerende redenering later gemakkelijker te volgen dan een frisse, losstaande notitie elke keer."
+      },
+      {
+        "heading": "Documenteren voor multidisciplinaire zorg",
+        "body": "Veel neurologische aandoeningen worden beheerd naast fysiotherapie, psychiatrie of revalidatieteams die de beoordeling van de neurolog snel moeten kunnen lezen. Duidelijke, gestructureerde notities maken het voor dat bredere team gemakkelijker om op hetzelfde spoor te blijven zonder voor elke update of kleine aanpassing een aparte samenvattingsbijeenkomst nodig te hebben."
+      },
+      {
+        "heading": "Passen in een bestaande neurologische workflow",
+        "body": "De meeste neurologische diensten introduceren DocNote naast hun huidige documentatiegewoonten in plaats van ze van de ene op de andere dag te vervangen, beginnend met poliklinische vervolgconsulten voordat ze uitbreiden naar eerste consulten en klinisch werk. Die geleidelijke uitrol geeft de afdeling tijd om sjablonen aan te passen aan haar eigen conventies voordat ze voor haar meest complexe gevallen op het tool vertrouwt."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kunnen lange neurologische anamneses worden verwerkt?",
+        "a": "Langere consulten produceren langere concepten. Clinici kunnen nog steeds selectief inkorten en prioriteren wat in het dossier thuishoort."
+      },
+      {
+        "q": "Zijn EMG- of procedurerapporten inbegrepen?",
+        "a": "Begin met consultnotities; breid uit met aanvullende sjablonen naarmate uw dienst ze valideert."
+      },
+      {
+        "q": "Vervangt DocNote de formulering van de neuroloog?",
+        "a": "Nee. Het stelt een concept voor ter beoordeling."
+      },
+      {
+        "q": "Hoe adopteren neurologische ziekenhuisteams het?",
+        "a": "Meestal via een proefproject, sjabloonaanpassing en vervolgens bredere implementatie."
+      },
+      {
+        "q": "Kan DocNote follow-up over meerdere consulten aan voor chronische neurologische aandoeningen?",
+        "a": "Ja — een consistente structuur over consulten heen helpt veranderingen in de tijd te volgen voor chronische aandoeningen."
+      },
+      {
+        "q": "Worden beeldvormings- of EMG-bevindingen automatisch opgenomen?",
+        "a": "Bevindingen die tijdens het consult worden besproken, kunnen in de notitie worden vastgelegd; beeldvormings- en EMG-systemen blijven in hun eigen tools."
+      }
+    ],
+    "cta": {
+      "title": "Leg neurologische details vast zonder lege pagina",
+      "body": "Start een gratis proefperiode en ontdek hoe DocNote past bij uw neurologische consulten.",
+      "primary": "Start gratis proefperiode",
+      "secondary": "Bekijk prijzen"
+    },
+    "relatedLabel": "Gerelateerde gidsen",
+    "navDesc": "Nuances van anamnese en onderzoek, minder typen."
+  }
+}

@@ -1,7 +1,29 @@
-import { locales, type Locale } from './i18n';
+import { defaultLocale, locales, type Locale, pickLocale, getLocalizedPath } from './i18n';
+import { seoCopy } from './inline-content';
+import { BLOG_PAGE_SIZE, getBlogPageCount } from './blogPagination';
 
-export const SITE_URL = 'https://docnote.care';
-export const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
+const DEFAULT_SITE_URL = 'https://docnote.care';
+
+/** Canonical site origin for SEO (canonical, hreflang, sitemap, robots). Prefer PUBLIC_SITE_URL in CI/preview. */
+export const SITE_URL = String(
+  import.meta.env.PUBLIC_SITE_URL || import.meta.env.SITE || DEFAULT_SITE_URL
+).replace(/\/+$/, '');
+
+/**
+ * Preview SEO strategy (DocNote + MailMerge Deploy DocNote Website Preview):
+ * Keep PUBLIC_SITE_URL as the workers.dev host so links/canonicals match the preview
+ * origin, but never encourage indexing — meta robots noindex + robots.txt Disallow.
+ * Production (docnote.care, no PUBLIC_IS_PREVIEW) stays index,follow.
+ */
+export const IS_PREVIEW_DEPLOY =
+  String(import.meta.env.PUBLIC_IS_PREVIEW || '').toLowerCase() === 'true' ||
+  /workers\.dev/i.test(SITE_URL);
+
+export const ROBOTS_META_CONTENT = IS_PREVIEW_DEPLOY
+  ? 'noindex,nofollow,noarchive,nosnippet'
+  : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
+
+export const OG_IMAGE = `${SITE_URL}/images/og-image.jpg`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
@@ -9,6 +31,19 @@ const OG_LOCALES: Record<Locale, string> = {
   en: 'en_US',
   fr: 'fr_FR',
   de: 'de_CH',
+  es: 'es_ES',
+  it: 'it_IT',
+  pt: 'pt_PT',
+  nl: 'nl_NL',
+  ru: 'ru_RU',
+  ja: 'ja_JP',
+  ko: 'ko_KR',
+  zh: 'zh_CN',
+  ar: 'ar_SA',
+  hi: 'hi_IN',
+  th: 'th_TH',
+  sv: 'sv_SE',
+  no: 'nb_NO',
 };
 
 export const formatPageTitle = (title: string) => {
@@ -26,6 +61,9 @@ export const withTrailingSlash = (pathname: string) => {
 export const absoluteUrl = (pathname: string) =>
   new URL(withTrailingSlash(pathname), SITE_URL).href;
 
+export const absoluteLocalizedUrl = (path: string, locale: Locale) =>
+  absoluteUrl(getLocalizedPath(path, locale));
+
 export const getOgLocale = (locale: Locale) => OG_LOCALES[locale];
 
 export const buildBreadcrumbLd = (items: { name: string; url: string }[]) => ({
@@ -39,165 +77,75 @@ export const buildBreadcrumbLd = (items: { name: string; url: string }[]) => ({
   })),
 });
 
-export const getDefaultAlternates = (pathname: string): Record<Locale, string> => {
+const getBlogPostCountByLocale = async (): Promise<Partial<Record<Locale, number>>> => {
+  const { getCollection } = await import('astro:content');
+  const { isCanonicalBlogPostId } = await import('./blog-translations');
+  const posts = await getCollection('blog');
+  const countByLocale: Partial<Record<Locale, number>> = {};
+  for (const post of posts) {
+    if (!isCanonicalBlogPostId(post.id)) continue;
+    const [loc] = post.id.split('/');
+    if (locales.includes(loc as Locale)) {
+      countByLocale[loc as Locale] = (countByLocale[loc as Locale] ?? 0) + 1;
+    }
+  }
+  return countByLocale;
+};
+
+/**
+ * Hreflang for `/blog/all/:page` — only locales that actually have that page.
+ * Clamping to another page number breaks reciprocal return links.
+ */
+const getBlogAllAlternates = async (
+  requestedPage: number
+): Promise<Partial<Record<Locale, string>>> => {
+  const countByLocale = await getBlogPostCountByLocale();
+  const page = Math.max(1, requestedPage);
+  return Object.fromEntries(
+    locales
+      .filter((locale) => getBlogPageCount(countByLocale[locale] ?? 0, BLOG_PAGE_SIZE) >= page)
+      .map((locale) => [locale, absoluteLocalizedUrl(`/blog/all/${page}`, locale)])
+  );
+};
+
+/** Language switcher paths: clamp to each locale's last valid page (never 404). */
+export const getBlogAllAlternatePaths = async (
+  requestedPage: number
+): Promise<Record<Locale, string>> => {
+  const countByLocale = await getBlogPostCountByLocale();
+  return Object.fromEntries(
+    locales.map((locale) => {
+      const totalPages = getBlogPageCount(countByLocale[locale] ?? 0, BLOG_PAGE_SIZE);
+      const page = Math.min(Math.max(1, requestedPage), totalPages);
+      return [locale, getLocalizedPath(`/blog/all/${page}`, locale)];
+    })
+  ) as Record<Locale, string>;
+};
+
+export const getDefaultAlternates = async (
+  pathname: string
+): Promise<Partial<Record<Locale, string>>> => {
   const segments = pathname.split('/').filter(Boolean);
   const rest =
     segments.length > 0 && locales.includes(segments[0] as Locale)
       ? segments.slice(1).join('/')
       : segments.join('/');
-  const suffix = rest ? `/${rest}` : '';
-  return {
-    en: absoluteUrl(`/en${suffix}`),
-    fr: absoluteUrl(`/fr${suffix}`),
-    de: absoluteUrl(`/de${suffix}`),
-  };
+
+  const blogAllMatch = rest.match(/^blog\/all\/(\d+)$/);
+  if (blogAllMatch) return getBlogAllAlternates(Number(blogAllMatch[1]));
+
+  const suffix = rest ? `/${rest}` : '/';
+  return Object.fromEntries(
+    locales.map((locale) => [locale, absoluteLocalizedUrl(suffix, locale)])
+  ) as Record<Locale, string>;
 };
 
 type PageMeta = { title: string; description: string };
+type PageKey = 'home' | 'pricing' | 'blog' | 'team' | 'tutorial' | 'contact' | 'privacy' | 'gtc';
 
-export const pageMeta: Record<
-  'home' | 'pricing' | 'blog' | 'team' | 'tutorial' | 'contact' | 'privacy' | 'gtc',
-  Record<Locale, PageMeta>
-> = {
-  home: {
-    en: {
-      title: 'AI Medical Documentation for Swiss Hospitals',
-      description:
-        'AI medical scribe for hospitals: turn consultations into discharge letters, ward notes and OR reports. Swiss-hosted. FADP, GDPR, HIPAA compliant.',
-    },
-    fr: {
-      title: 'Documentation médicale IA pour les hôpitaux',
-      description:
-        'Scribe IA médical hébergé en Suisse : lettres de sortie, notes de visite et comptes rendus opératoires pour médecins et hôpitaux.',
-    },
-    de: {
-      title: 'KI-Dokumentation für Spitäler und Kliniken',
-      description:
-        'Schweizer KI-Schreibassistent für Spitäler: Austrittsberichte, Visitennotizen und OP-Berichte aus Konsultationen. DSG- und DSGVO-konform.',
-    },
-  },
-  pricing: {
-    en: {
-      title: 'Pricing',
-      description:
-        'DocNote pricing for individual physicians and hospitals. 30 free consultations, then Professional from CHF 99/month (yearly) or custom Enterprise. Swiss and EU billing.',
-    },
-    fr: {
-      title: 'Tarifs',
-      description:
-        'Tarifs DocNote pour médecins indépendants et hôpitaux. 30 consultations offertes, puis Professional dès CHF 99/mois (annuel) ou Enterprise sur mesure. Facturation Suisse et Europe.',
-    },
-    de: {
-      title: 'Preise',
-      description:
-        'DocNote-Preise für Einzelpraxen und Spitäler. 30 kostenlose Konsultationen, danach Professional ab CHF 99/Monat (jährlich) oder Enterprise nach Mass. Abrechnung Schweiz und Europa.',
-    },
-  },
-  blog: {
-    en: {
-      title: 'News & insights',
-      description:
-        'DocNote news, research and insights on AI medical documentation, physician burnout, compliance and hospital workflows in Switzerland and Europe.',
-    },
-    fr: {
-      title: 'Actualités et analyses',
-      description:
-        'Actualités DocNote, études et analyses sur la documentation médicale IA, le burnout des médecins, la conformité et les workflows hospitaliers en Suisse et en Europe.',
-    },
-    de: {
-      title: 'Neuigkeiten & Einblicke',
-      description:
-        'DocNote-Neuigkeiten, Forschung und Einblicke zu KI-Dokumentation, Ärztinnen-Burnout, Compliance und Spital-Workflows in der Schweiz und Europa.',
-    },
-  },
-  team: {
-    en: {
-      title: 'Team',
-      description:
-        'Meet the DocNote team: physicians and engineers building AI clinical documentation for hospitals in Switzerland and Europe.',
-    },
-    fr: {
-      title: 'Équipe',
-      description:
-        "Découvrez l'équipe DocNote : médecins et ingénieurs qui construisent la documentation clinique IA pour les hôpitaux en Suisse et en Europe.",
-    },
-    de: {
-      title: 'Team',
-      description:
-        'Das DocNote-Team: Ärztinnen, Ärzte und Engineers, die KI-Dokumentation für Spitäler in der Schweiz und Europa entwickeln.',
-    },
-  },
-  tutorial: {
-    en: {
-      title: 'Tutorial',
-      description:
-        'Learn how to use DocNote: record consultations, generate clinical notes, customise templates and sync with your EHR.',
-    },
-    fr: {
-      title: 'Tutoriel',
-      description:
-        'Apprenez à utiliser DocNote : enregistrer une consultation, générer des notes cliniques, personnaliser les modèles et synchroniser avec votre DPI.',
-    },
-    de: {
-      title: 'Anleitung',
-      description:
-        'So nutzen Sie DocNote: Konsultationen aufnehmen, klinische Notizen erzeugen, Vorlagen anpassen und mit dem KIS synchronisieren.',
-    },
-  },
-  contact: {
-    en: {
-      title: 'Contact',
-      description:
-        'Contact DocNote for hospital demos, Enterprise pricing or support. Reach Dr. Vincent Tan and Dr. Alice Gilson in Switzerland and France.',
-    },
-    fr: {
-      title: 'Contact',
-      description:
-        'Contactez DocNote pour une démo hospitalière, un devis Enterprise ou du support. Dr Vincent Tan et Dre Alice Gilson, Suisse et France.',
-    },
-    de: {
-      title: 'Kontakt',
-      description:
-        'Kontaktieren Sie DocNote für Spital-Demos, Enterprise-Preise oder Support. Dr. Vincent Tan und Dr. Alice Gilson in der Schweiz und Frankreich.',
-    },
-  },
-  privacy: {
-    en: {
-      title: 'Privacy policy',
-      description:
-        'DocNote privacy policy: Swiss hosting, data retention, medical confidentiality and your rights under FADP/nFADP and GDPR.',
-    },
-    fr: {
-      title: 'Politique de confidentialité',
-      description:
-        'Politique de confidentialité DocNote : hébergement suisse, rétention des données, secret médical et vos droits selon la nLPD et le RGPD.',
-    },
-    de: {
-      title: 'Datenschutz',
-      description:
-        'Datenschutzrichtlinie von DocNote: Hosting in der Schweiz, Aufbewahrung, Arztgeheimnis und Ihre Rechte nach DSG und DSGVO.',
-    },
-  },
-  gtc: {
-    en: {
-      title: 'Terms and conditions',
-      description:
-        'General terms and conditions for using the DocNote AI medical documentation platform.',
-    },
-    fr: {
-      title: 'Conditions générales',
-      description:
-        "Conditions générales d'utilisation de la plateforme DocNote de documentation médicale par IA.",
-    },
-    de: {
-      title: 'Allgemeine Geschäftsbedingungen',
-      description:
-        'Allgemeine Geschäftsbedingungen für die Nutzung der DocNote-Plattform zur KI-Dokumentation.',
-    },
-  },
+export const getPageMeta = (page: PageKey, locale: Locale): PageMeta => {
+  const byLocale = pickLocale(seoCopy, locale);
+  return byLocale[page] ?? seoCopy.en[page];
 };
 
-export const getPageMeta = (
-  page: keyof typeof pageMeta,
-  locale: Locale
-): PageMeta => pageMeta[page][locale];
+export { defaultLocale };

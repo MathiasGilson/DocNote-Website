@@ -1,0 +1,382 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../ui/PageHero.astro';
+import '../../styles/landing-page.css';
+import '../../styles/family-landings.css';
+import '../../styles/hub-pages.css';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import {
+  getLandingNavDesc,
+  getLandingNavLabel,
+  getNavSolutionsColumnLabel,
+  navSolutionsColumns,
+  type LandingSlug,
+  type NavSolutionsColumnId,
+} from '../../content/landings';
+import {
+  getSolutionsHub,
+  SOLUTIONS_FEATURED_IMAGE,
+  SOLUTIONS_HUB_HERO_IMAGE,
+  SOLUTIONS_HUB_PATH,
+} from '../../content/hubs';
+import { landingNavIconMarkup } from '../../data/landing-nav-icons';
+import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const lang = locale;
+const p = getSolutionsHub(lang);
+
+const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
+const solutionsLabel =
+  lang === 'fr' ? 'Solutions' : lang === 'de' ? 'Lösungen' : 'Solutions';
+
+const hubPath = SOLUTIONS_HUB_PATH;
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+  { name: solutionsLabel, url: absoluteLocalizedUrl(hubPath, lang) },
+]);
+
+type HubItem = {
+  slug: LandingSlug;
+  href: string;
+  label: string;
+  desc: string;
+  icon: string;
+};
+
+const columns = navSolutionsColumns.map((col) => ({
+  id: col.id as NavSolutionsColumnId,
+  title: getNavSolutionsColumnLabel(col.id, lang),
+  extra: p.columnExtras[col.id],
+  items: col.slugs.map(
+    (slug): HubItem => ({
+      slug,
+      href: getLocalizedPath(`/${slug}`, lang),
+      label: getLandingNavLabel(slug, lang),
+      desc: getLandingNavDesc(slug, lang),
+      icon: landingNavIconMarkup(slug),
+    })
+  ),
+}));
+
+const platform = columns.find((c) => c.id === 'platform')!;
+const documents = columns.find((c) => c.id === 'documents')!;
+const careTrust = columns.find((c) => c.id === 'careTrust')!;
+
+const ambientSlug = 'ambient-clinical-documentation' as LandingSlug;
+const ambientItem =
+  platform.items.find((item) => item.slug === ambientSlug) ?? platform.items[0];
+const platformRest = platform.items.filter((item) => item.slug !== ambientItem.slug);
+
+const primaryHref = getLocalizedPath('/tutorial', lang);
+const secondaryHref = getLocalizedPath('/pricing', lang);
+const ambientHref = getLocalizedPath(`/${ambientItem.slug}`, lang);
+const openLabel = lang === 'fr' ? 'Ouvrir' : 'Open';
+---
+
+<Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>
+  <div class="lp-crumb-bar pt-28 sm:pt-32">
+    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center justify-center gap-2">
+        <li>
+          <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li class="text-gray-900 font-medium">{solutionsLabel}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <PageHero
+    eyebrow={p.hero.badge}
+    title={p.hero.title}
+    subtitle={p.hero.subtitle}
+    lead={p.hero.lead}
+    compact
+  >
+    <a href={primaryHref} class="btn-primary">{p.cta.primary}</a>
+    <a href={secondaryHref} class="btn-secondary">{p.cta.secondary}</a>
+  </PageHero>
+
+  <p class="lp-stats-line">{p.statsLine}</p>
+
+  <section class="relative py-10 sm:py-14 overflow-hidden bg-white">
+    <div class="hub-atmosphere" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fm-media-band fm-media-band--flip reveal">
+        <div class="fm-media-frame" data-fm-parallax>
+          <img
+            src={SOLUTIONS_HUB_HERO_IMAGE}
+            alt={p.media.imageAlt}
+            class="fm-media-img"
+            width="960"
+            height="640"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="fm-media-scrim" aria-hidden="true"></div>
+          <p class="fm-media-caption">{p.media.caption}</p>
+        </div>
+        <div class="fm-media-copy">
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {p.media.badge}
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.media.title}
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+            {p.media.body}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-8 sm:py-10 lp-section-soft">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ul class="hub-stats reveal" aria-label={p.statsLine}>
+        {p.stats.map((stat, i) => (
+          <li class:list={['hub-stat', `reveal-delay-${i + 1}`]}>
+            <span class="hub-stat-value">{stat.value}</span>
+            <span class="hub-stat-label">{stat.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="relative py-14 sm:py-20 bg-white overflow-hidden" id="featured">
+    <div class="hub-atmosphere" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="hub-featured hub-featured--flip reveal">
+        <div class="hub-featured-media">
+          <img
+            src={SOLUTIONS_FEATURED_IMAGE}
+            alt={p.media.imageAlt}
+            class="hub-featured-img"
+            width="960"
+            height="640"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="hub-featured-scrim" aria-hidden="true"></div>
+        </div>
+        <div class="hub-featured-copy">
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {p.featured.badge}
+          </span>
+          <h2 class="hub-featured-title">{p.featured.title}</h2>
+          <p class="hub-featured-body">{p.featured.body}</p>
+          <div class="hub-featured-actions">
+            <a href={ambientHref} class="btn-primary">{p.featured.primary}</a>
+            <a href="#platform" class="btn-secondary">{p.featured.secondary}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-14 sm:py-20 lp-section-soft" id="platform">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-8 sm:mb-10 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {platform.extra.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {platform.title}
+        </h2>
+        <p class="hub-col-sub">{platform.extra.subtitle}</p>
+      </div>
+
+      <div class="hub-platform-spotlight">
+        <a
+          href={ambientItem.href}
+          class="hub-sol-card hub-sol-card--spotlight reveal"
+          style={`--hub-spot-image: url('${SOLUTIONS_FEATURED_IMAGE}')`}
+        >
+          <span class="hub-sol-spot-badge">{p.featuredInPlatform}</span>
+          <span class="hub-card-icon" aria-hidden="true">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              set:html={ambientItem.icon}
+            />
+          </span>
+          <h3 class="lp-card-title">{ambientItem.label}</h3>
+          {ambientItem.desc ? <p class="lp-card-text">{ambientItem.desc}</p> : null}
+        </a>
+
+        <div class="hub-sol-stack">
+          {platformRest.map((item, i) => (
+            <a
+              href={item.href}
+              class:list={['hub-sol-card reveal', `reveal-delay-${i + 1}`]}
+            >
+              <span class="hub-card-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  set:html={item.icon}
+                />
+              </span>
+              <h3 class="lp-card-title" style="margin-top: 0.85rem">{item.label}</h3>
+              {item.desc ? <p class="lp-card-text">{item.desc}</p> : null}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-14 sm:py-20 bg-white" id="documents">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-8 sm:mb-10 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {documents.extra.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {documents.title}
+        </h2>
+        <p class="hub-col-sub">{documents.extra.subtitle}</p>
+      </div>
+
+      <ul class="hub-doc-list">
+        {documents.items.map((item, i) => (
+          <li class:list={['reveal', `reveal-delay-${(i % 4) + 1}`]}>
+            <a href={item.href} class="hub-doc-row">
+              <span class="hub-card-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  set:html={item.icon}
+                />
+              </span>
+              <div>
+                <h3>{item.label}</h3>
+                {item.desc ? <p>{item.desc}</p> : null}
+              </div>
+              <span class="hub-doc-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="relative py-14 sm:py-20 lp-section-soft" id="care-trust">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-8 sm:mb-10 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {careTrust.extra.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {careTrust.title}
+        </h2>
+        <p class="hub-col-sub">{careTrust.extra.subtitle}</p>
+      </div>
+
+      <div class="hub-trust-grid">
+        {careTrust.items.map((item, i) => {
+          const variant = item.slug === 'hospital-documentation' ? 'hospital' : 'practice';
+          return (
+            <a
+              href={item.href}
+              class:list={['hub-trust-card reveal', i === 1 && 'reveal-delay-2']}
+            >
+              <div class:list={['lp-setting', `lp-setting--${variant}`]}>
+                <div class="lp-setting__grid">
+                  <div class="lp-setting__lead">
+                    <span class="lp-eyebrow">
+                      <span class="lp-dot" aria-hidden="true"></span>
+                      {careTrust.extra.badge}
+                    </span>
+                    <h3 class="lp-setting__title">{item.label}</h3>
+                  </div>
+                  <div class="lp-setting__body">
+                    {item.desc ? <p>{item.desc}</p> : null}
+                    <span class="hub-trust-link">{openLabel} →</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-14 sm:py-20 overflow-hidden bg-white">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-6 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.columnsBadge}
+        </span>
+        <h2 class="mt-3 text-xl sm:text-2xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.columnsTitle}
+        </h2>
+        <p class="mt-2 text-base text-gray-500 leading-relaxed">{p.columnsSubtitle}</p>
+      </div>
+      <div class="lp-cta-shell reveal">
+        <div class="max-w-xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.cta.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-600 leading-relaxed">{p.cta.body}</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href={primaryHref} class="btn-primary">{p.cta.primary}</a>
+            <a href={secondaryHref} class="btn-secondary">{p.cta.secondary}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const prefersReduced = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  document.querySelectorAll<HTMLElement>('[data-fm-parallax]').forEach((frame) => {
+    if (prefersReduced()) return
+    const img = frame.querySelector<HTMLElement>('.fm-media-img')
+    if (!img) return
+
+    const onScroll = () => {
+      const rect = frame.getBoundingClientRect()
+      const mid = rect.top + rect.height / 2 - window.innerHeight / 2
+      const shift = Math.max(-12, Math.min(12, mid * -0.04))
+      img.style.transform = `translate3d(0, ${shift}px, 0) scale(1.04)`
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+  })
+</script>

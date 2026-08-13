@@ -3,7 +3,7 @@ title: "Weniger Zeit für Dokumentation dank KI, mehr Zeit für die Patientenver
 excerpt: "Im Februar 2025 veröffentlichte JAMA Network Open eine Studie, die überzeugende Belege für die wachsende Rolle der künstlichen Intelligenz bei der Bekämpfung von Burnout und Dokumentationsüberlastung bei Klinikern liefert."
 category: "ai"
 author: "Dr. Vincent Tan"
-authorRole: "Medical Director"
+authorRole: "Arzt & Geschäftsführer"
 authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/University of Pennsylvania.avif"
 date: "2026-02-01"

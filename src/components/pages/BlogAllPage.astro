@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../ui/BlogCard.astro';
+import PageHero from '../ui/PageHero.astro';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getEntry, getCollection } from 'astro:content';
+import { buildBreadcrumbLd, getPageMeta, absoluteLocalizedUrl } from '../../utils/seo';
+import { CATEGORY_META, FALLBACK_META, type BlogCategory } from '../../utils/blogCategories';
+import { BLOG_PAGE_SIZE, paginateItems } from '../../utils/blogPagination';
+import { isCanonicalBlogPostId } from '../../utils/blog-translations';
+
+interface Props {
+  locale: Locale;
+  page: number;
+}
+
+const { locale, page } = Astro.props as Props;
+
+const entry = await getEntry('pages', locale);
+const enEntry = locale === 'en' ? entry : await getEntry('pages', 'en');
+const t = entry!.data;
+const enBlog = enEntry!.data.blog;
+const blog = {
+  ...enBlog,
+  ...t.blog,
+  categories: { ...enBlog.categories, ...t.blog.categories },
+};
+
+const meta = getPageMeta('blog', locale);
+const viewAll =
+  (t.blog as { viewAllArticles?: string }).viewAllArticles?.trim() ||
+  (enBlog as { viewAllArticles?: string }).viewAllArticles ||
+  'All articles';
+const pageLabel =
+  (t.blog as { pageLabel?: string }).pageLabel?.trim() ||
+  (enBlog as { pageLabel?: string }).pageLabel ||
+  'Page';
+
+const allPosts = await getCollection(
+  'blog',
+  ({ id }) => id.startsWith(`${locale}/`) && isCanonicalBlogPostId(id)
+);
+const sorted = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const { page: currentPage, totalPages, items } = paginateItems(sorted, page, BLOG_PAGE_SIZE);
+
+const postCards = items.map((post) => {
+  const slug = post.id.replace(`${locale}/`, '').replace(/\.mdx?$/, '');
+  const cat = post.data.category as BlogCategory;
+  const metaStyle = CATEGORY_META[cat] ?? FALLBACK_META;
+  return {
+    href: getLocalizedPath(`/blog/${slug}`, locale),
+    title: post.data.title,
+    excerpt: post.data.excerpt,
+    image: post.data.image,
+    imagePosition: post.data.imagePosition,
+    date: post.data.date,
+    categoryLabel:
+      blog.categories[post.data.category as keyof typeof blog.categories] ?? post.data.category,
+    categoryClass: metaStyle.badge,
+  };
+});
+
+const blogIndexHref = getLocalizedPath('/blog', locale);
+const pageHref = (n: number) => getLocalizedPath(`/blog/all/${n}`, locale);
+
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteLocalizedUrl('/', locale) },
+  { name: meta.title, url: absoluteLocalizedUrl('/blog/', locale) },
+  { name: `${viewAll} · ${pageLabel} ${currentPage}`, url: absoluteLocalizedUrl(`/blog/all/${currentPage}/`, locale) },
+]);
+
+const title =
+  currentPage > 1 ? `${meta.title} · ${pageLabel} ${currentPage}` : `${meta.title} · ${viewAll}`;
+---
+
+<Layout title={title} description={meta.description} jsonLd={breadcrumbLd}>
+  <PageHero eyebrow="DocNote" title={viewAll} subtitle={blog.subtitle || meta.description} compact />
+
+  <section class="pb-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 flex items-center justify-between gap-4">
+        <a
+          href={blogIndexHref}
+          class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-[var(--dn-primary-ink)] transition-colors"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M11.375 7H2.625M2.625 7L6.125 3.5M2.625 7L6.125 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          {blog.backToBlog}
+        </a>
+        <p class="text-sm text-slate-400 tabular-nums">
+          {pageLabel} {currentPage} / {totalPages}
+        </p>
+      </div>
+
+      <h2 class="sr-only">{viewAll} — {pageLabel} {currentPage}</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {postCards.map((post) => (
+          <BlogCard
+            href={post.href}
+            title={post.title}
+            excerpt={post.excerpt}
+            image={post.image}
+            imagePosition={post.imagePosition}
+            date={post.date}
+            locale={locale}
+            categoryLabel={post.categoryLabel}
+            categoryClass={post.categoryClass}
+            readMore={blog.readMore}
+          />
+        ))}
+      </div>
+
+      {totalPages > 1 && (
+        <nav class="mt-12 flex flex-wrap items-center justify-center gap-2" aria-label={viewAll}>
+          <a
+            href={currentPage > 1 ? pageHref(currentPage - 1) : undefined}
+            class:list={[
+              'inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-medium transition',
+              currentPage > 1
+                ? 'border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                : 'pointer-events-none border-slate-100 text-slate-300',
+            ]}
+            aria-disabled={currentPage <= 1}
+          >
+            {blog.prev ?? 'Previous'}
+          </a>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+            <a
+              href={pageHref(n)}
+              class:list={[
+                'inline-flex h-10 min-w-10 items-center justify-center rounded-full border px-3 text-sm font-semibold tabular-nums transition',
+                n === currentPage
+                  ? 'border-transparent text-white shadow-sm'
+                  : 'border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50',
+              ]}
+              style={n === currentPage ? 'background: var(--dn-gradient)' : undefined}
+              aria-current={n === currentPage ? 'page' : undefined}
+            >
+              {n}
+            </a>
+          ))}
+
+          <a
+            href={currentPage < totalPages ? pageHref(currentPage + 1) : undefined}
+            class:list={[
+              'inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-medium transition',
+              currentPage < totalPages
+                ? 'border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                : 'pointer-events-none border-slate-100 text-slate-300',
+            ]}
+            aria-disabled={currentPage >= totalPages}
+          >
+            {blog.next ?? 'Next'}
+          </a>
+        </nav>
+      )}
+    </div>
+  </section>
+</Layout>

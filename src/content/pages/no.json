@@ -1,0 +1,710 @@
+{
+  "nav": {
+    "tutorial": "Veiledning",
+    "pricing": "Priser",
+    "blog": "Blogg",
+    "team": "Team",
+    "survey": "Undersøkelse",
+    "patient": "Pasienter",
+    "joinUs": "Bli med oss",
+    "demo": "Få en demo",
+    "webApp": "Web App",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "solutions": "Løsninger",
+    "specialties": "Spesialiteter",
+    "more": "Mer"
+  },
+  "hero": {
+    "badge": "Utviklet av leger · Vert i Sveits",
+    "title": "Sykehusdokumentasjon,",
+    "titleHighlight": "uten å miste kvelder på notater",
+    "subtitle": "DocNote gjør konsultasjoner om til utskrivningsbrev, avdelingsnotater og operasjonsrapporter. Utviklet av leger som fortsatt jobber i sykehusvesenet.",
+    "cta": "Start gratis",
+    "ctaSecondary": "For klinikker og sykehus",
+    "founders": "Dr. Vincent Tan · Dr. Alice Gilson",
+    "foundersRole": "Grunnleggere · HUG & La Tour",
+    "trustedBy": "Stolt brukt av ledende helseaktører"
+  },
+  "soapDemo": {
+    "consultations": "Konsultasjoner",
+    "patients": "Pasienter",
+    "templates": "Maler",
+    "settings": "Innstillinger",
+    "consultationTitle": "Konsultasjon — Pasient #1247",
+    "consultationDate": "I dag, 14:30 · Allmennpraksis",
+    "recording": "Opptak",
+    "soapNoteGenerated": "SOAP-notat generert",
+    "soapNote": "SOAP-notat",
+    "savedToEHR": "Lagret i EHR",
+    "justNow": "Nå nettopp",
+    "patientId": "Pasient #1247",
+    "generalPractice": "Allmennpraksis",
+    "liveTranscript": "Direkte transkripsjon",
+    "soapS": "Pasienten rapporterer vedvarende hodepine i 3 dager, forverres om kvelden. Vurderer smerte til 6/10, bilateral trykk. Benekter kvalme eller lysfølsomhet.",
+    "soapO": "BP 120/80, HR 72, Temp 36.8°C. Våken og orientert. Mild ømhet i trapezius bilateral. CN II-XII intakt.",
+    "soapA": "Spenningshodepine, sannsynligvis stressrelatert. Ingen alarmerende tegn på sekundær hodepine.",
+    "soapP": "Ibuprofen 400mg ved behov. Søvnhygienerådgivning. Oppfølging om 2 uker hvis ingen bedring.",
+    "phoneSoapS": "Vedvarende hodepine 3 dager, 6/10, bilateral trykk.",
+    "phoneSoapO": "BP 120/80, HR 72. Ømhet i trapezius. CN intakt.",
+    "phoneSoapA": "Spenningshodepine, stressrelatert.",
+    "phoneSoapP": "Ibuprofen 400mg ved behov. Oppfølging om 2 uker."
+  },
+  "stats": {
+    "timeSaved": "Tid spart på dokumentasjon",
+    "timeSavedValue": "2+ timer",
+    "timeSavedSuffix": "+ timer",
+    "timeSavedDesc": "i snitt per dag",
+    "accuracy": "Transkripsjonsnøyaktighet",
+    "accuracyValue": "99%",
+    "accuracyDesc": "medisinsk terminologi",
+    "doctors": "Aktive leger",
+    "doctorsValue": "1,000+",
+    "doctorsDesc": "over hele Europa"
+  },
+  "features": {
+    "badge": "Funksjoner og fordeler",
+    "title": "Tilpassbar til alle administrative oppgaver",
+    "subtitle": "Alle verktøyene du trenger for å effektivisere dokumentasjonen din",
+    "recording": {
+      "title": "Smart opptak",
+      "description": "Ta opp konsultasjoner med ett trykk. Vår AI forstår medisinsk kontekst og filtrerer bakgrunnsstøy.",
+      "animStatus": "Opptak",
+      "animWords": [
+        "Så",
+        "smerte",
+        "startet",
+        "for",
+        "omtrent",
+        "to",
+        "uker",
+        "siden,",
+        "mest",
+        "om",
+        "morgenen.",
+        "Jeg",
+        "har",
+        "ikke",
+        "hatt",
+        "migrene",
+        "før..."
+      ]
+    },
+    "transcription": {
+      "title": "Nøyaktig transkripsjon",
+      "description": "Sanntidstranskripsjon med 99% nøyaktighet for medisinsk terminologi på flere språk.",
+      "animLine1": "Pasienten presenterer med",
+      "animLine2Pre": "tilbakevendende ",
+      "animWrong1": "diabetes",
+      "animRight1": "diabetes",
+      "animLine2Post": " symptomer,",
+      "animLine3Pre": "forhøyet ",
+      "animWrong2": "glukose",
+      "animRight2": "glukose",
+      "animLine3Post": " nivåer notert."
+    },
+    "summaries": {
+      "title": "Strukturerte sammendrag",
+      "description": "Generer automatisk medisinske besøksnotater, utskrivningsbrev og konsultasjonsrapporter.",
+      "animTitle": "Konsultasjonssammendrag",
+      "animSection1": "Diagnose",
+      "animSection2": "Behandling",
+      "animSection3": "Oppfølging"
+    },
+    "integration": {
+      "title": "EHR-integrasjon",
+      "description": "Integrer sømløst med ditt eksisterende elektroniske pasientjournal (EHR)-system.",
+      "animTitle": "EHR — Pasientjournal",
+      "animPatient": "Pasient",
+      "animDob": "Fødselsdato",
+      "animNotes": "Notater",
+      "animNoReport": "Ingen rapport"
+    },
+    "security": {
+      "title": "Datasikkerhet",
+      "description": "Dine data blir i Sveits. HIPAA-kompatibel, ISO 27001-sertifisert.",
+      "animLabel1": "Pasient",
+      "animLabel2": "Fødselsdato",
+      "animLabel3": "Diagnose",
+      "animLabel4": "Notater",
+      "animValue1": "Marie Dupont",
+      "animValue2": "12.03.1987",
+      "animValue3": "Type 2 diabetes",
+      "animValue4": "HbA1c forhøyet",
+      "animNoReport": "Ingen rapport"
+    },
+    "languages": {
+      "title": "Flerspråklig støtte",
+      "description": "Støtter fransk, engelsk, italiensk, spansk, arabisk og 20+ andre språk."
+    }
+  },
+  "specificities": {
+    "badge": "Spesifikasjoner",
+    "title": "Bygget for hvordan sykehus faktisk dokumenterer",
+    "subtitle": "Hver spesifikasjon endrer hva som havner i journalen, ikke bare en til funksjonsbryter.",
+    "impactLabel": "Effekt",
+    "stageLabel": "I produktet",
+    "coding": {
+      "title": "Medisinsk koding og fakturering",
+      "impact": "Koding slutter å være et ekstra dokumentasjonssteg. Brevet selv fremhever fakturerbare diagnoser: færre oversettelser av SADs, mindre kveldsarbeid med koding.",
+      "description": "Viktige assosierte diagnoser fremheves i utskrivningsbrevet, med kodingsforslag på slutten av dokumentet.",
+      "descriptionCh": "Viktige assosierte diagnoser fremheves i utskrivningsbrevet, med Swiss DRG-kodingsforslag på slutten av dokumentet.",
+      "descriptionRow": "Viktige assosierte diagnoser fremheves i utskrivningsbrevet, med PMSI-kodingsforslag på slutten av dokumentet.",
+      "stageLabel": "I brevet",
+      "line1Pre": "…historikk med ",
+      "line1Mark": "type 2 diabetes",
+      "line1Post": " med nylig forhøyet HbA1c…",
+      "line2Pre": "…kjent ",
+      "line2Mark": "hypertensjon",
+      "line2Post": ", nå kontrollert…",
+      "line3Pre": "…tidligere ",
+      "line3Mark": "DVT",
+      "line3Post": " · antikoagulering diskutert…"
+    },
+    "tardoc": {
+      "title": "TARDOC-kompatibilitet",
+      "impact": "En kort sengekantdiktat blir en fullstendig, fakturerbar undersøkelsesbeskrivelse. Du dokumenterer én gang for klinisk omsorg og for TARDOC, ikke to ganger.",
+      "description": "Konsise dikterte funn utvides til den strukturerte formuleringen forsikringsselskaper og TARDOC forventer, uten å måtte skrive om undersøkelsen fra bunnen av.",
+      "stageLabel": "Diktat til fakturerbar beskrivelse",
+      "shortDictation": "“Abdomen myk, ingen rebound. BS til stede.”",
+      "expandLabel": "Utvides til TARDOC-klar tekst",
+      "fullDescription": "Abdominalundersøkelse: abdomen myk og ikke øm, ingen forsvar eller reboundømhet. Tarmlyder til stede i alle kvadranter. Ingen organomegali palpabelt…"
+    },
+    "ehr": {
+      "title": "EHR-integrasjon",
+      "impact": "Dokumentasjon er ikke ferdig når notatet ser bra ut. Den er ferdig når den er i journalen: ingen kopieringsgap, ingen versjon som flyter utenfor EHR.",
+      "description": "Validerte rapporter sendes direkte inn i Mediway og SOKLE, slik at det kliniske dokumentet og pasientjournalen forblir det samme objektet.",
+      "stageLabel": "Validerte notater til pasientjournal",
+      "docReady": "Utskrivningsbrev",
+      "docMeta": "validert · PDF klar"
+    },
+    "templates": {
+      "title": "Egendefinerte Word-maler",
+      "impact": "Du slutter å reformatere AI-utdata for å matche sykehusets brevhode. Hver rapport er allerede ditt dokument: layout, seksjoner, signatur. Gjennomgang forblir medisinsk, ikke kosmetisk.",
+      "description": "Last opp din Word-mal én gang. DocNote gjenoppretter fremtidige rapporter med din eksakte struktur og merkevare.",
+      "stageLabel": "Din mal blir rapporten",
+      "fileName": "Tjenestebrevhode.docx",
+      "dropHint": "Dine seksjoner · dine marger · din signatur",
+      "letterhead": "Sykehus · Kirurgisk tjeneste",
+      "letterBody": "Kjære kollega,\nVedlagt finner du…"
+    },
+    "context": {
+      "title": "Rik kontekstinput",
+      "impact": "Notatet reflekterer det fulle kliniske bildet, ikke bare det som ble sagt høyt: færre utelatelser, færre «vennligst legg til labresultat»-rettelser etterpå.",
+      "description": "Legg ved tidligere brev, laboratorieprøver, bildediagnostikk og bilder. Modellen bruker dem når den strukturerer rapporten.",
+      "stageLabel": "Lyd pluss filkontekst til et sterkere notat",
+      "chip1": "Tidligere utskrivning",
+      "chip2": "Laboratorieprøver.pdf",
+      "chip3": "Sårfoto",
+      "meterLabel": "Rapportfullstendighet",
+      "meterNote": "Kontekst inkludert · færre manglende funn i utkastet"
+    },
+    "hospital": {
+      "title": "Sykehusspesifikk dokumentasjon",
+      "impact": "Du tvinger ikke sykehusarbeid inn i et poliklinisk SOAP. Dokumenttypen matcher arbeidsflyten, slik at struktur, lengde og mottakere er riktige første gang.",
+      "description": "Opprinnelige formater for utskrivningsbrev, avdelingsnotater, operasjonsrapporter og andre sykehusdokumenter.",
+      "stageLabel": "Riktig dokument for øyeblikket",
+      "type1Title": "Utskrivning",
+      "type1Sub": "brev til fastlege",
+      "type2Title": "Avdeling",
+      "type2Sub": "forløpsnotat",
+      "type3Title": "OR-rapport",
+      "type3Sub": "operativ"
+    },
+    "sync": {
+      "title": "Telefon og PC synkronisert",
+      "impact": "Dokumentasjon forblir én tråd fra sengekant til skrivebord. Du trenger ikke å legge inn eller bygge notatet på nytt når du bytter enhet: utkastet følger deg.",
+      "description": "Ta opp på avdelingen fra telefonen din, og fortsett og valider på PC. Samme konsultasjon, sanntidssynkronisering.",
+      "stageLabel": "Ett notat, to steder",
+      "phone": "Telefon",
+      "recording": "Opptak…",
+      "desktop": "PC",
+      "sameDraft": "Samme utkast"
+    },
+    "dayHospital": {
+      "title": "Samarbeidende dagsykehus",
+      "impact": "På slutten av dagen har du én strukturert pasientjournal, ikke fire delvise notater å avstemme. Dokumentasjonskvalitet skalerer med teamet i stedet for å fragmenteres.",
+      "description": "Flere omsorgsgivere bidrar til den samme lokale pasientjournalen. DocNote slår sammen bidragene til én pålitelig journal.",
+      "stageLabel": "Flere omsorgsgivere til én fil",
+      "mergeResult": "Enkelt strukturert dagsykehusjournal"
+    }
+  },
+  "specialties": {
+    "title": "Støtter 61 medisinske spesialiteter",
+    "subtitle": "Fra allmennpraksis til spesialisert behandling",
+    "items": [
+      "Allmennpraksis",
+      "Indremedisin",
+      "Kardiologi",
+      "Dermatologi",
+      "Endokrinologi",
+      "Gastroenterologi",
+      "Nevrologi",
+      "Onkologi",
+      "Ortopedi",
+      "Pediatri",
+      "Psykiatri",
+      "Pulmonologi",
+      "Revmatologi",
+      "Kirurgi",
+      "Urologi",
+      "Akuttmedisin"
+    ],
+    "countLabel": "61"
+  },
+  "testimonials": {
+    "badge": "Tilbakemelding",
+    "title": "Elsket av leger",
+    "subtitle": "Se hva helsepersonell sier om DocNote",
+    "quote1": "DocNote har virkelig forandret min dag på akuttmottaket, og lar meg konsentrere meg om pasientene mine og nyte konsultasjonene mine igjen.",
+    "author1": "Dr. Perrot",
+    "role1": "Residentlege på akuttmottak",
+    "quote2": "Siden jeg begynte å bruke DocNote, har forberedelse og oppfølging av konsultasjoner blitt en rask og effektiv prosess.",
+    "author2": "Dr. Patel",
+    "role2": "Residentlege i generell kirurgi",
+    "quote3": "Jeg sa alltid at jeg skulle betale for en fulltidsassistent når jeg ble milliardær, men nå trenger jeg ikke engang å være det.",
+    "author3": "Prof. Ris",
+    "role3": "Overlege i kolorektal kirurgi",
+    "items": [
+      {
+        "quote": "DocNote har virkelig forandret min hverdag på akuttmottaket, slik at jeg kan konsentrere meg om pasientene mine og igjen nyte konsultasjonene mine.",
+        "author": "Dre Perrot",
+        "role": "Residentlege på akuttmottak",
+        "image": "/images/perrot.png"
+      },
+      {
+        "quote": "Siden jeg begynte å bruke DocNote, har forberedelse og oppfølging av konsultasjoner blitt en rask og effektiv prosess.",
+        "author": "Dr Patel",
+        "role": "Residentlege i generell kirurgi",
+        "image": "/images/patel.jpg"
+      },
+      {
+        "quote": "Jeg sa alltid at jeg ville betale for en heltidsassistent når jeg ble milliardær, men nå trenger jeg ikke engang å være det.",
+        "author": "Pr Ris",
+        "role": "Overlege i kolorektal kirurgi",
+        "image": "/images/ris.png"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Klar til å spare 2+ timer daglig?",
+    "subtitle": "Bli med hundrevis av leger som har forandret dokumentasjonsarbeidsflyten sin.",
+    "button": "Start gratis",
+    "noCard": "Ingen kredittkort nødvendig"
+  },
+  "valueProp": {
+    "title": "Effektivisert medisinsk dokumentasjon",
+    "subtitle": "Forenkle dokumentasjonsarbeidsflyten din, spar timer hver dag og fokuser på det som betyr mest — pasientene dine.",
+    "card1": {
+      "title": "Kom i gang raskt",
+      "description": "Start umiddelbart. Enhver lege på teamet ditt kan ta opp, transkribere og dele kliniske notater på minutter."
+    },
+    "card2": {
+      "title": "Synkroniser med din EHR",
+      "description": "Forenkle verktøyene dine. Koble til data fra hvor som helst med sømløse EHR-integrasjoner og automatiserte arbeidsflyter."
+    },
+    "card3": {
+      "title": "Sømløst på tvers av enheter",
+      "description": "Forbli tilkoblet, uansett hvor du jobber. DocNote kjører problemfritt på enhver enhet — mobil, nettbrett eller PC."
+    }
+  },
+  "compliance": {
+    "badge": "Konfidensialitet",
+    "title": "Sikkerhet skreddersydd til medisinske krav",
+    "subtitle": "Vår infrastruktur overholder høye standarder for databeskyttelse, spesielt tilpasset medisinske sektorkrav.",
+    "cardTitle": "Databeskyttelsesrammeverk",
+    "cardDescription": "DocNote implementerer bedriftssikkerhet med ende-til-ende-kryptering, strenge tilgangskontroller og omfattende revisjonslogging for å beskytte sensitive pasientdata.",
+    "protocolTitle": "DocNote-sikkerhetsprotokoll",
+    "protocolEncryption": "Ende-til-ende-kryptering: TLS 1.3 (under overføring) & AES-256 (i ro)",
+    "protocolRetention": "Ingen data lagret utover 7 dager",
+    "protocolRbac": "Rollebasert tilgangskontroll (RBAC)",
+    "protocolAudit": "Omfattende revisjonslogging",
+    "swiss": {
+      "title": "Sveitsisk design og vert",
+      "description": "Bygget og vert i Sveits. Alle data forblir på sveitsiske servere, i tråd med lokale helseforskrifter."
+    },
+    "hipaa": {
+      "title": "HIPAA-kompatibel",
+      "description": "Fullt kompatibel med helsepersonvernstandarder, som sikrer pasientdatabeskyttelse på alle nivåer."
+    },
+    "iso": {
+      "title": "ISO 27001",
+      "description": "Sertifisert informasjonssikkerhetsledelse med regelmessige revisjoner og kontinuerlig overvåking."
+    }
+  },
+  "faq": {
+    "title": "Ofte stilte spørsmål",
+    "subtitle": "Alt leger og sykehus spør om før de tar i bruk DocNote. Har du fortsatt et spørsmål? ",
+    "contactUs": "Kontakt oss",
+    "q1": "Hva er DocNote og hvordan fungerer det?",
+    "a1": "DocNote er en AI-drevet medisinsk skriver og klinisk dokumentasjonsassistent designet for leger, kirurger og sykehus i Sveits, Frankrike og over hele Europa. Under en konsultasjon tar DocNote sikkert opp samtalen mellom legen og pasienten, transkriberer den i sanntid og genererer automatisk en strukturert medisinsk rapport (konsultasjonsnotat, utskrivningsbrev, operasjonsrapport, avdelingsnotat osv.) som legen gjennomgår og godkjenner før den sendes til pasientens elektroniske journal.",
+    "q2": "Hvorfor velge DocNote fremfor andre AI-medisinske skrivere?",
+    "a2": "DocNote er bygget spesielt for europeisk og sveitsisk helsevesen, ikke tilpasset fra et amerikansk produkt. Viktige forskjeller: (1) alle data er vert i Sveits og brukes aldri til å trene AI-modeller, (2) full overholdelse av den sveitsiske føderale loven om databeskyttelse (FADP), GDPR, HIPAA og ISO 27001, (3) automatiske medisinske kodingsforslag i tråd med Swiss DRG og PMSI, (4) innbygd TARDOC-støtte for å gjøre dikterte undersøkelser om til fakturerbare beskrivelser, (5) direkte EHR-integrasjon med Mediway og SOKLE, (6) ekte synkronisering mellom mobil og PC, og (7) sykehusspesifikk dokumentasjon inkludert utskrivningsbrev, operasjonsrapporter og samarbeidende dagsykehusfiler.",
+    "a2Ch": "DocNote er bygget spesielt for sveitsisk helsevesen, ikke tilpasset fra et amerikansk produkt. Viktige forskjeller: (1) alle data er vert i Sveits og brukes aldri til å trene AI-modeller, (2) full overholdelse av den sveitsiske føderale loven om databeskyttelse (FADP / nLPD), HIPAA og ISO 27001, (3) automatiske medisinske kodingsforslag i tråd med Swiss DRG, (4) innbygd TARDOC-støtte for å gjøre dikterte undersøkelser om til fakturerbare beskrivelser, (5) direkte EHR-integrasjon med Mediway og SOKLE, (6) ekte synkronisering mellom mobil og PC, og (7) sykehusspesifikk dokumentasjon inkludert utskrivningsbrev, operasjonsrapporter og samarbeidende dagsykehusfiler.",
+    "a2Row": "DocNote er bygget spesielt for fransk og europeisk helsevesen, ikke tilpasset fra et amerikansk produkt. Viktige forskjeller: (1) alle data er vert i Frankrike og brukes aldri til å trene AI-modeller, (2) full overholdelse av europeisk GDPR, HIPAA og ISO 27001, (3) automatiske medisinske kodingsforslag i tråd med fransk PMSI, (4) direkte EHR-integrasjon med ledende sykehusinformasjonssystemer, (5) ekte synkronisering mellom mobil og PC, og (6) sykehusspesifikk dokumentasjon inkludert utskrivningsbrev, operasjonsrapporter og samarbeidende dagsykehusfiler.",
+    "q3": "Er DocNote sikkert og i tråd med helsedataregler?",
+    "a3": "Ja. DocNote bruker ende-til-ende-kryptering (AES-256 i ro, TLS 1.3 under overføring), vert alle helsedata utelukkende i Sveits, og overholder den sveitsiske FADP, den europeiske GDPR, HIPAA og ISO 27001. DocNote fungerer som en hjelpeperson for legen under artikkel 321 i den sveitsiske straffeloven (medisinsk taushetsplikt). Helsedata slettes automatisk og ugjenkallelig innen 7 dager etter behandling. DocNote beholder aldri permanente kopier av lyd, transkripsjoner eller medisinske rapporter.",
+    "a3Ch": "Ja. DocNote bruker ende-til-ende-kryptering (AES-256 i ro, TLS 1.3 under overføring), vert alle helsedata utelukkende i Sveits, og overholder den sveitsiske føderale loven om databeskyttelse (FADP / nLPD), HIPAA og ISO 27001. DocNote fungerer som en hjelpeperson for legen under artikkel 321 i den sveitsiske straffeloven (medisinsk taushetsplikt). Helsedata slettes automatisk og ugjenkallelig innen 7 dager etter behandling. DocNote beholder aldri permanente kopier av lyd, transkripsjoner eller medisinske rapporter.",
+    "a3Row": "Ja. DocNote bruker ende-til-ende-kryptering (AES-256 i ro, TLS 1.3 under overføring), vert alle helsedata utelukkende i Frankrike i HDS-sertifiserte datasentre (Hébergeur de Données de Santé), og overholder den europeiske GDPR, HIPAA og ISO 27001. DocNote er bundet av fransk medisinsk taushetsplikt under artikkel 226-13 i den franske straffeloven og artikkel L1110-4 i folkehelseloven. Helsedata slettes automatisk og ugjenkallelig innen 7 dager etter behandling. DocNote beholder aldri permanente kopier av lyd, transkripsjoner eller medisinske rapporter.",
+    "q4": "Hvilke medisinske spesialiteter støtter DocNote?",
+    "a4": "DocNote støtter 61 medisinske spesialiteter, inkludert allmennpraksis, indremedisin, kardiologi, kirurgi (generell, ortopedisk, kolorektal, vaskulær), gynekologi, pediatri, psykiatri, dermatologi, oftalmologi, øre-nese-hals, nevrologi, onkologi, anestesiologi, akuttmedisin og radiologi. Rapportene er tilpasset terminologien og strukturen som forventes for hver spesialitet.",
+    "q5": "Hvilke språk støtter DocNote?",
+    "a5": "DocNote forstår og produserer rapporter på fransk, tysk, italiensk, engelsk og over 20 andre språk. Den håndterer sveitsisk-spesifikk medisinsk terminologi og kodebytte under konsultasjoner (for eksempel en pasient som snakker sveitsertysk mens legen dikterer på fransk).",
+    "q6": "Hvor mye tid sparer DocNote per konsultasjon?",
+    "a6": "I gjennomsnitt sparer leger som bruker DocNote mer enn 2 timer med administrativt arbeid per dag. Et konsultasjonsnotat som tidligere tok 5 til 10 minutter å skrive, genereres på sekunder, og etterlater bare en rask medisinsk gjennomgang før godkjenning. Dette betyr mer tid med pasienter, færre kvelder brukt på papirarbeid og redusert utbrenthet.",
+    "q7": "Integrerer DocNote med elektroniske pasientjournaler (EHR)?",
+    "a7": "Ja. DocNote integrerer direkte med Mediway og SOKLE, med nye EHR-integrasjoner regelmessig lagt til. Du kan også dra og slippe dine egne Word-rapportmaler: DocNote gjenoppretter automatisk rapporten og respekterer din eksakte layout, og eksporterer deretter til PDF eller kopierer/limer inn i ethvert annet system.",
+    "q8": "Hvor mye koster DocNote og er det en gratis prøveversjon?",
+    "a8": "DocNote tilbyr en gratis prøveversjon på 30 konsultasjoner med full tilgang til alle profesjonelle funksjoner, uten kredittkort nødvendig. Den profesjonelle planen koster CHF 109 per måned (eller CHF 99 per måned fakturert årlig) for brukere i Sveits, med tilsvarende prising i EUR for resten av Europa. Sykehus og store organisasjoner har en tilpasset Enterprise-plan tilgjengelig på forespørsel.",
+    "a8Ch": "DocNote tilbyr en gratis prøveversjon på 30 konsultasjoner med full tilgang til alle profesjonelle funksjoner, uten kredittkort nødvendig. Den profesjonelle planen koster CHF 109 per måned (eller CHF 99 per måned fakturert årlig). Sykehus og store organisasjoner har en tilpasset Enterprise-plan tilgjengelig på forespørsel.",
+    "a8Row": "DocNote tilbyr en gratis prøveversjon på 30 konsultasjoner med full tilgang til alle profesjonelle funksjoner, uten kredittkort nødvendig. Den profesjonelle planen koster €89 per måned (eller €79 per måned fakturert årlig). Sykehus og store organisasjoner har en tilpasset Enterprise-plan tilgjengelig på forespørsel.",
+    "q9": "Hva gjør DocNote annerledes for sykehus- og dagsykehusdokumentasjon?",
+    "a9": "DocNote er den første AI-medisinske skriveren som er spesialbygget for sykehuskompleksitet, ikke bare polikliniske konsultasjoner. Tre forskjeller skiller seg ut. (1) Samarbeidende dagsykehusfiler: i HDJ-arbeidsflyter der flere omsorgsgivere (leger, residenter, sykepleiere, anestesileger) suksessivt ser den samme pasienten, lar DocNote hver omsorgsgiver bidra til den samme delte pasientjournalen og slår automatisk sammen alle bidrag til én strukturert, pålitelig, reviderbar journal. Ingen annen omgivelses-AI-skriver på det europeiske markedet tilbyr dette for øyeblikket. (2) Rik konsultasjonskontekst: DocNote lar legen berike enhver konsultasjon ved å dra og slippe tidligere dokumenter (laboratorieresultater, bildediagnostikkrapporter, tidligere utskrivningsbrev), legge ved bilder (sår, lesjoner, EKG, røntgen) eller lime inn fritekst. AI-en inkorporerer deretter denne rike konteksten i den strukturerte utdataen, og produserer rapporter med uovertruffen presisjon. (3) Personlige Word-maler: dra og slipp ditt eget Word-dokument med din eksakte formatering, signatur, sykehusbrevhode og seksjonsstruktur. DocNote gjenoppretter hver fremtidige rapport og respekterer din eksakte mal og layout. Ingen annen AI-skriver tilbyr dette nivået av tilpasning per lege."
+  },
+  "footer": {
+    "description": "AI-drevet medisinsk dokumentasjon for sykehusarbeidsflyter.",
+    "product": "Produkt",
+    "company": "Selskap",
+    "legal": "Juridisk",
+    "features": "Funksjoner",
+    "pricing": "Priser",
+    "integrations": "Integrasjoner",
+    "about": "Om oss",
+    "blog": "Blogg",
+    "careers": "Karrierer",
+    "contact": "Kontakt",
+    "privacy": "Personvernpolicy",
+    "terms": "Bruksvilkår",
+    "gtc": "Generelle vilkår og betingelser",
+    "gdpr": "GDPR",
+    "rights": "Alle rettigheter forbeholdt."
+  },
+  "pricing": {
+    "title": "Fra enkeltpraktiserende leger til store organisasjoner",
+    "subtitle": "Velg den planen som passer din praksis",
+    "monthly": "Månedlig",
+    "yearly": "Årlig",
+    "save": "Spar 15%",
+    "perMonth": "/måned",
+    "getStarted": "Kom i gang",
+    "subscription": "Abonnement",
+    "freeTrial": "30 gratis konsultasjoner, deretter",
+    "professional": {
+      "name": "Kontorer og enkeltpraktiserende leger",
+      "description": "For enkeltleger og små praksiser",
+      "price": "79",
+      "monthlyPrice": "89",
+      "features": [
+        "Ubegrensede konsultasjoner",
+        "Prioritert støtte",
+        "Tilgang til mobilapp og webapp",
+        "Egendefinerte maler på forespørsel",
+        "Mulig integrasjon av DocNote-teamet"
+      ],
+      "popular": "Mest populær"
+    },
+    "enterprise": {
+      "name": "Sykehus og klinikker",
+      "description": "For sykehus og store klinikker",
+      "price": "Tilpasset",
+      "features": [
+        "Alt i Professional",
+        "Dedikert kontomanager",
+        "Tilpassede integrasjoner",
+        "On-premise-installasjon",
+        "SLA-garanti",
+        "Opplæring & onboarding"
+      ],
+      "contact": "Kontakt salg"
+    },
+    "faq": {
+      "title": "Ofte stilte spørsmål",
+      "q1": "Hvordan fungerer den gratis prøveversjonen?",
+      "a1": "Start med 30 gratis konsultasjoner med full tilgang til profesjonelle funksjoner. Ingen kredittkort nødvendig.",
+      "q2": "Kan jeg endre plan senere?",
+      "a2": "Ja, du kan oppgradere eller nedgradere planen din når som helst. Endringer trer i kraft ved neste faktureringssyklus.",
+      "q3": "Er dataene mine sikre?",
+      "a3": "Absolutt. Alle data er kryptert og lagret i Sveits. Vi er HIPAA-kompatible og ISO 27001-sertifisert.",
+      "q4": "Hvilke EHR-systemer integrerer dere med?",
+      "a4": "Vi integrerer med de fleste store EHR-systemer inkludert Epic, Cerner og lokale sveitsiske systemer som Sokle eller Mediway.",
+      "q5": "Hva er forskjellen mellom Profesjonell og Enterprise?",
+      "a5": "Profesjonell er bygget for enkeltleger og små praksiser: ubegrensede konsultasjoner, mobil og nettaksess, maler og prioritert support. Enterprise legger til flerbrukeroppsett, dedikert kontomanagement, tilpasset EHR-arbeid, valgfritt on-premise-oppsett, SLA og strukturert opplæring for sykehus og klinikker.",
+      "q6": "Kan jeg betale månedlig eller årlig?",
+      "a6": "Ja. Du kan velge månedlig fakturering eller årlig fakturering med ca. 15% besparelse. Priser vises i lokal valuta når tilgjengelig (CHF, EUR eller USD).",
+      "q7": "Tilbyr dere fakturaer for klinikker og sykehus?",
+      "a7": "Ja. Profesjonelle abonnementer faktureres via Stripe med nedlastbare fakturaer. Enterprise-kontrakter kan faktureres gjennom din anskaffelsesprosess med tilpassede betingelser.",
+      "q8": "Er det en binding eller avbestillingsgebyr?",
+      "a8": "Det er ingen langtidsbinding på Profesjonell-planen. Du kan avbryte før neste faktureringssyklus. Enterprise-avtaler følger vilkårene definert i kontrakten din.",
+      "q9": "Hvor lang tid tar onboarding?",
+      "a9": "De fleste enkeltklinikere starter samme dag etter gratis prøveperiode. Sykehus- og klinikkoppsett tar vanligvis noen uker avhengig av EHR-integrasjon, opplæringsskjema og intern IT-gjennomgang.",
+      "q10": "Kan flere leger i en praksis dele en konto?",
+      "a10": "Små praksiser kan starte på Profesjonell per kliniker. For delte avdelinger, admin-roller eller sykehusomfattende tilgang er Enterprise-planen det rette valget — kontakt salg så vil vi dimensjonere det med deg."
+    },
+    "compare": {
+      "title": "Sammenlign planer",
+      "subtitle": "Se hva som er inkludert for enkeltklinikere versus sykehus og klinikker.",
+      "feature": "Funksjon",
+      "pro": "Profesjonell",
+      "enterprise": "Enterprise",
+      "yes": "Inkludert",
+      "no": "—",
+      "custom": "Tilpasset",
+      "rows": [
+        {
+          "label": "Ubegrensede konsultasjoner",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Mobilapp og nettaksess",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Spesialtilpassede rapporter",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Tilpassede maler",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Prioritert support",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Sveitsisk-hos data & kryptering",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "EHR-integrasjoner (Mediway, SOKLE, …)",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Flere brukere / avdelingsoppsett",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Dedikert kontomanager",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "On-premise eller privat sky",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SLA-garanti",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Opplæring & onboarding",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SSO / admin-konsoll",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Samarbeidsdagsykehusarbeidsflyter",
+          "pro": "no",
+          "enterprise": "yes"
+        }
+      ]
+    }
+  },
+  "blog": {
+    "title": "Blogg",
+    "subtitle": "Innsikter om AI i helsevesenet, medisinsk dokumentasjon og praksisledelse",
+    "readMore": "Les mer",
+    "backToBlog": "Tilbake til bloggen",
+    "recentPosts": "Nye innlegg",
+    "minRead": "min lesetid",
+    "shareArticle": "Del denne artikkelen:",
+    "categories": {
+      "all": "Alle",
+      "news": "Nyheter",
+      "ai": "Forskning & innsikt",
+      "documentation": "Forskning & innsikt",
+      "practice": "Forskning & innsikt"
+    },
+    "onThisPage": "På denne siden",
+    "writtenBy": "Skrevet av",
+    "share": "Del",
+    "relatedArticles": "Relaterte artikler",
+    "createdOn": "Publisert",
+    "articles": "Artikler",
+    "prev": "Forrige",
+    "next": "Neste",
+    "viewAllArticles": "Alle artikler",
+    "pageLabel": "Side"
+  },
+  "team": {
+    "aboutUs": "Om oss",
+    "title": "Designet av leger, bygget av AI-ingeniører",
+    "subtitle": "Et klinisk og teknisk team som jobber side om side for å gi legene tiden sin tilbake.",
+    "intro": "DocNote startet i sykehuskorridorer, ikke i en pitch-deck. Våre gründere praktiserer fortsatt medisin, så hver produktbeslutning vurderes ut fra om den overlever en travel vakterunde.",
+    "story": "I dag deler klinikere, ingeniører og markedsføringsteammet én misjon: gjøre konsultasjoner til pålitelige kliniske dokumenter på sekunder, med sveitsisk-hosting og personvern i sentrum. Vi bygger sammen med de som skal bruke produktet i morgen.",
+    "members": {
+      "vincentTan": {
+        "name": "Dr. Vincent Tan",
+        "role": "Lege & Administrerende direktør",
+        "bio": "Lege med erfaring fra Hôpital de la Tour i Genève. Ledet DocNote med fokus på reelle sykehusarbeidsflyter og klinikernes tillit."
+      },
+      "aliceGilson": {
+        "name": "Dr. Alice Gilson",
+        "role": "Lege & Administrerende direktør",
+        "bio": "Kirurgisk spesialist med erfaring fra HUG (Genève). Formgir produktet rundt operasjonsrapporter, utskrivningsbrev og den daglige kliniske virkeligheten."
+      },
+      "mathiasGilson": {
+        "name": "Mathias Gilson",
+        "role": "Teknisk direktør",
+        "bio": "Ansvarlig for DocNotes tekniske visjon, AI-plattformarkitektur og pålitelighetsstandard for klinisk programvare."
+      },
+      "jeremyYvinec": {
+        "name": "Jeremy Yvinec",
+        "role": "Senior Fullstack-utvikler",
+        "bio": "Utdannet ved IUT Aix-Marseille, bygger web- og React Native-løsninger som holder dokumentasjonen rask på alle enheter."
+      },
+      "hugoRoussel": {
+        "name": "Hugo Roussel",
+        "role": "Team Lead Engineer",
+        "bio": "Utdannet ved ETH Zürich, leder teknisk leveranse med fokus på skalerbare systemer og ren arkitektur."
+      },
+      "ericWei": {
+        "name": "Eric Wei",
+        "role": "Senior Frontend-utvikler",
+        "bio": "Utdannet ved EPFL, lager grensesnitt klinikere stoler på, med fokus på klarhet, hastighet og moderne frontend-håndverk."
+      },
+      "nedimAmer": {
+        "name": "Nedim Amer",
+        "role": "Salg",
+        "bio": "Hjelper klinikker og sykehus med å evaluere DocNote, kartlegge arbeidsflyter og gå fra første demo til trygg implementering."
+      },
+      "valeryDemunck": {
+        "name": "Valery Demunck",
+        "role": "Salg",
+        "bio": "Samarbeider med helseorganisasjoner i ulike markeder for å tilpasse DocNote til deres dokumentasjonsbehov og tidslinjer."
+      },
+      "julietteKristanek": {
+        "name": "Juliette Kristanek",
+        "role": "Markedsføring & Kommunikasjon",
+        "bio": "Formulerer hvordan DocNote presenterer seg for leger og partnere, fra produktfortellinger til fellesskap og arrangementer."
+      }
+    },
+    "highlightsTitle": "Hvordan vi jobber",
+    "highlightsLead": "DocNote startet ikke som en pitch-deck. Det startet i sykehuskorridorer — mellom varderunder, operasjonslister og kvelder brukt på å omskrive notater som burde ha skrevet seg selv. Den opprinnelsen preger fortsatt hver ansettelse, hver utgivelse og hver samtale vi har med en klinikk.",
+    "highlights": [
+      {
+        "title": "Praktiserende leger i kjernen",
+        "body": "Våre grunnleggere praktiserer fortsatt medisin. Det er ikke et slagord for Om-siden — det er filteret for produktbeslutninger. Hvis en funksjon ikke overlever en travel varderunde, en støyende akuttavdeling eller en fredagsettermiddagsklinikk, blir den ikke lansert.\n\nKlinisk språk, spesialitetsstruktur og den virkelige rytmen i sykehusdokumentasjon kommer først. Vi designer for utskrivningsbrev, operasjonsrapporter, samarbeidsdagssykehusfiler og de vanskelige øyeblikkene når tre omsorgsgivere berører samme pasient på en ettermiddag.\n\nNår klinikere forteller oss at noe føles feil, behandler vi det som ingeniørinformasjon — ikke som en kosmetisk UX-kommentar."
+      },
+      {
+        "title": "Sveitsisk-hos personvern som standard",
+        "body": "Helsedata er ikke en treningskorpus. DocNote huser klinisk informasjon i Sveits, krypterer den under overføring og i ro, og bruker oppbevaringsregler som matcher europeiske forventninger til medisinsk hemmelighold.\n\nVi bygger for FADP / nLPD, GDPR, HIPAA og ISO 27001-realiteter — sykehus-IT-gjennomganger, anskaffelsesspørreskjemaer og det stille spørsmålet hver lege stiller: hvor bor pasientens data egentlig?\n\nIngenting ved ambient dokumentasjon er verdt å undergrave tillit. Personvern er en del av produktarkitekturen, ikke et juridisk vedlegg."
+      },
+      {
+        "title": "Klinikere og ingeniører i samme løkke",
+        "body": "Medisinske spesialister, AI-ingeniører og produktmedarbeidere sitter i samme løkke. Rapportmodeller oppfinnes ikke i isolasjon og deretter \"tilpasses\" for sykehus — de er meddesignet av folk som fortsatt skriver disse rapportene for hånd i dag.\n\nDerfor kan DocNote gå fra fri diktering til strukturerte spesialitetsnotater, operasjonsrapporter, oppfølgningsnotater og utskrivningssammendrag uten å tvinge leger inn i en generell US-poliklinisk mal.\n\nIngeniørkvalitet vises som hastighet, pålitelighet og rolige grensesnitt. Klinisk kvalitet vises som vokabular, struktur og respekt for hvordan omsorgsteam faktisk jobber."
+      },
+      {
+        "title": "Fra første demo til sykehusoppsett",
+        "body": "En god ambient skribentdemo er enkel. Et pålitelig sykehusoppsett er det ikke. Vårt salg, onboarding og supportteam hjelper klinikker med å kartlegge arbeidsflyter, velge riktige rapportmodeller, koble EHR-stier der nødvendig og trene team uten å avbryte omsorg.\n\nVi holder oss gjennom piloter, anskaffelser og det rotete midtpartiet — spesialitetsunntak, malpreferanser, flerspråklige avdelinger og IT-sjekklisten ingen setter på markedsføringssiden.\n\nMålet er enkelt: mer tid med pasienter, færre kvelder tapt på notater og et dokumentasjonssystem klinikere er villige til å forsvare overfor kolleger."
+      }
+    ],
+    "highlightsClosing": "I dag spenner teamet over klinisk lederskap, dypt ingeniørarbeid, go-to-market og kommunikasjon — forent av ett oppdrag: gjør konsultasjoner om til pålitelige kliniske dokumenter på sekunder, med sveitsisk-hos personvern i kjernen. Vi bygger med de som skal bruke produktet i morgen."
+  },
+  "tutorial": {
+    "title": "Kom i gang med DocNote",
+    "subtitle": "Følg disse enkle trinnene for å transformere din medisinske dokumentasjonsarbeidsflyt",
+    "step1": {
+      "title": "Last ned mobilapplikasjonen, eller koble til webappen",
+      "description": "Last ned DocNote-mobilapplikasjonen fra telefonens appbutikk, eller få tilgang direkte via vår webapp:",
+      "ios": "Tilgjengelig i App Store",
+      "android": "Tilgjengelig i Google Play"
+    },
+    "step2": {
+      "title": "Opprett din konto",
+      "description": "Opprett din konto ved å angi din profesjonelle e-post. Vi sender deg en aktiveringskode.",
+      "trialInfo": "Din 30-konsultasjonsprøveversjon starter når du mottar og angir aktiveringskoden din."
+    },
+    "step3": {
+      "title": "Hovedskjerm",
+      "description": "Begynn å bruke vår løsning for å forbedre din administrative byrde og begynn å nyte arbeidet ditt igjen. Du kan se veiledningen nedenfor for å hjelpe deg med å forstå våre hovedfunksjoner.",
+      "chooseModel": "Fra landingssiden kan du velge rapportmodellen som best passer dine behov:",
+      "models": {
+        "dictation": {
+          "title": "Diktat",
+          "description": "Fritekstdiktat med automatisk strukturering"
+        },
+        "general": {
+          "title": "Allmennlegekonsultasjon",
+          "description": "Konsise, klinisk strukturerte notater designet for primærhelsetjenesten"
+        },
+        "specialist": {
+          "title": "Spesialistkonsultasjon",
+          "description": "Detaljert spesialistkonsultasjon strukturert som et formelt brev til henvisende lege"
+        },
+        "operative": {
+          "title": "Operasjonsrapport",
+          "description": "Strukturert kirurgisk prosedyre-rapport"
+        },
+        "followUp": {
+          "title": "Medisinske besøksoppfølgningsnotater",
+          "description": "Standardiserte daglige forløpsnotater for innlagte pasienter"
+        },
+        "discharge": {
+          "title": "Utskrivningsbrev",
+          "description": "Konsolidert utskrivningssammendrag som integrerer alle dokumenter opprettet under innleggelsen"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klar til å komme i gang?",
+      "subtitle": "Last ned appen og start din 30-konsultasjonsprøveversjon i dag.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "webApp": "Web App",
+      "getDemo": "Bestill en demo"
+    }
+  },
+  "contact": {
+    "title": "Kontakt oss",
+    "subtitle": "Snakk med vårt sykehus-team. Kontakt Vincent for Sveits, eller Alice for franske helseorganisasjoner.",
+    "bookDemo": "Bestill en demo",
+    "emailLabel": "E-post",
+    "phoneLabel": "Telefon",
+    "locationLabel": "Sted",
+    "switzerland": "Sveits",
+    "france": "Frankrike",
+    "vincentName": "Dr. Vincent Tan",
+    "aliceName": "Dr. Alice Gilson",
+    "vincentRole": "Lege & Administrerende direktør",
+    "aliceRole": "Lege & Administrerende direktør",
+    "vincentFocus": "Sykehus og klinikker i Sveits — demoer, piloter og EHR-oppsett.",
+    "aliceFocus": "Franske helseorganisasjoner — sykehus, klinikker og anskaffelsessamtaler.",
+    "vincentCity": "Genève, Sveits",
+    "aliceCity": "Frankrike",
+    "writeEmail": "Skriv en e-post",
+    "callPhone": "Ring",
+    "hoursLabel": "Tilgjengelighet",
+    "hoursValue": "Man–Fre · svar innen én virkedag",
+    "responseLabel": "Best for",
+    "responseValue": "Sykehusdemoer, prising og integrasjonsspørsmål",
+    "companyLabel": "Selskap",
+    "companyValue": "DocNote · Sveitsisk-hos klinisk AI",
+    "generalEmailLabel": "Generelle henvendelser",
+    "generalEmail": "hello@docnote.ch",
+    "hostingNote": "Helsedata huses i Sveits. Vi trener aldri modeller på dine konsultasjoner."
+  }
+}

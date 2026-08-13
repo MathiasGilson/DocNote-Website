@@ -5,7 +5,9 @@ import Features from "./Features.astro"
 import Specificities from "./Specificities.astro"
 import Specialties from "./Specialties.astro"
 import Compliance from "./Compliance.astro"
+import TeamMarquee from "./TeamMarquee.astro"
 import Testimonials from "./Testimonials.astro"
+import LatestNews from "./LatestNews.astro"
 import FAQ from "./FAQ.astro"
 import CTA from "./CTA.astro"
 import SeoContent from "./SeoContent.astro"
@@ -17,20 +19,55 @@ interface Props {
 }
 
 const { locale = "en", variant = "default" } = Astro.props
-const entry = (await getEntry("pages", locale as "en" | "de" | "fr")) ?? (await getEntry("pages", "en"))
+const entry = (await getEntry("pages", locale)) ?? (await getEntry("pages", "en"))
+const enEntry = locale === "en" ? entry : await getEntry("pages", "en")
 if (!entry) {
     throw new Error(`Missing pages content for locale "${locale}" (and fallback "en")`)
 }
 const t = entry
+const enTeam = enEntry!.data.team
+const team = {
+    aboutUs: (t.data.team.aboutUs && t.data.team.aboutUs.trim()) || enTeam.aboutUs,
+    title: (t.data.team.title && t.data.team.title.trim()) || enTeam.title,
+    subtitle: (t.data.team.subtitle && t.data.team.subtitle.trim()) || enTeam.subtitle,
+}
 ---
 
 <Hero translations={t.data} />
 <LogoBar translations={t.data} />
 <Features translations={t.data} />
 <Specificities translations={t.data} />
-<Specialties translations={t.data} />
+<Specialties translations={t.data} locale={locale} />
+<section class="team-home-marquee bg-white py-16 sm:py-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 lg:mb-14">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+        <span class="team-home-badge-dot" aria-hidden="true"></span>
+        {team.aboutUs}
+      </span>
+      <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+        {team.title}
+      </h2>
+      <p class="mt-3 text-base text-gray-500 leading-relaxed">
+        {team.subtitle}
+      </p>
+    </div>
+  </div>
+  <TeamMarquee locale={locale} />
+</section>
+
+<style>
+  .team-home-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.18);
+  }
+</style>
 <Compliance translations={t.data} />
 <Testimonials translations={t.data} />
+<LatestNews locale={locale} translations={t.data} />
 <FAQ translations={t.data} />
 <CTA translations={t.data} />
-<SeoContent locale={(locale as "en" | "fr" | "de") || "en"} />
+<SeoContent locale={locale || "en"} />

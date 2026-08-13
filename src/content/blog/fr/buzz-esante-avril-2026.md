@@ -2,9 +2,9 @@
 title: "Buzz E-santé : DocNote, l'assistant IA conçu pour le rythme réel de l'hôpital"
 excerpt: "Le média e-santé Buzz E-santé, animé par Rémy Teston, consacre un article à DocNote et à son approche ciblée : le premier assistant IA pensé de bout en bout pour les workflows hospitaliers."
 category: "news"
-author: "Équipe DocNote"
-authorRole: "Actualités de l'entreprise"
-authorImage: "/images/logo.png"
+author: "Dr. Vincent Tan"
+authorRole: "Médecin & Directeur général"
+authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/buzz_esante_04.26.jpg"
 fullImage: true
 date: "2026-04-15"

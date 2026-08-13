@@ -1,0 +1,26 @@
+---
+import BlogAllPage from '../../../../components/pages/BlogAllPage.astro';
+import { nonDefaultLocales, type Locale } from '../../../../utils/i18n';
+import { isCanonicalBlogPostId } from '../../../../utils/blog-translations';
+import { getCollection } from 'astro:content';
+import { BLOG_PAGE_SIZE, getBlogPageCount } from '../../../../utils/blogPagination';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const locale of nonDefaultLocales) {
+    const posts = await getCollection(
+      'blog',
+      ({ id }) => id.startsWith(`${locale}/`) && isCanonicalBlogPostId(id)
+    );
+    const totalPages = getBlogPageCount(posts.length, BLOG_PAGE_SIZE);
+    for (let i = 1; i <= totalPages; i++) {
+      paths.push({ params: { locale, page: String(i) } });
+    }
+  }
+  return paths;
+}
+
+const { locale, page } = Astro.params as { locale: Locale; page: string };
+---
+
+<BlogAllPage locale={locale} page={Number(page)} />

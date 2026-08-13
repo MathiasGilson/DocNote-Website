@@ -1,0 +1,14 @@
+---
+import CareersPage from '../../components/pages/CareersPage.astro';
+import { nonDefaultLocales, type Locale } from '../../utils/i18n';
+
+export function getStaticPaths() {
+  return nonDefaultLocales
+    .filter((locale) => locale !== 'fr')
+    .map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+---
+
+<CareersPage locale={locale} />

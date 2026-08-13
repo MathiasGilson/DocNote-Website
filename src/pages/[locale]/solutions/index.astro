@@ -1,0 +1,17 @@
+---
+import SolutionsHubPage from '../../../components/pages/SolutionsHubPage.astro';
+import { nonDefaultLocales, isValidLocale, type Locale } from '../../../utils/i18n';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params;
+if (!isValidLocale(locale)) {
+  return Astro.redirect('/');
+}
+---
+
+<SolutionsHubPage locale={locale as Locale} />

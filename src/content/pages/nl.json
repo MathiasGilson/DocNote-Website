@@ -1,0 +1,711 @@
+{
+  "nav": {
+    "tutorial": "Handleiding",
+    "pricing": "Prijzen",
+    "blog": "Blog",
+    "team": "Team",
+    "survey": "Enquête",
+    "patient": "Patiënten",
+    "joinUs": "Doe mee",
+    "demo": "Demo aanvragen",
+    "webApp": "Web App",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "solutions": "Oplossingen",
+    "specialties": "Specialismen",
+    "more": "Meer"
+  },
+  "hero": {
+    "badge": "Gemaakt door artsen · Gehost in Zwitserland",
+    "title": "Ziekenhuisdocumentatie,",
+    "titleHighlight": "zonder de avonden die verloren gaan aan notities",
+    "subtitle": "DocNote verandert consultaties in ontslagbrieven, verpleegnotities en operatieverslagen. Ontwikkeld door artsen die nog steeds in ziekenhuiszorg werken.",
+    "cta": "Gratis starten",
+    "ctaSecondary": "Voor klinieken en ziekenhuizen",
+    "founders": "Dr. Vincent Tan · Dr. Alice Gilson",
+    "foundersRole": "Oprichters · HUG & La Tour",
+    "trustedBy": "Vertrouwd door toonaangevende zorgaanbieders"
+  },
+  "soapDemo": {
+    "consultations": "Consultaties",
+    "patients": "Patiënten",
+    "templates": "Sjablonen",
+    "settings": "Instellingen",
+    "consultationTitle": "Consultatie — Patiënt #1247",
+    "consultationDate": "Vandaag, 14:30 · Huisartsenpraktijk",
+    "recording": "Opname",
+    "soapNoteGenerated": "SOAP-notitie gegenereerd",
+    "soapNote": "SOAP-notitie",
+    "savedToEHR": "Opgeslagen in EHR",
+    "justNow": "Zojuist",
+    "patientId": "Patiënt #1247",
+    "generalPractice": "Huisartsenpraktijk",
+    "liveTranscript": "Live transcriptie",
+    "soapS": "Patiënt meldt aanhoudende hoofdpijn gedurende 3 dagen, verergerd in de avond. Beoordeelt pijn als 6/10, bilaterale druk. Ontkent misselijkheid of fotofobie.",
+    "soapO": "BP 120/80, HR 72, Temp 36.8°C. Alert en georiënteerd. Milde trapeziusgevoeligheid bilateraal. CN II-XII intact.",
+    "soapA": "Spanningshoofdpijn, waarschijnlijk stressgerelateerd. Geen rode vlaggen voor secundaire hoofdpijn.",
+    "soapP": "Ibuprofen 400mg PRN. Advies over slaaphygiëne. Follow-up over 2 weken bij geen verbetering.",
+    "phoneSoapS": "Aanhoudende hoofdpijn 3 dagen, 6/10, bilaterale druk.",
+    "phoneSoapO": "BP 120/80, HR 72. Trapeziusgevoeligheid. CN intact.",
+    "phoneSoapA": "Spanningshoofdpijn, stressgerelateerd.",
+    "phoneSoapP": "Ibuprofen 400mg PRN. Follow-up over 2 weken."
+  },
+  "stats": {
+    "timeSaved": "Documentatietijd bespaard",
+    "timeSavedValue": "2+ uur",
+    "timeSavedSuffix": "+ uur",
+    "timeSavedDesc": "gemiddeld per dag",
+    "accuracy": "Transcriptienauwkeurigheid",
+    "accuracyValue": "99%",
+    "accuracyDesc": "medische terminologie",
+    "doctors": "Actieve artsen",
+    "doctorsValue": "1.000+",
+    "doctorsDesc": "in heel Europa"
+  },
+  "features": {
+    "badge": "Functies & Voordelen",
+    "title": "Aanpasbaar aan alle administratieve taken",
+    "subtitle": "Alle tools die je nodig hebt om je documentatie te versnellen",
+    "recording": {
+      "title": "Slimme Opname",
+      "description": "Neem consultaties op met één tik. Onze AI begrijpt medische context en filtert achtergrondgeluid.",
+      "animStatus": "Opname",
+      "animWords": [
+        "Dus",
+        "de",
+        "pijn",
+        "begon",
+        "ongeveer",
+        "twee",
+        "weken",
+        "geleden,",
+        "meestal",
+        "in",
+        "de",
+        "ochtend.",
+        "Ik",
+        "heb",
+        "geen",
+        "migraine",
+        "gehad",
+        "voorheen..."
+      ]
+    },
+    "transcription": {
+      "title": "Nauwkeurige Transcriptie",
+      "description": "Realtime transcriptie met 99% nauwkeurigheid voor medische terminologie in meerdere talen.",
+      "animLine1": "Patiënt presenteert met",
+      "animLine2Pre": "terugkerende ",
+      "animWrong1": "diabetes",
+      "animRight1": "diabetes",
+      "animLine2Post": " symptomen,",
+      "animLine3Pre": "verhoogde ",
+      "animWrong2": "glykemie",
+      "animRight2": "glykemie",
+      "animLine3Post": " niveaus geconstateerd."
+    },
+    "summaries": {
+      "title": "Gestructureerde Samenvattingen",
+      "description": "Genereer automatisch medische consultnotities, ontslagbrieven en consultatierapporten.",
+      "animTitle": "Consultatiesamenvatting",
+      "animSection1": "Diagnose",
+      "animSection2": "Behandeling",
+      "animSection3": "Follow-up"
+    },
+    "integration": {
+      "title": "EHR-integratie",
+      "description": "Naadloze integratie met je bestaande elektronische patiëntendossier.",
+      "animTitle": "EHR — Patiëntendossier",
+      "animPatient": "Patiënt",
+      "animDob": "Geboortedatum",
+      "animNotes": "Notities",
+      "animNoReport": "Geen rapport"
+    },
+    "security": {
+      "title": "Gegevensbeveiliging",
+      "description": "Je gegevens blijven in Zwitserland. HIPAA-compliant, ISO 27001 gecertificeerd.",
+      "animLabel1": "Patiënt",
+      "animLabel2": "Geboortedatum",
+      "animLabel3": "Diagnose",
+      "animLabel4": "Notities",
+      "animValue1": "Marie Dupont",
+      "animValue2": "12.03.1987",
+      "animValue3": "Diabetes type 2",
+      "animValue4": "HbA1c verhoogd",
+      "animNoReport": "Geen rapport"
+    },
+    "languages": {
+      "title": "Meertalige ondersteuning",
+      "description": "Ondersteuning voor Frans, Engels, Italiaans, Spaans, Arabisch en 20+ andere talen."
+    }
+  },
+  "specificities": {
+    "badge": "Specificiteiten",
+    "title": "Gemaakt voor hoe ziekenhuizen daadwerkelijk documenteren",
+    "subtitle": "Elke specificiteit verandert wat uiteindelijk in het dossier terechtkomt, niet alleen een extra functieoptie.",
+    "impactLabel": "Impact",
+    "stageLabel": "In het product",
+    "coding": {
+      "title": "Medische codering & facturering",
+      "impact": "Coderen wordt geen tweede documentatieronde meer. De brief zelf toont factureerbare diagnoses: minder gemiste SAD's, minder avondwerk aan codering.",
+      "description": "Belangrijke geassocieerde diagnoses worden gemarkeerd in de ontslagbrief, met coderingsuggesties aan het einde van het document.",
+      "descriptionCh": "Belangrijke geassocieerde diagnoses worden gemarkeerd in de ontslagbrief, met Zwitserse DRG-coderingsuggesties aan het einde van het document.",
+      "descriptionRow": "Belangrijke geassocieerde diagnoses worden gemarkeerd in de ontslagbrief, met PMSI-coderingsuggesties aan het einde van het document.",
+      "stageLabel": "In de brief",
+      "line1Pre": "…voorgeschiedenis van ",
+      "line1Mark": "diabetes type 2",
+      "line1Post": " met recente HbA1c-stijging…",
+      "line2Pre": "…bekende ",
+      "line2Mark": "hypertensie",
+      "line2Post": ", momenteel onder controle…",
+      "line3Pre": "…eerdere ",
+      "line3Mark": "DVT",
+      "line3Post": " · antistolling besproken…"
+    },
+    "tardoc": {
+      "title": "TARDOC-compatibiliteit",
+      "impact": "Een korte beddictatie wordt een complete, factureerbare onderzoeksbeschrijving. Je documenteert één keer voor klinische zorg en voor TARDOC, niet twee keer.",
+      "description": "Beknopte gedicteerde bevindingen worden uitgebreid tot de gestructureerde formulering die verzekeraars en TARDOC verwachten, zonder het onderzoek helemaal opnieuw te schrijven.",
+      "stageLabel": "Dictatie naar factureerbare beschrijving",
+      "shortDictation": "“Abdomen zacht, geen rebound. Darmgeluiden aanwezig.”",
+      "expandLabel": "Breidt uit tot TARDOC-gereed tekst",
+      "fullDescription": "Abdominaal onderzoek: abdomen zacht en niet drukpijnlijk, geen weerstand of reboundpijn. Darmgeluiden aanwezig in alle kwadranten. Geen organomegalie gepalpeerd…"
+    },
+    "ehr": {
+      "title": "EHR-integratie",
+      "impact": "Documentatie is niet klaar als de notitie er goed uitziet. Het is klaar als het in het dossier staat: geen kopieer-plak-kloof, geen versie die buiten het EHR zweeft.",
+      "description": "Gevalideerde rapporten worden direct naar Mediway en SOKLE gestuurd, zodat het klinische document en het patiëntendossier hetzelfde object blijven.",
+      "stageLabel": "Gevalideerde notitie naar patiëntendossier",
+      "docReady": "Ontslagbrief",
+      "docMeta": "gevalideerd · PDF gereed"
+    },
+    "templates": {
+      "title": "Aangepaste Word-sjablonen",
+      "impact": "Je hoeft AI-output niet meer te herformatteren om bij ziekenhuiskoptekst te passen. Elk rapport is al jouw document: opmaak, secties, handtekening. Review blijft medisch, niet cosmetisch.",
+      "description": "Plaats je Word-sjabloon eenmaal. DocNote maakt toekomstige rapporten met jouw exacte structuur en branding.",
+      "stageLabel": "Jouw sjabloon wordt het rapport",
+      "fileName": "Dienstbriefhoofd.docx",
+      "dropHint": "Jouw secties · jouw marges · jouw handtekening",
+      "letterhead": "Ziekenhuis · Chirurgische dienst",
+      "letterBody": "Geachte collega,\nHierbij treft u aan…"
+    },
+    "context": {
+      "title": "Rijke contextinvoer",
+      "impact": "De notitie weerspiegelt het volledige klinische beeld, niet alleen wat hardop werd gezegd: minder omissies, minder 'voeg de labuitslag toe'-correcties achteraf.",
+      "description": "Voeg eerdere brieven, labs, beeldvorming en foto's toe. Het model gebruikt deze bij het structureren van het rapport.",
+      "stageLabel": "Audio plus bestandscontext naar een sterkere notitie",
+      "chip1": "Eerdere ontslag",
+      "chip2": "Labs.pdf",
+      "chip3": "Wondfoto",
+      "meterLabel": "Rapportvolledigheid",
+      "meterNote": "Context inbegrepen · minder ontbrekende bevindingen in het concept"
+    },
+    "hospital": {
+      "title": "Ziekenhuisspecifieke documentatie",
+      "impact": "Je forceert ziekenhuiswerk niet in een poliklinische SOAP. Het documenttype past bij de workflow, dus structuur, lengte en ontvangers zijn meteen goed.",
+      "description": "Native formaten voor ontslagbrieven, verpleegnotities, operatieverslagen en andere ziekenhuisdocumenten.",
+      "stageLabel": "Juist document voor het moment",
+      "type1Title": "Ontslag",
+      "type1Sub": "brief naar huisarts",
+      "type2Title": "Verpleegronde",
+      "type2Sub": "voortgangsnotitie",
+      "type3Title": "OR-verslag",
+      "type3Sub": "operatief"
+    },
+    "sync": {
+      "title": "Telefoon & desktop gesynchroniseerd",
+      "impact": "Documentatie blijft één draad van bed naar bureau. Je hoeft de notitie niet opnieuw in te voeren of op te bouwen bij het wisselen van apparaat: het concept volgt je.",
+      "description": "Neem op de afdeling op met je telefoon, ga verder en valideer op desktop. Dezelfde consultatie, realtime synchronisatie.",
+      "stageLabel": "Eén notitie, twee plaatsen",
+      "phone": "Telefoon",
+      "recording": "Opname…",
+      "desktop": "Desktop",
+      "sameDraft": "Zelfde concept"
+    },
+    "dayHospital": {
+      "title": "Collaboratief dagziekenhuis",
+      "impact": "Aan het eind van de dag heb je één gestructureerd patiëntendossier, niet vier gedeeltelijke notities om af te stemmen. Documentatiekwaliteit schaalt met het team in plaats van te fragmenteren.",
+      "description": "Meerdere zorgverleners dragen bij aan hetzelfde lokale patiëntendossier. DocNote voegt bijdragen samen tot één betrouwbaar dossier.",
+      "stageLabel": "Meerdere zorgverleners naar één dossier",
+      "mergeResult": "Enkel gestructureerd dagziekenhuisdossier"
+    }
+  },
+  "specialties": {
+    "title": "Ondersteuning voor 61 medische specialismen",
+    "subtitle": "Van huisartsenpraktijk tot gespecialiseerde zorg",
+    "items": [
+      "Huisartsenpraktijk",
+      "Interne Geneeskunde",
+      "Cardiologie",
+      "Dermatologie",
+      "Endocrinologie",
+      "Gastro-enterologie",
+      "Neurologie",
+      "Oncologie",
+      "Orthopedie",
+      "Pediatrie",
+      "Psychiatrie",
+      "Pulmonologie",
+      "Reumatologie",
+      "Chirurgie",
+      "Urologie",
+      "Spoedeisende Hulp"
+    ],
+    "countLabel": "61"
+  },
+  "testimonials": {
+    "badge": "Getuigenis",
+    "title": "Geliefd door artsen",
+    "subtitle": "Zie wat zorgprofessionals zeggen over DocNote",
+    "quote1": "DocNote heeft mijn dag op de spoedeisende hulp echt veranderd, waardoor ik me kan concentreren op mijn patiënten en weer van mijn consultaties kan genieten.",
+    "author1": "Dre Perrot",
+    "role1": "AIOS Spoedeisende Hulp",
+    "quote2": "Sinds ik DocNote gebruik, is het voorbereiden en opvolgen van consultaties een snel en efficiënt proces geworden.",
+    "author2": "Dr Patel",
+    "role2": "AIOS Algemene Chirurgie",
+    "quote3": "Ik zei altijd dat ik een fulltime assistent zou betalen als ik miljardair werd, maar nu hoef ik dat niet eens meer te zijn.",
+    "author3": "Pr Ris",
+    "role3": "Hoofd Colorectale Chirurgie",
+    "items": [
+      {
+        "quote": "DocNote heeft mijn dag op de spoedeisende hulp echt veranderd, waardoor ik me kan concentreren op mijn patiënten en weer van mijn consulten kan genieten.",
+        "author": "Dre Perrot",
+        "role": "Arts in Opleiding tot Specialist, Spoedeisende Hulp",
+        "image": "/images/perrot.png"
+      },
+      {
+        "quote": "Sinds ik DocNote gebruik, is het voorbereiden en opvolgen van consulten een snel en efficiënt proces geworden.",
+        "author": "Dr Patel",
+        "role": "Arts in Opleiding tot Specialist, Algemene Chirurgie",
+        "image": "/images/patel.jpg"
+      },
+      {
+        "quote": "Ik zei altijd dat ik een fulltime assistent zou betalen als ik miljardair werd, maar nu hoef ik dat niet eens meer te zijn.",
+        "author": "Pr Ris",
+        "role": "Hoofd Colorectale Chirurgie",
+        "image": "/images/ris.png"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Klaar om dagelijks 2+ uur te besparen?",
+    "subtitle": "Sluit je aan bij honderden artsen die hun documentatieworkflow hebben getransformeerd.",
+    "button": "Gratis starten",
+    "noCard": "Geen creditcard nodig"
+  },
+  "valueProp": {
+    "title": "Gestroomlijnde medische documentatie",
+    "subtitle": "Verenig je documentatieworkflow, bespaar uren per dag en focus op wat het belangrijkst is — je patiënten.",
+    "card1": {
+      "title": "Snel aan de slag",
+      "description": "Begin direct. Elke arts in je team kan binnen minuten consultaties opnemen, transcriberen en klinische notities delen."
+    },
+    "card2": {
+      "title": "Synchroniseer met je EHR",
+      "description": "Verenig je tools. Verbind gegevens van overal met naadloze EHR-integraties en geautomatiseerde workflows."
+    },
+    "card3": {
+      "title": "Naadloos op alle apparaten",
+      "description": "Blijf verbonden, waar je ook werkt. DocNote werkt moeiteloos op elk apparaat — mobiel, tablet of desktop."
+    }
+  },
+  "compliance": {
+    "badge": "Vertrouwelijkheid",
+    "title": "Beveiliging afgestemd op medische vereisten",
+    "subtitle": "Onze infrastructuur voldoet aan hoge gegevensbeschermingsnormen, specifiek afgestemd op de vereisten van de medische sector.",
+    "cardTitle": "Gegevensbeschermingskader",
+    "cardDescription": "DocNote implementeert bedrijfsgrade beveiliging met end-to-end encryptie, strikte toegangscontroles en uitgebreide auditlogging om gevoelige patiëntgegevens te beschermen.",
+    "protocolTitle": "DocNote Beveiligingsprotocol",
+    "protocolEncryption": "End-to-end encryptie: TLS 1.3 (in transit) & AES-256 (at rest)",
+    "protocolRetention": "Geen gegevens bewaard na 7 dagen",
+    "protocolRbac": "Rolgebaseerde toegangscontrole (RBAC)",
+    "protocolAudit": "Uitgebreide auditlogging",
+    "swiss": {
+      "title": "Zwitsers ontwerp & hosting",
+      "description": "Gebouwd en gehost in Zwitserland. Alle gegevens blijven op Zwitserse servers, in lijn met lokale zorgreguleringen."
+    },
+    "hipaa": {
+      "title": "HIPAA-compliant",
+      "description": "Volledig compliant met zorgprivacystandaarden, die patiëntgegevensbescherming op elk niveau waarborgen."
+    },
+    "iso": {
+      "title": "ISO 27001",
+      "description": "Gecertificeerd informatiebeveiligingsbeheer met regelmatige audits en continue monitoring."
+    }
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "subtitle": "Alles wat artsen en ziekenhuizen vragen voordat ze DocNote adopteren. Nog een vraag? ",
+    "contactUs": "Neem contact op",
+    "q1": "Wat is DocNote en hoe werkt het?",
+    "a1": "DocNote is een AI-gestuurde medische scribent en klinische documentatieassistent ontworpen voor artsen, chirurgen en ziekenhuizen in Zwitserland, Frankrijk en heel Europa. Tijdens een consultatie neemt DocNote het gesprek tussen arts en patiënt veilig op, transcribeert het in realtime en genereert automatisch een gestructureerd medisch rapport (consultnotitie, ontslagbrief, operatieverslag, verpleegnotitie, etc.) dat de arts controleert en valideert voordat het naar het elektronisch patiëntendossier wordt gestuurd.",
+    "q2": "Waarom DocNote kiezen boven andere AI-medische scribenten?",
+    "a2": "DocNote is specifiek gebouwd voor Europese en Zwitserse zorg, niet aangepast vanuit een Amerikaans product. Belangrijke verschillen: (1) alle gegevens worden in Zwitserland gehost en nooit gebruikt om AI-modellen te trainen, (2) volledige compliance met de Zwitserse Federale Wet op Gegevensbescherming (FADP), GDPR, HIPAA en ISO 27001, (3) automatische medische coderingssuggesties afgestemd op Zwitserse DRG en PMSI, (4) native TARDOC-ondersteuning om gedicteerde onderzoeken om te zetten in factureerbare beschrijvingen, (5) directe EHR-integratie met Mediway en SOKLE, (6) echte synchronisatie tussen mobiel en desktop, en (7) ziekenhuisspecifieke documentatie inclusief ontslagbrieven, operatieverslagen en collaboratieve dagziekenhuisdossiers.",
+    "a2Ch": "DocNote is specifiek gebouwd voor Zwitserse zorg, niet aangepast vanuit een Amerikaans product. Belangrijke verschillen: (1) alle gegevens worden in Zwitserland gehost en nooit gebruikt om AI-modellen te trainen, (2) volledige compliance met de Zwitserse Federale Wet op Gegevensbescherming (FADP / nLPD), HIPAA en ISO 27001, (3) automatische medische coderingssuggesties afgestemd op Zwitserse DRG, (4) native TARDOC-ondersteuning om gedicteerde onderzoeken om te zetten in factureerbare beschrijvingen, (5) directe EHR-integratie met Mediway en SOKLE, (6) echte synchronisatie tussen mobiel en desktop, en (7) ziekenhuisspecifieke documentatie inclusief ontslagbrieven, operatieverslagen en collaboratieve dagziekenhuisdossiers.",
+    "a2Row": "DocNote is specifiek gebouwd voor Franse en Europese zorg, niet aangepast vanuit een Amerikaans product. Belangrijke verschillen: (1) alle gegevens worden in Frankrijk gehost en nooit gebruikt om AI-modellen te trainen, (2) volledige compliance met de Europese GDPR, HIPAA en ISO 27001, (3) automatische medische coderingssuggesties afgestemd op de Franse PMSI, (4) directe EHR-integratie met toonaangevende ziekenhuisinformatiesystemen, (5) echte synchronisatie tussen mobiel en desktop, en (6) ziekenhuisspecifieke documentatie inclusief ontslagbrieven, operatieverslagen en collaboratieve dagziekenhuisdossiers.",
+    "q3": "Is DocNote veilig en compliant met gezondheidsgegevensreguleringen?",
+    "a3": "Ja. DocNote past end-to-end encryptie toe (AES-256 at rest, TLS 1.3 in transit), host alle gezondheidsgegevens exclusief in Zwitserland, en voldoet aan de Zwitserse FADP, de Europese GDPR, HIPAA en ISO 27001. DocNote fungeert als hulppersoon van de arts onder Artikel 321 van het Zwitserse Strafwetboek (medisch beroepsgeheim). Gezondheidsgegevens worden automatisch en onomkeerbaar verwijderd binnen 7 dagen na verwerking. DocNote bewaart nooit permanente kopieën van audio, transcripties of medische rapporten.",
+    "a3Ch": "Ja. DocNote past end-to-end encryptie toe (AES-256 at rest, TLS 1.3 in transit), host alle gezondheidsgegevens exclusief in Zwitserland, en voldoet aan de Zwitserse Federale Wet op Gegevensbescherming (FADP / nLPD), HIPAA en ISO 27001. DocNote fungeert als hulppersoon van de arts onder Artikel 321 van het Zwitserse Strafwetboek (medisch beroepsgeheim). Gezondheidsgegevens worden automatisch en onomkeerbaar verwijderd binnen 7 dagen na verwerking. DocNote bewaart nooit permanente kopieën van audio, transcripties of medische rapporten.",
+    "a3Row": "Ja. DocNote past end-to-end encryptie toe (AES-256 at rest, TLS 1.3 in transit), host alle gezondheidsgegevens exclusief in Frankrijk in HDS-gecertificeerde datacenters (Hébergeur de Données de Santé), en voldoet aan de Europese GDPR, HIPAA en ISO 27001. DocNote is gebonden aan Frans medisch beroepsgeheim onder Artikel 226-13 van het Franse Strafwetboek en Artikel L1110-4 van de Publieke Gezondheidscode. Gezondheidsgegevens worden automatisch en onomkeerbaar verwijderd binnen 7 dagen na verwerking. DocNote bewaart nooit permanente kopieën van audio, transcripties of medische rapporten.",
+    "q4": "Welke medische specialismen ondersteunt DocNote?",
+    "a4": "DocNote ondersteunt 61 medische specialismen, waaronder huisartsenpraktijk, interne geneeskunde, cardiologie, chirurgie (algemeen, orthopedisch, colorectaal, vaatchirurgie), gynaecologie, pediatrie, psychiatrie, dermatologie, oogheelkunde, KNO, neurologie, oncologie, anesthesiologie, spoedeisende hulp en radiologie. De rapporten zijn aangepast aan de terminologie en structuur die voor elk specialisme wordt verwacht.",
+    "q5": "Welke talen ondersteunt DocNote?",
+    "a5": "DocNote begrijpt en produceert rapporten in Frans, Duits, Italiaans, Engels en meer dan 20 andere talen. Het gaat correct om met Zwitsers-specifieke medische terminologie en codewisseling tijdens consultaties (bijvoorbeeld een patiënt die Zwitserduits spreekt terwijl de arts in het Frans dicteert).",
+    "q6": "Hoeveel tijd bespaart DocNote per consultatie?",
+    "a6": "Gemiddeld besparen artsen die DocNote gebruiken meer dan 2 uur administratief werk per dag. Een consultnotitie die voorheen 5 tot 10 minuten kostte om te schrijven, wordt in seconden gegenereerd, waarna alleen een snelle medische review nodig is voor validatie. Dit betekent meer tijd met patiënten, minder avonden besteed aan papierwerk en minder burn-out.",
+    "q7": "Integreert DocNote met elektronische patiëntendossiers (EHR)?",
+    "a7": "Ja. DocNote integreert direct met Mediway en SOKLE, met regelmatig nieuwe EHR-integraties. Je kunt ook je eigen Word-rapportsjablonen slepen en neerzetten: DocNote maakt elk rapport automatisch aan volgens je exacte lay-out, waarna je kunt exporteren naar PDF of kopiëren/plakken in elk ander systeem.",
+    "q8": "Hoeveel kost DocNote en is er een gratis proefversie?",
+    "a8": "DocNote biedt een gratis proefperiode van 30 consultaties met volledige toegang tot alle professionele functies, zonder creditcard. Het Professional-abonnement kost CHF 109 per maand (of CHF 99 per maand bij jaarlijkse betaling) voor gebruikers in Zwitserland, met vergelijkbare prijzen in EUR voor de rest van Europa. Ziekenhuizen en grote organisaties kunnen op aanvraag een aangepast Enterprise-abonnement krijgen.",
+    "a8Ch": "DocNote biedt een gratis proefperiode van 30 consultaties met volledige toegang tot alle professionele functies, zonder creditcard. Het Professional-abonnement kost CHF 109 per maand (of CHF 99 per maand bij jaarlijkse betaling). Ziekenhuizen en grote organisaties kunnen op aanvraag een aangepast Enterprise-abonnement krijgen.",
+    "a8Row": "DocNote biedt een gratis proefperiode van 30 consultaties met volledige toegang tot alle professionele functies, zonder creditcard. Het Professional-abonnement kost €89 per maand (of €79 per maand bij jaarlijkse betaling). Ziekenhuizen en grote organisaties kunnen op aanvraag een aangepast Enterprise-abonnement krijgen.",
+    "q9": "Wat maakt DocNote anders voor ziekenhuis- en dagziekenhuis (HDJ) documentatie?",
+    "a9": "DocNote is de eerste AI-medische scribent specifiek gebouwd voor ziekenhuiscomplexiteit, niet alleen poliklinische consultaties. Drie verschillen springen eruit. (1) Collaboratieve dagziekenhuisdossiers: in HDJ-workflows waar meerdere zorgverleners (artsen, AIOS, verpleegkundigen, anesthesisten) achtereenvolgens dezelfde patiënt zien, laat DocNote elke zorgverlener bijdragen aan hetzelfde gedeelde patiëntendossier en voegt alle bijdragen automatisch samen tot één gestructureerd, betrouwbaar, controleerbaar dossier. Geen andere ambient AI-scribent op de Europese markt biedt dit momenteel. (2) Rijke consultatiecontext: DocNote stelt de arts in staat elke consultatie te verrijken door eerdere documenten te slepen en neer te zetten (labresultaten, beeldvormingsrapporten, eerdere ontslagbrieven), foto's te uploaden (wonden, laesies, ECG's, röntgenfoto's) of vrije tekst te plakken. De AI verwerkt deze rijke context vervolgens in de gestructureerde output, wat rapporten oplevert met ongeëvenaarde precisie. (3) Persoonlijke Word-sjablonen: sleep en zet je eigen Word-document neer met je exacte opmaak, handtekening, ziekenhuiskoptekst en sectiestructuur. DocNote maakt elk toekomstig rapport aan volgens je exacte sjabloon en lay-out. Geen andere AI-scribent biedt dit niveau van per-arts aanpassing."
+  },
+  "footer": {
+    "description": "AI-gestuurde medische documentatie voor ziekenhuisworkflows.",
+    "product": "Product",
+    "company": "Bedrijf",
+    "legal": "Juridisch",
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "integrations": "Integraties",
+    "about": "Over ons",
+    "blog": "Blog",
+    "careers": "Vacatures",
+    "contact": "Contact",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "gtc": "Algemene Voorwaarden",
+    "gdpr": "GDPR",
+    "rights": "Alle rechten voorbehouden."
+  },
+  "pricing": {
+    "title": "Van solo-klinieken tot grote organisaties",
+    "subtitle": "Kies het plan dat bij je praktijk past",
+    "monthly": "Maandelijks",
+    "yearly": "Jaarlijks",
+    "save": "Bespaar 15%",
+    "perMonth": "/maand",
+    "getStarted": "Aan de slag",
+    "subscription": "Abonnement",
+    "freeTrial": "30 gratis consultaties, daarna",
+    "professional": {
+      "name": "Praktijken en individuele artsen",
+      "description": "Voor individuele artsen en kleine praktijken",
+      "price": "79",
+      "monthlyPrice": "89",
+      "features": [
+        "Onbeperkte consultaties",
+        "Prioritaire ondersteuning",
+        "Mobiele app en webapp toegang",
+        "Aangepaste sjablonen op aanvraag",
+        "Mogelijke integratie door het DocNote-team"
+      ],
+      "popular": "Meest Populair"
+    },
+    "enterprise": {
+      "name": "Ziekenhuizen en klinieken",
+      "description": "Voor ziekenhuizen en grote klinieken",
+      "price": "Aangepast",
+      "features": [
+        "Alles in Professional",
+        "Toegewezen accountmanager",
+        "Aangepaste integraties",
+        "On-premise implementatie",
+        "SLA-garantie",
+        "Training & onboarding"
+      ],
+      "contact": "Neem contact op met Sales"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "q1": "Hoe werkt de gratis proefversie?",
+      "a1": "Begin met 30 gratis consultaties met volledige toegang tot Professional-functies. Geen creditcard nodig.",
+      "q2": "Kan ik later van plan veranderen?",
+      "a2": "Ja, je kunt je plan op elk moment upgraden of downgraden. Wijzigingen gaan in bij je volgende factureringscyclus.",
+      "q3": "Zijn mijn gegevens veilig?",
+      "a3": "Absoluut. Alle gegevens zijn versleuteld en opgeslagen in Zwitserland. We zijn HIPAA-compliant en ISO 27001 gecertificeerd.",
+      "q4": "Met welke EHR-systemen integreer je?",
+      "a4": "We integreren met de meeste grote EHR-systemen, waaronder Epic, Cerner en lokale Zwitserse systemen zoals Sokle of Mediway.",
+      "q5": "Wat is het verschil tussen Professional en Enterprise?",
+      "a5": "Professional is gebouwd voor individuele artsen en kleine praktijken: onbeperkte consulten, mobiele en webtoegang, sjablonen en prioritaire ondersteuning. Enterprise voegt multi-user implementatie, toegewezen accountmanagement, aangepaste EHR-integratie, optionele on-premise implementatie, SLA en gestructureerde training toe voor ziekenhuizen en klinieken.",
+      "q6": "Kan ik maandelijks of jaarlijks betalen?",
+      "a6": "Ja. U kunt kiezen voor maandelijkse facturering of jaarlijkse facturering met ongeveer 15% korting. Prijzen worden getoond in uw lokale valuta waar beschikbaar (CHF, EUR of USD).",
+      "q7": "Bieden jullie facturen aan voor klinieken en ziekenhuizen?",
+      "a7": "Ja. Professional-abonnementen worden via Stripe gefactureerd met downloadbare facturen. Enterprise-contracten kunnen worden gefactureerd via uw inkoopproces met aangepaste betalingsvoorwaarden.",
+      "q8": "Is er een verplichting of opzegvergoeding?",
+      "a8": "Er is geen langetermijnverplichting voor het Professional-abonnement. U kunt voor de volgende factureringscyclus opzeggen. Enterprise-overeenkomsten volgen de voorwaarden in uw contract.",
+      "q9": "Hoe lang duurt het onboardingproces?",
+      "a9": "De meeste individuele artsen kunnen dezelfde dag starten na de gratis proefperiode. Implementaties in ziekenhuizen en klinieken duren meestal een paar weken, afhankelijk van EHR-integratie, trainingsschema en interne IT-review.",
+      "q10": "Kunnen meerdere artsen in één praktijk een account delen?",
+      "a10": "Kleine praktijken kunnen beginnen met Professional per arts. Voor gedeelde afdelingen, beheerdersrollen of ziekenhuisbrede toegang is het Enterprise-abonnement de juiste keuze — neem contact op met sales en we helpen u met de juiste omvang."
+    },
+    "compare": {
+      "title": "Vergelijk abonnementen",
+      "subtitle": "Bekijk wat is inbegrepen voor individuele artsen versus ziekenhuizen en klinieken.",
+      "feature": "Functie",
+      "pro": "Professional",
+      "enterprise": "Enterprise",
+      "yes": "Inbegrepen",
+      "no": "—",
+      "custom": "Aangepast",
+      "rows": [
+        {
+          "label": "Onbeperkte consulten",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Mobiele app en webtoegang",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Specialty-aangepaste rapporten",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Aangepaste sjablonen",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Prioritaire ondersteuning",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Zwitsers gehoste data & encryptie",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "EHR-integraties (Mediway, SOKLE, …)",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Multi-user / afdelingsimplementatie",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Toegewezen accountmanager",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "On-premise of private cloud",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SLA-garantie",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Training & onboarding",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SSO / adminconsole",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "Collaboratieve dagziekenhuisworkflows",
+          "pro": "no",
+          "enterprise": "yes"
+        }
+      ]
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Inzichten over AI in de zorg, medische documentatie en praktijkbeheer",
+    "readMore": "Lees Meer",
+    "backToBlog": "Terug naar Blog",
+    "recentPosts": "Recente Berichten",
+    "minRead": "min lezen",
+    "shareArticle": "Deel dit artikel:",
+    "categories": {
+      "all": "Alles",
+      "news": "Nieuws",
+      "ai": "Onderzoek & Inzichten",
+      "documentation": "Onderzoek & Inzichten",
+      "practice": "Onderzoek & Inzichten"
+    },
+    "onThisPage": "Op deze pagina",
+    "writtenBy": "Geschreven door",
+    "share": "Delen",
+    "relatedArticles": "Gerelateerde artikelen",
+    "createdOn": "Gepubliceerd",
+    "articles": "Artikelen",
+    "prev": "Vorige",
+    "next": "Volgende",
+    "viewAllArticles": "Alle artikelen",
+    "pageLabel": "Pagina"
+  },
+  "team": {
+    "aboutUs": "Over Ons",
+    "title": "Ontworpen door artsen, gebouwd door AI-ingenieurs",
+    "subtitle": "Een klinisch en technisch team dat zij aan zij werkt om artsen hun tijd terug te geven.",
+    "intro": "DocNote begon in ziekenhuisgangen, niet in een pitchdeck. Onze oprichters werken nog steeds in de geneeskunde, dus elk productbesluit wordt beoordeeld op basis van of het een drukke dienstronde overleeft.",
+    "story": "Tegenwoordig delen clinici, ingenieurs en go-to-market teamleden één missie: verander consultaties in betrouwbare klinische documenten binnen seconden, met Zwitserse privacy als kernwaarde. We bouwen samen met de mensen die het product morgen zullen gebruiken.",
+    "members": {
+      "vincentTan": {
+        "name": "Dr. Vincent Tan",
+        "role": "Arts & Algemeen Directeur",
+        "bio": "Arts met ervaring bij Hôpital de la Tour in Genève. Leidt DocNote met focus op echte ziekenhuiswerkstromen en vertrouwen van clinici."
+      },
+      "aliceGilson": {
+        "name": "Dr. Alice Gilson",
+        "role": "Arts & Algemeen Directeur",
+        "bio": "Chirurgisch specialist met ervaring bij HUG (Genève). Vormt het product rond operatieve verslagen, ontslagbrieven en de dagelijkse klinische realiteit."
+      },
+      "mathiasGilson": {
+        "name": "Mathias Gilson",
+        "role": "Hoofd Technische Dienst",
+        "bio": "Verantwoordelijk voor de technische visie van DocNote, AI-platformarchitectuur en de betrouwbaarheidsstandaard voor klinische software."
+      },
+      "jeremyYvinec": {
+        "name": "Jeremy Yvinec",
+        "role": "Senior Fullstack Engineer",
+        "bio": "Afgestudeerd aan IUT Aix-Marseille, bouwt web- en React Native-ervaringen die documentatie op elk apparaat snel houden."
+      },
+      "hugoRoussel": {
+        "name": "Hugo Roussel",
+        "role": "Teamleider Engineering",
+        "bio": "Afgestudeerd aan ETH Zurich, leidt engineeringprojecten met focus op schaalbare systemen en heldere architectuur."
+      },
+      "ericWei": {
+        "name": "Eric Wei",
+        "role": "Senior Frontend Engineer",
+        "bio": "Afgestudeerd aan EPFL, ontwerpt de interfaces waar clinici op vertrouwen, met aandacht voor helderheid, snelheid en moderne frontendtechnieken."
+      },
+      "nedimAmer": {
+        "name": "Nedim Amer",
+        "role": "Verkoop",
+        "bio": "Helpt klinieken en ziekenhuizen bij het evalueren van DocNote, het in kaart brengen van workflows en de overgang van eerste demo naar zelfverzekerde implementatie."
+      },
+      "valeryDemunck": {
+        "name": "Valery Demunck",
+        "role": "Verkoop",
+        "bio": "Werkt samen met zorgorganisaties in verschillende markten om DocNote af te stemmen op hun documentatiebehoeften en tijdlijnen."
+      },
+      "julietteKristanek": {
+        "name": "Juliette Kristanek",
+        "role": "Marketing & Communicatie",
+        "bio": "Bepaalt hoe DocNote zich presenteert aan artsen en partners, van productverhalen tot community en evenementen."
+      }
+    },
+    "highlightsTitle": "Hoe we werken",
+    "highlightsLead": "DocNote begon niet als een pitchdeck. Het begon in ziekenhuisgangen — tussen diensten, operatielijsten en avonden besteed aan het herschrijven van notities die zichzelf hadden moeten schrijven. Die oorsprong bepaalt nog steeds elke aanwerving, elke release en elk gesprek dat we met een kliniek voeren.",
+    "highlights": [
+      {
+        "title": "Praktiserende artsen centraal",
+        "body": "Onze oprichters werken nog steeds in de praktijk. Dat is geen slogan voor de Over-pagina — het is het filter voor productbeslissingen. Als een functie een drukke dienst, een lawaaierige spoedpost of een vrijdagmiddagpolikliniek niet overleeft, wordt hij niet vrijgegeven.\n\nKlinische taal, specialisatiestructuur en het echte ritme van ziekenhuisdocumentatie komen eerst. We ontwerpen voor ontslagbrieven, operatieverslagen, collaboratieve dagziekenhuisdossiers en de lastige momenten waarop drie zorgverleners dezelfde patiënt op één middag zien.\n\nWanneer artsen ons vertellen dat iets niet goed voelt, behandelen we dat als technische input — niet als een leuk extra UX-commentaar."
+      },
+      {
+        "title": "Zwitsers gehoste privacy standaard",
+        "body": "Gezondheidsdata is geen trainingscorpus. DocNote host klinische informatie in Zwitserland, versleutelt het onderweg en in rust en past bewaartermijnen toe die aansluiten bij Europese verwachtingen voor medisch beroepsgeheim.\n\nWe bouwen voor FADP / nLPD, GDPR, HIPAA en ISO 27001-realiteiten — ziekenhuis IT-reviews, inkoopvragenlijsten en de stille vraag die elke arts stelt: waar bevinden de gegevens van mijn patiënt zich eigenlijk?\n\nNiets aan ambient documentation is het waard om vertrouwen te ondermijnen. Privacy is onderdeel van de productarchitectuur, geen juridische bijlage."
+      },
+      {
+        "title": "Artsen en ingenieurs in één lus",
+        "body": "Medisch specialisten, AI-ingenieurs en productteamleden zitten in dezelfde feedbacklus. Rapportmodellen worden niet in isolatie bedacht en dan 'aangepast' voor ziekenhuizen — ze worden mede-ontworpen door mensen die die rapporten vandaag nog met de hand schrijven.\n\nDaarom kan DocNote van vrije dictatie naar gestructureerde specialismennotities, operatieverslagen, vervolgnotities en ontslagbrieven gaan zonder artsen in een generiek Amerikaans poliklinisch sjabloon te dwingen.\n\nTechnische kwaliteit uit zich in snelheid, betrouwbaarheid en rustige interfaces. Klinische kwaliteit uit zich in vocabulaire, structuur en respect voor hoe zorgteams echt werken."
+      },
+      {
+        "title": "Van eerste demo tot ziekenhuisimplementatie",
+        "body": "Een goede ambient scribe-demo is makkelijk. Een betrouwbare ziekenhuisimplementatie niet. Onze sales-, onboarding- en supportteams helpen klinieken met workflowmapping, het kiezen van de juiste rapportmodellen, het aansluiten van EHR-paden waar nodig en het trainen van teams zonder de zorg te onderbreken.\n\nWe blijven betrokken tijdens proefprojecten, inkoop en de rommelige middenfase — specialismenuances, sjabloonvoorkeuren, meertalige afdelingen en de IT-checklist die niemand op de marketingwebsite zet.\n\nHet doel is simpel: meer tijd met patiënten, minder avonden verloren aan notities en een documentatiesysteem waar artsen hun collega's voor willen verdedigen."
+      }
+    ],
+    "highlightsClosing": "Vandaag omvat het team klinisch leiderschap, diepgaande technische expertise, go-to-market en communicatie — verenigd door één missie: verander consulten in betrouwbare klinische documenten binnen seconden, met Zwitsers gehoste privacy als kern. We bouwen met de mensen die het product morgen zullen gebruiken."
+  },
+  "tutorial": {
+    "title": "Aan de slag met DocNote",
+    "subtitle": "Volg deze eenvoudige stappen om je medische documentatieworkflow te transformeren",
+    "step1": {
+      "title": "Download de mobiele applicatie, of verbind met de Web App",
+      "description": "Download de DocNote-mobiele applicatie vanuit de app store van je telefoon, of ga er direct naartoe via onze webapp:",
+      "ios": "Beschikbaar in de App Store",
+      "android": "Beschikbaar in Google Play"
+    },
+    "step2": {
+      "title": "Maak je account aan",
+      "description": "Maak je account aan door je professionele e-mailadres in te voeren. We sturen je een activatiecode.",
+      "trialInfo": "Je proefperiode van 30 consultaties begint zodra je je activatiecode ontvangt en invoert."
+    },
+    "step3": {
+      "title": "Hoofdscherm",
+      "description": "Begin met onze oplossing om je administratieve last te verlichten en weer van je werk te genieten. Je kunt de onderstaande handleiding bekijken om je te helpen onze belangrijkste functies te begrijpen.",
+      "chooseModel": "Vanaf de landingspagina kun je het rapportmodel selecteren dat het beste bij je behoeften past:",
+      "models": {
+        "dictation": {
+          "title": "Dictatie",
+          "description": "Vrije-tekstdictatie met automatische structurering"
+        },
+        "general": {
+          "title": "Huisartsenconsultatie",
+          "description": "Beknopte, klinisch gestructureerde notities ontworpen voor eerstelijnszorg"
+        },
+        "specialist": {
+          "title": "Specialistenconsultatie",
+          "description": "Gedetailleerde specialistenconsultatie gestructureerd als een formele brief aan de verwijzende arts"
+        },
+        "operative": {
+          "title": "Operatieverslag",
+          "description": "Gestructureerd chirurgisch procedureverslag"
+        },
+        "followUp": {
+          "title": "Medische vervolgnotities",
+          "description": "Gestandaardiseerde dagelijkse voortgangsnotities voor opgenomen patiënten"
+        },
+        "discharge": {
+          "title": "Ontslagbrief",
+          "description": "Geconsolideerd ontslagoverzicht dat alle tijdens de opname gemaakte documenten integreert"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om aan de slag te gaan?",
+      "subtitle": "Download de app en start vandaag nog je proefperiode van 30 consultaties.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "webApp": "Web App",
+      "getDemo": "Demo boeken"
+    }
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "subtitle": "Praat met ons ziekenhuisteam. Neem contact op met Vincent voor Zwitserland, of Alice voor Franse zorgorganisaties.",
+    "bookDemo": "Demo boeken",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefoon",
+    "locationLabel": "Locatie",
+    "switzerland": "Zwitserland",
+    "france": "Frankrijk",
+    "vincentName": "Dr. Vincent Tan",
+    "aliceName": "Dr. Alice Gilson",
+    "vincentRole": "Arts & Algemeen Directeur",
+    "aliceRole": "Arts & Algemeen Directeur",
+    "vincentFocus": "Ziekenhuizen en klinieken in Zwitserland — demo's, proefprojecten en EHR-implementatie.",
+    "aliceFocus": "Franse zorgorganisaties — ziekenhuizen, klinieken en inkoopgesprekken.",
+    "vincentCity": "Genève, Zwitserland",
+    "aliceCity": "Frankrijk",
+    "writeEmail": "Stuur een e-mail",
+    "callPhone": "Bel",
+    "hoursLabel": "Bereikbaarheid",
+    "hoursValue": "Ma–Vr · reactie binnen één werkdag",
+    "responseLabel": "Beste voor",
+    "responseValue": "Ziekenhuisdemo's, prijzen en integratievragen",
+    "companyLabel": "Bedrijf",
+    "companyValue": "DocNote · Zwitsers gehoste klinische AI",
+    "generalEmailLabel": "Algemene vragen",
+    "generalEmail": "hello@docnote.ch",
+    "hostingNote": "Gezondheidsdata wordt in Zwitserland gehost. We trainen nooit modellen op uw consulten."
+  }
+}

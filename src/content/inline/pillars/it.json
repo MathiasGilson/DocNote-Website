@@ -1,0 +1,128 @@
+{
+  "ai-medical-scribe": {
+    "title": "Assistente medico AI per medici",
+    "description": "DocNote è un assistente medico AI per medici e ospedali in Svizzera e in Europa. Trasforma le consultazioni in note cliniche strutturate in pochi secondi. Ospitato in Svizzera, conforme a FADP/GDPR.",
+    "h1": "Assistente medico AI progettato per il lavoro clinico reale",
+    "intro": "DocNote ascolta durante la consultazione, trascrive in modo sicuro e redige il documento clinico di cui hai bisogno — note di consultazione, lettere di dimissione, note dei turni in reparto o referti operatori — così passi meno tempo a digitare e più tempo con i pazienti.",
+    "sections": [
+      {
+        "heading": "Cosa dovrebbe fare un assistente medico AI",
+        "body": "Un assistente medico utile non è una trascrizione generica. Deve comprendere la struttura clinica, il linguaggio specialistico e i documenti che il tuo ospedale o studio produce effettivamente. DocNote è progettato per questo flusso di lavoro: acquisisci una volta, genera il tipo di nota corretto, poi lascia che il medico convalidi prima che tutto raggiunga l'EHR."
+      },
+      {
+        "heading": "Progettato per la Svizzera e l'Europa",
+        "body": "A differenza degli strumenti ambientali pensati prima per gli USA e adattati alla pratica europea, DocNote è costruito intorno alle abitudini documentali svizzere ed europee, alle consultazioni multilingue e alle rigide norme sui dati sanitari. L'hosting rimane in Svizzera. I dati sanitari non vengono utilizzati per addestrare modelli di base."
+      },
+      {
+        "heading": "Dalla voce alla nota convalidata",
+        "body": "Avvia una registrazione su mobile o web, completa l'incontro e rivedi una bozza strutturata in pochi secondi. Modifica, approva e inserisci nel tuo solito processo — incluse le integrazioni con Mediway e SOKLE dove disponibili, o modelli Word che corrispondono al tuo intestazione."
+      }
+    ],
+    "ctaPrimary": "Inizia la prova gratuita",
+    "ctaSecondary": "Vedi i prezzi",
+    "relatedLabel": "Guide correlate",
+    "navLabel": "Assistente medico AI",
+    "faq": [
+      {
+        "q": "Cos'è un assistente medico AI?",
+        "a": "Un assistente medico AI ascolta o elabora un incontro clinico e redige una nota strutturata per il clinico da revisionare e convalidare prima che entri nella cartella clinica."
+      },
+      {
+        "q": "DocNote scrive automaticamente nell'EHR?",
+        "a": "No. I medici rimangono responsabili della revisione e dell'approvazione di ogni documento."
+      },
+      {
+        "q": "Dove sono ospitati i dati sanitari?",
+        "a": "DocNote è progettato per essere ospitato in Svizzera nel rispetto del segreto medico e delle aspettative europee sulla protezione dei dati."
+      },
+      {
+        "q": "I dati delle visite vengono utilizzati per addestrare modelli AI?",
+        "a": "No. Le visite vengono utilizzate per produrre i vostri documenti, non per addestrare modelli di base."
+      }
+    ]
+  },
+  "hospital-documentation": {
+    "title": "Documentazione ospedaliera con AI",
+    "description": "AI per la documentazione ospedaliera: lettere di dimissione, referti operatori, note dei turni in reparto e file di day-hospital. DocNote aiuta i team sanitari a documentare più velocemente senza abbandonare l'hosting svizzero o il segreto medico.",
+    "h1": "Documentazione ospedaliera senza l'arretrato serale",
+    "intro": "Il lavoro in ospedale non è una singola nota SOAP ambulatoriale. DocNote supporta i documenti che riempiono davvero la serata di un clinico: lettere di dimissione, referti operatori, note dei turni in reparto e file condivisi di day-hospital tra i caregiver.",
+    "sections": [
+      {
+        "heading": "Documenti di cui gli ospedali hanno realmente bisogno",
+        "body": "Genera bozze strutturate per gli output ad alto volume degli ospedali, poi rivedi e convalida prima che entrino nella cartella del paziente. I modelli Word personalizzati mantengono il layout istituzionale, il blocco firma e l'ordine delle sezioni."
+      },
+      {
+        "heading": "Collaborazione nel day-hospital",
+        "body": "Quando più professionisti vedono lo stesso paziente in sequenza, DocNote può supportare un file condiviso in modo che i contributi diventino un record coerente invece di note frammentate."
+      },
+      {
+        "heading": "Flussi di lavoro pronti per l'EHR",
+        "body": "Integrati con sistemi come Mediway e SOKLE, o esporta nel tuo processo ospedaliero esistente. Il medico rimane responsabile del documento finale convalidato."
+      }
+    ],
+    "ctaPrimary": "Per cliniche e ospedali",
+    "ctaSecondary": "Guarda il tutorial",
+    "relatedLabel": "Guide correlate",
+    "navLabel": "Documentazione ospedaliera",
+    "faq": [
+      {
+        "q": "Quali documenti ospedalieri può redigere DocNote?",
+        "a": "Lettere di dimissione, referti operatori, note di visita in reparto, note di consultazione e altri documenti clinici ad alto volume a seconda dei vostri modelli."
+      },
+      {
+        "q": "Possiamo mantenere l'intestazione istituzionale?",
+        "a": "Sì. I modelli Word personalizzati preservano il layout, il blocco firme e l'ordine delle sezioni."
+      },
+      {
+        "q": "L'AI sostituisce la firma del medico?",
+        "a": "No. I clinici convalidano ogni documento prima che diventi parte della cartella."
+      },
+      {
+        "q": "Questo è solo per le note SOAP ambulatoriali?",
+        "a": "No. I tipi di documenti ospedalieri sono una parte integrante di DocNote."
+      }
+    ]
+  },
+  "clinical-compliance": {
+    "title": "Conformità clinica AI (FADP, GDPR, HIPAA)",
+    "description": "Come DocNote gestisce la conformità clinica AI: hosting svizzero, crittografia, conservazione audio breve, segreto medico, FADP/nFADP, GDPR, HIPAA e controlli ISO 27001 per ospedali e studi medici.",
+    "h1": "AI clinica che può superare una revisione di conformità",
+    "intro": "Gli ospedali non adottano la documentazione ambientale solo per le funzionalità. DocNote è costruito in modo che sicurezza, conservazione e segreto medico siano parte integrante del prodotto — non una slide aggiunta dopo.",
+    "sections": [
+      {
+        "heading": "Hosting svizzero e crittografia",
+        "body": "I dati sanitari sono ospitati in Svizzera con una forte crittografia in transito e a riposo. DocNote è progettato per operare sotto le aspettative di segreto medico applicabili agli ausiliari clinici."
+      },
+      {
+        "heading": "Breve conservazione per design",
+        "body": "L'audio utilizzato per produrre la documentazione viene eliminato automaticamente entro una breve finestra dopo l'elaborazione. Il record duraturo è il documento clinico convalidato dal medico nei tuoi sistemi."
+      },
+      {
+        "heading": "Standard che contano per gli acquirenti",
+        "body": "DocNote è allineato con le aspettative FADP/nFADP, GDPR, HIPAA e ISO 27001 che gli acquirenti chiedono nei questionari di sicurezza — e pubblica una politica sulla privacy chiara per pazienti e istituzioni."
+      }
+    ],
+    "ctaPrimary": "Leggi la politica sulla privacy",
+    "ctaSecondary": "Contattaci",
+    "relatedLabel": "Guide correlate",
+    "navLabel": "Conformità clinica",
+    "faq": [
+      {
+        "q": "DocNote è conforme al GDPR e al FADP?",
+        "a": "DocNote è progettato per allinearsi alle aspettative del FADP/nFADP e del GDPR che gli acquirenti verificano durante l'approvvigionamento. Consultate la nostra politica sulla privacy per i dettagli."
+      },
+      {
+        "q": "Per quanto tempo viene conservato l'audio?",
+        "a": "L'audio utilizzato per produrre la documentazione viene eliminato automaticamente entro un breve periodo dopo l'elaborazione."
+      },
+      {
+        "q": "I dati dei pazienti vengono venduti o utilizzati per pubblicità?",
+        "a": "No. Le visite cliniche non sono un prodotto per la pubblicità e i dati non vengono utilizzati per addestrare modelli di base."
+      },
+      {
+        "q": "Dove posso leggere l'intera politica sulla privacy?",
+        "a": "Nella pagina della politica sulla privacy di DocNote, collegata dal piè di pagina del sito e dai CTA di conformità."
+      }
+    ]
+  }
+}

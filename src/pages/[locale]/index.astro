@@ -1,22 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Main from '../../components/Main.astro';
-import { locales, isValidLocale, type Locale } from '../../utils/i18n';
+import { nonDefaultLocales, type Locale } from '../../utils/i18n';
 import { getPageMeta } from '../../utils/seo';
 
 export function getStaticPaths() {
-  return locales.map((locale) => ({ params: { locale } }));
+  return nonDefaultLocales.map((locale) => ({ params: { locale } }));
 }
 
-const { locale } = Astro.params;
-
-if (!isValidLocale(locale)) {
-  return Astro.redirect('/en/');
-}
-
-const meta = getPageMeta('home', locale as Locale);
+const { locale } = Astro.params as { locale: Locale };
+const meta = getPageMeta('home', locale);
 ---
 
 <Layout title={meta.title} description={meta.description}>
-  <Main locale={locale as Locale} variant="locale" />
+  <Main locale={locale} variant="locale" />
 </Layout>

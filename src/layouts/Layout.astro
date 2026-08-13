@@ -6,12 +6,14 @@ import { getLocaleFromUrl, locales, type Locale } from '../utils/i18n';
 import { getEntry } from 'astro:content';
 import {
   absoluteUrl,
+  absoluteLocalizedUrl,
   formatPageTitle,
   getDefaultAlternates,
   getOgLocale,
   OG_IMAGE,
   OG_IMAGE_HEIGHT,
   OG_IMAGE_WIDTH,
+  ROBOTS_META_CONTENT,
   SITE_URL,
   withTrailingSlash,
 } from '../utils/seo';
@@ -25,7 +27,7 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const DEFAULT_DESCRIPTIONS: Record<Locale, string> = {
+const DEFAULT_DESCRIPTIONS: Partial<Record<Locale, string>> & { en: string } = {
   en: 'DocNote is the AI-powered medical scribe and clinical documentation assistant for doctors, surgeons and hospitals in Switzerland and Europe. Generate consultation notes, discharge letters, operative reports and ward-round notes from voice in seconds. Swiss-hosted, FADP, GDPR, HIPAA and ISO 27001 compliant.',
   fr: "DocNote est l'assistant IA de documentation médicale pour les médecins, chirurgiens et hôpitaux en Suisse, en France et en Europe. Générez en quelques secondes vos notes de consultation, lettres de sortie, comptes rendus opératoires et notes de visite à partir de la voix. Hébergé en Suisse, conforme nLPD, RGPD, HIPAA et ISO 27001.",
   de: 'DocNote ist der KI-gestützte medizinische Schreibassistent für Ärztinnen, Ärzte, Chirurginnen, Chirurgen und Spitäler in der Schweiz, in Deutschland, Österreich und Europa. Konsultationsnotizen, Austrittsberichte, OP-Berichte und Visitennotizen in Sekunden aus der Sprache. In der Schweiz gehostet, DSG-, DSGVO-, HIPAA- und ISO-27001-konform.',
@@ -34,17 +36,17 @@ const DEFAULT_DESCRIPTIONS: Record<Locale, string> = {
 const locale = getLocaleFromUrl(Astro.url);
 const {
   title,
-  description = DEFAULT_DESCRIPTIONS[locale],
+  description = DEFAULT_DESCRIPTIONS[locale] ?? DEFAULT_DESCRIPTIONS.en,
   alternates: alternatesProp,
   ogType = 'website',
   ogImage = OG_IMAGE,
   jsonLd,
 } = Astro.props;
-const t = await getEntry('pages', locale);
+const t = (await getEntry('pages', locale)) ?? (await getEntry('pages', 'en'));
 
 const pageTitle = formatPageTitle(title);
 const canonicalUrl = absoluteUrl(withTrailingSlash(Astro.url.pathname));
-const alternateUrls = { ...getDefaultAlternates(Astro.url.pathname), ...alternatesProp };
+const alternateUrls = { ...(await getDefaultAlternates(Astro.url.pathname)), ...alternatesProp };
 const ogLocale = getOgLocale(locale);
 const extraJsonLd = jsonLd
   ? Array.isArray(jsonLd)
@@ -153,7 +155,7 @@ const softwareApplicationLd = {
         unitText: 'MONTH',
       },
       availability: 'https://schema.org/InStock',
-      url: absoluteUrl(`/${locale}/pricing`),
+      url: absoluteLocalizedUrl('/pricing', locale),
     },
     {
       '@type': 'Offer',
@@ -167,7 +169,7 @@ const softwareApplicationLd = {
         unitText: 'MONTH',
       },
       availability: 'https://schema.org/InStock',
-      url: absoluteUrl(`/${locale}/pricing`),
+      url: absoluteLocalizedUrl('/pricing', locale),
     },
   ],
   provider: { '@type': 'Organization', name: 'DocNote', legalName: 'Gilson GmbH' },
@@ -180,7 +182,7 @@ const softwareApplicationLd = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="robots" content={ROBOTS_META_CONTENT} />
     <meta name="author" content="DocNote — Gilson GmbH" />
     {import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION && (
       <meta name="google-site-verification" content={import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION} />
@@ -190,7 +192,11 @@ const softwareApplicationLd = {
     {locales.map((code) => (
       alternateUrls[code] && <link rel="alternate" hreflang={code} href={alternateUrls[code]} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={alternateUrls.en || absoluteUrl('/en/')} />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={alternateUrls.en || alternateUrls[locale] || canonicalUrl}
+    />
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="DocNote" />
@@ -249,12 +255,22 @@ const softwareApplicationLd = {
     /></noscript>
     <!-- End Meta Pixel Code -->
   </head>
-  <body class="min-h-screen bg-gray-900 text-gray-900 antialiased">
+  <body class="min-h-screen bg-white text-gray-900 antialiased">
     <Header locale={locale} translations={t.data} />
     <main class="relative z-10 bg-white lg:rounded-b-3xl lg:shadow-2xl">
       <slot />
     </main>
+    <!-- Dark canvas only behind fixed footer (keeps reveal effect; top overscroll stays white) -->
+    <div
+      class="pointer-events-none fixed inset-x-0 bottom-0 z-0 hidden h-[min(100vh,48rem)] lg:block"
+      style="background: #0a101c;"
+      aria-hidden="true"
+    ></div>
     <Footer locale={locale} translations={t.data} />
+    <script>
+      import { initReveal } from "../scripts/reveal"
+      initReveal()
+    </script>
     <script>
       const footer = document.getElementById("site-footer")
       if (footer) {

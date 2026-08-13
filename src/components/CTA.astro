@@ -12,7 +12,7 @@ const locale = getLocaleFromUrl(Astro.url);
 <section class="bg-gradient-to-b from-white to-indigo-50 py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 items-end">
-            <div class="pb-4">
+            <div class="pb-4 reveal">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 leading-snug">
                     {t.cta.title}
                 </h2>
@@ -21,41 +21,41 @@ const locale = getLocaleFromUrl(Astro.url);
                 </p>
                 <a
                     href={getLocalizedPath('/tutorial', locale)}
-                    class="inline-flex items-center justify-center px-7 py-3 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/20"
+                    class="btn-primary btn-primary-sm"
                 >
                     {t.cta.button}
                 </a>
             </div>
 
-            <div class="relative" id="cta-card-wrapper" data-locale={locale}>
+            <div class="relative reveal reveal-delay-2" id="cta-card-wrapper" data-locale={locale}>
                 <div
                     id="cta-card"
-                    class="bg-white backdrop-blur-sm rounded-xl border border-gray-200/60 shadow-xl p-6 transform transition-all duration-500 max-w-[600px] overflow-hidden"
+                    class="bg-white backdrop-blur-sm rounded-xl border border-gray-200/60 shadow-xl p-6 transform transition-transform duration-500 max-w-[600px] overflow-hidden will-change-transform"
                 >
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/images/logo.png" alt="DocNote" class="w-8 h-8 rounded-lg" />
+                        <img src="/images/logo.png" alt="DocNote" class="w-8 h-8 rounded-lg" width="32" height="32" />
                         <div>
                             <p class="text-sm font-semibold text-gray-900">DocNote Pro</p>
                             <p class="text-xs text-gray-400">AI Medical Documentation</p>
                         </div>
                     </div>
 
-                    <!-- Placeholder bars - visible by default -->
-                    <div id="cta-placeholder" class="space-y-2.5 transition-opacity duration-300">
-                        <div class="h-2 bg-gray-200 rounded-full w-full"></div>
-                        <div class="h-2 bg-gray-200 rounded-full w-4/5"></div>
-                        <div class="h-2 bg-gray-200 rounded-full w-3/5"></div>
-                        <div class="h-2 bg-gray-100 rounded-full w-2/5 mt-4"></div>
-                    </div>
+                    <div class="relative h-[168px] overflow-hidden">
+                        <div id="cta-placeholder" class="absolute inset-0 space-y-2.5 transition-opacity duration-300">
+                            <div class="h-2 bg-gray-200 rounded-full w-full"></div>
+                            <div class="h-2 bg-gray-200 rounded-full w-4/5"></div>
+                            <div class="h-2 bg-gray-200 rounded-full w-3/5"></div>
+                            <div class="h-2 bg-gray-100 rounded-full w-2/5 mt-4"></div>
+                        </div>
 
-                    <!-- Medical text - typed on hover -->
-                    <div id="cta-medical-text" class="hidden text-[11px] leading-relaxed text-gray-600 min-h-[80px]">
-                        <span id="cta-typed"></span><span id="cta-cursor" class="inline-block w-[2px] h-3 bg-violet-500 ml-0.5 align-middle animate-pulse"></span>
+                        <div id="cta-medical-text" class="absolute inset-0 overflow-hidden text-[11px] leading-relaxed text-gray-600 opacity-0 pointer-events-none transition-opacity duration-300">
+                            <span id="cta-typed"></span><span id="cta-cursor" class="inline-block w-[2px] h-3 bg-violet-500 ml-0.5 align-middle animate-pulse"></span>
+                        </div>
                     </div>
 
                     <div class="flex items-center gap-2 mt-4">
                         <div class="flex-1 h-8 bg-gray-100 rounded-md"></div>
-                        <div class="w-20 h-8 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-md flex items-center justify-center">
+                        <div class="w-20 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-brand-glow-sm">
                             <span class="text-xs text-white font-medium">Save</span>
                         </div>
                     </div>
@@ -90,17 +90,12 @@ const locale = getLocaleFromUrl(Astro.url);
     function startTyping() {
         if (!typed || !medicalText || !placeholder) return;
 
-        // Show medical text area, hide placeholder
         placeholder.style.opacity = '0';
-        setTimeout(() => {
-            placeholder.classList.add('hidden');
-            medicalText.classList.remove('hidden');
-        }, 300);
+        medicalText.classList.remove('pointer-events-none', 'opacity-0');
+        medicalText.classList.add('opacity-100');
 
-        // Tilt the card
         card?.classList.add('rotate-1', '-translate-y-2', 'shadow-2xl');
 
-        // Start typewriter
         charIndex = 0;
         typed.innerHTML = '';
         isHovering = true;
@@ -118,11 +113,6 @@ const locale = getLocaleFromUrl(Astro.url);
         }
         charIndex++;
 
-        // Scroll to keep cursor visible
-        if (medicalText) {
-            medicalText.scrollTop = medicalText.scrollHeight;
-        }
-
         typingTimer = window.setTimeout(typeNext, 12);
     }
 
@@ -133,15 +123,13 @@ const locale = getLocaleFromUrl(Astro.url);
             typingTimer = null;
         }
 
-        // Reset card
         card?.classList.remove('rotate-1', '-translate-y-2', 'shadow-2xl');
 
-        // Hide medical text, show placeholder
-        if (medicalText) medicalText.classList.add('hidden');
-        if (placeholder) {
-            placeholder.classList.remove('hidden');
-            placeholder.style.opacity = '1';
+        if (medicalText) {
+            medicalText.classList.add('opacity-0', 'pointer-events-none');
+            medicalText.classList.remove('opacity-100');
         }
+        if (placeholder) placeholder.style.opacity = '1';
         if (typed) typed.innerHTML = '';
         charIndex = 0;
     }

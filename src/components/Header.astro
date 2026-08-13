@@ -1,7 +1,39 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.astro';
-import { getLocalizedPath, type Locale } from '../utils/i18n';
+import StoreIcon from './StoreIcon.astro';
+import {
+  getLocalizedPath,
+  getSurveyPath,
+  isSurveyPath,
+  getCareersPath,
+  isCareersPath,
+  type Locale,
+} from '../utils/i18n';
 import { DEMO_BOOKING_URL } from '../utils/links';
+import {
+  navSolutionsSlugs,
+  navSolutionsColumns,
+  getLandingNavDesc,
+  getLandingNavLabel,
+  getNavGroupLabel,
+  getNavSolutionsColumnLabel,
+  type LandingSlug,
+} from '../content/landings';
+import {
+  specialtyFamilySlugs,
+  getSpecialtyFamilyNavLabel,
+  getSpecialtyFamilyNavDesc,
+  getSpecialtyFamilyPath,
+  specialtyFamilyIconMarkup,
+  type SpecialtyFamilySlug,
+} from '../content/specialty-families';
+import {
+  getSolutionsHub,
+  getSpecialtiesHub,
+  SOLUTIONS_HUB_PATH,
+  SPECIALTIES_HUB_PATH,
+} from '../content/hubs';
+import { landingNavIconMarkup } from '../data/landing-nav-icons';
 
 interface Props {
   locale: Locale;
@@ -10,69 +42,273 @@ interface Props {
 
 const { locale, translations: t } = Astro.props;
 const currentPath = Astro.url.pathname;
+const surveyHref = getSurveyPath(locale);
+const surveyActive = isSurveyPath(currentPath);
+const careersHref = getCareersPath(locale);
+const careersActive = isCareersPath(currentPath);
 
 function isActive(path: string) {
   const localized = getLocalizedPath(path, locale);
   const normalized = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
   return normalized === localized;
 }
+
+function isSlugActive(slug: string) {
+  return isActive(`/${slug}`);
+}
+
+function groupActive(slugs: readonly string[]) {
+  return slugs.some((slug) => isSlugActive(slug));
+}
+
+function navItem(slug: LandingSlug) {
+  return {
+    slug,
+    href: getLocalizedPath(`/${slug}`, locale),
+    label: getLandingNavLabel(slug, locale),
+    desc: getLandingNavDesc(slug, locale),
+    active: isSlugActive(slug),
+    icon: landingNavIconMarkup(slug),
+  };
+}
+
+function familyNavItem(slug: SpecialtyFamilySlug) {
+  const path = getSpecialtyFamilyPath(slug);
+  return {
+    slug,
+    href: getLocalizedPath(path, locale),
+    label: getSpecialtyFamilyNavLabel(slug, locale),
+    desc: getSpecialtyFamilyNavDesc(slug, locale),
+    active: isActive(path),
+    icon: specialtyFamilyIconMarkup(slug),
+  };
+}
+
+const solutionsLabel = t.nav.solutions || getNavGroupLabel('solutions', locale);
+const specialtiesLabel = t.nav.specialties || getNavGroupLabel('specialties', locale);
+const solutionsHubHref = getLocalizedPath(SOLUTIONS_HUB_PATH, locale);
+const specialtiesHubHref = getLocalizedPath(SPECIALTIES_HUB_PATH, locale);
+const solutionsHubActive = isActive(SOLUTIONS_HUB_PATH);
+const specialtiesHubActive = isActive(SPECIALTIES_HUB_PATH);
+const solutionsOpenMenuLabel = getSolutionsHub(locale).openMenuLabel;
+const specialtiesOpenMenuLabel = getSpecialtiesHub(locale).openMenuLabel;
+
+const solutionsColumns = navSolutionsColumns.map((col) => ({
+  id: col.id,
+  title: getNavSolutionsColumnLabel(col.id, locale),
+  items: col.slugs.map(navItem),
+}));
+
+const specialtiesItems = specialtyFamilySlugs.map(familyNavItem);
+
+const solutionsOpen = solutionsHubActive || groupActive(navSolutionsSlugs);
+const specialtiesOpen = specialtiesHubActive || specialtiesItems.some((item) => item.active);
+
+const blogActive = isActive('/blog') || currentPath.includes('/blog/');
+const patientHref = getLocalizedPath('/patient', locale);
+const patientActive = isActive('/patient');
+const blogHref = getLocalizedPath('/blog', locale);
+/** Lowest priority collapses first when primary nav would hit right CTAs. */
+const overflowItems = [
+  { id: 'blog', href: blogHref, label: t.nav.blog, active: blogActive, priority: 1 },
+  { id: 'patient', href: patientHref, label: t.nav.patient, active: patientActive, priority: 2 },
+  { id: 'survey', href: surveyHref, label: t.nav.survey, active: surveyActive, priority: 3 },
+] as const;
+const moreOpen = overflowItems.some((item) => item.active);
+const moreLabel = t.nav.more || 'More';
+
+const linkClass = (active: boolean) =>
+  [
+    'nav-primary-link',
+    active ? 'nav-active' : 'text-gray-600 hover:text-gray-900',
+  ].join(' ');
+
+const mobileLinkClass = (active: boolean) =>
+  ['text-lg font-medium', active ? 'nav-active' : 'text-gray-600 hover:text-gray-900'].join(' ');
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20 gap-4">
-      <div class="flex items-center gap-5 min-w-0 2xl:gap-8">
-        <a href={getLocalizedPath('/', locale)} class="flex items-center gap-2.5 flex-shrink-0">
-          <img src="/images/logo.png" alt="DocNote" class="h-9 w-auto" />
-          <span class="text-xl font-semibold text-gray-900">DocNote</span>
+<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+  <nav class="w-full px-4 md:px-6 lg:px-8">
+    <div class="header-bar flex items-center justify-between h-20 gap-3 min-w-0">
+      <div class="header-left flex items-center gap-3 min-w-0 2xl:gap-6">
+        <a href={getLocalizedPath('/', locale)} class="flex items-center gap-1.5 flex-shrink-0 text-gray-900">
+          <img src="/images/logo-icon-black.png" alt="DocNote" class="h-9 w-auto 2xl:h-10" width="35" height="40" />
+          <span class="text-xl 2xl:text-2xl font-semibold text-gray-900">DocNote</span>
         </a>
 
-        <div class="hidden xl:flex items-center gap-3 2xl:gap-5">
-          <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+        <div class="header-primary hidden xl:flex items-center gap-2.5 2xl:gap-4 min-w-0" data-nav-primary>
+          <a href={getLocalizedPath('/tutorial', locale)} class={linkClass(isActive('/tutorial'))} data-nav-keep>
             {t.nav.tutorial}
           </a>
-          <a href={getLocalizedPath('/pricing', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+
+          <div class:list={['nav-dd', solutionsOpen && 'is-current']} data-nav-dd data-nav-keep>
+            <a
+              href={solutionsHubHref}
+              class:list={['nav-dd-trigger', solutionsOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
+              aria-haspopup="true"
+            >
+              <span>{solutionsLabel}</span>
+              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="nav-dd-panel nav-dd-panel--mega" data-nav-dd-panel role="menu">
+              <div class="nav-mega">
+                {
+                  solutionsColumns.map((col) => (
+                    <div class="nav-mega-col">
+                      <p class="nav-mega-heading">{col.title}</p>
+                      <ul class="nav-mega-list">
+                        {col.items.map((item) => (
+                          <li>
+                            <a
+                              href={item.href}
+                              class:list={['nav-dd-item nav-dd-item--icon', item.active && 'is-active']}
+                              role="menuitem"
+                            >
+                              <span class="nav-dd-icon" aria-hidden="true">
+                                <svg
+                                  width="18"
+                                  height="18"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="1.75"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  set:html={item.icon}
+                                />
+                              </span>
+                              <span class="nav-dd-text">
+                                <span class="nav-dd-label">{item.label}</span>
+                                {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                              </span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class:list={['nav-dd', specialtiesOpen && 'is-current']} data-nav-dd data-nav-keep>
+            <a
+              href={specialtiesHubHref}
+              class:list={['nav-dd-trigger', specialtiesOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
+              aria-haspopup="true"
+            >
+              <span>{specialtiesLabel}</span>
+              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="nav-dd-panel nav-dd-panel--specialties" data-nav-dd-panel role="menu">
+              <div class="nav-spec-grid">
+                {
+                  specialtiesItems.map((item) => (
+                    <a
+                      href={item.href}
+                      class:list={['nav-dd-item nav-dd-item--icon nav-dd-item--spec', item.active && 'is-active']}
+                      role="menuitem"
+                    >
+                      <span class="nav-dd-icon" aria-hidden="true">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          set:html={item.icon}
+                        />
+                      </span>
+                      <span class="nav-dd-text">
+                        <span class="nav-dd-label">{item.label}</span>
+                        {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                      </span>
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <a href={getLocalizedPath('/pricing', locale)} class={linkClass(isActive('/pricing'))} data-nav-keep>
             {t.nav.pricing}
           </a>
-          <a href={getLocalizedPath('/blog', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
-            {t.nav.blog}
-          </a>
-          <a href={getLocalizedPath('/team', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={getLocalizedPath('/team', locale)} class={linkClass(isActive('/team'))} data-nav-keep>
             {t.nav.team}
           </a>
-          <a href={getLocalizedPath('/emploi', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/emploi') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
+          <a href={careersHref} class={linkClass(careersActive)} data-nav-keep>
             {t.nav.joinUs}
           </a>
-          <a href={getLocalizedPath('/sondage', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
-            {t.nav.survey}
-          </a>
-          <a href={getLocalizedPath('/patient', locale)} class:list={["text-sm 2xl:text-base whitespace-nowrap transition-colors", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>
-            {t.nav.patient}
-          </a>
+
+          {
+            overflowItems
+              .slice()
+              .sort((a, b) => b.priority - a.priority)
+              .map((item) => (
+                <a
+                  href={item.href}
+                  class={`${linkClass(item.active)} is-collapsed`}
+                  data-nav-overflow={item.id}
+                  data-nav-priority={item.priority}
+                >
+                  {item.label}
+                </a>
+              ))
+          }
+
+          <div
+            class:list={['nav-dd', 'nav-more', moreOpen && 'is-current']}
+            data-nav-dd
+            data-nav-more
+          >
+            <button
+              type="button"
+              class:list={['nav-dd-trigger', moreOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
+              aria-expanded="false"
+              aria-haspopup="true"
+              data-nav-dd-trigger
+            >
+              <span>{moreLabel}</span>
+              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="nav-dd-panel nav-dd-panel--more" data-nav-dd-panel role="menu">
+              <ul class="nav-more-list">
+                {
+                  overflowItems.map((item) => (
+                    <li data-nav-more-item={item.id}>
+                      <a
+                        href={item.href}
+                        class:list={['nav-dd-item', item.active && 'is-active']}
+                        role="menuitem"
+                      >
+                        <span class="nav-dd-label">{item.label}</span>
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="flex items-center gap-1.5 2xl:gap-2 flex-shrink-0">
-        <LanguageSwitcher locale={locale} />
-        <a
-          href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-3.5 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
-        >
-          {t.nav.appStore}
-        </a>
-        <a
-          href="https://play.google.com/store/apps/details?id=app.docnote&pli=1"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-3.5 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
-        >
-          {t.nav.googlePlay}
-        </a>
+      <div class="header-right flex items-center gap-1.5 2xl:gap-2.5 flex-shrink-0">
+        <div class="header-lang hidden xl:block">
+          <LanguageSwitcher locale={locale} />
+        </div>
         <a
           href="https://docnote.care/app/"
-          class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20 whitespace-nowrap"
+          class="btn-primary header-cta inline-flex whitespace-nowrap"
         >
           {t.nav.webApp}
         </a>
@@ -80,7 +316,7 @@ function isActive(path: string) {
           href={DEMO_BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-violet-700 bg-violet-50 border border-violet-200 rounded-full hover:bg-violet-100 transition-all whitespace-nowrap"
+          class="btn-soft header-cta header-cta-demo hidden xl:inline-flex whitespace-nowrap"
         >
           {t.nav.demo}
         </a>
@@ -94,24 +330,541 @@ function isActive(path: string) {
     </div>
 
     <div id="mobile-menu" class="hidden xl:hidden py-6 border-t border-gray-100">
-      <div class="flex flex-col gap-6">
-        <a href={getLocalizedPath('/tutorial', locale)} class:list={["text-lg", isActive('/tutorial') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.tutorial}</a>
-        <a href={getLocalizedPath('/pricing', locale)} class:list={["text-lg", isActive('/pricing') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.pricing}</a>
-        <a href={getLocalizedPath('/blog', locale)} class:list={["text-lg", isActive('/blog') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.blog}</a>
-        <a href={getLocalizedPath('/team', locale)} class:list={["text-lg", isActive('/team') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.team}</a>
-        <a href={getLocalizedPath('/emploi', locale)} class:list={["text-lg", isActive('/emploi') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.joinUs}</a>
-        <a href={getLocalizedPath('/sondage', locale)} class:list={["text-lg", isActive('/sondage') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.survey}</a>
-        <a href={getLocalizedPath('/patient', locale)} class:list={["text-lg", isActive('/patient') ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold" : "text-gray-600 hover:text-gray-900"]}>{t.nav.patient}</a>
+      <div class="flex flex-col gap-5">
+        <div class="nav-m-lang">
+          <LanguageSwitcher locale={locale} />
+        </div>
+        <a href={getLocalizedPath('/tutorial', locale)} class={mobileLinkClass(isActive('/tutorial'))}>{t.nav.tutorial}</a>
+
+        <div class:list={['nav-mgroup', solutionsOpen && 'is-open']} data-nav-mgroup>
+          <div class="nav-mgroup-trigger-row">
+            <a href={solutionsHubHref} class:list={[mobileLinkClass(solutionsHubActive || solutionsOpen), 'nav-mgroup-hub']}>
+              {solutionsLabel}
+            </a>
+            <button
+              type="button"
+              class="nav-mgroup-chevron-btn"
+              data-nav-mgroup-trigger
+              aria-expanded={solutionsOpen ? 'true' : 'false'}
+              aria-label={solutionsOpenMenuLabel}
+            >
+              <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+          </div>
+          <div class="nav-mgroup-panel">
+            {
+              solutionsColumns.map((col) => (
+                <div class="nav-mgroup-section">
+                  <p class="nav-mega-heading">{col.title}</p>
+                  {col.items.map((item) => (
+                    <a href={item.href} class:list={[mobileLinkClass(item.active), 'nav-m-item']}>
+                      <span class="nav-dd-icon" aria-hidden="true">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          set:html={item.icon}
+                        />
+                      </span>
+                      <span class="nav-dd-text">
+                        <span class="nav-dd-label">{item.label}</span>
+                        {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class:list={['nav-mgroup', specialtiesOpen && 'is-open']} data-nav-mgroup>
+          <div class="nav-mgroup-trigger-row">
+            <a href={specialtiesHubHref} class:list={[mobileLinkClass(specialtiesHubActive || specialtiesOpen), 'nav-mgroup-hub']}>
+              {specialtiesLabel}
+            </a>
+            <button
+              type="button"
+              class="nav-mgroup-chevron-btn"
+              data-nav-mgroup-trigger
+              aria-expanded={specialtiesOpen ? 'true' : 'false'}
+              aria-label={specialtiesOpenMenuLabel}
+            >
+              <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+          </div>
+          <div class="nav-mgroup-panel">
+            {
+              specialtiesItems.map((item) => (
+                <a href={item.href} class:list={[mobileLinkClass(item.active), 'nav-m-item']}>
+                  <span class="nav-dd-icon" aria-hidden="true">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      set:html={item.icon}
+                    />
+                  </span>
+                  <span class="nav-dd-text">
+                    <span class="nav-dd-label">{item.label}</span>
+                    {item.desc ? <span class="nav-dd-desc">{item.desc}</span> : null}
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <a href={getLocalizedPath('/pricing', locale)} class={mobileLinkClass(isActive('/pricing'))}>{t.nav.pricing}</a>
+        <a href={getLocalizedPath('/team', locale)} class={mobileLinkClass(isActive('/team'))}>{t.nav.team}</a>
+        <a href={careersHref} class={mobileLinkClass(careersActive)}>{t.nav.joinUs}</a>
+        <a href={surveyHref} class={mobileLinkClass(surveyActive)}>{t.nav.survey}</a>
+        <a href={getLocalizedPath('/patient', locale)} class={mobileLinkClass(isActive('/patient'))}>{t.nav.patient}</a>
+        <a href={getLocalizedPath('/blog', locale)} class={mobileLinkClass(isActive('/blog') || currentPath.includes('/blog/'))}>{t.nav.blog}</a>
         <div class="flex flex-col gap-3 mt-2">
-          <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 text-center hover:bg-gray-200 transition-all">{t.nav.appStore}</a>
-          <a href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 text-center hover:bg-gray-200 transition-all">{t.nav.googlePlay}</a>
-          <a href="https://docnote.care/app/" class="text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full px-6 py-2.5 text-center">{t.nav.webApp}</a>
-          <a href={DEMO_BOOKING_URL} target="_blank" rel="noopener noreferrer" class="text-base font-medium text-violet-700 bg-violet-50 border border-violet-200 rounded-full px-6 py-2.5 text-center">{t.nav.demo}</a>
+          <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-lg font-medium text-gray-700 bg-gray-100 rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">
+            <StoreIcon store="apple" class="w-5 h-5" />
+            {t.nav.appStore}
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-lg font-medium text-gray-700 bg-gray-100 rounded-full px-7 py-3.5 hover:bg-gray-200 transition-all">
+            <StoreIcon store="google" class="w-5 h-5" />
+            {t.nav.googlePlay}
+          </a>
+          <a href={DEMO_BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn-soft header-cta-mobile text-center">{t.nav.demo}</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
+
+<style>
+  .header-bar {
+    overflow: visible;
+  }
+
+  .header-left {
+    flex: 1 1 0;
+    min-width: 0;
+    /* Keep mega-menus visible; never let this cluster paint over CTAs */
+    overflow: visible;
+  }
+
+  .header-primary {
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+
+  .header-primary [data-nav-overflow].is-collapsed {
+    display: none !important;
+  }
+
+  .header-primary [data-nav-more].is-empty {
+    display: none !important;
+  }
+
+  .header-right {
+    flex: 0 0 auto;
+    margin-left: 0.75rem;
+    padding-left: 0.25rem;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav-primary-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+  }
+
+  @media (min-width: 1536px) {
+    .nav-primary-link {
+      font-size: 1.0625rem;
+    }
+  }
+
+  .header-lang :global(.lang-switcher-btn) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1536px) {
+    .header-lang :global(.lang-switcher-btn) {
+      padding: 0.625rem 1.25rem;
+      font-size: 1rem;
+    }
+  }
+
+  header a.header-cta {
+    padding: 0.5rem 0.95rem;
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1536px) {
+    header a.header-cta {
+      padding: 0.625rem 1.25rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 639px) {
+    header a.header-cta {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  header a.header-cta-mobile {
+    padding: 0.875rem 1.75rem;
+    font-size: 1.125rem;
+  }
+
+  .nav-dd-panel--more {
+    min-width: 12rem;
+    right: 0;
+    left: auto;
+  }
+
+  .nav-m-lang :global(.lang-switcher) {
+    width: 100%;
+  }
+
+  .nav-m-lang :global(.lang-switcher-btn) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-m-lang :global(.lang-dropdown) {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .nav-dd {
+    position: relative;
+    /* Hover bridge so the cursor can leave the label without closing the menu */
+    padding-bottom: 0.85rem;
+    margin-bottom: -0.85rem;
+  }
+
+  .nav-dd-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  a.nav-dd-trigger:hover,
+  button.nav-dd-trigger:hover {
+    color: #111827;
+  }
+
+  @media (min-width: 1536px) {
+    .nav-dd-trigger {
+      font-size: 1.0625rem;
+    }
+  }
+
+  .nav-dd-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-dd.is-open > .nav-dd-trigger .nav-dd-chevron,
+  .nav-dd:hover > .nav-dd-trigger .nav-dd-chevron,
+  .nav-dd:focus-within > .nav-dd-trigger .nav-dd-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-dd-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 16.5rem;
+    max-height: min(70vh, 28rem);
+    overflow-y: auto;
+    overscroll-contain: contain;
+    padding: 0.4rem;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 0.85rem;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 18px 40px rgba(15, 23, 42, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.14s ease,
+      visibility 0.14s ease;
+    z-index: 60;
+  }
+
+  .nav-dd-panel--mega {
+    left: 0;
+    right: auto;
+    transform: none;
+    min-width: min(52rem, calc(100vw - 2rem));
+    width: min(56rem, calc(100vw - 2rem));
+    max-width: min(56rem, calc(100vw - 2rem));
+    max-height: none;
+    overflow: visible;
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .nav-dd-panel--specialties {
+    left: 0;
+    right: auto;
+    transform: none;
+    min-width: min(36rem, calc(100vw - 2rem));
+    width: max-content;
+    max-width: min(42rem, calc(100vw - 2rem));
+    padding: 0.65rem;
+  }
+
+  .nav-dd.is-open .nav-dd-panel,
+  .nav-dd:hover .nav-dd-panel,
+  .nav-dd:focus-within .nav-dd-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-dd.is-open .nav-dd-panel--mega,
+  .nav-dd:hover .nav-dd-panel--mega,
+  .nav-dd:focus-within .nav-dd-panel--mega,
+  .nav-dd.is-open .nav-dd-panel--specialties,
+  .nav-dd:hover .nav-dd-panel--specialties,
+  .nav-dd:focus-within .nav-dd-panel--specialties {
+    transform: none;
+  }
+
+  .nav-mega {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35rem 1.25rem;
+  }
+
+  .nav-mega-heading {
+    margin: 0 0 0.45rem;
+    padding: 0 0.55rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+  }
+
+  .nav-mega-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .nav-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+    justify-content: start;
+    align-items: start;
+    column-gap: 0.35rem;
+    row-gap: 0.15rem;
+  }
+
+  .nav-more-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-dd-item {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.55rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #4b5563;
+    white-space: normal;
+    text-align: left;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .nav-dd-item--icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    padding: 0.55rem 0.7rem;
+  }
+
+  .nav-dd-item--spec {
+    min-width: 0;
+    max-width: 22rem;
+  }
+
+  .nav-dd-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .nav-dd-label {
+    display: block;
+    white-space: nowrap;
+    text-align: left;
+    color: inherit;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.25;
+  }
+
+  .nav-dd-desc {
+    display: block;
+    white-space: normal;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #9ca3af;
+  }
+
+  .nav-dd-item:hover .nav-dd-desc,
+  .nav-dd-item.is-active .nav-dd-desc {
+    color: #8b93a1;
+  }
+
+  .nav-dd-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.05rem;
+    border-radius: 0.55rem;
+    background: rgba(var(--dn-primary-rgb), 0.08);
+    color: var(--dn-primary-ink, #3b1f6e);
+  }
+
+  .nav-dd-item:hover,
+  .nav-dd-item.is-active {
+    background: rgba(var(--dn-primary-rgb), 0.07);
+    color: var(--dn-primary-ink, #3b1f6e);
+  }
+
+  .nav-dd-item:hover .nav-dd-icon,
+  .nav-dd-item.is-active .nav-dd-icon {
+    background: rgba(var(--dn-primary-rgb), 0.14);
+  }
+
+  .nav-mgroup-trigger-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .nav-mgroup-hub {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .nav-mgroup-chevron-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0.55rem;
+    background: rgba(15, 23, 42, 0.04);
+    color: #4b5563;
+    cursor: pointer;
+  }
+
+  .nav-mgroup-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-mgroup.is-open .nav-mgroup-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-mgroup-panel {
+    display: none;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.85rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid rgba(var(--dn-primary-rgb), 0.18);
+  }
+
+  .nav-mgroup.is-open .nav-mgroup-panel {
+    display: flex;
+  }
+
+  .nav-mgroup-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .nav-mgroup-section + .nav-mgroup-section {
+    margin-top: 0.35rem;
+  }
+
+  .nav-m-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .nav-m-item .nav-dd-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-top: 0.1rem;
+  }
+
+  .nav-m-item .nav-dd-label {
+    white-space: normal;
+    font-size: 1rem;
+  }
+</style>
 
 <script>
   const menuBtn = document.getElementById('mobile-menu-btn');
@@ -120,4 +873,120 @@ function isActive(path: string) {
   menuBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
   });
+
+  // Click-toggle only for button triggers (More menu). Hub groups open on hover/focus-within via CSS.
+  const closeDesktopDropdowns = (except?: HTMLElement | null) => {
+    document.querySelectorAll<HTMLElement>('[data-nav-dd]').forEach((dd) => {
+      if (except && dd === except) return;
+      dd.classList.remove('is-open');
+      dd.querySelector<HTMLButtonElement>('[data-nav-dd-trigger]')?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-nav-dd]').forEach((dd) => {
+    const trigger = dd.querySelector<HTMLButtonElement>('button[data-nav-dd-trigger]');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willOpen = !dd.classList.contains('is-open');
+      closeDesktopDropdowns(willOpen ? dd : null);
+      dd.classList.toggle('is-open', willOpen);
+      trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', () => closeDesktopDropdowns());
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDesktopDropdowns();
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-nav-mgroup]').forEach((group) => {
+    const trigger = group.querySelector<HTMLButtonElement>('[data-nav-mgroup-trigger]');
+    trigger?.addEventListener('click', () => {
+      const willOpen = !group.classList.contains('is-open');
+      group.classList.toggle('is-open', willOpen);
+      trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  const primary = document.querySelector<HTMLElement>('[data-nav-primary]');
+  const headerRight = document.querySelector<HTMLElement>('.header-right');
+  const headerBar = document.querySelector<HTMLElement>('.header-bar');
+  const moreWrap = primary?.querySelector<HTMLElement>('[data-nav-more]');
+  const SAFETY_PX = 8;
+
+  const primaryContentWidth = (includeMore: boolean) => {
+    if (!primary) return 0;
+    const gap = parseFloat(getComputedStyle(primary).columnGap || getComputedStyle(primary).gap) || 0;
+    const kids = [...primary.children].filter((el) => {
+      const node = el as HTMLElement;
+      if (node.classList.contains('is-collapsed')) return false;
+      if (node === moreWrap) return includeMore && !node.classList.contains('is-empty');
+      return true;
+    }) as HTMLElement[];
+    return kids.reduce((sum, el, i) => sum + el.offsetWidth + (i > 0 ? gap : 0), 0);
+  };
+
+  const syncMoreItems = (collapsedIds: string[]) => {
+    if (!moreWrap) return;
+    const collapsed = new Set(collapsedIds);
+    moreWrap.querySelectorAll<HTMLElement>('[data-nav-more-item]').forEach((li) => {
+      const id = li.dataset.navMoreItem || '';
+      const show = collapsed.has(id);
+      li.hidden = !show;
+      const link = li.querySelector('a');
+      if (link) link.tabIndex = show ? 0 : -1;
+    });
+    const anyVisible = collapsedIds.length > 0;
+    moreWrap.classList.toggle('is-empty', !anyVisible);
+    if (!anyVisible) moreWrap.classList.remove('is-open');
+  };
+
+  const collapsedIdsOf = (els: HTMLElement[]) =>
+    els.filter((el) => el.classList.contains('is-collapsed')).map((el) => el.dataset.navOverflow || '');
+
+  const fitPrimaryNav = () => {
+    if (!primary || !headerRight || !moreWrap) return;
+    if (getComputedStyle(primary).display === 'none') return;
+
+    const overflowEls = [...primary.querySelectorAll<HTMLElement>('[data-nav-overflow]')].sort(
+      (a, b) => Number(a.dataset.navPriority || 0) - Number(b.dataset.navPriority || 0),
+    );
+
+    // Start fully collapsed (no overlap), then reveal highest-priority first.
+    overflowEls.forEach((el) => el.classList.add('is-collapsed'));
+    syncMoreItems(collapsedIdsOf(overflowEls));
+
+    const available =
+      headerRight.getBoundingClientRect().left - primary.getBoundingClientRect().left - SAFETY_PX;
+    if (available <= 0) return;
+
+    const revealOrder = [...overflowEls].reverse();
+    for (const el of revealOrder) {
+      el.classList.remove('is-collapsed');
+      const collapsedIds = collapsedIdsOf(overflowEls);
+      syncMoreItems(collapsedIds);
+      const width = primaryContentWidth(collapsedIds.length > 0);
+      if (width > available) {
+        el.classList.add('is-collapsed');
+        syncMoreItems(collapsedIdsOf(overflowEls));
+        break;
+      }
+    }
+  };
+
+  let fitRaf = 0;
+  const scheduleFit = () => {
+    cancelAnimationFrame(fitRaf);
+    fitRaf = requestAnimationFrame(fitPrimaryNav);
+  };
+
+  if (primary && headerRight && headerBar) {
+    fitPrimaryNav();
+    const ro = new ResizeObserver(scheduleFit);
+    ro.observe(headerBar);
+    ro.observe(headerRight);
+    window.addEventListener('resize', scheduleFit);
+    document.fonts?.ready?.then(scheduleFit);
+  }
 </script>

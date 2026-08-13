@@ -1,0 +1,10 @@
+---
+import { nonDefaultLocales, type Locale } from '../../../../utils/i18n';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+return Astro.redirect(`/${locale}/blog/all/1/`);
+---

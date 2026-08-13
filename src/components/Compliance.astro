@@ -17,82 +17,113 @@ const pillars = [
     key: "swiss",
     title: t.compliance.swiss.title,
     description: t.compliance.swiss.description,
-    mark: "Swiss Design",
-    markSub: "Swiss Hosted",
   },
   {
     key: "hipaa",
     title: t.compliance.hipaa.title,
     description: t.compliance.hipaa.description,
-    mark: "HIPAA",
-    markSub: "Privacy",
   },
   {
     key: "iso",
     title: t.compliance.iso.title,
     description: t.compliance.iso.description,
-    mark: "ISO",
-    markSub: "27001",
   },
 ]
 ---
 
-<section class="compliance-section py-20 lg:py-24" data-compliance>
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-10 lg:mb-12 max-w-2xl">
-      <span class="text-xs font-semibold text-violet-600 uppercase tracking-widest">{t.compliance.badge}</span>
-      <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+<section id="confidentiality" class="compliance-section py-20 lg:py-28 scroll-mt-24" data-compliance>
+  <div class="compliance-atmosphere dn-bg-grid" aria-hidden="true"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-10 lg:mb-14 max-w-2xl" data-compliance-intro>
+      <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 uppercase tracking-widest">
+        <span class="compliance-badge-dot" aria-hidden="true"></span>
+        {t.compliance.badge}
+      </span>
+      <h2 class="mt-3 text-3xl sm:text-4xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
         {t.compliance.title}
       </h2>
-      <p class="mt-3 text-base text-gray-500 leading-relaxed">{t.compliance.subtitle}</p>
+      <p class="mt-3 text-lg text-gray-500 leading-relaxed">{t.compliance.subtitle}</p>
     </div>
 
     <div class="compliance-shell">
-      <div class="grid lg:grid-cols-12 gap-0">
-        <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10">
-          <h3 class="text-lg font-semibold text-gray-900 tracking-tight">{t.compliance.cardTitle}</h3>
-          <p class="mt-2 text-sm text-gray-500 leading-relaxed max-w-xl">
-            {t.compliance.cardDescription}
-          </p>
-
-          <div class="compliance-protocol mt-7">
-            <div class="flex items-center gap-2.5 mb-4">
-              <span class="compliance-lock" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+      <div class="grid lg:grid-cols-12">
+        <div class="lg:col-span-7 compliance-vault relative p-6 sm:p-8 lg:p-10">
+          <div class="relative">
+            <div class="flex items-start gap-3">
+              <span class="compliance-shield-mark" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3l7 3v5.5c0 4.4-2.9 8.4-7 9.5-4.1-1.1-7-5.1-7-9.5V6l7-3z" fill="currentColor" opacity="0.18"/>
+                  <path d="M12 3l7 3v5.5c0 4.4-2.9 8.4-7 9.5-4.1-1.1-7-5.1-7-9.5V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M9.2 12.1l1.8 1.8 3.8-3.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
-              <span class="text-sm font-semibold text-gray-900">{t.compliance.protocolTitle}</span>
+              <div class="min-w-0">
+                <h3 class="text-xl font-semibold text-white tracking-tight">{t.compliance.cardTitle}</h3>
+                <p class="mt-2 text-base text-primary-100/75 leading-relaxed max-w-xl">
+                  {t.compliance.cardDescription}
+                </p>
+              </div>
             </div>
-            <ul class="space-y-3">
-              {protocols.map((item) => (
-                <li class="compliance-protocol-item">
-                  <span class="compliance-check" aria-hidden="true">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <path d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+
+            <div class="compliance-protocol mt-7" data-compliance-protocol>
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="compliance-lock" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                  </svg>
+                </span>
+                <span class="text-base font-semibold text-white">{t.compliance.protocolTitle}</span>
+              </div>
+              <ul class="space-y-2.5">
+                {protocols.map((item, i) => (
+                  <li class="compliance-protocol-item" style={`--d:${0.06 + i * 0.07}s`} data-compliance-item>
+                    <span class="compliance-check" aria-hidden="true">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="lg:col-span-5 compliance-marks p-6 sm:p-8 lg:p-10 flex flex-col justify-center gap-4 border-t lg:border-t-0 lg:border-l border-black/[0.06]">
+        <div class="lg:col-span-5 compliance-marks p-6 sm:p-8 lg:p-9 flex flex-col justify-center gap-3.5">
           {pillars.map((pillar, i) => (
-            <div class="compliance-mark" style={`--d:${0.08 + i * 0.1}s`} data-compliance-mark>
-              <div class={`compliance-badge compliance-badge--${pillar.key}`} aria-hidden="true">
-                <span class="compliance-badge-frame">
-                  <span class="compliance-badge-main">{pillar.mark}</span>
-                  <span class="compliance-badge-sub">{pillar.markSub}</span>
-                </span>
+            <article class="compliance-mark" style={`--d:${0.12 + i * 0.1}s`} data-compliance-mark>
+              <div class={`compliance-icon compliance-icon--${pillar.key}`} aria-hidden="true">
+                {pillar.key === "swiss" ? (
+                  <img
+                    src="/images/flags/ch.svg"
+                    alt="Switzerland"
+                    width="28"
+                    height="28"
+                    loading="lazy"
+                    decoding="async"
+                    class="compliance-flag"
+                  />
+                ) : pillar.key === "hipaa" ? (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3l7 3v5.5c0 4.4-2.9 8.4-7 9.5-4.1-1.1-7-5.1-7-9.5V6l7-3z" fill="currentColor" opacity="0.12"/>
+                    <path d="M12 3l7 3v5.5c0 4.4-2.9 8.4-7 9.5-4.1-1.1-7-5.1-7-9.5V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M12 8.2v7.2M9.4 11.2h5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                ) : (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="5.5" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
+                    <path d="M12 7.6v4.2l2.4 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
               </div>
               <div class="min-w-0">
-                <h4 class="text-sm font-semibold text-gray-900 tracking-tight">{pillar.title}</h4>
-                <p class="mt-1 text-xs text-gray-500 leading-relaxed">{pillar.description}</p>
+                <h4 class="text-base font-semibold text-gray-900 tracking-tight">{pillar.title}</h4>
+                <p class="mt-1 text-sm text-gray-500 leading-relaxed">{pillar.description}</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
@@ -103,17 +134,20 @@ const pillars = [
 <script>
   const root = document.querySelector("[data-compliance]")
   if (root) {
-    const marks = root.querySelectorAll("[data-compliance-mark]")
+    const targets = root.querySelectorAll(
+      "[data-compliance-mark], [data-compliance-item], [data-compliance-intro], [data-compliance-protocol]"
+    )
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            marks.forEach((mark) => mark.classList.add("is-visible"))
+            root.classList.add("is-inview")
+            targets.forEach((el) => el.classList.add("is-visible"))
             observer.disconnect()
           }
         })
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     )
     observer.observe(root)
   }
@@ -121,27 +155,102 @@ const pillars = [
 
 <style>
   .compliance-section {
+    position: relative;
+    overflow: hidden;
+    background: #fbfafd;
+  }
+
+  .compliance-atmosphere {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
     background:
-      radial-gradient(ellipse 65% 45% at 8% 20%, rgba(121, 81, 251, 0.08), transparent 55%),
-      linear-gradient(180deg, #ffffff 0%, #f7f5fc 55%, #ffffff 100%);
+      radial-gradient(ellipse 55% 50% at 12% 18%, rgba(var(--dn-primary-rgb), 0.14), transparent 60%),
+      radial-gradient(ellipse 40% 45% at 88% 72%, rgba(var(--dn-primary-end-rgb), 0.08), transparent 55%),
+      radial-gradient(ellipse 30% 28% at 62% 8%, rgba(var(--dn-primary-mid-rgb), 0.07), transparent 50%),
+      linear-gradient(180deg, #ffffff 0%, #f5f9ff 48%, #ffffff 100%);
+  }
+
+  .compliance-badge-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.18);
+  }
+
+  [data-compliance-intro] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  [data-compliance-intro].is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .compliance-shell {
-    background: #fff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 0.875rem;
+    position: relative;
+    border-radius: 1.25rem;
     overflow: hidden;
+    border: 1px solid rgba(91, 63, 144, 0.12);
     box-shadow:
       0 1px 2px rgba(15, 23, 42, 0.04),
-      0 18px 40px rgba(15, 23, 42, 0.05);
-    position: relative;
+      0 24px 56px rgba(49, 30, 110, 0.08);
+    background: #fff;
+  }
+
+  .compliance-vault {
+    background:
+      radial-gradient(ellipse 80% 70% at 0% 0%, rgba(var(--dn-primary-mid-rgb), 0.22), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(var(--dn-primary-end-rgb), 0.18), transparent 50%),
+      linear-gradient(155deg, #1a1528 0%, #241a3d 48%, #1c1630 100%);
+    color: #fff;
+  }
+
+  .compliance-shield-mark {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    color: #d4c4ff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(203, 184, 255, 0.2);
   }
 
   .compliance-protocol {
-    background: #f8f8fa;
-    border: 1px solid rgba(15, 23, 42, 0.06);
-    border-radius: 0.75rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(203, 184, 255, 0.16);
+    border-radius: 0.9rem;
     padding: 1.15rem 1.2rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  .compliance-protocol.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .compliance-section.is-inview .compliance-protocol {
+    border-color: rgba(203, 184, 255, 0.28);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 0 0 1px rgba(var(--dn-primary-rgb), 0.08),
+      0 12px 40px rgba(var(--dn-primary-rgb), 0.12);
   }
 
   .compliance-lock {
@@ -150,18 +259,30 @@ const pillars = [
     justify-content: center;
     width: 1.75rem;
     height: 1.75rem;
-    border-radius: 0.45rem;
-    background: #1a1528;
-    color: #cbb8ff;
+    border-radius: 0.5rem;
+    background: linear-gradient(145deg, var(--dn-primary-mid), var(--dn-primary-ink));
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(var(--dn-primary-rgb), 0.35);
   }
 
   .compliance-protocol-item {
     display: flex;
     align-items: flex-start;
-    gap: 0.65rem;
-    font-size: 0.8125rem;
-    line-height: 1.45;
-    color: #3f3f46;
+    gap: 0.7rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: rgba(245, 243, 255, 0.88);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--d, 0s);
+  }
+
+  .compliance-protocol-item.is-visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .compliance-check {
@@ -173,24 +294,33 @@ const pillars = [
     width: 1.15rem;
     height: 1.15rem;
     border-radius: 999px;
-    background: rgba(121, 81, 251, 0.12);
-    color: #5b3fd4;
+    background: rgba(203, 184, 255, 0.16);
+    color: #d4c4ff;
   }
 
   .compliance-marks {
-    background: #f6f6f8;
+    background:
+      linear-gradient(180deg, #f8f6fc 0%, #f3f0fa 100%);
+    border-top: 1px solid #e5e7eb;
+  }
+
+  @media (min-width: 1024px) {
+    .compliance-marks {
+      border-top: 0;
+      border-left: 1px solid #e5e7eb;
+    }
   }
 
   .compliance-mark {
     display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    padding: 0.85rem 0.9rem;
-    border-radius: 0.75rem;
-    background: #fff;
+    align-items: flex-start;
+    gap: 0.95rem;
+    padding: 1rem 1.05rem;
+    border-radius: 0.95rem;
+    background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(15, 23, 42, 0.07);
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
     transition:
       opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
@@ -205,78 +335,61 @@ const pillars = [
   }
 
   .compliance-mark:hover {
-    border-color: #d4caf5;
-    box-shadow: 0 8px 24px rgba(91, 63, 212, 0.08);
+    border-color: rgba(var(--dn-primary-rgb), 0.28);
+    box-shadow: 0 10px 28px rgba(var(--dn-primary-rgb), 0.1);
+    transform: translateY(-2px);
   }
 
-  .compliance-badge {
+  .compliance-icon {
     box-sizing: border-box;
     flex-shrink: 0;
-    width: 5.5rem;
-    height: 3.75rem;
-    padding: 3px;
-    border-radius: 0.7rem;
-    background: linear-gradient(145deg, #9b6cff, #5b3fd4 55%, #7951fb);
-    box-shadow: 0 4px 14px rgba(91, 63, 212, 0.18);
+    width: 3.15rem;
+    height: 3.15rem;
+    border-radius: 0.85rem;
     display: flex;
-    align-items: stretch;
-  }
-
-  .compliance-badge-frame {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.2rem;
-    flex: 1;
-    min-height: 0;
-    border-radius: 0.55rem;
-    background: #faf8ff;
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    padding: 0.25rem 0.35rem;
-    text-align: center;
-    line-height: 1.1;
+    border: 1px solid transparent;
   }
 
-  .compliance-badge-main {
-    display: block;
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    color: #4c35c4;
+  .compliance-icon--swiss {
+    background: #fff;
+    border-color: rgba(213, 43, 30, 0.18);
+    box-shadow: 0 4px 14px rgba(213, 43, 30, 0.1);
   }
 
-  .compliance-badge--swiss .compliance-badge-main {
-    font-size: 0.58rem;
-    letter-spacing: 0.01em;
+  .compliance-flag {
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
   }
 
-  .compliance-badge--hipaa .compliance-badge-main {
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+  .compliance-icon--hipaa {
+    color: var(--dn-primary-ink);
+    background: linear-gradient(160deg, #eef2ff, #e0e7ff);
+    border-color: rgba(var(--dn-primary-rgb), 0.18);
   }
 
-  .compliance-badge-sub {
-    display: block;
-    margin: 0;
-    font-size: 0.48rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #7c6bb5;
-  }
-
-  .compliance-badge--swiss .compliance-badge-sub {
-    font-size: 0.48rem;
-    letter-spacing: 0.02em;
+  .compliance-icon--iso {
+    color: var(--dn-primary-ink);
+    background: linear-gradient(160deg, #eef0ff, #e8ebff);
+    border-color: rgba(var(--dn-primary-end-rgb), 0.2);
   }
 
   @media (prefers-reduced-motion: reduce) {
+    [data-compliance-intro],
+    .compliance-protocol,
+    .compliance-protocol-item,
     .compliance-mark {
       opacity: 1;
       transform: none;
       transition: none;
+    }
+
+    .compliance-mark:hover {
+      transform: none;
     }
   }
 </style>

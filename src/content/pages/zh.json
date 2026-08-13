@@ -1,0 +1,709 @@
+{
+  "nav": {
+    "tutorial": "教程",
+    "pricing": "定价",
+    "blog": "博客",
+    "team": "团队",
+    "survey": "问卷调查",
+    "patient": "患者",
+    "joinUs": "加入我们",
+    "demo": "获取演示",
+    "webApp": "网页应用",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "solutions": "解决方案",
+    "specialties": "专科",
+    "more": "更多"
+  },
+  "hero": {
+    "badge": "由医生打造 · 瑞士托管",
+    "title": "医院文档记录，",
+    "titleHighlight": "不再为笔记熬夜",
+    "subtitle": "DocNote将问诊转化为出院信、查房记录和手术报告。由仍在医院工作的医生打造。",
+    "cta": "免费开始",
+    "ctaSecondary": "适用于诊所和医院",
+    "founders": "Dr. Vincent Tan · Dr. Alice Gilson",
+    "foundersRole": "创始人 · HUG & La Tour医院",
+    "trustedBy": "受领先医疗机构信赖"
+  },
+  "soapDemo": {
+    "consultations": "问诊",
+    "patients": "患者",
+    "templates": "模板",
+    "settings": "设置",
+    "consultationTitle": "问诊 — 患者 #1247",
+    "consultationDate": "今天 14:30 · 全科门诊",
+    "recording": "录音中",
+    "soapNoteGenerated": "SOAP病历已生成",
+    "soapNote": "SOAP病历",
+    "savedToEHR": "已保存至电子病历",
+    "justNow": "刚刚",
+    "patientId": "患者 #1247",
+    "generalPractice": "全科门诊",
+    "liveTranscript": "实时转录",
+    "soapS": "患者主诉持续头痛3天，傍晚加重。疼痛评分6/10，双侧压迫感。否认恶心或畏光。",
+    "soapO": "血压120/80，心率72，体温36.8°C。神清语利。双侧斜方肌轻度压痛。颅神经II-XII完整。",
+    "soapA": "紧张型头痛，可能与压力相关。无继发性头痛危险信号。",
+    "soapP": "布洛芬400mg按需服用。睡眠卫生指导。若2周无改善随诊。",
+    "phoneSoapS": "持续头痛3天，6/10，双侧压迫感。",
+    "phoneSoapO": "血压120/80，心率72。斜方肌压痛。颅神经完整。",
+    "phoneSoapA": "紧张型头痛，压力相关。",
+    "phoneSoapP": "布洛芬400mg按需服用。2周后随诊。"
+  },
+  "stats": {
+    "timeSaved": "节省文档时间",
+    "timeSavedValue": "2+小时",
+    "timeSavedSuffix": "+小时",
+    "timeSavedDesc": "日均节省",
+    "accuracy": "转录准确率",
+    "accuracyValue": "99%",
+    "accuracyDesc": "医学术语",
+    "doctors": "活跃医生",
+    "doctorsValue": "1,000+",
+    "doctorsDesc": "遍布欧洲"
+  },
+  "features": {
+    "badge": "功能与优势",
+    "title": "适应各类行政任务",
+    "subtitle": "加速文档处理所需的全套工具",
+    "recording": {
+      "title": "智能录音",
+      "description": "一键记录问诊过程。我们的AI理解医疗语境并过滤背景噪音。",
+      "animStatus": "录音中",
+      "animWords": [
+        "疼痛",
+        "大约",
+        "两周前",
+        "开始",
+        "主要",
+        "在",
+        "早晨",
+        "出现",
+        "我",
+        "之前",
+        "没有",
+        "偏头痛",
+        "病史...",
+        "haven't",
+        "had",
+        "migraines"
+      ]
+    },
+    "transcription": {
+      "title": "精准转录",
+      "description": "实时转录，医学术语准确率达99%，支持多语言。",
+      "animLine1": "患者主诉",
+      "animLine2Pre": "反复",
+      "animWrong1": "糖尿病",
+      "animRight1": "糖尿病",
+      "animLine2Post": "症状",
+      "animLine3Pre": "伴有",
+      "animWrong2": "高血糖",
+      "animRight2": "高血糖",
+      "animLine3Post": "水平升高"
+    },
+    "summaries": {
+      "title": "结构化摘要",
+      "description": "自动生成就诊记录、出院信和会诊报告。",
+      "animTitle": "问诊摘要",
+      "animSection1": "诊断",
+      "animSection2": "治疗",
+      "animSection3": "随访"
+    },
+    "integration": {
+      "title": "电子病历集成",
+      "description": "无缝对接现有电子病历系统。",
+      "animTitle": "电子病历 — 患者记录",
+      "animPatient": "患者",
+      "animDob": "出生日期",
+      "animNotes": "备注",
+      "animNoReport": "无报告"
+    },
+    "security": {
+      "title": "数据安全",
+      "description": "您的数据始终留在瑞士。符合HIPAA标准，通过ISO 27001认证。",
+      "animLabel1": "患者",
+      "animLabel2": "出生日期",
+      "animLabel3": "诊断",
+      "animLabel4": "备注",
+      "animValue1": "Marie Dupont",
+      "animValue2": "1987.03.12",
+      "animValue3": "2型糖尿病",
+      "animValue4": "HbA1c升高",
+      "animNoReport": "无报告"
+    },
+    "languages": {
+      "title": "多语言支持",
+      "description": "支持法语、英语、意大利语、西班牙语、阿拉伯语等20多种语言。"
+    }
+  },
+  "specificities": {
+    "badge": "专业特性",
+    "title": "为医院实际文档需求打造",
+    "subtitle": "每项特性都改变最终记录内容，而非简单功能开关。",
+    "impactLabel": "影响",
+    "stageLabel": "在产品中",
+    "coding": {
+      "title": "医疗编码与计费",
+      "impact": "编码不再需要二次文档处理。信件本身显示可计费诊断：减少遗漏SADs，减少晚间补编码工作。",
+      "description": "重要相关诊断在出院信中高亮显示，文档末尾提供编码建议。",
+      "descriptionCh": "重要相关诊断在出院信中高亮显示，文档末尾提供瑞士DRG编码建议。",
+      "descriptionRow": "重要相关诊断在出院信中高亮显示，文档末尾提供PMSI编码建议。",
+      "stageLabel": "在信件中",
+      "line1Pre": "…有",
+      "line1Mark": "2型糖尿病",
+      "line1Post": "病史，近期HbA1c升高…",
+      "line2Pre": "…已知",
+      "line2Mark": "高血压",
+      "line2Post": "，目前控制良好…",
+      "line3Pre": "…既往",
+      "line3Mark": "深静脉血栓",
+      "line3Post": "·已讨论抗凝治疗…"
+    },
+    "tardoc": {
+      "title": "TARDOC合规",
+      "impact": "简短的床边口述转化为完整可计费的检查描述。您只需记录一次，同时满足临床需求和TARDOC要求。",
+      "description": "简洁的口述结果扩展为保险公司和TARDOC期望的结构化表述，无需从头重写检查报告。",
+      "stageLabel": "口述转为可计费描述",
+      "shortDictation": "“腹部柔软，无反跳痛。肠鸣音存在。”",
+      "expandLabel": "扩展为TARDOC就绪文本",
+      "fullDescription": "腹部检查：腹部柔软无压痛，无肌卫或反跳痛。各象限肠鸣音存在。未触及脏器肿大…"
+    },
+    "ehr": {
+      "title": "电子病历集成",
+      "impact": "文档完成不仅在于内容完善，更在于进入病历系统：无复制粘贴缺口，无版本游离于电子病历之外。",
+      "description": "验证后的报告直接发送至Mediway和SOKLE，确保临床文档与患者档案始终一致。",
+      "stageLabel": "已验证记录存入患者档案",
+      "docReady": "出院信",
+      "docMeta": "已验证·PDF就绪"
+    },
+    "templates": {
+      "title": "自定义Word模板",
+      "impact": "您无需重新格式化AI输出以匹配医院信头。每份报告都已符合您的文档标准：版式、章节、签名。审核只需关注医疗内容，无需调整格式。",
+      "description": "只需上传一次Word模板。DocNote将按您的精确结构和品牌生成后续报告。",
+      "stageLabel": "您的模板即报告",
+      "fileName": "科室信头.docx",
+      "dropHint": "您的章节·您的页边距·您的签名",
+      "letterhead": "医院·外科",
+      "letterBody": "尊敬的同事：\n随信附上…"
+    },
+    "context": {
+      "title": "丰富上下文输入",
+      "impact": "记录反映完整临床情况，而不仅是口头表述：减少遗漏，减少事后补充“请添加检验结果”的修正。",
+      "description": "附加既往信件、检验、影像和照片。模型在构建报告时会使用这些资料。",
+      "stageLabel": "音频加文件上下文生成更完善记录",
+      "chip1": "既往出院记录",
+      "chip2": "检验报告.pdf",
+      "chip3": "伤口照片",
+      "meterLabel": "报告完整度",
+      "meterNote": "包含上下文·草案中遗漏更少"
+    },
+    "hospital": {
+      "title": "医院专用文档",
+      "impact": "您无需将医院工作强塞入门诊SOAP格式。文档类型匹配工作流程，确保结构、长度和接收方一次到位。",
+      "description": "出院信、查房记录、手术报告等医院文档的专属格式。",
+      "stageLabel": "为不同场景匹配文档类型",
+      "type1Title": "出院",
+      "type1Sub": "致全科医生信",
+      "type2Title": "查房",
+      "type2Sub": "病程记录",
+      "type3Title": "手术",
+      "type3Sub": "报告"
+    },
+    "sync": {
+      "title": "手机与电脑同步",
+      "impact": "文档从床边到办公桌保持连贯。切换设备时无需重新输入或重建记录：草稿随您移动。",
+      "description": "用手机在病房录音，然后在电脑上继续编辑和验证。同一问诊，实时同步。",
+      "stageLabel": "一处记录，两处同步",
+      "phone": "手机",
+      "recording": "录音中…",
+      "desktop": "电脑",
+      "sameDraft": "同一草稿"
+    },
+    "dayHospital": {
+      "title": "协作日间医院",
+      "impact": "一天结束时您将获得一份结构化患者档案，而非四份需要整合的部分记录。文档质量随团队协作提升而非碎片化。",
+      "description": "多位护理人员共同完善同一本地患者档案。DocNote将各方贡献合并为一份可靠记录。",
+      "stageLabel": "多位护理人员共建一份档案",
+      "mergeResult": "单一结构化日间医院记录"
+    }
+  },
+  "specialties": {
+    "title": "支持61个医学专科",
+    "subtitle": "从全科到专科护理",
+    "items": [
+      "全科医学",
+      "内科",
+      "心血管科",
+      "皮肤科",
+      "内分泌科",
+      "消化科",
+      "神经科",
+      "肿瘤科",
+      "骨科",
+      "儿科",
+      "精神科",
+      "呼吸科",
+      "风湿科",
+      "外科",
+      "泌尿科",
+      "急诊科"
+    ],
+    "countLabel": "61"
+  },
+  "testimonials": {
+    "badge": "用户评价",
+    "title": "深受医生喜爱",
+    "subtitle": "听听医疗专业人士对DocNote的评价",
+    "quote1": "DocNote真正改变了我在急诊科的工作日常，让我能专注于患者并重新享受问诊过程。",
+    "author1": "Dre Perrot",
+    "role1": "急诊科住院医师",
+    "quote2": "自从使用DocNote后，准备和跟进问诊变得快速高效。",
+    "author2": "Dr Patel",
+    "role2": "普外科住院医师",
+    "quote3": "我曾说成为亿万富翁后会雇全职助理，但现在连成为富翁都不需要了。",
+    "author3": "Pr Ris",
+    "role3": "结直肠外科主任",
+    "items": [
+      {
+        "quote": "DocNote彻底改变了我在急诊科的日常工作，让我能重新专注于患者并享受诊疗过程。",
+        "author": "Dre Perrot",
+        "role": "急诊科住院医师",
+        "image": "/images/perrot.png"
+      },
+      {
+        "quote": "自从使用DocNote后，诊疗准备和随访工作变得快速高效。",
+        "author": "Dr Patel",
+        "role": "普外科住院医师",
+        "image": "/images/patel.jpg"
+      },
+      {
+        "quote": "我常说成为亿万富翁后会雇全职助手，但现在连亿万富翁都不用当了。",
+        "author": "Pr Ris",
+        "role": "结直肠外科主任",
+        "image": "/images/ris.png"
+      }
+    ]
+  },
+  "cta": {
+    "title": "准备好每天节省2+小时了吗？",
+    "subtitle": "加入数百位已改变文档工作流程的医生行列。",
+    "button": "免费开始",
+    "noCard": "无需信用卡"
+  },
+  "valueProp": {
+    "title": "高效医疗文档管理",
+    "subtitle": "统一文档工作流程，每天节省数小时，专注于最重要的事——您的患者。",
+    "card1": {
+      "title": "快速上手",
+      "description": "即时开始。您团队的任何医生都能在几分钟内完成录音、转录和分享临床记录。"
+    },
+    "card2": {
+      "title": "与电子病历同步",
+      "description": "统一您的工具。通过无缝电子病历集成和自动化工作流连接各处数据。"
+    },
+    "card3": {
+      "title": "跨设备无缝衔接",
+      "description": "随时随地保持连接。DocNote可在手机、平板或电脑上流畅运行。"
+    }
+  },
+  "compliance": {
+    "badge": "保密性",
+    "title": "符合医疗要求的安全标准",
+    "subtitle": "我们的基础设施符合高标准数据保护要求，专为医疗行业需求定制。",
+    "cardTitle": "数据保护框架",
+    "cardDescription": "DocNote实施企业级安全措施，包括端到端加密、严格访问控制和全面审计日志，保护敏感患者数据。",
+    "protocolTitle": "DocNote安全协议",
+    "protocolEncryption": "端到端加密：传输TLS 1.3 & 存储AES-256",
+    "protocolRetention": "数据保留不超过7天",
+    "protocolRbac": "基于角色的访问控制(RBAC)",
+    "protocolAudit": "全面审计追踪记录",
+    "swiss": {
+      "title": "瑞士设计与托管",
+      "description": "在瑞士开发并托管。所有数据保留在瑞士服务器，符合当地医疗法规。"
+    },
+    "hipaa": {
+      "title": "HIPAA合规",
+      "description": "完全符合医疗隐私标准，确保患者数据在各层面受到保护。"
+    },
+    "iso": {
+      "title": "ISO 27001",
+      "description": "通过定期审计和持续监控的认证信息安全管理体系。"
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "医生和医院采用DocNote前的所有疑问。仍有问题？",
+    "contactUs": "联系我们",
+    "q1": "什么是DocNote？它是如何工作的？",
+    "a1": "DocNote是一款AI驱动的医疗文书助手和临床文档辅助工具，专为瑞士、法国及欧洲各地的医生、外科医生和医院设计。在问诊过程中，DocNote安全记录医患对话，实时转录，并自动生成结构化医疗报告（问诊记录、出院信、手术报告、查房记录等），经医生审核验证后发送至患者电子病历。",
+    "q2": "为什么选择DocNote而非其他AI医疗文书工具？",
+    "a2": "DocNote专为欧洲和瑞士医疗体系打造，而非从美国产品改编。关键差异：(1)所有数据托管在瑞士且绝不用于训练AI模型，(2)完全符合瑞士联邦数据保护法(FADP)、GDPR、HIPAA和ISO 27001，(3)自动医疗编码建议符合瑞士DRG和PMSI，(4)原生TARDOC支持将口述检查转为可计费描述，(5)直接与Mediway和SOKLE电子病历集成，(6)手机与电脑实时同步，(7)医院专用文档包括出院信、手术报告和协作日间医院档案。",
+    "a2Ch": "DocNote专为瑞士医疗体系打造。关键差异：(1)所有数据托管在瑞士，(2)完全符合瑞士联邦数据保护法(FADP/nLPD)、HIPAA和ISO 27001，(3)自动医疗编码建议符合瑞士DRG，(4)原生TARDOC支持，(5)直接与Mediway和SOKLE电子病历集成，(6)设备间实时同步，(7)医院专用文档类型。",
+    "a2Row": "DocNote专为法国及欧洲医疗体系打造。关键差异：(1)所有数据托管在法国，(2)完全符合欧盟GDPR、HIPAA和ISO 27001，(3)自动医疗编码建议符合法国PMSI，(4)与主流医院信息系统直接集成，(5)设备间实时同步，(6)医院专用文档类型。",
+    "q3": "DocNote是否符合健康数据法规的安全要求？",
+    "a3": "是的。DocNote采用端到端加密（存储AES-256，传输TLS 1.3），所有健康数据专储于瑞士，符合瑞士FADP、欧盟GDPR、HIPAA和ISO 27001。根据瑞士刑法第321条(医疗保密)，DocNote作为医生的辅助人员运作。健康数据在处理后7天内自动不可逆删除。DocNote绝不保留音频、转录或医疗报告的永久副本。",
+    "a3Ch": "是的。DocNote采用端到端加密，所有健康数据专储于瑞士，符合瑞士联邦数据保护法(FADP/nLPD)、HIPAA和ISO 27001。根据瑞士刑法第321条(医疗保密)运作。健康数据7天内自动删除，不保留任何永久副本。",
+    "a3Row": "是的。DocNote采用端到端加密，所有健康数据专储于法国HDS认证数据中心，符合欧盟GDPR、HIPAA和ISO 27001。受法国刑法第226-13条和公共卫生法典第L1110-4条(医疗保密)约束。健康数据7天内自动删除，不保留永久副本。",
+    "q4": "DocNote支持哪些医学专科？",
+    "a4": "DocNote支持61个医学专科，包括全科、内科、心血管科、外科(普外、骨科、结直肠、血管)、妇科、儿科、精神科、皮肤科、眼科、耳鼻喉科、神经科、肿瘤科、麻醉科、急诊科和放射科。报告格式适配各专科术语和结构要求。",
+    "q5": "DocNote支持哪些语言？",
+    "a5": "DocNote能理解并生成法语、德语、意大利语、英语等20+语言的报告。正确处理瑞士特定医学术语和问诊中的语码转换(如患者说瑞士德语而医生用法语口述)。",
+    "q6": "DocNote每次问诊能节省多少时间？",
+    "a6": "平均而言，使用DocNote的医生每天可节省2+小时行政工作。原本需要5-10分钟撰写的问诊记录现在秒级生成，只需快速医疗审核即可验证。这意味着更多时间留给患者，更少夜晚加班处理文书，减少职业倦怠。",
+    "q7": "DocNote能否与电子病历(EHR)集成？",
+    "a7": "可以。DocNote直接与Mediway和SOKLE集成，并持续添加新EHR对接。您也可拖放自定义Word报告模板：DocNote会严格遵循您的版式自动生成报告，然后导出PDF或复制到其他系统。",
+    "q8": "DocNote价格如何？是否有免费试用？",
+    "a8": "DocNote提供30次问诊的免费试用，包含全部专业功能，无需信用卡。瑞士用户的专业版月费109瑞士法郎(年付99瑞士法郎/月)。欧洲其他地区为89欧元/月(年付79欧元/月)。医院和大型机构可定制企业方案。",
+    "a8Ch": "DocNote提供30次问诊免费试用，含全部专业功能，无需信用卡。专业版月费109瑞士法郎(年付99瑞士法郎/月)。医院机构可定制企业方案。",
+    "a8Row": "DocNote提供30次问诊免费试用，含全部专业功能，无需信用卡。专业版月费89欧元(年付79欧元/月)。医院机构可定制企业方案。",
+    "q9": "DocNote对医院和日间医院(HDJ)文档有何特别之处？",
+    "a9": "DocNote是首个专为医院复杂场景打造的AI文书助手，不仅限于门诊。三大特点：(1)协作日间医院档案：在多位护理人员(医生、住院医、护士、麻醉师)接诊同一患者的HDJ流程中，DocNote让每位贡献者共同完善同一患者档案，并自动合并为一份结构化可靠可审计的记录。目前欧洲市场无其他环境AI文书提供此功能。(2)丰富问诊上下文：医生可通过拖放既往文档(检验结果、影像报告、出院信)、附加照片(伤口、病变、心电图、X光)或粘贴自由文本来丰富任何问诊。AI会将这些丰富上下文融入结构化输出，生成精准度无与伦比的报告。(3)个人Word模板：拖放您精确格式化、签名、医院信头和章节结构的Word文档。DocNote将按您的模板生成所有后续报告。无其他AI文书提供此级别个性化定制。"
+  },
+  "footer": {
+    "description": "AI赋能的医院工作流程医疗文档解决方案。",
+    "product": "产品",
+    "company": "公司",
+    "legal": "法律",
+    "features": "功能",
+    "pricing": "定价",
+    "integrations": "集成",
+    "about": "关于我们",
+    "blog": "博客",
+    "careers": "招聘",
+    "contact": "联系",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "gtc": "通用条款与条件",
+    "gdpr": "GDPR",
+    "rights": "保留所有权利。"
+  },
+  "pricing": {
+    "title": "从独立执业到大型机构",
+    "subtitle": "选择适合您医疗实践的方案",
+    "monthly": "月付",
+    "yearly": "年付",
+    "save": "节省15%",
+    "perMonth": "/月",
+    "getStarted": "开始使用",
+    "subscription": "订阅",
+    "freeTrial": "30次免费问诊，之后",
+    "professional": {
+      "name": "诊所与个人医生",
+      "description": "适用于独立医生和小型诊所",
+      "price": "79",
+      "monthlyPrice": "89",
+      "features": [
+        "无限次问诊",
+        "优先支持",
+        "移动应用和网页端访问",
+        "可申请自定义模板",
+        "可能由DocNote团队提供集成"
+      ],
+      "popular": "最受欢迎"
+    },
+    "enterprise": {
+      "name": "医院和大型诊所",
+      "description": "适用于医院和大型医疗机构",
+      "price": "定制",
+      "features": [
+        "包含专业版所有功能",
+        "专属客户经理",
+        "定制集成",
+        "本地化部署",
+        "SLA保障",
+        "培训与上线支持"
+      ],
+      "contact": "联系销售"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": "免费试用如何运作？",
+      "a1": "以30次免费问诊开始，体验全部专业功能。无需信用卡。",
+      "q2": "之后可以更换方案吗？",
+      "a2": "可以随时升级或降级方案。变更将在下一账单周期生效。",
+      "q3": "我的数据安全吗？",
+      "a3": "绝对安全。所有数据加密存储在瑞士。我们符合HIPAA标准并通过ISO 27001认证。",
+      "q4": "支持哪些电子病历系统？",
+      "a4": "我们与大多数主流EHR系统集成，包括Epic、Cerner及瑞士本地系统如Sokle或Mediway。",
+      "q5": "专业版与企业版有何区别？",
+      "a5": "专业版面向个体医师和小型诊所：无限次诊疗、移动和网页访问、模板及优先支持。企业版增加多用户部署、专属客户管理、定制EHR对接、可选本地部署、SLA及面向医院诊所的结构化培训。",
+      "q6": "支持月付或年付吗？",
+      "a6": "支持。可选择月付或年付（节省约15%）。价格显示为当地货币（瑞士法郎、欧元或美元）。",
+      "q7": "为诊所医院提供发票吗？",
+      "a7": "提供。专业版通过Stripe开具可下载发票。企业版可按采购流程定制开票条款。",
+      "q8": "是否有合约期或取消费用？",
+      "a8": "专业版无长期绑定，可在下一计费周期前取消。企业版遵循合同条款。",
+      "q9": "上线需要多长时间？",
+      "a9": "多数个人医师在免费试用后当天即可使用。医院诊所部署通常需数周，取决于EHR集成、培训计划和内部IT审核。",
+      "q10": "同一诊所的多位医生能共享账户吗？",
+      "a10": "小型诊所可从专业版按医生订阅起步。如需共享科室、管理权限或全院访问，请联系销售部门评估适合的企业版方案。"
+    },
+    "compare": {
+      "title": "方案对比",
+      "subtitle": "查看个人执业医师与医院诊所的不同功能包含",
+      "feature": "功能",
+      "pro": "专业版",
+      "enterprise": "企业版",
+      "yes": "包含",
+      "no": "—",
+      "custom": "定制",
+      "rows": [
+        {
+          "label": "无限次诊疗记录",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "移动端和网页访问",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "专科适配报告",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "自定义模板",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "优先支持",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "瑞士托管数据与加密",
+          "pro": "yes",
+          "enterprise": "yes"
+        },
+        {
+          "label": "EHR集成（Mediway, SOKLE等）",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "多用户/科室部署",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "专属客户经理",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "本地化或私有云部署",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "SLA保障",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "培训与上线支持",
+          "pro": "custom",
+          "enterprise": "yes"
+        },
+        {
+          "label": "单点登录/管理控制台",
+          "pro": "no",
+          "enterprise": "yes"
+        },
+        {
+          "label": "协作式日间医院工作流",
+          "pro": "no",
+          "enterprise": "yes"
+        }
+      ]
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "关于AI医疗、医学文档和实践管理的深度洞察",
+    "readMore": "阅读更多",
+    "backToBlog": "返回博客",
+    "recentPosts": "最新文章",
+    "minRead": "分钟阅读",
+    "shareArticle": "分享文章：",
+    "categories": {
+      "all": "全部",
+      "news": "新闻",
+      "ai": "研究与洞察",
+      "documentation": "研究与洞察",
+      "practice": "研究与洞察"
+    },
+    "onThisPage": "本页目录",
+    "writtenBy": "作者",
+    "share": "分享",
+    "relatedArticles": "相关文章",
+    "createdOn": "发布于",
+    "articles": "文章",
+    "prev": "上一篇",
+    "next": "下一篇",
+    "viewAllArticles": "全部文章",
+    "pageLabel": "页码"
+  },
+  "team": {
+    "aboutUs": "关于我们",
+    "title": "医生设计，AI工程师打造",
+    "subtitle": "临床与技术团队并肩合作，为医生赢回宝贵时间。",
+    "intro": "DocNote诞生于医院走廊而非商业企划书。我们的创始人仍在行医，因此每个产品决策都需经得起繁忙查房工作的考验。",
+    "story": "如今，临床医生、工程师和市场团队共同肩负一项使命：以瑞士托管的隐私保护为核心，在数秒内将问诊转化为可靠的临床文档。我们与未来产品的使用者共同构建解决方案。",
+    "members": {
+      "vincentTan": {
+        "name": "Dr. Vincent Tan",
+        "role": "医生兼董事总经理",
+        "bio": "拥有日内瓦Hôpital de la Tour工作经验的医师。以真实医院工作流程和临床医生信任为核心领导DocNote。"
+      },
+      "aliceGilson": {
+        "name": "Dr. Alice Gilson",
+        "role": "医生兼董事总经理",
+        "bio": "具有HUG（日内瓦）工作经验的外科专家。围绕手术报告、出院信函和日常临床实际需求塑造产品。"
+      },
+      "mathiasGilson": {
+        "name": "Mathias Gilson",
+        "role": "首席技术官",
+        "bio": "负责DocNote的技术愿景、AI平台架构以及临床级软件的可靠性标准。"
+      },
+      "jeremyYvinec": {
+        "name": "Jeremy Yvinec",
+        "role": "高级全栈工程师",
+        "bio": "IUT Aix-Marseille毕业生，致力于构建跨设备的快速文档记录Web和React Native体验。"
+      },
+      "hugoRoussel": {
+        "name": "Hugo Roussel",
+        "role": "工程团队主管",
+        "bio": "苏黎世联邦理工学院毕业生，领导工程交付工作，专注于可扩展系统和清晰架构。"
+      },
+      "ericWei": {
+        "name": "Eric Wei",
+        "role": "高级前端工程师",
+        "bio": "洛桑联邦理工学院毕业生，精心打造临床医生依赖的界面，注重清晰度、速度和现代前端工艺。"
+      },
+      "nedimAmer": {
+        "name": "Nedim Amer",
+        "role": "销售",
+        "bio": "协助诊所和医院评估DocNote，规划工作流程，从首次演示顺利过渡到全面部署。"
+      },
+      "valeryDemunck": {
+        "name": "Valery Demunck",
+        "role": "销售",
+        "bio": "与各市场医疗机构合作，根据其文档需求和时间表匹配DocNote解决方案。"
+      },
+      "julietteKristanek": {
+        "name": "Juliette Kristanek",
+        "role": "市场营销与传播",
+        "bio": "从产品叙事到社区活动，塑造DocNote面向医生和合作伙伴的呈现方式。"
+      }
+    },
+    "highlightsTitle": "工作方式",
+    "highlightsLead": "DocNote并非始于商业计划书，而是诞生于医院走廊——在查房、手术排班和重写本该自动生成的记录之间。这个起源至今仍影响着我们的每次招聘、每次发布和每次与诊所的对话。",
+    "highlights": [
+      {
+        "title": "以执业医师为核心",
+        "body": "我们的创始人仍在行医。这不是官网标语，而是产品决策的过滤器。如果某个功能无法在繁忙查房、嘈杂急诊或周五下午门诊中存活，就不会发布。\n\n我们优先考虑临床语言、专科结构和医院文档的真实节奏。为出院小结、手术报告、协作式日间医院档案设计，也为三位医护人员同日下午接触同一位患者的尴尬时刻设计。\n\n当临床医生反馈问题，我们将其视为工程输入——而非锦上添花的用户体验意见。"
+      },
+      {
+        "title": "默认瑞士托管的隐私保护",
+        "body": "健康数据不是训练素材。DocNote将临床信息托管于瑞士，传输和存储加密，应用符合欧洲医疗保密预期的留存规则。\n\n我们为FADP/nLPD、GDPR、HIPAA和ISO 27001现实构建——医院IT审查、采购问卷和每位医生内心的疑问：患者数据实际存储在哪里？\n\n环境记录的任何价值都不应以侵蚀信任为代价。隐私是产品架构的一部分，而非法律附录。"
+      },
+      {
+        "title": "临床与工程闭环协作",
+        "body": "医学专家、AI工程师和产品团队处于同一闭环。报告模型不是孤立发明后\"适配\"医院，而是与至今仍手动书写这些报告的人共同设计。\n\n因此DocNote能从自由口述转向结构化专科记录、手术报告、随访记录和出院摘要，而不会强制医生使用通用门诊模板。\n\n工程质量体现为速度、可靠性和平静界面。临床质量体现为术语、结构和对实际工作流程的尊重。"
+      },
+      {
+        "title": "从演示到全院部署",
+        "body": "优秀的环境记录演示很简单，可靠的全院部署则不然。我们的销售、上线和支持团队帮助诊所规划工作流、选择正确报告模型、连接EHR路径并按需培训，同时不影响诊疗。\n\n我们全程参与试点、采购和复杂中期——专科例外、模板偏好、多语言病房和营销网站从不提及的IT检查清单。\n\n目标很简单：更多时间留给患者，更少夜晚耗费记录，建立医生愿意向同事推荐的文档系统。"
+      }
+    ],
+    "highlightsClosing": "如今团队涵盖临床领导、深度工程、市场推广和传播——共同使命是：将诊疗转化为秒级可靠的临床文档，以瑞士托管隐私为核心。我们与明天就将使用产品的人们共同构建。"
+  },
+  "tutorial": {
+    "title": "DocNote入门指南",
+    "subtitle": "跟随简单步骤改变您的医疗文档工作流程",
+    "step1": {
+      "title": "下载移动应用或访问网页端",
+      "description": "从手机应用商店下载DocNote移动应用，或直接通过网页端访问：",
+      "ios": "App Store下载",
+      "android": "Google Play下载"
+    },
+    "step2": {
+      "title": "创建账户",
+      "description": "输入专业邮箱创建账户。我们将发送激活码。",
+      "trialInfo": "收到并输入激活码后，您的30次问诊试用将开始。"
+    },
+    "step3": {
+      "title": "主界面",
+      "description": "开始使用我们的解决方案减轻行政负担，重拾工作乐趣。您可观看下方教程了解主要功能。",
+      "chooseModel": "从首页选择最适合您需求的报告模板：",
+      "models": {
+        "dictation": {
+          "title": "口述记录",
+          "description": "自动结构化的自由文本口述"
+        },
+        "general": {
+          "title": "全科医生问诊",
+          "description": "为初级护理设计的简洁临床结构化记录"
+        },
+        "specialist": {
+          "title": "专科会诊",
+          "description": "以致转诊医生的正式信件形式呈现的专科会诊详情"
+        },
+        "operative": {
+          "title": "手术报告",
+          "description": "结构化手术过程报告"
+        },
+        "followUp": {
+          "title": "医疗随访记录",
+          "description": "住院患者标准化每日病程记录"
+        },
+        "discharge": {
+          "title": "出院信",
+          "description": "整合住院期间所有文档的出院摘要"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备开始了吗？",
+      "subtitle": "立即下载应用开启30次问诊试用。",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "webApp": "网页端",
+      "getDemo": "预约演示"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "联系我们的医院团队。瑞士地区联系Vincent，法国医疗机构联系Alice。",
+    "bookDemo": "预约演示",
+    "emailLabel": "邮箱",
+    "phoneLabel": "电话",
+    "locationLabel": "所在地",
+    "switzerland": "瑞士",
+    "france": "法国",
+    "vincentName": "Dr. Vincent Tan",
+    "aliceName": "Dr. Alice Gilson",
+    "vincentRole": "医学博士兼董事总经理",
+    "aliceRole": "医学博士兼董事总经理",
+    "vincentFocus": "瑞士医院诊所——演示、试点和EHR部署",
+    "aliceFocus": "法国医疗机构——医院、诊所和采购洽谈",
+    "vincentCity": "瑞士日内瓦",
+    "aliceCity": "法国",
+    "writeEmail": "写邮件",
+    "callPhone": "致电",
+    "hoursLabel": "可联络时间",
+    "hoursValue": "周一至周五·一个工作日内回复",
+    "responseLabel": "最适合",
+    "responseValue": "医院演示、价格及集成咨询",
+    "companyLabel": "公司",
+    "companyValue": "DocNote·瑞士托管临床AI",
+    "generalEmailLabel": "一般咨询",
+    "generalEmail": "hello@docnote.ch",
+    "hostingNote": "健康数据托管于瑞士。我们绝不将您的诊疗记录用于模型训练。"
+  }
+}

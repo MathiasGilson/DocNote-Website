@@ -1,11 +1,17 @@
 ---
+import { getEntry } from 'astro:content';
+
 interface Props {
   translations: any;
 }
 
-const { translations: t } = Astro.props;
+type Item = { quote: string; author: string; role: string; image: string };
 
-const testimonials = [
+const { translations: t } = Astro.props;
+const enEntry = await getEntry('pages', 'en');
+const enItems = (enEntry?.data.testimonials.items || []) as Item[];
+
+const legacyFallback: Item[] = [
   {
     quote: t.testimonials.quote1,
     author: t.testimonials.author1,
@@ -25,13 +31,18 @@ const testimonials = [
     image: '/images/ris.png',
   },
 ];
+
+const locItems = (t.testimonials.items || []) as Item[];
+// Prefer curated items (live site uses 3 real clinician quotes); avoid AI-expanded sets.
+const testimonials: Item[] =
+  locItems.length >= 3 ? locItems.slice(0, 3) : enItems.length >= 3 ? enItems.slice(0, 3) : legacyFallback;
 ---
 
 <section class="py-20">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <span class="text-xs font-medium text-gray-400 uppercase tracking-widest mb-8 block">{t.testimonials.badge}</span>
+    <span class="text-xs font-medium text-gray-400 uppercase tracking-widest mb-8 block reveal">{t.testimonials.badge}</span>
 
-    <div class="relative" id="testimonial-container">
+    <div class="relative reveal reveal-delay-1" id="testimonial-container">
       {testimonials.map((testimonial, index) => (
         <div
           class:list={['testimonial-slide absolute inset-0 transition-opacity duration-500 ease-in-out', index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none']}
@@ -41,15 +52,19 @@ const testimonials = [
             &ldquo;{testimonial.quote}&rdquo;
           </blockquote>
 
-          <div class="flex flex-col items-center gap-3">
+          <div class="flex flex-col items-center gap-4">
             <img
               src={testimonial.image}
               alt={testimonial.author}
-              class="w-10 h-10 rounded-full object-cover"
+              width="112"
+              height="112"
+              class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-top ring-1 ring-gray-200 shadow-sm"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
             />
             <div>
-              <p class="text-sm font-semibold text-gray-900">{testimonial.author}</p>
-              <p class="text-xs text-gray-500">{testimonial.role}</p>
+              <p class="text-base font-semibold text-gray-900">{testimonial.author}</p>
+              <p class="text-sm text-gray-500 mt-0.5">{testimonial.role}</p>
             </div>
           </div>
         </div>
@@ -57,18 +72,25 @@ const testimonials = [
     </div>
 
     <div class="flex items-center justify-center gap-3 mt-10">
-      <button id="testimonial-prev" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors">
+      <button id="testimonial-prev" class="w-10 h-10 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors" aria-label="Previous testimonial">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
       </button>
-      <div class="flex items-center gap-2" id="testimonial-dots">
-        {testimonials.map((_, index) => (
-          <button
-            class:list={['testimonial-dot w-2 h-2 rounded-full transition-all duration-300', index === 0 ? 'bg-violet-500 w-6' : 'bg-gray-300']}
-            data-dot={index}
-          />
-        ))}
+      <div class="flex flex-col items-center gap-2 min-w-[4.5rem]">
+        <div class="flex flex-wrap items-center justify-center gap-1.5 max-w-[14rem]" id="testimonial-dots">
+          {testimonials.map((_, index) => (
+            <button
+              type="button"
+              class:list={['testimonial-dot h-1.5 rounded-full transition-all duration-300', index === 0 ? 'bg-violet-500 w-5' : 'bg-gray-300 w-1.5']}
+              data-dot={index}
+              aria-label={`Testimonial ${index + 1}`}
+            />
+          ))}
+        </div>
+        <p class="text-xs text-gray-400 tabular-nums" id="testimonial-count" aria-live="polite">
+          1 / {testimonials.length}
+        </p>
       </div>
-      <button id="testimonial-next" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors">
+      <button id="testimonial-next" class="w-10 h-10 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors" aria-label="Next testimonial">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
       </button>
     </div>
@@ -81,10 +103,10 @@ const testimonials = [
   const dots = document.querySelectorAll('.testimonial-dot');
   const prevBtn = document.getElementById('testimonial-prev');
   const nextBtn = document.getElementById('testimonial-next');
+  const countEl = document.getElementById('testimonial-count');
   let currentSlide = 0;
   let autoplayTimer: number;
 
-  // Set container height to tallest slide
   function updateContainerHeight() {
     if (!container) return;
     let maxHeight = 0;
@@ -121,13 +143,15 @@ const testimonials = [
 
     dots.forEach((dot, i) => {
       if (i === index) {
-        dot.classList.add('bg-violet-500', 'w-6');
-        dot.classList.remove('bg-gray-300');
+        dot.classList.add('bg-violet-500', 'w-5');
+        dot.classList.remove('bg-gray-300', 'w-1.5');
       } else {
-        dot.classList.remove('bg-violet-500', 'w-6');
-        dot.classList.add('bg-gray-300');
+        dot.classList.remove('bg-violet-500', 'w-5');
+        dot.classList.add('bg-gray-300', 'w-1.5');
       }
     });
+
+    if (countEl) countEl.textContent = `${index + 1} / ${slides.length}`;
 
     currentSlide = index;
     resetAutoplay();

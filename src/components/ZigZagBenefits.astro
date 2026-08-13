@@ -1,0 +1,968 @@
+---
+interface Item {
+  title: string;
+  body: string;
+}
+
+interface Props {
+  badge: string;
+  title: string;
+  subtitle: string;
+  items: Item[];
+}
+
+const { badge, title, subtitle, items } = Astro.props;
+---
+
+  <!-- Benefits zig-zag -->
+  <section class="patient-benefits relative py-16 sm:py-24 overflow-hidden">
+    <div class="patient-atmosphere patient-atmosphere--soft" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12 sm:mb-16 reveal">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+          <span class="patient-badge-dot" aria-hidden="true"></span>
+          {badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{subtitle}</p>
+      </div>
+
+      <div class="flex flex-col gap-12 sm:gap-16 lg:gap-20" data-patient-benefits>
+        {items.map((item, i) => (
+          <article
+            class:list={[
+              'patient-benefit reveal',
+              i % 2 === 1 && 'patient-benefit--flip',
+              i % 4 === 0 && 'reveal-delay-1',
+              i % 4 === 1 && 'reveal-delay-2',
+              i % 4 === 2 && 'reveal-delay-3',
+              i % 4 === 3 && 'reveal-delay-4',
+            ]}
+            data-benefit={i}
+          >
+            <div class="patient-benefit-visual" aria-hidden="true" data-benefit-viz={i}>
+              <span class="patient-benefit-num">{String(i + 1).padStart(2, '0')}</span>
+
+              {i === 0 && (
+                <div class="pb-scene pb-scene--present">
+                  <div class="pb-present-glow"></div>
+                  <div class="pb-present-row">
+                    <div class="pb-avatar pb-avatar--doc">
+                      <span class="pb-avatar-face">
+                        <span class="pb-eye"></span>
+                        <span class="pb-eye"></span>
+                      </span>
+                      <span class="pb-avatar-label">MD</span>
+                    </div>
+                    <div class="pb-present-link">
+                      <span class="pb-pulse-ring r1"></span>
+                      <span class="pb-pulse-ring r2"></span>
+                      <span class="pb-gaze"></span>
+                    </div>
+                    <div class="pb-avatar pb-avatar--patient">
+                      <span class="pb-avatar-face">
+                        <span class="pb-eye"></span>
+                        <span class="pb-eye"></span>
+                      </span>
+                      <span class="pb-avatar-label">You</span>
+                    </div>
+                  </div>
+                  <div class="pb-chat">
+                    <span class="pb-bubble pb-bubble--l"></span>
+                    <span class="pb-bubble pb-bubble--r"></span>
+                    <span class="pb-bubble pb-bubble--l short"></span>
+                  </div>
+                </div>
+              )}
+
+              {i === 1 && (
+                <div class="pb-scene pb-scene--checklist">
+                  <div class="pb-check-card">
+                    <div class="pb-check-head">
+                      <span class="pb-check-live"></span>
+                      <span class="pb-check-head-bar"></span>
+                    </div>
+                    <ul class="pb-check-list">
+                      <li class="pb-check-item c1">
+                        <span class="pb-check-box"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="pb-check-line len-full"></span>
+                      </li>
+                      <li class="pb-check-item c2">
+                        <span class="pb-check-box"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="pb-check-line len-80"></span>
+                      </li>
+                      <li class="pb-check-item c3">
+                        <span class="pb-check-box"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="pb-check-line len-60"></span>
+                      </li>
+                      <li class="pb-check-item c4">
+                        <span class="pb-check-box"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="pb-check-line len-66"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {i === 2 && (
+                <div class="pb-scene pb-scene--time">
+                  <div class="pb-clock">
+                    <span class="pb-clock-face">
+                      <span class="pb-clock-tick t12"></span>
+                      <span class="pb-clock-tick t3"></span>
+                      <span class="pb-clock-tick t6"></span>
+                      <span class="pb-clock-tick t9"></span>
+                      <span class="pb-clock-hand pb-clock-hand--h"></span>
+                      <span class="pb-clock-hand pb-clock-hand--m"></span>
+                      <span class="pb-clock-center"></span>
+                    </span>
+                  </div>
+                  <div class="pb-time-reclaim">
+                    <div class="pb-time-wave">
+                      <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <span class="pb-time-badge">+care</span>
+                  </div>
+                </div>
+              )}
+
+              {i === 3 && (
+                <div class="pb-scene pb-scene--notes">
+                  <div class="pb-note-card">
+                    <div class="pb-note-head">
+                      <span class="pb-note-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      </span>
+                      <span class="pb-note-title-bar"></span>
+                    </div>
+                    <div class="pb-note-section s1">
+                      <span class="pb-note-label"></span>
+                      <span class="pb-note-bar"></span>
+                      <span class="pb-note-bar short"></span>
+                    </div>
+                    <div class="pb-note-section s2">
+                      <span class="pb-note-label med"></span>
+                      <span class="pb-note-bar"></span>
+                    </div>
+                    <div class="pb-note-section s3">
+                      <span class="pb-note-label short"></span>
+                      <span class="pb-note-bar med"></span>
+                    </div>
+                    <span class="pb-note-check">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div class="patient-benefit-body">
+              <h3 class="patient-benefit-title">{item.title}</h3>
+              <p class="patient-benefit-text">{item.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+<script>
+  const prefersReduced = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  document.querySelectorAll('[data-patient-benefits]').forEach((benefitsRoot) => {
+    if (!('IntersectionObserver' in window)) return
+    const cards = benefitsRoot.querySelectorAll('.patient-benefit')
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          entry.target.classList.add('is-active')
+          if (prefersReduced()) io.unobserve(entry.target)
+        })
+      },
+      { threshold: 0.35 }
+    )
+    cards.forEach((card) => io.observe(card))
+
+    if (!prefersReduced()) {
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          if (card.getAttribute('data-benefit') === '1' || card.getAttribute('data-benefit') === '3') {
+            card.classList.remove('is-active')
+            void (card as HTMLElement).offsetWidth
+            card.classList.add('is-active')
+          }
+        })
+      })
+    }
+  })
+</script>
+
+<style>
+  .patient-badge-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.18);
+  }
+  .patient-atmosphere,
+  .patient-atmosphere--soft {
+    display: none;
+  }
+  .patient-benefits {
+    background: #fff;
+  }
+
+  .patient-benefit {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .patient-benefit {
+      grid-template-columns: minmax(0, 17.5rem) minmax(0, 1fr);
+      gap: 2.75rem;
+    }
+
+    .patient-benefit--flip {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 17.5rem);
+    }
+
+    .patient-benefit--flip .patient-benefit-visual {
+      order: 2;
+    }
+
+    .patient-benefit--flip .patient-benefit-body {
+      order: 1;
+      text-align: right;
+    }
+
+    .patient-benefit--flip .patient-benefit-text {
+      margin-left: auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .patient-benefit {
+      grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+      gap: 3.25rem;
+    }
+
+    .patient-benefit--flip {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+    }
+  }
+
+  .patient-benefit-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 11.5rem;
+    height: 11.5rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background:
+      radial-gradient(ellipse 70% 80% at 50% 0%, rgba(var(--dn-primary-rgb), 0.1), transparent 65%),
+      linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 14px 36px rgba(var(--dn-primary-rgb), 0.07);
+    overflow: hidden;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .patient-benefit:hover .patient-benefit-visual {
+    border-color: rgba(var(--dn-primary-mid-rgb), 0.28);
+    box-shadow:
+      0 4px 12px rgba(15, 23, 42, 0.05),
+      0 18px 44px rgba(var(--dn-primary-rgb), 0.12);
+    transform: translateY(-2px);
+  }
+
+  .patient-benefit-num {
+    position: absolute;
+    top: 0.85rem;
+    left: 1rem;
+    z-index: 2;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(var(--dn-primary-rgb), 0.42);
+  }
+
+  .patient-benefit-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 640px) {
+    .patient-benefit-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .patient-benefit-text {
+    margin-top: 0.75rem;
+    max-width: 34rem;
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.7;
+  }
+
+  .pb-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 1rem 1rem;
+  }
+
+  /* ── 01 Present: eye-contact conversation ── */
+  .pb-scene--present {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .pb-present-glow {
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(var(--dn-primary-rgb), 0.18), transparent 68%);
+    opacity: 0.55;
+    transition: opacity 0.4s ease;
+  }
+
+  .patient-benefit.is-active .pb-present-glow,
+  .patient-benefit:hover .pb-present-glow {
+    opacity: 1;
+    animation: pb-glow-breathe 2.8s ease-in-out infinite;
+  }
+
+  .pb-present-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .pb-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .pb-avatar-face {
+    position: relative;
+    width: 2.85rem;
+    height: 2.85rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    border: 1.5px solid rgba(var(--dn-primary-mid-rgb), 0.28);
+    background: linear-gradient(160deg, #fff 0%, #f3efff 100%);
+    box-shadow: 0 6px 16px rgba(var(--dn-primary-rgb), 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .pb-avatar--doc .pb-avatar-face {
+    background: linear-gradient(160deg, #fff 0%, #ebe4ff 100%);
+  }
+
+  .pb-avatar--patient .pb-avatar-face {
+    background: linear-gradient(160deg, #fff 0%, #f0f4ff 100%);
+  }
+
+  .patient-benefit.is-active .pb-avatar--doc .pb-avatar-face,
+  .patient-benefit:hover .pb-avatar--doc .pb-avatar-face {
+    transform: translateX(2px);
+  }
+
+  .patient-benefit.is-active .pb-avatar--patient .pb-avatar-face,
+  .patient-benefit:hover .pb-avatar--patient .pb-avatar-face {
+    transform: translateX(-2px);
+  }
+
+  .pb-eye {
+    width: 0.28rem;
+    height: 0.28rem;
+    border-radius: 999px;
+    background: #3b2d5c;
+    opacity: 0.75;
+  }
+
+  .patient-benefit.is-active .pb-eye,
+  .patient-benefit:hover .pb-eye {
+    animation: pb-blink 4.5s ease-in-out infinite;
+  }
+
+  .pb-avatar--patient .pb-eye {
+    animation-delay: 0.4s;
+  }
+
+  .pb-avatar-label {
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(55, 48, 82, 0.55);
+  }
+
+  .pb-present-link {
+    position: relative;
+    width: 2.75rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pb-gaze {
+    width: 1.6rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(var(--dn-primary-rgb), 0.15), rgba(var(--dn-primary-rgb), 0.55), rgba(var(--dn-primary-rgb), 0.15));
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .patient-benefit.is-active .pb-gaze,
+  .patient-benefit:hover .pb-gaze {
+    opacity: 1;
+    animation: pb-gaze-pulse 2.2s ease-in-out infinite;
+  }
+
+  .pb-pulse-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 999px;
+    border: 1.5px solid rgba(var(--dn-primary-mid-rgb), 0.35);
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+  }
+
+  .patient-benefit.is-active .pb-pulse-ring,
+  .patient-benefit:hover .pb-pulse-ring {
+    animation: pb-ring-out 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  .pb-pulse-ring.r2 {
+    animation-delay: 0.7s;
+    border-color: rgba(var(--dn-primary-rgb), 0.22);
+  }
+
+  .pb-chat {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+    width: 7.5rem;
+  }
+
+  .pb-bubble {
+    height: 0.45rem;
+    border-radius: 999px;
+    background: rgba(var(--dn-primary-rgb), 0.12);
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  .pb-bubble--l {
+    width: 72%;
+    align-self: flex-start;
+  }
+
+  .pb-bubble--r {
+    width: 58%;
+    align-self: flex-end;
+    background: rgba(var(--dn-primary-mid-rgb), 0.18);
+  }
+
+  .pb-bubble.short {
+    width: 44%;
+  }
+
+  .patient-benefit.is-active .pb-bubble,
+  .patient-benefit:hover .pb-bubble {
+    animation: pb-bubble-in 3.6s ease-in-out infinite;
+  }
+
+  .pb-bubble--l:nth-child(1) { animation-delay: 0s; }
+  .pb-bubble--r { animation-delay: 0.35s; }
+  .pb-bubble--l.short { animation-delay: 0.7s; }
+
+  @keyframes pb-glow-breathe {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.12); opacity: 1; }
+  }
+
+  @keyframes pb-blink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    94%, 96% { transform: scaleY(0.1); }
+  }
+
+  @keyframes pb-gaze-pulse {
+    0%, 100% { opacity: 0.45; transform: scaleX(0.92); }
+    50% { opacity: 1; transform: scaleX(1); }
+  }
+
+  @keyframes pb-ring-out {
+    0% { transform: translate(-50%, -50%) scale(0.55); opacity: 0; }
+    20% { opacity: 0.65; }
+    100% { transform: translate(-50%, -50%) scale(2.1); opacity: 0; }
+  }
+
+  @keyframes pb-bubble-in {
+    0%, 8% { opacity: 0; transform: translateY(5px); }
+    18%, 70% { opacity: 1; transform: translateY(0); }
+    85%, 100% { opacity: 0.35; transform: translateY(0); }
+  }
+
+  /* ── 02 Nothing missed: checklist ── */
+  .pb-check-card {
+    width: 10.5rem;
+    padding: 0.75rem 0.8rem 0.85rem;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 22px rgba(var(--dn-primary-rgb), 0.08);
+  }
+
+  .pb-check-head {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .pb-check-live {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+  }
+
+  .patient-benefit.is-active .pb-check-live,
+  .patient-benefit:hover .pb-check-live {
+    animation: pb-live-pulse 1.8s ease-in-out infinite;
+  }
+
+  .pb-check-head-bar {
+    height: 0.35rem;
+    width: 3.5rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.1);
+  }
+
+  .pb-check-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .pb-check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .pb-check-box {
+    flex-shrink: 0;
+    width: 0.95rem;
+    height: 0.95rem;
+    border-radius: 0.28rem;
+    border: 1.5px solid rgba(var(--dn-primary-mid-rgb), 0.35);
+    background: #fff;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .pb-check-box svg {
+    width: 0.65rem;
+    height: 0.65rem;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .pb-check-line {
+    height: 0.38rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.1);
+    flex: 1;
+    transform-origin: left;
+  }
+
+  .pb-check-line.len-full { width: 100%; }
+  .pb-check-line.len-80 { width: 80%; flex: none; }
+  .pb-check-line.len-60 { width: 60%; flex: none; }
+  .pb-check-line.len-66 { width: 66%; flex: none; }
+
+  .patient-benefit.is-active .pb-check-item.c1 .pb-check-box,
+  .patient-benefit:hover .pb-check-item.c1 .pb-check-box {
+    background: rgba(var(--dn-primary-rgb), 0.12);
+    border-color: rgba(var(--dn-primary-rgb), 0.45);
+    color: var(--dn-primary-ink);
+    transition-delay: 0.15s;
+  }
+  .patient-benefit.is-active .pb-check-item.c2 .pb-check-box,
+  .patient-benefit:hover .pb-check-item.c2 .pb-check-box { transition-delay: 0.45s; background: rgba(var(--dn-primary-rgb), 0.12); border-color: rgba(var(--dn-primary-rgb), 0.45); color: var(--dn-primary-ink); }
+  .patient-benefit.is-active .pb-check-item.c3 .pb-check-box,
+  .patient-benefit:hover .pb-check-item.c3 .pb-check-box { transition-delay: 0.75s; background: rgba(var(--dn-primary-rgb), 0.12); border-color: rgba(var(--dn-primary-rgb), 0.45); color: var(--dn-primary-ink); }
+  .patient-benefit.is-active .pb-check-item.c4 .pb-check-box,
+  .patient-benefit:hover .pb-check-item.c4 .pb-check-box { transition-delay: 1.05s; background: rgba(var(--dn-primary-rgb), 0.12); border-color: rgba(var(--dn-primary-rgb), 0.45); color: var(--dn-primary-ink); }
+
+  .patient-benefit.is-active .pb-check-item .pb-check-box svg,
+  .patient-benefit:hover .pb-check-item .pb-check-box svg {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .patient-benefit.is-active .c1 .pb-check-box svg,
+  .patient-benefit:hover .c1 .pb-check-box svg { transition-delay: 0.2s; }
+  .patient-benefit.is-active .c2 .pb-check-box svg,
+  .patient-benefit:hover .c2 .pb-check-box svg { transition-delay: 0.5s; }
+  .patient-benefit.is-active .c3 .pb-check-box svg,
+  .patient-benefit:hover .c3 .pb-check-box svg { transition-delay: 0.8s; }
+  .patient-benefit.is-active .c4 .pb-check-box svg,
+  .patient-benefit:hover .c4 .pb-check-box svg { transition-delay: 1.1s; }
+
+  .patient-benefit.is-active .pb-check-line,
+  .patient-benefit:hover .pb-check-line {
+    animation: pb-line-fill 0.45s ease forwards;
+  }
+  .patient-benefit.is-active .c1 .pb-check-line,
+  .patient-benefit:hover .c1 .pb-check-line { animation-delay: 0.15s; background: rgba(var(--dn-primary-rgb), 0.18); }
+  .patient-benefit.is-active .c2 .pb-check-line,
+  .patient-benefit:hover .c2 .pb-check-line { animation-delay: 0.45s; background: rgba(var(--dn-primary-rgb), 0.18); }
+  .patient-benefit.is-active .c3 .pb-check-line,
+  .patient-benefit:hover .c3 .pb-check-line { animation-delay: 0.75s; background: rgba(var(--dn-primary-rgb), 0.18); }
+  .patient-benefit.is-active .c4 .pb-check-line,
+  .patient-benefit:hover .c4 .pb-check-line { animation-delay: 1.05s; background: rgba(var(--dn-primary-rgb), 0.18); }
+
+  @keyframes pb-live-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18); }
+    50% { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.08); }
+  }
+
+  @keyframes pb-line-fill {
+    from { transform: scaleX(0.85); opacity: 0.6; }
+    to { transform: scaleX(1); opacity: 1; }
+  }
+
+  /* ── 03 More time: clock → calm talk ── */
+  .pb-scene--time {
+    gap: 0.85rem;
+  }
+
+  .pb-clock {
+    position: relative;
+    z-index: 1;
+  }
+
+  .pb-clock-face {
+    position: relative;
+    display: block;
+    width: 4.25rem;
+    height: 4.25rem;
+    border-radius: 999px;
+    border: 1.5px solid rgba(var(--dn-primary-mid-rgb), 0.28);
+    background:
+      radial-gradient(circle at 35% 30%, #fff, #f4f0ff 70%);
+    box-shadow: 0 8px 20px rgba(var(--dn-primary-rgb), 0.1);
+    transition: transform 0.45s ease, opacity 0.45s ease;
+  }
+
+  .pb-clock-tick {
+    position: absolute;
+    width: 2px;
+    height: 0.35rem;
+    background: rgba(55, 48, 82, 0.28);
+    border-radius: 1px;
+  }
+
+  .pb-clock-tick.t12 { top: 0.35rem; left: 50%; transform: translateX(-50%); }
+  .pb-clock-tick.t6 { bottom: 0.35rem; left: 50%; transform: translateX(-50%); }
+  .pb-clock-tick.t3 { right: 0.4rem; top: 50%; transform: translateY(-50%) rotate(90deg); }
+  .pb-clock-tick.t9 { left: 0.4rem; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+  .pb-clock-hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+    border-radius: 999px;
+    background: var(--dn-primary-ink);
+  }
+
+  .pb-clock-hand--h {
+    width: 2px;
+    height: 1.1rem;
+    margin-left: -1px;
+    opacity: 0.7;
+    transform: rotate(40deg);
+  }
+
+  .pb-clock-hand--m {
+    width: 1.5px;
+    height: 1.45rem;
+    margin-left: -0.75px;
+    background: var(--dn-primary);
+    transform: rotate(120deg);
+  }
+
+  .patient-benefit.is-active .pb-clock-hand--h,
+  .patient-benefit:hover .pb-clock-hand--h {
+    animation: pb-hand-h 8s linear infinite;
+  }
+
+  .patient-benefit.is-active .pb-clock-hand--m,
+  .patient-benefit:hover .pb-clock-hand--m {
+    animation: pb-hand-m 2.4s linear infinite;
+  }
+
+  .pb-clock-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.35rem;
+    height: 0.35rem;
+    margin: -0.175rem 0 0 -0.175rem;
+    border-radius: 999px;
+    background: var(--dn-primary);
+  }
+
+  .pb-time-reclaim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.45;
+    transform: translateY(4px);
+    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+  }
+
+  .patient-benefit.is-active .pb-time-reclaim,
+  .patient-benefit:hover .pb-time-reclaim {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .patient-benefit.is-active .pb-clock-face,
+  .patient-benefit:hover .pb-clock-face {
+    transform: scale(0.92);
+    opacity: 0.85;
+  }
+
+  .pb-time-wave {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 1.1rem;
+  }
+
+  .pb-time-wave span {
+    width: 3px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--dn-primary), var(--dn-primary-mid));
+    opacity: 0.45;
+    transform-origin: bottom;
+  }
+
+  .pb-time-wave span:nth-child(1) { height: 0.35rem; }
+  .pb-time-wave span:nth-child(2) { height: 0.7rem; }
+  .pb-time-wave span:nth-child(3) { height: 0.5rem; }
+  .pb-time-wave span:nth-child(4) { height: 0.95rem; }
+  .pb-time-wave span:nth-child(5) { height: 0.45rem; }
+
+  .patient-benefit.is-active .pb-time-wave span,
+  .patient-benefit:hover .pb-time-wave span {
+    animation: pb-wave 1.15s ease-in-out infinite;
+  }
+
+  .pb-time-wave span:nth-child(1) { animation-delay: 0s; }
+  .pb-time-wave span:nth-child(2) { animation-delay: 0.1s; }
+  .pb-time-wave span:nth-child(3) { animation-delay: 0.2s; }
+  .pb-time-wave span:nth-child(4) { animation-delay: 0.08s; }
+  .pb-time-wave span:nth-child(5) { animation-delay: 0.25s; }
+
+  .pb-time-badge {
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--dn-primary-ink);
+    background: rgba(var(--dn-primary-rgb), 0.12);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.22);
+    border-radius: 999px;
+    padding: 0.15rem 0.45rem;
+  }
+
+  @keyframes pb-hand-h {
+    from { transform: rotate(40deg); }
+    to { transform: rotate(400deg); }
+  }
+
+  @keyframes pb-hand-m {
+    from { transform: rotate(120deg); }
+    to { transform: rotate(480deg); }
+  }
+
+  @keyframes pb-wave {
+    0%, 100% { transform: scaleY(0.55); opacity: 0.35; }
+    50% { transform: scaleY(1); opacity: 0.9; }
+  }
+
+  /* ── 04 Clearer notes: assembling card ── */
+  .pb-note-card {
+    position: relative;
+    width: 10.75rem;
+    padding: 0.7rem 0.75rem 0.8rem;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 8px 22px rgba(var(--dn-primary-rgb), 0.08);
+  }
+
+  .pb-note-head {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .pb-note-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.35rem;
+    color: var(--dn-primary-ink);
+    background: rgba(var(--dn-primary-rgb), 0.12);
+  }
+
+  .pb-note-title-bar {
+    height: 0.35rem;
+    width: 4rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.12);
+  }
+
+  .pb-note-section {
+    margin-top: 0.45rem;
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  .pb-note-label {
+    display: block;
+    height: 0.28rem;
+    width: 2.2rem;
+    border-radius: 999px;
+    background: rgba(var(--dn-primary-rgb), 0.28);
+    margin-bottom: 0.28rem;
+  }
+
+  .pb-note-label.med { width: 1.7rem; }
+  .pb-note-label.short { width: 1.35rem; }
+
+  .pb-note-bar {
+    display: block;
+    height: 0.32rem;
+    width: 100%;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.1);
+    margin-top: 0.18rem;
+    transform-origin: left;
+    transform: scaleX(0.3);
+  }
+
+  .pb-note-bar.short { width: 62%; }
+  .pb-note-bar.med { width: 78%; }
+
+  .pb-note-check {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(135deg, var(--dn-primary), var(--dn-primary-mid));
+    opacity: 0;
+    transform: scale(0.6);
+    box-shadow: 0 4px 12px rgba(var(--dn-primary-rgb), 0.28);
+  }
+
+  .patient-benefit.is-active .pb-note-section,
+  .patient-benefit:hover .pb-note-section {
+    animation: pb-section-in 0.45s ease forwards;
+  }
+
+  .patient-benefit.is-active .pb-note-section.s1,
+  .patient-benefit:hover .pb-note-section.s1 { animation-delay: 0.1s; }
+  .patient-benefit.is-active .pb-note-section.s2,
+  .patient-benefit:hover .pb-note-section.s2 { animation-delay: 0.35s; }
+  .patient-benefit.is-active .pb-note-section.s3,
+  .patient-benefit:hover .pb-note-section.s3 { animation-delay: 0.6s; }
+
+  .patient-benefit.is-active .pb-note-bar,
+  .patient-benefit:hover .pb-note-bar {
+    animation: pb-bar-grow 0.4s ease forwards;
+  }
+
+  .patient-benefit.is-active .s1 .pb-note-bar,
+  .patient-benefit:hover .s1 .pb-note-bar { animation-delay: 0.2s; }
+  .patient-benefit.is-active .s2 .pb-note-bar,
+  .patient-benefit:hover .s2 .pb-note-bar { animation-delay: 0.45s; }
+  .patient-benefit.is-active .s3 .pb-note-bar,
+  .patient-benefit:hover .s3 .pb-note-bar { animation-delay: 0.7s; }
+
+  .patient-benefit.is-active .pb-note-check,
+  .patient-benefit:hover .pb-note-check {
+    animation: pb-check-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.95s forwards;
+  }
+
+  @keyframes pb-section-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pb-bar-grow {
+    to { transform: scaleX(1); }
+  }
+
+  @keyframes pb-check-pop {
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>

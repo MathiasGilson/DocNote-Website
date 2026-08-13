@@ -1,0 +1,18 @@
+---
+import SpecialtyFamilyPage from '../../components/pages/SpecialtyFamilyPage.astro';
+import { defaultLocale } from '../../utils/i18n';
+import { specialtyFamilySlugs, isSpecialtyFamilySlug } from '../../content/specialty-families';
+
+export function getStaticPaths() {
+  return specialtyFamilySlugs.map((family) => ({
+    params: { family },
+  }));
+}
+
+const { family } = Astro.params;
+if (!family || !isSpecialtyFamilySlug(family)) {
+  return Astro.redirect('/');
+}
+---
+
+<SpecialtyFamilyPage locale={defaultLocale} family={family} />

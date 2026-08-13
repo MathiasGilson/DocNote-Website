@@ -1,292 +1,378 @@
 ---
+import type { LandingFeatureKey } from '../content/landings';
+
 interface Props {
   translations: any;
+  /** Subset of cards; default = all six (homepage). */
+  keys?: LandingFeatureKey[];
+  sectionId?: string;
+  heading?: { badge?: string; title?: string; subtitle?: string };
+  /** Left-aligned header (landings); homepage stays centered. */
+  align?: 'center' | 'start';
 }
 
-const { translations: t } = Astro.props;
+const {
+  translations: t,
+  keys,
+  sectionId = 'features',
+  heading,
+  align = 'center',
+} = Astro.props;
 
-const features = [
+const recordingTranscript = Array.isArray(t.features.recording.animWords)
+  ? t.features.recording.animWords.join(' ')
+  : String(t.features.recording.animWords || '');
+
+const allFeatures = [
   {
     title: t.features.recording.title,
     description: t.features.recording.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />`,
-    color: 'from-blue-50 to-indigo-50',
+    key: 'recording',
   },
   {
     title: t.features.transcription.title,
     description: t.features.transcription.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
-    color: 'from-emerald-50 to-teal-50',
+    key: 'transcription',
   },
   {
     title: t.features.summaries.title,
     description: t.features.summaries.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />`,
-    color: 'from-violet-50 to-purple-50',
+    key: 'summaries',
   },
   {
     title: t.features.integration.title,
     description: t.features.integration.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />`,
-    color: 'from-amber-50 to-yellow-50',
+    key: 'integration',
   },
   {
     title: t.features.security.title,
     description: t.features.security.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
-    color: 'from-rose-50 to-pink-50',
+    key: 'security',
   },
   {
     title: t.features.languages.title,
     description: t.features.languages.description,
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />`,
-    color: 'from-cyan-50 to-sky-50',
+    key: 'languages',
   },
 ];
+
+const features = keys && keys.length
+  ? keys.map((key) => allFeatures.find((f) => f.key === key)).filter(Boolean)
+  : allFeatures;
+
+const badge = heading?.badge ?? t.features.badge;
+const title = heading?.title ?? t.features.title;
+const subtitle = heading?.subtitle ?? t.features.subtitle;
+const colsClass =
+  features.length <= 2
+    ? 'features-grid features-grid--2'
+    : features.length === 3
+      ? 'features-grid features-grid--3'
+      : features.length === 4
+        ? 'features-grid features-grid--4'
+        : 'features-grid';
 ---
 
-<section class="py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-4">
-      <span class="text-xs font-medium text-gray-400 uppercase tracking-widest">{t.features.badge}</span>
-    </div>
-    <div class="text-center mb-6">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 max-w-2xl mx-auto leading-snug">
-        {t.features.title}
+<section id={sectionId} class="features-section py-20 lg:py-28 scroll-mt-24">
+  <div class="features-atmosphere dn-bg-grid" aria-hidden="true"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class:list={[
+        'mb-10 lg:mb-14 max-w-2xl reveal',
+        align === 'center' ? 'mx-auto text-center' : 'text-left',
+      ]}
+    >
+      <span class="inline-flex items-center gap-2 text-xs font-semibold text-primary-600 uppercase tracking-widest">
+        <span class="features-badge-dot" aria-hidden="true"></span>
+        {badge}
+      </span>
+      <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+        {title}
       </h2>
-    </div>
-    <div class="text-center mb-14">
-      <p class="text-gray-500 max-w-xl mx-auto">
-        {t.features.subtitle}
+      <p class="mt-3 text-base text-gray-500 leading-relaxed">
+        {subtitle}
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class={colsClass}>
       {features.map((feature, i) => (
-        <div class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300">
-          {i === 0 ? (
-            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100">
-              <div class="record-demo">
-                <div class="record-btn">
-                  <div class="record-btn-ring">
-                    <div class="record-btn-dot bg-gradient-to-br from-violet-500 to-indigo-500 shadow-lg shadow-indigo-500/30">
+        <div
+          class:list={[
+            'feature-card-wrap reveal',
+            i % 3 === 0 && 'reveal-delay-1',
+            i % 3 === 1 && 'reveal-delay-2',
+            i % 3 === 2 && 'reveal-delay-3',
+          ]}
+        >
+          <article class="feature-card group" data-feature={feature.key}>
+            {feature.key === 'recording' ? (
+              <div class="feature-viz" data-record-card>
+                <div class="record-demo">
+                  <div class="record-idle" aria-hidden="true">
+                    <div class="record-rings">
+                      <span class="record-ring r1"></span>
+                      <span class="record-ring r2"></span>
+                      <span class="record-ring r3"></span>
+                    </div>
+                    <div class="record-btn-dot bg-brand-gradient-br shadow-brand-glow-sm">
                       <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                       </svg>
                     </div>
+                    <div class="record-wave">
+                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
                   </div>
-                </div>
-                <div class="transcript-ui">
-                  <div class="transcript-header">
-                    <div class="transcript-dot recording"></div>
-                    <span class="transcript-status">{t.features.recording.animStatus}</span>
-                    <span class="transcript-timer">0:12</span>
-                  </div>
-                  <div class="transcript-words">
-                    {t.features.recording.animWords.map((word: string) => (
-                      <span class="tw">{word}</span>
-                    ))}
+                  <div class="transcript-ui">
+                    <div class="transcript-header">
+                      <div class="transcript-dot recording"></div>
+                      <span class="transcript-status">{t.features.recording.animStatus}</span>
+                      <span class="transcript-timer" data-transcript-timer>0:00</span>
+                    </div>
+                    <div class="transcript-words">
+                      <span class="transcript-typed" data-transcript-typed data-full-text={recordingTranscript}></span><span class="transcript-caret" aria-hidden="true"></span>
+                    </div>
+                    <div class="transcript-scrub" aria-hidden="true"></div>
                   </div>
                 </div>
               </div>
-            </div>
-          ) : i === 1 ? (
-            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="transcribe-card">
-              <div class="transcribe-demo">
-                <div class="transcribe-ui animate-correct">
-                  <div class="transcribe-line">{t.features.transcription.animLine1}</div>
-                  <div class="transcribe-line">{t.features.transcription.animLine2Pre}<span class="tw-correct"><span class="tw-wrong">{t.features.transcription.animWrong1}</span><span class="tw-right">{t.features.transcription.animRight1}</span></span>{t.features.transcription.animLine2Post}</div>
-                  <div class="transcribe-line">{t.features.transcription.animLine3Pre}<span class="tw-correct"><span class="tw-wrong">{t.features.transcription.animWrong2}</span><span class="tw-right">{t.features.transcription.animRight2}</span></span>{t.features.transcription.animLine3Post}</div>
+            ) : feature.key === 'transcription' ? (
+              <div class="feature-viz" id="transcribe-card" data-transcribe-card>
+                <div class="transcribe-demo">
+                  <div class="transcribe-ui animate-correct">
+                    <div class="transcribe-line l1">
+                      <span class="tl-word">{t.features.transcription.animLine1}</span>
+                    </div>
+                    <div class="transcribe-line l2">
+                      {t.features.transcription.animLine2Pre}
+                      <span class="tw-correct">
+                        <span class="tw-wrong">{t.features.transcription.animWrong1}</span>
+                        <span class="tw-right">{t.features.transcription.animRight1}</span>
+                      </span>
+                      {t.features.transcription.animLine2Post}
+                    </div>
+                    <div class="transcribe-line l3">
+                      {t.features.transcription.animLine3Pre}
+                      <span class="tw-correct">
+                        <span class="tw-wrong">{t.features.transcription.animWrong2}</span>
+                        <span class="tw-right">{t.features.transcription.animRight2}</span>
+                      </span>
+                      {t.features.transcription.animLine3Post}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ) : i === 2 ? (
-            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="summary-card">
-              <div class="summary-demo">
-                <div class="summary-skeleton">
-                  <div class="skel-header">
-                    <div class="skel-icon"></div>
-                    <div class="skel-title-bar"></div>
-                  </div>
-                  <div class="skel-sections">
-                    <div class="skel-block">
-                      <div class="skel-label-bar"></div>
-                      <div class="skel-line"></div>
-                      <div class="skel-line w-3/5"></div>
+            ) : feature.key === 'summaries' ? (
+              <div class="feature-viz" id="summary-card" data-summary-card>
+                <div class="summary-demo">
+                  <div class="summary-skeleton" aria-hidden="true">
+                    <div class="skel-header">
+                      <div class="skel-icon"></div>
+                      <div class="skel-title-bar"></div>
                     </div>
-                    <div class="skel-block">
-                      <div class="skel-label-bar w-16"></div>
-                      <div class="skel-line"></div>
-                    </div>
-                    <div class="skel-block">
-                      <div class="skel-label-bar w-14"></div>
-                      <div class="skel-line w-3/4"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="summary-doc">
-                  <div class="summary-doc-header">
-                    <div class="summary-doc-icon">
-                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#8B5CF6" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                    </div>
-                    <span class="summary-doc-title">{t.features.summaries.animTitle}</span>
-                  </div>
-                  <div class="summary-sections">
-                    <div class="summary-section s-1">
-                      <div class="summary-section-label">{t.features.summaries.animSection1}</div>
-                      <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
-                      <div class="summary-section-bar short"><div class="summary-bar-fill"></div></div>
-                    </div>
-                    <div class="summary-section s-2">
-                      <div class="summary-section-label">{t.features.summaries.animSection2}</div>
-                      <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
-                    </div>
-                    <div class="summary-section s-3">
-                      <div class="summary-section-label">{t.features.summaries.animSection3}</div>
-                      <div class="summary-section-bar med"><div class="summary-bar-fill"></div></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="summary-badge">
-                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          ) : i === 3 ? (
-            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="ehr-card">
-              <div class="ehr-demo">
-                <div class="ehr-system">
-                  <div class="ehr-header">
-                    <div class="ehr-header-dots">
-                      <span class="ehr-dot-r"></span><span class="ehr-dot-y"></span><span class="ehr-dot-g"></span>
-                    </div>
-                    <span class="ehr-header-title">{t.features.integration.animTitle}</span>
-                  </div>
-                  <div class="ehr-body">
-                    <div class="ehr-row">
-                      <div class="ehr-label">{t.features.integration.animPatient}</div>
-                      <div class="ehr-value"><div class="ehr-bar w-20"></div></div>
-                    </div>
-                    <div class="ehr-row">
-                      <div class="ehr-label">{t.features.integration.animDob}</div>
-                      <div class="ehr-value"><div class="ehr-bar w-14"></div></div>
-                    </div>
-                    <div class="ehr-divider"></div>
-                    <div class="ehr-row">
-                      <div class="ehr-label">{t.features.integration.animNotes}</div>
-                      <div class="ehr-value ehr-empty-slot">
-                        <span class="ehr-empty-text">{t.features.integration.animNoReport}</span>
+                    <div class="skel-sections">
+                      <div class="skel-block">
+                        <div class="skel-label-bar"></div>
+                        <div class="skel-line"></div>
+                        <div class="skel-line w-3/5"></div>
+                      </div>
+                      <div class="skel-block">
+                        <div class="skel-label-bar w-16"></div>
+                        <div class="skel-line"></div>
+                      </div>
+                      <div class="skel-block">
+                        <div class="skel-label-bar w-14"></div>
+                        <div class="skel-line w-3/4"></div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="ehr-report-card">
-                  <div class="ehr-report-icon">
-                    <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="#8B5CF6" stroke-width="2.5">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <div class="summary-doc">
+                    <div class="summary-doc-header">
+                      <div class="summary-doc-icon">
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <span class="summary-doc-title">{t.features.summaries.animTitle}</span>
+                    </div>
+                    <div class="summary-sections">
+                      <div class="summary-section s-1">
+                        <div class="summary-section-label">{t.features.summaries.animSection1}</div>
+                        <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
+                        <div class="summary-section-bar short"><div class="summary-bar-fill"></div></div>
+                      </div>
+                      <div class="summary-section s-2">
+                        <div class="summary-section-label">{t.features.summaries.animSection2}</div>
+                        <div class="summary-section-bar"><div class="summary-bar-fill"></div></div>
+                      </div>
+                      <div class="summary-section s-3">
+                        <div class="summary-section-label">{t.features.summaries.animSection3}</div>
+                        <div class="summary-section-bar med"><div class="summary-bar-fill"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="summary-badge">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div class="ehr-report-lines">
-                    <div class="ehr-report-line"></div>
-                    <div class="ehr-report-line short"></div>
-                  </div>
-                </div>
-                <div class="ehr-success-badge">
-                  <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
                 </div>
               </div>
-            </div>
-          ) : i === 4 ? (
-            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="security-card">
-              <div class="encrypt-demo">
-                <div class="encrypt-lines">
-                  <div class="encrypt-row r-1">
-                    <span class="encrypt-label">{t.features.security.animLabel1}</span>
-                    <span class="encrypt-plain">{t.features.security.animValue1}</span>
-                    <span class="encrypt-cipher">••••• •••••••</span>
+            ) : feature.key === 'integration' ? (
+              <div class="feature-viz" id="ehr-card" data-ehr-card>
+                <div class="ehr-demo">
+                  <div class="ehr-system">
+                    <div class="ehr-header">
+                      <div class="ehr-header-dots">
+                        <span class="ehr-dot-r"></span><span class="ehr-dot-y"></span><span class="ehr-dot-g"></span>
+                      </div>
+                      <span class="ehr-header-title">{t.features.integration.animTitle}</span>
+                    </div>
+                    <div class="ehr-body">
+                      <div class="ehr-row">
+                        <div class="ehr-label">{t.features.integration.animPatient}</div>
+                        <div class="ehr-value"><div class="ehr-bar fill-a"></div></div>
+                      </div>
+                      <div class="ehr-row">
+                        <div class="ehr-label">{t.features.integration.animDob}</div>
+                        <div class="ehr-value"><div class="ehr-bar fill-b"></div></div>
+                      </div>
+                      <div class="ehr-divider"></div>
+                      <div class="ehr-row">
+                        <div class="ehr-label">{t.features.integration.animNotes}</div>
+                        <div class="ehr-value ehr-empty-slot">
+                          <span class="ehr-empty-text">{t.features.integration.animNoReport}</span>
+                          <div class="ehr-filled-notes" aria-hidden="true">
+                            <span class="ehr-note-line"></span>
+                            <span class="ehr-note-line short"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="encrypt-row r-2">
-                    <span class="encrypt-label">{t.features.security.animLabel2}</span>
-                    <span class="encrypt-plain">{t.features.security.animValue2}</span>
-                    <span class="encrypt-cipher">••.••.••••</span>
-                  </div>
-                  <div class="encrypt-row r-3">
-                    <span class="encrypt-label">{t.features.security.animLabel3}</span>
-                    <span class="encrypt-plain">{t.features.security.animValue3}</span>
-                    <span class="encrypt-cipher">•••• • ••••••••</span>
-                  </div>
-                  <div class="encrypt-row r-4">
-                    <span class="encrypt-label">{t.features.security.animLabel4}</span>
-                    <span class="encrypt-plain">{t.features.security.animValue4}</span>
-                    <span class="encrypt-cipher">••••• ••••••••</span>
-                  </div>
-                </div>
-                <div class="encrypt-lock">
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                    <path class="lock-shackle" d="M7 11V7a5 5 0 0110 0v4" />
-                  </svg>
-                </div>
-                <div class="encrypt-shield-badge">
-                  <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div class="h-36 bg-white flex items-center justify-center relative overflow-hidden border-b border-gray-100" id="lang-card">
-              <div class="lang-demo">
-                <div class="lang-tabs">
-                  <span class="lang-tab is-active" data-lang-tab="fr">FR</span>
-                  <span class="lang-tab" data-lang-tab="en">EN</span>
-                  <span class="lang-tab" data-lang-tab="it">IT</span>
-                  <span class="lang-tab" data-lang-tab="es">ES</span>
-                  <span class="lang-tab" data-lang-tab="ar">AR</span>
-                </div>
-                <div class="lang-doc">
-                  <div class="lang-doc-header">
-                    <div class="lang-doc-icon">
-                      <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="#8B5CF6" stroke-width="2.5">
+                  <div class="ehr-report-card">
+                    <div class="ehr-report-icon">
+                      <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     </div>
-                    <span class="lang-doc-title">
-                      <span class="lang-title-text is-active" data-lang-title="fr">Rapport médical</span>
-                      <span class="lang-title-text" data-lang-title="en">Medical report</span>
-                      <span class="lang-title-text" data-lang-title="it">Referto medico</span>
-                      <span class="lang-title-text" data-lang-title="es">Informe médico</span>
-                      <span class="lang-title-text" data-lang-title="ar" dir="rtl">تقرير طبي</span>
-                    </span>
+                    <div class="ehr-report-lines">
+                      <div class="ehr-report-line"></div>
+                      <div class="ehr-report-line short"></div>
+                    </div>
                   </div>
-                  <div class="lang-lines">
-                    <div class="lang-line l-1"><div class="lang-bar"></div></div>
-                    <div class="lang-line l-2"><div class="lang-bar w-4/5"></div></div>
-                    <div class="lang-line l-3"><div class="lang-bar w-3/5"></div></div>
-                    <div class="lang-line l-4"><div class="lang-bar w-11/12"></div></div>
-                    <div class="lang-line l-5"><div class="lang-bar w-2/3"></div></div>
-                    <div class="lang-line l-6"><div class="lang-bar w-4/5"></div></div>
-                    <div class="lang-line l-7"><div class="lang-bar w-1/2"></div></div>
+                  <div class="ehr-success-badge">
+                    <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                </div>
-                <div class="lang-badge">
-                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
                 </div>
               </div>
+            ) : feature.key === 'security' ? (
+              <div class="feature-viz feature-viz--flat" id="security-card" data-security-card>
+                <div class="encrypt-demo" data-encrypt-demo>
+                  <div class="encrypt-cluster">
+                    <div class="encrypt-lock" data-encrypt-lock>
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" />
+                      </svg>
+                    </div>
+                    <div class="encrypt-lines">
+                      <div class="encrypt-row r-1">
+                        <span class="encrypt-label">{t.features.security.animLabel1}</span>
+                        <span
+                          class="encrypt-value"
+                          data-encrypt-value
+                          data-plain={t.features.security.animValue1}
+                          data-cipher="••••• •••••••"
+                        >{t.features.security.animValue1}</span>
+                      </div>
+                      <div class="encrypt-row r-2">
+                        <span class="encrypt-label">{t.features.security.animLabel2}</span>
+                        <span
+                          class="encrypt-value"
+                          data-encrypt-value
+                          data-plain={t.features.security.animValue2}
+                          data-cipher="••.••.••••"
+                        >{t.features.security.animValue2}</span>
+                      </div>
+                      <div class="encrypt-row r-3">
+                        <span class="encrypt-label">{t.features.security.animLabel3}</span>
+                        <span
+                          class="encrypt-value"
+                          data-encrypt-value
+                          data-plain={t.features.security.animValue3}
+                          data-cipher="•••• • ••••••••"
+                        >{t.features.security.animValue3}</span>
+                      </div>
+                      <div class="encrypt-row r-4">
+                        <span class="encrypt-label">{t.features.security.animLabel4}</span>
+                        <span
+                          class="encrypt-value"
+                          data-encrypt-value
+                          data-plain={t.features.security.animValue4}
+                          data-cipher="••••• ••••••••"
+                        >{t.features.security.animValue4}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="encrypt-shield-badge" data-encrypt-badge aria-hidden="true">
+                    <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div class="feature-viz" id="lang-card" data-lang-card>
+                <div class="lang-demo">
+                  <div class="lang-tabs">
+                    <span class="lang-tab is-active" data-lang-tab="fr">FR</span>
+                    <span class="lang-tab" data-lang-tab="en">EN</span>
+                    <span class="lang-tab" data-lang-tab="it">IT</span>
+                    <span class="lang-tab" data-lang-tab="es">ES</span>
+                    <span class="lang-tab" data-lang-tab="ar">AR</span>
+                  </div>
+                  <div class="lang-doc">
+                    <div class="lang-doc-header">
+                      <div class="lang-doc-icon">
+                        <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <span class="lang-doc-title">
+                        <span class="lang-title-text is-active" data-lang-title="fr">Rapport médical</span>
+                        <span class="lang-title-text" data-lang-title="en">Medical report</span>
+                        <span class="lang-title-text" data-lang-title="it">Referto medico</span>
+                        <span class="lang-title-text" data-lang-title="es">Informe médico</span>
+                        <span class="lang-title-text" data-lang-title="ar" dir="rtl">تقرير طبي</span>
+                      </span>
+                    </div>
+                    <div class="lang-lines">
+                      <div class="lang-line l-1"><div class="lang-bar"></div></div>
+                      <div class="lang-line l-2"><div class="lang-bar w-4/5"></div></div>
+                      <div class="lang-line l-3"><div class="lang-bar w-3/5"></div></div>
+                      <div class="lang-line l-4"><div class="lang-bar w-11/12"></div></div>
+                      <div class="lang-line l-5"><div class="lang-bar w-2/3"></div></div>
+                      <div class="lang-line l-6"><div class="lang-bar w-4/5"></div></div>
+                      <div class="lang-line l-7"><div class="lang-bar w-1/2"></div></div>
+                    </div>
+                  </div>
+                  <div class="lang-badge">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div class="feature-body">
+              <h3 class="feature-title">{feature.title}</h3>
+              <p class="feature-desc">{feature.description}</p>
             </div>
-          )}
-          <div class="p-5">
-            <h3 class="text-sm font-semibold text-gray-900 mb-1.5">{feature.title}</h3>
-            <p class="text-sm text-gray-500 leading-relaxed">{feature.description}</p>
-          </div>
+          </article>
         </div>
       ))}
     </div>
@@ -294,6 +380,178 @@ const features = [
 </section>
 
 <style>
+  .features-section {
+    position: relative;
+    overflow: hidden;
+    background: #fbfafd;
+  }
+
+  .features-atmosphere {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 45% at 8% 20%, rgba(var(--dn-primary-rgb), 0.12), transparent 58%),
+      radial-gradient(ellipse 42% 40% at 92% 78%, rgba(var(--dn-primary-end-rgb), 0.08), transparent 55%),
+      radial-gradient(ellipse 28% 26% at 55% 6%, rgba(var(--dn-primary-mid-rgb), 0.07), transparent 50%),
+      linear-gradient(180deg, #ffffff 0%, #f5f9ff 48%, #ffffff 100%);
+  }
+
+  .features-atmosphere.dn-bg-grid::before {
+    background-size: 36px 36px;
+  }
+
+  .features-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.18);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 768px) {
+    .features-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .features-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .features-grid--2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 44rem;
+    }
+
+    .features-grid--3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .features-grid--4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .feature-card-wrap {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+  }
+
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 10px 28px rgba(var(--dn-primary-rgb), 0.05);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: rgba(var(--dn-primary-mid-rgb), 0.28);
+    box-shadow:
+      0 4px 12px rgba(15, 23, 42, 0.05),
+      0 16px 40px rgba(var(--dn-primary-rgb), 0.1);
+    transform: translateY(-2px);
+  }
+
+  .feature-viz {
+    position: relative;
+    flex-shrink: 0;
+    height: 10.5rem;
+    min-height: 10.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    background:
+      radial-gradient(ellipse 70% 80% at 50% 0%, rgba(var(--dn-primary-rgb), 0.07), transparent 65%),
+      linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+  }
+
+  .feature-viz:not(.feature-viz--flat)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: center top;
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.28) 45%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.28) 45%,
+      transparent 100%
+    );
+  }
+
+  .feature-viz > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .feature-viz--flat {
+    background: #fff;
+  }
+
+  .feature-viz--flat::before {
+    content: none;
+  }
+
+  .feature-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1.35rem 1.4rem;
+    min-height: 0;
+  }
+
+  .feature-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+
+  .feature-desc {
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  /* ── Card 1: Smart Recording ── */
   .record-demo {
     position: relative;
     width: 100%;
@@ -303,102 +561,176 @@ const features = [
     justify-content: center;
   }
 
-  .record-btn {
+  .record-idle {
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    gap: 10px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
   }
 
-  .record-btn-ring {
-    width: 72px;
-    height: 72px;
+  .record-rings {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, calc(-50% - 10px));
+    pointer-events: none;
+  }
+
+  .record-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
     border-radius: 50%;
-    border: 2px solid rgba(139, 92, 246, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: pulse-ring 2.5s ease-in-out infinite;
+    border: 1.5px solid rgba(var(--dn-primary-mid-rgb), 0.22);
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+    animation: ring-pulse 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  .record-ring.r1 { width: 72px; height: 72px; animation-delay: 0s; }
+  .record-ring.r2 { width: 96px; height: 96px; animation-delay: 0.45s; border-color: rgba(var(--dn-primary-rgb), 0.16); }
+  .record-ring.r3 { width: 120px; height: 120px; animation-delay: 0.9s; border-color: rgba(var(--dn-primary-end-rgb), 0.12); }
+
+  @keyframes ring-pulse {
+    0% { transform: translate(-50%, -50%) scale(0.82); opacity: 0; }
+    18% { opacity: 0.7; }
+    70% { opacity: 0.15; }
+    100% { transform: translate(-50%, -50%) scale(1.18); opacity: 0; }
   }
 
   .record-btn-dot {
+    position: relative;
+    z-index: 1;
     width: 56px;
     height: 56px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: mic-breathe 2.8s ease-in-out infinite;
   }
 
-  @keyframes pulse-ring {
-    0%, 100% { transform: scale(1); border-color: rgba(139, 92, 246, 0.12); }
-    50% { transform: scale(1.1); border-color: rgba(139, 92, 246, 0.3); }
+  @keyframes mic-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+
+  .record-wave {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 18px;
+    z-index: 1;
+  }
+
+  .record-wave span {
+    width: 3px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--dn-primary), var(--dn-primary-mid));
+    opacity: 0.55;
+    animation: wave-bar 1.1s ease-in-out infinite;
+  }
+
+  .record-wave span:nth-child(1) { height: 6px; animation-delay: 0s; }
+  .record-wave span:nth-child(2) { height: 12px; animation-delay: 0.1s; }
+  .record-wave span:nth-child(3) { height: 9px; animation-delay: 0.2s; }
+  .record-wave span:nth-child(4) { height: 16px; animation-delay: 0.05s; }
+  .record-wave span:nth-child(5) { height: 8px; animation-delay: 0.25s; }
+  .record-wave span:nth-child(6) { height: 13px; animation-delay: 0.15s; }
+  .record-wave span:nth-child(7) { height: 7px; animation-delay: 0.3s; }
+
+  @keyframes wave-bar {
+    0%, 100% { transform: scaleY(0.55); opacity: 0.35; }
+    50% { transform: scaleY(1); opacity: 0.85; }
   }
 
   .transcript-ui {
     position: absolute;
-    inset: 16px 20px;
+    inset: 12px 16px 14px;
     opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    pointer-events: none;
+    min-width: 0;
+    overflow: visible;
   }
 
   .transcript-header {
     display: flex;
     align-items: center;
     gap: 6px;
+    flex-shrink: 0;
   }
 
   .transcript-dot {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: #8B5CF6;
+    flex-shrink: 0;
+    background: var(--dn-primary-mid);
+    box-shadow: 0 0 0 0 rgba(var(--dn-primary-mid-rgb), 0.4);
   }
 
   .transcript-status {
-    font-size: 12px;
-    font-weight: 500;
-    color: #8B5CF6;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--dn-primary-ink);
+    white-space: nowrap;
   }
 
   .transcript-timer {
-    font-size: 12px;
+    font-size: 11px;
     color: #9ca3af;
     font-family: ui-monospace, monospace;
     margin-left: auto;
+    flex-shrink: 0;
   }
 
   .transcript-words {
-    font-size: 13px;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    font-size: 12.5px;
     color: #6b7280;
-    line-height: 1.7;
-    position: relative;
+    line-height: 1.55;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    overflow: visible;
   }
 
-  .tw {
-    opacity: 0;
-    transition: opacity 0.12s ease;
-    position: relative;
-    margin-right: 0.25em;
+  .transcript-typed {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
-  .tw.visible {
-    opacity: 1;
-  }
-
-  .tw.active::after {
-    content: '';
+  .transcript-caret {
     display: inline-block;
     width: 1.5px;
-    height: 12px;
-    background: #8B5CF6;
-    vertical-align: middle;
+    height: 0.95em;
     margin-left: 1px;
+    vertical-align: -0.1em;
+    background: var(--dn-primary-mid);
+    border-radius: 1px;
+    opacity: 0;
+  }
+
+  .is-recording-live .transcript-caret {
+    opacity: 1;
     animation: blink 0.8s step-end infinite;
+  }
+
+  .is-recording-live .transcript-caret.is-done {
+    animation: none;
+    opacity: 0.35;
   }
 
   @keyframes blink {
@@ -406,28 +738,73 @@ const features = [
     50% { opacity: 0; }
   }
 
-  .group:hover .record-btn {
+  .transcript-scrub {
+    flex-shrink: 0;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    overflow: hidden;
     opacity: 0;
-    transform: scale(0.7);
+  }
+
+  .transcript-scrub::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    background: linear-gradient(90deg, var(--dn-primary), var(--dn-primary-mid));
+    border-radius: 1px;
+  }
+
+  .group:hover .record-idle,
+  .is-recording-live .record-idle {
+    opacity: 0;
+    transform: scale(0.88);
     pointer-events: none;
   }
 
-  .group:hover .transcript-ui {
+  .group:hover .transcript-ui,
+  .is-recording-live .transcript-ui {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .group:hover .transcript-dot.recording {
-    animation: pulse-dot 1s ease-in-out infinite;
+  .group:hover .transcript-dot.recording,
+  .is-recording-live .transcript-dot.recording {
+    animation: pulse-dot 1.2s ease-in-out infinite;
+  }
+
+  .group:hover .transcript-scrub,
+  .is-recording-live .transcript-scrub {
+    opacity: 1;
+  }
+
+  .group:hover .transcript-scrub::after,
+  .is-recording-live .transcript-scrub::after {
+    animation: scrub-fill 2.2s ease forwards;
+  }
+
+  @keyframes scrub-fill {
+    from { width: 0%; }
+    to { width: 72%; }
   }
 
   @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(var(--dn-primary-mid-rgb), 0.45);
+    }
+    50% {
+      opacity: 0.55;
+      box-shadow: 0 0 0 5px rgba(var(--dn-primary-mid-rgb), 0);
+    }
   }
 
-
-  /* Card 2: Transcription with autocorrect */
+  /* ── Card 2: Transcription cascade ── */
   .transcribe-demo {
     position: relative;
     width: 100%;
@@ -440,17 +817,36 @@ const features = [
   .transcribe-ui {
     position: absolute;
     inset: 0;
-    padding: 24px;
+    padding: 22px 24px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 1px;
     justify-content: center;
+    contain: layout paint;
   }
 
   .transcribe-line {
-    font-size: 14px;
+    font-size: 13px;
     color: #9ca3af;
-    line-height: 1.7;
+    line-height: 1.3;
+    opacity: 0.45;
+    transform: translateX(-4px);
+  }
+
+  .animate-correct .transcribe-line {
+    animation: line-cascade 0.45s ease forwards;
+  }
+
+  .animate-correct .transcribe-line.l1 { animation-delay: 0.05s; }
+  .animate-correct .transcribe-line.l2 { animation-delay: 0.22s; }
+  .animate-correct .transcribe-line.l3 { animation-delay: 0.4s; }
+
+  @keyframes line-cascade {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      color: #6b7280;
+    }
   }
 
   .tw-correct {
@@ -463,41 +859,45 @@ const features = [
     left: 0;
     top: 0;
     white-space: nowrap;
+    color: #9ca3af;
   }
 
   .tw-right {
-    color: #8B5CF6;
+    color: var(--dn-primary-ink);
     font-weight: 600;
     opacity: 0;
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    border-radius: 3px;
+    padding: 0 2px;
   }
 
   .animate-correct .tw-wrong {
-    animation: wrong-hide 0.5s ease 1s forwards;
+    animation: wrong-hide 0.45s ease 1.05s forwards;
   }
 
   .animate-correct .tw-right {
-    animation: right-show 0.5s ease 1.15s forwards;
+    animation: right-show 0.45s ease 1.2s forwards;
   }
 
-  .animate-correct .transcribe-line:nth-child(3) .tw-wrong {
-    animation-delay: 1.5s;
+  .animate-correct .transcribe-line.l3 .tw-wrong {
+    animation-delay: 1.55s;
   }
 
-  .animate-correct .transcribe-line:nth-child(3) .tw-right {
-    animation-delay: 1.65s;
+  .animate-correct .transcribe-line.l3 .tw-right {
+    animation-delay: 1.7s;
   }
 
   @keyframes wrong-hide {
-    from { opacity: 1; }
-    to { opacity: 0; }
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-3px); }
   }
 
   @keyframes right-show {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(3px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Card 3: Structured report summary */
+  /* ── Card 3: Structured Summaries ── */
   .summary-demo {
     position: relative;
     width: 100%;
@@ -509,12 +909,12 @@ const features = [
 
   .summary-skeleton {
     position: absolute;
-    inset: 12px 20px;
+    inset: 14px 20px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     opacity: 1;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.25s ease;
   }
 
   .skel-header {
@@ -527,14 +927,14 @@ const features = [
     width: 18px;
     height: 18px;
     border-radius: 4px;
-    background: #f3f4f6;
+    background: #eef1f6;
   }
 
   .skel-title-bar {
     width: 100px;
     height: 8px;
     border-radius: 4px;
-    background: #f3f4f6;
+    background: #eef1f6;
   }
 
   .skel-sections {
@@ -570,12 +970,12 @@ const features = [
 
   .summary-doc {
     position: absolute;
-    inset: 12px 20px;
+    inset: 14px 20px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     opacity: 0;
-    transition: opacity 0.25s ease 0.05s;
+    transition: opacity 0.28s ease 0.04s;
   }
 
   .group:hover .summary-doc {
@@ -592,7 +992,8 @@ const features = [
     width: 18px;
     height: 18px;
     border-radius: 4px;
-    background: rgba(139, 92, 246, 0.08);
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    color: var(--dn-primary-ink);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -616,13 +1017,13 @@ const features = [
     flex-direction: column;
     gap: 4px;
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(5px);
   }
 
   .summary-section-label {
     font-size: 8px;
     font-weight: 600;
-    color: #8B5CF6;
+    color: var(--dn-primary-ink);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -635,19 +1036,15 @@ const features = [
     overflow: hidden;
   }
 
-  .summary-section-bar.short {
-    width: 60%;
-  }
-
-  .summary-section-bar.med {
-    width: 75%;
-  }
+  .summary-section-bar.short { width: 60%; }
+  .summary-section-bar.med { width: 75%; }
 
   .summary-bar-fill {
     height: 100%;
     width: 0%;
-    background: rgba(139, 92, 246, 0.12);
+    background: linear-gradient(90deg, rgba(var(--dn-primary-rgb), 0.35), rgba(var(--dn-primary-mid-rgb), 0.45));
     border-radius: 2px;
+    transform-origin: left center;
   }
 
   .summary-badge {
@@ -657,45 +1054,56 @@ const features = [
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #8B5CF6;
+    background: var(--dn-gradient);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transform: scale(0.5);
+    box-shadow: var(--dn-glow-sm);
   }
 
   .group:hover .summary-section.s-1 {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.25s ease 0.1s, transform 0.25s ease 0.1s;
+    transition: opacity 0.28s ease 0.1s, transform 0.28s ease 0.1s;
   }
 
   .group:hover .summary-section.s-2 {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.25s ease 0.25s, transform 0.25s ease 0.25s;
+    transition: opacity 0.28s ease 0.28s, transform 0.28s ease 0.28s;
   }
 
   .group:hover .summary-section.s-3 {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.25s ease 0.4s, transform 0.25s ease 0.4s;
+    transition: opacity 0.28s ease 0.46s, transform 0.28s ease 0.46s;
   }
 
-  .group:hover .summary-bar-fill {
+  .group:hover .summary-section.s-1 .summary-bar-fill {
     width: 100%;
-    transition: width 0.4s ease 0.5s;
+    transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.22s;
+  }
+
+  .group:hover .summary-section.s-2 .summary-bar-fill {
+    width: 100%;
+    transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+  }
+
+  .group:hover .summary-section.s-3 .summary-bar-fill {
+    width: 100%;
+    transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.58s;
   }
 
   .group:hover .summary-badge {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.2s ease 0.7s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s;
+    transition: opacity 0.2s ease 0.78s, transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.78s;
   }
 
-  /* Card 4: EHR Integration */
+  /* ── Card 4: EHR Integration ── */
   .ehr-demo {
     position: absolute;
     inset: 0;
@@ -705,20 +1113,20 @@ const features = [
   }
 
   .ehr-system {
-    width: 180px;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
+    width: 188px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 8px;
     overflow: hidden;
     background: white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
   }
 
   .ehr-header {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 5px 8px;
-    background: #fafafa;
+    padding: 6px 8px;
+    background: linear-gradient(180deg, #fafbff, #f5f7fb);
     border-bottom: 1px solid #f3f4f6;
   }
 
@@ -745,10 +1153,10 @@ const features = [
   }
 
   .ehr-body {
-    padding: 7px 8px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
   }
 
   .ehr-row {
@@ -761,16 +1169,35 @@ const features = [
     font-size: 7px;
     font-weight: 600;
     color: #9ca3af;
-    width: 28px;
+    width: 30px;
     flex-shrink: 0;
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
 
+  .ehr-value {
+    flex: 1;
+    min-width: 0;
+  }
+
   .ehr-bar {
-    height: 4px;
+    height: 5px;
     background: #f3f4f6;
-    border-radius: 2px;
+    border-radius: 2.5px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ehr-bar.fill-a { width: 5.5rem; }
+  .ehr-bar.fill-b { width: 3.75rem; }
+
+  .ehr-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    background: linear-gradient(90deg, rgba(var(--dn-primary-rgb), 0.35), rgba(var(--dn-primary-mid-rgb), 0.5));
+    border-radius: inherit;
   }
 
   .ehr-divider {
@@ -780,14 +1207,16 @@ const features = [
   }
 
   .ehr-empty-slot {
+    position: relative;
     flex: 1;
-    height: 18px;
+    height: 20px;
     border: 1px dashed #d1d5db;
-    border-radius: 3px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: border-color 0.3s ease, background 0.3s ease;
+    overflow: hidden;
   }
 
   .ehr-empty-text {
@@ -796,29 +1225,51 @@ const features = [
     transition: opacity 0.2s ease;
   }
 
+  .ehr-filled-notes {
+    position: absolute;
+    inset: 4px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  .ehr-note-line {
+    height: 3px;
+    width: 100%;
+    border-radius: 1.5px;
+    background: rgba(var(--dn-primary-mid-rgb), 0.35);
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  .ehr-note-line.short { width: 70%; }
+
   .ehr-report-card {
     position: absolute;
-    right: calc(50% - 115px);
+    right: calc(50% - 118px);
     top: 50%;
-    transform: translate(-20px, -10px);
-    width: 60px;
+    transform: translate(-24px, -8px) scale(0.92);
+    width: 62px;
     padding: 5px 6px;
     background: white;
-    border: 1px solid rgba(139, 92, 246, 0.25);
-    border-radius: 4px;
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.28);
+    border-radius: 5px;
     display: flex;
     align-items: center;
     gap: 5px;
-    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
+    box-shadow: 0 4px 14px rgba(var(--dn-primary-rgb), 0.12);
     opacity: 0;
-    transition: opacity 0.25s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.25s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    color: var(--dn-primary-ink);
   }
 
   .ehr-report-icon {
     width: 14px;
     height: 14px;
     border-radius: 3px;
-    background: rgba(139, 92, 246, 0.08);
+    background: rgba(var(--dn-primary-rgb), 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -834,23 +1285,21 @@ const features = [
 
   .ehr-report-line {
     height: 3px;
-    background: rgba(139, 92, 246, 0.15);
+    background: rgba(var(--dn-primary-mid-rgb), 0.2);
     border-radius: 1.5px;
     width: 100%;
   }
 
-  .ehr-report-line.short {
-    width: 65%;
-  }
+  .ehr-report-line.short { width: 65%; }
 
   .ehr-success-badge {
     position: absolute;
-    left: calc(50% + 68px);
-    top: 14px;
+    left: calc(50% + 72px);
+    top: 16px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #8B5CF6;
+    background: var(--dn-gradient);
     color: white;
     display: flex;
     align-items: center;
@@ -858,47 +1307,80 @@ const features = [
     opacity: 0;
     transform: scale(0.3);
     transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--dn-glow-sm);
+  }
+
+  .group:hover .ehr-bar.fill-a::after {
+    width: 100%;
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
+  }
+
+  .group:hover .ehr-bar.fill-b::after {
+    width: 100%;
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.22s;
   }
 
   .group:hover .ehr-report-card {
     opacity: 1;
-    transform: translate(49px, -10px);
-    transition: opacity 0.2s ease 0.05s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
+    transform: translate(52px, -8px) scale(1);
+    transition: opacity 0.2s ease 0.28s, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.28s;
   }
 
   .group:hover .ehr-empty-slot {
-    border-color: rgba(139, 92, 246, 0.3);
-    background: rgba(139, 92, 246, 0.03);
-    transition: border-color 0.3s ease 0.3s, background 0.3s ease 0.3s;
+    border-color: rgba(var(--dn-primary-mid-rgb), 0.35);
+    background: rgba(var(--dn-primary-rgb), 0.04);
+    transition: border-color 0.3s ease 0.45s, background 0.3s ease 0.45s;
   }
 
   .group:hover .ehr-empty-text {
     opacity: 0;
-    transition: opacity 0.15s ease 0.2s;
+    transition: opacity 0.15s ease 0.4s;
+  }
+
+  .group:hover .ehr-filled-notes {
+    opacity: 1;
+    transition: opacity 0.2s ease 0.5s;
+  }
+
+  .group:hover .ehr-note-line {
+    transform: scaleX(1);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.55s;
+  }
+
+  .group:hover .ehr-note-line.short {
+    transition-delay: 0.65s;
   }
 
   .group:hover .ehr-success-badge {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.2s ease 0.55s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.55s;
+    transition: opacity 0.2s ease 0.72s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.72s;
   }
 
-  /* Card 5: Security / Encryption */
+  /* ── Card 5: Security (plain → encrypted) ── */
   .encrypt-demo {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 14px 16px;
+  }
+
+  .encrypt-cluster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    max-width: 100%;
   }
 
   .encrypt-lines {
-    position: absolute;
-    inset: 16px 20px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     justify-content: center;
+    min-width: 0;
   }
 
   .encrypt-row {
@@ -906,7 +1388,22 @@ const features = [
     align-items: center;
     gap: 8px;
     position: relative;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
   }
+
+  .encrypt-demo.is-ready .encrypt-row {
+    opacity: 1;
+    transform: none;
+  }
+
+  .encrypt-demo.is-ready .encrypt-row.r-1 { transition-delay: 0.02s; }
+  .encrypt-demo.is-ready .encrypt-row.r-2 { transition-delay: 0.08s; }
+  .encrypt-demo.is-ready .encrypt-row.r-3 { transition-delay: 0.14s; }
+  .encrypt-demo.is-ready .encrypt-row.r-4 { transition-delay: 0.2s; }
 
   .encrypt-label {
     font-size: 9px;
@@ -914,102 +1411,78 @@ const features = [
     color: #9ca3af;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    width: 60px;
+    width: 58px;
     flex-shrink: 0;
   }
 
-  .encrypt-plain {
-    font-size: 13px;
+  .encrypt-value {
+    font-size: 11px;
+    font-weight: 600;
     color: #374151;
-    font-weight: 500;
-    transition: opacity 0.25s ease, transform 0.2s ease;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    transition: color 0.25s ease, letter-spacing 0.25s ease;
   }
 
-  .encrypt-cipher {
-    font-size: 13px;
-    color: #8B5CF6;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    position: absolute;
-    left: 68px;
-    opacity: 0;
-    transform: translateY(2px);
-    transition: opacity 0.25s ease, transform 0.2s ease;
+  .encrypt-value.is-cipher {
+    color: var(--dn-primary-ink);
+    letter-spacing: 0.06em;
   }
 
   .encrypt-lock {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: rgba(139, 92, 246, 0.06);
-    border: 1px solid rgba(139, 92, 246, 0.12);
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: rgba(var(--dn-primary-rgb), 0.08);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #d1d5db;
-    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--dn-primary-ink);
+    opacity: 0.55;
+    transform: scale(0.86);
+    transition:
+      opacity 0.35s ease,
+      transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      background 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
-  .lock-shackle {
-    transition: d 0.3s ease;
+  .encrypt-demo.is-locked .encrypt-lock {
+    opacity: 1;
+    transform: scale(1);
+    background: rgba(var(--dn-primary-rgb), 0.12);
+    border-color: rgba(var(--dn-primary-mid-rgb), 0.35);
+    box-shadow: 0 6px 16px rgba(var(--dn-primary-rgb), 0.14);
   }
 
   .encrypt-shield-badge {
     position: absolute;
-    right: 14px;
+    right: 12px;
     top: 12px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #8B5CF6;
+    background: var(--dn-primary-mid);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transform: scale(0.3);
-    transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(0.5);
+    transition:
+      opacity 0.28s ease,
+      transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .group:hover .encrypt-plain {
-    opacity: 0;
-    transform: translateY(-2px);
-  }
-
-  .group:hover .encrypt-row.r-1 .encrypt-plain { transition-delay: 0.05s; }
-  .group:hover .encrypt-row.r-2 .encrypt-plain { transition-delay: 0.12s; }
-  .group:hover .encrypt-row.r-3 .encrypt-plain { transition-delay: 0.19s; }
-  .group:hover .encrypt-row.r-4 .encrypt-plain { transition-delay: 0.26s; }
-
-  .group:hover .encrypt-cipher {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .group:hover .encrypt-row.r-1 .encrypt-cipher { transition-delay: 0.15s; }
-  .group:hover .encrypt-row.r-2 .encrypt-cipher { transition-delay: 0.22s; }
-  .group:hover .encrypt-row.r-3 .encrypt-cipher { transition-delay: 0.29s; }
-  .group:hover .encrypt-row.r-4 .encrypt-cipher { transition-delay: 0.36s; }
-
-  .group:hover .encrypt-lock {
-    color: #8B5CF6;
-    background: rgba(139, 92, 246, 0.1);
-    border-color: rgba(139, 92, 246, 0.3);
-    box-shadow: 0 0 12px rgba(139, 92, 246, 0.15);
-    transition-delay: 0.3s;
-  }
-
-  .group:hover .encrypt-shield-badge {
+  .encrypt-demo.is-locked .encrypt-shield-badge {
     opacity: 1;
     transform: scale(1);
-    transition-delay: 0.55s;
   }
 
-  /* Card 6: Multilingual report generation */
+  /* ── Card 6: Multilingual ── */
   .lang-demo {
     position: absolute;
     inset: 0;
@@ -1020,32 +1493,38 @@ const features = [
 
   .lang-tabs {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 12px;
     display: flex;
-    gap: 2px;
+    gap: 3px;
     z-index: 2;
+    padding: 3px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(6px);
   }
 
   .lang-tab {
-    font-size: 7px;
+    font-size: 8px;
     font-weight: 700;
-    color: #d1d5db;
+    color: #c4c9d4;
     letter-spacing: 0.03em;
-    padding: 2px 4px;
-    border-radius: 3px;
+    padding: 3px 5px;
+    border-radius: 5px;
     background: transparent;
-    transition: color 0.25s ease, background 0.25s ease;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
   }
 
   .lang-tab.is-active {
-    color: #8B5CF6;
-    background: rgba(139, 92, 246, 0.08);
+    color: var(--dn-primary-ink);
+    background: rgba(var(--dn-primary-rgb), 0.12);
+    transform: scale(1.05);
   }
 
   .lang-doc {
     position: absolute;
-    inset: 12px 16px;
+    inset: 14px 16px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -1061,7 +1540,8 @@ const features = [
     width: 18px;
     height: 18px;
     border-radius: 4px;
-    background: rgba(139, 92, 246, 0.08);
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    color: var(--dn-primary-ink);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1076,7 +1556,7 @@ const features = [
   }
 
   .lang-title-text {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #374151;
     letter-spacing: 0.01em;
@@ -1084,8 +1564,8 @@ const features = [
     left: 0;
     white-space: nowrap;
     opacity: 0;
-    transform: translateY(3px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .lang-title-text.is-active {
@@ -1097,12 +1577,7 @@ const features = [
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-right: 40px;
-  }
-
-  .lang-line {
-    opacity: 1;
-    transform: translateX(0);
+    padding-right: 44px;
   }
 
   .lang-bar {
@@ -1118,7 +1593,7 @@ const features = [
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(139, 92, 246, 0.1);
+    background: linear-gradient(90deg, rgba(var(--dn-primary-rgb), 0.22), rgba(var(--dn-primary-mid-rgb), 0.32));
     width: 0%;
     border-radius: 2.5px;
     transition: width 0.4s ease;
@@ -1131,124 +1606,432 @@ const features = [
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #8B5CF6;
+    background: var(--dn-gradient);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transform: scale(0.5);
+    box-shadow: var(--dn-glow-sm);
   }
 
-  .group:hover .lang-line.l-1 .lang-bar::after {
-    width: 100%;
-    transition: width 0.3s ease 0.05s;
-  }
-
-  .group:hover .lang-line.l-2 .lang-bar::after {
-    width: 100%;
-    transition: width 0.3s ease 0.15s;
-  }
-
-  .group:hover .lang-line.l-3 .lang-bar::after {
-    width: 100%;
-    transition: width 0.3s ease 0.25s;
-  }
-
-  .group:hover .lang-line.l-4 .lang-bar::after {
-    width: 100%;
-    transition: width 0.3s ease 0.35s;
-  }
-
-  .group:hover .lang-line.l-5 .lang-bar::after {
-    width: 100%;
-    transition: width 0.3s ease 0.45s;
-  }
-
-  .group:hover .lang-line.l-6 .lang-bar::after {
-    width: 100%;
-    transition: width 0.3s ease 0.55s;
-  }
-
-  .group:hover .lang-line.l-7 .lang-bar::after {
-    width: 100%;
-    transition: width 0.3s ease 0.65s;
-  }
+  .group:hover .lang-line.l-1 .lang-bar::after { width: 100%; transition: width 0.32s ease 0.05s; }
+  .group:hover .lang-line.l-2 .lang-bar::after { width: 100%; transition: width 0.32s ease 0.14s; }
+  .group:hover .lang-line.l-3 .lang-bar::after { width: 100%; transition: width 0.32s ease 0.23s; }
+  .group:hover .lang-line.l-4 .lang-bar::after { width: 100%; transition: width 0.32s ease 0.32s; }
+  .group:hover .lang-line.l-5 .lang-bar::after { width: 100%; transition: width 0.32s ease 0.41s; }
+  .group:hover .lang-line.l-6 .lang-bar::after { width: 100%; transition: width 0.32s ease 0.5s; }
+  .group:hover .lang-line.l-7 .lang-bar::after { width: 100%; transition: width 0.32s ease 0.59s; }
 
   .group:hover .lang-badge {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.2s ease 0.9s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s;
+    transition: opacity 0.2s ease 0.85s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.85s;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .record-ring,
+    .record-btn-dot,
+    .record-wave span,
+    .transcript-dot.recording,
+    .transcript-caret {
+      animation: none !important;
+    }
+
+    .record-ring {
+      opacity: 0.25;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .record-ring.r2,
+    .record-ring.r3 {
+      display: none;
+    }
+
+    .record-wave span {
+      transform: none;
+      opacity: 0.5;
+    }
+
+    .feature-card:hover {
+      transform: none;
+    }
+
+    .group:hover .transcript-scrub::after,
+    .is-recording-live .transcript-scrub::after {
+      animation: none;
+      width: 72%;
+    }
+
+    .is-recording-live .transcript-caret {
+      animation: none !important;
+      opacity: 0.35;
+    }
+
+    .animate-correct .transcribe-line,
+    .animate-correct .tw-wrong,
+    .animate-correct .tw-right {
+      animation: none !important;
+    }
+
+    .animate-correct .transcribe-line {
+      opacity: 1;
+      transform: none;
+      color: #6b7280;
+    }
+
+    .animate-correct .tw-wrong { opacity: 0; }
+    .animate-correct .tw-right { opacity: 1; }
+
+    .group:hover .summary-section,
+    .group:hover .summary-bar-fill,
+    .group:hover .summary-badge,
+    .group:hover .ehr-bar::after,
+    .group:hover .ehr-report-card,
+    .group:hover .ehr-success-badge,
+    .group:hover .ehr-note-line,
+    .group:hover .lang-bar::after,
+    .group:hover .lang-badge,
+    .group:hover .encrypt-row,
+    .group:hover .encrypt-lock,
+    .group:hover .encrypt-shield-badge {
+      transition-delay: 0s !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .group:hover .summary-section { opacity: 1; transform: none; }
+    .group:hover .summary-bar-fill { width: 100%; }
+    .group:hover .summary-badge,
+    .group:hover .ehr-success-badge,
+    .group:hover .lang-badge {
+      opacity: 1;
+      transform: none;
+    }
+
+    .group:hover .ehr-bar::after { width: 100%; }
+    .group:hover .ehr-report-card {
+      opacity: 1;
+      transform: translate(52px, -8px) scale(1);
+    }
+    .group:hover .ehr-note-line { transform: scaleX(1); }
+    .group:hover .lang-bar::after { width: 100%; }
+
+    .group:hover .encrypt-row {
+      opacity: 1;
+      transform: none;
+    }
+    .group:hover .encrypt-lock {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .group:hover .encrypt-shield-badge {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 </style>
 
 <script>
-  const card = document.getElementById('transcribe-card');
-  if (card) {
-    card.addEventListener('mouseenter', () => {
-      const ui = card.querySelector('.transcribe-ui');
-      ui.classList.remove('animate-correct');
-      void ui.offsetWidth;
-      ui.classList.add('animate-correct');
-    });
+  const prefersReduced = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  const transcribeCard = document.getElementById('transcribe-card')
+  if (transcribeCard) {
+    let restarting = false
+    const restartTranscribe = () => {
+      if (prefersReduced() || restarting) return
+      const ui = transcribeCard.querySelector('.transcribe-ui')
+      if (!ui) return
+      restarting = true
+      ui.classList.remove('animate-correct')
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          ui.classList.add('animate-correct')
+          restarting = false
+        })
+      })
+    }
+    transcribeCard.addEventListener('mouseenter', restartTranscribe)
   }
 
-  const wordsContainer = document.querySelector('.transcript-words');
-  if (wordsContainer) {
-    const recordCard = wordsContainer.closest('.group');
-    const words = wordsContainer.querySelectorAll('.tw');
-    let timers = [];
+  const recordCardEl = document.querySelector<HTMLElement>('[data-record-card]')
+  if (recordCardEl) {
+    const featureCard = recordCardEl.closest<HTMLElement>('.feature-card')
+    const typedEl = recordCardEl.querySelector<HTMLElement>('[data-transcript-typed]')
+    const caretEl = recordCardEl.querySelector<HTMLElement>('.transcript-caret')
+    const timerEl = recordCardEl.querySelector<HTMLElement>('[data-transcript-timer]')
+    const fullText = typedEl?.dataset.fullText ?? ''
+    const CHAR_MS = 28
+    const LOOP_PAUSE_MS = 1600
+    let charTimer = 0
+    let loopTimer = 0
+    let tickTimer = 0
+    let idx = 0
+    let seconds = 0
 
-    recordCard.addEventListener('mouseenter', () => {
-      timers.forEach(clearTimeout);
-      timers = [];
-      words.forEach((w, i) => {
-        timers.push(setTimeout(() => {
-          w.classList.add('visible');
-          words.forEach(w2 => w2.classList.remove('active'));
-          w.classList.add('active');
-        }, 200 + i * 70));
-      });
-    });
+    const formatTimer = (s: number) => {
+      const m = Math.floor(s / 60)
+      const r = s % 60
+      return `${m}:${r.toString().padStart(2, '0')}`
+    }
 
-    recordCard.addEventListener('mouseleave', () => {
-      timers.forEach(clearTimeout);
-      timers = [];
-      words.forEach(w => {
-        w.classList.remove('visible', 'active');
-      });
-    });
+    const stopTimers = () => {
+      window.clearInterval(charTimer)
+      window.clearTimeout(loopTimer)
+      window.clearInterval(tickTimer)
+      charTimer = 0
+      loopTimer = 0
+      tickTimer = 0
+    }
+
+    const resetTranscript = () => {
+      stopTimers()
+      idx = 0
+      seconds = 0
+      if (typedEl) typedEl.textContent = ''
+      if (timerEl) timerEl.textContent = '0:00'
+      caretEl?.classList.remove('is-done')
+      featureCard?.classList.remove('is-recording-live')
+    }
+
+    const showFull = () => {
+      if (typedEl) typedEl.textContent = fullText
+      caretEl?.classList.add('is-done')
+      if (timerEl) timerEl.textContent = '0:12'
+    }
+
+    const typeNext = () => {
+      if (!typedEl) return
+      if (idx >= fullText.length) {
+        window.clearInterval(charTimer)
+        charTimer = 0
+        caretEl?.classList.add('is-done')
+        loopTimer = window.setTimeout(() => {
+          if (!featureCard?.classList.contains('is-recording-live')) return
+          idx = 0
+          seconds = 0
+          typedEl.textContent = ''
+          caretEl?.classList.remove('is-done')
+          if (timerEl) timerEl.textContent = '0:00'
+          startTyping()
+        }, LOOP_PAUSE_MS)
+        return
+      }
+      typedEl.textContent = fullText.slice(0, idx + 1)
+      idx += 1
+    }
+
+    const startTyping = () => {
+      window.clearInterval(charTimer)
+      if (prefersReduced()) {
+        showFull()
+        return
+      }
+      charTimer = window.setInterval(typeNext, CHAR_MS)
+    }
+
+    const startLive = () => {
+      if (featureCard?.classList.contains('is-recording-live')) return
+      resetTranscript()
+      featureCard?.classList.add('is-recording-live')
+      if (prefersReduced()) {
+        showFull()
+        return
+      }
+      tickTimer = window.setInterval(() => {
+        seconds += 1
+        if (timerEl) timerEl.textContent = formatTimer(seconds)
+      }, 1000)
+      startTyping()
+    }
+
+    const stopLive = () => {
+      resetTranscript()
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (!entry) return
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+          startLive()
+        } else {
+          stopLive()
+        }
+      },
+      { threshold: [0, 0.45, 0.75] }
+    )
+    io.observe(recordCardEl)
+
+    featureCard?.addEventListener('mouseenter', () => {
+      if (!featureCard.classList.contains('is-recording-live')) startLive()
+    })
   }
 
-  const langCard = document.getElementById('lang-card');
+  const langCard = document.getElementById('lang-card')
   if (langCard) {
-    const langs = ['fr', 'en', 'it', 'es', 'ar'];
-    let langIndex = 0;
-    let langTimer = 0;
+    const langs = ['fr', 'en', 'it', 'es', 'ar']
+    let langIndex = 0
+    let langTimer = 0
 
-    const setLang = (code) => {
+    const setLang = (code: string) => {
       langCard.querySelectorAll('[data-lang-tab]').forEach((tab) => {
-        tab.classList.toggle('is-active', tab.getAttribute('data-lang-tab') === code);
-      });
+        tab.classList.toggle('is-active', tab.getAttribute('data-lang-tab') === code)
+      })
       langCard.querySelectorAll('[data-lang-title]').forEach((title) => {
-        title.classList.toggle('is-active', title.getAttribute('data-lang-title') === code);
-      });
-    };
+        title.classList.toggle('is-active', title.getAttribute('data-lang-title') === code)
+      })
+    }
 
     langCard.addEventListener('mouseenter', () => {
-      langIndex = 0;
-      setLang(langs[0]);
-      window.clearInterval(langTimer);
+      langIndex = 0
+      setLang(langs[0])
+      window.clearInterval(langTimer)
+      if (prefersReduced()) return
       langTimer = window.setInterval(() => {
-        langIndex = (langIndex + 1) % langs.length;
-        setLang(langs[langIndex]);
-      }, 700);
-    });
+        langIndex = (langIndex + 1) % langs.length
+        setLang(langs[langIndex])
+      }, 720)
+    })
 
     langCard.addEventListener('mouseleave', () => {
-      window.clearInterval(langTimer);
-      langIndex = 0;
-      setLang(langs[0]);
-    });
+      window.clearInterval(langTimer)
+      langIndex = 0
+      setLang(langs[0])
+    })
+  }
+
+  const securityCard = document.querySelector<HTMLElement>('[data-security-card]')
+  if (securityCard) {
+    const demo = securityCard.querySelector<HTMLElement>('[data-encrypt-demo]')
+    const values = Array.from(
+      securityCard.querySelectorAll<HTMLElement>('[data-encrypt-value]')
+    )
+    const ROW_STAGGER_MS = 140
+    const CHAR_MS = 22
+    const HOLD_MS = 1600
+    const RESET_MS = 500
+    let timers: number[] = []
+    let running = false
+
+    const clearEncryptTimers = () => {
+      timers.forEach((id) => {
+        window.clearTimeout(id)
+        window.clearInterval(id)
+      })
+      timers = []
+    }
+
+    const showPlain = () => {
+      demo?.classList.remove('is-locked')
+      demo?.classList.add('is-ready')
+      values.forEach((el) => {
+        el.textContent = el.dataset.plain || ''
+        el.classList.remove('is-cipher')
+      })
+    }
+
+    showPlain()
+
+    const showCipher = () => {
+      demo?.classList.add('is-locked')
+      values.forEach((el) => {
+        el.textContent = el.dataset.cipher || ''
+        el.classList.add('is-cipher')
+      })
+    }
+
+    const scrambleRow = (el: HTMLElement, onDone?: () => void) => {
+      const plain = el.dataset.plain || ''
+      const cipher = el.dataset.cipher || ''
+      const target = cipher || plain.replace(/[^\s.]/g, '•')
+      let i = 0
+      el.classList.add('is-cipher')
+      const id = window.setInterval(() => {
+        if (i >= target.length) {
+          window.clearInterval(id)
+          el.textContent = target
+          onDone?.()
+          return
+        }
+        el.textContent = target.slice(0, i + 1) + plain.slice(i + 1)
+        i += 1
+      }, CHAR_MS)
+      timers.push(id)
+    }
+
+    const runEncrypt = () => {
+      if (!demo || running) return
+      running = true
+      clearEncryptTimers()
+      showPlain()
+      demo.classList.add('is-ready')
+
+      if (prefersReduced()) {
+        showCipher()
+        running = false
+        return
+      }
+
+      values.forEach((el, idx) => {
+        const startId = window.setTimeout(() => {
+          scrambleRow(el, () => {
+            if (idx === values.length - 1) {
+              demo.classList.add('is-locked')
+              const holdId = window.setTimeout(() => {
+                demo.classList.remove('is-locked')
+                const resetId = window.setTimeout(() => {
+                  showPlain()
+                  running = false
+                  const loopId = window.setTimeout(() => {
+                    if (securityCard.dataset.encryptLive === '1') runEncrypt()
+                  }, 280)
+                  timers.push(loopId)
+                }, RESET_MS)
+                timers.push(resetId)
+              }, HOLD_MS)
+              timers.push(holdId)
+            }
+          })
+        }, 220 + idx * ROW_STAGGER_MS)
+        timers.push(startId)
+      })
+    }
+
+    const stopEncrypt = () => {
+      securityCard.dataset.encryptLive = '0'
+      clearEncryptTimers()
+      running = false
+      showPlain()
+      demo?.classList.add('is-ready')
+      demo?.classList.remove('is-locked')
+    }
+
+    const startEncrypt = () => {
+      if (securityCard.dataset.encryptLive === '1') return
+      securityCard.dataset.encryptLive = '1'
+      runEncrypt()
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (!entry) return
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+          startEncrypt()
+        } else {
+          stopEncrypt()
+        }
+      },
+      { threshold: [0, 0.4, 0.75] }
+    )
+    io.observe(securityCard)
+
+    securityCard.closest('.feature-card')?.addEventListener('mouseenter', () => {
+      stopEncrypt()
+      startEncrypt()
+    })
   }
 </script>

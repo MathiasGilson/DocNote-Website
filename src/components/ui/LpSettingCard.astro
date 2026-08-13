@@ -1,0 +1,25 @@
+---
+interface Props {
+  badge: string;
+  title: string;
+  body?: string;
+  variant?: 'practice' | 'hospital' | 'both' | 'diagnostics';
+}
+
+const { badge, title, body, variant = 'practice' } = Astro.props;
+---
+
+<div class:list={['lp-setting', `lp-setting--${variant}`, 'reveal']}>
+  <div class="lp-setting__grid">
+    <div class="lp-setting__lead">
+      <span class="lp-eyebrow">
+        <span class="lp-dot" aria-hidden="true"></span>
+        {badge}
+      </span>
+      <h2 class="lp-setting__title">{title}</h2>
+    </div>
+    <div class="lp-setting__body">
+      {body ? <p>{body}</p> : <slot />}
+    </div>
+  </div>
+</div>

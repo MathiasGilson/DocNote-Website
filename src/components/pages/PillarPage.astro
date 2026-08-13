@@ -1,0 +1,444 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import FaqAccordion from '../FaqAccordion.astro';
+import Features from '../Features.astro';
+import ZigZagBenefits from '../ZigZagBenefits.astro';
+import PageHero from '../ui/PageHero.astro';
+import LpSettingCard from '../ui/LpSettingCard.astro';
+import '../../styles/landing-page.css';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import {
+  getLanding,
+  getLandingNavLabel,
+  landingMeta,
+  landingFeatureKeys,
+  landingZigZagSlugs,
+  isLandingSlug,
+  type LandingSlug,
+  type SpecialtyLandingSlug,
+} from '../../content/landings';
+import {
+  familyBySpecialtyLanding,
+  getSpecialtyFamily,
+  getSpecialtyFamilyPath,
+} from '../../content/specialty-families';
+import { SOLUTIONS_HUB_PATH, SPECIALTIES_HUB_PATH } from '../../content/hubs';
+import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
+
+interface Props {
+  locale: Locale;
+  pillar: string;
+}
+
+const { locale, pillar } = Astro.props;
+const lang = locale;
+
+if (!isLandingSlug(pillar)) {
+  return Astro.redirect(getLocalizedPath('/', lang));
+}
+
+const slug = pillar as LandingSlug;
+const p = getLanding(slug, lang);
+const meta = landingMeta[slug];
+const pagesEntry = (await getEntry('pages', lang)) ?? (await getEntry('pages', 'en'));
+const pagesT = pagesEntry!.data;
+const featureKeys = landingFeatureKeys[slug];
+const useZigZagBenefits = landingZigZagSlugs.has(slug);
+
+const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
+const solutionsCrumb =
+  lang === 'fr' ? 'Solutions' : lang === 'de' ? 'Lösungen' : 'Solutions';
+const specialtiesCrumb =
+  lang === 'fr' ? 'Spécialités' : lang === 'de' ? 'Fachgebiete' : 'Specialties';
+const faqHeading =
+  lang === 'fr' ? 'Questions fréquentes' : lang === 'de' ? 'Häufige Fragen' : 'Frequently asked questions';
+const faqSubtitle =
+  lang === 'fr'
+    ? 'Réponses claires sur la confidentialité, la validation clinique et le fonctionnement au quotidien.'
+    : lang === 'de'
+      ? 'Klare Antworten zu Datenschutz, klinischer Validierung und dem täglichen Ablauf.'
+      : 'Straight answers on privacy, clinical validation, and how this fits your daily workflow.';
+const depthBadge =
+  lang === 'fr' ? 'En pratique' : lang === 'de' ? 'In der Praxis' : 'In practice';
+const depthTitle =
+  lang === 'fr'
+    ? 'Ce qu’il faut savoir avant de déployer'
+    : lang === 'de'
+      ? 'Was vor dem Rollout zählt'
+      : 'What to know before you roll out';
+
+const ctaHref = (key: typeof meta.primaryCta) => {
+  const map = {
+    tutorial: '/tutorial',
+    pricing: '/pricing',
+    contact: '/contact',
+    privacy: '/privacy',
+  } as const;
+  return getLocalizedPath(map[key], lang);
+};
+
+const primaryHref = ctaHref(meta.primaryCta);
+const secondaryHref = ctaHref(meta.secondaryCta);
+
+const relatedSlugs = meta.related.filter((s) => s !== slug);
+const parentFamilySlug =
+  meta.type === 'specialty' ? familyBySpecialtyLanding[slug as SpecialtyLandingSlug] : undefined;
+const parentFamily = parentFamilySlug ? getSpecialtyFamily(parentFamilySlug, lang) : null;
+const parentFamilyHref = parentFamilySlug
+  ? getLocalizedPath(getSpecialtyFamilyPath(parentFamilySlug), lang)
+  : null;
+const familyHubLabel =
+  lang === 'fr' ? 'Famille de spécialités' : lang === 'de' ? 'Fachfamilie' : 'Specialty family';
+const pageLabel = p.navLabel || p.hero.title;
+const isSpecialtyLanding = meta.type === 'specialty';
+
+const breadcrumbLd = buildBreadcrumbLd(
+  isSpecialtyLanding
+    ? [
+        { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+        { name: specialtiesCrumb, url: absoluteLocalizedUrl(SPECIALTIES_HUB_PATH, lang) },
+        ...(parentFamilySlug
+          ? [
+              {
+                name: parentFamily!.navLabel,
+                url: absoluteLocalizedUrl(getSpecialtyFamilyPath(parentFamilySlug), lang),
+              },
+            ]
+          : []),
+        { name: pageLabel, url: absoluteLocalizedUrl(`/${slug}/`, lang) },
+      ]
+    : [
+        { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+        { name: solutionsCrumb, url: absoluteLocalizedUrl(SOLUTIONS_HUB_PATH, lang) },
+        { name: pageLabel, url: absoluteLocalizedUrl(`/${slug}/`, lang) },
+      ]
+);
+
+const faqLd =
+  p.faq && p.faq.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: p.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      }
+    : null;
+
+const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
+---
+
+<Layout title={p.title} description={p.description} jsonLd={jsonLd}>
+  <div class="lp-crumb-bar pt-28 sm:pt-32">
+    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center justify-center gap-2">
+        <li>
+          <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        {isSpecialtyLanding ? (
+          <>
+            <li>
+              <a href={getLocalizedPath(SPECIALTIES_HUB_PATH, lang)} class="hover:text-gray-900 transition-colors">
+                {specialtiesCrumb}
+              </a>
+            </li>
+            {parentFamily && parentFamilyHref ? (
+              <>
+                <li aria-hidden="true">/</li>
+                <li>
+                  <a href={parentFamilyHref} class="hover:text-gray-900 transition-colors">
+                    {parentFamily.navLabel}
+                  </a>
+                </li>
+              </>
+            ) : null}
+          </>
+        ) : (
+          <li>
+            <a href={getLocalizedPath(SOLUTIONS_HUB_PATH, lang)} class="hover:text-gray-900 transition-colors">
+              {solutionsCrumb}
+            </a>
+          </li>
+        )}
+        <li aria-hidden="true">/</li>
+        <li class="text-gray-900 font-medium">{pageLabel}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <PageHero
+    eyebrow={p.hero.badge}
+    title={p.hero.title}
+    subtitle={p.hero.subtitle}
+    lead={p.hero.lead}
+    compact
+  >
+    <a href={primaryHref} class="btn-primary">
+      {p.cta.primary}
+    </a>
+    <a
+      href={secondaryHref}
+      class="btn-secondary"
+    >
+      {p.cta.secondary}
+    </a>
+  </PageHero>
+
+  <!-- Story -->
+  <section class="relative py-14 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <LpSettingCard badge={p.story.badge} title={p.story.title} variant="both">
+        {p.story.paragraphs.map((para) => (
+          <p>{para}</p>
+        ))}
+      </LpSettingCard>
+    </div>
+  </section>
+
+  <Features
+    translations={pagesT}
+    keys={featureKeys}
+    sectionId={`features-${slug}`}
+    align="start"
+  />
+
+  {useZigZagBenefits ? (
+    <ZigZagBenefits
+      badge={p.benefits.badge}
+      title={p.benefits.title}
+      subtitle={p.benefits.subtitle}
+      items={p.benefits.items}
+    />
+  ) : (
+    <section class="relative py-14 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-10 sm:mb-14 reveal">
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {p.benefits.badge}
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.benefits.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.benefits.subtitle}</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
+          {p.benefits.items.map((item, i) => (
+            <article
+              class:list={[
+                'lp-card reveal',
+                i % 4 === 0 && 'reveal-delay-1',
+                i % 4 === 1 && 'reveal-delay-2',
+                i % 4 === 2 && 'reveal-delay-3',
+                i % 4 === 3 && 'reveal-delay-4',
+              ]}
+            >
+              <span class="lp-card-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="lp-card-title">{item.title}</h3>
+              <p class="lp-card-text">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Steps -->
+  <section class="py-14 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10 sm:mb-14 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.steps.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.steps.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.steps.subtitle}</p>
+      </div>
+
+      <ol class="lp-steps-grid">
+        {p.steps.items.map((step, i) => (
+          <li
+            class:list={[
+              'lp-step reveal',
+              i === 0 && 'reveal-delay-1',
+              i === 1 && 'reveal-delay-2',
+              i === 2 && 'reveal-delay-3',
+              i === 3 && 'reveal-delay-4',
+            ]}
+          >
+            <span class="lp-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="mt-4 text-lg font-semibold text-gray-900 tracking-tight">{step.title}</h3>
+            <p class="mt-2 text-sm sm:text-base text-gray-500 leading-relaxed">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Proof / trust -->
+  <section class="relative py-14 sm:py-20 overflow-hidden">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 max-w-2xl reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.proof.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.proof.title}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.proof.intro}</p>
+      </div>
+
+      <div class="lp-proof-shell reveal reveal-delay-1">
+        <div class="grid sm:grid-cols-2 gap-px bg-white/10">
+          {p.proof.points.map((point) => (
+            <article class="lp-proof-point">
+              <span class="lp-proof-check" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-base font-semibold text-white tracking-tight">{point.title}</h3>
+                <p class="mt-1.5 text-sm text-primary-100/75 leading-relaxed">{point.body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {p.sections && p.sections.length > 0 && (
+    <section class="relative py-14 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-8 sm:mb-10 reveal">
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {depthBadge}
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {depthTitle}
+          </h2>
+        </div>
+
+        <div class="lp-shell lp-depth reveal">
+          <ol class="lp-depth-list">
+            {p.sections.map((section, i) => (
+              <li class="lp-depth-item">
+                <span class="lp-card-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <div class="lp-depth-copy">
+                  <h3 class="lp-depth-heading">{section.heading}</h3>
+                  <p class="lp-depth-body">{section.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="py-14 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2">
+          {faqHeading}
+        </h2>
+        <p class="text-gray-500">{faqSubtitle}</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <FaqAccordion items={p.faq} />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-14 sm:py-20 overflow-hidden">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lp-cta-shell reveal">
+        <div class="max-w-xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.cta.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-600 leading-relaxed">{p.cta.body}</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href={primaryHref} class="btn-primary">{p.cta.primary}</a>
+            <a
+              href={secondaryHref}
+              class="btn-secondary"
+            >
+              {p.cta.secondary}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="py-14 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {parentFamily && parentFamilyHref && (
+        <aside class="pt-10 border-t border-gray-200 reveal mb-8">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-4">
+            {familyHubLabel}
+          </h2>
+          <p class="text-base text-gray-600 mb-3">
+            {lang === 'fr'
+              ? 'Voir toutes les spécialités de cette famille :'
+              : 'See all specialties in this family:'}
+          </p>
+          <a
+            href={parentFamilyHref}
+            class="text-base font-medium text-gray-900 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+          >
+            {parentFamily.navLabel} — {parentFamily.hero.title}
+          </a>
+        </aside>
+      )}
+      <aside class:list={[!parentFamily && 'pt-10 border-t border-gray-200', 'reveal']}>
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-4">{p.relatedLabel}</h2>
+        <ul class="flex flex-wrap gap-x-8 gap-y-2">
+          {relatedSlugs.map((s) => (
+            <li>
+              <a
+                href={getLocalizedPath(`/${s}`, lang)}
+                class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+              >
+                {getLandingNavLabel(s, lang)}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href={getLocalizedPath('/pricing', lang)}
+              class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+            >
+              {lang === 'fr' ? 'Tarifs' : lang === 'de' ? 'Preise' : 'Pricing'}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath('/blog', lang)}
+              class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
+            >
+              {lang === 'fr' ? 'Actualités' : lang === 'de' ? 'Neuigkeiten' : 'News & insights'}
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</Layout>

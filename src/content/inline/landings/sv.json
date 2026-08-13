@@ -1,0 +1,2825 @@
+{
+  "ai-medical-scribe": {
+    "navLabel": "AI medicinsk sekreterare",
+    "title": "AI medicinsk sekreterare för läkare",
+    "description": "DocNote är en AI medicinsk sekreterare för läkare och sjukhus i Schweiz och Europa. Omvandla konsultationer till strukturerade kliniska anteckningar på sekunder. Schweizbaserad, FADP/GDPR-kompatibel.",
+    "hero": {
+      "badge": "AI medicinsk sekreterare",
+      "title": "AI medicinsk sekreterare byggd för verkligt kliniskt arbete",
+      "subtitle": "DocNote lyssnar under konsultationen, skriver utkast till anteckningen och låter dig återvända till patienten.",
+      "lead": "Läkare i Schweiz och över hela Europa använder DocNote för att omvandla talade möten till strukturerade kliniska dokument — konsultationsanteckningar, utskrivningsbrev, vårdrundor och operationsrapporter — på sekunder, inte kvällar."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "En assistent, varje dokument din praktik faktiskt skickar",
+      "paragraphs": [
+        "De flesta ambienta sekreterare är byggda kring en enda amerikansk SOAP-mall för öppenvård. DocNote är annorlunda: den designades i Schweiz av en läkare som ville sluta förlora kvällar till pappersarbete, så den täcker dokumenten som europeiska kliniker och sjukhus producerar varje dag.",
+        "Starta en inspelning på mobil eller webb under konsultationen. När besöket avslutas omvandlar DocNote samtalet till ett strukturerat utkast som matchar den anteckningstyp du valt — konsultationsanteckning, utskrivningsbrev, vårdrunda eller operationsrapport.",
+        "Du läser sedan utkastet, korrigerar det som behöver korrigeras och godkänner det. Endast den version du godkänner blir en del av journalen — samma ansvar du redan bär, bara med mycket mindre skrivande."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför kliniker byter",
+      "title": "Mindre skrivande, mer medicin",
+      "subtitle": "DocNote är byggd kring verkligheten i en full klinikdag, inte en demo.",
+      "items": [
+        {
+          "title": "Byggd för schweizisk och europeisk praxis",
+          "body": "Flerspråkiga konsultationer, schweizisk datahosting och dokumentationsvanor som matchar hur europeiska kliniker faktiskt skriver — inte en amerikansk öppenvårdsmall anpassad för export."
+        },
+        {
+          "title": "Täcker sjukhusdokument också",
+          "body": "Konsultationsanteckningar är bara en del av jobbet. DocNote skriver även utskrivningsbrev, vårdrundor och operationsrapporter, så tjänster behöver inte en andra leverantör för slutenvårdsarbete."
+        },
+        {
+          "title": "Du förblir författaren",
+          "body": "Varje utkast är en startpunkt. Du redigerar, korrigerar kliniska detaljer och godkänner innan något når journalen — DocNote skriver aldrig in i EHR utan tillsyn."
+        },
+        {
+          "title": "Passar din befintliga stack",
+          "body": "Skicka godkända anteckningar till Mediway eller SOKLE där konfigurerat, eller exportera till en Word-mall som matchar ditt brevpapper och sektionsordning."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från konsultation till godkänd anteckning",
+      "subtitle": "Fyra steg, det mesta av arbetet sker medan du pratar med patienten.",
+      "items": [
+        {
+          "title": "Starta inspelningen",
+          "body": "Öppna DocNote på mobil eller webb och börja fånga konsultationen med patientens samtycke."
+        },
+        {
+          "title": "Avsluta mötet",
+          "body": "Prata, undersök och besluta som vanligt. DocNote lyssnar i bakgrunden; du håller fokus på personen framför dig."
+        },
+        {
+          "title": "Granska utkastet",
+          "body": "Inom sekunder från att inspelningen avslutas är en strukturerad anteckning klar — organiserad efter den dokumenttyp du valt."
+        },
+        {
+          "title": "Redigera och godkänn",
+          "body": "Korrigera det som behöver korrigeras, godkänn sedan. Det godkända dokumentet är det som går in i din journal — aldrig det råa utkastet."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Byggd för att vara betrodd",
+      "title": "Säkerhet som överlever en sjukhusgranskning",
+      "intro": "Köpare antar inte klinisk AI enbart på funktioner. DocNote är designad så att hosting, kvarhållning och medicinsk sekretess är en del av produkten från dag ett.",
+      "points": [
+        {
+          "title": "Schweizisk datahosting",
+          "body": "Hälsodata hostas i Schweiz och behandlas under förväntningar om medicinsk sekretess — inte dirigeras genom en standardmolnregion i USA."
+        },
+        {
+          "title": "Kort ljudkvarhållning",
+          "body": "Ljud som används för att producera ett dokument raderas automatiskt inom en kort tidsram efter bearbetning. Det bestående dokumentet är anteckningen du godkänner."
+        },
+        {
+          "title": "Aldrig använd för att träna AI",
+          "body": "Dina konsultationer används bara för att producera dina dokument. De används aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "FADP, GDPR och HIPAA-anpassad",
+          "body": "DocNote är byggd för att anpassas till FADP/nFADP, GDPR och HIPAA-förväntningar som dyker upp i sjukhusets säkerhetsenkäter."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Vad man ska utvärdera i en AI medicinsk sekreterare",
+        "body": "Ord-felkvot är inte hela historien. Titta på om verktyget förstår klinisk struktur och specialspråk, om det täcker dokumenttyperna din tjänst faktiskt skickar, och om hosting och kvarhållning möter din kompatibilitetsnivå innan du skriver på något."
+      },
+      {
+        "heading": "Implementera DocNote över en praktik eller tjänst",
+        "body": "De flesta team börjar med en kliniker eller en tjänstlinje, anpassar mallar för att matcha lokal vokabulär och brevpapper, expanderar sedan när arbetsflödet är validerat. Gransknings- och godkännandesteget ändras aldrig, oavsett hur många kliniker som ansluter."
+      },
+      {
+        "heading": "AI medicinsk sekreterare vs. traditionell diktering",
+        "body": "Diktering kräver fortfarande en transkriberare eller ett separat skrivpass efter besöket. En AI medicinsk sekreterare kollapsar detta till ett steg: det strukturerade utkastet är klart när du avslutar mötet, och du redigerar direkt istället för att vänta på att en transkription ska komma tillbaka."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Vad är en AI medicinsk sekreterare?",
+        "a": "En AI medicinsk sekreterare lyssnar på eller bearbetar ett kliniskt möte och skriver ett strukturerat utkast för klinikern att granska och godkänna innan det går in i journalen."
+      },
+      {
+        "q": "Skriver DocNote automatiskt in i EHR?",
+        "a": "Nej. Läkare förblir ansvariga för att granska och godkänna varje dokument."
+      },
+      {
+        "q": "Var hostas hälsodata?",
+        "a": "DocNote är designad för schweizisk hosting under medicinsk sekretess och europeiska dataskyddsförväntningar."
+      },
+      {
+        "q": "Används besöksdata för att träna AI-modeller?",
+        "a": "Nej. Besök används bara för att producera dina dokument, inte för att träna grundmodeller."
+      },
+      {
+        "q": "Vilka dokumenttyper stöder DocNote?",
+        "a": "Konsultationsanteckningar, utskrivningsbrev, vårdrundor, operationsrapporter och specialitetsmallar — sekreteraren anpassar sig till den anteckningstyp du väljer."
+      },
+      {
+        "q": "Hur lång tid tar det att få ett utkast?",
+        "a": "De flesta utkast är klara inom sekunder från att inspelningen avslutas, beroende på mötets längd."
+      }
+    ],
+    "cta": {
+      "title": "Se DocNote i dina egna konsultationer",
+      "body": "Starta en gratis provperiod eller prata med vårt team om att implementera DocNote över din praktik eller sjukhaustjänst.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se prissättning"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Lyssnar under besöket, skriver utkastet."
+  },
+  "hospital-documentation": {
+    "navLabel": "Sjukhusdokumentation",
+    "title": "Sjukhusdokumentation med AI",
+    "description": "Sjukhusdokumentations-AI för utskrivningsbrev, operationsrapporter, vårdrundor och dag-sjukhusfiler. DocNote hjälper vårdteam att dokumentera snabbare utan att lämna schweizisk hosting eller medicinsk sekretess.",
+    "hero": {
+      "badge": "Sjukhusdokumentation",
+      "title": "Sjukhusdokumentation utan kvällsefterarbete",
+      "subtitle": "Utskrivningsbrev, operationsrapporter och vårdrundor — skrivna från mötet, godkända av läkaren.",
+      "lead": "Sjukhusarbete är inte en enda öppenvårds-SOAP-anteckning. DocNote stöder dokumenten som faktiskt fyller en klinikers kväll över avdelningar, operationssalar och dag-sjukhaustjänster, samtidigt som hosting hålls inom Schweiz."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Byggd för avdelningar, inte bara öppenvårdsrum",
+      "paragraphs": [
+        "En sjukhusdag producerar mer än konsultationsanteckningar: utskrivningsbrev vid slutet av en vistelse, operationsrapporter efter operationssal, vårdrundor varje morgon och delade dag-sjukhusfiler som berörs av flera vårdgivare. DocNote behandlar alla dessa som förstklassiga dokumenttyper, inte en eftertanke fäst på ett öppenvårdsverktyg.",
+        "Fånga mötet, vårdrundan eller operationsgenomgången, låt sedan DocNote skriva mot strukturen din tjänst redan använder — diagnoser, förlopp, behandling, uppföljning, i den ordning din institution förväntar.",
+        "Den ansvarande läkaren granskar utkastet, korrigerar kliniska detaljer och godkänner det innan det blir en del av journalen. Anpassade Word-mallar bevarar ditt brevpapper, signaturblock och sektionsordning så utdata ser ut som om det alltid skrivits internt."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför sjukhus antar det",
+      "title": "Dokument som matchar hur din tjänst faktiskt fungerar",
+      "subtitle": "Inte en demo byggd kring ett enda öppenvårdsbesök.",
+      "items": [
+        {
+          "title": "Utskrivningsbrev som bär hela förloppet",
+          "body": "Diagnoser, behandling, komplikationer och uppföljning hamnar i strukturen din institution förväntar, så den ansvarande läkaren redigerar klinisk sanning istället för formatering."
+        },
+        {
+          "title": "Operationsrapporter med kirurgisk struktur",
+          "body": "Indikation, fynd, procedursteg och postoperativ plan följer en tydlig ordning, så utkast läses som en operationsrapport snarare än en transkription klistrad in i ett brev."
+        },
+        {
+          "title": "Delade dag-sjukhusfiler",
+          "body": "När flera professionella ser samma patient i följd stöder DocNote en sammanhängande fil istället för fragmenterade, frånkopplade anteckningar."
+        },
+        {
+          "title": "Institutionella mallar, inte generiska",
+          "body": "Anpassade Word-mallar bevarar din sektionsordning, brevpapper och signaturblock så implementeringar inte tvingar en ny husstil på din tjänst."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från avdelning eller operationssal till ett godkänt dokument",
+      "subtitle": "Samma gransknings- och godkännandedisciplin din tjänst redan följer.",
+      "items": [
+        {
+          "title": "Fånga mötet",
+          "body": "Spela in konsultationen, vårdrundan eller operationsgenomgången på mobil eller webb som en del av din vanliga rutin."
+        },
+        {
+          "title": "Välj dokumenttyp",
+          "body": "Välj utskrivningsbrev, operationsrapport, vårdrunda eller en annan stödd mall för den tjänsten."
+        },
+        {
+          "title": "Granska det strukturerade utkastet",
+          "body": "Ett utkast som matchar din institutionella struktur är klart inom sekunder, med din befintliga sektionsordning."
+        },
+        {
+          "title": "Godkänn och arkivera",
+          "body": "Den ansvarande läkaren korrigerar och godkänner dokumentet, sedan flyttas det in i din EHR eller exportprocess — Mediway och SOKLE där konfigurerat."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Byggd för institutionell granskning",
+      "title": "Säkerhet din IT och medicinska direktörer kan godkänna",
+      "intro": "Sjukhus antar AI-dokumentation efter en säkerhetsenkät, inte en demo. DocNote är designad för att svara på dessa frågor tydligt.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata hålls hostad i Schweiz och behandlas under förväntningar om medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudkvarhållning",
+          "body": "Ljud behålls bara kort för att producera dokumentet, raderas sedan automatiskt."
+        },
+        {
+          "title": "Läkargodkännande, alltid",
+          "body": "Inget dokument når journalen utan att en kliniker granskat och godkänt det först."
+        },
+        {
+          "title": "Mediway- och SOKLE-integrationer",
+          "body": "Där konfigurerat flödar godkända dokument in i systemen ditt sjukhus redan kör."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Implementera DocNote över en institution",
+        "body": "Den vanliga vägen börjar med en dokumenttyp och en avdelning eller tjänst. Mallar valideras mot verkliga fall innan implementeringen expanderar till andra avdelningar. IT och medicinska direktörer granskar hosting, kvarhållning och integrationer parallellt — samma struktur som gäller för annan klinisk mjukvaruanskaffning."
+      },
+      {
+        "heading": "När flera tjänster delar samma fil",
+        "body": "Dag-sjukhus och multidisciplinära avdelningar drar mest nytta av konsekvent struktur, eftersom flera professionella bidrar till samma patientfil över en vistelse. DocNote håller sektionsordning konsekvent över specialiteter så journalen förblir läsbar oavsett vem som dokumenterade sist."
+      },
+      {
+        "heading": "Var sjukhusdokumentation skiljer sig från öppenvårdsanteckningar",
+        "body": "En öppenvårdsanteckning och ett utskrivningsbrev bär olika information och olika målgrupper — den remitterande allmänläkaren, försäkringsbolaget, patienten. DocNote behandlar varje dokumenttyp som sin egen struktur snarare än att tvinga en mall att passa alla ändamål, så brevet som lämnar avdelningen faktiskt läses som ett."
+      },
+      {
+        "heading": "Hantera en blandad avdelning med flera specialiteter",
+        "body": "Allmänmedicinska avdelningar hostar ofta patienter under flera olika specialiteter samtidigt. Konsekvent dokumentstruktur spelar ännu större roll här, eftersom en täckande läkare som inte tog emot patienten behöver förstå förloppet snabbt från den skrivna journalen ensam. DocNotes sjukhusmallar är designade för läsbarhet av någon som stöter på fallet för första gången, inte bara teamet som följt det från inläggning."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Vilka sjukhusdokument kan DocNote skriva?",
+        "a": "Utskrivningsbrev, operationsrapporter, vårdrundor, konsultationsanteckningar och andra högvolymskliniska dokument beroende på dina mallar."
+      },
+      {
+        "q": "Kan vi behålla vårt institutionella brevpapper?",
+        "a": "Ja. Anpassade Word-mallar bevarar layout, signaturblock och sektionsordning."
+      },
+      {
+        "q": "Ersätter AI läkarens signatur?",
+        "a": "Nej. Kliniker godkänner varje dokument innan det blir en del av journalen."
+      },
+      {
+        "q": "Är detta bara för öppenvårds-SOAP-anteckningar?",
+        "a": "Nej. Sjukhusdokumenttyper är en förstklassig del av DocNote."
+      },
+      {
+        "q": "Hur delar dag-sjukhusteam en fil?",
+        "a": "Flera vårdgivare kan bidra till samma patientfil över en dag-sjukhusvistelse, så journalen förblir sammanhängande istället för fragmenterad över separata anteckningar."
+      },
+      {
+        "q": "Hur lång tid tar implementering för en sjukhaustjänst?",
+        "a": "De flesta tjänster börjar med en dokumenttyp och en avdelning eller enhet, validerar mallar, expanderar sedan — vanligtvis veckor, inte månader."
+      }
+    ],
+    "cta": {
+      "title": "Ta DocNote till din avdelning eller tjänst",
+      "body": "Prata med vårt team om en pilot för ditt sjukhus, inklusive mallinställning och EHR-integration.",
+      "primary": "Kontakta vårt team",
+      "secondary": "Se handledning"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Utskrivning, op och rond från mötet."
+  },
+  "clinical-compliance": {
+    "navLabel": "Klinisk kompatibilitet",
+    "title": "Klinisk AI-kompatibilitet (FADP, GDPR, HIPAA)",
+    "description": "Hur DocNote hanterar klinisk AI-kompatibilitet: schweizisk hosting, kryptering, kort ljudkvarhållning, medicinsk sekretess, FADP/nFADP, GDPR, HIPAA och ISO 27001-kontroller för sjukhus och praktiker.",
+    "hero": {
+      "badge": "Klinisk AI-kompatibilitet",
+      "title": "Klinisk AI som kan överleva en kompatibilitetsgranskning",
+      "subtitle": "Schweizisk hosting, kort kvarhållning och medicinsk sekretess — inbyggda i produkten, inte en bild.",
+      "lead": "Sjukhus antar inte ambient dokumentation enbart på funktioner. DocNote är designad så säkerhet, databostad och kliniskt ansvar håller under en verklig anskaffningsgranskning."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Kompatibilitet som en funktion, inte en eftertanke",
+      "paragraphs": [
+        "Många ambienta sekreterare byggs först, lägger sedan till en sekretesssida när köpare börjar ställa frågor. DocNote designades i motsatt ordning: schweizisk hosting, kort ljudkvarhållning och läkargodkännande var en del av första versionen, eftersom produkten byggdes av en läkare som förstod medicinsk sekretess inifrån.",
+        "Det betyder att svaren på en sjukhus säkerhetsenkät inte improviseras. Databostad, kvarhållningsfönster och åtkomstkontroll dokumenteras, är konsekventa och desamma för varje institution — inte ett specialundantag förhandlat per affär.",
+        "Kompatibilitet skyddar också människor som använder produkten. Kliniker förblir ensam författare till varje godkänt dokument, vilket håller ansvar där det redan ligger — hos läkaren — snarare än att flytta det till en ogenomskinlig modell."
+      ]
+    },
+    "benefits": {
+      "badge": "Vad köpare kontrollerar först",
+      "title": "Frågorna ditt säkerhetsteam ställer — besvarade",
+      "subtitle": "Byggda för att matcha vad sjukhus- och praktikköpare faktiskt granskar innan underskrift.",
+      "items": [
+        {
+          "title": "Databostad",
+          "body": "Hälsodata hostas i Schweiz, dirigeras inte genom en standardmolnregion i USA, och behandlas under förväntningar om medicinsk sekretess."
+        },
+        {
+          "title": "Kryptering under överföring och i vila",
+          "body": "Inspelningar och dokument skyddas med stark kryptering genom hela pipelinen, från fångst till godkänd anteckning."
+        },
+        {
+          "title": "Kvarhållning du kan förklara för en patient",
+          "body": "Ljud som används för dokumentation raderas automatiskt inom ett kort fönster — en policy enkel nog att ange i ett samtyckessamtal."
+        },
+        {
+          "title": "Ingen träning på kliniska besök",
+          "body": "Konsultationer används bara för att producera dina dokument. De används aldrig för att träna grundmodeller, och säljs eller används aldrig för reklam."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur kompatibilitet fungerar i praktiken",
+      "title": "Från möte till ett försvarligt register",
+      "subtitle": "Varje steg mappar till en fråga en kompatibilitetsgranskare ställer.",
+      "items": [
+        {
+          "title": "Fånga under samtycke",
+          "body": "Inspelning startar bara med patientens samtycke, följer din institutions samtyckesarbetsflöde."
+        },
+        {
+          "title": "Bearbeta under schweizisk hosting",
+          "body": "Ljud och utkast behandlas inom schweizisk infrastruktur, anpassad till FADP/nFADP och GDPR-förväntningar."
+        },
+        {
+          "title": "Godkänn under läkarens ansvar",
+          "body": "Klinikern granskar, korrigerar och godkänner — samma ansvarsstruktur sjukhus redan använder för papper och diktering."
+        },
+        {
+          "title": "Radera ljud automatiskt",
+          "body": "När dokumentet producerats raderas källjudet på ett kort, fast kvarhållningsfönster."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Standarder köpare frågar om",
+      "title": "FADP, GDPR, HIPAA och ISO 27001-anpassning",
+      "intro": "DocNote är byggd för att anpassas till ramverk som dyker upp upprepade gånger i sjukhus- och praktiksäkerhetsgranskningar.",
+      "points": [
+        {
+          "title": "FADP / nFADP",
+          "body": "Schweiziska dataskyddsförväntningar adresseras genom design — hostingplats, kvarhållning och åtkomstkontroll."
+        },
+        {
+          "title": "GDPR",
+          "body": "Europeiska dataskyddsprinciper tillämpas över plattformen för institutioner som verkar under GDPR."
+        },
+        {
+          "title": "HIPAA-anpassade kontroller",
+          "body": "Säkerhets- och åtkomstkontroller är byggda för att anpassas till HIPAA-förväntningar för organisationer som behöver det."
+        },
+        {
+          "title": "ISO 27001-anpassade metoder",
+          "body": "Informationssäkerhetsmetoder följer ISO 27001-anpassade kontroller köpare frågar om i enkäter."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Vad en säkerhetsenkät faktiskt frågar",
+        "body": "Kompatibilitetsteam frågar sällan om marknadsföringspåståenden. De frågar om hostingplats, kvarhållningsfönster, åtkomstloggar och vem som ansvarar för ett godkänt dokument. DocNote svarar på dessa frågor konsekvent eftersom svaren är en del av arkitekturen — inte ett separat kompatibilitetsteam som försöker förklara en produkt efteråt."
+      },
+      {
+        "heading": "Ansvar stannar hos klinikern",
+        "body": "Inget AI-system tar på sig det juridiska ansvaret för ett kliniskt beslut. DocNote skriver utkast, läkaren godkänner — och den separationen är precis vad som låter institutioner passa produkten i sina befintliga ansvars- och styrstrukturer utan att ställa nya frågor."
+      },
+      {
+        "heading": "Förbereda för en anskaffningsgranskning",
+        "body": "De flesta institutioner kör AI-dokumentationsverktyg genom samma granskning som används för annan klinisk mjukvara: databostad, kvarhållning, kryptering, åtkomstkontroll och leverantörsansvar. Att ha tydliga, skriftliga svar på var och en av dessa innan första mötet förkortar anskaffning avsevärt jämfört med att förhandla undantag affär för affär."
+      },
+      {
+        "heading": "Vad DocNote inte hävdar",
+        "body": "En leverantör som hävdar varje certifiering som finns översäljer vanligtvis. DocNote är tydlig med vad den anpassas till — FADP/nFADP, GDPR, HIPAA-anpassade kontroller, ISO 27001-anpassade metoder — och hävdar inte certifieringar den inte erhållit. Fråga oss direkt om aktuell status för någon specifik standard din institution kräver."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Är DocNote kompatibel med GDPR och FADP?",
+        "a": "DocNote är designad för att anpassas till FADP/nFADP och GDPR-förväntningar köpare granskar under anskaffning. Se vår sekretesspolicy för detaljer."
+      },
+      {
+        "q": "Hur länge behålls ljud?",
+        "a": "Ljud som används för dokumentation raderas automatiskt inom ett kort fönster efter bearbetning."
+      },
+      {
+        "q": "Säljs patientdata eller används för reklam?",
+        "a": "Nej. Kliniska besök är inte en produkt för reklam, och data används inte för att träna grundmodeller."
+      },
+      {
+        "q": "Var kan jag läsa hela sekretesspolicyn?",
+        "a": "På DocNotes sekretesspolicysida, länkad från sidfot och kompatibilitets-CTAs."
+      },
+      {
+        "q": "Ersätter DocNote vår befintliga säkerhetsgranskningsprocess?",
+        "a": "Nej. DocNote tillhandahåller dokumentation och svar för din befintliga anskaffning och säkerhetsgranskning — den ersätter inte din institutions egna godkännandeprocess."
+      },
+      {
+        "q": "Vem ansvarar för det godkända dokumentet?",
+        "a": "Klinikern som granskar och godkänner det — DocNote skriver utkast, men arkiverar aldrig något i journalen utan tillsyn."
+      }
+    ],
+    "cta": {
+      "title": "Ta dina kompatibilitetsfrågor till oss",
+      "body": "Läs hela sekretesspolicyn eller prata med vårt team om din institutions specifika säkerhetsgranskning.",
+      "primary": "Läs sekretesspolicy",
+      "secondary": "Kontakta oss"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Schweizisk hosting, kort lagring, tystnadsplikt."
+  },
+  "ambient-clinical-documentation": {
+    "navLabel": "Passiv klinisk dokumentation",
+    "title": "Ambient klinisk dokumentations-AI | DocNote",
+    "description": "Ambient klinisk dokumentation som lyssnar under mötet och skriver strukturerade anteckningar för läkargranskning. Schweizbaserad AI för sjukhus och praktiker i Europa.",
+    "hero": {
+      "badge": "Ambient dokumentation",
+      "title": "Ambient klinisk dokumentation som stannar i rummet med dig",
+      "subtitle": "Passiv fångst under besöket, ett strukturerat utkast direkt efter — inget skrivande däremellan.",
+      "lead": "Ambient klinisk dokumentation fångar det naturliga samtalet mellan kliniker och patient, skriver sedan anteckningen du annars skulle skriva efter besöket. DocNote är byggd för det arbetsflödet — utan att skicka hälsodata utanför Schweiz eller tvinga en enda amerikansk öppenvårdsmall på europeiska vårdteam."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Lyssnar i bakgrunden, skriver i förgrunden",
+      "paragraphs": [
+        "Ambient AI lyssnar medan du kör en normal konsultation, vårdrunda eller procedurgenomgång. Den ersätter inte din kliniska bedömning — den skriver ett strukturerat dokument så du granskar och godkänner istället för att börja från en tom sida. Det bestående dokumentet är anteckningen du godkänner, inte det råa ljudet.",
+        "Många ambienta verktyg optimerar för en enda öppenvårds-SOAP-anteckning. Verklig europeisk dokumentation inkluderar utskrivningssammanfattningar, samarbetande dag-sjukhusfiler, flerspråkiga möten och institutionella brevpapper — allt detta är DocNote byggd för att stödja."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför team väljer ambient fångst",
+      "title": "Byggd för sjukhus och kliniker, inte demos",
+      "subtitle": "Ambient lyssning tjänar bara sin plats om den överlever en verklig, bullrig klinikdag.",
+      "items": [
+        {
+          "title": "Närvarande under besöket",
+          "body": "Du håller ögonkontakt och följer samtalet istället för att dela uppmärksamhet med ett tangentbord, eftersom anteckningen skrivs efter, inte under, mötet."
+        },
+        {
+          "title": "Från fångst till godkänd anteckning",
+          "body": "Starta inspelning på mobil eller webb, avsluta mötet, granska ett utkast på sekunder — redigera sedan terminologi, skärp planen och godkänn."
+        },
+        {
+          "title": "Täcker sjukhusdokumenttyper",
+          "body": "Bortom öppenvårdsanteckningar skriver DocNote utskrivningsbrev, operationsrapporter och vårdrundor från samma ambienta fångst."
+        },
+        {
+          "title": "Kompatibilitet inbyggd, inte påmonterad",
+          "body": "Ljud som används för dokumentation behålls bara kort, raderas sedan. Hälsodata används inte för att träna grundmodeller."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från ambient fångst till ett godkänt dokument",
+      "subtitle": "Fyra steg, det mesta av arbetet sker medan du pratar med patienten.",
+      "items": [
+        {
+          "title": "Starta fångst",
+          "body": "Börja spela in på mobil eller webb vid konsultationens, vårdrundans eller procedurgenomgångens start."
+        },
+        {
+          "title": "Kör mötet som vanligt",
+          "body": "Prata, undersök och besluta som alltid — assistenten lyssnar i bakgrunden utan att störa flödet."
+        },
+        {
+          "title": "Granska det strukturerade utkastet",
+          "body": "Inom sekunder från att fångsten avslutas är ett utkast organiserat efter dokumenttyp klart för din granskning."
+        },
+        {
+          "title": "Redigera, godkänn och skicka vidare",
+          "body": "Korrigera terminologi eller detaljer, godkänn, skicka sedan in i din vanliga process — inklusive Mediway och SOKLE där tillgängligt."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Kompatibilitet är en del av produkten",
+      "title": "En sekretesshistoria du faktiskt kan förklara",
+      "intro": "Köpare får en tydlig historia för FADP/nFADP, GDPR och institutionella säkerhetsenkäter — inte en bild som säger 'vi tar sekretess på allvar.'",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Bearbetning hålls anpassad till schweiziska och europeiska hälsodataförväntningar snarare än standardmolnregioner i USA."
+        },
+        {
+          "title": "Kort ljudkvarhållning",
+          "body": "Ljud som används för dokumentation behålls bara kort, raderas sedan automatiskt."
+        },
+        {
+          "title": "Aldrig använd för att träna AI",
+          "body": "Hälsodata används inte för att träna grundmodeller — besök finns bara för att producera dina dokument."
+        },
+        {
+          "title": "Läkargodkännande, alltid",
+          "body": "En läkare eller auktoriserad kliniker granskar och godkänner utkastet innan det blir en del av journalen."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Vad ambient dokumentation verkligen betyder",
+        "body": "Ambient AI lyssnar i bakgrunden medan du kör en vanlig konsultation, vårdrunda eller procedurgenomgång. Den ersätter inte din kliniska bedömning. Den skriver ett strukturerat dokument — konsultationsanteckning, utskrivningsbrev, operationsrapport eller specialitetsmall — så du granskar och godkänner istället för att börja från en tom sida. Det bestående dokumentet är anteckningen du godkänner, inte den råa inspelningen."
+      },
+      {
+        "heading": "Från ambient fångst till en godkänd anteckning",
+        "body": "Starta inspelningen på mobil eller webb, avsluta konsultationen, granska ett utkast inom sekunder. Justera terminologi, skärp planen, godkänn och flytta in i din vanliga process — inklusive Mediway och SOKLE där tillgängligt, eller Word-mallar som matchar ditt brevpapper."
+      },
+      {
+        "heading": "Ambient dokumentation över en full klinikdag",
+        "body": "Värdet ackumuleras över en hel dag, inte bara ett besök. En kliniker som sparar flera minuter per möte över ett dussin eller fler konsultationer får den tiden tillbaka för patienter snarare än för skrivande — vilket vanligtvis är den verkliga anledningen team antar ambient fångst från början."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Är ambient klinisk dokumentation samma sak som en AI medicinsk sekreterare?",
+        "a": "De överlappar. \"Ambient klinisk dokumentation\" betonar passiv fångst under besöket; \"AI medicinsk sekreterare\" är den bredare kategorin verktyg som skriver utkast till klinikergranskning. DocNote täcker båda."
+      },
+      {
+        "q": "Skriver AI in i EHR automatiskt?",
+        "a": "Nej. En läkare eller auktoriserad kliniker granskar och godkänner utkastet innan det blir en del av journalen."
+      },
+      {
+        "q": "Var bearbetas ambient ljud?",
+        "a": "DocNote är designad för schweizisk hosting. Bearbetning hålls anpassad till schweiziska och europeiska hälsodataförväntningar snarare än standardmolnregioner i USA."
+      },
+      {
+        "q": "Kan ambient dokumentation hantera sjukhusdokumenttyper?",
+        "a": "Ja. Bortom öppenvårdsanteckningar stöder DocNote utskrivningsbrev, operationsrapporter, vårdrundor och andra högvolymssjukhusutskrifter."
+      },
+      {
+        "q": "Kan DocNote fungera i ett bullrigt flerbäddssal?",
+        "a": "Ambient fångst är knuten till enheten och arbetsflöde du väljer. Vi hjälper till att mappa en praktisk inställning för avdelningar och delade rum under onboarding."
+      },
+      {
+        "q": "Behöver patienter samtycka till ambient inspelning?",
+        "a": "Följ din lokala lag och institutionella regler. DocNote stöder transparenta, sekretessmedvetna arbetsflöden; din organisation definierar samtyckesprocessen."
+      }
+    ],
+    "cta": {
+      "title": "Prova ambient dokumentation på din nästa konsultation",
+      "body": "Starta en gratis provperiod eller prata med vårt team om att implementera ambient fångst över din tjänst.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se prissättning"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Passiv inspelning, strukturerat utkast efteråt."
+  },
+  "ai-clinical-documentation": {
+    "navLabel": "AI-klinisk dokumentation",
+    "title": "AI-klinisk dokumentationsprogram | DocNote",
+    "description": "AI-klinisk dokumentation för läkare och sjukhus: strukturerade anteckningar från konsultationer, utskrivningsbrev och operationsrapporter. Värdbaserat i Schweiz, utformat för Europa.",
+    "hero": {
+      "badge": "AI-klinisk dokumentation",
+      "title": "AI-klinisk dokumentation utan kvällsarbete",
+      "subtitle": "Strukturerade utkast från konsultationer och avdelningar, granskade av den ansvarige läkaren.",
+      "lead": "Klinisk dokumentation är där vårdteam förlorar kvällar. DocNote omvandlar konsultationer och avdelningsarbete till strukturerade utkast – så läkare spenderar mindre tid på att skriva och mer tid med patienter, samtidigt som de följer schweizisk datalagring och sekretessregler."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Dokumentation som matchar hur din verksamhet faktiskt fungerar",
+      "paragraphs": [
+        "Generiska anteckningsverktyg plattar ut alla specialiteter till ett amerikanskt öppenvårdsformat. DocNote anpassar sig till de dokument din verksamhet faktiskt använder: konsultationsanteckningar, uppföljningar, utskrivningssammanfattningar, operationsrapporter och gemensamma dagssjukhusfiler.",
+        "AI skapar utkast; läkare godkänner. Denna uppdelning säkerställer ansvar och medicinsk sekretess samtidigt som det minskar skrivandet som leder till utmattning och kvällsarbete med journaler."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför team byter",
+      "title": "Utformat för inköpare och kliniska förespråkare",
+      "subtitle": "IT- och medicinska chefer bryr sig lika mycket om datalagring och användning som kliniker bryr sig om hastighet.",
+      "items": [
+        {
+          "title": "Klara säkerhetskrav",
+          "body": "Tydlig schweizisk datalagring, kort ljudlagring och läkargodkännande innan något når journalen – historien IT- och medicinska chefer behöver."
+        },
+        {
+          "title": "Passar alla dokumenttyper",
+          "body": "Inte bara SOAP-anteckningar – utskrivningssammanfattningar, operationsrapporter och dagssjukhusfiler är lika viktiga."
+        },
+        {
+          "title": "Samma kliniska ansvar som idag",
+          "body": "AI skapar utkast, läkaren godkänner – ansvarsmodellen din institution redan litar på förblir exakt densamma."
+        },
+        {
+          "title": "Kopplas till din befintliga plattform",
+          "body": "Skicka godkända anteckningar till Mediway eller SOKLE där konfigurerat, eller exportera till en Word-mall som matchar din institutions struktur."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från möte till ett dokument ditt team litar på",
+      "subtitle": "En arbetsprocess kliniska förespråkare kan förklara för IT på en bild.",
+      "items": [
+        {
+          "title": "Fånga mötet",
+          "body": "Spela in konsultationen eller avdelningsinteraktionen på mobil eller webb som en del av det vanliga besöket."
+        },
+        {
+          "title": "Välj dokumenttyp",
+          "body": "Välj konsultationsanteckning, utskrivningssammanfattning, operationsrapport eller annan mall."
+        },
+        {
+          "title": "Granska det strukturerade utkastet",
+          "body": "Ett utkast som matchar din dokumentationsvanor är klart inom sekunder."
+        },
+        {
+          "title": "Godkänn och arkivera",
+          "body": "Korrigera och godkänn, skicka sedan till din journalsökväg eller exportprocess."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Byggd för upphandling",
+      "title": "Efterfrågad efterlevnadsberättelse",
+      "intro": "En pilot blir bara en heltidslösning när säkerhets- och medicinska chefer godkänner.",
+      "points": [
+        {
+          "title": "Schweizisk datalagring",
+          "body": "Hälsouppgifter lagras och bearbetas i Schweiz, i enlighet med medicinska sekretesskrav."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att dokumentet skapats."
+        },
+        {
+          "title": "Ingen träning på dina besök",
+          "body": "Konsultationer används bara för att skapa dina dokument, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Läkargodkännande, alltid",
+          "body": "Varje dokument granskas och godkänns av en läkare innan det blir del av journalen."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Dokumentation som matchar din verksamhet",
+        "body": "Generiska anteckningsverktyg plattar ut alla specialiteter till ett amerikanskt öppenvårdsformat. DocNote anpassar sig till de dokument din verksamhet faktiskt använder: konsultationsanteckningar, uppföljningar, utskrivningssammanfattningar, operationsrapporter och gemensamma dagssjukhusfiler."
+      },
+      {
+        "heading": "För både inköpare och kliniska förespråkare",
+        "body": "En pilot övertygar kliniska team snabbt. En heltidslösning kräver också tydliga svar för IT- och medicinska chefer – exakt vad DocNote ger från början, istället för att improvisera efteråt."
+      },
+      {
+        "heading": "Att välja mellan pilot och heltidslösning",
+        "body": "De flesta verksamheter börjar med en dokumenttyp med hög volym och en liten grupp kliniker, testar i några veckor och beslutar sedan om en bredare lansering. Denna process ger medicinska chefer verkliga bevis istället för en funktionsdemo och ger kliniker inflytande över hur mallar anpassas innan alla är beroende av dem."
+      },
+      {
+        "heading": "AI-klinisk dokumentation kontra enkel skrivtjänst",
+        "body": "Vissa verktyg nöjer sig med att producera text som låter som en anteckning. AI-klinisk dokumentation, som DocNote bygger, innebär att utdata struktureras till de avsnitt din verksamhet faktiskt arkiverar – kodade fält, rubriker och terminologi som matchar din befintliga journal – inte bara flytande text som fortfarande måste omorganiseras för hand innan den är användbar."
+      },
+      {
+        "heading": "Ärlig mätning av användning",
+        "body": "Det tydligaste tecknet på att ett dokumentationsverktyg fungerar är att kliniker fortsätter använda det efter att nyheten lagt sig, inte dag ett-demon. Spåra hur många utkast som skrivs om kraftigt kontra lätt redigeras under den första månaden – den trenden säger mer om passform än någon funktionsjämförelse."
+      },
+      {
+        "heading": "Involvera IT tidigt, inte i slutet",
+        "body": "Lanseringar som bara involverar IT efter att kliniker redan förbundit sig tenderar att fastna på frågor som kunde besvarats veckor tidigare. Att inkludera IT- och säkerhetsgranskning parallellt med den kliniska piloten, snarare än efter, håller tidsplanen realistisk."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Vem är AI-klinisk dokumentation för?",
+        "a": "Fristående läkare, grupppraktiker och sjukhusavdelningar som vill ha snabbare strukturerade anteckningar utan att ge upp kliniskt godkännande eller europeiska dataregler."
+      },
+      {
+        "q": "Hur skiljer sig detta från tal-till-text?",
+        "a": "Tal-till-text ger dig ord. DocNote strukturerar ett kliniskt dokument – rubriker, specialspråk och den valda anteckningstypen – redo för granskning."
+      },
+      {
+        "q": "Är DocNote bara för SOAP-anteckningar?",
+        "a": "Nej. Sjukhusdokumenttyper är en lika viktig del av produkten, inte en eftertanke."
+      },
+      {
+        "q": "Kan vi testa med en specialitet först?",
+        "a": "Ja. Många team börjar med en verksamhet med hög volym, validerar mallar och expanderar sedan."
+      },
+      {
+        "q": "Vad innebär onboarding?",
+        "a": "Mallanpassning till dina dokument, en kort pilot med verkliga möten och klinikerfeedback innan bredare lansering."
+      },
+      {
+        "q": "Kan icke-läkare använda DocNote?",
+        "a": "Ja, inom den ram din institution definierar – ansvar följer din befintliga kliniska styrning."
+      }
+    ],
+    "cta": {
+      "title": "Ta AI-klinisk dokumentation till din verksamhet",
+      "body": "Starta en gratis provperiod eller prata med vårt team om en pilot för din praktik eller ditt sjukhus.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Strukturerade utkast som du granskar och äger."
+  },
+  "ai-soap-notes": {
+    "navLabel": "AI SOAP-anteckningar",
+    "title": "AI SOAP-anteckningar för kliniker | DocNote",
+    "description": "Generera AI SOAP-anteckningar från konsultationer för läkargranskning. Strukturerade Subjektiva, Objektiva, Bedömningar och Planer – med schweizisk datalagring och europeiska arbetsflöden.",
+    "hero": {
+      "badge": "AI SOAP-anteckningar",
+      "title": "AI SOAP-anteckningar som fortfarande låter som din klinik",
+      "subtitle": "Subjektivt, Objektivt, Bedömning och Plan – skapat från besöket, inte en generisk mall.",
+      "lead": "SOAP förblir ryggraden i många öppenvårdsanteckningar. DocNote skapar Subjektivt, Objektivt, Bedömning och Plan från konsultationen så du redigerar och signerar istället för att bygga anteckningen från grunden efter varje besök."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Strukturerad SOAP utan robotliknande språk",
+      "paragraphs": [
+        "En användbar AI SOAP-anteckning bevarar klinisk nyans: patientens egna ord där de är viktiga, undersökningsfynd som faktiskt nämndes och en Bedömning/Plan som återspeglar ditt resonemang – inte en generisk sammanfattning som kunde tillhöra vilken patient som helst.",
+        "Om din dag mest består av öppenvårds-SOAP, börja där. När du även behöver utskrivningsbrev eller specialitetsrapporter täcker samma DocNote-arbetsyta dessa dokumenttyper utan att byta leverantör."
+      ]
+    },
+    "benefits": {
+      "badge": "Vad kliniker märker",
+      "title": "SOAP-anteckningar som håller vid granskning",
+      "subtitle": "Struktur utan att förlora de detaljer som är viktiga för kontinuitet och kodning.",
+      "items": [
+        {
+          "title": "Behåller din kliniska röst",
+          "body": "Utkast bevarar patientens egna ord där relevant och de undersökningsfynd du faktiskt nämnde – inte en platt sammanfattning."
+        },
+        {
+          "title": "Granska före journal",
+          "body": "Rätta en differentialdiagnos, lägg till en kodningsrelevant detalj, ta bort småprat som modellen överviktade – godkänn sedan."
+        },
+        {
+          "title": "En arbetsyta för mer än SOAP",
+          "body": "Lägg till utskrivningsbrev eller specialitetsrapporter senare utan att byta leverantör."
+        },
+        {
+          "title": "Integritet för varje samtal",
+          "body": "Besöksljud bearbetas för att skapa anteckningen och raderas sedan efter kort tid."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från konsultation till signerad SOAP-anteckning",
+      "subtitle": "Tillräckligt snabbt för tätt schemalagda besök.",
+      "items": [
+        {
+          "title": "Fånga besöket",
+          "body": "Spela in konsultationen på mobil eller webb med patientens samtycke."
+        },
+        {
+          "title": "Välj SOAP som anteckningstyp",
+          "body": "Välj SOAP-mallen (eller konsultationsmall) för det mötet."
+        },
+        {
+          "title": "Granska Subjektivt, Objektivt, Bedömning, Plan",
+          "body": "Ett strukturerat utkast är klart inom sekunder, organiserat i de fyra SOAP-avsnitten."
+        },
+        {
+          "title": "Redigera och signera",
+          "body": "Justera formulering eller detaljer, godkänn sedan – det validerade anteckningen blir del av journalen."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Integritet för patientsamtal",
+      "title": "Samma förtroendebaserade berättelse för varje besök",
+      "intro": "SOAP-anteckningar innehåller känsliga detaljer varje dag – integritetsberättelsen måste hålla varje gång, inte bara under piloten.",
+      "points": [
+        {
+          "title": "Schweizisk datalagring",
+          "body": "Data stannar i Schweiz och används inte för att träna grundmodeller."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Besöksljud raderas efter kort tid när anteckningen skapats."
+        },
+        {
+          "title": "Läkargranskning, alltid",
+          "body": "Varje SOAP-utkast förblir under läkarens kontroll innan det når journalen."
+        },
+        {
+          "title": "Byggd för europeisk praxis",
+          "body": "Flerspråkiga konsultationer och europeiska dokumentationsvanor, inte enbart en amerikansk mall."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Anpassa SOAP-mallar till din specialitet",
+        "body": "SOAP är en utgångsstruktur, inte ett stelt format. Under onboarding justerar team rubriker och betoningar så anteckningen återspeglar hur din verksamhet dokumenterar vård – från allmänpraktik till specialiserade öppenvårdstjänster."
+      },
+      {
+        "heading": "Använda SOAP parallellt med andra dokumenttyper",
+        "body": "Många praktiker börjar med SOAP-anteckningar för öppenvård och utökar senare till utskrivningsbrev eller specialitetsrapporter när patienter inläggs. Samma arbetsyta täcker båda fallen utan leverantörsbyte."
+      },
+      {
+        "heading": "Vad gör ett SOAP-utkast användbart, inte bara snabbt",
+        "body": "En snabb SOAP-anteckning som förlorar klinisk nyans kostar mer tid än den sparar, eftersom du ändå måste skriva om Bedömningen och Planen. DocNote är byggd för att bevara det resonemang som spelar roll – övervägda differentialdiagnoser, varför en plan ändrades – så redigering innebär förfining, inte ombyggnad."
+      },
+      {
+        "heading": "SOAP-anteckningar och kodningsnoggrannhet",
+        "body": "Kodning förlitar sig på specifika, väldokumenterade detaljer – den exakta anledningen till besöket, beslutsfattandets komplexitet, tid spenderad på rådgivning där relevant. Ett SOAP-utkast som plattar ut dessa till generiska fraser gör kodning svårare, inte enklare. DocNotes utkast strävar efter att bevara just de detaljer som stödjer korrekt kodning, men lämnar själva kodningsbeslutet till dig."
+      },
+      {
+        "heading": "SOAP för uppföljningar kontra första besök",
+        "body": "En uppföljnings-SOAP-anteckning bör hänvisa till vad som ändrats sedan senaste besöket, inte upprepa hela historiken igen. DocNote kan använda tidigare anteckningar som kontext så ett uppföljningsutkast fokuserar på förloppet och planjusteringar, snarare än att återge ett onödigt långt Subjektivt avsnitt varje gång."
+      },
+      {
+        "heading": "Signera SOAP-anteckningar samma dag",
+        "body": "En SOAP-anteckning som lämnas öppen över natten är mer sannolikt att glömmas, skyndas igenom eller signeras med mindre uppmärksamhet nästa morgon. Att få större delen av utkastet gjort före dagens slut, även om slutlig signering sker senare, håller journalen närmare vad som faktiskt hände under besöket."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan DocNote generera SOAP-anteckningar från omgivningslyssning?",
+        "a": "Ja. Fånga konsultationen, välj SOAP-modellen (eller konsultationsmodell) och granska det strukturerade utkastet."
+      },
+      {
+        "q": "Kommer SOAP-anteckningar fungera för min specialitet?",
+        "a": "SOAP är en utgångsstruktur. Specialterminologi och mallar kan anpassas så anteckningen matchar hur din verksamhet dokumenterar vård."
+      },
+      {
+        "q": "Är detta bara för amerikanska kliniker?",
+        "a": "Nej. DocNote är byggd för Schweiz och Europa, inklusive flerspråkiga konsultationer och europeiska dokumentationsvanor."
+      },
+      {
+        "q": "Hur lång tid tar utkastskapandet?",
+        "a": "De flesta utkast är klara inom sekunder efter inspelningen slutar, beroende på mötets längd och nätverksförhållanden."
+      },
+      {
+        "q": "Kan jag anpassa SOAP-mallen?",
+        "a": "Avsnittsrubriker och betoningar kan anpassas under onboarding för att matcha din dokumentationspraxis."
+      },
+      {
+        "q": "Föreslår DocNote kodningsrelevanta detaljer?",
+        "a": "Utkast strävar efter att fånga kliniskt relevanta detaljer; kodningsbeslut förblir hos läkaren."
+      }
+    ],
+    "cta": {
+      "title": "Skapa dina nästa SOAP-anteckningar på sekunder",
+      "body": "Starta en gratis provperiod och se hur DocNote hanterar din nästa öppenvårdsdag.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "SOAP från besöket, inte en tom mall."
+  },
+  "ai-medical-transcription": {
+    "navLabel": "AI-medicinsk transkription",
+    "title": "AI-medicinsk transkription som blir en klinisk anteckning | DocNote",
+    "description": "AI-medicinsk transkription uppgraderad: omvandla kliniskt tal till strukturerade anteckningar, inte bara råtext. Schweizbaserad DocNote för läkare och sjukhus.",
+    "hero": {
+      "badge": "AI-medicinsk transkription",
+      "title": "AI-medicinsk transkription som inte stannar vid transkriptet",
+      "subtitle": "Tal blir ett strukturerat kliniskt dokument, inte bara råtext att redigera.",
+      "lead": "Traditionell medicinsk transkription ger dig text. Kliniker måste fortfarande omvandla den texten till en användbar anteckning. DocNote börjar från tal och skapar det strukturerade kliniska dokument du behöver – så transkription blir dokumentation, inte ytterligare ett redigeringsjobb."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Bortom tal-till-text",
+      "paragraphs": [
+        "Ett transkript är en utgångspunkt, inte en medicinsk journal. DocNote mappar talat innehåll till de avsnitt, terminologi och dokumenttyp din verksamhet förväntar, och lämnar sedan slutlig formulering till klinikern.",
+        "Många inköpare använder \"AI-medicinsk transkription\" för omgivningsskrivare och anteckningsverktyg. Om ditt mål är mindre kvällsskrivande, utvärdera strukturerad utdata, specialitetsanpassning, datalagringsplats och valideringsflöde – inte bara ord-felkvot."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför transkription inte räcker",
+      "title": "Från ord till ett användbart kliniskt dokument",
+      "subtitle": "Transkription är den enkla delen. Struktur är vad som sparar kvällen.",
+      "items": [
+        {
+          "title": "Strukturerat, inte bara transkriberat",
+          "body": "Talat innehåll mappas till avsnitt och terminologi som matchar din dokumenttyp – ingen separat redigeringsprocess behövs."
+        },
+        {
+          "title": "Färre transkriptionstimmar",
+          "body": "Många team minskar eller eliminerar rutintranskription för dokumenttyper som stöds, med bibehållen mänsklig granskning för undantagsfall."
+        },
+        {
+          "title": "Byggd för flerspråkiga kliniker",
+          "body": "DocNote är utformad för de flerspråkiga kliniska miljöer som är vanliga i Schweiz och Europa."
+        },
+        {
+          "title": "Säkerhet från inspelning till utkast",
+          "body": "Hälsosamtal stannar i schweizisk datalagring, med kort ljudlagring genom hela processen."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från tal till en strukturerad anteckning",
+      "subtitle": "En inspelning, inget separat transkriptionssteg.",
+      "items": [
+        {
+          "title": "Spela in mötet",
+          "body": "Fånga konsultationen på mobil eller webb som en del av ditt vanliga besök."
+        },
+        {
+          "title": "DocNote strukturerar innehållet",
+          "body": "Talat innehåll mappas till de avsnitt och terminologi din dokumenttyp förväntar."
+        },
+        {
+          "title": "Granska utkastet",
+          "body": "En strukturerad anteckning – inte ett råtranskript – är redo för din granskning inom sekunder."
+        },
+        {
+          "title": "Redigera och validera",
+          "body": "Justera formulering, godkänn sedan. Den validerade anteckningen blir del av din journal."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Säkerhetsfokuserad design",
+      "title": "Känsliga samtal, strikta gränser",
+      "intro": "Hälsosamtal förtjänar mer skydd än en generisk transkriptionsleverantör vanligtvis erbjuder.",
+      "points": [
+        {
+          "title": "Schweizisk datalagring",
+          "body": "Datalagring stannar i Schweiz, vilket förkortar avståndet mellan inspelning och efterlevnad."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud lagras bara kort för att skapa dokumentet och raderas sedan."
+        },
+        {
+          "title": "Ingen träning på dina besök",
+          "body": "Dina konsultationer används aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Anpassad för europeisk dokumentation",
+          "body": "Från konsultationsanteckningar till utskrivningsbrev och operationsrapporter – inte bara en enda öppenvårds-SOAP-mall."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Utvärdera transkription bortom felkvot",
+        "body": "Två leverantörer med liknande ord-felkvot kan ge mycket olika resultat för din verksamhet om bara en faktiskt strukturerar språket. Fråga om utdata är en färdig dokumentstruktur eller bara råtext du fortfarande måste organisera själv."
+      },
+      {
+        "heading": "Minska transkriptionsarbetsbördan gradvis",
+        "body": "De flesta verksamheter ersätter inte transkription över en natt. En typisk väg börjar med en dokumenttyp med hög volym, granskar resultat över några veckor och utökar sedan till fler mallar samtidigt som mänsklig transkription finns tillgänglig för komplexa fall."
+      },
+      {
+        "heading": "Var transkription fortfarande faller kort",
+        "body": "Tunga accenter, överlappande tal och högst specialiserad jargong förblir de svåraste fallen för all talteknologi. DocNotes gransknings- och valideringssteg finns just för att dessa undantagsfall ska fångas av en läkare innan de når journalen, snarare än skickas som de är."
+      },
+      {
+        "heading": "Jämför transkriptionsleverantörer på mer än noggrannhet",
+        "body": "När du jämför AI-medicinska transkriptionsleverantörer, fråga om utdatastruktur, datalagringsplats och ljudlagring parallellt med noggrannhetssiffror. En leverantör med lägre annonserad felkvot men endast råtext-utdata och oklar datalagring kan sluta kosta ditt team mer redigeringstid och mer efterlevnadsrisk än ett strukturerat, schweiziskt-baserat alternativ."
+      },
+      {
+        "heading": "Migrera från ett äldre transkriptionskontrakt",
+        "body": "Verksamheter som lämnar ett långvarigt transkriptionskontrakt kör vanligtvis båda systemen parallellt under några veckor snarare än att byta över en natt. Denna överlappning låter ett team jämföra utkastkvalitet direkt på samma möten innan den gamla arbetsprocessen avvecklas helt, vilket minskar risken för en lucka i dokumentationskvalitet under övergången."
+      },
+      {
+        "heading": "Vad händer med gamla dikterade inspelningar",
+        "body": "Att byta verktyg kräver inte ombearbetning av årsgamla dikteringar. De flesta team behåller helt enkelt arkiverade transkript tillgängliga i sitt befintliga system medan nya möten flyttas till DocNote framöver, vilket undviker ett kostsamt och onödigt migreringsprojekt. Gamla transkript förblir sökbara i sitt ursprungliga arkiv."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Är DocNote en medicinsk transkriptionstjänst?",
+        "a": "DocNote är en AI-dokumentationsplattform. Den kan ersätta mycket av transkriptionsarbetsflödet genom att skapa strukturerade anteckningar för läkargranskning."
+      },
+      {
+        "q": "Behöver vi fortfarande mänskliga transkriptionister?",
+        "a": "Många team minskar eller eliminerar rutintranskription för dokumenttyper som stöds. Komplexa eller medicinsk-juridiska undantagsfall drar fortfarande nytta av läkargranskning – vilket DocNote alltid kräver."
+      },
+      {
+        "q": "Vilka språk stöds?",
+        "a": "DocNote är utformad för de flerspråkiga kliniska miljöer som är vanliga i Schweiz och Europa. Fråga vårt team om ditt språkmix under onboarding."
+      },
+      {
+        "q": "Var hamnar ljudet?",
+        "a": "Bearbetning sker i Schweiz. Ljud lagras bara kort för att skapa dokumentet och raderas sedan."
+      },
+      {
+        "q": "Kan DocNote hantera tunga accenter eller snabbt tal?",
+        "a": "Igenkänningskvalitet varierar med ljudförhållanden; team granskar utkast och kan flagga möten för närmare granskning under onboarding."
+      },
+      {
+        "q": "Finns råtranskriptet tillgängligt om jag vill ha det?",
+        "a": "Fokus ligger på strukturerat dokument; fråga vårt team om dina specifika arbetsflödesbehov."
+      }
+    ],
+    "cta": {
+      "title": "Ersätt transkriptionsendast-arbetsflöden",
+      "body": "Starta en gratis provperiod och se skillnaden mellan ett transkript och ett validerat kliniskt dokument.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Tal blir ett strukturerat kliniskt dokument."
+  },
+  "ai-discharge-summary": {
+    "navLabel": "AI-utskrivningssammanfattning",
+    "title": "AI-utskrivningssammanfattning & utskrivningsbrev | DocNote",
+    "description": "Skapa AI-utskrivningssammanfattningar och sjukhusutskrivningsbrev snabbare. Strukturerade, granskningsbara dokument med schweizisk datalagring – byggda för europeiska sjukhusarbetsflöden.",
+    "hero": {
+      "badge": "AI-utskrivningssammanfattning",
+      "title": "AI-utskrivningssammanfattningar utan nattetapp",
+      "subtitle": "Diagnoser, förlopp, behandling och uppföljning – skissat innan brevet blir brådskande.",
+      "lead": "Utskrivningsbrev är högrisk och högvolym. DocNote hjälper sjukhusavdelningar att skapa strukturerade utskrivningssammanfattningar från klinisk kontext så läkare validerar ett komplett brev istället för att bygga det under tidspress."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Dokument som sjukhus faktiskt skickar",
+      "paragraphs": [
+        "En utskrivningssammanfattning måste innehålla diagnoser, förlopp, behandlingar, uppföljning och den ton din institution förväntar. DocNote skissar mot den strukturen så den behandlande läkaren redigerar klinisk sanning, inte formatering.",
+        "Avdelningsrytm, gemensamma dagssjukhusfiler och flerspråkiga team är normalt i Schweiz och Europa. DocNote är utformad kring dessa begränsningar – inklusive schweizisk datalagring och medicinsk sekretess – snarare än en amerikansk klinikdemo."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför sjukhusavdelningar byter",
+      "title": "Säkrare, snabbare överlämningar",
+      "subtitle": "Utskrivningsbrev är både högrisk och högvolym – båda måste respekteras.",
+      "items": [
+        {
+          "title": "Fullständigt förlopp, inte bara sammanfattning",
+          "body": "Diagnoser, behandlingar, komplikationer och uppföljning hamnar i strukturen din institution förväntar."
+        },
+        {
+          "title": "Från möte till brev",
+          "body": "Använd konsultations- eller avdelningskontext för att påbörja utskrivningsutkastet, applicera sedan din Word-mall eller institutionella avsnitt."
+        },
+        {
+          "title": "Tidigare öppenvårdsoverlämningar",
+          "body": "Snabbare brev betyder tidigare överlämningar till öppenvård – utan att hoppa över läkarens valideringssteg."
+        },
+        {
+          "title": "Byggd för europeisk avdelningsrytm",
+          "body": "Gemensamma dagssjukhusfiler och flerspråkiga team är normalfallet, inte undantaget."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från inläggningskontext till validerat brev",
+      "subtitle": "Utformat för ögonblicket utskrivningsplanering börjar, inte bara den sista timmen.",
+      "items": [
+        {
+          "title": "Påbörja utkast från kontext",
+          "body": "Använd konsultationsanteckningar eller avdelningskontext insamlad under vistelsen för att påbörja utskrivningsutkastet."
+        },
+        {
+          "title": "Applicera din institutionella mall",
+          "body": "DocNote skissar mot din Word-mall eller institutionell avsnittsordning."
+        },
+        {
+          "title": "Granska före utskrivning",
+          "body": "Den behandlande läkaren granskar diagnoser, förlopp och uppföljning för korrekthet."
+        },
+        {
+          "title": "Validera och skicka",
+          "body": "Godkänn brevet så det lämnar avdelningen i tid, med läkarens ansvar intakt."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Byggd för europeisk sjukhusverklighet",
+      "title": "Efterlevnad som klarar av avdelningstryck",
+      "intro": "Utskrivningsbrev rör sig snabbt under tidspress – efterlevnadsberättelsen måste hänga med.",
+      "points": [
+        {
+          "title": "Schweizisk datalagring",
+          "body": "Hälsouppgifter lagras och bearbetas enligt schweiziska förväntningar, inte en amerikansk klinikdemo."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud som används för utkast raderas automatiskt kort efter bearbetning."
+        },
+        {
+          "title": "Ingen träning på patientdata",
+          "body": "Besök används för att skapa dina dokument, inte för att träna grundmodeller."
+        },
+        {
+          "title": "Mediway och SOKLE där konfigurerat",
+          "body": "Integrationer finns tillgängliga där inställt; annars exportera till din befintliga sjukhusprocess."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Starta utskrivningsplanering tidigare",
+        "body": "Många team väntar till den sista dagen för att skriva brevet, trots att den kliniska kontexten funnits i dagar. När konsultationer och avdelningsrundanteckningar redan fångats i struktur kan utskrivningsutkastet börja tidigare – vilket lämnar den behandlande läkaren att granska och lägga till detaljer den sista dagen istället för att skriva från grunden."
+      },
+      {
+        "heading": "Mallar per avdelning, inte ett format för alla",
+        "body": "Kirurgiska, invärtesmedicinska och pediatriska avdelningar förväntar olika avsnitt och detaljnivåer i ett utskrivningsbrev. DocNote mappar dessa skillnader genom institutionella mallar, så varje avdelning behåller sin vanliga struktur istället för att anpassa sig till ett generiskt format."
+      },
+      {
+        "heading": "Minska återinläggningsrisk genom tydligare brev",
+        "body": "Ett utskrivningsbrev som tydligt separerar diagnoser, läkemedelsförändringar och uppföljningsinstruktioner är lättare för öppenvårdsteam och patienter att agera på. Struktur ensamt förhindrar inte återinläggningar, men ett brev som går vilse i täta stycken gör uppföljningsmisstag mer sannolika."
+      },
+      {
+        "heading": "Hantera komplexa, fleravdelningars utskrivningar",
+        "body": "En patient som setts av flera avdelningar under en lång vistelse behöver en utskrivningssammanfattning som sammanför hela förloppet, inte bara de sista dagarna. DocNote kan påbörja utkastet från konsultations- och avdelningsrundanteckningar fångade under hela vistelsen, så det slutliga brevet återspeglar hela förloppet snarare än bara vad det utskrivande teamet minns."
+      },
+      {
+        "heading": "Samordna brevet med öppenvårdsteamet",
+        "body": "Ett utskrivningsbrev är bara användbart om det når husläkaren eller specialisten som fortsätter vården i tid att agera på det. Snabbare utkastskrivning förkortar gapet mellan utskrivning och komplett brev som når öppenvårdsteamet, vilket spelar störst roll för patienter med smalt uppföljningsfönster."
+      },
+      {
+        "heading": "Utskrivningsbrev för äldre och multimorbida patienter",
+        "body": "En utskrivningssammanfattning för en äldre patient med flera kroniska tillstånd behöver vanligtvis täcka fler läkemedelsförändringar och fler uppföljningstider än ett yngre patients brev. DocNotes struktur skalar till den komplexiteten utan att tvinga en kortbesöksmall på en lång, komplicerad vistelse för en skör patient som behöver noggrann, entydig överlämning."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan DocNote matcha vårt sjukhus utskrivningsmall?",
+        "a": "Ja. Anpassade Word-mallar och avsnittsordningar är en kärndel av sjukhuslanseringar."
+      },
+      {
+        "q": "Vem signerar utskrivningsbrevet?",
+        "a": "Den ansvarige läkaren. DocNote skapar utkast; kliniker validerar och förblir ansvariga för journalen."
+      },
+      {
+        "q": "Fungerar detta med vår journal?",
+        "a": "Integrationer som Mediway och SOKLE finns tillgängliga där konfigurerat; annars exportera till din befintliga process."
+      },
+      {
+        "q": "Används patientdata för att träna AI-modeller?",
+        "a": "Nej. Besök används för att skapa dina dokument, inte för att träna grundmodeller."
+      },
+      {
+        "q": "Kan DocNote börja utkastet innan patienten lämnar?",
+        "a": "Ja. Avdelningskontext insamlad under vistelsen kan påbörja utskrivningsutkastet före slutlig granskning."
+      },
+      {
+        "q": "Vad händer om brevet behöver brådskande redigeringar?",
+        "a": "Den behandlande läkaren kan redigera fritt före validering – inget arkiveras automatiskt."
+      }
+    ],
+    "cta": {
+      "title": "Minska nattappet av utskrivningsbrev",
+      "body": "Prata med vårt team om en pilot för din avdelning eller utskrivningsplaneringsprocess.",
+      "primary": "Prata med vårt team",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Diagnoser, förlopp och plan före utskrivning."
+  },
+  "operative-report-ai": {
+    "navLabel": "AI-operationsrapport",
+    "title": "AI-operationsrapport för kirurger | DocNote",
+    "description": "Skapa AI-operationsrapporter och kirurgiska anteckningar för granskning av kirurger. Strukturerad operationsdokumentation med schweizisk hosting för sjukhusets kirurgiska tjänster.",
+    "hero": {
+      "badge": "AI-operationsrapport",
+      "title": "AI-operationsrapporter som respekterar kirurgisk struktur",
+      "subtitle": "Indikation, fynd, procedur och plan — i den ordning en operationsrapport faktiskt behöver.",
+      "lead": "Operationsrapporter är precisa, repetitiva under tidspress och juridiskt viktiga. DocNote hjälper kirurgiska team att skapa strukturerade operationsanteckningar så att kirurger kan förfina teknikdetaljer och fynd istället för att börja från en tom mall efter en lång lista."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Kirurgisk dokumentation, inte en generell anteckning",
+      "paragraphs": [
+        "Indikation, fynd, procedursteg, implantat, komplikationer och postoperativ plan hör hemma i en tydlig ordning. DocNote riktar in sig på den strukturen så att utkastet läses som en operationsrapport — inte en konversationstranskript klistrad in i ett brev.",
+        "När fallet är avslutat konkurrerar dokumentationen fortfarande med nästa patient. Ett bra utkast minskar det gapet samtidigt som kirurgen förblir ansvarig för den slutliga formuleringen."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför kirurgiska team väljer det",
+      "title": "Mindre tid med tom sida efter en lång lista",
+      "subtitle": "Precision under tidspress, utan att förlora kirurgisk kontroll.",
+      "items": [
+        {
+          "title": "Struktur som matchar en operationsrapport",
+          "body": "Indikation, fynd, steg, implantat och komplikationer hamnar i den ordning kirurger och kodare förväntar sig."
+        },
+        {
+          "title": "Passar överlämningen från operationssal till avdelning",
+          "body": "Ett utkast klart strax efter fallet minskar gapet mellan det sista snittet och en avslutad rapport."
+        },
+        {
+          "title": "Fungerar sida vid sida med utskrivnings- och avdelningsanteckningar",
+          "body": "Samma plattform som skapar operationsrapporter hanterar också utskrivningsbrev, så teamen behöver inte hantera flera AI-leverantörer."
+        },
+        {
+          "title": "Sjukhussäkrade kontroller genomgående",
+          "body": "Schweizisk hosting, kort ljudlagring och kirurgvalidering är byggda för tjänster som svarar på efterlevnad."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från fallgenomgång till en validerad operationsrapport",
+      "subtitle": "Byggd för stunden direkt efter fallet, inte en kväll senare.",
+      "items": [
+        {
+          "title": "Genomgå fallet",
+          "body": "Spela in operationsgenomgången — indikation, fynd, steg och plan — direkt efter ingreppet."
+        },
+        {
+          "title": "DocNote strukturerar rapporten",
+          "body": "Ett utkast organiserat enligt operationsrapportens avsnitt är klart inom sekunder."
+        },
+        {
+          "title": "Granska teknik och fynd",
+          "body": "Kirurgen förfinar fynd, implantat och komplikationer för precision."
+        },
+        {
+          "title": "Validera innan arkivering",
+          "body": "Godkänn rapporten så att den går in i journalen under kirurgens ansvar."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Sjukhussäkrade kontroller",
+      "title": "Byggd för kirurgiska tjänster under efterlevnad",
+      "intro": "Operationsrapporter är juridiskt viktiga — kontrollerna bakom dem måste matcha den vikten.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata lagras och bearbetas under schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Genomgångsljud raderas automatiskt kort efter att rapporten har skapats."
+        },
+        {
+          "title": "Kirurgvalidering, alltid",
+          "body": "Ingen operationsrapport arkiveras automatiskt — kirurgen granskar och godkänner varje en."
+        },
+        {
+          "title": "Institutionella mallar",
+          "body": "Avsnittsordning och terminologi matchar din tjänsts befintliga mall för operationsrapporter."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Från det sista stygnet till en avslutad rapport",
+        "body": "Den största tidsförlusten kring operationsrapporter är vanligtvis inte diktering — det är att vänta till kvällen för att skriva en rapport som ingen kommer ihåg i detalj längre. Ett utkast klart direkt efter genomgången håller detaljerna friska och minskar meningsfullt tiden till arkivering."
+      },
+      {
+        "heading": "Flera specialiteter, ett gemensamt format",
+        "body": "Ortopedi, allmänkirurgi och andra linjer har olika rapportformer. DocNote kartlägger dessa genom specialitetsspecifika mallar, så varje team använder sin vanliga struktur samtidigt som institutionen behåller en konsekvent struktur överlag."
+      },
+      {
+        "heading": "Varför struktur är viktigare i operationsrapporter än annars",
+        "body": "En operationsrapport läs av kodare, remitterande läkare och ibland advokater år efter fallet, ofta utan att kirurgen är tillgänglig för att klargöra. En tydlig, konsekvent ordnad rapport minskar oklarheter för var och en av dessa läsare, vilket är varför DocNote behandlar avsnittsordning som en förstaklassbegränsning snarare än ett kosmetiskt val."
+      },
+      {
+        "heading": "Registrera implantat och material korrekt",
+        "body": "Implantatspårning är ofta en regelbunden krav, inte en valfri detalj. Namn, lottsnummer och placeringsdetaljer måste hamna i rätt avsnitt konsekvent så att de kan hämtas senare — under en återkallelse, en revision eller ett uppföljningsingrepp. DocNotes operationsmallar har en dedikerad plats för denna detalj istället för att lämna den att nämnas i förbigående."
+      },
+      {
+        "heading": "Genomgå komplikationer ärligt",
+        "body": "En ärlig, precist dokumenterad komplikation är mer försvarbar senare än en vag — och mer användbar för teamet som hanterar patienten efteråt. DocNotes mallar har ett tydligt avsnitt för komplikationer istället för att vika in dem i en allmän berättelse där de är lätta att underskatta eller begrava."
+      },
+      {
+        "heading": "Operationsrapporter för utbildningssjukhus",
+        "body": "På utbildningssjukhus kan en operationsrapport behöva skilja på roller för övervakande kirurg och en praktikant som utför delar av ingreppet. DocNotes mallar kan anpassas för den distinktionen där din institution kräver det, snarare än att anta en enkelkirurgstruktur genom hela fallet från början till slut."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan vi använda vår tjänsts mall för operationsrapporter?",
+        "a": "Ja. Institutionella mallar och avsnittspreferenser är en del av sjukhusets onboarding."
+      },
+      {
+        "q": "Arkiveras operationsrapporten automatiskt?",
+        "a": "Nej. Kirurgen eller auktoriserad kliniker granskar och validerar innan den går in i journalen."
+      },
+      {
+        "q": "Förstår DocNote kirurgisk terminologi?",
+        "a": "Rapporter anpassas till specialitetsspråk. Team förfinar formuleringar under piloter så att utkast matchar lokal vokabulär."
+      },
+      {
+        "q": "Hur börjar vi med en operationssal eller specialitet?",
+        "a": "De flesta kirurgiska lanseringar börjar med en tjänstelinje, validerar mallar och expanderar sedan."
+      },
+      {
+        "q": "Kan vi spåra implantat och material som används?",
+        "a": "Avsnittsstruktur följer din mall, och implantat- eller materialspårning kan inkluderas där din tjänst dokumenterar det."
+      },
+      {
+        "q": "Saktar detta ned omsättning mellan fall?",
+        "a": "Genomgång tar minuter och sker parallellt med normal postoperativ rutin — det är designat för att förkorta, inte lägga till, omsättningstid."
+      }
+    ],
+    "cta": {
+      "title": "Stäng operationsrapporter snabbare",
+      "body": "Prata med vårt team om en pilot för din operationssal eller kirurgiska tjänst.",
+      "primary": "Prata med vårt team",
+      "secondary": "Titta på handledning"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Från indikation till plan, i op-ordning."
+  },
+  "ai-consultation-notes": {
+    "navLabel": "AI-konsultationsanteckningar",
+    "title": "AI-konsultationsanteckningar för läkare | DocNote",
+    "description": "AI-konsultationsanteckningar från besöket — strukturerade utkast för läkargranskning. Byggd för europeisk öppenvård och sjukhuskonsultationer med schweizisk hosting.",
+    "hero": {
+      "badge": "AI-konsultationsanteckningar",
+      "title": "AI-konsultationsanteckningar redo för din granskning",
+      "subtitle": "Anamnes, fynd, bedömning och plan — skisserade i den ordning din tjänst förväntar sig.",
+      "lead": "Konsultationsanteckningar är den dagliga valutan för öppenvård och specialiserad vård. DocNote skisserar dem från mötet så att du lämnar rummet med en strukturerad anteckning att validera — inte en kväll med skrivande."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Konsultationsförsta arbetsflöden",
+      "paragraphs": [
+        "Fånga besöket, välj konsultationsmodellen och granska ett utkast som reflekterar anamnes, fynd, bedömning och plan i den ordning din tjänst förväntar sig.",
+        "Många europeiska kliniker söker efter konsultationsanteckningar snarare än amerikansk SOAP-jargong. DocNote stöder båda tankesätten samtidigt som det håller sig orienterat mot schweizisk och europeisk dokumentationsvanor, inklusive flerspråkiga möten."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför kliniker håller det öppet hela dagen",
+      "title": "En anteckning redo när besöket slutar",
+      "subtitle": "Byggd för öppenvård och specialkonsultationer under en full klinikdag.",
+      "items": [
+        {
+          "title": "Europeisk formulering, inte bara SOAP-jargong",
+          "body": "Konsultationsanteckningar följer lokala mallar snarare än att tvinga en enda amerikansk modell på varje specialitet."
+        },
+        {
+          "title": "Flerspråkiga möten",
+          "body": "Konsultationer byter ofta språk — DocNote är designad för flerspråkiga kliniska miljöer vanliga i Schweiz och gränsöverskridande vård."
+        },
+        {
+          "title": "Specialitetsspråk över 61 fält",
+          "body": "Terminologi och mallar anpassas så att utkast passar hur din specialitet faktiskt dokumenterar vård."
+        },
+        {
+          "title": "En integritetsberättelse patienter förstår",
+          "body": "Kort ljudlagring, schweizisk hosting och ingen träning på dina besök — samma berättelse du kan förklara för patienter och efterlevnadsteam."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från besök till en granskad konsultationsanteckning",
+      "subtitle": "Lämna rummet med ett utkast redo att validera.",
+      "items": [
+        {
+          "title": "Fånga konsultationen",
+          "body": "Spela in besöket på mobil eller webb, enligt din institutions samtyckesprocess."
+        },
+        {
+          "title": "Välj konsultationsmodell",
+          "body": "Välj konsultationsmallen som matchar din specialitet och tjänst."
+        },
+        {
+          "title": "Granska anamnes, fynd, plan",
+          "body": "Ett strukturerat utkast som täcker anamnes, fynd, bedömning och plan är klart inom sekunder."
+        },
+        {
+          "title": "Redigera mycket eller lite, sedan signera",
+          "body": "Utkastet är alltid en utgångspunkt under ditt kliniska ansvar."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Integritet patienter och efterlevnadsteam förstår",
+      "title": "Samma förtroendebaserade berättelse, varje konsultation",
+      "intro": "Konsultationsanteckningar är den dagliga valutan för öppenvård — integritetsberättelsen måste vara enkel nog att upprepa varje dag.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata stannar lagrade och bearbetade under schweiziska förväntningar."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Besöksljud raderas inom en kort lagringsperiod när anteckningen har skapats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Konsultationer används bara för att producera ditt dokument, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Specialistklara mallar",
+          "body": "Specialitetsspråk och mallar är en del av hur DocNote är designat över många medicinska fält."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Konsultationsanteckningar kontra SOAP",
+        "body": "Många europeiska mottagningar dokumenterar med lokala konsultationsmallar snarare än den amerikanska SOAP-strukturen. DocNote stöder båda tankesätten samtidigt, så en mottagning med blandade bakgrunder inte låses in i ett enda format."
+      },
+      {
+        "heading": "Från ett första besök till en uppföljning",
+        "body": "En tydligt strukturerad första anteckning gör varje efterföljande uppföljning snabbare att förbereda, eftersom anamnes och tidigare bedömning omedelbart går att hitta istället för att vara utspridda över ostrukturerad fri text."
+      },
+      {
+        "heading": "Konsultationsanteckningar för specialister, inte bara allmänläkare",
+        "body": "Specialistkonsultationer behöver ofta en annan balans av anamnes, fynd och resonemang än ett allmänläkarbesök. DocNote anpassar mallar per specialitet snarare än att anta att varje konsultationsanteckning ser likadan ut, så en kardiologisk uppföljning och ett dermatologiskt första besök inte delar en struktur som passar ingen av dem bra."
+      },
+      {
+        "heading": "Konsultationsanteckningar som ryggraden i journalen",
+        "body": "Under loppet av en långsiktig vårdrelation är det konsultationsanteckningar en ny kliniker läser först för att förstå en patients historia. En serie tydliga, strukturerade anteckningar gör den historien lätt att följa år senare; en serie stressade, inkonsekventa gör varje framtida besök långsammare att förbereda, oavsett hur bra en enskild anteckning var vid tillfället."
+      },
+      {
+        "heading": "Konsultationsanteckningar för vikarier och tillfälliga kliniker",
+        "body": "En kliniker som täcker för en kollega eller arbetar som vikarie har ingen personlig minnesbild av patienten att falla tillbaka på. Tydliga, konsekvent strukturerade konsultationsanteckningar är vad som gör vikarier säkra — DocNotes struktur är designad med den läsaren i åtanke, inte bara klinikern som skrev anteckningen."
+      },
+      {
+        "heading": "Hålla konsultationsanteckningar koncisa utan att förlora substans",
+        "body": "En lång anteckning är inte automatiskt en grundlig, och en kort är inte automatiskt ofullständig. DocNotes utkast strävar efter den detaljnivå din dokumenttyp faktiskt behöver, så redigering innebär vanligtvis att trimma eller lägga till en specifik punkt snarare än att omstrukturera hela anteckningen från grunden."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Är AI-konsultationsanteckningar samma som SOAP-anteckningar?",
+        "a": "SOAP är en vanlig struktur. Konsultationsanteckningar kan följa lokala mallar. DocNote skisserar strukturen du väljer."
+      },
+      {
+        "q": "Kan specialister också använda detta?",
+        "a": "Ja. Specialitetsspråk och mallar är en del av hur DocNote är designat över 61 specialiteter."
+      },
+      {
+        "q": "Behöver patienter samtycka till inspelning?",
+        "a": "Följ dina lokala lagar och institutionella regler. DocNote stöder transparenta, integritetsmedvetna dokumentationspraxis; din organisation sätter samtyckesflödet."
+      },
+      {
+        "q": "Kan jag redigera mycket innan signering?",
+        "a": "Alltid. Utkastet är en utgångspunkt under ditt kliniska ansvar."
+      },
+      {
+        "q": "Kan konsultationsanteckningar följa min egen lokala mall?",
+        "a": "Ja. Lokala mallar och avsnittspreferenser kan mappas under onboarding."
+      },
+      {
+        "q": "Hur hjälper detta med uppföljningsbesök?",
+        "a": "En tydlig strukturerad anteckning från första besöket gör nästa uppföljning snabbare att förbereda och granska."
+      }
+    ],
+    "cta": {
+      "title": "Lämna varje konsultation med en anteckning redo att granska",
+      "body": "Starta en gratis provperiod och se hur DocNote hanterar din konsultationsbelastning.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Från anamnes till plan, i er ordning."
+  },
+  "multilingual-ai-medical-scribe": {
+    "navLabel": "Flerspråkig AI-assistent",
+    "title": "Flerspråkig AI-medicinsk skrivare | DocNote",
+    "description": "Flerspråkig AI-medicinsk skrivare för schweiziska och europeiska kliniker. Dokumentera konsultationer över språk med schweizisk hosting och medicinsk sekretess.",
+    "hero": {
+      "badge": "Flerspråkig AI-skrivare",
+      "title": "Flerspråkig AI-medicinsk skrivare för verkliga europeiska kliniker",
+      "subtitle": "Dokumentera konsultationer över språk utan att skicka hälsodata till en endast amerikansk stack.",
+      "lead": "Vård i Schweiz och Europa är sällan enspråkig. DocNote är en AI-medicinsk skrivare designad för flerspråkiga konsultationer — så team dokumenterar på de språk de faktiskt arbetar på, utan att skicka hälsodata till en endast amerikansk ambient stack."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Byggd där språkbyte är normalt",
+      "paragraphs": [
+        "En enda klinikdag kan innehålla franska, tyska, engelska, italienska eller andra språk. Dokumentationsverktyg som antar ett språk bryter mot den verkligheten. DocNote är orienterad mot flerspråkigt kliniskt arbete från början.",
+        "Flerspråkig vård kräver fortfarande strikta datagränser. Hosting i Schweiz, kort ljudlagring och ingen träning på besök är en del av hur DocNote förtjänar förtroende med sjukhus och patienter över språkgrupper."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför flerspråkiga team väljer DocNote",
+      "title": "En skrivare, många språk, ett arbetsflöde",
+      "subtitle": "Byggd för gränsöverskridande och internationell vård, inte en enspråkig demo.",
+      "items": [
+        {
+          "title": "Hanterar verklig klinikdags språkblandning",
+          "body": "Franska, tyska, engelska, italienska eller andra språk under samma dag — dokumentation hänger med utan att byta verktyg."
+        },
+        {
+          "title": "Samma skrivare, många dokumenttyper",
+          "body": "Oavsett om du behöver konsultationsanteckningar, utskrivningsbrev eller specialitetsrapporter, matar flerspråkig inlämning in i samma gransknings- och valideringsflöde."
+        },
+        {
+          "title": "Schweizisk hosting över alla språk",
+          "body": "Datagränser slappnar inte bara för att mötet bytte språk mitt i besöket."
+        },
+        {
+          "title": "Byggd för internationella patienttjänster",
+          "body": "Privata kliniker, akademiska centra och gränsöverskridande team behöver dokumentation som hänger med språklig mångfald utan att offra efterlevnad."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från ett flerspråkigt möte till en tydlig anteckning",
+      "subtitle": "Språkbyte avbryter inte arbetsflödet.",
+      "items": [
+        {
+          "title": "Fånga mötet som det talas",
+          "body": "Spela in konsultationen när det händer, på vilket språk eller språkblandning besöket använder."
+        },
+        {
+          "title": "DocNote strukturerar innehållet",
+          "body": "Talat innehåll mappas in i anteckningstypen och strukturen din tjänst förväntar sig."
+        },
+        {
+          "title": "Granska på ditt föredragna utspråk",
+          "body": "Prata med oss om ditt föredragna utspråk och mallar för ditt team."
+        },
+        {
+          "title": "Validera som vanligt",
+          "body": "Klinikern granskar och godkänner — samma ansvar som vilket annat möte som helst."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Schweizisk hosting som en produktfunktion",
+      "title": "Förtroende som inte beror på talat språk",
+      "intro": "Flerspråkig vård kräver fortfarande strikta, konsekventa datagränser.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hosting i Schweiz gäller för varje möte, oavsett språk."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att dokumentet har producerats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Flerspråkiga konsultationer används aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Inte en endast amerikansk ambient stack",
+          "body": "Bearbetning och hosting stämmer överens med schweiziska och europeiska förväntningar, en kärnskillnad mot många amerikanska verktyg."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "När en konsultation byter språk mitt i meningen",
+        "body": "I praktiken byter patienter och kliniker ofta språk inom samma konsultation, särskilt i gränsregioner och internationella centra. DocNote är designad för att hantera dessa byten utan separat konfiguration per språk, istället för att avbryta inlämning varje gång språket ändras."
+      },
+      {
+        "heading": "Konfigurera utspråk separat från besöket",
+        "body": "Ett team kan dokumentera på ett språk och producera på ett annat om det matchar institutionell standard. Detta konfigureras per team under onboarding, inte per enskild konsultation."
+      },
+      {
+        "heading": "Flerspråkig dokumentation för internationella patienttjänster",
+        "body": "Privata kliniker och akademiska centra som ser patienter utifrån behöver ofta dokumentation som hänger med fler språk än en typisk regional mottagning. DocNote är byggd kring den verkligheten från början, snarare än att behandla ytterligare språk som en tilläggsfunktion fastsatt på en enspråkig produkt."
+      },
+      {
+        "heading": "Varför generella ambient verktyg kämpar med språkbyte",
+        "body": "De flesta ambient skrivare är tränade och inställda kring ett primärt språk, med andra språk behandlade som en eftertanke. Det visar sig som noggrannhetsfall precis när en konsultation byter språk mitt i meningen — ofta stunden en patient förklarar sitt viktigaste symtom. DocNotes flerspråkiga fokus är ett designval, inte ett översättningslager fastsatt ovanpå."
+      },
+      {
+        "heading": "Stödja tolkassisterade konsultationer",
+        "body": "Vissa möten involverar en professionell tolk snarare än en tvåspråkig kliniker som talar direkt med patienten. DocNote kan också fånga och strukturera dessa trevägssamtal; prata med vårt team om det specifika mönster din tjänst använder för tolkassisterade besök under onboarding."
+      },
+      {
+        "heading": "Lansera flerspråkig dokumentation över en grupp",
+        "body": "En klinikgrupp som verkar över flera språkregioner standardiserar vanligtvis på delade mallar först, sedan låter individuella platser konfigurera sina föredragna konsultations- och utspråk. Den sekvensen håller journalstrukturen jämförbar över gruppen samtidigt som den respekterar lokala språkbehov på varje enskild plats."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Vilka språk kan DocNote hantera?",
+        "a": "DocNote är designad för flerspråkiga schweiziska och europeiska miljöer. Bekräfta din språkblandning med vårt team under onboarding."
+      },
+      {
+        "q": "Kan anteckningen produceras på ett annat språk än besöket?",
+        "a": "Arbetsflöden varierar per organisation. Prata med oss om ditt föredragna utspråk och mallar."
+      },
+      {
+        "q": "Är flerspråkigt stöd bara för öppenvård?",
+        "a": "Nej. Sjukhusdokumenttyper stöds sida vid sida med konsultationsanteckningar."
+      },
+      {
+        "q": "Lämnar flerspråkig bearbetning Schweiz?",
+        "a": "DocNote är designad så att hälsohosting och bearbetning stämmer överens med schweiziska förväntningar — en kärnskillnad mot många amerikanska ambient verktyg."
+      },
+      {
+        "q": "Behöver kliniker tala alla stödda språk?",
+        "a": "Nej. DocNote är byggd för att hantera språket patienten och klinikern faktiskt använder, inklusive blandade språkmöten."
+      },
+      {
+        "q": "Kan olika kliniker i samma grupp använda olika utspråk?",
+        "a": "Ja, utspråk och mallar kan konfigureras per team under onboarding."
+      }
+    ],
+    "cta": {
+      "title": "Dokumentera vård på de språk du faktiskt arbetar på",
+      "body": "Starta en gratis provperiod eller prata med vårt team om din språkblandning.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Flerspråkiga anteckningar på schweizisk infrastruktur."
+  },
+  "ai-scribe-general-practice": {
+    "navLabel": "AI-assistent för allmänmedicin",
+    "title": "AI-medicinsk skrivare för allmänmedicin | DocNote",
+    "description": "AI-medicinsk skrivare för allmänmedicin och familjemedicin. Snabbare konsultationsanteckningar och uppföljningar med schweizisk hosting — byggd för upptagna allmänmedicinska kliniker.",
+    "hero": {
+      "badge": "AI-skrivare för allmänmedicin",
+      "title": "AI-medicinsk skrivare för allmänmedicin",
+      "subtitle": "Skydda ansikte-mot-ansikte-tid i rygg-mot-rygg-konsultationer utan att förlora journalkvalitet.",
+      "lead": "Allmänmedicin kör på hög volym och korta tidsluckor. DocNote skisserar konsultations- och uppföljningsanteckningar från besöket så allmänläkare skyddar ansikte-mot-ansikte-tid utan att offra journalens kvalitet."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Byggd för allmänmedicinsk rytm",
+      "paragraphs": [
+        "Rygg-mot-rygg-konsultationer, multimorbiditet och administrativa uppföljningar lämnar lite utrymme för skrivande. Ambient inlämning plus ett strukturerat utkast minskar gapet mellan sista patienten och en stängd anteckning.",
+        "Konsultationsanteckningar, remissbrev och uppföljningsplaner — inte bara en SOAP-demo. Mallar anpassas till hur din mottagning dokumenterar vård, oavsett om du arbetar ensam eller tillsammans med andra kliniker i samma mottagning."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför allmänläkare antar det",
+      "title": "Dokument allmänläkare faktiskt skriver",
+      "subtitle": "Byggd för korta tidsluckor och hög volym, inte en specialists långsamma takt.",
+      "items": [
+        {
+          "title": "Passar korta konsultationstidsluckor",
+          "body": "Ett strukturerat utkast klart inom sekunder hänger med i rygg-mot-rygg-bokningar."
+        },
+        {
+          "title": "Täcker remissbrev också",
+          "body": "Bortom konsultationsanteckningar är remissbrev och uppföljningsplaner en del av vad DocNote skisserar för allmänmedicin."
+        },
+        {
+          "title": "Integritet för samhällsmottagningar",
+          "body": "Patienter litar på sin allmänläkare med känsliga berättelser — schweizisk hosting och kort ljudlagring stödjer det förtroendet."
+        },
+        {
+          "title": "Konsekvent över hela mottagningen",
+          "body": "När flera kliniker delar en mottagning håller konsekvent anteckningsstruktur journalen sammanhängande för alla."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från konsultation till en stängd anteckning innan nästa patient",
+      "subtitle": "Designad för takten i en full allmänmedicinsk dag.",
+      "items": [
+        {
+          "title": "Fånga besöket",
+          "body": "Spela in konsultationen på mobil eller webb mellan patienter, enligt din samtyckesprocess."
+        },
+        {
+          "title": "Granska utkastet",
+          "body": "En strukturerad anteckning är klart inom sekunder efter inspelningen slutar."
+        },
+        {
+          "title": "Justera snabbt",
+          "body": "Redigera mellan patienter — de flesta utkast behöver bara små korrigeringar."
+        },
+        {
+          "title": "Validera och gå vidare",
+          "body": "Godkänn anteckningen så den stängs innan nästa patient kommer in."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Integritet för samhällsmottagningar",
+      "title": "Förtroendet dina patienter redan ger dig",
+      "intro": "Samhällsmottagningar kör på långsiktigt förtroende — dokumentationsverktyget måste förtjäna sin plats i den relationen.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Data stannar lagrade och bearbetade under schweiziska förväntningar."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att anteckningen har producerats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Konsultationer används bara för att producera dina anteckningar, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Fungerar för enskilda och gruppmottagningar",
+          "body": "Oberoende läkare är en kärnpublik bredvid större mottagningar och kliniker."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Dokumentera multimorbiditet utan ändlös kopiering",
+        "body": "Äldre patienter med flera kroniska tillstånd behöver anteckningar som tar hänsyn till tidigare förlopp utan att skriva om allt varje gång. DocNote hjälper till att strukturera det aktuella besöket tydligt samtidigt som tidigare anteckningar hålls tillgängliga som referens."
+      },
+      {
+        "heading": "Skala från enskild mottagning till en grupp",
+        "body": "Många allmänläkare börjar ensamma och går senare med i en gruppmottagning eller tar in kollegor. Konsekventa mallar från början gör den övergången enklare, eftersom journalstrukturen förblir densamma oavsett mottagningsstorlek."
+      },
+      {
+        "heading": "Allmänmedicinska remissbrev som faktiskt läses",
+        "body": "Ett remissbrev tävlar om en specialists uppmärksamhet med dussintals andra. DocNote skisserar remissbrev med samma strukturerade tillvägagångssätt som konsultationsanteckningar — anledning till remiss, relevant anamnes och den specifika fråga du vill ha besvarad — så brevet är mer sannolikt att få ett användbart svar."
+      },
+      {
+        "heading": "Varför allmänmedicin behöver egna mallar",
+        "body": "En generisk öppenvårdsmall byggd för specialistuppföljningar passar inte en allmänläkares mix av akuta besvär, kronisk sjukdomshantering och förebyggande vård samma eftermiddag. DocNotes allmänmedicinska mallar är anpassade för den mixen snarare än lånade från ett specialitetsverktyg."
+      },
+      {
+        "heading": "Stödja hembesök och jourvård",
+        "body": "Allmänmedicin slutar inte vid klinikdörren — hembesök och jourvård är en del av många allmänläkares rutin. Mobil inlämning innebär att samma strukturerade arbetsflöde gäller oavsett om konsultationen sker i ett undersökningsrum eller vid patientens köksbord, utan en separat process för besök utanför mottagningen."
+      },
+      {
+        "heading": "Förebyggande vårddokumentation utan extra klick",
+        "body": "Vaccinationsstatus, screeningpåminnelser och livsstilsrådgivning är lätta att hoppa över att dokumentera när ett besök redan är försenat. Eftersom DocNote skisserar från vad som faktiskt diskuterades, fångas förebyggande vårdobjekt nämnda under konsultationen utan att kräva en separat checklista att fylla i efteråt."
+      },
+      {
+        "heading": "En anteckning som läses likadant för varje patient i mottagningen",
+        "body": "När flera allmänläkare delar en patientlista spelar konsekvent anteckningsstruktur lika stor roll som hastighet. En kollega som täcker din lista kort varsel ska kunna hitta det senaste relevanta besöket och förstå det snabbt, vilket bara är möjligt om alla i mottagningen dokumenterar till samma struktur."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Är DocNote lämpligt för enskilda allmänmedicinska mottagningar?",
+        "a": "Ja. Oberoende läkare är en kärnpublik bredvid större kliniker."
+      },
+      {
+        "q": "Kan vi använda det för telefon- eller videokonsultationer?",
+        "a": "Stödda arbetsflöden beror på din inställning — fråga under onboarding om telehealth-inlämning."
+      },
+      {
+        "q": "Hur hjälper detta med journalföring efter arbetstid?",
+        "a": "Att skissera under eller direkt efter besöket minskar pyjamasdokumentation för många kliniker."
+      },
+      {
+        "q": "Ersätter det min EHR?",
+        "a": "Nej. DocNote hjälper till att producera anteckningen; din EHR förblir journalsystemet."
+      },
+      {
+        "q": "Kan DocNote hjälpa med kronisk sjukdomsuppföljning?",
+        "a": "Ja — återkommande uppföljningsstrukturer kan anpassas så multimorbiditetsbesök hålls organiserade över möten."
+      },
+      {
+        "q": "Finns det en inlärningskurva för enskilda allmänläkare?",
+        "a": "De flesta kliniker är bekväma inom de första konsultationerna; onboarding inkluderar guidad inställning för dina mallar."
+      }
+    ],
+    "cta": {
+      "title": "Skydda din ansikte-mot-ansikte-tid",
+      "body": "Starta en gratis provperiod och se hur DocNote passar din allmänmedicinska dag.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Skydda face-to-face tid i täta mottagningar."
+  },
+  "ai-scribe-psychiatry": {
+    "navLabel": "AI-assistent för psykiatri",
+    "title": "AI-medicinsk skrivare för psykiatri | DocNote",
+    "description": "AI-medicinsk skrivare för psykiatri och mentalhälsokonsultationer. Strukturerade anteckningar med förhöjd integritet — schweizisk hosting och medicinsk sekretess.",
+    "hero": {
+      "badge": "AI-skrivare för psykiatri",
+      "title": "AI-medicinsk skrivare för psykiatri",
+      "subtitle": "Strukturerade sessionsanteckningar med förhöjd integritet, utan att förlora narrativ nyans.",
+      "lead": "Psykiatrisk dokumentation är narrativt tung och djupt känslig. DocNote hjälper psykiatriker att skapa strukturerade konsultationsanteckningar från sessionen samtidigt som schweizisk hosting, kort ljudlagring och klinisk validering står i centrum."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Anteckningar som respekterar psykiatrisk nyans",
+      "paragraphs": [
+        "Mental status, risk, medicinering och terapeutisk kontext kräver noggrant formulering. DocNote skapar en strukturerad utgångspunkt; psykiatern behåller full kontroll över vad som hamnar i journalen.",
+        "Psykiatriska samtal kräver strikta gränser. DocNote använder inte besök för att träna grundmodeller, hostas i Schweiz och raderar ljud inom en kort lagringsperiod — samma förväntningar som patienter har vid alla möten inom mentalhälsovården."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför psykiatriker litar på det",
+      "title": "Integritet är inte förhandlingsbart här",
+      "subtitle": "Byggd för känsligheten i mentalhälsodokumentation, i privatpraktik eller sjukhusavdelningar.",
+      "items": [
+        {
+          "title": "Mental status och risk, noggrant utformade",
+          "body": "Strukturerade utgångspunkter för mental status, risk och medicinering — alltid under full klinisk kontroll."
+        },
+        {
+          "title": "Striktare integritet som standard",
+          "body": "Ingen träning på besök, schweizisk hosting och kort ljudlagring — de gränser som psykiatrisk vård kräver."
+        },
+        {
+          "title": "Ambulanta och institutionella miljöer",
+          "body": "Från privatpraktik till sjukhuspsykiatri, samma gransknings- och valideringsprocess gäller."
+        },
+        {
+          "title": "Byggd för flerspråkiga patienter",
+          "body": "Mentalhälsovård korsar ofta språk — DocNote är designad för flerspråkiga europeiska kliniska miljöer."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Så fungerar det",
+      "title": "Från session till en anteckning som psykiatern fullt ut kontrollerar",
+      "subtitle": "Ambient inspelning endast där det är kliniskt lämpligt.",
+      "items": [
+        {
+          "title": "Avgör om ambient inspelning passar",
+          "body": "Klinisk bedömning, samtycke och lokala regler avgör när inspelning är lämplig."
+        },
+        {
+          "title": "Fånga sessionen",
+          "body": "Spela in där det är lämpligt, enligt din verksamhets samtyckesprocess."
+        },
+        {
+          "title": "Granska det strukturerade utkastet",
+          "body": "Ett utkast som täcker mental status, risk och plan är redo för noggrann granskning."
+        },
+        {
+          "title": "Redigera fritt före validering",
+          "body": "Utkast arkiveras aldrig automatiskt — psykiatern redigerar och godkänner varje anteckning."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Integritet är inte förhandlingsbart",
+      "title": "Gränser byggda för mentalhälsovård",
+      "intro": "Psykiatriska samtal kräver den striktaste versionen av alla integritetsåtaganden DocNote gör.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Sessionsdata hostas och bearbetas under schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt inom en kort period efter att anteckningen skapats."
+        },
+        {
+          "title": "Aldrig använt för AI-träning",
+          "body": "Sessioner används endast för att skapa anteckningar, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Full klinisk kontroll",
+          "body": "Psykiatern granskar, redigerar och validerar varje utkast innan det hamnar i journalen."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "När ambient inspelning är meningsfull inom psykiatri",
+        "body": "Inte varje session passar för ambient inspelning. Känslomässigt intensiva första sessioner, krisamtal eller särskilt känsligt innehåll är ofta bättre dokumenterade traditionellt. DocNote stöder det beslutet snarare än att tvinga fram det — den kliniska bedömningen ligger alltid hos klinikern."
+      },
+      {
+        "heading": "Dokumentation över flera sessioner",
+        "body": "För längre behandlingsförlopp hjälper konsekvent struktur att spåra förändringar i mental status över tid. DocNote behåller sektionsstrukturen stabil över på varandra följande sessioner medan psykiatern bedömer den kliniska kontinuiteten själv."
+      },
+      {
+        "heading": "Varför psykiatri behöver striktare standarder",
+        "body": "Journaler inom mentalhälsa bär särskild stigmrisk om de läcker eller hanteras slarvigt. DocNotes striktare standarder — ingen träning på besök, kort lagring, schweizisk hosting — är inte ett specialtillägg för psykiatri; de är samma åtaganden plattformen gör överallt, applicerade på en specialitet där patienter känner insatsen mest akut."
+      },
+      {
+        "heading": "Samarbete med befintliga psykoterapianteckningar",
+        "body": "Många psykiatriker har redan separata processanteckningar för terapiinnehåll som stannar utanför den formella journalen. DocNote skapar det strukturerade kliniska anteckningen — mental status, risk, plan — utan att kräva att du ändrar hur du hanterar dessa separata processanteckningar."
+      },
+      {
+        "heading": "Konsekvent dokumentation av riskbedömning",
+        "body": "Riskbedömning är en av de mest juridiskt känsliga delarna av en psykiatrisk anteckning, och den måste vara tydlig även i en full patientlista. En dedikerad, konsekvent placerad risksektion i varje utkast minskar risken att en riskbedömning begravs i narrativ text eller hoppas över under tidspress."
+      },
+      {
+        "heading": "Institutionell psykiatri kontra privatpraktik",
+        "body": "En sjukhuspsykiatrisk avdelning och en enskild privatpraktik har olika dokumentationskrav — institutionella mallar, försäkringskrav och rapporteringsskyldigheter kan alla skilja sig. DocNotes mallar konfigureras per miljö under onboarding snarare än att anta att en form passar båda sammanhangen."
+      },
+      {
+        "heading": "Spårning av medicinering över en lång behandlingsperiod",
+        "body": "Psykiatrisk medicinering involverar ofta gradvisa justeringar över många sessioner snarare än ett enda beslut. En konsekvent strukturerad medicineringssektion över besök gör det enklare att se hela förloppet av förändringar vid en överblick, istället för att rekonstruera det från spridda narrativa anteckningar över många tidigare sessioner och möten över tid."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Är ambient inspelning lämplig inom psykiatri?",
+        "a": "Det beror på klinisk bedömning, samtycke och lokala regler. DocNote stöder integritetsmedvetna arbetsflöden; din verksamhet definierar när inspelning är lämplig."
+      },
+      {
+        "q": "Kan vi exkludera känsliga fraser från utkast?",
+        "a": "Kliniker kan redigera fritt före validering. Utkast arkiveras aldrig automatiskt."
+      },
+      {
+        "q": "Var hostas data?",
+        "a": "DocNote är designad för schweizisk hosting under förväntningar på medicinsk sekretess."
+      },
+      {
+        "q": "Ersätter DocNote psykiaterns anteckning?",
+        "a": "Nej. Den skapar utkast; psykiatern är ansvarig för det slutliga dokumentet."
+      },
+      {
+        "q": "Kan terapiinnehåll exkluderas från dokumentationsutkast?",
+        "a": "Kliniker kontrollerar exakt vad som inkluderas före validering — inget arkiveras utan granskning."
+      },
+      {
+        "q": "Fungerar detta för psykiatriska sjukhusavdelningar?",
+        "a": "Ja, parallellt med privatpraktik — institutionella mallar och arbetsflöden tillämpar samma granskningsdisciplin."
+      }
+    ],
+    "cta": {
+      "title": "Ta med noggrann dokumentation till din praktik",
+      "body": "Starta en gratis provperiod eller prata med vårt team om psykiatrispecifika mallar.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Sessionsanteckningar med integritet och nyans."
+  },
+  "ai-scribe-cardiology": {
+    "navLabel": "AI-assistent för kardiologi",
+    "title": "AI-medicinsk skrivare för kardiologi | DocNote",
+    "description": "AI-medicinsk skrivare för kardiologikliniker och sjukhusavdelningar. Strukturerad konsultations- och uppföljningsdokumentation med schweizisk hosting.",
+    "hero": {
+      "badge": "AI-skrivare för kardiologi",
+      "title": "AI-medicinsk skrivare för kardiologi",
+      "subtitle": "Specialitetsmedvetna utkast för tätbefolkade konsultationer och proceduruppföljningar.",
+      "lead": "Kardiologi kombinerar tät data, proceduruppföljningar och hög dokumentationsbörda. DocNote skapar strukturerade anteckningar från konsultationer så kardiologer spenderar mindre tid på att skriva och mer tid på kliniska beslut."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Specialitetsspråk som betyder något",
+      "paragraphs": [
+        "Symptom, undersökningsfynd, bildkontext och planförändringar behöver kardiologiskt vokabulär. DocNote riktar in sig på specialitetsmedvetna utkast så kardiologer spenderar mindre tid på att skriva och mer tid på kliniska beslut.",
+        "Öppenvårdsuppföljningar och slutenvårdsdokumentation kan finnas i samma AI-dokumentationsstack — inklusive vägar mot utskrivningssammanfattningar när en patient är inlagd."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför kardiologitjänster anammar det",
+      "title": "Snabbare stängda anteckningar, samma kliniska rigor",
+      "subtitle": "Byggd för tät data och hög dokumentationsbörda.",
+      "items": [
+        {
+          "title": "Kardiologiskt medvetet vokabulär",
+          "body": "Symptom, undersökningsfynd, bildkontext och planförändringar skapas med specialitetsmedvetet språk."
+        },
+        {
+          "title": "Klinik- och sjukhuskontinuitet",
+          "body": "Öppenvårdsuppföljningar och slutenvårdsdokumentation delar samma stack, inklusive vägar till utskrivningssammanfattningar."
+        },
+        {
+          "title": "Efterlevnad för kardiologitjänster",
+          "body": "Schweizisk hosting och kort ljudlagring hjälper sjukhuskardiologitjänster att klara säkerhets- och integritetsgranskning."
+        },
+        {
+          "title": "Snabbare stängda anteckningar",
+          "body": "Skapa utkast under eller efter mötet, validera och håll journalen i rörelse utan kvällsbacklog."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Så fungerar det",
+      "title": "Från konsultation till ett specialitetsredo utkast",
+      "subtitle": "Byggd för tätbefolkade besök och proceduruppföljningar.",
+      "items": [
+        {
+          "title": "Fånga konsultationen eller uppföljningen",
+          "body": "Spela in besöket på mobil eller webb, inklusive diskussioner om proceduruppföljning."
+        },
+        {
+          "title": "DocNote tillämpar kardiologisk struktur",
+          "body": "Symptom, fynd och planförändringar organiseras med specialitetsmedvetet språk."
+        },
+        {
+          "title": "Granska utkastet",
+          "body": "En strukturerad anteckning är redo inom sekunder för din granskning."
+        },
+        {
+          "title": "Validera och fortsätt",
+          "body": "Godkänn anteckningen; den ansvarige klinikern signerar alltid av."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Efterlevnad för kardiologitjänster",
+      "title": "Säkerhet som stödjer upphandling",
+      "intro": "Sjukhuskardiologitjänster behöver ett tydligt efterlevnadssvar, inte en funktionslista.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata hostas och bearbetas under schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att anteckningen skapats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Konsultationer används endast för att skapa dokument, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Mediway och SOKLE där konfigurerat",
+          "body": "Integrationer finns tillgängliga där de är inställda, vilket stödjer sjukhuskardiologiarbetsflöden."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Från en uppföljningsvis till en inläggning",
+        "body": "När en öppenvårdskardiologipatient blir inlagd måste dokumentationen fortsätta sömlöst. Eftersom DocNote använder samma plattform för konsultationsanteckningar och utskrivningssammanfattningar går inte klinisk kontext förlorad vid övergången från öppen till sluten vård."
+      },
+      {
+        "heading": "Hålla tät data läsbar",
+        "body": "Kardiologikonsultationer packar ofta många mätningar, medicinering och kursjämförelser in i ett kort besök. En strukturerad mall hjälper till att hålla den tätheten läsbar istället för att förlora den i en lång textblock."
+      },
+      {
+        "heading": "Dokumentera proceduruppföljningar tydligt",
+        "body": "En uppföljningsvis efter en kateterisering, ablation eller implantat behöver referera till proceduren tydligt samtidigt som den fokuserar på aktuella symptom och nästa steg. DocNotes kardiologimallar håller den länken explicit, så anteckningen läses som en fortsättning på fallet snarare än ett frånkopplat besök."
+      },
+      {
+        "heading": "Varför kardiologiskt vokabulär betyder något för adoption",
+        "body": "En skrivare som missförstår eller missstrukturerar kardiologiskt specifika termer — NYHA-klass, ejektionsfraktion, specifika arytmityper — skapar mer korrigeringsarbete än det sparar. DocNotes specialitetsmedvetna språk är vad som gör skillnaden mellan ett verktyg kliniker tolererar och ett de faktiskt håller öppet hela dagen."
+      },
+      {
+        "heading": "Koppla öppenvårdskardiologi till slutenvård",
+        "body": "Hjärtsvikt- och arytmipatienter rör sig ofta mellan klinikuppföljningar och sjukhusinläggningar över månader eller år. Eftersom DocNote täcker både öppenvårdskonsultationsanteckningar och slutenvårdsutskrivningssammanfattningar förblir dokumentationsspåret sammankopplat över denna fram och tillbaka istället för att återställas med varje ny miljö."
+      },
+      {
+        "heading": "Spåra medicinförändringar precist",
+        "body": "Kardiologibesök involverar ofta dosjusteringar och läkemedelsbyten som måste vara entydiga för nästa kliniker som läser anteckningen, inklusive apotekare som granskar för interaktioner. DocNote håller medicinförändringar på en konsekvent, tydligt markerad plats i utkastet snarare än blandat i en allmän berättelse."
+      },
+      {
+        "heading": "Dokumentera riskfaktorer konsekvent",
+        "body": "Kardiovaskulära riskfaktorer — rökning, familjehistoria, lipid- och blodtryckstrender — måste vara synliga över besök, inte begravda i en enda konsultation. DocNotes kardiologimallar håller en konsekvent plats för dessa faktorer så de bärs vidare läsbart snarare än att behöva återupprättas från grunden varje gång."
+      },
+      {
+        "heading": "Förbereda för multidisciplinära hjärtteamgranskningar",
+        "body": "Komplexa kardiologifall diskuteras ofta i ett multidisciplinärt hjärtteammöte före ett större beslut. En tydlig, strukturerad anteckning gör det snabbare för teamet att komma ikapp med fallet i början av det mötet, snarare än att spendera de första minuterna med att rekonstruera historien från grunden tillsammans och dubbelkolla tidigare besök."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan kardiologiproceduranteckningar stödjas?",
+        "a": "Dokumenttyper beror på dina mallar. Många tjänster börjar med konsultations- och uppföljningsanteckningar, sedan expanderar."
+      },
+      {
+        "q": "Integrerar DocNote med sjukhussystem?",
+        "a": "Integrationer som Mediway och SOKLE finns tillgängliga där de är konfigurerade."
+      },
+      {
+        "q": "Är detta endast för privata kliniker?",
+        "a": "Nej. Sjukhusavdelningar är en primär användningsfall."
+      },
+      {
+        "q": "Vem validerar kardiologianteckningen?",
+        "a": "Den ansvarige klinikern — alltid."
+      },
+      {
+        "q": "Kan bildbefattningar inkluderas i utkastet?",
+        "a": "Befattningar diskuterade under mötet kan fångas; bildrapporter förblir i sina egna system."
+      },
+      {
+        "q": "Stödjer DocNote proceduruppföljningsbesök?",
+        "a": "Ja — öppenvårdsuppföljningar efter procedurer är ett vanligt användningsfall parallellt med första konsultationer."
+      }
+    ],
+    "cta": {
+      "title": "Ta med specialitetsmedvetna anteckningar till din kardiologitjänst",
+      "body": "Starta en gratis provperiod och se hur DocNote hanterar din konsultationsbörda.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Täta besök och uppföljning efter ingrepp."
+  },
+  "ai-scribe-pediatrics": {
+    "navLabel": "AI-assistent för pediatrik",
+    "title": "AI-medicinsk skrivare för pediatrik | DocNote",
+    "description": "AI-medicinsk skrivare för pediatrik: strukturerade konsultationsanteckningar för barnkliniker med schweizisk hosting och noggranna integritetsstandarder.",
+    "hero": {
+      "badge": "AI-skrivare för pediatrik",
+      "title": "AI-medicinsk skrivare för pediatrik",
+      "subtitle": "Fånga tillväxt, symptom och planer utan att förlora fokus på barnet och vårdnadshavarna.",
+      "lead": "Pediatriska besök är snabba, familjecentrerade och dokumentationstunga. DocNote hjälper barnläkare att skapa konsultationsanteckningar från mötet så tillväxt, symptom och planer fångas utan att stjäla uppmärksamhet från barnet och vårdnadshavarna."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Anteckningar som passar pediatriska besök",
+      "paragraphs": [
+        "Historik från vårdnadshavare, undersökningsfynd, förebyggande råd och uppföljning — skapat till en struktur du kan redigera snabbt mellan patienter.",
+        "Vårdnadshavare kan tala andra språk än anteckningsspråket, och besök är familjecentrerade och snabba. DocNote är byggd för flerspråkiga europeiska kliniker och pediatrisk vårds särskilda rytm."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför barnkliniker anammar det",
+      "title": "Integritet för barn och familjer, hastighet för upptagna kliniker",
+      "subtitle": "Byggd för familjecentrerade, snabba besök.",
+      "items": [
+        {
+          "title": "Fångar vårdnadshavares historik tydligt",
+          "body": "Historik från föräldrar eller vårdnadshavare, undersökningsfynd och förebyggande råd hamnar i en struktur du kan redigera snabbt."
+        },
+        {
+          "title": "Förhöjd integritet som standard",
+          "body": "Schweizisk hosting, kort ljudlagring och ingen träning på besök stödjer pediatrisk vårds förhöjda integritetsförväntningar."
+        },
+        {
+          "title": "Konsekvent överlämning mellan allmänläkare och specialist",
+          "body": "Konsekvent AI-dokumentationsvanor minskar friktion när barn rör sig mellan allmänläkare och pediatrik."
+        },
+        {
+          "title": "Byggd för flerspråkiga familjer",
+          "body": "Vårdnadshavare kan tala ett annat språk än anteckningen — DocNote är byggd för flerspråkiga europeiska kliniker."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Så fungerar det",
+      "title": "Från ett familjebesök till en tydlig anteckning",
+      "subtitle": "Tillräckligt snabbt mellan korta, högomsättningsbesök.",
+      "items": [
+        {
+          "title": "Fånga besöket",
+          "body": "Spela in konsultationen med vårdnadshavare på mobil eller webb, enligt samtyckesregler."
+        },
+        {
+          "title": "Granska utkastet",
+          "body": "En strukturerad anteckning som täcker historik, undersökning och plan är redo inom sekunder."
+        },
+        {
+          "title": "Kontrollera åldersspecifik detalj",
+          "body": "Kliniker granskar för tillväxt, säkerhetskritisk och åldersspecifik noggrannhet."
+        },
+        {
+          "title": "Validera och fortsätt",
+          "body": "Godkänn anteckningen mellan patienter utan att förlora takt."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Integritet för barn och familjer",
+      "title": "Den förhöjda tillit pediatrisk vård kräver",
+      "intro": "Dokumentation för barn bär extra tyngd — integritetsberättelsen måste matcha det.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata hostas och bearbetas under schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att anteckningen skapats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Familjekonsultationer används aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Familjecentrerat arbetsflöde",
+          "body": "Dokumentation stödjer besöket utan att stjäla uppmärksamhet från barnet och vårdnadshavarna."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Dokumentera välbarnskontroller konsekvent",
+        "body": "Rutinmässiga välbarnskontroller följer ofta ett återkommande mönster av tillväxtdata, utvecklingsfrågor och vaccinationsstatus. En konsekvent mall gör dessa besök enklare att jämföra över möten, utan att behöva ange allt varje gång."
+      },
+      {
+        "heading": "När vårdnadshavare och anteckning använder olika språk",
+        "body": "I flerspråkiga familjer sker konsultationen ofta på ett språk medan institutionen dokumenterar på ett annat. DocNote stödjer denna separation så familjens språkliga mångfald inte påverkar journalens kvalitet."
+      },
+      {
+        "heading": "Hålla fokus på barnet, inte skärmen",
+        "body": "Pediatriska besök beror på att bygga snabb rapport med ett barn som redan kan vara oroligt för mötet. En kliniker som spenderar besöket med att skriva förlorar en del av denna koppling. Ambient inspelning är designad för att låta dig hålla ögonkontakt och kroppsspråk fokuserat på barnet och vårdnadshavaren genom hela besöket."
+      },
+      {
+        "heading": "Dokumentera förebyggande råd konsekvent",
+        "body": "Förebyggande råd — säkerhetsråd, utvecklingsmilstolpar att hålla uppsikt över, när man ska söka vård — är lätt att hoppa över när ett besök tar tid. En strukturerad mall håller en platshållare för dessa råd i varje anteckning, vilket gör det enklare att bekräfta att de faktiskt täcktes snarare än antogs."
+      },
+      {
+        "heading": "Arbeta med skilda eller separerade vårdnadshavare",
+        "body": "Familjesituationer som påverkar vem som får information eller fattar beslut uppstår ofta i pediatrisk praktik. DocNotes anteckningsstruktur bestämmer inte vem som har vårdnad, men en tydlig, välorganiserad journal gör det enklare för praktiken att tillämpa sin egen policy konsekvent när frågor uppstår."
+      },
+      {
+        "heading": "Dokumentera skol- och förskoleintyg effektivt",
+        "body": "Bortom den kliniska anteckningen själv behöver pediatriska praktiker ofta korta administrativa brev — för skola, idrottstillstånd eller förskola — som refererar till samma besök. Eftersom det underliggande besöket redan är strukturerat tar generering av dessa kortare dokument mindre omarbete än att börja från en ostrukturerad anteckning varje gång."
+      },
+      {
+        "heading": "Följa tillväxt och utveckling över år",
+        "body": "Ett barns journal läses över många år av kliniker som kanske aldrig träffat familjen tidigare. Konsekvent struktur över besök gör det enklare att spåra tillväxttrender och utvecklingsmilstolpar över tid, snarare än att rekonstruera den historiken från inkonsekventa tidigare anteckningar varje gång en ny fråga uppstår."
+      },
+      {
+        "heading": "Stödja vikarierande och roterande pediatrisk personal",
+        "body": "Pediatriska praktiker förlitar sig ofta på vikarierande kliniker eller roterande praktikanter som ser ett barn för första gången utan fördelen av en långvarig relation med familjen. En välstrukturerad tidigare anteckning ger den klinikern den kontext de behöver på en bråkdel av den tid det skulle ta att läsa igenom år av löst organiserad fri text."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan föräldrar vägra inspelning?",
+        "a": "Samtycke och lokala regler styr inspelning. DocNote ändrar inte din skyldighet att följa dem."
+      },
+      {
+        "q": "Stöds välbarnskontroller?",
+        "a": "Ja — konsultationsliknande anteckningar för rutin- och akuta besök kan använda dina föredragna mallar."
+      },
+      {
+        "q": "Är DocNote endast för sjukhus?",
+        "a": "Nej. Barnkliniker och blandade praktiker ingår."
+      },
+      {
+        "q": "Hur noggranna är pediatriska utkast?",
+        "a": "Utkast är utgångspunkter. Kliniker granskar alltid för åldersspecifik detalj och säkerhetskritisk information."
+      },
+      {
+        "q": "Kan tillväxtkurvor eller mätningar refereras i anteckningen?",
+        "a": "Mätningar diskuterade under besöket kan fångas i anteckningen; kurvsystem förblir i sina egna verktyg."
+      },
+      {
+        "q": "Hanterar DocNote välbarn och akuta besök olika?",
+        "a": "Ja — olika mallar kan väljas beroende på besökstyp."
+      }
+    ],
+    "cta": {
+      "title": "Håll fokus på barnet, inte tangentbordet",
+      "body": "Starta en gratis provperiod och se hur DocNote passar din barnklinik.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Tillväxt, symtom, plan — fokus på barnet."
+  },
+  "ai-scribe-emergency-medicine": {
+    "navLabel": "AI-assistent för akutsjukvård",
+    "title": "AI-medicinsk skrivare för akutmottagning | DocNote",
+    "description": "AI-medicinsk skrivare för akutmottagning och akutvård. Snabbare strukturerade anteckningar i högtempomiljöer — schweizisk hosting för sjukhuslag.",
+    "hero": {
+      "badge": "AI-skrivare för akutmottagning",
+      "title": "AI-medicinsk skrivare för akutmottagning",
+      "subtitle": "Strukturerade anteckningar som hänger med i tempot utan att hoppa över validering.",
+      "lead": "Akutmottagningar arbetar med ofullständig information och obevekligt tempo. DocNote hjälper akutlag att skapa strukturerade anteckningar så dokumentationen hänger med i tempot utan att överge klinisk validering."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Hastighet utan att kompromissa med journalen",
+      "paragraphs": [
+        "Huvudbesvär, tidslinje, undersökning, utredning och disposition måste hamna i journalen. En stark utkast minskar tiden till avslut samtidigt som läkaren förblir ansvarig.",
+        "Akutvård är högljudd, ofullständig och språkligt blandad. DocNote är designad för verkliga vårdavdelningar och bås — inte tysta demonstrationsrum — och ansluter till samma sjukhusdokumentationsstack som används för inläggning och utskrivning."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför akutlag väljer det",
+      "title": "Dokumentation som hänger med i tempot",
+      "subtitle": "Byggd för ofullständig information och obevekligt tempo.",
+      "items": [
+        {
+          "title": "Hänger med i tempot",
+          "body": "Huvudbesvär, tidslinje, undersökning, utredning och disposition hamnar snabbare i journalen, vilket minskar tiden till avslut."
+        },
+        {
+          "title": "Byggd för högljudda, verkliga miljöer",
+          "body": "Designad för högljudda, språkligt blandade bås och vårdavdelningar — inte ett tyst demonstrationsrum."
+        },
+        {
+          "title": "Ansluter till sjukhusets dokumentationsstack",
+          "body": "Akutanteckningar finns bredvid inläggnings-, utskrivnings- och specialkonsultdokumentation i samma plattform."
+        },
+        {
+          "title": "Säkerhet för akutvårdsupphandling",
+          "body": "Schweizisk hosting och kort ljudlagring hjälper akutledningen att besvara integritetsfrågor under upphandling."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från ett snabbt förlopp till en avslutad anteckning",
+      "subtitle": "Byggd för att förhindra att dokumentation hamnar efter triage.",
+      "items": [
+        {
+          "title": "Fånga under vägen",
+          "body": "Spela in nyckelmoment från mötet när de händer, även med ofullständig information."
+        },
+        {
+          "title": "DocNote skriver utkastet",
+          "body": "Huvudbesvär, undersökning, utredning och disposition organiseras till ett utkast inom sekunder."
+        },
+        {
+          "title": "Granska före disposition",
+          "body": "Behandlande läkare kontrollerar utkastet mot det faktiska vårdförloppet."
+        },
+        {
+          "title": "Validera och avsluta",
+          "body": "Godkänn anteckningen så dokumentationen hänger med i patientflödet."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Säkerhet för akutvård",
+      "title": "Efterlevnad som överlever upphandling, inte bara ett pilotskift",
+      "intro": "Akutledning behöver ett tydligt svar på integritet och säkerhet innan de går vidare med en utrullning.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata hostas och bearbetas under schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att anteckningen har producerats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Möten används endast för att producera dokumentation, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Behandlande läkare äger anteckningen",
+          "body": "Behandlande läkare eller auktoriserad undertecknare äger alltid den slutliga akutanteckningen."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Pilot på utvalda skift",
+        "body": "En full utrullning över en hel akutmottagning är sällan det första steget. De flesta tjänster börjar med utvalda skift och en begränsad dokumenttyp, samlar feedback från sjuksköterske- och läkarpersonal, och expanderar sedan till full täckning."
+      },
+      {
+        "heading": "Hantering av avbrutna möten",
+        "body": "På akuten avslutas dokumentation sällan i ett svep — avbrott från nya fall är normalt. DocNote sammanfattar vad som faktiskt fångades och lämnar det till behandlande läkare att fylla luckor under granskning, snarare än att anta oförstörd inspelning."
+      },
+      {
+        "heading": "Minska tiden till avslut utan genvägar",
+        "body": "Akutmottagningar mäts ofta på hur snabbt ett fall avslutas efter disposition, tillsammans med kliniska kvalitetsmått. Ett snabbare utkast minskar det gapet, men valideringssteget försvinner aldrig — DocNote är byggd för att snabba på skrivandet, inte för att ta bort läkarens slutliga kontroll."
+      },
+      {
+        "heading": "Anpassning till triage-till-utskrivning-arbetsflöden",
+        "body": "Ett akutbesök kan gå från triage till inläggning, utskrivning eller överföring inom samma skift, var och en med olika dokumentationsbehov. DocNotes akutmallar är designade för att ansluta till vilken väg fallet tar, snarare än att anta att varje besök slutar på samma sätt."
+      },
+      {
+        "heading": "Dokumentera under verkligt tidspress",
+        "body": "Akutmedicin är en av få miljöer där dokumentation verkligen konkurrerar med nästa kritiska beslut, inte bara nästa patient. Ett utkast som är mestadels korrekt efter inspelning, och bara behöver korrigering snarare än komposition, är det som faktiskt sparar tid här — att skriva från en tom sida under ett hektiskt skift är sällan realistiskt."
+      },
+      {
+        "heading": "Koppla akutanteckningar till specialkonsulter",
+        "body": "Många akutfall involverar en specialkonsult mitt i besöket — kardiologi, kirurgi, psykiatri — som behöver återspeglas i den slutliga anteckningen tillsammans med akutlagets egna fynd. DocNotes sjukhusomfattande plattform innebär att en specialkonsults anteckning och akutanteckningen kan referera till samma fall konsekvent istället för att leva i separata system."
+      },
+      {
+        "heading": "Pilotera utan att störa en levande avdelning",
+        "body": "En akutpilot körs vanligtvis på en delmängd av skift med en tydligt avgränsad dokumenttyp, så resten av avdelningen fortsätter sin befintliga process ostörd. Detta begränsar risken samtidigt som det producerar tillräckligt med verkliga fall för att bedöma om arbetsflödet passar innan man går vidare till full täckning."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan DocNote hänga med i akuttempot?",
+        "a": "Utkast är designade för att vara snabba efter inspelning. Lag piloterar vanligtvis på utvalda skift före full utrullning."
+      },
+      {
+        "q": "Vad gäller för trauma eller kritiska resusanteckningar?",
+        "a": "Börja med anteckningstyper din tjänst validerar. Höga kritiska edge cases kan förbli helt manuella tills mallar mognar."
+      },
+      {
+        "q": "Integrerar detta med sjukhusets EHR-vägar?",
+        "a": "Där integrationer är konfigurerade, ja; annars exportera till din befintliga akutdokumentationsprocess."
+      },
+      {
+        "q": "Vem äger den slutliga akutanteckningen?",
+        "a": "Behandlande läkare eller auktoriserad undertecknare — aldrig modellen ensam."
+      },
+      {
+        "q": "Kan DocNote hantera avbrutna eller ofullständiga möten?",
+        "a": "Ja — utkast återspeglar vad som fångades, och läkare kompletterar eller korrigerar luckor under granskning."
+      },
+      {
+        "q": "Hur piloterar vi detta utan att störa ett skift?",
+        "a": "De flesta lag börjar med utvalda skift och en begränsad anteckningstyp innan de expanderar till full akuttäckning."
+      }
+    ],
+    "cta": {
+      "title": "Håll dokumentationen i akuttakt",
+      "body": "Prata med vårt team om en pilot för utvalda skift på din avdelning.",
+      "primary": "Prata med vårt team",
+      "secondary": "Titta på handledning"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Anteckningar i akutmottagningens tempo."
+  },
+  "ai-scribe-surgery": {
+    "navLabel": "AI-assistent för kirurgi",
+    "title": "AI-medicinsk skrivare för kirurgi | DocNote",
+    "description": "AI-medicinsk skrivare för kirurgiska tjänster: operationsrapporter, uppföljningar och sjukhusdokumentation med schweizisk hosting.",
+    "hero": {
+      "badge": "AI-skrivare för kirurgi",
+      "title": "AI-medicinsk skrivare för kirurgi",
+      "subtitle": "Operationsrapporter, klinikuppföljningar och utskrivningshandlingar i ett perioperativt stack.",
+      "lead": "Kirurgiska tjänster drunknar i operationsrapporter, klinikuppföljningar och utskrivningshandlingar. DocNote skriver strukturerad kirurgisk dokumentation så kirurger förfinar klinisk detalj istället för att kämpa med tomma mallar efter en lång lista."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Operations- och klinikdokumentation tillsammans",
+      "paragraphs": [
+        "Kirurgiska tjänster drunknar i operationsrapporter, klinikuppföljningar och utskrivningshandlingar. DocNote skriver strukturerad kirurgisk dokumentation så kirurger förfinar klinisk detalj istället för att kämpa med tomma mallar efter en lång lista.",
+        "Ortopedi, allmän kirurgi och andra linjer har olika rapportformer. Onboarding kartlägger DocNote till mallarna din operationssal redan litar på, och täcker hela den perioperativa vägen i ett stack."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför kirurgiska tjänster väljer det",
+      "title": "Mindre kvällspapper över hela vägen",
+      "subtitle": "Ett stack för operationsrapporter, klinikanteckningar och utskrivning.",
+      "items": [
+        {
+          "title": "Operations- och klinikdokumentation tillsammans",
+          "body": "Använd DocNote för utkast till operationsrapporter och kirurgiska konsultationer — ett stack för den perioperativa vägen."
+        },
+        {
+          "title": "Mallar som matchar din tjänst",
+          "body": "Onboarding kartlägger DocNote till rapportformerna din operationssal och klinik redan litar på, per specialitetslinje."
+        },
+        {
+          "title": "Mindre ikappdokumentation",
+          "body": "Utkast klara i slutet av fallet eller kliniken återvinner tid som annars gått till kvällspapper."
+        },
+        {
+          "title": "Sjukhusefterlevnad genomgående",
+          "body": "Schweizisk hosting, kort ljudlagring och läkarvalidering är byggda för kirurgiska avdelningar under medicinsk sekretess."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från fall eller klinik till ett validerat dokument",
+      "subtitle": "Ett arbetsflöde över operationsrapporter och klinikanteckningar.",
+      "items": [
+        {
+          "title": "Fånga fallet eller besöket",
+          "body": "Spela in operationsgenomgången eller klinikkonsultationen på mobil eller webb."
+        },
+        {
+          "title": "DocNote tillämpar din mall",
+          "body": "Sektionsstruktur följer operationsrapporten eller konsultationsmallen din tjänst använder."
+        },
+        {
+          "title": "Granska teknik och detalj",
+          "body": "Kirurger förfinar fynd, implantat och plan för precision."
+        },
+        {
+          "title": "Validera och arkivera",
+          "body": "Godkänn dokumentet; det går in i journalen under kirurgens ansvar."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Sjukhusefterlevnad",
+      "title": "Byggd för kirurgiska avdelningar under medicinsk sekretess",
+      "intro": "Kirurgisk dokumentation bär juridisk vikt över hela vägen, inte bara operationsrapporten.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata hostas och bearbetas under schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att varje dokument har producerats."
+        },
+        {
+          "title": "Kirurgvalidering, alltid",
+          "body": "Varje operationsrapport och klinikanteckning granskas och godkänns av kirurgen."
+        },
+        {
+          "title": "Mallar per specialitetslinje",
+          "body": "Rapportformer kartläggs till ortopedi, allmän kirurgi och andra linjer under onboarding."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Täckning av hela den perioperativa vägen",
+        "body": "Ett kirurgiskt fall genererar dokumentation före, under och efter ingreppet — från pre-op klinikbesök till post-op kontroll. Eftersom samma plattform täcker alla dessa steg behöver inget team byta mellan flera verktyg för att följa samma fall."
+      },
+      {
+        "heading": "Konsistens över flera kirurger",
+        "body": "När en tjänst inkluderar flera kliniker med något olika dokumentationsvanor hjälper en delad mall per specialitetslinje till att hålla journalen läsbar och jämförbar över hela laget."
+      },
+      {
+        "heading": "Koppla klinikuppföljningar till originaloperationsrapporten",
+        "body": "Ett post-op klinikbesök läses bättre när det tydligt kan referera till originalingreppet — vad som gjordes, vilka komplikationer noterades, vad planen var. Eftersom DocNote hanterar båda dokumenttyperna är den kontinuiteten lättare att upprätthålla än när klinikanteckningar och operationsrapporter lever i separata system."
+      },
+      {
+        "heading": "Onboarding av en kirurgisk avdelning per specialitetslinje",
+        "body": "Ortopediska, allmänna och andra kirurgiska linjer delar sällan identiska dokumentationsvanor även inom samma sjukhus. En avdelningsoverall utrullning kartlägger typiskt varje linjes befintliga mallar först, tränar sedan på verkliga fall innan expansion — samma sekvens som fungerar för vilken specialitet som helst."
+      },
+      {
+        "heading": "Dokumentera ett fullständigt kirurgiskt avsnitt, början till slut",
+        "body": "Ett kirurgiskt avsnitt sträcker sig över en pre-op bedömning, operationsrapporten och en eller flera post-op uppföljningar, ofta veckor ifrån varandra. Att hålla dessa dokument på en plattform innebär att en kirurg som granskar post-op anteckningen snabbt kan referera till exakt vad som planerades och gjordes vid operationstillfället, utan att leta över separata system."
+      },
+      {
+        "heading": "Hantera akuta kontra elektiva ingrepp olika",
+        "body": "Ett akut ingrepp tillåter sällan tid för samma pre-op dokumentation som ett elektivt. DocNotes mallar tar hänsyn till den skillnaden, så ett akut fall inte tvingas genom samma flerstegsdokumentationsflöde byggt för en schemalagd operation."
+      },
+      {
+        "heading": "Anpassning till en full operationslista",
+        "body": "Mellan fall på en full lista finns det sällan mer än några minuter att dokumentera innan nästa patient är redo. En genomgång som tar dessa minuter snarare än kräver en längre sits är vad som gör samma-dags dokumentation realistisk över en hel operationslista, inte bara det första fallet på en krävande dag."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan vi börja med bara operationsrapporter?",
+        "a": "Ja. Många kirurgiska lag börjar med en dokumenttyp, lägger sedan till klinikanteckningar."
+      },
+      {
+        "q": "Är kirurgen fortfarande ansvarig för rapporten?",
+        "a": "Alltid. DocNote skriver utkast; kirurger validerar."
+      },
+      {
+        "q": "Stöder ni implantat- och fyndsektioner?",
+        "a": "Sektionsstruktur följer din mall. Lag finjusterar detta under piloter."
+      },
+      {
+        "q": "Hur involverar vi hela den kirurgiska tjänsten?",
+        "a": "Rulla ut per operationslag eller specialitetslinje med delade mallar och träning."
+      },
+      {
+        "q": "Kan vi börja med klinikanteckningar före operationsrapporter?",
+        "a": "Ja — lag kan börja med endera dokumenttyp och lägga till den andra när arbetsflödet validerats."
+      },
+      {
+        "q": "Hur delar flera kirurger i en tjänst mallar?",
+        "a": "Delade mallar och träning sätts upp per specialitetslinje så hela tjänsten dokumenterar konsekvent."
+      }
+    ],
+    "cta": {
+      "title": "Täck hela den perioperativa vägen",
+      "body": "Prata med vårt team om en pilot för din operationssal eller kirurgklinik.",
+      "primary": "Prata med vårt team",
+      "secondary": "Titta på handledning"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Op, mottagning och utskrivning i ett system."
+  },
+  "ai-scribe-dermatology": {
+    "navLabel": "AI-assistent för dermatologi",
+    "title": "AI-medicinsk skrivare för dermatologi | DocNote",
+    "description": "AI-medicinsk skrivare för dermatologikliniker. Strukturerade konsultationsanteckningar för hög genomströmning inom dermatologi med schweizisk hosting.",
+    "hero": {
+      "badge": "AI-skrivare för dermatologi",
+      "title": "AI-medicinsk skrivare för dermatologi",
+      "subtitle": "Behåll visuell uppmärksamhet på patienten medan dokumentationen fortfarande blir klar.",
+      "lead": "Dermatologikliniker rör sig snabbt över många korta möten. DocNote skriver strukturerade konsultationsanteckningar så dermatologer behåller visuell uppmärksamhet på patienten medan dokumentationen fortfarande blir klar."
+    },
+    "story": {
+      "badge": "I korthet",
+      "title": "Hög genomströmning, tydliga anteckningar",
+      "paragraphs": [
+        "Lesionsbeskrivningar, bedömningar, ingrepp och planer måste landa korrekt. Ett specialitetsmedvetet utkast minskar repetitivt skrivande mellan korta, snabba möten.",
+        "Fånga besöket, granska det dermatologiorienterade utkastet, validera och gå vidare — utan en separat transkriptionsleverantör eller att bryta rytmen i en hög genomströmningsklinik."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför dermatologikliniker väljer det",
+      "title": "Dokumentation som hänger med i rumomsättningen",
+      "subtitle": "Byggd för många korta möten, inte ett enda långt konsultationsbesök.",
+      "items": [
+        {
+          "title": "Korrekt lesionsdokumentation",
+          "body": "Lesionsbeskrivningar, bedömningar, ingrepp och planer skrivs korrekt för snabb granskning."
+        },
+        {
+          "title": "Ett arbetsflöde, ingen separat leverantör",
+          "body": "Fånga, granska, validera — utan en separat transkriptionsleverantör som saktar ner kliniken."
+        },
+        {
+          "title": "Integritet för synliga, känsliga tillstånd",
+          "body": "Schweizisk hosting och kort ljudlagring stödjer patientens förtroende inom dermatologi och estetisk-adjacent vård."
+        },
+        {
+          "title": "Tydliga överlämningar till remitterande allmänläkare",
+          "body": "Tydliga konsultationsanteckningar förbättrar överlämningar tillbaka till allmänpraktik och andra specialister."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Hur det fungerar",
+      "title": "Från ett kort besök till en tydlig anteckning",
+      "subtitle": "Tillräckligt snabbt för hög genomströmningsdermatologikliniker.",
+      "items": [
+        {
+          "title": "Fånga besöket",
+          "body": "Spela in konsultationen på mobil eller webb mellan rum."
+        },
+        {
+          "title": "Granska det dermatologiorienterade utkastet",
+          "body": "Lesionsfynd, bedömning och plan organiseras till ett strukturerat utkast."
+        },
+        {
+          "title": "Justera lesionsbeskrivningar",
+          "body": "Dermatologen redigerar beskrivningar och plandetaljer före godkännande."
+        },
+        {
+          "title": "Validera och gå vidare till nästa rum",
+          "body": "Godkänn anteckningen utan att bryta klinikrytmen."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Integritet för synliga tillstånd",
+      "title": "Förtroende för känslig och synlig vård",
+      "intro": "Dermatologi och estetisk-adjacent vård bär sina egna integritetskänsligheter.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata hostas och bearbetas under schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att anteckningen har producerats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Konsultationer används endast för att producera dina anteckningar, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Tydlig remissdokumentation",
+          "body": "Strukturerade anteckningar stödjer tydliga överlämningar till och från allmänpraktik."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Ingreppsanteckningar bredvid konsultationsanteckningar",
+        "body": "Många dermatologikliniker kör både konsultationer och mindre ingrepp i samma möte. DocNote stöder båda dokumenttyperna, så en biopsi eller excision kan dokumenteras direkt efter konsultationen utan att byta till ett separat formulär."
+      },
+      {
+        "heading": "Flerrums kliniker med snabb omsättning",
+        "body": "När flera behandlingsrum körs parallellt hjälper snabb per-rum inspelning till att hålla väntetiden mellan patienter kort. Den praktiska uppsättningen per rum kartläggs tillsammans med ditt lag under onboarding."
+      },
+      {
+        "heading": "Dokumentera visuella fynd i ord",
+        "body": "Dermatologi förlitar sig tungt på visuell bedömning, men den skriftliga journalen måste fortfarande beskriva lesions exakt — storlek, morfologi, distribution, utveckling — för kontinuitet och för senare jämförelse. DocNotes mallar håller utrymme för den beskrivningen strukturerad, snarare än att lämna den som en eftertanke i en allmän anteckning."
+      },
+      {
+        "heading": "Stöd för estetisk-adjacenta konsultationer",
+        "body": "Många dermatologipraktiker ser också estetisk-adjacenta besök bredvid medicinsk dermatologi. Dokumentationsbehov och integritetskänsligheter kan skilja sig något mellan de två; prata med vårt team om att kartlägga båda besökstyperna under onboarding så varje får den struktur den behöver."
+      },
+      {
+        "heading": "Spåra lesions över uppföljningsbesök",
+        "body": "Många dermatologifall kräver att man jämför en lesions utseende över flera besök månader ifrån varandra — en födelsemärke som övervakas, en behandling som bedöms för respons. Konsekvent strukturerade anteckningar gör den jämförelsen enklare eftersom samma detaljer registreras på samma plats varje gång, snarare än att förlita sig på minne eller spridd fri text."
+      },
+      {
+        "heading": "Dokumentation för remitterade och självremitterade patienter",
+        "body": "Dermatologi ser både allmänläkarremisser och självremitterade patienter, var och en anländer med en annan mängd tidig kontext. DocNotes konsultationsmallar fångar remissorsaken och relevant anamnes tydligt oavsett inträdespunkt, så anteckningen läses konsekvent oavsett."
+      },
+      {
+        "heading": "Balansera hastighet med beskrivande precision",
+        "body": "Ett snabbt dermatologiutkast som beskriver en lesion för löst skapar tvetydighet för nästa besöks jämförelse. DocNotes mallar uppmanar till de specifika beskrivande fält som betyder något — storlek, färg, kanter, distribution — snarare än att lämna den precisionen till vad dermatologen råkar säga högt i ett snabbt, upptaget besök."
+      },
+      {
+        "heading": "Samordning med patologiresultat",
+        "body": "När en biopsi skickas för patologi behöver konsultationsanteckningen och det slutliga patologiresultatet kopplas tydligt för nästa besök. DocNote håller det ursprungliga kliniska intrycket dokumenterat precist, så jämförelse mot patologirapporten senare är enkel snarare än att förlita sig enbart på minne."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan ingreppsanteckningar också skrivas?",
+        "a": "Ja där dina mallar inkluderar dem. Många kliniker börjar med konsultationsanteckningar."
+      },
+      {
+        "q": "Fungerar ambient avlyssning i flerrumskliniker?",
+        "a": "Inspelning är knuten till den enhet och arbetsflöde du väljer. Vi hjälper till att kartlägga en praktisk rumskonfiguration under onboarding."
+      },
+      {
+        "q": "Är DocNote endast för medicinsk dermatologi?",
+        "a": "Medicinsk dokumentation är fokus; prata med oss om din mix av besökstyper."
+      },
+      {
+        "q": "Vem redigerar lesionsbeskrivningar?",
+        "a": "Dermatologen — utkast är alltid redigerbara före validering."
+      },
+      {
+        "q": "Kan ingreppsanteckningar referera till specifika tekniker som används?",
+        "a": "Ja, där dina mallar inkluderar ingreppssektioner — många kliniker börjar med konsultationsanteckningar och lägger till dessa senare."
+      },
+      {
+        "q": "Fungerar DocNote i flerrumskliniker med snabb omsättning?",
+        "a": "Inspelning är knuten till den enhet och arbetsflöde du väljer; vi hjälper till att kartlägga en praktisk flerrumskonfiguration under onboarding."
+      }
+    ],
+    "cta": {
+      "title": "Håll takten utan att förlora dokumentationskvalitet",
+      "body": "Starta en gratis provperiod och se hur DocNote passar en hög genomströmningsdermatologidag.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Blicken på patienten; anteckningen blir klar ändå."
+  },
+  "ai-scribe-neurology": {
+    "navLabel": "AI-assistent för neurologi",
+    "title": "AI-medicinsk skrivare för neurologi | DocNote",
+    "description": "AI-medicinsk skrivare för neurologi: strukturerade konsultations- och uppföljningsanteckningar med schweizisk hosting för kliniker och sjukhusavdelningar.",
+    "hero": {
+      "badge": "AI-skrivare för neurologi",
+      "title": "AI-medicinsk skrivare för neurologi",
+      "subtitle": "Anamnes och undersökningsnyanser fångas utan att behöva skriva varje rad från grunden.",
+      "lead": "Neurologiska anteckningar är detaljerade och tidskrävande. DocNote skapar strukturerade utkast till konsultationer och uppföljningsdokumentation så att neurologer kan fånga anamnes och undersökningsnyanser utan att behöva skriva varje rad från grunden."
+    },
+    "story": {
+      "badge": "Kortfattat",
+      "title": "Detaljer utan den tomma sidan",
+      "paragraphs": [
+        "Anamnes, neurologisk undersökning, bedömning och behandlingsplan gynnas av ett strukturerat utkast som neurologerna kan finslipa för precision.",
+        "Öppenvårdsneurologi och inläggningskonsulter kan använda samma AI-dokumentationsplattform som används för bredare sjukhusdokument, och komplexa anamneser som kommer i mer än ett språk stöds från början."
+      ]
+    },
+    "benefits": {
+      "badge": "Varför neurologiavdelningar använder det",
+      "title": "Strukturerade detaljer för komplexa anamneser",
+      "subtitle": "Byggd för den längd och precision som neurologiska anteckningar kräver.",
+      "items": [
+        {
+          "title": "Strukturerad anamnes och undersökning",
+          "body": "Anamnes och neurologiska fynd presenteras i ett strukturerat utkast redo för precisionsredigering."
+        },
+        {
+          "title": "Klinik- och sjukhuskonsulter, en plattform",
+          "body": "Öppenvårdsneurologi och inläggningskonsulter delar samma AI-dokumentationsplattform som används för sjukhusdokument."
+        },
+        {
+          "title": "Hanterar längre möten",
+          "body": "Längre möten ger längre utkast; kliniker trimmar och prioriterar vad som hör hemma i journalen."
+        },
+        {
+          "title": "Flerspråkiga anamneser",
+          "body": "Komplexa anamneser som kommer i mer än ett språk stöds från början."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Så fungerar det",
+      "title": "Från detaljerad anamnes till precis anteckning",
+      "subtitle": "Byggd för den djup som neurologiska konsultationer kräver.",
+      "items": [
+        {
+          "title": "Fånga konsultationen",
+          "body": "Spela in anamnes och undersökning på mobil eller webb, inklusive längre eller komplexa möten."
+        },
+        {
+          "title": "Granska det strukturerade utkastet",
+          "body": "Anamnes, undersökning, bedömning och behandlingsplan organiseras till ett utkast på några sekunder."
+        },
+        {
+          "title": "Finslipa för precision",
+          "body": "Neurologen förfinar formuleringar och prioriterar vad som hör hemma i den slutliga journalen."
+        },
+        {
+          "title": "Validera och fortsätt",
+          "body": "Godkänn anteckningen; den läggs in i journalen under neurologens ansvar."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Efterlevnad och hosting",
+      "title": "Byggd för sjukhusets neurologiavdelningar",
+      "intro": "Efterlevnadskrav för sjukhusets neurologiavdelningar matchar resten av sjukhusets dokumentationsstack.",
+      "points": [
+        {
+          "title": "Schweizisk hosting",
+          "body": "Hälsodata hostas och behandlas enligt schweiziska förväntningar på medicinsk sekretess."
+        },
+        {
+          "title": "Kort ljudlagring",
+          "body": "Ljud raderas automatiskt kort efter att anteckningen skapats."
+        },
+        {
+          "title": "Ingen träning på besök",
+          "body": "Konsultationer används endast för att skapa dokument, aldrig för att träna grundmodeller."
+        },
+        {
+          "title": "Kliniker validerar, alltid",
+          "body": "Neurologen granskar och godkänner varje utkast innan det läggs in i journalen."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Trimma långa anamneser utan att förlora detaljer",
+        "body": "Första neurologiska konsultationer ger ofta mycket långa utkast eftersom anamnesen innehåller många detaljer. DocNote strukturerar dessa detaljer så att neurologen kan trimma medvetet utan att av misstag tappa relevanta fynd."
+      },
+      {
+        "heading": "Konsulter mellan avdelningar",
+        "body": "En neurologkonsult på en annan avdelning följer ofta en annan struktur än en öppenvårdskonsult. DocNote anpassar mallen till sammanhanget medan den underliggande dokumentationslogiken förblir konsekvent i båda miljöerna."
+      },
+      {
+        "heading": "Strukturera en detaljerad neurologisk undersökning",
+        "body": "En fullständig neurologisk undersökning täcker kranialnerv, motorik, sensorik, reflexer, koordination och gång — många diskreta fynd som är lätta att förlora i fri text. DocNote håller varje kategori åtskild i utkastet, så ett normalt fynd och ett avvikande är lika lätta att hitta vid granskning."
+      },
+      {
+        "heading": "Uppföljning av kroniska tillstånd över tid",
+        "body": "Tillstånd som migrän, epilepsi eller multipel skleros följs upp över många besök snarare än att lösas vid ett tillfälle. Konsekvent struktur över dessa besök gör det enklare att se vad som faktiskt har förändrats sedan senaste konsultationen, istället för att läsa om en hel anamnes varje gång."
+      },
+      {
+        "heading": "Koppla neurologiska konsulter till bilddiagnostik och EMG",
+        "body": "Neurologisk bedömning beror ofta på bilddiagnostik eller EMG-resultat som finns i separata system. DocNotes anteckning fångar vad som diskuterades om dessa fynd under mötet, medan källrapporterna förblir i sina egna system — de två är tänkta att komplettera varandra, inte slås samman till ett verktyg."
+      },
+      {
+        "heading": "Stödja komplex differentialdiagnostik",
+        "body": "Neurologi innebär ofta en bred differentialdiagnos som smalnar av över flera besök och tester. En strukturerad bedömningssektion som neurologen kan revidera konsultation för konsultation gör det utvecklande resonemanget enklare att följa senare än en färsk, orelaterad anteckning varje gång."
+      },
+      {
+        "heading": "Dokumentera för multidisciplinär vård",
+        "body": "Många neurologiska tillstånd hanteras tillsammans med fysioterapi, psykiatri eller rehabiliteringsteam som snabbt behöver läsa neurologens bedömning. Tydliga, strukturerade anteckningar gör det enklare för det bredare teamet att hålla sig anpassade till den aktuella planen utan att behöva ett separat sammanfattningsmöte för varje uppdatering eller mindre justering."
+      },
+      {
+        "heading": "Anpassa till befintligt neurologiskt arbetsflöde",
+        "body": "De flesta neurologiavdelningar introducerar DocNote sida vid sida med sina nuvarande dokumentationsvanor snarare än att ersätta dem över natten, börjar med öppenvårdsuppföljningar innan de utvidgar till första konsultationer och inläggningsarbete. Den gradvisa lanseringen ger avdelningen tid att skräddarsy mallar efter egna konventioner innan de förlitar sig på verktyget för sina mest komplexa fall."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kan långa neurologiska anamneser hanteras?",
+        "a": "Längre möten ger längre utkast. Kliniker trimmar och prioriterar fortfarande vad som hör hemma i journalen."
+      },
+      {
+        "q": "Ingår EMG- eller procedurrapporter?",
+        "a": "Börja med konsultationsanteckningar; utöka till ytterligare mallar när din avdelning validerat dem."
+      },
+      {
+        "q": "Ersätter DocNote neurologens formuleringar?",
+        "a": "Nej. Det föreslår ett utkast under din granskning."
+      },
+      {
+        "q": "Hur anammar sjukhusets neurologiteam det?",
+        "a": "Vanligtvis via en pilotservice, mallanpassning, sedan bredare lansering."
+      },
+      {
+        "q": "Kan DocNote hantera uppföljning över flera besök för kroniska neurologiska tillstånd?",
+        "a": "Ja — konsekvent struktur över besök hjälper till att spåra förändringar över tid för kroniska tillstånd."
+      },
+      {
+        "q": "Ingår bilddiagnostik eller EMG-fynd automatiskt?",
+        "a": "Fynd som diskuteras under mötet kan fångas i anteckningen; bilddiagnostik- och EMG-system förblir i sina egna verktyg."
+      }
+    ],
+    "cta": {
+      "title": "Fånga neurologiska detaljer utan den tomma sidan",
+      "body": "Starta en gratis provperiod och se hur DocNote passar dina neurologiska konsultationer.",
+      "primary": "Starta gratis provperiod",
+      "secondary": "Se priser"
+    },
+    "relatedLabel": "Relaterade guider",
+    "navDesc": "Nyanser i anamnes och status, mindre skrivande."
+  }
+}

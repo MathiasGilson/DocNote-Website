@@ -1,0 +1,320 @@
+---
+import type { Locale } from '../../utils/i18n';
+import type { FamilyLeadItem } from '../../content/specialty-families';
+import type { FamilyRecipe } from '../../content/family-visuals';
+
+interface Props {
+  locale: Locale;
+  recipe: FamilyRecipe;
+  badge: string;
+  title: string;
+  items: FamilyLeadItem[];
+  /** Specialty names for vocab recipe */
+  specialtyNames?: string[];
+}
+
+const { locale, recipe, badge, title, items, specialtyNames = [] } = Astro.props;
+const lang = locale === 'fr' || locale === 'de' ? locale : 'en';
+
+const chrome = {
+  en: {
+    preop: 'Pre-op',
+    or: 'OR',
+    ward: 'Ward',
+    discharge: 'Discharge',
+    consult: 'Consult',
+    procedure: 'Procedure',
+    vocab: 'Vocabulary',
+    nextPatient: 'Next patient',
+    unitBoard: 'Unit board',
+    handoff: 'Handoff',
+    dictating: 'Dictating',
+    report: 'Report',
+    actPricing: 'Act pricing',
+    ready: 'Ready',
+  },
+  fr: {
+    preop: 'Pré-op',
+    or: 'Bloc',
+    ward: 'Étage',
+    discharge: 'Sortie',
+    consult: 'Consult',
+    procedure: 'Acte',
+    vocab: 'Vocabulaire',
+    nextPatient: 'Patient suivant',
+    unitBoard: 'Tableau unité',
+    handoff: 'Transmission',
+    dictating: 'Dictée',
+    report: 'Compte rendu',
+    actPricing: 'Tarification',
+    ready: 'Prêt',
+  },
+  de: {
+    preop: 'Prä-op',
+    or: 'OP',
+    ward: 'Station',
+    discharge: 'Entlassung',
+    consult: 'Konsult',
+    procedure: 'Eingriff',
+    vocab: 'Vokabular',
+    nextPatient: 'Nächster Patient',
+    unitBoard: 'Stationsboard',
+    handoff: 'Übergabe',
+    dictating: 'Diktat',
+    report: 'Bericht',
+    actPricing: 'Tarifierung',
+    ready: 'Bereit',
+  },
+}[lang];
+
+const pathwayLabels = [chrome.preop, chrome.or, chrome.ward, chrome.discharge];
+const vocabPreview = specialtyNames.slice(0, 8);
+---
+
+<section class="relative py-14 sm:py-20 overflow-hidden bg-white">
+  <div class="fm-atmosphere" aria-hidden="true"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-10 sm:mb-12 reveal">
+      <span class="lp-eyebrow">
+        <span class="lp-dot" aria-hidden="true"></span>
+        {badge}
+      </span>
+      <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+        {title}
+      </h2>
+    </div>
+
+    {recipe === 'pathway' && (
+      <div class="fm-pathway" data-fm-motion>
+        <ol class="fm-pathway-rail reveal">
+          {pathwayLabels.map((label, i) => (
+            <li class:list={['fm-pathway-node', `reveal-delay-${i + 1}`]}>
+              <span class="fm-pathway-dot" aria-hidden="true">{String(i + 1)}</span>
+              <span class="fm-pathway-label">{label}</span>
+            </li>
+          ))}
+        </ol>
+        <ul class="fm-pathway-cards">
+          {items.map((item, i) => (
+            <li
+              class:list={[
+                'fm-pathway-card reveal',
+                `reveal-delay-${(i % 4) + 1}`,
+              ]}
+            >
+              <span class="lp-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="mt-3 text-lg font-semibold text-gray-900 tracking-tight">{item.title}</h3>
+              <p class="mt-2 text-sm sm:text-base text-gray-500 leading-relaxed">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {recipe === 'split-duo' && (
+      <div class="fm-split" data-fm-motion>
+        <div class="fm-split-viz reveal" aria-hidden="true">
+          <div class="fm-split-panel fm-split-panel--consult">
+            <span class="fm-split-tag">{chrome.consult}</span>
+            <span class="fm-split-line"></span>
+            <span class="fm-split-line short"></span>
+            <span class="fm-split-line med"></span>
+          </div>
+          <div class="fm-split-arrow">
+            <span class="fm-split-pulse"></span>
+          </div>
+          <div class="fm-split-panel fm-split-panel--proc">
+            <span class="fm-split-tag">{chrome.procedure}</span>
+            <span class="fm-split-badge">{chrome.ready}</span>
+            <span class="fm-split-line"></span>
+            <span class="fm-split-line short"></span>
+          </div>
+        </div>
+        <ul class="fm-split-list">
+          {items.map((item, i) => (
+            <li class:list={['fm-split-item reveal', `reveal-delay-${i + 1}`]}>
+              <span class="lp-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 tracking-tight">{item.title}</h3>
+                <p class="mt-2 text-sm sm:text-base text-gray-500 leading-relaxed">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {recipe === 'vocab' && (
+      <div class="fm-vocab" data-fm-motion>
+        {vocabPreview.length > 0 && (
+          <div class="fm-vocab-strip reveal" aria-hidden="true">
+            {vocabPreview.map((name, i) => (
+              <span class:list={['fm-vocab-pill', `reveal-delay-${(i % 4) + 1}`]}>
+                <span class="fm-vocab-mark">{chrome.vocab}</span>
+                {name}
+              </span>
+            ))}
+          </div>
+        )}
+        <div class="fm-vocab-grid">
+          {items.map((item, i) => (
+            <article
+              class:list={[
+                'fm-vocab-card reveal',
+                `reveal-delay-${(i % 4) + 1}`,
+              ]}
+            >
+              <span class="lp-card-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="lp-card-title">{item.title}</h3>
+              <p class="lp-card-text">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {recipe === 'pace' && (
+      <div class="fm-pace" data-fm-motion>
+        <div class="fm-pace-timer reveal" aria-hidden="true">
+          <div class="fm-pace-ring">
+            <span class="fm-pace-hand"></span>
+          </div>
+          <span class="fm-pace-timer-label">{chrome.nextPatient}</span>
+        </div>
+        <ol class="fm-pace-track">
+          {items.map((item, i) => (
+            <li
+              class:list={[
+                'fm-pace-card reveal',
+                `reveal-delay-${i + 1}`,
+              ]}
+            >
+              <span class="fm-pace-idx" aria-hidden="true">{String(i + 1)}</span>
+              <h3 class="text-lg font-semibold text-gray-900 tracking-tight">{item.title}</h3>
+              <p class="mt-2 text-sm text-gray-500 leading-relaxed">{item.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
+
+    {recipe === 'unit' && (
+      <div class="fm-unit" data-fm-motion>
+        <div class="fm-unit-board reveal" aria-hidden="true">
+          <div class="fm-unit-head">
+            <span class="fm-unit-live"></span>
+            <span>{chrome.unitBoard}</span>
+          </div>
+          <div class="fm-unit-beds">
+            {[1, 2, 3, 4].map((n) => (
+              <div class:list={['fm-unit-bed', n === 2 && 'is-active']}>
+                <span class="fm-unit-bed-num">{n}</span>
+                <span class="fm-unit-bed-bar"></span>
+              </div>
+            ))}
+          </div>
+          <div class="fm-unit-handoff">
+            <span class="fm-unit-handoff-dot"></span>
+            {chrome.handoff}
+          </div>
+        </div>
+        <ul class="fm-unit-list">
+          {items.map((item, i) => (
+            <li class:list={['fm-unit-item reveal', `reveal-delay-${(i % 5) + 1}`]}>
+              <span class="lp-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">{item.title}</h3>
+                <p class="mt-1.5 text-sm text-gray-500 leading-relaxed">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {recipe === 'dictation' && (
+      <div class="fm-dict" data-fm-motion>
+        <div class="fm-dict-viz reveal" aria-hidden="true">
+          <div class="fm-dict-mic">
+            <span class="fm-dict-ring r1"></span>
+            <span class="fm-dict-ring r2"></span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </div>
+          <div class="fm-dict-wave">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="fm-dict-flow"></div>
+          <div class="fm-dict-doc">
+            <span class="fm-dict-doc-label">{chrome.report}</span>
+            <span class="fm-dict-doc-line"></span>
+            <span class="fm-dict-doc-line short"></span>
+            <span class="fm-dict-doc-line med"></span>
+          </div>
+        </div>
+        <ul class="fm-dict-list">
+          {items.map((item, i) => (
+            <li class:list={['fm-dict-item reveal', `reveal-delay-${i + 1}`]}>
+              <span class="lp-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 tracking-tight">{item.title}</h3>
+                <p class="mt-2 text-sm sm:text-base text-gray-500 leading-relaxed">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {recipe === 'pricing' && (
+      <div class="fm-pricing" data-fm-motion>
+        <div class="fm-pricing-viz reveal" aria-hidden="true">
+          <div class="fm-pricing-card">
+            <span class="fm-pricing-tag">{chrome.actPricing}</span>
+            <span class="fm-pricing-title">Dentotar®</span>
+            <div class="fm-pricing-rows">
+              <span class="fm-pricing-row"><i></i><b></b></span>
+              <span class="fm-pricing-row"><i></i><b class="w-2/3"></b></span>
+              <span class="fm-pricing-row is-live"><i></i><b class="w-1/2"></b><em>CHF</em></span>
+            </div>
+          </div>
+        </div>
+        <ul class="fm-pricing-list">
+          {items.map((item, i) => (
+            <li class:list={['fm-pricing-item reveal', `reveal-delay-${i + 1}`]}>
+              <span class="lp-step-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 tracking-tight">{item.title}</h3>
+                <p class="mt-2 text-sm sm:text-base text-gray-500 leading-relaxed">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  const prefersReduced = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  document.querySelectorAll<HTMLElement>('[data-fm-motion]').forEach((root) => {
+    if (!('IntersectionObserver' in window)) {
+      root.classList.add('is-active')
+      return
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          entry.target.classList.add('is-active')
+          if (prefersReduced()) io.unobserve(entry.target)
+        })
+      },
+      { threshold: 0.28 }
+    )
+    io.observe(root)
+  })
+</script>

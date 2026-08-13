@@ -1,0 +1,77 @@
+---
+import type { Locale } from '../../utils/i18n';
+import {
+  familyVisualCopy,
+  type FamilyVisualMeta,
+} from '../../content/family-visuals';
+
+interface Props {
+  locale: Locale;
+  visual: FamilyVisualMeta;
+  badge: string;
+  title: string;
+  body: string;
+}
+
+const { locale, visual, badge, title, body } = Astro.props;
+const { imageAlt, mediaCaption } = familyVisualCopy(visual, locale);
+---
+
+<section class="relative py-14 sm:py-20 overflow-hidden bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class:list={[
+        'fm-media-band reveal',
+        visual.mediaRight && 'fm-media-band--flip',
+      ]}
+    >
+      <div class="fm-media-frame" data-fm-parallax>
+        <img
+          src={visual.image}
+          alt={imageAlt}
+          class="fm-media-img"
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="fm-media-scrim" aria-hidden="true"></div>
+        <p class="fm-media-caption">{mediaCaption}</p>
+      </div>
+
+      <div class="fm-media-copy">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {title}
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+          {body}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const prefersReduced = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  document.querySelectorAll<HTMLElement>('[data-fm-parallax]').forEach((frame) => {
+    if (prefersReduced()) return
+    const img = frame.querySelector<HTMLElement>('.fm-media-img')
+    if (!img) return
+
+    const onScroll = () => {
+      const rect = frame.getBoundingClientRect()
+      const mid = rect.top + rect.height / 2 - window.innerHeight / 2
+      const shift = Math.max(-12, Math.min(12, mid * -0.04))
+      img.style.transform = `translate3d(0, ${shift}px, 0) scale(1.04)`
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+  })
+</script>

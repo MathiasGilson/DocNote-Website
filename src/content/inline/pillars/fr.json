@@ -1,0 +1,128 @@
+{
+  "ai-medical-scribe": {
+    "navLabel": "Scribe IA médical",
+    "title": "Scribe IA médical pour médecins",
+    "description": "DocNote est un scribe IA médical pour médecins et hôpitaux en Suisse et en Europe. Transformez vos consultations en notes cliniques structurées. Hébergé en Suisse, conforme nLPD / RGPD.",
+    "h1": "Le scribe IA médical pensé pour le soin réel",
+    "intro": "DocNote écoute pendant la consultation, transcrit de façon sécurisée et rédige le document clinique dont vous avez besoin — note de consultation, lettre de sortie, note de visite ou compte rendu opératoire — pour que vous passiez moins de temps à taper et plus de temps avec vos patients.",
+    "sections": [
+      {
+        "heading": "Ce qu’un scribe IA médical doit vraiment faire",
+        "body": "Un bon scribe médical n’est pas une simple transcription. Il doit comprendre la structure clinique, le langage de spécialité et les documents que votre hôpital ou cabinet produit réellement. DocNote est conçu pour ce flux : capturer une fois, générer le bon type de note, puis laisser le médecin valider avant l’envoi au DPI."
+      },
+      {
+        "heading": "Conçu pour la Suisse et l’Europe",
+        "body": "Contrairement aux outils ambient américains adaptés après coup, DocNote part des habitudes de documentation suisses et européennes, des consultations multilingues et des règles strictes sur les données de santé. Hébergement en Suisse. Les données de santé ne servent pas à entraîner des modèles de fondation."
+      },
+      {
+        "heading": "De la voix à la note validée",
+        "body": "Démarrez un enregistrement sur mobile ou web, terminez la consultation, puis relisez un brouillon structuré en quelques secondes. Corrigez, validez, et poursuivez votre processus habituel — avec Mediway et SOKLE le cas échéant, ou vos modèles Word à en-tête."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qu'est-ce qu'un scribe médical IA ?",
+        "a": "Un scribe médical IA écoute ou traite une consultation clinique et rédige une note structurée que le clinicien relit et valide avant qu'elle n'intègre le dossier médical."
+      },
+      {
+        "q": "DocNote écrit-il automatiquement dans le DPI ?",
+        "a": "Non. Les médecins restent responsables de la relecture et de l'approbation de chaque document."
+      },
+      {
+        "q": "Où les données de santé sont-elles hébergées ?",
+        "a": "DocNote est conçu pour un hébergement en Suisse, dans le respect du secret médical et des exigences européennes de protection des données."
+      },
+      {
+        "q": "Les données des consultations servent-elles à entraîner des modèles d'IA ?",
+        "a": "Non. Les consultations servent à produire vos documents, pas à entraîner des modèles de fondation."
+      }
+    ],
+    "ctaPrimary": "Essai gratuit",
+    "ctaSecondary": "Voir les tarifs",
+    "relatedLabel": "Guides associés"
+  },
+  "hospital-documentation": {
+    "navLabel": "Documentation hospitalière",
+    "title": "Documentation hospitalière par IA",
+    "description": "Documentation hospitalière IA pour lettres de sortie, comptes rendus opératoires, notes de visite et dossiers HDJ. DocNote accélère la rédaction sans quitter l’hébergement suisse ni le secret médical.",
+    "h1": "Documentation hospitalière sans backlog du soir",
+    "intro": "Le travail hospitalier ne se limite pas à une note SOAP ambulatoire. DocNote couvre les documents qui remplissent réellement les soirées des soignants : lettres de sortie, comptes rendus opératoires, notes de visite et dossiers d’hôpital de jour partagés.",
+    "sections": [
+      {
+        "heading": "Les documents dont l’hôpital a vraiment besoin",
+        "body": "Générez des brouillons structurés pour les productions hospitalières à fort volume, puis relisez et validez avant le dossier patient. Les modèles Word personnalisés conservent votre mise en page institutionnelle, votre signature et l’ordre des sections."
+      },
+      {
+        "heading": "Collaboration en hôpital de jour",
+        "body": "Lorsque plusieurs professionnels voient le même patient à la suite, DocNote peut soutenir un dossier partagé pour fusionner les contributions en un compte rendu cohérent plutôt qu’en notes fragmentées."
+      },
+      {
+        "heading": "Flux prêts pour le DPI",
+        "body": "Intégrez Mediway et SOKLE, ou exportez dans votre processus hospitalier existant. Le médecin reste responsable du document final validé."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quels documents hospitaliers DocNote peut-il rédiger ?",
+        "a": "Lettres de sortie, comptes rendus opératoires, notes de visite, notes de consultation et d'autres documents cliniques à fort volume, selon vos modèles."
+      },
+      {
+        "q": "Pouvons-nous conserver notre en-tête institutionnel ?",
+        "a": "Oui. Les modèles Word personnalisés conservent la mise en page, le bloc de signature et l'ordre des sections."
+      },
+      {
+        "q": "L'IA remplace-t-elle la signature du médecin ?",
+        "a": "Non. Les cliniciens valident chaque document avant qu'il n'intègre le dossier."
+      },
+      {
+        "q": "Est-ce réservé aux notes SOAP ambulatoires ?",
+        "a": "Non. Les types de documents hospitaliers sont une composante à part entière de DocNote."
+      }
+    ],
+    "ctaPrimary": "Pour les cliniques et hôpitaux",
+    "ctaSecondary": "Voir le tutoriel",
+    "relatedLabel": "Guides associés"
+  },
+  "clinical-compliance": {
+    "navLabel": "Conformité clinique",
+    "title": "Conformité IA clinique (nLPD, RGPD, HIPAA)",
+    "description": "Comment DocNote gère la conformité IA clinique : hébergement suisse, chiffrement, rétention audio courte, secret médical, nLPD, RGPD, HIPAA et ISO 27001 pour hôpitaux et cabinets.",
+    "h1": "Une IA clinique qui tient face à un audit",
+    "intro": "Les hôpitaux n’adoptent pas la documentation ambient sur les seules fonctionnalités. DocNote est conçu pour que sécurité, rétention et secret médical fassent partie du produit — pas d’une slide oubliée.",
+    "sections": [
+      {
+        "heading": "Hébergement suisse et chiffrement",
+        "body": "Les données de santé sont hébergées en Suisse avec un chiffrement fort en transit et au repos. DocNote est pensé pour les exigences du secret médical applicables aux auxiliaires du médecin."
+      },
+      {
+        "heading": "Rétention courte par conception",
+        "body": "L’audio utilisé pour produire la documentation est supprimé automatiquement dans un délai court après traitement. Le document durable est le compte rendu validé par le médecin dans vos systèmes."
+      },
+      {
+        "heading": "Les standards que demandent les acheteurs",
+        "body": "DocNote s’aligne sur la nLPD, le RGPD, HIPAA et ISO 27001 — les points qui reviennent dans les questionnaires de sécurité — et publie une politique de confidentialité claire pour patients et institutions."
+      }
+    ],
+    "faq": [
+      {
+        "q": "DocNote est-il conforme au RGPD et à la nLPD ?",
+        "a": "DocNote est conçu pour s'aligner sur les exigences de la nLPD et du RGPD examinées par les acheteurs lors des achats. Consultez notre politique de confidentialité pour plus de détails."
+      },
+      {
+        "q": "Combien de temps l'audio est-il conservé ?",
+        "a": "L'audio utilisé pour produire la documentation est supprimé automatiquement dans un délai court après traitement."
+      },
+      {
+        "q": "Les données des patients sont-elles vendues ou utilisées à des fins publicitaires ?",
+        "a": "Non. Les consultations cliniques ne sont pas un produit publicitaire, et les données ne servent pas à entraîner des modèles de fondation."
+      },
+      {
+        "q": "Où puis-je lire la politique de confidentialité complète ?",
+        "a": "Sur la page de politique de confidentialité de DocNote, accessible depuis le pied de page du site et les appels à l'action liés à la conformité."
+      }
+    ],
+    "ctaPrimary": "Lire la politique de confidentialité",
+    "ctaSecondary": "Nous contacter",
+    "relatedLabel": "Guides associés"
+  }
+}

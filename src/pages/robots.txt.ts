@@ -1,28 +1,28 @@
+/**
+ * Production: Allow all + sitemap.
+ * Preview (workers.dev / PUBLIC_IS_PREVIEW): Disallow all — no sitemap pointer.
+ */
+import { IS_PREVIEW_DEPLOY, SITE_URL as SITE } from '../utils/seo';
+
 export const prerender = true;
 
-const buildRobotsTxt = (site: string) => {
-  const sitemaps = ['sitemap.xml', 'sitemap-landings.xml', 'sitemap-blog.xml']
-    .map((path) => `Sitemap: ${new URL(path, site).href}`)
-    .join('\n');
-
-  return `Content-Signal: ai-train=yes, search=yes, ai-input=yes
-
-User-agent: *
+const body = IS_PREVIEW_DEPLOY
+  ? `User-agent: *
+Disallow: /
+`
+  : `User-agent: *
 Allow: /
 
-# Curated index for AI agents (not used by Google Search ranking)
-# https://docnote.care/llms.txt
+Sitemap: ${SITE}/sitemap.xml
 
-${sitemaps}
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 `;
-};
 
-export const GET = () => {
-  const site = import.meta.env.SITE;
-  return new Response(buildRobotsTxt(site), {
+export const GET = () =>
+  new Response(body, {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'public, max-age=3600',
+      ...(IS_PREVIEW_DEPLOY ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
     },
   });
-};

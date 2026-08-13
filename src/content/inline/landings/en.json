@@ -1,0 +1,2825 @@
+{
+  "ai-medical-scribe": {
+    "navLabel": "AI medical scribe",
+    "title": "AI medical scribe for doctors",
+    "description": "DocNote is an AI medical scribe for physicians and hospitals in Switzerland and Europe. Turn consultations into structured clinical notes in seconds. Swiss-hosted, FADP/GDPR compliant.",
+    "hero": {
+      "badge": "AI medical scribe",
+      "title": "AI medical scribe built for real clinical work",
+      "subtitle": "DocNote listens during the consultation, drafts the note, and lets you get back to the patient.",
+      "lead": "Physicians in Switzerland and across Europe use DocNote to turn spoken encounters into structured clinical documents — consultation notes, discharge letters, ward-round notes, and operative reports — in seconds, not evenings."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "One assistant, every document your practice actually ships",
+      "paragraphs": [
+        "Most ambient scribes are built around a single US outpatient SOAP template. DocNote is different: it was designed in Switzerland by a doctor who wanted to stop losing evenings to paperwork, so it covers the documents European clinicians and hospitals produce every day.",
+        "Start a recording on mobile or web during the consultation. When the visit ends, DocNote turns the conversation into a structured draft that matches the note type you selected — consultation note, discharge letter, ward-round note, or operative report.",
+        "You then read the draft, correct anything that needs correcting, and validate it. Only the version you approve becomes part of the medical record — the same responsibility you already carry, just with far less typing."
+      ]
+    },
+    "benefits": {
+      "badge": "Why clinicians switch",
+      "title": "Less typing, more medicine",
+      "subtitle": "DocNote is built around the reality of a full clinic day, not a demo.",
+      "items": [
+        {
+          "title": "Built for Swiss and European practice",
+          "body": "Multilingual consultations, Swiss data hosting, and documentation habits that match how European clinicians actually write — not a US ambulatory template retrofitted for export."
+        },
+        {
+          "title": "Covers hospital documents too",
+          "body": "Consultation notes are only part of the job. DocNote also drafts discharge letters, ward-round notes, and operative reports, so services don't need a second vendor for inpatient work."
+        },
+        {
+          "title": "You stay the author",
+          "body": "Every draft is a starting point. You edit, correct clinical detail, and validate before anything reaches the record — DocNote never writes into the EHR unsupervised."
+        },
+        {
+          "title": "Fits your existing stack",
+          "body": "Push validated notes into Mediway or SOKLE where configured, or export to a Word template that matches your letterhead and section order."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From consultation to validated note",
+      "subtitle": "Four steps, most of the work happening while you talk with the patient.",
+      "items": [
+        {
+          "title": "Start the recording",
+          "body": "Open DocNote on mobile or web and start capturing the consultation with the patient's agreement."
+        },
+        {
+          "title": "Finish the encounter",
+          "body": "Talk, examine, and decide as usual. DocNote listens in the background; you stay focused on the person in front of you."
+        },
+        {
+          "title": "Review the draft",
+          "body": "Within seconds of ending the recording, a structured note is ready — organised by the document type you selected."
+        },
+        {
+          "title": "Edit and validate",
+          "body": "Correct anything that needs correcting, then approve. The validated document is what enters your record — never the raw draft."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Built to be trusted",
+      "title": "Security that survives a hospital review",
+      "intro": "Buyers don't adopt clinical AI on features alone. DocNote is designed so hosting, retention, and medical secrecy are part of the product from day one.",
+      "points": [
+        {
+          "title": "Swiss-hosted data",
+          "body": "Health data is hosted in Switzerland and processed under medical secrecy expectations — not routed through a default US cloud region."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio used to produce a document is deleted automatically within a short window after processing. The lasting record is the note you validate."
+        },
+        {
+          "title": "Never used to train AI",
+          "body": "Your consultations are used only to produce your documents. They are never used to train foundation models."
+        },
+        {
+          "title": "FADP, GDPR and HIPAA aligned",
+          "body": "DocNote is built to align with the FADP/nFADP, GDPR, and HIPAA expectations that come up in hospital security questionnaires."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "What to evaluate in an AI medical scribe",
+        "body": "Word-error rate is not the whole story. Look at whether the tool understands clinical structure and specialty language, whether it covers the document types your service actually ships, and whether hosting and retention meet your compliance bar before you sign anything."
+      },
+      {
+        "heading": "Rolling DocNote out across a practice or service",
+        "body": "Most teams start with one clinician or one service line, tune templates to match local vocabulary and letterhead, then expand once the workflow is validated. The review-and-approve step never changes, no matter how many clinicians join."
+      },
+      {
+        "heading": "AI medical scribe vs. traditional dictation",
+        "body": "Dictation still requires a transcriptionist or a separate typing pass after the visit. An AI medical scribe collapses that into one step: the structured draft is ready by the time you finish the encounter, and you edit directly instead of waiting for a transcript to come back."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is an AI medical scribe?",
+        "a": "An AI medical scribe listens to or processes a clinical encounter and drafts a structured note for the clinician to review and validate before it enters the medical record."
+      },
+      {
+        "q": "Does DocNote write into the EHR automatically?",
+        "a": "No. Physicians remain responsible for reviewing and approving every document."
+      },
+      {
+        "q": "Where is health data hosted?",
+        "a": "DocNote is designed for Swiss hosting under medical secrecy and European data-protection expectations."
+      },
+      {
+        "q": "Is visit data used to train AI models?",
+        "a": "No. Visits are used to produce your documents, not to train foundation models."
+      },
+      {
+        "q": "Which document types does DocNote support?",
+        "a": "Consultation notes, discharge letters, ward-round notes, operative reports, and specialty templates — the scribe adapts to the note type you select."
+      },
+      {
+        "q": "How long does it take to get a draft?",
+        "a": "Most drafts are ready within seconds of ending the recording, depending on encounter length."
+      }
+    ],
+    "cta": {
+      "title": "See DocNote in your own consultations",
+      "body": "Start a free trial or talk to our team about rolling DocNote out across your practice or hospital service.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Listens in the visit, drafts the note."
+  },
+  "hospital-documentation": {
+    "navLabel": "Hospital documentation",
+    "title": "Hospital documentation with AI",
+    "description": "Hospital documentation AI for discharge letters, operative reports, ward rounds and day-hospital files. DocNote helps care teams document faster without leaving Swiss hosting or medical secrecy.",
+    "hero": {
+      "badge": "Hospital documentation",
+      "title": "Hospital documentation without the evening backlog",
+      "subtitle": "Discharge letters, operative reports, and ward-round notes — drafted from the encounter, validated by the physician.",
+      "lead": "Hospital work is not a single ambulatory SOAP note. DocNote supports the documents that actually fill a clinician's evening across wards, theatres, and day-hospital services, while keeping hosting inside Switzerland."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Built for wards, not just outpatient rooms",
+      "paragraphs": [
+        "A hospital day produces more than consultation notes: discharge letters at the end of a stay, operative reports after theatre, ward-round notes every morning, and shared day-hospital files touched by several caregivers. DocNote treats all of these as first-class document types, not an afterthought bolted onto an ambulatory tool.",
+        "Capture the encounter, ward round, or operative debrief, then let DocNote draft toward the structure your service already uses — diagnoses, course, treatment, follow-up, in the order your institution expects.",
+        "The attending physician reviews the draft, corrects clinical detail, and validates it before it becomes part of the record. Custom Word templates preserve your letterhead, signature block, and section order so the output looks like it was always written in-house."
+      ]
+    },
+    "benefits": {
+      "badge": "Why hospitals adopt it",
+      "title": "Documents that match how your service actually works",
+      "subtitle": "Not a demo built around a single outpatient visit.",
+      "items": [
+        {
+          "title": "Discharge letters that carry the full course",
+          "body": "Diagnoses, treatment, complications, and follow-up land in the structure your institution expects, so the attending edits clinical truth instead of formatting."
+        },
+        {
+          "title": "Operative reports with surgical structure",
+          "body": "Indication, findings, procedure steps, and post-op plan follow a clear order, so drafts read like an operative report rather than a transcript pasted into a letter."
+        },
+        {
+          "title": "Shared day-hospital files",
+          "body": "When several professionals see the same patient in sequence, DocNote supports one coherent file instead of fragmented, disconnected notes."
+        },
+        {
+          "title": "Institutional templates, not generic ones",
+          "body": "Custom Word templates keep your section order, letterhead, and signature block so rollouts don't force a new house style on your service."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From ward or theatre to a validated document",
+      "subtitle": "The same review-and-validate discipline your service already follows.",
+      "items": [
+        {
+          "title": "Capture the encounter",
+          "body": "Record the consultation, ward round, or operative debrief on mobile or web as part of your normal routine."
+        },
+        {
+          "title": "Select the document type",
+          "body": "Choose discharge letter, operative report, ward-round note, or another supported template for that service."
+        },
+        {
+          "title": "Review the structured draft",
+          "body": "A draft matching your institutional structure is ready within seconds, using your existing section order."
+        },
+        {
+          "title": "Validate and file",
+          "body": "The responsible physician corrects and approves the document, then it moves into your EHR or export process — Mediway and SOKLE where configured."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Built for institutional review",
+      "title": "Security your IT and medical directors can sign off on",
+      "intro": "Hospitals adopt AI documentation after a security questionnaire, not a demo. DocNote is designed to answer those questions clearly.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data stays hosted in Switzerland and processed under medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is retained only briefly to produce the document, then deleted automatically."
+        },
+        {
+          "title": "Physician validation, always",
+          "body": "No document reaches the record without a clinician reviewing and approving it first."
+        },
+        {
+          "title": "Mediway and SOKLE integrations",
+          "body": "Where configured, validated documents flow into the systems your hospital already runs."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Rolling DocNote out across an institution",
+        "body": "The usual path starts with one document type and one ward or service. Templates are validated against real cases before the rollout expands to other departments. IT and medical directors review hosting, retention, and integrations in parallel — the same structure that applies to any other clinical software procurement."
+      },
+      {
+        "heading": "When several services share the same file",
+        "body": "Day hospitals and multidisciplinary wards benefit most from consistent structure, because several professionals contribute to the same patient file across a stay. DocNote keeps section order consistent across specialties so the record stays legible no matter who documented last."
+      },
+      {
+        "heading": "Where hospital documentation differs from ambulatory notes",
+        "body": "An outpatient consultation note and a discharge letter carry different information and different audiences — the referring GP, the insurer, the patient. DocNote treats each document type as its own structure rather than forcing a single template to serve every purpose, so the letter that leaves the ward actually reads like one."
+      },
+      {
+        "heading": "Handling a mixed ward with several specialties",
+        "body": "General internal medicine wards often host patients under several different specialties at once. Consistent document structure matters even more here, because a covering physician who did not admit the patient needs to understand the course quickly from the written record alone. DocNote's hospital templates are designed to be readable by someone encountering the case for the first time, not only by the team that has followed it from admission."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which hospital documents can DocNote draft?",
+        "a": "Discharge letters, operative reports, ward-round notes, consultation notes, and other high-volume clinical documents depending on your templates."
+      },
+      {
+        "q": "Can we keep our institutional letterhead?",
+        "a": "Yes. Custom Word templates preserve layout, signature block, and section order."
+      },
+      {
+        "q": "Does AI replace the physician's signature?",
+        "a": "No. Clinicians validate every document before it becomes part of the record."
+      },
+      {
+        "q": "Is this only for ambulatory SOAP notes?",
+        "a": "No. Hospital document types are a first-class part of DocNote."
+      },
+      {
+        "q": "How do day-hospital teams share one file?",
+        "a": "Several caregivers can contribute to the same patient file across a day-hospital stay, so the record stays coherent instead of fragmented across separate notes."
+      },
+      {
+        "q": "How long does rollout take for a hospital service?",
+        "a": "Most services start with one document type and one ward or unit, validate templates, then expand — typically a matter of weeks, not months."
+      }
+    ],
+    "cta": {
+      "title": "Bring DocNote to your ward or service",
+      "body": "Talk to our team about a pilot for your hospital, including template setup and EHR integration.",
+      "primary": "Contact our team",
+      "secondary": "Watch tutorial"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Discharge, OR, and ward notes from the encounter."
+  },
+  "clinical-compliance": {
+    "navLabel": "Clinical compliance",
+    "title": "Clinical AI compliance (FADP, GDPR, HIPAA)",
+    "description": "How DocNote handles clinical AI compliance: Swiss hosting, encryption, short audio retention, medical secrecy, FADP/nFADP, GDPR, HIPAA and ISO 27001 controls for hospitals and practices.",
+    "hero": {
+      "badge": "Clinical AI compliance",
+      "title": "Clinical AI that can survive a compliance review",
+      "subtitle": "Swiss hosting, short retention, and medical secrecy — built into the product, not a slide.",
+      "lead": "Hospitals do not adopt ambient documentation on features alone. DocNote is designed so security, data residency, and clinical responsibility hold up under a real procurement review."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Compliance as a feature, not an afterthought",
+      "paragraphs": [
+        "Many ambient scribes are built first, then patched with a privacy page once buyers start asking questions. DocNote was designed in the opposite order: Swiss hosting, short audio retention, and physician validation were part of the first version, because the product was built by a doctor who understood medical secrecy from the inside.",
+        "That means the answers to a hospital security questionnaire are not improvised. Data residency, retention windows, and access control are documented, consistent, and the same for every institution — not a special exception negotiated per deal.",
+        "Compliance also protects the people using the product. Clinicians remain the sole author of every validated document, which keeps liability where it already sits — with the physician — rather than shifting it onto an opaque model."
+      ]
+    },
+    "benefits": {
+      "badge": "What buyers check first",
+      "title": "The questions your security team will ask — answered",
+      "subtitle": "Built to match what hospital and practice buyers actually review before signing.",
+      "items": [
+        {
+          "title": "Data residency",
+          "body": "Health data is hosted in Switzerland, not routed through a default US cloud region, and processed under medical secrecy expectations."
+        },
+        {
+          "title": "Encryption in transit and at rest",
+          "body": "Recordings and documents are protected with strong encryption throughout the pipeline, from capture to validated note."
+        },
+        {
+          "title": "Retention you can explain to a patient",
+          "body": "Audio used to produce documentation is deleted automatically within a short window — a policy simple enough to state in a consent conversation."
+        },
+        {
+          "title": "No training on clinical visits",
+          "body": "Consultations are used only to produce your documents. They are never used to train foundation models, and never sold or used for advertising."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How compliance works in practice",
+      "title": "From encounter to a defensible record",
+      "subtitle": "Every step maps to a question a compliance reviewer will ask.",
+      "items": [
+        {
+          "title": "Capture under consent",
+          "body": "Recording starts only with the patient's agreement, following your institution's consent workflow."
+        },
+        {
+          "title": "Process under Swiss hosting",
+          "body": "Audio and drafts are processed within Swiss infrastructure, aligned with FADP/nFADP and GDPR expectations."
+        },
+        {
+          "title": "Validate under physician responsibility",
+          "body": "The clinician reviews, corrects, and approves — the same accountability structure hospitals already use for paper and dictation."
+        },
+        {
+          "title": "Delete audio automatically",
+          "body": "Once the document is produced, the source audio is deleted on a short, fixed retention window."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Standards buyers ask about",
+      "title": "FADP, GDPR, HIPAA and ISO 27001 alignment",
+      "intro": "DocNote is built to align with the frameworks that come up repeatedly in hospital and practice security reviews.",
+      "points": [
+        {
+          "title": "FADP / nFADP",
+          "body": "Swiss data-protection expectations are addressed by design — hosting location, retention, and access control."
+        },
+        {
+          "title": "GDPR",
+          "body": "European data-protection principles apply across the platform for institutions operating under GDPR."
+        },
+        {
+          "title": "HIPAA-aligned controls",
+          "body": "Security and access controls are built to align with HIPAA expectations for organisations that need it."
+        },
+        {
+          "title": "ISO 27001-aligned practices",
+          "body": "Information-security practices follow ISO 27001-aligned controls that buyers ask about in questionnaires."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "What a security questionnaire actually asks",
+        "body": "Compliance teams rarely ask about marketing claims. They ask about hosting location, retention windows, access logs, and who is accountable for a validated document. DocNote answers these questions consistently because the answers are part of the architecture — not a separate compliance team trying to explain a product after the fact."
+      },
+      {
+        "heading": "Responsibility stays with the clinician",
+        "body": "No AI system takes on the legal responsibility for a clinical decision. DocNote drafts, the physician validates — and that separation is exactly what lets institutions fit the product into their existing liability and governance structures without raising new questions."
+      },
+      {
+        "heading": "Preparing for a procurement review",
+        "body": "Most institutions run AI documentation tools through the same review used for any clinical software: data residency, retention, encryption, access control, and vendor accountability. Having clear, written answers to each of these before the first meeting shortens procurement significantly compared with negotiating exceptions deal by deal."
+      },
+      {
+        "heading": "What DocNote does not claim",
+        "body": "A vendor that claims every certification going is usually overselling. DocNote is explicit about what it aligns with — FADP/nFADP, GDPR, HIPAA-aligned controls, ISO 27001-aligned practices — and does not claim certifications it has not obtained. Ask us directly about the current state of any specific standard your institution requires."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is DocNote compliant with GDPR and FADP?",
+        "a": "DocNote is designed to align with FADP/nFADP and GDPR expectations buyers review during procurement. See our privacy policy for details."
+      },
+      {
+        "q": "How long is audio retained?",
+        "a": "Audio used to produce documentation is deleted automatically within a short window after processing."
+      },
+      {
+        "q": "Is patient data sold or used for ads?",
+        "a": "No. Clinical visits are not a product for advertising, and data is not used to train foundation models."
+      },
+      {
+        "q": "Where can I read the full privacy policy?",
+        "a": "On the DocNote privacy policy page, linked from the site footer and compliance CTAs."
+      },
+      {
+        "q": "Does DocNote replace our existing security review process?",
+        "a": "No. DocNote provides documentation and answers for your existing procurement and security review — it doesn't replace your institution's own approval process."
+      },
+      {
+        "q": "Who is responsible for the validated document?",
+        "a": "The clinician who reviews and validates it — DocNote drafts, but never files anything into the record unsupervised."
+      }
+    ],
+    "cta": {
+      "title": "Bring your compliance questions to us",
+      "body": "Read the full privacy policy or talk to our team about your institution's specific security review.",
+      "primary": "Read privacy policy",
+      "secondary": "Contact us"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Swiss hosting, short retention, medical secrecy."
+  },
+  "ambient-clinical-documentation": {
+    "navLabel": "Ambient clinical documentation",
+    "title": "Ambient clinical documentation AI | DocNote",
+    "description": "Ambient clinical documentation that listens during the encounter and drafts structured notes for physician review. Swiss-hosted AI for hospitals and practices in Europe.",
+    "hero": {
+      "badge": "Ambient documentation",
+      "title": "Ambient clinical documentation that stays in the room with you",
+      "subtitle": "Passive capture during the visit, a structured draft right after — no typing in between.",
+      "lead": "Ambient clinical documentation captures the natural conversation between clinician and patient, then drafts the note you would otherwise type after the visit. DocNote is built for that workflow — without shipping health data out of Switzerland or forcing a US-only ambulatory template onto European care teams."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Listening in the background, drafting in the foreground",
+      "paragraphs": [
+        "Ambient AI listens while you run a normal consultation, ward round, or procedure debrief. It does not replace your clinical judgment — it drafts a structured document so you review and validate instead of starting from a blank page. The lasting record is the note you approve, not the raw audio.",
+        "Many ambient tools optimise for a single outpatient SOAP note. Real European documentation includes discharge summaries, collaborative day-hospital files, multilingual encounters, and institutional letterheads — all of which DocNote is built to support."
+      ]
+    },
+    "benefits": {
+      "badge": "Why teams choose ambient capture",
+      "title": "Built for hospitals and clinics, not demos",
+      "subtitle": "Ambient listening only earns its place if it survives a real, noisy clinic day.",
+      "items": [
+        {
+          "title": "Present during the visit",
+          "body": "You keep eye contact and follow the conversation instead of splitting attention with a keyboard, because the note is drafted after, not during, the encounter."
+        },
+        {
+          "title": "From capture to validated note",
+          "body": "Start recording on mobile or web, finish the encounter, and review a draft in seconds — then edit terminology, tighten the plan, and approve."
+        },
+        {
+          "title": "Covers hospital document types",
+          "body": "Beyond ambulatory notes, DocNote drafts discharge letters, operative reports, and ward-round notes from the same ambient capture."
+        },
+        {
+          "title": "Compliance built in, not bolted on",
+          "body": "Audio used to produce documentation is retained only briefly, then deleted. Health data is not used to train foundation models."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From ambient capture to a validated document",
+      "subtitle": "Four steps, most of the effort happening while you talk with the patient.",
+      "items": [
+        {
+          "title": "Start capture",
+          "body": "Begin recording on mobile or web at the start of the consultation, ward round, or procedure debrief."
+        },
+        {
+          "title": "Run the encounter as normal",
+          "body": "Talk, examine, and decide as you always would — the assistant listens in the background without interrupting the flow."
+        },
+        {
+          "title": "Review the structured draft",
+          "body": "Within seconds of ending capture, a draft organised by document type is ready for your review."
+        },
+        {
+          "title": "Edit, approve, and push forward",
+          "body": "Correct terminology or detail, validate, then send into your usual process — including Mediway and SOKLE where available."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Compliance is part of the product",
+      "title": "A privacy story you can actually explain",
+      "intro": "Buyers get a clear story for FADP/nFADP, GDPR, and institutional security questionnaires — not a slide that says 'we take privacy seriously.'",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Processing stays aligned with Swiss and European health-data expectations rather than default US cloud regions."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio used to produce documentation is retained only briefly, then deleted automatically."
+        },
+        {
+          "title": "Never used to train AI",
+          "body": "Health data is not used to train foundation models — visits exist only to produce your documents."
+        },
+        {
+          "title": "Physician validation, always",
+          "body": "A physician or authorised clinician reviews and validates the draft before it becomes part of the medical record."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "What ambient documentation really means",
+        "body": "Ambient AI listens in the background while you run an ordinary consultation, ward round, or procedure debrief. It does not replace your clinical judgment. It drafts a structured document — consultation note, discharge letter, operative report, or specialty template — so you review and approve instead of starting from a blank page. The lasting record is the note you validate, not the raw recording."
+      },
+      {
+        "heading": "From ambient capture to a validated note",
+        "body": "Start the recording on mobile or web, finish the consultation, and review a draft within seconds. Adjust terminology, sharpen the plan, approve, and move it into your usual process — including Mediway and SOKLE where available, or Word templates matching your letterhead."
+      },
+      {
+        "heading": "Ambient documentation across a full clinic day",
+        "body": "The value compounds over a full day, not just one visit. A clinician who saves several minutes per encounter across a dozen or more consultations gets that time back for patients rather than for typing — which is usually the actual reason teams adopt ambient capture in the first place."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is ambient clinical documentation the same as an AI medical scribe?",
+        "a": "They overlap. \"Ambient clinical documentation\" emphasises passive capture during the visit; \"AI medical scribe\" is the broader category of tools that draft notes for clinician review. DocNote covers both."
+      },
+      {
+        "q": "Does the AI write into the EHR automatically?",
+        "a": "No. A physician or authorised clinician reviews and validates the draft before it becomes part of the medical record."
+      },
+      {
+        "q": "Where is ambient audio processed?",
+        "a": "DocNote is designed for Swiss hosting. Processing stays aligned with Swiss and European health-data expectations rather than default US cloud regions."
+      },
+      {
+        "q": "Can ambient documentation handle hospital document types?",
+        "a": "Yes. Beyond ambulatory notes, DocNote supports discharge letters, operative reports, ward-round notes, and other high-volume hospital outputs."
+      },
+      {
+        "q": "Can DocNote work in a noisy multi-bed ward?",
+        "a": "Ambient capture is tied to the device and workflow you choose. We help map a practical setup for wards and shared rooms during onboarding."
+      },
+      {
+        "q": "Do patients need to consent to ambient recording?",
+        "a": "Follow your local legal and institutional rules. DocNote supports transparent, privacy-minded workflows; your organisation defines the consent process."
+      }
+    ],
+    "cta": {
+      "title": "Try ambient documentation on your next consultation",
+      "body": "Start a free trial or talk to our team about rolling ambient capture out across your service.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Passive capture, structured draft after."
+  },
+  "ai-clinical-documentation": {
+    "navLabel": "AI clinical documentation",
+    "title": "AI clinical documentation software | DocNote",
+    "description": "AI clinical documentation for physicians and hospitals: structured notes from consultations, discharge letters, and operative reports. Swiss-hosted, built for Europe.",
+    "hero": {
+      "badge": "AI clinical documentation",
+      "title": "AI clinical documentation without the evening backlog",
+      "subtitle": "Structured drafts from consultations and ward work, reviewed by the clinician who owns them.",
+      "lead": "Clinical documentation is where care teams lose evenings. DocNote turns consultations and ward work into structured drafts — so clinicians spend less time typing and more time with patients, while staying inside Swiss hosting and medical secrecy rules."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Documentation that matches how your service actually works",
+      "paragraphs": [
+        "Generic note generators flatten every specialty into one US outpatient format. DocNote adapts to the documents your service actually ships: consultation notes, follow-ups, discharge summaries, operative reports, and collaborative day-hospital files.",
+        "AI drafts; clinicians decide. That split keeps liability and medical secrecy intact while cutting the typing that drives burnout and pajama-time EHR work."
+      ]
+    },
+    "benefits": {
+      "badge": "Why teams switch",
+      "title": "Built for buyers and clinical champions",
+      "subtitle": "IT and medical directors care about hosting and adoption as much as clinicians care about speed.",
+      "items": [
+        {
+          "title": "Survives a security questionnaire",
+          "body": "Clear Swiss hosting, short audio retention, and physician validation before anything reaches the record — the story IT and medical directors need."
+        },
+        {
+          "title": "Fits every document type you ship",
+          "body": "Not just ambulatory SOAP notes — discharge summaries, operative reports, and day-hospital files are first-class citizens."
+        },
+        {
+          "title": "Same clinical responsibility as today",
+          "body": "AI drafts, the clinician validates — the accountability model your institution already trusts stays exactly the same."
+        },
+        {
+          "title": "Connects to your existing stack",
+          "body": "Push validated notes into Mediway or SOKLE where configured, or export to a Word template matching your institutional structure."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From encounter to a document your team trusts",
+      "subtitle": "A workflow clinical champions can explain to IT in one slide.",
+      "items": [
+        {
+          "title": "Capture the encounter",
+          "body": "Record the consultation or ward interaction on mobile or web as part of the normal visit."
+        },
+        {
+          "title": "Choose the document type",
+          "body": "Select consultation note, discharge summary, operative report, or another supported template."
+        },
+        {
+          "title": "Review the structured draft",
+          "body": "A draft matching your documentation habits is ready within seconds."
+        },
+        {
+          "title": "Validate and file",
+          "body": "Correct and approve, then push into your EHR path or export process."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Built to pass procurement",
+      "title": "The compliance story buyers actually ask for",
+      "intro": "A pilot only turns into a rollout once security and medical directors sign off.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data is hosted and processed in Switzerland, aligned with medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the document is produced."
+        },
+        {
+          "title": "No training on your visits",
+          "body": "Consultations are used only to produce your documents, never to train foundation models."
+        },
+        {
+          "title": "Physician validation, always",
+          "body": "Every document is reviewed and approved by a clinician before it becomes part of the record."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Documentation that matches how your service works",
+        "body": "Generic note generators flatten every specialty into a single US outpatient format. DocNote adapts to the documents your service actually ships: consultation notes, follow-up visits, discharge summaries, operative reports, and shared day-hospital files."
+      },
+      {
+        "heading": "For buyers and clinical champions alike",
+        "body": "A pilot convinces clinical teams quickly. Rolling out across a whole institution also needs a clear answer for IT and medical directors — the exact answer DocNote provides from the start, instead of improvising one after the fact."
+      },
+      {
+        "heading": "Choosing between a pilot and a full rollout",
+        "body": "Most services start with a single high-volume document type and a small group of clinicians, run it for a few weeks, and only then decide on a wider rollout. That sequence gives medical directors real evidence instead of a features demo, and gives clinicians a say in how templates are tuned before everyone depends on them."
+      },
+      {
+        "heading": "AI clinical documentation versus a plain ambient scribe",
+        "body": "Some tools stop at producing text that sounds like a note. AI clinical documentation, as DocNote builds it, means the output is structured into the sections your service actually files — coded fields, headings, and terminology that match your existing record — not just fluent prose that still needs to be reorganised by hand before it's usable."
+      },
+      {
+        "heading": "Measuring adoption honestly",
+        "body": "The clearest sign a documentation tool is working is that clinicians keep using it after the novelty fades, not the demo reaction on day one. Track how many drafts get heavily rewritten versus lightly edited over the first month — that trend tells you more about fit than any single feature comparison."
+      },
+      {
+        "heading": "Involving IT early, not at the end",
+        "body": "Rollouts that bring IT in only after clinicians have already committed tend to stall on questions that could have been answered weeks earlier. Looping in IT and security review alongside the clinical pilot, rather than after it, keeps the eventual rollout timeline realistic."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who is AI clinical documentation for?",
+        "a": "Independent physicians, group practices, and hospital services that want faster structured notes without giving up clinical validation or European data rules."
+      },
+      {
+        "q": "How is this different from speech-to-text?",
+        "a": "Speech-to-text gives you words. DocNote structures a clinical document — headings, specialty language, and the note type you selected — ready for review."
+      },
+      {
+        "q": "Is DocNote only for ambulatory SOAP notes?",
+        "a": "No. Hospital document types are a first-class part of the product, not an afterthought."
+      },
+      {
+        "q": "Can we pilot with one specialty first?",
+        "a": "Yes. Many teams start with a high-volume service, validate templates, then expand."
+      },
+      {
+        "q": "What does onboarding involve?",
+        "a": "Template mapping to your documents, a short pilot with real encounters, and clinician feedback before wider rollout."
+      },
+      {
+        "q": "Can non-physician clinicians use DocNote?",
+        "a": "Yes, within the scope your institution defines — validation responsibility follows your existing clinical governance."
+      }
+    ],
+    "cta": {
+      "title": "Bring AI clinical documentation to your service",
+      "body": "Start a free trial or talk to our team about a pilot for your practice or hospital.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Structured drafts you review and own."
+  },
+  "ai-soap-notes": {
+    "navLabel": "AI SOAP notes",
+    "title": "AI SOAP notes for clinicians | DocNote",
+    "description": "Generate AI SOAP notes from consultations for physician review. Structured Subjective, Objective, Assessment, and Plan — with Swiss hosting and European clinical workflows.",
+    "hero": {
+      "badge": "AI SOAP notes",
+      "title": "AI SOAP notes that still sound like your clinic",
+      "subtitle": "Subjective, Objective, Assessment, and Plan — drafted from the visit, not a generic template.",
+      "lead": "SOAP remains the backbone of many ambulatory notes. DocNote drafts Subjective, Objective, Assessment, and Plan from the consultation so you edit and sign instead of rebuilding the note from scratch after every visit."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Structured SOAP without robotic language",
+      "paragraphs": [
+        "A useful AI SOAP note preserves clinical nuance: the patient's own words where they matter, exam findings that were actually stated, and an Assessment/Plan that reflects your reasoning — not a generic summary that could belong to any patient.",
+        "If your day is mostly outpatient SOAP, start there. When you also need discharge letters or specialty reports, the same DocNote workspace covers those document types without switching vendors."
+      ]
+    },
+    "benefits": {
+      "badge": "What clinicians notice",
+      "title": "SOAP notes that hold up at review",
+      "subtitle": "Structure without losing the details that matter for continuity and coding.",
+      "items": [
+        {
+          "title": "Keeps your clinical voice",
+          "body": "Drafts preserve the patient's own words where relevant and the exam findings you actually stated — not a flattened summary."
+        },
+        {
+          "title": "Review before the record",
+          "body": "Fix a differential, add a coding-relevant detail, remove small talk the model overweighted — then approve."
+        },
+        {
+          "title": "One workspace for more than SOAP",
+          "body": "Add discharge letters or specialty reports later without switching to a second vendor."
+        },
+        {
+          "title": "Privacy for every conversation",
+          "body": "Visit audio is processed to produce the note, then deleted on a short retention window."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From consultation to a signed SOAP note",
+      "subtitle": "Fast enough for back-to-back ambulatory slots.",
+      "items": [
+        {
+          "title": "Capture the visit",
+          "body": "Record the consultation on mobile or web with the patient's agreement."
+        },
+        {
+          "title": "Select SOAP as the note type",
+          "body": "Choose the SOAP (or consultation) template for that encounter."
+        },
+        {
+          "title": "Review Subjective, Objective, Assessment, Plan",
+          "body": "A structured draft is ready within seconds, organised into the four SOAP sections."
+        },
+        {
+          "title": "Edit and sign",
+          "body": "Adjust wording or detail, then approve — the validated note is what enters the record."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy for patient conversations",
+      "title": "The same trust story for every visit",
+      "intro": "SOAP notes carry sensitive detail every day — the privacy story has to hold up every time, not just on the pilot.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Data stays in Switzerland and is not used to train foundation models."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Visit audio is deleted on a short retention window once the note is produced."
+        },
+        {
+          "title": "Clinician review, always",
+          "body": "Every SOAP draft stays under clinician control before it reaches the record."
+        },
+        {
+          "title": "Built for European practice",
+          "body": "Multilingual consultations and European documentation habits, not a US-only template."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Adapting SOAP templates to your specialty",
+        "body": "SOAP is a starting structure, not a rigid format. During onboarding, teams adjust section headings and emphasis so the note reflects how your service actually documents care — from general practice to specialised outpatient services."
+      },
+      {
+        "heading": "Using SOAP alongside other document types",
+        "body": "Many practices start with SOAP notes for the ambulatory day and later expand to discharge letters or specialty reports once patients are admitted. The same workspace covers both cases without switching vendors."
+      },
+      {
+        "heading": "What makes a SOAP draft useful, not just fast",
+        "body": "A fast SOAP note that loses clinical nuance costs more time than it saves, because you end up rewriting the Assessment and Plan anyway. DocNote is built to keep the reasoning that matters — differentials considered, why a plan changed — so editing means refining, not rebuilding."
+      },
+      {
+        "heading": "SOAP notes and coding accuracy",
+        "body": "Coding relies on specific, well-documented detail — the exact reason for a visit, the complexity of decision-making, time spent on counselling where relevant. A SOAP draft that flattens these into generic phrasing makes coding harder, not easier. DocNote's drafts aim to preserve exactly the details that support accurate coding, leaving the coding decision itself to you."
+      },
+      {
+        "heading": "SOAP for follow-up visits versus first visits",
+        "body": "A follow-up SOAP note should reference what changed since the last visit, not repeat the full history again. DocNote can use prior notes as context so a follow-up draft focuses on the interval course and plan adjustments, rather than reproducing an unnecessarily long Subjective section each time."
+      },
+      {
+        "heading": "Signing SOAP notes the same day",
+        "body": "A SOAP note left open overnight is more likely to be forgotten, rushed, or signed with less attention the next morning. Getting most of the drafting done before the end of the day, even if final signature happens later, keeps the record closer to what actually happened during the visit."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can DocNote generate SOAP notes from ambient listening?",
+        "a": "Yes. Capture the consultation, select the SOAP (or consultation) model, and review the structured draft."
+      },
+      {
+        "q": "Will SOAP notes work for my specialty?",
+        "a": "SOAP is a starting structure. Specialty terminology and templates can be adapted so the note matches how your service documents care."
+      },
+      {
+        "q": "Is this only for US clinics?",
+        "a": "No. DocNote is built for Switzerland and Europe, including multilingual consultations and European documentation habits."
+      },
+      {
+        "q": "How long does drafting take?",
+        "a": "Most drafts are ready within seconds after the recording ends, depending on encounter length and network conditions."
+      },
+      {
+        "q": "Can I customise the SOAP template?",
+        "a": "Section headings and emphasis can be adapted to how your practice documents care during onboarding."
+      },
+      {
+        "q": "Does DocNote suggest coding-relevant details?",
+        "a": "Drafts aim to capture clinically relevant detail; coding decisions remain with the clinician."
+      }
+    ],
+    "cta": {
+      "title": "Draft your next SOAP note in seconds",
+      "body": "Start a free trial and see how DocNote handles your next ambulatory day.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "SOAP from the visit, not a blank template."
+  },
+  "ai-medical-transcription": {
+    "navLabel": "AI medical transcription",
+    "title": "AI medical transcription that becomes a clinical note | DocNote",
+    "description": "AI medical transcription upgraded: turn clinical speech into structured notes, not just raw text. Swiss-hosted DocNote for physicians and hospitals.",
+    "hero": {
+      "badge": "AI medical transcription",
+      "title": "AI medical transcription that does not stop at the transcript",
+      "subtitle": "Speech becomes a structured clinical document, not just raw text to edit.",
+      "lead": "Traditional medical transcription gives you text. Clinicians still have to turn that text into a usable note. DocNote starts from speech and drafts the structured clinical document you need — so transcription becomes documentation, not another editing job."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Beyond speech-to-text",
+      "paragraphs": [
+        "A transcript is a starting point, not a medical record. DocNote maps spoken content into the sections, terminology, and document type your practice or hospital expects, then leaves final wording to the clinician.",
+        "Many buyers use \"AI medical transcription\" for ambient scribes and note generators. If your goal is less after-hours typing, evaluate structured output, specialty fit, hosting location, and validation workflow — not word-error rate alone."
+      ]
+    },
+    "benefits": {
+      "badge": "Why transcription alone isn't enough",
+      "title": "From words to a usable clinical document",
+      "subtitle": "Transcription is the easy part. Structure is what saves the evening.",
+      "items": [
+        {
+          "title": "Structured, not just transcribed",
+          "body": "Spoken content is mapped into sections and terminology matching your document type — no separate editing pass needed."
+        },
+        {
+          "title": "Fewer transcriptionist hours",
+          "body": "Many teams reduce or eliminate routine transcription for supported note types, keeping human oversight for edge cases."
+        },
+        {
+          "title": "Built for multilingual clinics",
+          "body": "DocNote is designed for the multilingual clinical environments common in Switzerland and Europe."
+        },
+        {
+          "title": "Secure from capture to draft",
+          "body": "Health conversations stay in Swiss hosting, with short audio retention throughout the pipeline."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From speech to a structured note",
+      "subtitle": "One capture, no separate transcription step.",
+      "items": [
+        {
+          "title": "Record the encounter",
+          "body": "Capture the consultation on mobile or web as part of your normal visit."
+        },
+        {
+          "title": "DocNote structures the content",
+          "body": "Spoken content is mapped into the sections and terminology your document type expects."
+        },
+        {
+          "title": "Review the draft",
+          "body": "A structured note — not a raw transcript — is ready for your review within seconds."
+        },
+        {
+          "title": "Edit and validate",
+          "body": "Adjust wording, then approve. The validated note becomes part of your record."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Secure by design",
+      "title": "Sensitive conversations, strict boundaries",
+      "intro": "Health conversations deserve more protection than a generic transcription vendor typically offers.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Hosting stays in Switzerland, shortening the distance between capture and compliance."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is retained only briefly to produce the document, then deleted."
+        },
+        {
+          "title": "No training on your visits",
+          "body": "Your consultations are never used to train foundation models."
+        },
+        {
+          "title": "Fits European documentation",
+          "body": "From consultation notes to discharge letters and operative reports — not only a single ambulatory SOAP template."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Evaluating transcription beyond error rate",
+        "body": "Two vendors with a similar word-error rate can produce very different results for your practice if only one actually structures the language. Ask whether the output is a finished document structure or just raw text you still have to organise yourself."
+      },
+      {
+        "heading": "Reducing transcription workload gradually",
+        "body": "Most practices don't replace transcription overnight. A typical path starts with one high-volume document type, reviews results over a few weeks, then expands to more templates while keeping human transcription available for complex cases."
+      },
+      {
+        "heading": "Where transcription still falls short",
+        "body": "Heavy accents, overlapping speech, and highly specialised jargon remain the hardest cases for any speech technology. DocNote's review-and-validate step exists precisely so these edge cases are caught by a clinician before they reach the record, rather than shipped as-is."
+      },
+      {
+        "heading": "Comparing transcription vendors on more than accuracy",
+        "body": "When comparing AI medical transcription vendors, ask about output structure, hosting location, and audio retention alongside accuracy figures. A vendor with a lower advertised error rate but a raw-text-only output and unclear hosting can end up costing your team more editing time and more compliance risk than a structured, Swiss-hosted alternative."
+      },
+      {
+        "heading": "Migrating away from a legacy transcription contract",
+        "body": "Practices leaving a long-standing transcription contract usually run both systems in parallel for a few weeks rather than switching overnight. That overlap lets a team compare draft quality directly on the same encounters before fully retiring the old workflow, which reduces the risk of a gap in documentation quality during the transition."
+      },
+      {
+        "heading": "What happens to old dictated recordings",
+        "body": "Switching tools doesn't require re-processing years of old dictations. Most teams simply keep archived transcripts accessible in their existing system while new encounters move to DocNote going forward, avoiding a costly and unnecessary migration project. Old transcripts stay searchable in their original archive."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is DocNote a medical transcription service?",
+        "a": "DocNote is an AI documentation platform. It can replace much of the transcription workflow by drafting structured notes for clinician review."
+      },
+      {
+        "q": "Do we still need human transcriptionists?",
+        "a": "Many teams reduce or eliminate routine transcription for supported note types. Complex or medico-legal edge cases still benefit from clinician oversight — which DocNote always requires."
+      },
+      {
+        "q": "What languages are supported?",
+        "a": "DocNote is designed for multilingual clinical environments common in Switzerland and Europe. Ask our team about your language mix during onboarding."
+      },
+      {
+        "q": "Where does audio go?",
+        "a": "Processing is aligned with Swiss hosting. Audio is retained only briefly to produce the document, then deleted."
+      },
+      {
+        "q": "Can DocNote handle heavy accents or fast speech?",
+        "a": "Recognition quality varies with audio conditions; teams review drafts and can flag encounters for closer review during onboarding."
+      },
+      {
+        "q": "Is a raw transcript still available if I want it?",
+        "a": "The focus is a structured document; ask our team about your specific workflow needs."
+      }
+    ],
+    "cta": {
+      "title": "Replace transcript-only workflows",
+      "body": "Start a free trial and see the difference between a transcript and a validated clinical document.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Speech to a structured clinical document."
+  },
+  "ai-discharge-summary": {
+    "navLabel": "AI discharge summary",
+    "title": "AI discharge summary & discharge letter | DocNote",
+    "description": "Draft AI discharge summaries and hospital discharge letters faster. Structured, reviewable documents with Swiss hosting — built for European hospital workflows.",
+    "hero": {
+      "badge": "AI discharge summary",
+      "title": "AI discharge summaries without the late-night backlog",
+      "subtitle": "Diagnoses, course, treatment, and follow-up — drafted before the letter becomes urgent.",
+      "lead": "Discharge letters are high-stakes and high-volume. DocNote helps hospital teams draft structured discharge summaries from clinical context so physicians validate a complete letter instead of rebuilding it under time pressure."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Documents hospitals actually ship",
+      "paragraphs": [
+        "A discharge summary must carry diagnoses, course, treatments, follow-up, and the tone your institution expects. DocNote drafts toward that structure so the attending edits clinical truth, not formatting.",
+        "Ward rhythm, shared day-hospital files, and multilingual teams are normal in Switzerland and Europe. DocNote is designed around those constraints — including Swiss hosting and medical secrecy — rather than a US clinic demo."
+      ]
+    },
+    "benefits": {
+      "badge": "Why hospital teams switch",
+      "title": "Safer, faster handoffs",
+      "subtitle": "Discharge letters are high-stakes and high-volume — both need to be respected.",
+      "items": [
+        {
+          "title": "Full course, not just a summary",
+          "body": "Diagnoses, treatments, complications, and follow-up land in the structure your institution expects."
+        },
+        {
+          "title": "From encounter to letter",
+          "body": "Use consultation or ward context to seed the discharge draft, then apply your Word template or institutional sections."
+        },
+        {
+          "title": "Earlier outpatient handoffs",
+          "body": "Faster letters mean earlier handoffs to outpatient care — without skipping the physician validation step."
+        },
+        {
+          "title": "Built for European ward rhythm",
+          "body": "Shared day-hospital files and multilingual teams are the normal case, not the exception."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From admission context to a validated letter",
+      "subtitle": "Designed for the moment discharge planning starts, not just the final hour.",
+      "items": [
+        {
+          "title": "Seed the draft from context",
+          "body": "Use consultation notes or ward context gathered during the stay to seed the discharge draft."
+        },
+        {
+          "title": "Apply your institutional template",
+          "body": "DocNote drafts toward your Word template or institutional section order."
+        },
+        {
+          "title": "Review before discharge",
+          "body": "The attending reviews diagnoses, course, and follow-up for accuracy."
+        },
+        {
+          "title": "Validate and send",
+          "body": "Approve the letter so it leaves the service on time, with the physician's responsibility intact."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Built for European hospital reality",
+      "title": "Compliance that fits ward pressure",
+      "intro": "Discharge letters move fast under time pressure — the compliance story has to keep up.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss expectations, not a US clinic demo."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio used to seed the draft is deleted automatically shortly after processing."
+        },
+        {
+          "title": "No training on patient data",
+          "body": "Visits are used to produce your documents, not to train foundation models."
+        },
+        {
+          "title": "Mediway and SOKLE where configured",
+          "body": "Integrations are available where set up; otherwise export into your existing hospital process."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Starting discharge planning earlier",
+        "body": "Many teams wait until the final day to write the letter, even though the clinical context has existed for days. When consultation and ward-round notes are already captured in structure, the discharge draft can start earlier — leaving the attending to review and add detail on the last day instead of writing from scratch."
+      },
+      {
+        "heading": "Templates by department, not one format for all",
+        "body": "Surgical, internal medicine, and paediatric services expect different sections and levels of detail in a discharge letter. DocNote maps these differences through institutional templates, so each department keeps its usual structure instead of adapting to a generic format."
+      },
+      {
+        "heading": "Reducing readmission risk through clearer letters",
+        "body": "A discharge letter that clearly separates diagnoses, medication changes, and follow-up instructions is easier for outpatient teams and patients to act on. Structure alone doesn't prevent readmissions, but a letter that gets lost in dense paragraphs makes follow-up mistakes more likely."
+      },
+      {
+        "heading": "Handling complex, multi-service discharges",
+        "body": "A patient who has been seen by several services during a long stay needs a discharge summary that pulls the whole course together, not just the last few days. DocNote can seed the draft from consultation and ward-round notes captured throughout the stay, so the final letter reflects the full course rather than only what the discharging team remembers."
+      },
+      {
+        "heading": "Coordinating the letter with the outpatient team",
+        "body": "A discharge letter is only useful if it reaches the GP or specialist who continues care in time to act on it. Faster drafting shortens the gap between discharge and a complete letter reaching the outpatient team, which matters most for patients with a narrow follow-up window."
+      },
+      {
+        "heading": "Discharge letters for elderly and multimorbid patients",
+        "body": "A discharge summary for an elderly patient with several chronic conditions typically needs to cover more medication changes and more follow-up appointments than a younger patient's letter. DocNote's structure scales to that complexity without forcing a short-visit template onto a long, complicated stay for a fragile patient who needs careful, unambiguous handover."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can DocNote match our hospital discharge template?",
+        "a": "Yes. Custom Word templates and section orders are a core part of hospital rollouts."
+      },
+      {
+        "q": "Who signs the discharge letter?",
+        "a": "The responsible physician. DocNote drafts; clinicians validate and remain accountable for the record."
+      },
+      {
+        "q": "Does this work with our EHR?",
+        "a": "Integrations such as Mediway and SOKLE are available where configured; otherwise export into your existing process."
+      },
+      {
+        "q": "Is patient data used to train AI models?",
+        "a": "No. Visits are used to produce your documents, not to train foundation models."
+      },
+      {
+        "q": "Can DocNote start the draft before the patient leaves?",
+        "a": "Yes. Ward context gathered during the stay can seed the discharge draft ahead of the final review."
+      },
+      {
+        "q": "What happens if the letter needs urgent edits?",
+        "a": "The attending can edit freely before validation — nothing is filed automatically."
+      }
+    ],
+    "cta": {
+      "title": "Cut the late-night discharge backlog",
+      "body": "Talk to our team about a pilot for your ward or discharge planning workflow.",
+      "primary": "Talk to our team",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Diagnoses, course, and plan before discharge."
+  },
+  "operative-report-ai": {
+    "navLabel": "AI operative report",
+    "title": "AI operative report for surgeons | DocNote",
+    "description": "Draft AI operative reports and surgical notes for surgeon review. Structured operative documentation with Swiss hosting for hospital surgical services.",
+    "hero": {
+      "badge": "AI operative report",
+      "title": "AI operative reports that respect surgical structure",
+      "subtitle": "Indication, findings, procedure, and plan — in the order an operative report actually needs.",
+      "lead": "Operative reports are precise, repetitive under time pressure, and legally important. DocNote helps surgical teams draft structured operative notes so surgeons refine technique details and findings instead of starting from a blank template at the end of a long list."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Surgical documentation, not a generic note",
+      "paragraphs": [
+        "Indication, findings, procedure steps, implants, complications, and post-op plan belong in a clear order. DocNote targets that structure so the draft reads like an operative report — not a conversation transcript pasted into a letter.",
+        "When the case ends, documentation still competes with the next patient. A strong draft shortens that gap while keeping the surgeon responsible for the final wording."
+      ]
+    },
+    "benefits": {
+      "badge": "Why surgical teams adopt it",
+      "title": "Less blank-page time after a long list",
+      "subtitle": "Precision under time pressure, without losing surgeon control.",
+      "items": [
+        {
+          "title": "Structure that matches an operative report",
+          "body": "Indication, findings, steps, implants, and complications land in the order surgeons and coders expect."
+        },
+        {
+          "title": "Fits the OR-to-ward handoff",
+          "body": "A draft ready shortly after the case shortens the gap between the last incision and a closed report."
+        },
+        {
+          "title": "Works alongside discharge and ward notes",
+          "body": "The same platform drafting operative reports also handles discharge letters, so teams don't juggle multiple AI vendors."
+        },
+        {
+          "title": "Hospital-grade controls throughout",
+          "body": "Swiss hosting, short audio retention, and surgeon validation are built for services that answer to compliance."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From case debrief to a validated operative report",
+      "subtitle": "Built for the moment right after the case, not an evening later.",
+      "items": [
+        {
+          "title": "Debrief the case",
+          "body": "Record the operative debrief — indication, findings, steps, and plan — right after the procedure."
+        },
+        {
+          "title": "DocNote structures the report",
+          "body": "A draft organised by operative-report sections is ready within seconds."
+        },
+        {
+          "title": "Review technique and findings",
+          "body": "The surgeon refines findings, implants, and complications for precision."
+        },
+        {
+          "title": "Validate before filing",
+          "body": "Approve the report so it enters the record under the surgeon's responsibility."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Hospital-grade controls",
+      "title": "Built for surgical services under compliance",
+      "intro": "Operative reports are legally important — the controls behind them need to match that weight.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Debrief audio is deleted automatically shortly after the report is produced."
+        },
+        {
+          "title": "Surgeon validation, always",
+          "body": "No operative report is auto-filed — the surgeon reviews and approves every one."
+        },
+        {
+          "title": "Institutional templates",
+          "body": "Section order and terminology match your service's existing operative report template."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "From the last stitch to a closed report",
+        "body": "The biggest time loss around operative reports usually isn't dictation — it's waiting until evening to type a report nobody remembers in detail anymore. A draft ready right after the debrief keeps the details fresh and meaningfully shortens the time to filing."
+      },
+      {
+        "heading": "Multiple specialties, one shared format",
+        "body": "Orthopaedics, general surgery, and other lines have different report shapes. DocNote maps these through specialty-specific templates, so each team uses its usual structure while the institution keeps consistent structure overall."
+      },
+      {
+        "heading": "Why structure matters more in operative reports than elsewhere",
+        "body": "An operative report is read by coders, referring physicians, and sometimes lawyers years after the case, often without the surgeon available to clarify. A clear, consistently ordered report reduces ambiguity for every one of those readers, which is why DocNote treats section order as a first-class constraint rather than a cosmetic choice."
+      },
+      {
+        "heading": "Recording implants and materials accurately",
+        "body": "Implant tracking is often a regulatory requirement, not an optional nicety. Naming, lot numbers, and placement details need to land in the correct section consistently so they can be retrieved later — during a recall, an audit, or a follow-up procedure. DocNote's operative templates keep a dedicated place for this detail rather than leaving it to be mentioned in passing."
+      },
+      {
+        "heading": "Debriefing complications honestly",
+        "body": "An honest, precisely documented complication is more defensible later than a vague one — and more useful to the team managing the patient afterward. DocNote's templates keep a clear section for complications rather than folding them into a general narrative where they're easy to understate or bury."
+      },
+      {
+        "heading": "Operative reports for training hospitals",
+        "body": "In teaching hospitals, an operative report may need to distinguish the roles of the supervising surgeon and a trainee performing part of the procedure. DocNote's templates can accommodate that distinction where your institution requires it, rather than assuming a single-surgeon structure throughout the whole case from start to finish."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can we use our service's operative report template?",
+        "a": "Yes. Institutional templates and section preferences are part of hospital onboarding."
+      },
+      {
+        "q": "Is the operative report auto-filed?",
+        "a": "No. The surgeon or authorised clinician reviews and validates before it enters the record."
+      },
+      {
+        "q": "Does DocNote understand surgical terminology?",
+        "a": "Reports are adapted to specialty language. Teams refine phrasing during pilots so drafts match local vocabulary."
+      },
+      {
+        "q": "How do we start with one theatre or specialty?",
+        "a": "Most surgical rollouts begin with a single service line, validate templates, then expand."
+      },
+      {
+        "q": "Can we track implants and materials used?",
+        "a": "Section structure follows your template, and implant or materials tracking can be included where your service documents it."
+      },
+      {
+        "q": "Does this slow down turnover between cases?",
+        "a": "Debriefing takes minutes and happens alongside normal post-op routine — it is designed to shorten, not add to, turnover time."
+      }
+    ],
+    "cta": {
+      "title": "Close operative reports faster",
+      "body": "Talk to our team about a pilot for your theatre or surgical service.",
+      "primary": "Talk to our team",
+      "secondary": "Watch tutorial"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Indication through plan, in OR order."
+  },
+  "ai-consultation-notes": {
+    "navLabel": "AI consultation notes",
+    "title": "AI consultation notes for doctors | DocNote",
+    "description": "AI consultation notes from the visit — structured drafts for physician review. Built for European ambulatory and hospital consultations with Swiss hosting.",
+    "hero": {
+      "badge": "AI consultation notes",
+      "title": "AI consultation notes ready for your review",
+      "subtitle": "History, findings, assessment, and plan — drafted in the order your service expects.",
+      "lead": "Consultation notes are the daily currency of ambulatory and specialist care. DocNote drafts them from the encounter so you leave the room with a structured note to validate — not an evening of typing."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Consultation-first workflows",
+      "paragraphs": [
+        "Capture the visit, choose the consultation model, and review a draft that reflects history, findings, assessment, and plan in the order your service expects.",
+        "Many European clinicians search for consultation notes rather than US SOAP jargon. DocNote supports both mental models while staying oriented to Swiss and European documentation habits, including multilingual encounters."
+      ]
+    },
+    "benefits": {
+      "badge": "Why clinicians keep it open all day",
+      "title": "A note ready when the visit ends",
+      "subtitle": "Built for ambulatory and specialist consultations across a full clinic day.",
+      "items": [
+        {
+          "title": "European wording, not just SOAP jargon",
+          "body": "Consultation notes follow local templates rather than forcing a single US mental model onto every specialty."
+        },
+        {
+          "title": "Multilingual encounters",
+          "body": "Consultations often switch languages — DocNote is designed for multilingual clinical environments common in Switzerland and cross-border care."
+        },
+        {
+          "title": "Specialty language across 61 fields",
+          "body": "Terminology and templates are adapted so drafts fit how your specialty actually documents care."
+        },
+        {
+          "title": "A privacy story patients understand",
+          "body": "Short audio retention, Swiss hosting, and no training on your visits — the same story you can explain to patients and compliance teams."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From visit to a reviewed consultation note",
+      "subtitle": "Leave the room with a draft ready to validate.",
+      "items": [
+        {
+          "title": "Capture the consultation",
+          "body": "Record the visit on mobile or web, following your institution's consent process."
+        },
+        {
+          "title": "Choose the consultation model",
+          "body": "Select the consultation template that matches your specialty and service."
+        },
+        {
+          "title": "Review history, findings, plan",
+          "body": "A structured draft covering history, findings, assessment, and plan is ready within seconds."
+        },
+        {
+          "title": "Edit heavily or lightly, then sign",
+          "body": "The draft is always a starting point under your clinical responsibility."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy patients and compliance teams understand",
+      "title": "The same trust story, every consultation",
+      "intro": "Consultation notes are the daily currency of ambulatory care — the privacy story has to be simple enough to repeat every day.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data stays hosted and processed under Swiss expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Visit audio is deleted on a short retention window once the note is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Consultations are used only to produce your document, never to train foundation models."
+        },
+        {
+          "title": "Specialist-ready templates",
+          "body": "Specialty language and templates are part of how DocNote is designed across many fields of medicine."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Consultation notes versus SOAP",
+        "body": "Many European practices document using local consultation templates rather than the US SOAP structure. DocNote supports both mental models at once, so a practice with mixed backgrounds isn't locked into a single format."
+      },
+      {
+        "heading": "From a first visit to a follow-up",
+        "body": "A clearly structured first note makes every subsequent follow-up faster to prepare, because history and prior assessment are immediately findable instead of scattered across unstructured free text."
+      },
+      {
+        "heading": "Consultation notes for specialists, not only GPs",
+        "body": "Specialist consultations often need a different balance of history, findings, and reasoning than a general-practice visit. DocNote adapts templates per specialty rather than assuming every consultation note looks the same, so a cardiology follow-up and a dermatology first visit don't share a structure that fits neither well."
+      },
+      {
+        "heading": "Consultation notes as the backbone of the record",
+        "body": "Over the course of a long-term care relationship, consultation notes are what a new clinician reads first to understand a patient's history. A series of clear, structured notes makes that history easy to follow years later; a series of rushed, inconsistent ones makes every future visit slower to prepare for, regardless of how good any single note was at the time."
+      },
+      {
+        "heading": "Consultation notes for cross-cover and locum clinicians",
+        "body": "A clinician covering for a colleague or working as a locum has no personal memory of the patient to fall back on. Clear, consistently structured consultation notes are what makes cross-cover safe — DocNote's structure is designed with that reader in mind, not only the clinician who wrote the note."
+      },
+      {
+        "heading": "Keeping consultation notes concise without losing substance",
+        "body": "A long note isn't automatically a thorough one, and a short note isn't automatically incomplete. DocNote's drafts aim for the level of detail your document type actually needs, so editing usually means trimming or adding a specific point rather than restructuring the whole note from scratch."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Are AI consultation notes the same as SOAP notes?",
+        "a": "SOAP is one common structure. Consultation notes may follow local templates. DocNote drafts the structure you select."
+      },
+      {
+        "q": "Can specialists use this too?",
+        "a": "Yes. Specialty language and templates are part of how DocNote is designed across 61 specialties."
+      },
+      {
+        "q": "Do patients need to consent to recording?",
+        "a": "Follow your local legal and institutional rules. DocNote supports transparent, privacy-minded documentation practices; your organisation sets consent workflow."
+      },
+      {
+        "q": "Can I edit heavily before signing?",
+        "a": "Always. The draft is a starting point under your clinical responsibility."
+      },
+      {
+        "q": "Can consultation notes follow my own local template?",
+        "a": "Yes. Local templates and section preferences can be mapped during onboarding."
+      },
+      {
+        "q": "How does this help with follow-up visits?",
+        "a": "A clear structured note from the first visit makes the next follow-up faster to prepare and review."
+      }
+    ],
+    "cta": {
+      "title": "Leave every consultation with a note ready to review",
+      "body": "Start a free trial and see how DocNote handles your consultation load.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "History to plan, in your service’s order."
+  },
+  "multilingual-ai-medical-scribe": {
+    "navLabel": "Multilingual AI scribe",
+    "title": "Multilingual AI medical scribe | DocNote",
+    "description": "Multilingual AI medical scribe for Swiss and European clinics. Document consultations across languages with Swiss hosting and medical secrecy.",
+    "hero": {
+      "badge": "Multilingual AI scribe",
+      "title": "Multilingual AI medical scribe for real European clinics",
+      "subtitle": "Document consultations across languages without sending health data to a US-only stack.",
+      "lead": "Care in Switzerland and Europe is rarely monolingual. DocNote is an AI medical scribe designed for multilingual consultations — so teams document in the languages they actually work in, without sending health data to a US-only ambient stack."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Built where language switching is normal",
+      "paragraphs": [
+        "A single clinic day can include French, German, English, Italian, or other languages. Documentation tools that assume one language break that reality. DocNote is oriented to multilingual clinical work from the start.",
+        "Multilingual care still requires strict data boundaries. Hosting in Switzerland, short audio retention, and no training on visits are part of how DocNote earns trust with hospitals and patients across language groups."
+      ]
+    },
+    "benefits": {
+      "badge": "Why multilingual teams choose DocNote",
+      "title": "One scribe, many languages, one workflow",
+      "subtitle": "Built for cross-border and international care, not a single-language demo.",
+      "items": [
+        {
+          "title": "Handles real clinic-day language mix",
+          "body": "French, German, English, Italian, or other languages within the same day — documentation keeps up without switching tools."
+        },
+        {
+          "title": "Same scribe, many document types",
+          "body": "Whether you need consultation notes, discharge letters, or specialty reports, multilingual capture feeds the same review-and-validate workflow."
+        },
+        {
+          "title": "Swiss hosting across every language",
+          "body": "Data boundaries do not loosen just because the encounter switched languages mid-visit."
+        },
+        {
+          "title": "Built for international patient services",
+          "body": "Private clinics, academic centres, and cross-border teams need documentation that keeps pace with language diversity without sacrificing compliance."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From a multilingual encounter to one clear note",
+      "subtitle": "Language switching does not interrupt the workflow.",
+      "items": [
+        {
+          "title": "Capture the encounter as spoken",
+          "body": "Record the consultation as it happens, in whichever language or mix of languages the visit uses."
+        },
+        {
+          "title": "DocNote structures the content",
+          "body": "Spoken content is mapped into the note type and structure your service expects."
+        },
+        {
+          "title": "Review in your preferred output language",
+          "body": "Talk to us about your preferred output language and templates for your team."
+        },
+        {
+          "title": "Validate as usual",
+          "body": "The clinician reviews and approves — the same responsibility as any other encounter."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Swiss hosting as a product feature",
+      "title": "Trust that does not depend on the language spoken",
+      "intro": "Multilingual care still requires strict, consistent data boundaries.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Hosting in Switzerland applies to every encounter, regardless of language."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the document is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Multilingual consultations are never used to train foundation models."
+        },
+        {
+          "title": "Not a US-only ambient stack",
+          "body": "Processing and hosting align with Swiss and European expectations, a core differentiator versus many US tools."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "When a consultation switches language mid-sentence",
+        "body": "In practice, patients and clinicians often move between languages within the same consultation, especially in border regions and international centres. DocNote is designed to handle these switches without separate per-language configuration, instead of interrupting capture every time the language changes."
+      },
+      {
+        "heading": "Configuring output language separately from the visit",
+        "body": "A team can document in one language and output in another if that matches the institutional standard. This is configured per team during onboarding, not per individual consultation."
+      },
+      {
+        "heading": "Multilingual documentation for international patient services",
+        "body": "Private clinics and academic centres that see patients from abroad often need documentation that keeps up with more languages than a typical regional practice. DocNote is built around that reality from the start, rather than treating additional languages as an add-on feature bolted onto a single-language product."
+      },
+      {
+        "heading": "Why generic ambient tools struggle with language switching",
+        "body": "Most ambient scribes are trained and tuned around a single primary language, with other languages treated as an afterthought. That shows up as accuracy drops exactly when a consultation switches languages mid-sentence — often the moment a patient explains their most important symptom. DocNote's multilingual focus is a design choice, not a bolt-on translation layer."
+      },
+      {
+        "heading": "Supporting interpreter-assisted consultations",
+        "body": "Some encounters involve a professional interpreter rather than a bilingual clinician speaking directly with the patient. DocNote can capture and structure these three-way conversations too; talk to our team about the specific pattern your service uses for interpreter-assisted visits during onboarding."
+      },
+      {
+        "heading": "Rolling out multilingual documentation across a group",
+        "body": "A clinic group operating across several language regions typically standardises on shared templates first, then lets individual sites configure their preferred consultation and output languages. That sequence keeps the record structure comparable across the group while still respecting local language needs at each individual site."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which languages can DocNote handle?",
+        "a": "DocNote is designed for multilingual Swiss and European environments. Confirm your language mix with our team during onboarding."
+      },
+      {
+        "q": "Can the note be produced in a different language than the visit?",
+        "a": "Workflows vary by organisation. Talk to us about your preferred output language and templates."
+      },
+      {
+        "q": "Is multilingual support only for ambulatory care?",
+        "a": "No. Hospital document types are supported alongside consultation notes."
+      },
+      {
+        "q": "Does multilingual processing leave Switzerland?",
+        "a": "DocNote is designed so health data hosting and processing align with Swiss expectations — a core differentiator versus many US ambient tools."
+      },
+      {
+        "q": "Do clinicians need to speak every supported language?",
+        "a": "No. DocNote is built to handle the language the patient and clinician actually use, including mixed-language encounters."
+      },
+      {
+        "q": "Can different clinics in the same group use different output languages?",
+        "a": "Yes, output language and templates can be configured per team during onboarding."
+      }
+    ],
+    "cta": {
+      "title": "Document care in the languages you actually work in",
+      "body": "Start a free trial or talk to our team about your language mix.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Cross-language notes on a Swiss stack."
+  },
+  "ai-scribe-general-practice": {
+    "navLabel": "AI scribe for GP",
+    "title": "AI medical scribe for general practice | DocNote",
+    "description": "AI medical scribe for general practice and family medicine. Faster consultation notes and follow-ups with Swiss hosting — built for busy GP clinics.",
+    "hero": {
+      "badge": "AI scribe for general practice",
+      "title": "AI medical scribe for general practice",
+      "subtitle": "Protect face-to-face time in back-to-back consultations without losing record quality.",
+      "lead": "General practice runs on high volume and short slots. DocNote drafts consultation and follow-up notes from the visit so GPs protect face-to-face time without sacrificing the quality of the record."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Built for GP rhythm",
+      "paragraphs": [
+        "Back-to-back consultations, multimorbidity, and administrative follow-ups leave little room for typing. Ambient capture plus a structured draft cuts the gap between the last patient and a closed note.",
+        "Consultation notes, referral letters, and follow-up plans — not only a demo SOAP. Templates adapt to how your practice documents care, whether you work solo or alongside other clinicians in the same practice."
+      ]
+    },
+    "benefits": {
+      "badge": "Why GPs adopt it",
+      "title": "Documents GPs actually write",
+      "subtitle": "Built for short slots and high volume, not a specialist's leisurely pace.",
+      "items": [
+        {
+          "title": "Fits short consultation slots",
+          "body": "A structured draft ready within seconds keeps pace with back-to-back bookings."
+        },
+        {
+          "title": "Covers referral letters too",
+          "body": "Beyond consultation notes, referral letters and follow-up plans are part of what DocNote drafts for general practice."
+        },
+        {
+          "title": "Privacy for community practice",
+          "body": "Patients trust their GP with sensitive stories — Swiss hosting and short audio retention support that trust."
+        },
+        {
+          "title": "Consistent across the whole practice",
+          "body": "When several clinicians share a practice, consistent note structure keeps the record coherent for everyone."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From consultation to a closed note before the next patient",
+      "subtitle": "Designed for the pace of a full GP day.",
+      "items": [
+        {
+          "title": "Capture the visit",
+          "body": "Record the consultation on mobile or web between patients, following your consent process."
+        },
+        {
+          "title": "Review the draft",
+          "body": "A structured note is ready within seconds of ending the recording."
+        },
+        {
+          "title": "Adjust quickly",
+          "body": "Edit between patients — most drafts need only small corrections."
+        },
+        {
+          "title": "Validate and move on",
+          "body": "Approve the note so it is closed before the next patient walks in."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy for community practice",
+      "title": "The trust your patients already give you",
+      "intro": "Community practice runs on long-term trust — the documentation tool has to earn its place in that relationship.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Data stays hosted and processed under Swiss expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the note is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Consultations are used only to produce your notes, never to train foundation models."
+        },
+        {
+          "title": "Works for solo and group practices",
+          "body": "Independent physicians are a core audience alongside larger practices and clinics."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Documenting multimorbidity without endless copying",
+        "body": "Older patients with several chronic conditions need notes that account for prior course without retyping everything each time. DocNote helps structure the current visit clearly while keeping prior notes available as reference."
+      },
+      {
+        "heading": "Scaling from solo practice to a group",
+        "body": "Many GPs start solo and later join a group practice or bring in colleagues. Consistent templates from the start make that transition easier, because record structure stays the same regardless of practice size."
+      },
+      {
+        "heading": "General practice referral letters that get read",
+        "body": "A referral letter competes for a specialist's attention with dozens of others. DocNote drafts referral letters with the same structured approach as consultation notes — reason for referral, relevant history, and the specific question you want answered — so the letter is more likely to get a useful reply."
+      },
+      {
+        "heading": "Why general practice needs its own templates",
+        "body": "A generic ambulatory template built for specialist follow-ups doesn't fit a GP's mix of acute complaints, chronic disease management, and preventive care in the same afternoon. DocNote's general-practice templates are tuned for that mix rather than borrowed from a single-specialty tool."
+      },
+      {
+        "heading": "Supporting home visits and out-of-hours care",
+        "body": "General practice doesn't stop at the clinic door — home visits and out-of-hours cover are part of many GPs' routine. Mobile capture means the same structured workflow applies whether the consultation happens in an exam room or at a patient's kitchen table, without a separate process for visits outside the practice."
+      },
+      {
+        "heading": "Preventive care documentation without extra clicks",
+        "body": "Vaccination status, screening reminders, and lifestyle counselling are easy to skip documenting when a visit is already running behind. Because DocNote drafts from what was actually discussed, preventive-care items mentioned during the consultation are captured without requiring a separate checklist to fill in afterward."
+      },
+      {
+        "heading": "A note that reads the same for every patient in the practice",
+        "body": "When several GPs share a patient list, consistent note structure matters as much as speed. A colleague covering your list on short notice should be able to find the last relevant visit and understand it quickly, which is only possible if everyone in the practice documents to the same structure."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is DocNote suitable for solo GP practices?",
+        "a": "Yes. Independent physicians are a core audience alongside larger clinics."
+      },
+      {
+        "q": "Can we use it for telephone or video consultations?",
+        "a": "Supported workflows depend on your setup — ask during onboarding about telehealth capture."
+      },
+      {
+        "q": "How does this help with after-hours charting?",
+        "a": "Drafting during or right after the visit reduces pajama-time documentation for many clinicians."
+      },
+      {
+        "q": "Does it replace my EHR?",
+        "a": "No. DocNote helps produce the note; your EHR remains the system of record."
+      },
+      {
+        "q": "Can DocNote help with chronic disease follow-ups?",
+        "a": "Yes — recurring follow-up structures can be adapted so multimorbidity visits stay organised across appointments."
+      },
+      {
+        "q": "Is there a learning curve for solo GPs?",
+        "a": "Most clinicians are comfortable within the first few consultations; onboarding includes guided setup for your templates."
+      }
+    ],
+    "cta": {
+      "title": "Protect your face-to-face time",
+      "body": "Start a free trial and see how DocNote fits your GP day.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Protect face time in back-to-back clinics."
+  },
+  "ai-scribe-psychiatry": {
+    "navLabel": "AI scribe for psychiatry",
+    "title": "AI medical scribe for psychiatry | DocNote",
+    "description": "AI medical scribe for psychiatry and mental health consultations. Structured notes with heightened privacy — Swiss hosting and medical secrecy.",
+    "hero": {
+      "badge": "AI scribe for psychiatry",
+      "title": "AI medical scribe for psychiatry",
+      "subtitle": "Structured session notes with heightened privacy, without losing narrative nuance.",
+      "lead": "Psychiatric documentation is narrative-heavy and deeply sensitive. DocNote helps psychiatrists draft structured consultation notes from the session while keeping Swiss hosting, short audio retention, and clinician validation at the centre."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Notes that respect psychiatric nuance",
+      "paragraphs": [
+        "Mental status, risk, medication changes, and therapeutic context need careful wording. DocNote drafts a structured starting point; the psychiatrist keeps full control over what enters the record.",
+        "Psychiatric conversations demand strict boundaries. DocNote does not use visits to train foundation models, hosts in Switzerland, and deletes audio on a short retention window — the same expectations patients bring to any mental health encounter."
+      ]
+    },
+    "benefits": {
+      "badge": "Why psychiatrists trust it",
+      "title": "Privacy is non-negotiable here",
+      "subtitle": "Built for the sensitivity of mental health documentation, in private practice or hospital services.",
+      "items": [
+        {
+          "title": "Mental status and risk, carefully drafted",
+          "body": "Structured starting points for mental status, risk, and medication changes — always under full clinician control."
+        },
+        {
+          "title": "Stricter privacy by default",
+          "body": "No training on visits, Swiss hosting, and short audio retention — the boundaries psychiatric care demands."
+        },
+        {
+          "title": "Ambulatory and institutional settings",
+          "body": "From private practice to hospital psychiatry services, the same review-and-validate workflow applies."
+        },
+        {
+          "title": "Built for multilingual patients",
+          "body": "Mental health care often crosses languages — DocNote is designed for multilingual European clinical environments."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From session to a note the psychiatrist fully controls",
+      "subtitle": "Ambient capture only where clinically appropriate.",
+      "items": [
+        {
+          "title": "Decide if ambient capture fits",
+          "body": "Clinical judgment, consent, and local rules determine when recording is appropriate."
+        },
+        {
+          "title": "Capture the session",
+          "body": "Record where appropriate, following your service's consent workflow."
+        },
+        {
+          "title": "Review the structured draft",
+          "body": "A draft covering mental status, risk, and plan is ready for careful review."
+        },
+        {
+          "title": "Edit freely before validation",
+          "body": "Drafts are never auto-filed — the psychiatrist edits and approves every note."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy is non-negotiable",
+      "title": "Boundaries built for mental health care",
+      "intro": "Psychiatric conversations require the strictest version of every privacy commitment DocNote makes.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Session data is hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically on a short window after the note is produced."
+        },
+        {
+          "title": "Never used to train AI",
+          "body": "Sessions are used only to produce the note, never to train foundation models."
+        },
+        {
+          "title": "Full clinician control",
+          "body": "The psychiatrist reviews, edits, and validates every draft before it enters the record."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "When ambient capture makes sense in psychiatry",
+        "body": "Not every session suits ambient recording. Emotionally intense first sessions, crisis conversations, or particularly sensitive content are often better served by traditional documentation. DocNote supports that decision rather than forcing it — clinical judgment always stays with the clinician."
+      },
+      {
+        "heading": "Documenting across multiple sessions",
+        "body": "For longer treatment courses, consistent structure helps track changes in mental status over time. DocNote keeps section structure stable across consecutive sessions while the psychiatrist judges the clinical continuity themselves."
+      },
+      {
+        "heading": "Why psychiatry needs stricter defaults",
+        "body": "Mental health records carry particular stigma risk if they leak or are handled carelessly. DocNote's stricter defaults — no training on visits, short retention, Swiss hosting — aren't a special add-on for psychiatry; they are the same commitments the platform makes everywhere, applied to a specialty where patients feel the stakes most acutely."
+      },
+      {
+        "heading": "Working alongside existing psychotherapy notes",
+        "body": "Many psychiatrists already keep separate process notes for therapy content that stay outside the formal medical record. DocNote drafts the structured clinical note — mental status, risk, plan — without requiring you to change how you handle those separate process notes."
+      },
+      {
+        "heading": "Documenting risk assessment consistently",
+        "body": "Risk assessment is one of the most legally sensitive parts of a psychiatric note, and it needs to be present and clear even in a busy caseload. A dedicated, consistently placed risk section in every draft reduces the chance that a risk assessment gets buried in narrative text or skipped under time pressure."
+      },
+      {
+        "heading": "Institutional psychiatry versus private practice",
+        "body": "A hospital psychiatry service and a solo private practice have different documentation obligations — institutional templates, insurer requirements, and reporting duties can all differ. DocNote's templates are configured per setting during onboarding rather than assuming one shape fits both contexts."
+      },
+      {
+        "heading": "Tracking medication changes over a long treatment course",
+        "body": "Psychiatric medication management often involves gradual adjustments across many sessions rather than a single decision. A consistently structured medication section across visits makes it easier to see the full trajectory of changes at a glance, instead of reconstructing it from scattered narrative notes across many past sessions and appointments over time."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is ambient recording appropriate in psychiatry?",
+        "a": "That depends on clinical judgment, consent, and local rules. DocNote supports privacy-minded workflows; your service defines when recording is appropriate."
+      },
+      {
+        "q": "Can we exclude sensitive phrases from drafts?",
+        "a": "Clinicians can edit freely before validation. Drafts are never auto-filed."
+      },
+      {
+        "q": "Where is data hosted?",
+        "a": "DocNote is designed for Swiss hosting under medical secrecy expectations."
+      },
+      {
+        "q": "Does DocNote replace the psychiatrist's note?",
+        "a": "No. It drafts; the psychiatrist remains responsible for the final document."
+      },
+      {
+        "q": "Can therapy content be excluded from documentation drafts?",
+        "a": "Clinicians control exactly what is included before validation — nothing is filed without review."
+      },
+      {
+        "q": "Does this work for hospital psychiatry wards?",
+        "a": "Yes, alongside private practice — institutional templates and workflows apply the same review discipline."
+      }
+    ],
+    "cta": {
+      "title": "Bring careful documentation to your practice",
+      "body": "Start a free trial or talk to our team about psychiatry-specific templates.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Session notes with privacy and nuance."
+  },
+  "ai-scribe-cardiology": {
+    "navLabel": "AI scribe for cardiology",
+    "title": "AI medical scribe for cardiology | DocNote",
+    "description": "AI medical scribe for cardiology clinics and hospital services. Structured consultation and follow-up documentation with Swiss hosting.",
+    "hero": {
+      "badge": "AI scribe for cardiology",
+      "title": "AI medical scribe for cardiology",
+      "subtitle": "Specialty-aware drafts for dense consultations and procedure follow-ups.",
+      "lead": "Cardiology combines dense data, procedure follow-ups, and high documentation load. DocNote drafts structured notes from consultations so cardiologists spend less time typing and more time on clinical decisions."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Specialty language that matters",
+      "paragraphs": [
+        "Symptoms, exam findings, imaging context, and plan changes need cardiology vocabulary. DocNote targets specialty-aware drafts so cardiologists spend less time typing and more time on clinical decisions.",
+        "Outpatient follow-ups and inpatient documentation can live in the same AI documentation stack — including pathways toward discharge summaries when a patient is admitted."
+      ]
+    },
+    "benefits": {
+      "badge": "Why cardiology services adopt it",
+      "title": "Faster closed notes, same clinical rigor",
+      "subtitle": "Built for dense data and high documentation load.",
+      "items": [
+        {
+          "title": "Cardiology-aware vocabulary",
+          "body": "Symptoms, exam findings, imaging context, and plan changes are drafted with specialty-aware language."
+        },
+        {
+          "title": "Clinic and hospital continuity",
+          "body": "Outpatient follow-ups and inpatient documentation share the same stack, including pathways to discharge summaries."
+        },
+        {
+          "title": "Compliance for cardiac services",
+          "body": "Swiss hosting and short audio retention help hospital cardiology services pass security and privacy review."
+        },
+        {
+          "title": "Faster closed notes",
+          "body": "Draft during or after the encounter, validate, and keep the record moving without evening backlog."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From consultation to a specialty-ready note",
+      "subtitle": "Built for dense visits and procedure follow-ups.",
+      "items": [
+        {
+          "title": "Capture the consultation or follow-up",
+          "body": "Record the visit on mobile or web, including procedure follow-up discussions."
+        },
+        {
+          "title": "DocNote applies cardiology structure",
+          "body": "Symptoms, findings, and plan changes are organised with specialty-aware language."
+        },
+        {
+          "title": "Review the draft",
+          "body": "A structured note is ready within seconds for your review."
+        },
+        {
+          "title": "Validate and continue",
+          "body": "Approve the note; the responsible clinician always signs off."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Compliance for cardiac services",
+      "title": "Security that supports procurement",
+      "intro": "Hospital cardiology services need a clear compliance answer, not a features list.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the note is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Consultations are used only to produce documents, never to train foundation models."
+        },
+        {
+          "title": "Mediway and SOKLE where configured",
+          "body": "Integrations are available where set up, supporting hospital cardiology workflows."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "From a follow-up visit to an admission",
+        "body": "When an outpatient cardiology patient is admitted, documentation needs to continue seamlessly. Because DocNote uses the same platform for consultation notes and discharge summaries, clinical context doesn't get lost at the transition from outpatient to inpatient care."
+      },
+      {
+        "heading": "Keeping dense data readable",
+        "body": "Cardiology consultations often pack many measurements, medication changes, and course comparisons into a short visit. A structured template helps keep that density legible instead of losing it in a long block of free text."
+      },
+      {
+        "heading": "Documenting procedure follow-ups clearly",
+        "body": "A follow-up visit after a catheterisation, ablation, or device implant needs to reference the procedure clearly while focusing on current symptoms and next steps. DocNote's cardiology templates keep that link explicit, so the note reads as a continuation of the case rather than a disconnected visit."
+      },
+      {
+        "heading": "Why cardiology vocabulary matters for adoption",
+        "body": "A scribe that mishears or mis-structures cardiology-specific terms — NYHA class, ejection fraction, specific arrhythmia types — creates more correction work than it saves. DocNote's specialty-aware language is what makes the difference between a tool clinicians tolerate and one they actually keep open all day."
+      },
+      {
+        "heading": "Connecting outpatient cardiology to inpatient care",
+        "body": "Heart failure and arrhythmia patients often move between clinic follow-ups and hospital admissions over months or years. Because DocNote covers both outpatient consultation notes and inpatient discharge summaries, the documentation trail stays connected across that back-and-forth instead of resetting with each new setting."
+      },
+      {
+        "heading": "Tracking medication changes precisely",
+        "body": "Cardiology visits frequently involve dose adjustments and drug substitutions that need to be unambiguous for the next clinician reading the note, including pharmacists reviewing for interactions. DocNote keeps medication changes in a consistent, clearly labelled place in the draft rather than mixed into a general narrative."
+      },
+      {
+        "heading": "Documenting risk factors consistently",
+        "body": "Cardiovascular risk factors — smoking, family history, lipid and blood pressure trends — need to be visible across visits, not buried in a single consultation. DocNote's cardiology templates keep a consistent place for these factors so they carry forward legibly rather than needing to be re-established from scratch each time."
+      },
+      {
+        "heading": "Preparing for multidisciplinary heart team reviews",
+        "body": "Complex cardiology cases are often discussed in a multidisciplinary heart team meeting before a major decision. A clear, structured note makes it faster for the team to get up to speed on the case at the start of that meeting, rather than spending the first minutes reconstructing the history from scratch together and cross-checking prior visits."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can cardiology procedure notes be supported?",
+        "a": "Document types depend on your templates. Many services start with consultation and follow-up notes, then expand."
+      },
+      {
+        "q": "Does DocNote integrate with hospital systems?",
+        "a": "Integrations such as Mediway and SOKLE are available where configured."
+      },
+      {
+        "q": "Is this only for private clinics?",
+        "a": "No. Hospital services are a primary use case."
+      },
+      {
+        "q": "Who validates the cardiology note?",
+        "a": "The responsible clinician — always."
+      },
+      {
+        "q": "Can imaging findings be included in the draft?",
+        "a": "Findings discussed during the encounter can be captured; imaging reports themselves remain in their own systems."
+      },
+      {
+        "q": "Does DocNote support procedure follow-up visits?",
+        "a": "Yes — outpatient follow-ups after procedures are a common use case alongside first consultations."
+      }
+    ],
+    "cta": {
+      "title": "Bring specialty-aware notes to your cardiology service",
+      "body": "Start a free trial and see how DocNote handles your consultation load.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Dense consults and procedure follow-ups."
+  },
+  "ai-scribe-pediatrics": {
+    "navLabel": "AI scribe for pediatrics",
+    "title": "AI medical scribe for pediatrics | DocNote",
+    "description": "AI medical scribe for pediatrics: structured consultation notes for paediatric clinics with Swiss hosting and careful privacy defaults.",
+    "hero": {
+      "badge": "AI scribe for pediatrics",
+      "title": "AI medical scribe for pediatrics",
+      "subtitle": "Capture growth, symptoms, and plans without losing attention on the child and caregivers.",
+      "lead": "Paediatric visits are fast, family-centred, and documentation-heavy. DocNote helps paediatricians draft consultation notes from the encounter so growth, symptoms, and plans are captured without stealing attention from the child and caregivers."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Notes that fit paediatric visits",
+      "paragraphs": [
+        "History from caregivers, exam findings, anticipatory guidance, and follow-up — drafted into a structure you can edit quickly between patients.",
+        "Caregivers may speak different languages than the note language, and visits are family-centred and fast. DocNote is built for multilingual European clinics and the particular rhythm of paediatric care."
+      ]
+    },
+    "benefits": {
+      "badge": "Why paediatric clinics adopt it",
+      "title": "Privacy for children and families, speed for busy clinics",
+      "subtitle": "Built for family-centred, fast-paced visits.",
+      "items": [
+        {
+          "title": "Captures caregiver history clearly",
+          "body": "History from parents or guardians, exam findings, and anticipatory guidance land in a structure you can edit quickly."
+        },
+        {
+          "title": "Heightened privacy by default",
+          "body": "Swiss hosting, short audio retention, and no training on visits support the elevated privacy expectations of paediatric care."
+        },
+        {
+          "title": "Consistent GP-to-specialist handoffs",
+          "body": "Consistent AI documentation habits reduce friction when children move between general practice and paediatrics."
+        },
+        {
+          "title": "Built for multilingual families",
+          "body": "Caregivers may speak a different language than the note — DocNote is built for multilingual European clinics."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From a family visit to a clear note",
+      "subtitle": "Fast enough between short, high-turnover appointments.",
+      "items": [
+        {
+          "title": "Capture the visit",
+          "body": "Record the consultation with caregivers on mobile or web, following consent rules."
+        },
+        {
+          "title": "Review the draft",
+          "body": "A structured note covering history, exam, and plan is ready within seconds."
+        },
+        {
+          "title": "Check age-specific detail",
+          "body": "Clinicians review for growth, safety-critical, and age-specific accuracy."
+        },
+        {
+          "title": "Validate and continue",
+          "body": "Approve the note between patients without losing pace."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy for children and families",
+      "title": "The elevated trust paediatric care requires",
+      "intro": "Documentation for children carries extra weight — the privacy story has to match it.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the note is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Family consultations are never used to train foundation models."
+        },
+        {
+          "title": "Family-centred workflow",
+          "body": "Documentation supports the visit without stealing attention from the child and caregivers."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Documenting well-child visits consistently",
+        "body": "Routine well-child checks often follow a recurring pattern of growth data, developmental questions, and vaccination status. A consistent template makes these visits easier to compare across appointments, without re-entering everything each time."
+      },
+      {
+        "heading": "When caregivers and the note use different languages",
+        "body": "In multilingual families, the consultation often happens in one language while the institution documents in another. DocNote supports that separation so the family's linguistic diversity doesn't affect the quality of the record."
+      },
+      {
+        "heading": "Keeping attention on the child, not the screen",
+        "body": "Paediatric visits depend on building quick rapport with a child who may already be anxious about the appointment. A clinician who spends the visit typing loses some of that connection. Ambient capture is designed to let you keep eye contact and body language focused on the child and caregiver throughout."
+      },
+      {
+        "heading": "Documenting anticipatory guidance consistently",
+        "body": "Anticipatory guidance — safety advice, developmental milestones to watch for, when to seek care — is easy to skip when a visit runs long. A structured template keeps a placeholder for this guidance in every note, making it easier to confirm it was actually covered rather than assumed."
+      },
+      {
+        "heading": "Working with divorced or separated caregivers",
+        "body": "Family situations affecting who receives information or makes decisions come up often in paediatric practice. DocNote's note structure doesn't decide who has parental authority, but a clear, well-organised record makes it easier for the practice to apply its own policy consistently when questions arise."
+      },
+      {
+        "heading": "Documenting school and childcare notes efficiently",
+        "body": "Beyond the clinical note itself, paediatric practices often need short administrative letters — for school, sports clearance, or childcare — that reference the same visit. Because the underlying visit is already structured, generating these shorter documents takes less rework than starting from an unstructured note each time."
+      },
+      {
+        "heading": "Following growth and development over years",
+        "body": "A child's record is read across many years by clinicians who may never have met the family before. Consistent structure across visits makes it easier to trace growth trends and developmental milestones over time, rather than reconstructing that history from inconsistent past notes each time a new question comes up."
+      },
+      {
+        "heading": "Supporting locum and rotating paediatric staff",
+        "body": "Paediatric practices often rely on locum clinicians or rotating trainees who see a child for the first time without the benefit of a long-standing relationship with the family. A well-structured previous note gives that clinician the context they need in a fraction of the time it would take to read through years of loosely organised free text."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can parents refuse recording?",
+        "a": "Consent and local rules govern recording. DocNote does not change your obligation to follow them."
+      },
+      {
+        "q": "Are well-child visits supported?",
+        "a": "Yes — consultation-style notes for routine and acute visits can use your preferred templates."
+      },
+      {
+        "q": "Is DocNote only for hospitals?",
+        "a": "No. Paediatric clinics and mixed practices are in scope."
+      },
+      {
+        "q": "How accurate are paediatric drafts?",
+        "a": "Drafts are starting points. Clinicians always review for age-specific details and safety-critical information."
+      },
+      {
+        "q": "Can growth charts or measurements be referenced in the note?",
+        "a": "Measurements discussed during the visit can be captured in the note; charting systems remain in their own tools."
+      },
+      {
+        "q": "Does DocNote handle well-child and acute visits differently?",
+        "a": "Yes — different templates can be selected depending on the visit type."
+      }
+    ],
+    "cta": {
+      "title": "Keep attention on the child, not the keyboard",
+      "body": "Start a free trial and see how DocNote fits your paediatric clinic.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Growth, symptoms, plans — eyes on the child."
+  },
+  "ai-scribe-emergency-medicine": {
+    "navLabel": "AI scribe for ED",
+    "title": "AI medical scribe for emergency medicine | DocNote",
+    "description": "AI medical scribe for emergency medicine and urgent care. Faster structured notes in high-tempo environments — Swiss-hosted for hospital teams.",
+    "hero": {
+      "badge": "AI scribe for emergency medicine",
+      "title": "AI medical scribe for emergency medicine",
+      "subtitle": "Structured notes that keep up with throughput, without skipping validation.",
+      "lead": "Emergency departments run on incomplete information and relentless tempo. DocNote helps ED teams draft structured notes so documentation keeps up with throughput without abandoning clinical validation."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Speed without skipping the record",
+      "paragraphs": [
+        "Chief complaint, timeline, exam, workup, and disposition need to land in the chart. A strong draft reduces time-to-close while the clinician stays accountable.",
+        "Emergency care is loud, incomplete, and linguistically mixed. DocNote is designed for real wards and bays — not silent demo rooms — and connects to the same hospital documentation stack used for admission and discharge."
+      ]
+    },
+    "benefits": {
+      "badge": "Why ED teams adopt it",
+      "title": "Documentation that keeps up with the tempo",
+      "subtitle": "Built for incomplete information and relentless throughput.",
+      "items": [
+        {
+          "title": "Keeps pace with throughput",
+          "body": "Chief complaint, timeline, exam, workup, and disposition land in the chart faster, reducing time-to-close."
+        },
+        {
+          "title": "Built for noisy, real environments",
+          "body": "Designed for loud, linguistically mixed bays and wards — not a silent demo room."
+        },
+        {
+          "title": "Connects to the hospital documentation stack",
+          "body": "ED notes sit alongside admission, discharge, and specialty consult documentation in the same platform."
+        },
+        {
+          "title": "Security for acute care procurement",
+          "body": "Swiss hosting and short audio retention help ED leadership answer privacy questions during procurement."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From a fast-moving case to a closed note",
+      "subtitle": "Built to keep documentation from falling behind triage.",
+      "items": [
+        {
+          "title": "Capture as you go",
+          "body": "Record key moments of the encounter as they happen, even with incomplete information."
+        },
+        {
+          "title": "DocNote drafts the note",
+          "body": "Chief complaint, exam, workup, and disposition are organised into a draft within seconds."
+        },
+        {
+          "title": "Review before disposition",
+          "body": "The treating clinician checks the draft against the actual course of care."
+        },
+        {
+          "title": "Validate and close",
+          "body": "Approve the note so documentation keeps pace with patient flow."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Security for acute care",
+      "title": "Compliance that survives procurement, not just a pilot shift",
+      "intro": "ED leadership needs a clear privacy and security answer before committing to a rollout.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the note is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Encounters are used only to produce documentation, never to train foundation models."
+        },
+        {
+          "title": "Treating clinician owns the note",
+          "body": "The treating clinician or authorised signer always owns the final ED note."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Piloting on selected shifts",
+        "body": "A full rollout across a whole emergency department is rarely the first step. Most services start with selected shifts and a limited document type, gather feedback from nursing and physician staff, and only then expand to full coverage."
+      },
+      {
+        "heading": "Handling interrupted encounters",
+        "body": "In the ED, documentation is rarely finished in one pass — interruptions from new cases are normal. DocNote summarises what was actually captured and leaves it to the treating clinician to fill gaps during review, rather than assuming uninterrupted capture."
+      },
+      {
+        "heading": "Reducing time-to-close without cutting corners",
+        "body": "Emergency departments are often measured on how quickly a case is closed after disposition, alongside clinical quality metrics. A faster draft shortens that gap, but the validation step never disappears — DocNote is built to speed up the typing, not to remove the clinician's final check."
+      },
+      {
+        "heading": "Fitting into triage-to-discharge workflows",
+        "body": "An ED encounter can move from triage to admission, discharge, or transfer within the same shift, each with different documentation needs. DocNote's ED templates are designed to connect to whichever path the case takes, rather than assuming every visit ends the same way."
+      },
+      {
+        "heading": "Documenting under genuine time pressure",
+        "body": "Emergency medicine is one of the few settings where documentation genuinely competes with the next critical decision, not just the next patient. A draft that's mostly right after capture, needing only correction rather than composition, is what actually saves time here — writing from a blank page during a busy shift is rarely realistic."
+      },
+      {
+        "heading": "Connecting ED notes to specialist consults",
+        "body": "Many ED cases involve a specialist consult mid-visit — cardiology, surgery, psychiatry — that needs to be reflected in the final note alongside the ED team's own findings. DocNote's hospital-wide platform means a specialist's consult note and the ED note can reference the same case consistently instead of living in disconnected systems."
+      },
+      {
+        "heading": "Piloting without disrupting a live department",
+        "body": "An ED pilot usually runs on a subset of shifts with a clearly scoped document type, so the rest of the department continues its existing process unaffected. This limits risk while still producing enough real cases to judge whether the workflow fits before committing to full coverage."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can DocNote keep up with ED pace?",
+        "a": "Drafting is designed to be fast after capture. Teams typically pilot on selected shifts before full rollout."
+      },
+      {
+        "q": "What about trauma or critical resus notes?",
+        "a": "Start with supported note types your service validates. High-acuity edge cases may remain fully manual until templates mature."
+      },
+      {
+        "q": "Does this integrate with hospital EHR paths?",
+        "a": "Where integrations are configured, yes; otherwise export into your existing ED documentation process."
+      },
+      {
+        "q": "Who owns the final ED note?",
+        "a": "The treating clinician or authorised signer — never the model alone."
+      },
+      {
+        "q": "Can DocNote handle interrupted or incomplete encounters?",
+        "a": "Yes — drafts reflect what was captured, and clinicians complete or correct gaps during review."
+      },
+      {
+        "q": "How do we pilot this without disrupting a shift?",
+        "a": "Most teams start with selected shifts and a limited note type before expanding to full ED coverage."
+      }
+    ],
+    "cta": {
+      "title": "Keep documentation moving at ED speed",
+      "body": "Talk to our team about a pilot for selected shifts in your department.",
+      "primary": "Talk to our team",
+      "secondary": "Watch tutorial"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Notes that keep up with ED throughput."
+  },
+  "ai-scribe-surgery": {
+    "navLabel": "AI scribe for surgery",
+    "title": "AI medical scribe for surgery | DocNote",
+    "description": "AI medical scribe for surgical services: operative reports, follow-ups, and hospital documentation with Swiss hosting.",
+    "hero": {
+      "badge": "AI scribe for surgery",
+      "title": "AI medical scribe for surgery",
+      "subtitle": "Operative reports, clinic follow-ups, and discharge paperwork in one perioperative stack.",
+      "lead": "Surgical services drown in operative reports, clinic follow-ups, and discharge paperwork. DocNote drafts structured surgical documentation so surgeons refine clinical detail instead of fighting blank templates after a long list."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Operative and clinic documentation together",
+      "paragraphs": [
+        "Surgical services drown in operative reports, clinic follow-ups, and discharge paperwork. DocNote drafts structured surgical documentation so surgeons refine clinical detail instead of fighting blank templates after a long list.",
+        "Orthopaedics, general surgery, and other lines have different report shapes. Onboarding maps DocNote to the templates your theatre already trusts, covering the whole perioperative pathway in one stack."
+      ]
+    },
+    "benefits": {
+      "badge": "Why surgical services adopt it",
+      "title": "Less evening paperwork across the pathway",
+      "subtitle": "One stack for operative reports, clinic notes, and discharge.",
+      "items": [
+        {
+          "title": "Operative and clinic documentation together",
+          "body": "Use DocNote for operative report drafts and outpatient surgical consultations — one stack for the perioperative pathway."
+        },
+        {
+          "title": "Templates that match your service",
+          "body": "Onboarding maps DocNote to the report shapes your theatre and clinic already trust, by specialty line."
+        },
+        {
+          "title": "Less catch-up documentation",
+          "body": "Drafts ready at the end of the case or clinic reclaim time otherwise lost to evening paperwork."
+        },
+        {
+          "title": "Hospital compliance throughout",
+          "body": "Swiss hosting, short audio retention, and physician validation are built for surgical departments under medical secrecy."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From case or clinic to a validated document",
+      "subtitle": "One workflow across operative reports and clinic notes.",
+      "items": [
+        {
+          "title": "Capture the case or visit",
+          "body": "Record the operative debrief or clinic consultation on mobile or web."
+        },
+        {
+          "title": "DocNote applies your template",
+          "body": "Section structure follows the operative report or consultation template your service uses."
+        },
+        {
+          "title": "Review technique and detail",
+          "body": "Surgeons refine findings, implants, and plan for precision."
+        },
+        {
+          "title": "Validate and file",
+          "body": "Approve the document; it enters the record under the surgeon's responsibility."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Hospital compliance",
+      "title": "Built for surgical departments under medical secrecy",
+      "intro": "Surgical documentation carries legal weight across the whole pathway, not just the operative report.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after each document is produced."
+        },
+        {
+          "title": "Surgeon validation, always",
+          "body": "Every operative report and clinic note is reviewed and approved by the surgeon."
+        },
+        {
+          "title": "Templates by specialty line",
+          "body": "Report shapes are mapped to orthopaedics, general surgery, and other lines during onboarding."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Covering the whole perioperative pathway",
+        "body": "A surgical case generates documentation before, during, and after the procedure — from the pre-op clinic visit to the post-op check. Because the same platform covers all of these steps, no team has to switch between multiple tools to follow the same case."
+      },
+      {
+        "heading": "Consistency across several surgeons",
+        "body": "When a service includes several clinicians with slightly different documentation habits, a shared template per specialty line helps keep the record legible and comparable across the whole team."
+      },
+      {
+        "heading": "Connecting clinic follow-ups to the original operative report",
+        "body": "A post-op clinic visit reads better when it can reference the original procedure clearly — what was done, what complications were noted, what the plan was. Because DocNote handles both document types, that continuity is easier to maintain than when clinic notes and operative reports live in separate systems."
+      },
+      {
+        "heading": "Onboarding a surgical department by specialty line",
+        "body": "Orthopaedic, general, and other surgical lines rarely share identical documentation habits even within the same hospital. A department-wide rollout typically maps each line's existing templates first, then trains on real cases before expanding — the same sequence that works for any specialty."
+      },
+      {
+        "heading": "Documenting a full surgical episode, start to finish",
+        "body": "A surgical episode spans a pre-op assessment, the operative report, and one or more post-op follow-ups, often weeks apart. Keeping these documents on one platform means a surgeon reviewing the post-op note can quickly reference exactly what was planned and done at the time of surgery, without hunting across separate systems."
+      },
+      {
+        "heading": "Handling emergency versus elective procedures differently",
+        "body": "An emergency procedure rarely allows time for the same pre-op documentation as an elective one. DocNote's templates account for that difference, so an urgent case isn't forced through the same multi-step documentation flow built for a scheduled operation."
+      },
+      {
+        "heading": "Fitting into a busy theatre schedule",
+        "body": "Between cases on a full list, there is rarely more than a few minutes to document before the next patient is ready. A debrief that takes those few minutes rather than requiring a longer sit-down is what makes same-day documentation realistic across an entire operating list, not just the first case on a demanding day."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can we start with operative reports only?",
+        "a": "Yes. Many surgical teams begin with one document type, then add clinic notes."
+      },
+      {
+        "q": "Is the surgeon still responsible for the report?",
+        "a": "Always. DocNote drafts; surgeons validate."
+      },
+      {
+        "q": "Do you support implant and findings sections?",
+        "a": "Section structure follows your template. Teams tune this during pilots."
+      },
+      {
+        "q": "How do we involve the whole surgical service?",
+        "a": "Roll out by theatre team or specialty line with shared templates and training."
+      },
+      {
+        "q": "Can we start with clinic notes before operative reports?",
+        "a": "Yes — teams can start with either document type and add the other once workflow is validated."
+      },
+      {
+        "q": "How do multiple surgeons in one service share templates?",
+        "a": "Shared templates and training are set up per specialty line so the whole service documents consistently."
+      }
+    ],
+    "cta": {
+      "title": "Cover the whole perioperative pathway",
+      "body": "Talk to our team about a pilot for your theatre or surgical clinic.",
+      "primary": "Talk to our team",
+      "secondary": "Watch tutorial"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "OR reports, clinic, and discharge in one stack."
+  },
+  "ai-scribe-dermatology": {
+    "navLabel": "AI scribe for dermatology",
+    "title": "AI medical scribe for dermatology | DocNote",
+    "description": "AI medical scribe for dermatology clinics. Structured consultation notes for high-throughput dermatology with Swiss hosting.",
+    "hero": {
+      "badge": "AI scribe for dermatology",
+      "title": "AI medical scribe for dermatology",
+      "subtitle": "Keep visual attention on the patient while documentation still gets done.",
+      "lead": "Dermatology clinics move quickly across many short encounters. DocNote drafts structured consultation notes so dermatologists keep visual attention on the patient while documentation still gets done."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "High throughput, clear notes",
+      "paragraphs": [
+        "Lesion descriptions, assessments, procedures, and plans need to land accurately. A specialty-aware draft reduces repetitive typing between short, fast-moving encounters.",
+        "Capture the visit, review the dermatology-oriented draft, validate, and move on — without a separate transcription vendor or breaking the rhythm of a high-throughput clinic."
+      ]
+    },
+    "benefits": {
+      "badge": "Why dermatology clinics adopt it",
+      "title": "Documentation that keeps up with the room turnover",
+      "subtitle": "Built for many short encounters, not a single long consultation.",
+      "items": [
+        {
+          "title": "Accurate lesion documentation",
+          "body": "Lesion descriptions, assessments, procedures, and plans are drafted accurately for quick review."
+        },
+        {
+          "title": "One workflow, no separate vendor",
+          "body": "Capture, review, validate — without a separate transcription vendor slowing down the clinic."
+        },
+        {
+          "title": "Privacy for visible, sensitive conditions",
+          "body": "Swiss hosting and short audio retention support patient trust in dermatology and aesthetic-adjacent care."
+        },
+        {
+          "title": "Clear handoffs to referring GPs",
+          "body": "Clear consultation notes improve handoffs back to general practice and other specialists."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From a short visit to a clear note",
+      "subtitle": "Fast enough for high-throughput dermatology clinics.",
+      "items": [
+        {
+          "title": "Capture the visit",
+          "body": "Record the consultation on mobile or web between rooms."
+        },
+        {
+          "title": "Review the dermatology-oriented draft",
+          "body": "Lesion findings, assessment, and plan are organised into a structured draft."
+        },
+        {
+          "title": "Adjust lesion descriptions",
+          "body": "The dermatologist edits descriptions and plan details before approving."
+        },
+        {
+          "title": "Validate and move to the next room",
+          "body": "Approve the note without breaking clinic rhythm."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Privacy for visible conditions",
+      "title": "Trust for sensitive and visible care",
+      "intro": "Dermatology and aesthetic-adjacent care carry their own privacy sensitivities.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the note is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Consultations are used only to produce your notes, never to train foundation models."
+        },
+        {
+          "title": "Clear referral documentation",
+          "body": "Structured notes support clear handoffs to and from general practice."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Procedure notes alongside consultation notes",
+        "body": "Many dermatology clinics run both consultations and minor procedures in the same appointment. DocNote supports both document types, so a biopsy or excision can be documented right after the consultation without switching to a separate form."
+      },
+      {
+        "heading": "Multi-room clinics with fast turnover",
+        "body": "When several treatment rooms run in parallel, quick per-room capture helps keep waiting time between patients short. The practical setup per room is mapped together with your team during onboarding."
+      },
+      {
+        "heading": "Documenting visual findings in words",
+        "body": "Dermatology relies heavily on visual assessment, but the written record still needs to describe lesions precisely — size, morphology, distribution, evolution — for continuity and for any later comparison. DocNote's templates keep space for that description structured, rather than leaving it as an afterthought in a general note."
+      },
+      {
+        "heading": "Supporting aesthetic-adjacent consultations",
+        "body": "Many dermatology practices also see aesthetic-adjacent visits alongside medical dermatology. Documentation needs and privacy sensitivities can differ slightly between the two; talk to our team about mapping both visit types during onboarding so each gets the structure it needs."
+      },
+      {
+        "heading": "Tracking lesions across follow-up visits",
+        "body": "Many dermatology cases require comparing a lesion's appearance across several visits months apart — a mole being monitored, a treatment being assessed for response. Consistently structured notes make that comparison easier because the same details are recorded in the same place each time, rather than relying on memory or scattered free text."
+      },
+      {
+        "heading": "Documentation for referred and self-referred patients",
+        "body": "Dermatology sees both GP referrals and self-referred patients, each arriving with a different amount of prior context. DocNote's consultation templates capture the referral reason and relevant history clearly regardless of entry point, so the note reads consistently either way."
+      },
+      {
+        "heading": "Balancing speed with descriptive precision",
+        "body": "A fast dermatology draft that describes a lesion too loosely creates ambiguity for the next visit's comparison. DocNote's templates prompt for the specific descriptive fields that matter — size, colour, borders, distribution — rather than leaving that precision to whatever the dermatologist happens to say out loud in a quick, busy visit."
+      },
+      {
+        "heading": "Coordinating with pathology results",
+        "body": "When a biopsy is sent for pathology, the consultation note and the eventual pathology result need to connect clearly for the next visit. DocNote keeps the original clinical impression documented precisely, so comparing it against the pathology report later is straightforward rather than relying on memory alone."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can procedure notes be drafted too?",
+        "a": "Yes where your templates include them. Many clinics start with consultation notes."
+      },
+      {
+        "q": "Does ambient listening work in multi-room clinics?",
+        "a": "Capture is tied to the device and workflow you choose. We help map a practical room setup during onboarding."
+      },
+      {
+        "q": "Is DocNote only for medical dermatology?",
+        "a": "Medical documentation is the focus; talk to us about your mix of visit types."
+      },
+      {
+        "q": "Who edits lesion descriptions?",
+        "a": "The dermatologist — drafts are always editable before validation."
+      },
+      {
+        "q": "Can procedure notes reference specific techniques used?",
+        "a": "Yes, where your templates include procedure sections — many clinics start with consultation notes and add these later."
+      },
+      {
+        "q": "Does DocNote work in multi-room clinics with fast turnover?",
+        "a": "Capture is tied to the device and workflow you choose; we help map a practical multi-room setup during onboarding."
+      }
+    ],
+    "cta": {
+      "title": "Keep pace without losing documentation quality",
+      "body": "Start a free trial and see how DocNote fits a high-throughput dermatology day.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "Eyes on the patient; notes still get done."
+  },
+  "ai-scribe-neurology": {
+    "navLabel": "AI scribe for neurology",
+    "title": "AI medical scribe for neurology | DocNote",
+    "description": "AI medical scribe for neurology: structured consultation and follow-up notes with Swiss hosting for clinics and hospital services.",
+    "hero": {
+      "badge": "AI scribe for neurology",
+      "title": "AI medical scribe for neurology",
+      "subtitle": "History and exam nuance captured without writing every line from scratch.",
+      "lead": "Neurology notes are detailed and time-consuming. DocNote drafts structured consultation and follow-up documentation so neurologists capture history and exam nuance without writing every line from scratch."
+    },
+    "story": {
+      "badge": "In a nutshell",
+      "title": "Detail without the blank page",
+      "paragraphs": [
+        "History of present illness, neurological exam, impression, and plan benefit from a structured draft that the neurologist can tighten for precision.",
+        "Outpatient neurology and inpatient consults can share the same AI documentation platform used for broader hospital documents, and complex histories that arrive in more than one language are supported from the start."
+      ]
+    },
+    "benefits": {
+      "badge": "Why neurology services adopt it",
+      "title": "Structured detail for complex histories",
+      "subtitle": "Built for the length and precision neurology notes demand.",
+      "items": [
+        {
+          "title": "Structured HPI and exam",
+          "body": "History of present illness and neurological exam findings land in a structured draft ready for precision editing."
+        },
+        {
+          "title": "Clinic and hospital consults, one platform",
+          "body": "Outpatient neurology and inpatient consults share the same AI documentation platform used for hospital documents."
+        },
+        {
+          "title": "Handles longer encounters",
+          "body": "Longer encounters produce longer drafts; clinicians trim and prioritise what belongs in the record."
+        },
+        {
+          "title": "Multilingual histories",
+          "body": "Complex histories that arrive in more than one language are supported from the start."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "How it works",
+      "title": "From a detailed history to a precise note",
+      "subtitle": "Built for the depth neurology consultations require.",
+      "items": [
+        {
+          "title": "Capture the consultation",
+          "body": "Record the history and exam on mobile or web, including longer or complex encounters."
+        },
+        {
+          "title": "Review the structured draft",
+          "body": "HPI, exam, impression, and plan are organised into a draft within seconds."
+        },
+        {
+          "title": "Tighten for precision",
+          "body": "The neurologist refines wording and prioritises what belongs in the final record."
+        },
+        {
+          "title": "Validate and continue",
+          "body": "Approve the note; it enters the record under the neurologist's responsibility."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Compliance and hosting",
+      "title": "Built for hospital neurology departments",
+      "intro": "Compliance expectations for hospital neurology services match the rest of the hospital documentation stack.",
+      "points": [
+        {
+          "title": "Swiss hosting",
+          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+        },
+        {
+          "title": "Short audio retention",
+          "body": "Audio is deleted automatically shortly after the note is produced."
+        },
+        {
+          "title": "No training on visits",
+          "body": "Consultations are used only to produce documents, never to train foundation models."
+        },
+        {
+          "title": "Clinician validation, always",
+          "body": "The neurologist reviews and approves every draft before it enters the record."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Trimming long histories without losing detail",
+        "body": "First neurological consultations often produce very long drafts because the history of present illness carries many details. DocNote structures that detail so the neurologist can trim purposefully, without accidentally losing relevant findings."
+      },
+      {
+        "heading": "Consults across departments",
+        "body": "A neurology consult on a different ward often follows a different structure than an outpatient consultation. DocNote adapts the template to the context while the underlying documentation logic stays consistent across both settings."
+      },
+      {
+        "heading": "Structuring a detailed neurological exam",
+        "body": "A full neurological exam covers cranial nerves, motor, sensory, reflexes, coordination, and gait — a lot of discrete findings that are easy to lose in free text. DocNote keeps each category distinct in the draft, so a normal finding and an abnormal one are equally easy to find on review."
+      },
+      {
+        "heading": "Chronic condition follow-up over time",
+        "body": "Conditions like migraine, epilepsy, or multiple sclerosis are tracked across many visits rather than resolved in one. Consistent structure across those visits makes it easier to see what has actually changed since the last consultation, instead of re-reading an entire history each time."
+      },
+      {
+        "heading": "Connecting neurology consults to imaging and EMG",
+        "body": "Neurological assessment often depends on imaging or EMG results that live in separate systems. DocNote's note captures what was discussed about those findings during the encounter, while the source reports themselves stay in their own systems — the two are meant to complement each other, not merge into one tool."
+      },
+      {
+        "heading": "Supporting complex differential diagnosis",
+        "body": "Neurology frequently involves a broad differential that narrows over several visits and tests. A structured Assessment section that the neurologist can revise consultation by consultation makes that evolving reasoning easier to follow later than a fresh, disconnected note each time."
+      },
+      {
+        "heading": "Documenting for multidisciplinary care",
+        "body": "Many neurological conditions are managed alongside physiotherapy, psychiatry, or rehabilitation teams who need to read the neurologist's assessment quickly. Clear, structured notes make it easier for that wider team to stay aligned on the current plan without needing a separate summary meeting for every update or minor adjustment."
+      },
+      {
+        "heading": "Fitting into an existing neurology workflow",
+        "body": "Most neurology services introduce DocNote alongside their current documentation habits rather than replacing them overnight, starting with outpatient follow-up visits before extending to first consultations and inpatient work. That gradual rollout gives the department time to tune templates to its own conventions before relying on the tool for its most complex cases."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can long neurological histories be handled?",
+        "a": "Longer encounters produce longer drafts. Clinicians still trim and prioritise what belongs in the record."
+      },
+      {
+        "q": "Are EMG or procedure reports included?",
+        "a": "Start with consultation notes; expand to additional templates as your service validates them."
+      },
+      {
+        "q": "Does DocNote replace the neurologist's wording?",
+        "a": "No. It proposes a draft under your review."
+      },
+      {
+        "q": "How do hospital neurology teams adopt it?",
+        "a": "Typically via a pilot service line, template tuning, then wider rollout."
+      },
+      {
+        "q": "Can DocNote handle multi-visit follow-up for chronic neurological conditions?",
+        "a": "Yes — consistent structure across visits helps track change over time for chronic conditions."
+      },
+      {
+        "q": "Are imaging or EMG findings included automatically?",
+        "a": "Findings discussed during the encounter can be captured in the note; imaging and EMG systems remain in their own tools."
+      }
+    ],
+    "cta": {
+      "title": "Capture neurological detail without the blank page",
+      "body": "Start a free trial and see how DocNote fits your neurology consultations.",
+      "primary": "Start free trial",
+      "secondary": "See pricing"
+    },
+    "relatedLabel": "Related guides",
+    "navDesc": "History and exam nuance, less typing."
+  }
+}

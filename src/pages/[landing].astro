@@ -1,0 +1,18 @@
+---
+import PillarPage from '../components/pages/PillarPage.astro';
+import { defaultLocale } from '../utils/i18n';
+import { landingSlugs, isLandingSlug } from '../content/landings';
+
+export function getStaticPaths() {
+  return landingSlugs.map((landing) => ({
+    params: { landing },
+  }));
+}
+
+const { landing } = Astro.params;
+if (!landing || !isLandingSlug(landing)) {
+  return Astro.redirect('/');
+}
+---
+
+<PillarPage locale={defaultLocale} pillar={landing} />

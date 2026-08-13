@@ -19,9 +19,10 @@ const keys = [
 ---
 
 <section class="spec-section py-20 lg:py-24" data-specificities>
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-10 lg:mb-12 max-w-2xl">
-      <span class="text-xs font-semibold text-violet-600 uppercase tracking-widest">{s.badge}</span>
+  <div class="spec-atmosphere dn-bg-grid" aria-hidden="true"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-10 lg:mb-12 max-w-2xl reveal">
+      <span class="text-xs font-semibold text-primary-600 uppercase tracking-widest">{s.badge}</span>
       <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
         {s.title}
       </h2>
@@ -29,7 +30,7 @@ const keys = [
     </div>
 
     <div class="spec-layout grid grid-cols-1 lg:grid-cols-[minmax(0,280px)_1fr] gap-6 lg:gap-8 items-stretch">
-      <div class="spec-list-wrap">
+      <div class="spec-list-wrap reveal reveal-delay-1">
         <div class="spec-list flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible" role="tablist" aria-label={s.badge} data-spec-list>
           {keys.map((key, i) => (
             <button
@@ -47,7 +48,7 @@ const keys = [
         </div>
       </div>
 
-      <div class="spec-preview" role="tabpanel" id="spec-panel" aria-labelledby="spec-tab-coding" data-spec-preview>
+      <div class="spec-preview reveal reveal-delay-2" role="tabpanel" id="spec-panel" aria-labelledby="spec-tab-coding" data-spec-preview>
         <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight" data-spec-title>
           {s.coding.title}
         </h3>
@@ -359,9 +360,21 @@ const keys = [
 
 <style>
   .spec-section {
+    position: relative;
+    overflow: hidden;
     background:
-      radial-gradient(ellipse 70% 50% at 88% 12%, rgba(121, 81, 251, 0.11), transparent 55%),
-      linear-gradient(180deg, #f7f5fc 0%, #ffffff 72%);
+      radial-gradient(ellipse 70% 50% at 88% 12%, rgba(var(--dn-primary-rgb), 0.11), transparent 55%),
+      linear-gradient(180deg, #f5f9ff 0%, #ffffff 72%);
+  }
+
+  .spec-atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .spec-atmosphere.dn-bg-grid::before {
+    background-size: 36px 36px;
   }
 
   .spec-list-wrap {
@@ -386,7 +399,7 @@ const keys = [
     min-width: max-content;
     text-align: left;
     padding: 0.7rem 0.85rem;
-    border-radius: 0.75rem;
+    border-radius: 9999px;
     border: 1px solid transparent;
     background: transparent;
     color: #3f3f46;
@@ -401,14 +414,14 @@ const keys = [
   }
 
   .spec-tab:hover {
-    background: rgba(121, 81, 251, 0.06);
+    background: rgba(var(--dn-primary-rgb), 0.06);
   }
 
   .spec-tab.is-active {
     background: #fff;
     border-color: #e6e2f0;
-    color: #5b3fd4;
-    box-shadow: 0 6px 20px rgba(91, 63, 212, 0.08);
+    color: var(--dn-primary-ink);
+    box-shadow: 0 6px 20px rgba(var(--dn-primary-rgb), 0.1);
   }
 
   @media (max-width: 1023px) {
@@ -425,7 +438,7 @@ const keys = [
       right: 0;
       bottom: 0;
       width: 2.75rem;
-      background: linear-gradient(90deg, transparent, #f7f5fc 78%);
+      background: linear-gradient(90deg, transparent, #f5f9ff 78%);
       z-index: 1;
     }
 
@@ -444,12 +457,12 @@ const keys = [
       max-width: 78vw;
       background: #fff;
       border-color: #e6e2f0;
-      box-shadow: 0 4px 14px rgba(91, 63, 212, 0.05);
+      box-shadow: 0 4px 14px rgba(var(--dn-primary-rgb), 0.05);
     }
 
     .spec-tab.is-active {
-      border-color: #cbbef8;
-      box-shadow: 0 6px 18px rgba(91, 63, 212, 0.12);
+      border-color: #a5b4fc;
+      box-shadow: 0 6px 18px rgba(var(--dn-primary-rgb), 0.12);
     }
   }
 
@@ -465,8 +478,8 @@ const keys = [
   }
 
   .spec-tab.is-active .spec-tab-dot {
-    background: #7951fb;
-    box-shadow: 0 0 0 3px rgba(121, 81, 251, 0.22);
+    background: var(--dn-primary);
+    box-shadow: 0 0 0 3px rgba(var(--dn-primary-rgb), 0.22);
   }
 
   .spec-preview {
@@ -505,7 +518,7 @@ const keys = [
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #5b3fd4;
+    color: var(--dn-primary-ink);
   }
 
   .spec-impact p {
@@ -574,10 +587,10 @@ const keys = [
 
   @keyframes spec-mark {
     from {
-      background: rgba(121, 81, 251, 0.12);
+      background: rgba(var(--dn-primary-rgb), 0.12);
     }
     to {
-      background: rgba(121, 81, 251, 0.48);
+      background: rgba(var(--dn-primary-rgb), 0.48);
     }
   }
 
@@ -597,7 +610,7 @@ const keys = [
     color: #fff;
     border-radius: 0.2rem;
     padding: 0 0.2rem;
-    background: rgba(121, 81, 251, 0.2);
+    background: rgba(var(--dn-primary-rgb), 0.2);
   }
 
   .spec-stage-panel.is-playing .spec-sad-line mark {
@@ -612,7 +625,7 @@ const keys = [
   }
 
   .spec-code {
-    background: #7951fb;
+    background: var(--dn-primary);
     color: #fff;
     font-size: 0.6875rem;
     font-weight: 700;
@@ -646,14 +659,14 @@ const keys = [
     justify-content: center;
     gap: 0.4rem;
     margin: 0.55rem 0;
-    color: #ab66ff;
+    color: var(--dn-primary-mid);
     font-size: 0.6875rem;
     opacity: 0;
   }
 
   .spec-dict-full {
-    background: rgba(121, 81, 251, 0.22);
-    border: 1px solid rgba(171, 102, 255, 0.35);
+    background: rgba(var(--dn-primary-rgb), 0.22);
+    border: 1px solid rgba(var(--dn-primary-mid-rgb), 0.35);
     opacity: 0;
   }
 
@@ -696,7 +709,7 @@ const keys = [
   }
 
   .spec-ehr-arrow {
-    color: #ab66ff;
+    color: var(--dn-primary-mid);
     font-size: 1.15rem;
     opacity: 0;
   }
@@ -709,8 +722,8 @@ const keys = [
   }
 
   .spec-ehr-slot {
-    background: rgba(121, 81, 251, 0.28);
-    border: 1px dashed rgba(171, 102, 255, 0.55);
+    background: rgba(var(--dn-primary-rgb), 0.28);
+    border: 1px dashed rgba(var(--dn-primary-mid-rgb), 0.55);
     border-radius: 0.4rem;
     padding: 0.55rem 0.4rem;
     font-size: 0.6875rem;
@@ -745,7 +758,7 @@ const keys = [
     to {
       opacity: 1;
       border-style: solid;
-      background: rgba(121, 81, 251, 0.5);
+      background: rgba(var(--dn-primary-rgb), 0.5);
     }
   }
 
@@ -753,10 +766,10 @@ const keys = [
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    border: 1.5px dashed rgba(171, 102, 255, 0.55);
+    border: 1.5px dashed rgba(var(--dn-primary-mid-rgb), 0.55);
     border-radius: 0.7rem;
     padding: 0.9rem;
-    background: rgba(121, 81, 251, 0.12);
+    background: rgba(var(--dn-primary-rgb), 0.12);
     opacity: 0;
   }
 
@@ -777,7 +790,7 @@ const keys = [
     height: 2.85rem;
     border-radius: 0.3rem;
     background: #fff;
-    color: #5b3fd4;
+    color: var(--dn-primary-ink);
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -803,7 +816,7 @@ const keys = [
     color: #cbb8ff;
     font-weight: 700;
     margin-bottom: 0.35rem;
-    border-bottom: 1px solid rgba(171, 102, 255, 0.28);
+    border-bottom: 1px solid rgba(var(--dn-primary-mid-rgb), 0.28);
     padding-bottom: 0.35rem;
   }
 
@@ -865,7 +878,7 @@ const keys = [
     height: 100%;
     width: 0;
     border-radius: inherit;
-    background: linear-gradient(90deg, #7951fb, #ab66ff);
+    background: linear-gradient(90deg, var(--dn-primary), var(--dn-primary-mid));
   }
 
   .spec-meter-note {
@@ -929,8 +942,8 @@ const keys = [
     48% {
       opacity: 1;
       transform: scale(1);
-      border-color: rgba(171, 102, 255, 0.7);
-      background: rgba(121, 81, 251, 0.3);
+      border-color: rgba(var(--dn-primary-mid-rgb), 0.7);
+      background: rgba(var(--dn-primary-rgb), 0.3);
     }
     58%,
     100% {
@@ -961,7 +974,7 @@ const keys = [
     margin-top: 0.55rem;
     height: 3rem;
     border-radius: 0.35rem;
-    background: rgba(121, 81, 251, 0.25);
+    background: rgba(var(--dn-primary-rgb), 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -973,7 +986,7 @@ const keys = [
     width: 1.65rem;
     height: 1.65rem;
     border-radius: 999px;
-    border: 2px solid #ab66ff;
+    border: 2px solid var(--dn-primary-mid);
     position: relative;
     opacity: 0;
   }
@@ -983,7 +996,7 @@ const keys = [
     position: absolute;
     inset: -0.4rem;
     border-radius: 999px;
-    border: 2px solid rgba(171, 102, 255, 0.4);
+    border: 2px solid rgba(var(--dn-primary-mid-rgb), 0.4);
   }
 
   .spec-stage-panel.is-playing .spec-device:first-child {
@@ -1029,13 +1042,13 @@ const keys = [
     background: #7c6bb5;
   }
   .spec-avatars span:nth-child(2) {
-    background: #9b6cff;
+    background: var(--dn-primary-mid);
   }
   .spec-avatars span:nth-child(3) {
-    background: #5456de;
+    background: var(--dn-primary-end);
   }
   .spec-avatars span:nth-child(4) {
-    background: #ab66ff;
+    background: var(--dn-primary-mid);
   }
 
   .spec-stage-panel.is-playing .spec-avatars span {
@@ -1066,10 +1079,10 @@ const keys = [
     background: #7c6bb5;
   }
   .spec-merge-line:nth-child(2) span {
-    background: #9b6cff;
+    background: var(--dn-primary-mid);
   }
   .spec-merge-line:nth-child(3) span {
-    background: #5456de;
+    background: var(--dn-primary-end);
   }
 
   .spec-merge-result {

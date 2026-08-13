@@ -1,0 +1,31 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  lead?: string;
+  class?: string;
+  compact?: boolean;
+}
+
+const { eyebrow, title, subtitle, lead, compact = false } = Astro.props;
+---
+
+<section class:list={['dn-page-hero', compact && 'dn-page-hero--compact', Astro.props.class]}>
+  <div class="dn-page-hero__inner reveal">
+    {
+      eyebrow && (
+        <p class="dn-page-hero__eyebrow">
+          <span class="dn-page-hero__dot" aria-hidden="true"></span>
+          {eyebrow}
+        </p>
+      )
+    }
+    <h1 class="dn-page-hero__title">{title}</h1>
+    {subtitle && <p class="dn-page-hero__subtitle">{subtitle}</p>}
+    {lead && <p class="dn-page-hero__lead">{lead}</p>}
+    <div class="dn-page-hero__actions">
+      <slot />
+    </div>
+  </div>
+</section>
