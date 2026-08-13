@@ -203,7 +203,7 @@ const solutionsHubByLocale: Partial<Record<Locale, SolutionsHubCopy>> & {
       title: 'Ambient capture is the product spine',
       body: 'Listen in the room, draft after the visit, validate before the record sticks — then branch into SOAP, CRO, discharge, or hospital files.',
       caption: 'Ambient clinical documentation — the path most teams open first.',
-      imageAlt: 'Clinicians reviewing documentation on a laptop',
+      imageAlt: 'Hospital and clinical campus exterior',
     },
     stats: [
       { value: '11', label: 'Solution pages' },
@@ -260,7 +260,7 @@ const solutionsHubByLocale: Partial<Record<Locale, SolutionsHubCopy>> & {
       title: 'La capture ambiante est la colonne vertébrale',
       body: 'Écouter en salle, rédiger après la visite, valider avant l’enregistrement — puis brancher vers SOAP, CRO, sortie ou dossiers hospitaliers.',
       caption: 'Documentation clinique ambiante — le chemin que la plupart des équipes ouvrent en premier.',
-      imageAlt: 'Cliniciens consultant la documentation sur un ordinateur',
+      imageAlt: 'Campus hospitalier et clinique — vue extérieure',
     },
     stats: [
       { value: '11', label: 'Pages solutions' },
@@ -314,6 +314,6 @@ export const specialtiesHubDeepSlugs = specialtyLandingSlugs
 
 /** Public assets reused on hub heroes (no new generation). */
 export const SPECIALTIES_HUB_HERO_IMAGE = '/images/CHUV.webp'
-export const SOLUTIONS_HUB_HERO_IMAGE = '/images/adopt_ai_11.25_-_3.jpg'
+export const SOLUTIONS_HUB_HERO_IMAGE = '/images/CHU Bordeaux.jpg'
 export const SOLUTIONS_FEATURED_IMAGE = '/images/visite-medicale.jpg'
 export const SPECIALTIES_FEATURED_IMAGE = '/images/CHUV.webp'

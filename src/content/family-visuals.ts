@@ -66,11 +66,11 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
   },
   'primary-care': {
     recipe: 'pace',
-    image: '/images/adopt_ai_11.25_-_3.jpg',
+    image: '/images/visite-medicale.jpg',
     imageAlt: {
-      en: 'Clinicians reviewing documentation on a laptop',
-      fr: 'Cliniciens consultant la documentation sur un ordinateur',
-      de: 'Ärztinnen prüfen Dokumentation am Laptop',
+      en: 'Clinician with patient during a practice visit',
+      fr: 'Clinicien avec un patient en consultation de cabinet',
+      de: 'Behandelnde Person mit Patientin in der Praxis',
     },
     mediaCaption: {
       en: 'Finished before the next patient — concise note, certificate, letter.',
@@ -97,9 +97,9 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
     recipe: 'dictation',
     image: '/images/radiology_mode_02.26.jpg',
     imageAlt: {
-      en: 'DocNote radiology / diagnostics reporting mode',
-      fr: 'Mode radiologie / diagnostics DocNote',
-      de: 'DocNote Radiologie- / Diagnostikmodus',
+      en: 'Clinician reviewing diagnostic imaging on a workstation',
+      fr: 'Clinicien examinant des images diagnostiques sur un poste',
+      de: 'Ärztin prüft diagnostische Bildgebung am Arbeitsplatz',
     },
     mediaCaption: {
       en: 'Dictate once into the house template — proofreading stays one tap away.',
@@ -110,11 +110,11 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
   },
   'allied-health': {
     recipe: 'pricing',
-    image: '/images/mediway_integration_02.26.jpg',
+    image: '/images/CHU Bordeaux.jpg',
     imageAlt: {
-      en: 'Practice software integration with DocNote',
-      fr: 'Intégration logicielle cabinet avec DocNote',
-      de: 'Praxissystem-Integration mit DocNote',
+      en: 'Hospital and practice campus exterior',
+      fr: 'Campus hospitalier et de cabinet — vue extérieure',
+      de: 'Krankenhaus- und Praxiscampus von außen',
     },
     mediaCaption: {
       en: 'Named for the job — including dental act pricing where it matters.',
