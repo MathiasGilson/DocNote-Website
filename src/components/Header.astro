@@ -316,7 +316,7 @@ const mobileLinkClass = (active: boolean) =>
           href={DEMO_BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-soft header-cta header-cta-demo hidden 2xl:inline-flex whitespace-nowrap"
+          class="btn-soft header-cta header-cta-demo hidden xl:inline-flex whitespace-nowrap"
         >
           {t.nav.demo}
         </a>
@@ -572,13 +572,13 @@ const mobileLinkClass = (active: boolean) =>
     background: none;
     border: 0;
     padding: 0;
-    color: inherit;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.15s ease;
   }
 
-  a.nav-dd-trigger:hover {
+  a.nav-dd-trigger:hover,
+  button.nav-dd-trigger:hover {
     color: #111827;
   }
 
@@ -593,9 +593,9 @@ const mobileLinkClass = (active: boolean) =>
     transition: transform 0.2s ease;
   }
 
-  .nav-dd.is-open .nav-dd-chevron,
-  .nav-dd:hover .nav-dd-chevron,
-  .nav-dd:focus-within .nav-dd-chevron {
+  .nav-dd.is-open > .nav-dd-trigger .nav-dd-chevron,
+  .nav-dd:hover > .nav-dd-trigger .nav-dd-chevron,
+  .nav-dd:focus-within > .nav-dd-trigger .nav-dd-chevron {
     transform: rotate(180deg);
   }
 
