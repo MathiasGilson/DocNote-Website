@@ -23,7 +23,7 @@ export const ROBOTS_META_CONTENT = IS_PREVIEW_DEPLOY
   ? 'noindex,nofollow,noarchive,nosnippet'
   : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 
-export const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
+export const OG_IMAGE = `${SITE_URL}/images/og-image.jpg`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 

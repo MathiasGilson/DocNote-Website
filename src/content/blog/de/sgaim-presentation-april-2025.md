@@ -5,7 +5,7 @@ category: "news"
 author: "Dr. Vincent Tan"
 authorRole: "Arzt & Geschäftsführer"
 authorImage: "/images/dr_vincent_tan.jpg"
-image: "/images/remise-prix-lumiere-2023.png"
+image: "/images/remise-prix-lumiere-2023.jpg"
 date: "2025-05-20"
 readTime: 10
 ---

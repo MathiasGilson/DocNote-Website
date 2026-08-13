@@ -1,4 +1,6 @@
-// rehype plugin: relocalize internal links inside blog markdown bodies.
+// rehype plugin: relocalize internal links inside blog markdown bodies,
+// ensure trailing slashes (site uses trailingSlash: 'always'), and demote
+// body <h1> → <h2> so the template title remains the sole page H1.
 //
 // Translators sometimes write internal links as bare EN-style paths
 // (`/pricing/`, `/ai-medical-scribe/`) with no locale prefix, or invent a
@@ -48,37 +50,89 @@ function isSkippableHref(href) {
   if (typeof href !== 'string' || href.length === 0) return true
   if (!href.startsWith('/')) return true
   if (href.startsWith('//')) return true
-  if (href.startsWith('/images/') || href.startsWith('/videos/')) return true
+  if (href.startsWith('/images/') || href.startsWith('/videos/') || href.startsWith('/fonts/')) return true
   return false
 }
 
-/** Rewrite one internal href for the given (non-default) locale. */
-function relocalizeHref(href, locale) {
+function ensureTrailingSlash(pathPart) {
+  if (!pathPart || pathPart === '/') return '/'
+  // Keep extension-looking paths as-is (e.g. /llms.txt).
+  const last = pathPart.split('/').filter(Boolean).pop() || ''
+  if (last.includes('.')) return pathPart
+  return pathPart.endsWith('/') ? pathPart : `${pathPart}/`
+}
+
+/** Rewrite one internal href for the given locale; always trailing-slash page paths. */
+function normalizeHref(href, locale) {
   const [pathPart, hashPart] = href.split('#')
   const segments = pathPart.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean)
-  if (segments.length === 0) return href
 
-  // Already locale-prefixed (this locale or another) — leave untouched.
-  if (LOCALES.includes(segments[0])) return href
-
-  let newSegments
-  if (segments[0] === 'blog') {
+  let newPath
+  if (segments.length === 0) {
+    newPath = locale === DEFAULT_LOCALE ? '/' : `/${locale}/`
+  } else if (LOCALES.includes(segments[0])) {
+    // Already locale-prefixed — only normalize slash.
+    newPath = ensureTrailingSlash(`/${segments.join('/')}`)
+  } else if (locale === DEFAULT_LOCALE) {
+    if (segments[0] === 'blog') {
+      const slug = segments.slice(1).join('/')
+      const canonicalSlug = BAD_BLOG_SLUG_MAP[slug] || slug
+      newPath = ensureTrailingSlash(canonicalSlug ? `/blog/${canonicalSlug}` : '/blog')
+    } else {
+      const canonicalFirst = BAD_SEGMENT_MAP[segments[0]] || segments[0]
+      newPath = ensureTrailingSlash(`/${[canonicalFirst, ...segments.slice(1)].join('/')}`)
+    }
+  } else if (segments[0] === 'blog') {
     const slug = segments.slice(1).join('/')
     const canonicalSlug = BAD_BLOG_SLUG_MAP[slug] || slug
-    newSegments = canonicalSlug ? ['blog', canonicalSlug] : ['blog']
+    newPath = ensureTrailingSlash(
+      canonicalSlug ? `/${locale}/blog/${canonicalSlug}` : `/${locale}/blog`
+    )
   } else {
     const canonicalFirst = BAD_SEGMENT_MAP[segments[0]] || segments[0]
-    newSegments = [canonicalFirst, ...segments.slice(1)]
+    newPath = ensureTrailingSlash(`/${locale}/${[canonicalFirst, ...segments.slice(1)].join('/')}`)
   }
 
-  const newPath = `/${locale}/${newSegments.join('/')}/`
   return hashPart ? `${newPath}#${hashPart}` : newPath
+}
+
+function demoteBodyH1(tree) {
+  const walk = (node) => {
+    if (!node || !Array.isArray(node.children)) return
+    for (const child of node.children) {
+      if (child?.type === 'element' && child.tagName === 'h1') {
+        child.tagName = 'h2'
+      }
+      walk(child)
+    }
+  }
+  walk(tree)
+}
+
+/** Add width/height on markdown <img> to reduce CLS (SF / Lighthouse unsized-images). */
+function ensureImgDimensions(tree) {
+  const walk = (node) => {
+    if (!node || !Array.isArray(node.children)) return
+    for (const child of node.children) {
+      if (child?.type === 'element' && child.tagName === 'img' && child.properties) {
+        const props = child.properties
+        if (props.width == null) props.width = 1200
+        if (props.height == null) props.height = 675
+        if (!props.loading) props.loading = 'lazy'
+        if (!props.decoding) props.decoding = 'async'
+      }
+      walk(child)
+    }
+  }
+  walk(tree)
 }
 
 export default function rehypeFixInternalLinks() {
   return (tree, file) => {
     const locale = localeFromPath(file?.history?.[0] || file?.path || '')
-    if (locale === DEFAULT_LOCALE) return
+
+    demoteBodyH1(tree)
+    ensureImgDimensions(tree)
 
     const walk = (node) => {
       if (!node || !Array.isArray(node.children)) return
@@ -86,7 +140,7 @@ export default function rehypeFixInternalLinks() {
         if (child?.type === 'element' && child.tagName === 'a' && child.properties) {
           const href = child.properties.href
           if (!isSkippableHref(href)) {
-            child.properties.href = relocalizeHref(href, locale)
+            child.properties.href = normalizeHref(href, locale)
           }
         }
         walk(child)
