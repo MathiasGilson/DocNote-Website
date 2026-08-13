@@ -5,6 +5,7 @@ import FaqAccordion from '../FaqAccordion.astro';
 import Features from '../Features.astro';
 import ZigZagBenefits from '../ZigZagBenefits.astro';
 import PageHero from '../ui/PageHero.astro';
+import LpSettingCard from '../ui/LpSettingCard.astro';
 import '../../styles/landing-page.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
 import {
@@ -193,24 +194,11 @@ const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
   <!-- Story -->
   <section class="relative py-14 sm:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="lp-shell reveal">
-        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          <div class="lg:col-span-4">
-            <span class="lp-eyebrow">
-              <span class="lp-dot" aria-hidden="true"></span>
-              {p.story.badge}
-            </span>
-            <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
-              {p.story.title}
-            </h2>
-          </div>
-          <div class="lg:col-span-8 space-y-4">
-            {p.story.paragraphs.map((para) => (
-              <p class="text-base sm:text-lg text-gray-600 leading-relaxed">{para}</p>
-            ))}
-          </div>
-        </div>
-      </div>
+      <LpSettingCard badge={p.story.badge} title={p.story.title} variant="both">
+        {p.story.paragraphs.map((para) => (
+          <p>{para}</p>
+        ))}
+      </LpSettingCard>
     </div>
   </section>
 

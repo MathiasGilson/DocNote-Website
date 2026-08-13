@@ -53,6 +53,161 @@
   }
 }
 
+/* Practice / Hospital setting split card */
+.lp-setting {
+  --lp-setting-accent: var(--dn-primary-rgb);
+  --lp-setting-accent-mid: var(--dn-primary-mid-rgb);
+  --lp-setting-ink: var(--dn-primary-ink);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  background:
+    radial-gradient(
+      ellipse 72% 90% at 0% 0%,
+      rgba(var(--lp-setting-accent), 0.09),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 70% at 100% 100%,
+      rgba(var(--lp-setting-accent-mid), 0.05),
+      transparent 55%
+    ),
+    #ffffff;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 28px rgba(15, 23, 42, 0.045),
+    0 28px 56px rgba(var(--lp-setting-accent), 0.07);
+  padding: 1.85rem 1.5rem 1.85rem 1.65rem;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.lp-setting::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    rgb(var(--lp-setting-accent)),
+    rgb(var(--lp-setting-accent-mid))
+  );
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .lp-setting {
+    padding: 2.5rem 2.35rem 2.5rem 2.5rem;
+  }
+}
+
+.lp-setting:hover {
+  border-color: rgba(var(--lp-setting-accent), 0.22);
+  box-shadow:
+    0 2px 4px rgba(15, 23, 42, 0.04),
+    0 16px 36px rgba(15, 23, 42, 0.06),
+    0 32px 64px rgba(var(--lp-setting-accent), 0.1);
+  transform: translateY(-2px);
+}
+
+.lp-setting--practice {
+  --lp-setting-accent: var(--dn-primary-rgb);
+  --lp-setting-accent-mid: var(--dn-primary-mid-rgb);
+  --lp-setting-ink: var(--dn-primary-ink);
+}
+
+.lp-setting--hospital {
+  --lp-setting-accent: var(--dn-primary-end-rgb);
+  --lp-setting-accent-mid: var(--dn-primary-mid-rgb);
+  --lp-setting-ink: #5b2fa0;
+}
+
+.lp-setting--both {
+  --lp-setting-accent: var(--dn-primary-mid-rgb);
+  --lp-setting-accent-mid: var(--dn-primary-end-rgb);
+  --lp-setting-ink: var(--dn-primary-ink);
+}
+
+.lp-setting--diagnostics {
+  --lp-setting-accent: 14, 165, 233;
+  --lp-setting-accent-mid: var(--dn-primary-rgb);
+  --lp-setting-ink: #0369a1;
+}
+
+.lp-setting .lp-eyebrow {
+  color: var(--lp-setting-ink);
+}
+
+.lp-setting .lp-dot {
+  background: rgb(var(--lp-setting-accent));
+  box-shadow: 0 0 0 3px rgba(var(--lp-setting-accent), 0.2);
+}
+
+.lp-setting__grid {
+  display: grid;
+  gap: 1.25rem 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .lp-setting__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 2rem 3rem;
+  }
+
+  .lp-setting__lead {
+    padding-right: 0.5rem;
+    border-right: 1px solid rgba(15, 23, 42, 0.07);
+  }
+
+  .lp-setting__body {
+    padding-left: 0.25rem;
+  }
+}
+
+.lp-setting__title {
+  margin: 0.85rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+@media (min-width: 640px) {
+  .lp-setting__title {
+    font-size: 1.75rem;
+  }
+}
+
+.lp-setting__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lp-setting__body p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+@media (min-width: 640px) {
+  .lp-setting__body p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lp-setting__body {
+    padding-top: 0.15rem;
+  }
+}
+
 .lp-card {
   position: relative;
   padding: 1.75rem 1.5rem;
@@ -333,7 +488,12 @@
 
 @media (prefers-reduced-motion: reduce) {
   .lp-card:hover,
-  .lp-step:hover {
+  .lp-step:hover,
+  .lp-setting:hover {
     transform: none;
+  }
+
+  .lp-setting {
+    transition: none;
   }
 }

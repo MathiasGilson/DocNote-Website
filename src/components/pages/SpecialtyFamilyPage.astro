@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../ui/PageHero.astro';
+import LpSettingCard from '../ui/LpSettingCard.astro';
 import FamilyMediaBand from '../family/FamilyMediaBand.astro';
 import FamilyLeadVariant from '../family/FamilyLeadVariant.astro';
 import '../../styles/landing-page.css';
@@ -208,22 +209,12 @@ const toolkitSoft = visual.recipe === 'unit' || visual.recipe === 'dictation';
   {p.setting && (
     <section class="relative py-14 sm:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lp-shell reveal">
-          <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            <div class="lg:col-span-4">
-              <span class="lp-eyebrow">
-                <span class="lp-dot" aria-hidden="true"></span>
-                {p.setting.badge}
-              </span>
-              <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
-                {p.setting.title}
-              </h2>
-            </div>
-            <div class="lg:col-span-8">
-              <p class="text-base sm:text-lg text-gray-600 leading-relaxed">{p.setting.body}</p>
-            </div>
-          </div>
-        </div>
+        <LpSettingCard
+          badge={p.setting.badge}
+          title={p.setting.title}
+          body={p.setting.body}
+          variant={meta.setting}
+        />
       </div>
     </section>
   )}
