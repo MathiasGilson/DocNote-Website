@@ -93,12 +93,16 @@ const solutionsOpen = groupActive(navSolutionsSlugs);
 const specialtiesOpen = specialtiesItems.some((item) => item.active);
 
 const blogActive = isActive('/blog') || currentPath.includes('/blog/');
-const moreItems = [
-  { href: surveyHref, label: t.nav.survey, active: surveyActive },
-  { href: getLocalizedPath('/patient', locale), label: t.nav.patient, active: isActive('/patient') },
-  { href: getLocalizedPath('/blog', locale), label: t.nav.blog, active: blogActive },
+const patientHref = getLocalizedPath('/patient', locale);
+const patientActive = isActive('/patient');
+const blogHref = getLocalizedPath('/blog', locale);
+/** Lowest priority collapses first when primary nav would hit right CTAs. */
+const overflowItems = [
+  { id: 'blog', href: blogHref, label: t.nav.blog, active: blogActive, priority: 1 },
+  { id: 'patient', href: patientHref, label: t.nav.patient, active: patientActive, priority: 2 },
+  { id: 'survey', href: surveyHref, label: t.nav.survey, active: surveyActive, priority: 3 },
 ] as const;
-const moreOpen = moreItems.some((item) => item.active);
+const moreOpen = overflowItems.some((item) => item.active);
 const moreLabel = t.nav.more || 'More';
 
 const linkClass = (active: boolean) =>
@@ -120,12 +124,12 @@ const mobileLinkClass = (active: boolean) =>
           <span class="text-xl 2xl:text-2xl font-semibold text-gray-900">DocNote</span>
         </a>
 
-        <div class="header-primary hidden xl:flex items-center gap-2.5 2xl:gap-4 min-w-0">
-          <a href={getLocalizedPath('/tutorial', locale)} class={linkClass(isActive('/tutorial'))}>
+        <div class="header-primary hidden xl:flex items-center gap-2.5 2xl:gap-4 min-w-0" data-nav-primary>
+          <a href={getLocalizedPath('/tutorial', locale)} class={linkClass(isActive('/tutorial'))} data-nav-keep>
             {t.nav.tutorial}
           </a>
 
-          <div class:list={['nav-dd', solutionsOpen && 'is-current']} data-nav-dd>
+          <div class:list={['nav-dd', solutionsOpen && 'is-current']} data-nav-dd data-nav-keep>
             <button
               type="button"
               class:list={['nav-dd-trigger', solutionsOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
@@ -180,7 +184,7 @@ const mobileLinkClass = (active: boolean) =>
             </div>
           </div>
 
-          <div class:list={['nav-dd', specialtiesOpen && 'is-current']} data-nav-dd>
+          <div class:list={['nav-dd', specialtiesOpen && 'is-current']} data-nav-dd data-nav-keep>
             <button
               type="button"
               class:list={['nav-dd-trigger', specialtiesOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
@@ -226,17 +230,37 @@ const mobileLinkClass = (active: boolean) =>
             </div>
           </div>
 
-          <a href={getLocalizedPath('/pricing', locale)} class={linkClass(isActive('/pricing'))}>
+          <a href={getLocalizedPath('/pricing', locale)} class={linkClass(isActive('/pricing'))} data-nav-keep>
             {t.nav.pricing}
           </a>
-          <a href={getLocalizedPath('/team', locale)} class={linkClass(isActive('/team'))}>
+          <a href={getLocalizedPath('/team', locale)} class={linkClass(isActive('/team'))} data-nav-keep>
             {t.nav.team}
           </a>
-          <a href={careersHref} class={linkClass(careersActive)}>
+          <a href={careersHref} class={linkClass(careersActive)} data-nav-keep>
             {t.nav.joinUs}
           </a>
 
-          <div class:list={['nav-dd', moreOpen && 'is-current']} data-nav-dd>
+          {
+            overflowItems
+              .slice()
+              .sort((a, b) => b.priority - a.priority)
+              .map((item) => (
+                <a
+                  href={item.href}
+                  class={`${linkClass(item.active)} is-collapsed`}
+                  data-nav-overflow={item.id}
+                  data-nav-priority={item.priority}
+                >
+                  {item.label}
+                </a>
+              ))
+          }
+
+          <div
+            class:list={['nav-dd', 'nav-more', moreOpen && 'is-current']}
+            data-nav-dd
+            data-nav-more
+          >
             <button
               type="button"
               class:list={['nav-dd-trigger', moreOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
@@ -252,8 +276,8 @@ const mobileLinkClass = (active: boolean) =>
             <div class="nav-dd-panel nav-dd-panel--more" data-nav-dd-panel role="menu">
               <ul class="nav-more-list">
                 {
-                  moreItems.map((item) => (
-                    <li>
+                  overflowItems.map((item) => (
+                    <li data-nav-more-item={item.id}>
                       <a
                         href={item.href}
                         class:list={['nav-dd-item', item.active && 'is-active']}
@@ -414,6 +438,14 @@ const mobileLinkClass = (active: boolean) =>
   .header-primary {
     flex-wrap: nowrap;
     max-width: 100%;
+  }
+
+  .header-primary [data-nav-overflow].is-collapsed {
+    display: none !important;
+  }
+
+  .header-primary [data-nav-more].is-empty {
+    display: none !important;
   }
 
   .header-right {
@@ -827,4 +859,85 @@ const mobileLinkClass = (active: boolean) =>
       trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     });
   });
+
+  const primary = document.querySelector<HTMLElement>('[data-nav-primary]');
+  const headerRight = document.querySelector<HTMLElement>('.header-right');
+  const headerBar = document.querySelector<HTMLElement>('.header-bar');
+  const moreWrap = primary?.querySelector<HTMLElement>('[data-nav-more]');
+  const SAFETY_PX = 8;
+
+  const primaryContentWidth = (includeMore: boolean) => {
+    if (!primary) return 0;
+    const gap = parseFloat(getComputedStyle(primary).columnGap || getComputedStyle(primary).gap) || 0;
+    const kids = [...primary.children].filter((el) => {
+      const node = el as HTMLElement;
+      if (node.classList.contains('is-collapsed')) return false;
+      if (node === moreWrap) return includeMore && !node.classList.contains('is-empty');
+      return true;
+    }) as HTMLElement[];
+    return kids.reduce((sum, el, i) => sum + el.offsetWidth + (i > 0 ? gap : 0), 0);
+  };
+
+  const syncMoreItems = (collapsedIds: string[]) => {
+    if (!moreWrap) return;
+    const collapsed = new Set(collapsedIds);
+    moreWrap.querySelectorAll<HTMLElement>('[data-nav-more-item]').forEach((li) => {
+      const id = li.dataset.navMoreItem || '';
+      const show = collapsed.has(id);
+      li.hidden = !show;
+      const link = li.querySelector('a');
+      if (link) link.tabIndex = show ? 0 : -1;
+    });
+    const anyVisible = collapsedIds.length > 0;
+    moreWrap.classList.toggle('is-empty', !anyVisible);
+    if (!anyVisible) moreWrap.classList.remove('is-open');
+  };
+
+  const collapsedIdsOf = (els: HTMLElement[]) =>
+    els.filter((el) => el.classList.contains('is-collapsed')).map((el) => el.dataset.navOverflow || '');
+
+  const fitPrimaryNav = () => {
+    if (!primary || !headerRight || !moreWrap) return;
+    if (getComputedStyle(primary).display === 'none') return;
+
+    const overflowEls = [...primary.querySelectorAll<HTMLElement>('[data-nav-overflow]')].sort(
+      (a, b) => Number(a.dataset.navPriority || 0) - Number(b.dataset.navPriority || 0),
+    );
+
+    // Start fully collapsed (no overlap), then reveal highest-priority first.
+    overflowEls.forEach((el) => el.classList.add('is-collapsed'));
+    syncMoreItems(collapsedIdsOf(overflowEls));
+
+    const available =
+      headerRight.getBoundingClientRect().left - primary.getBoundingClientRect().left - SAFETY_PX;
+    if (available <= 0) return;
+
+    const revealOrder = [...overflowEls].reverse();
+    for (const el of revealOrder) {
+      el.classList.remove('is-collapsed');
+      const collapsedIds = collapsedIdsOf(overflowEls);
+      syncMoreItems(collapsedIds);
+      const width = primaryContentWidth(collapsedIds.length > 0);
+      if (width > available) {
+        el.classList.add('is-collapsed');
+        syncMoreItems(collapsedIdsOf(overflowEls));
+        break;
+      }
+    }
+  };
+
+  let fitRaf = 0;
+  const scheduleFit = () => {
+    cancelAnimationFrame(fitRaf);
+    fitRaf = requestAnimationFrame(fitPrimaryNav);
+  };
+
+  if (primary && headerRight && headerBar) {
+    fitPrimaryNav();
+    const ro = new ResizeObserver(scheduleFit);
+    ro.observe(headerBar);
+    ro.observe(headerRight);
+    window.addEventListener('resize', scheduleFit);
+    document.fonts?.ready?.then(scheduleFit);
+  }
 </script>
