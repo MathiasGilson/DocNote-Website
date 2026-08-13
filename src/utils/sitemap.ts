@@ -62,7 +62,10 @@ const getSitemapMeta = (page: string): { priority: string; changefreq: string } 
   if (landingSlugs.some((slug) => page === slug || page === `${slug}/`)) {
     return { priority: '0.8', changefreq: 'monthly' };
   }
-  if (page.startsWith('specialties/')) {
+  if (page === 'specialties' || page === 'specialties/' || page.startsWith('specialties/')) {
+    return { priority: '0.8', changefreq: 'monthly' };
+  }
+  if (page === 'solutions' || page === 'solutions/') {
     return { priority: '0.8', changefreq: 'monthly' };
   }
   return { priority: '0.5', changefreq: 'monthly' };
@@ -147,11 +150,12 @@ export const buildStaticUrlset = (): string => {
   return wrapUrlset(parts.join('\n'));
 };
 
-/** SEO landing pages + specialty family hubs. */
+/** SEO landing pages + specialty/solutions hubs. */
 export const buildLandingsUrlset = (): string => {
   const familyPages = specialtyFamilySlugs.map((slug) => getSpecialtyFamilyPath(slug).replace(/^\//, ''));
+  const hubPages = ['specialties', 'solutions', ...familyPages];
   return wrapUrlset(
-    pageEntries([...landingSlugs, ...familyPages], locales, {
+    pageEntries([...landingSlugs, ...hubPages], locales, {
       priority: '0.8',
       changefreq: 'monthly',
     }).join('\n')

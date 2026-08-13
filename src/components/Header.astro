@@ -27,6 +27,12 @@ import {
   specialtyFamilyIconMarkup,
   type SpecialtyFamilySlug,
 } from '../content/specialty-families';
+import {
+  getSolutionsHub,
+  getSpecialtiesHub,
+  SOLUTIONS_HUB_PATH,
+  SPECIALTIES_HUB_PATH,
+} from '../content/hubs';
 import { landingNavIconMarkup } from '../data/landing-nav-icons';
 
 interface Props {
@@ -80,6 +86,14 @@ function familyNavItem(slug: SpecialtyFamilySlug) {
 
 const solutionsLabel = t.nav.solutions || getNavGroupLabel('solutions', locale);
 const specialtiesLabel = t.nav.specialties || getNavGroupLabel('specialties', locale);
+const solutionsHubHref = getLocalizedPath(SOLUTIONS_HUB_PATH, locale);
+const specialtiesHubHref = getLocalizedPath(SPECIALTIES_HUB_PATH, locale);
+const solutionsHubActive = isActive(SOLUTIONS_HUB_PATH);
+const specialtiesHubActive = isActive(SPECIALTIES_HUB_PATH);
+const solutionsOpenMenuLabel = getSolutionsHub(locale).openMenuLabel;
+const specialtiesOpenMenuLabel = getSpecialtiesHub(locale).openMenuLabel;
+const solutionsViewAllLabel = getSolutionsHub(locale).viewAllLabel;
+const specialtiesViewAllLabel = getSpecialtiesHub(locale).viewAllLabel;
 
 const solutionsColumns = navSolutionsColumns.map((col) => ({
   id: col.id,
@@ -89,8 +103,8 @@ const solutionsColumns = navSolutionsColumns.map((col) => ({
 
 const specialtiesItems = specialtyFamilySlugs.map(familyNavItem);
 
-const solutionsOpen = groupActive(navSolutionsSlugs);
-const specialtiesOpen = specialtiesItems.some((item) => item.active);
+const solutionsOpen = solutionsHubActive || groupActive(navSolutionsSlugs);
+const specialtiesOpen = specialtiesHubActive || specialtiesItems.some((item) => item.active);
 
 const blogActive = isActive('/blog') || currentPath.includes('/blog/');
 const patientHref = getLocalizedPath('/patient', locale);
@@ -130,18 +144,21 @@ const mobileLinkClass = (active: boolean) =>
           </a>
 
           <div class:list={['nav-dd', solutionsOpen && 'is-current']} data-nav-dd data-nav-keep>
-            <button
-              type="button"
-              class:list={['nav-dd-trigger', solutionsOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
-              aria-expanded="false"
-              aria-haspopup="true"
-              data-nav-dd-trigger
-            >
-              <span>{solutionsLabel}</span>
-              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
-              </svg>
-            </button>
+            <div class:list={['nav-dd-trigger', solutionsOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}>
+              <a href={solutionsHubHref} class="nav-dd-label-link">{solutionsLabel}</a>
+              <button
+                type="button"
+                class="nav-dd-chevron-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label={solutionsOpenMenuLabel}
+                data-nav-dd-trigger
+              >
+                <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+            </div>
             <div class="nav-dd-panel nav-dd-panel--mega" data-nav-dd-panel role="menu">
               <div class="nav-mega">
                 {
@@ -181,22 +198,26 @@ const mobileLinkClass = (active: boolean) =>
                   ))
                 }
               </div>
+              <a href={solutionsHubHref} class="nav-dd-viewall" role="menuitem">{solutionsViewAllLabel}</a>
             </div>
           </div>
 
           <div class:list={['nav-dd', specialtiesOpen && 'is-current']} data-nav-dd data-nav-keep>
-            <button
-              type="button"
-              class:list={['nav-dd-trigger', specialtiesOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
-              aria-expanded="false"
-              aria-haspopup="true"
-              data-nav-dd-trigger
-            >
-              <span>{specialtiesLabel}</span>
-              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
-              </svg>
-            </button>
+            <div class:list={['nav-dd-trigger', specialtiesOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}>
+              <a href={specialtiesHubHref} class="nav-dd-label-link">{specialtiesLabel}</a>
+              <button
+                type="button"
+                class="nav-dd-chevron-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label={specialtiesOpenMenuLabel}
+                data-nav-dd-trigger
+              >
+                <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+            </div>
             <div class="nav-dd-panel nav-dd-panel--specialties" data-nav-dd-panel role="menu">
               <div class="nav-spec-grid">
                 {
@@ -227,6 +248,7 @@ const mobileLinkClass = (active: boolean) =>
                   ))
                 }
               </div>
+              <a href={specialtiesHubHref} class="nav-dd-viewall" role="menuitem">{specialtiesViewAllLabel}</a>
             </div>
           </div>
 
@@ -329,13 +351,26 @@ const mobileLinkClass = (active: boolean) =>
         <a href={getLocalizedPath('/tutorial', locale)} class={mobileLinkClass(isActive('/tutorial'))}>{t.nav.tutorial}</a>
 
         <div class:list={['nav-mgroup', solutionsOpen && 'is-open']} data-nav-mgroup>
-          <button type="button" class="nav-mgroup-trigger" data-nav-mgroup-trigger aria-expanded={solutionsOpen ? 'true' : 'false'}>
-            <span class:list={[solutionsOpen ? 'nav-active' : '']}>{solutionsLabel}</span>
-            <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+          <div class="nav-mgroup-trigger-row">
+            <a href={solutionsHubHref} class:list={[mobileLinkClass(solutionsHubActive || solutionsOpen), 'nav-mgroup-hub']}>
+              {solutionsLabel}
+            </a>
+            <button
+              type="button"
+              class="nav-mgroup-chevron-btn"
+              data-nav-mgroup-trigger
+              aria-expanded={solutionsOpen ? 'true' : 'false'}
+              aria-label={solutionsOpenMenuLabel}
+            >
+              <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+          </div>
           <div class="nav-mgroup-panel">
+            <a href={solutionsHubHref} class:list={[mobileLinkClass(solutionsHubActive), 'nav-m-item nav-m-viewall']}>
+              {solutionsViewAllLabel}
+            </a>
             {
               solutionsColumns.map((col) => (
                 <div class="nav-mgroup-section">
@@ -368,13 +403,26 @@ const mobileLinkClass = (active: boolean) =>
         </div>
 
         <div class:list={['nav-mgroup', specialtiesOpen && 'is-open']} data-nav-mgroup>
-          <button type="button" class="nav-mgroup-trigger" data-nav-mgroup-trigger aria-expanded={specialtiesOpen ? 'true' : 'false'}>
-            <span class:list={[specialtiesOpen ? 'nav-active' : '']}>{specialtiesLabel}</span>
-            <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+          <div class="nav-mgroup-trigger-row">
+            <a href={specialtiesHubHref} class:list={[mobileLinkClass(specialtiesHubActive || specialtiesOpen), 'nav-mgroup-hub']}>
+              {specialtiesLabel}
+            </a>
+            <button
+              type="button"
+              class="nav-mgroup-chevron-btn"
+              data-nav-mgroup-trigger
+              aria-expanded={specialtiesOpen ? 'true' : 'false'}
+              aria-label={specialtiesOpenMenuLabel}
+            >
+              <svg class="nav-mgroup-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+          </div>
           <div class="nav-mgroup-panel">
+            <a href={specialtiesHubHref} class:list={[mobileLinkClass(specialtiesHubActive), 'nav-m-item nav-m-viewall']}>
+              {specialtiesViewAllLabel}
+            </a>
             {
               specialtiesItems.map((item) => (
                 <a href={item.href} class:list={[mobileLinkClass(item.active), 'nav-m-item']}>
@@ -537,14 +585,13 @@ const mobileLinkClass = (active: boolean) =>
   .nav-dd-trigger {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.15rem;
     font-size: 0.9375rem;
     font-weight: 500;
     white-space: nowrap;
     background: none;
     border: 0;
     padding: 0;
-    cursor: pointer;
     transition: color 0.15s ease;
   }
 
@@ -554,9 +601,50 @@ const mobileLinkClass = (active: boolean) =>
     }
   }
 
+  .nav-dd-label-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-dd-label-link:hover {
+    color: #111827;
+  }
+
+  .nav-dd-chevron-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0.15rem;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    border-radius: 0.35rem;
+  }
+
+  .nav-dd-chevron-btn:hover {
+    background: rgba(15, 23, 42, 0.05);
+  }
+
   .nav-dd-chevron {
     flex-shrink: 0;
     transition: transform 0.2s ease;
+  }
+
+  .nav-dd-viewall {
+    display: block;
+    margin-top: 0.55rem;
+    padding: 0.55rem 0.7rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--dn-primary-ink, #3b1f6e);
+    text-decoration: none;
+  }
+
+  .nav-dd-viewall:hover {
+    background: rgba(var(--dn-primary-rgb), 0.07);
   }
 
   .nav-dd.is-open .nav-dd-chevron,
@@ -753,25 +841,43 @@ const mobileLinkClass = (active: boolean) =>
     background: rgba(var(--dn-primary-rgb), 0.14);
   }
 
-  .nav-mgroup-trigger {
+  .nav-mgroup-trigger-row {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    background: none;
-    border: 0;
+  }
+
+  .nav-mgroup-hub {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .nav-mgroup-chevron-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0;
     padding: 0;
-    font-size: 1.125rem;
-    font-weight: 500;
+    border: 0;
+    border-radius: 0.55rem;
+    background: rgba(15, 23, 42, 0.04);
     color: #4b5563;
     cursor: pointer;
-    text-align: left;
   }
 
   .nav-mgroup-chevron {
     flex-shrink: 0;
     transition: transform 0.2s ease;
+  }
+
+  .nav-m-viewall {
+    font-weight: 600;
+    color: var(--dn-primary-ink, #3b1f6e) !important;
   }
 
   .nav-mgroup.is-open .nav-mgroup-chevron {

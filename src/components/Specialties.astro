@@ -9,6 +9,7 @@ import {
   getSpecialtyFamilyNavLabel,
   getSpecialtyFamilyPath,
 } from '../content/specialty-families'
+import { SPECIALTIES_HUB_PATH } from '../content/hubs'
 import { getLocalizedPath, type Locale } from '../utils/i18n'
 
 interface Props {
@@ -22,6 +23,7 @@ const labels: string[] = t.specialties.items ?? []
 const mid = Math.ceil(labels.length / 2)
 const countLabel = t.specialties.countLabel || '61'
 const familiesCta = t.specialties.familiesCta || (lang === 'fr' ? 'Voir les 7 familles' : 'Browse 7 families')
+const specialtiesHubHref = getLocalizedPath(SPECIALTIES_HUB_PATH, lang)
 
 const chips = labels.map((label, i) => {
   const key = specialtyKeyAt(i)
@@ -66,7 +68,11 @@ const rowB = chips.slice(mid)
                 <a href={f.href} class="specialties-family-link">{f.label}</a>
               ))}
             </div>
-            <p class="mt-3 text-sm text-gray-400">{familiesCta}</p>
+            <p class="mt-3 text-sm text-gray-400">
+              <a href={specialtiesHubHref} class="specialties-hub-cta hover:text-primary-700 transition-colors underline-offset-2 hover:underline">
+                {familiesCta}
+              </a>
+            </p>
           </div>
           <div class="specialties-count" aria-hidden="true">
             <span class="specialties-count-num">{countLabel}</span>

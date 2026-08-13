@@ -22,6 +22,7 @@ import {
   getSpecialtyFamily,
   getSpecialtyFamilyPath,
 } from '../../content/specialty-families';
+import { SOLUTIONS_HUB_PATH, SPECIALTIES_HUB_PATH } from '../../content/hubs';
 import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
 
 interface Props {
@@ -45,6 +46,10 @@ const featureKeys = landingFeatureKeys[slug];
 const useZigZagBenefits = landingZigZagSlugs.has(slug);
 
 const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
+const solutionsCrumb =
+  lang === 'fr' ? 'Solutions' : lang === 'de' ? 'Lösungen' : 'Solutions';
+const specialtiesCrumb =
+  lang === 'fr' ? 'Spécialités' : lang === 'de' ? 'Fachgebiete' : 'Specialties';
 const faqHeading =
   lang === 'fr' ? 'Questions fréquentes' : lang === 'de' ? 'Häufige Fragen' : 'Frequently asked questions';
 const faqSubtitle =
@@ -75,10 +80,39 @@ const ctaHref = (key: typeof meta.primaryCta) => {
 const primaryHref = ctaHref(meta.primaryCta);
 const secondaryHref = ctaHref(meta.secondaryCta);
 
-const breadcrumbLd = buildBreadcrumbLd([
-  { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
-  { name: p.title, url: absoluteLocalizedUrl(`/${slug}/`, lang) },
-]);
+const relatedSlugs = meta.related.filter((s) => s !== slug);
+const parentFamilySlug =
+  meta.type === 'specialty' ? familyBySpecialtyLanding[slug as SpecialtyLandingSlug] : undefined;
+const parentFamily = parentFamilySlug ? getSpecialtyFamily(parentFamilySlug, lang) : null;
+const parentFamilyHref = parentFamilySlug
+  ? getLocalizedPath(getSpecialtyFamilyPath(parentFamilySlug), lang)
+  : null;
+const familyHubLabel =
+  lang === 'fr' ? 'Famille de spécialités' : lang === 'de' ? 'Fachfamilie' : 'Specialty family';
+const pageLabel = p.navLabel || p.hero.title;
+const isSpecialtyLanding = meta.type === 'specialty';
+
+const breadcrumbLd = buildBreadcrumbLd(
+  isSpecialtyLanding
+    ? [
+        { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+        { name: specialtiesCrumb, url: absoluteLocalizedUrl(SPECIALTIES_HUB_PATH, lang) },
+        ...(parentFamilySlug
+          ? [
+              {
+                name: parentFamily!.navLabel,
+                url: absoluteLocalizedUrl(getSpecialtyFamilyPath(parentFamilySlug), lang),
+              },
+            ]
+          : []),
+        { name: pageLabel, url: absoluteLocalizedUrl(`/${slug}/`, lang) },
+      ]
+    : [
+        { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+        { name: solutionsCrumb, url: absoluteLocalizedUrl(SOLUTIONS_HUB_PATH, lang) },
+        { name: pageLabel, url: absoluteLocalizedUrl(`/${slug}/`, lang) },
+      ]
+);
 
 const faqLd =
   p.faq && p.faq.length
@@ -97,16 +131,6 @@ const faqLd =
     : null;
 
 const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
-
-const relatedSlugs = meta.related.filter((s) => s !== slug);
-const parentFamilySlug =
-  meta.type === 'specialty' ? familyBySpecialtyLanding[slug as SpecialtyLandingSlug] : undefined;
-const parentFamily = parentFamilySlug ? getSpecialtyFamily(parentFamilySlug, lang) : null;
-const parentFamilyHref = parentFamilySlug
-  ? getLocalizedPath(getSpecialtyFamilyPath(parentFamilySlug), lang)
-  : null;
-const familyHubLabel =
-  lang === 'fr' ? 'Famille de spécialités' : lang === 'de' ? 'Fachfamilie' : 'Specialty family';
 ---
 
 <Layout title={p.title} description={p.description} jsonLd={jsonLd}>
@@ -117,7 +141,33 @@ const familyHubLabel =
           <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
         </li>
         <li aria-hidden="true">/</li>
-        <li class="text-gray-900 font-medium">{p.navLabel || p.hero.title}</li>
+        {isSpecialtyLanding ? (
+          <>
+            <li>
+              <a href={getLocalizedPath(SPECIALTIES_HUB_PATH, lang)} class="hover:text-gray-900 transition-colors">
+                {specialtiesCrumb}
+              </a>
+            </li>
+            {parentFamily && parentFamilyHref ? (
+              <>
+                <li aria-hidden="true">/</li>
+                <li>
+                  <a href={parentFamilyHref} class="hover:text-gray-900 transition-colors">
+                    {parentFamily.navLabel}
+                  </a>
+                </li>
+              </>
+            ) : null}
+          </>
+        ) : (
+          <li>
+            <a href={getLocalizedPath(SOLUTIONS_HUB_PATH, lang)} class="hover:text-gray-900 transition-colors">
+              {solutionsCrumb}
+            </a>
+          </li>
+        )}
+        <li aria-hidden="true">/</li>
+        <li class="text-gray-900 font-medium">{pageLabel}</li>
       </ol>
     </nav>
   </div>

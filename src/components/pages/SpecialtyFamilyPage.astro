@@ -11,6 +11,7 @@ import {
   specialtyFamilyMeta,
   type SpecialtyFamilySlug,
 } from '../../content/specialty-families';
+import { SPECIALTIES_HUB_PATH } from '../../content/hubs';
 import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
 
 interface Props {
@@ -41,7 +42,7 @@ const secondaryUrl = /contact|contacter/i.test(p.cta.secondary)
 const familyPath = getSpecialtyFamilyPath(slug);
 const breadcrumbLd = buildBreadcrumbLd([
   { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
-  { name: specialtiesCrumb, url: absoluteLocalizedUrl(familyPath, lang) },
+  { name: specialtiesCrumb, url: absoluteLocalizedUrl(SPECIALTIES_HUB_PATH, lang) },
   { name: p.navLabel, url: absoluteLocalizedUrl(familyPath, lang) },
 ]);
 
@@ -57,7 +58,11 @@ const relatedLinks = meta.relatedLandings;
           <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
         </li>
         <li aria-hidden="true">/</li>
-        <li class="text-gray-500">{specialtiesCrumb}</li>
+        <li>
+          <a href={getLocalizedPath(SPECIALTIES_HUB_PATH, lang)} class="hover:text-gray-900 transition-colors">
+            {specialtiesCrumb}
+          </a>
+        </li>
         <li aria-hidden="true">/</li>
         <li class="text-gray-900 font-medium">{p.navLabel}</li>
       </ol>

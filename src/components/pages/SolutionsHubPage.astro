@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../ui/PageHero.astro';
+import '../../styles/landing-page.css';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import {
+  getLandingNavDesc,
+  getLandingNavLabel,
+  getNavSolutionsColumnLabel,
+  navSolutionsColumns,
+} from '../../content/landings';
+import { getSolutionsHub, SOLUTIONS_HUB_PATH } from '../../content/hubs';
+import { landingNavIconMarkup } from '../../data/landing-nav-icons';
+import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const lang = locale;
+const p = getSolutionsHub(lang);
+
+const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
+const solutionsLabel =
+  lang === 'fr' ? 'Solutions' : lang === 'de' ? 'Lösungen' : 'Solutions';
+
+const hubPath = SOLUTIONS_HUB_PATH;
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteLocalizedUrl('/', lang) },
+  { name: solutionsLabel, url: absoluteLocalizedUrl(hubPath, lang) },
+]);
+
+const columns = navSolutionsColumns.map((col) => ({
+  id: col.id,
+  title: getNavSolutionsColumnLabel(col.id, lang),
+  items: col.slugs.map((slug) => ({
+    slug,
+    href: getLocalizedPath(`/${slug}`, lang),
+    label: getLandingNavLabel(slug, lang),
+    desc: getLandingNavDesc(slug, lang),
+    icon: landingNavIconMarkup(slug),
+  })),
+}));
+
+const primaryHref = getLocalizedPath('/tutorial', lang);
+const secondaryHref = getLocalizedPath('/pricing', lang);
+---
+
+<Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>
+  <div class="lp-crumb-bar pt-28 sm:pt-32">
+    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center justify-center gap-2">
+        <li>
+          <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li class="text-gray-900 font-medium">{solutionsLabel}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <PageHero
+    eyebrow={p.hero.badge}
+    title={p.hero.title}
+    subtitle={p.hero.subtitle}
+    lead={p.hero.lead}
+    compact
+  >
+    <a href={primaryHref} class="btn-primary btn-primary-sm">{p.cta.primary}</a>
+    <a
+      href={secondaryHref}
+      class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+    >
+      {p.cta.secondary}
+    </a>
+  </PageHero>
+
+  <section class="relative py-14 sm:py-20 lp-section-soft">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10 sm:mb-12 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.columnsBadge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.columnsTitle}
+        </h2>
+        <p class="mt-3 text-base text-gray-500 leading-relaxed">{p.columnsSubtitle}</p>
+      </div>
+
+      <div class="space-y-12 sm:space-y-14">
+        {columns.map((col) => (
+          <div class="reveal">
+            <h3 class="hub-col-heading">{col.title}</h3>
+            <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {col.items.map((item, i) => (
+                <a
+                  href={item.href}
+                  class:list={[
+                    'lp-card hub-card',
+                    i % 3 === 0 && 'reveal-delay-1',
+                    i % 3 === 1 && 'reveal-delay-2',
+                    i % 3 === 2 && 'reveal-delay-3',
+                  ]}
+                >
+                  <span class="hub-card-icon" aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      set:html={item.icon}
+                    />
+                  </span>
+                  <h4 class="lp-card-title">{item.label}</h4>
+                  {item.desc ? <p class="lp-card-text">{item.desc}</p> : null}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-14 sm:py-20 overflow-hidden bg-white">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lp-cta-shell reveal">
+        <div class="max-w-xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 leading-snug tracking-tight">
+            {p.cta.title}
+          </h2>
+          <p class="mt-3 text-base text-gray-600 leading-relaxed">{p.cta.body}</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href={primaryHref} class="btn-primary btn-primary-sm">{p.cta.primary}</a>
+            <a
+              href={secondaryHref}
+              class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+            >
+              {p.cta.secondary}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hub-col-heading {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+  }
+
+  .hub-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .hub-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.35rem;
+    height: 2.35rem;
+    margin-bottom: 0.85rem;
+    border-radius: 0.65rem;
+    background: rgba(var(--dn-primary-rgb), 0.1);
+    color: var(--dn-primary-ink, #3b1f6e);
+  }
+</style>
