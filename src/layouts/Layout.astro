@@ -13,6 +13,7 @@ import {
   OG_IMAGE,
   OG_IMAGE_HEIGHT,
   OG_IMAGE_WIDTH,
+  ROBOTS_META_CONTENT,
   SITE_URL,
   withTrailingSlash,
 } from '../utils/seo';
@@ -181,7 +182,7 @@ const softwareApplicationLd = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="robots" content={ROBOTS_META_CONTENT} />
     <meta name="author" content="DocNote — Gilson GmbH" />
     {import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION && (
       <meta name="google-site-verification" content={import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION} />

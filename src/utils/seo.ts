@@ -8,6 +8,21 @@ const DEFAULT_SITE_URL = 'https://docnote.care';
 export const SITE_URL = String(
   import.meta.env.PUBLIC_SITE_URL || import.meta.env.SITE || DEFAULT_SITE_URL
 ).replace(/\/+$/, '');
+
+/**
+ * Preview SEO strategy (DocNote + MailMerge Deploy DocNote Website Preview):
+ * Keep PUBLIC_SITE_URL as the workers.dev host so links/canonicals match the preview
+ * origin, but never encourage indexing — meta robots noindex + robots.txt Disallow.
+ * Production (docnote.care, no PUBLIC_IS_PREVIEW) stays index,follow.
+ */
+export const IS_PREVIEW_DEPLOY =
+  String(import.meta.env.PUBLIC_IS_PREVIEW || '').toLowerCase() === 'true' ||
+  /workers\.dev/i.test(SITE_URL);
+
+export const ROBOTS_META_CONTENT = IS_PREVIEW_DEPLOY
+  ? 'noindex,nofollow,noarchive,nosnippet'
+  : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
+
 export const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;

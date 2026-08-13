@@ -51,6 +51,7 @@ jobs:
       - name: Build
         env:
           PUBLIC_SITE_URL: ${{ steps.preview-name.outputs.site_url }}
+          PUBLIC_IS_PREVIEW: "true"
         run: npm run build
 
       # Workers `wrangler deploy` fails if pages_build_output_dir is present (Pages project).

@@ -1,12 +1,16 @@
 /**
- * Tasksboard-style robots.txt:
- * Allow all, single sitemap index, Content-Signal for AI crawlers.
+ * Production: Allow all + sitemap.
+ * Preview (workers.dev / PUBLIC_IS_PREVIEW): Disallow all — no sitemap pointer.
  */
-import { SITE_URL as SITE } from '../utils/seo';
+import { IS_PREVIEW_DEPLOY, SITE_URL as SITE } from '../utils/seo';
 
 export const prerender = true;
 
-const body = `User-agent: *
+const body = IS_PREVIEW_DEPLOY
+  ? `User-agent: *
+Disallow: /
+`
+  : `User-agent: *
 Allow: /
 
 Sitemap: ${SITE}/sitemap.xml
@@ -19,5 +23,6 @@ export const GET = () =>
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'public, max-age=3600',
+      ...(IS_PREVIEW_DEPLOY ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
     },
   });
