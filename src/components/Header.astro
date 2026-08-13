@@ -144,21 +144,16 @@ const mobileLinkClass = (active: boolean) =>
           </a>
 
           <div class:list={['nav-dd', solutionsOpen && 'is-current']} data-nav-dd data-nav-keep>
-            <div class:list={['nav-dd-trigger', solutionsOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}>
-              <a href={solutionsHubHref} class="nav-dd-label-link">{solutionsLabel}</a>
-              <button
-                type="button"
-                class="nav-dd-chevron-btn"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-label={solutionsOpenMenuLabel}
-                data-nav-dd-trigger
-              >
-                <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
-                </svg>
-              </button>
-            </div>
+            <a
+              href={solutionsHubHref}
+              class:list={['nav-dd-trigger', solutionsOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
+              aria-haspopup="true"
+            >
+              <span>{solutionsLabel}</span>
+              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
             <div class="nav-dd-panel nav-dd-panel--mega" data-nav-dd-panel role="menu">
               <div class="nav-mega">
                 {
@@ -203,21 +198,16 @@ const mobileLinkClass = (active: boolean) =>
           </div>
 
           <div class:list={['nav-dd', specialtiesOpen && 'is-current']} data-nav-dd data-nav-keep>
-            <div class:list={['nav-dd-trigger', specialtiesOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}>
-              <a href={specialtiesHubHref} class="nav-dd-label-link">{specialtiesLabel}</a>
-              <button
-                type="button"
-                class="nav-dd-chevron-btn"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-label={specialtiesOpenMenuLabel}
-                data-nav-dd-trigger
-              >
-                <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
-                </svg>
-              </button>
-            </div>
+            <a
+              href={specialtiesHubHref}
+              class:list={['nav-dd-trigger', specialtiesOpen ? 'nav-active' : 'text-gray-600 hover:text-gray-900']}
+              aria-haspopup="true"
+            >
+              <span>{specialtiesLabel}</span>
+              <svg class="nav-dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
             <div class="nav-dd-panel nav-dd-panel--specialties" data-nav-dd-panel role="menu">
               <div class="nav-spec-grid">
                 {
@@ -592,39 +582,20 @@ const mobileLinkClass = (active: boolean) =>
     background: none;
     border: 0;
     padding: 0;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
     transition: color 0.15s ease;
+  }
+
+  a.nav-dd-trigger:hover {
+    color: #111827;
   }
 
   @media (min-width: 1536px) {
     .nav-dd-trigger {
       font-size: 1.0625rem;
     }
-  }
-
-  .nav-dd-label-link {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .nav-dd-label-link:hover {
-    color: #111827;
-  }
-
-  .nav-dd-chevron-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0.15rem;
-    border: 0;
-    background: none;
-    color: inherit;
-    cursor: pointer;
-    border-radius: 0.35rem;
-  }
-
-  .nav-dd-chevron-btn:hover {
-    background: rgba(15, 23, 42, 0.05);
   }
 
   .nav-dd-chevron {
@@ -933,6 +904,7 @@ const mobileLinkClass = (active: boolean) =>
     mobileMenu?.classList.toggle('hidden');
   });
 
+  // Click-toggle only for button triggers (More menu). Hub groups open on hover/focus-within via CSS.
   const closeDesktopDropdowns = (except?: HTMLElement | null) => {
     document.querySelectorAll<HTMLElement>('[data-nav-dd]').forEach((dd) => {
       if (except && dd === except) return;
@@ -942,8 +914,9 @@ const mobileLinkClass = (active: boolean) =>
   };
 
   document.querySelectorAll<HTMLElement>('[data-nav-dd]').forEach((dd) => {
-    const trigger = dd.querySelector<HTMLButtonElement>('[data-nav-dd-trigger]');
-    trigger?.addEventListener('click', (e) => {
+    const trigger = dd.querySelector<HTMLButtonElement>('button[data-nav-dd-trigger]');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
       e.stopPropagation();
       const willOpen = !dd.classList.contains('is-open');
       closeDesktopDropdowns(willOpen ? dd : null);
