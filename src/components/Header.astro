@@ -92,8 +92,6 @@ const solutionsHubActive = isActive(SOLUTIONS_HUB_PATH);
 const specialtiesHubActive = isActive(SPECIALTIES_HUB_PATH);
 const solutionsOpenMenuLabel = getSolutionsHub(locale).openMenuLabel;
 const specialtiesOpenMenuLabel = getSpecialtiesHub(locale).openMenuLabel;
-const solutionsViewAllLabel = getSolutionsHub(locale).viewAllLabel;
-const specialtiesViewAllLabel = getSpecialtiesHub(locale).viewAllLabel;
 
 const solutionsColumns = navSolutionsColumns.map((col) => ({
   id: col.id,
@@ -193,7 +191,6 @@ const mobileLinkClass = (active: boolean) =>
                   ))
                 }
               </div>
-              <a href={solutionsHubHref} class="nav-dd-viewall" role="menuitem">{solutionsViewAllLabel}</a>
             </div>
           </div>
 
@@ -238,7 +235,6 @@ const mobileLinkClass = (active: boolean) =>
                   ))
                 }
               </div>
-              <a href={specialtiesHubHref} class="nav-dd-viewall" role="menuitem">{specialtiesViewAllLabel}</a>
             </div>
           </div>
 
@@ -358,9 +354,6 @@ const mobileLinkClass = (active: boolean) =>
             </button>
           </div>
           <div class="nav-mgroup-panel">
-            <a href={solutionsHubHref} class:list={[mobileLinkClass(solutionsHubActive), 'nav-m-item nav-m-viewall']}>
-              {solutionsViewAllLabel}
-            </a>
             {
               solutionsColumns.map((col) => (
                 <div class="nav-mgroup-section">
@@ -410,9 +403,6 @@ const mobileLinkClass = (active: boolean) =>
             </button>
           </div>
           <div class="nav-mgroup-panel">
-            <a href={specialtiesHubHref} class:list={[mobileLinkClass(specialtiesHubActive), 'nav-m-item nav-m-viewall']}>
-              {specialtiesViewAllLabel}
-            </a>
             {
               specialtiesItems.map((item) => (
                 <a href={item.href} class:list={[mobileLinkClass(item.active), 'nav-m-item']}>
@@ -601,21 +591,6 @@ const mobileLinkClass = (active: boolean) =>
   .nav-dd-chevron {
     flex-shrink: 0;
     transition: transform 0.2s ease;
-  }
-
-  .nav-dd-viewall {
-    display: block;
-    margin-top: 0.55rem;
-    padding: 0.55rem 0.7rem;
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--dn-primary-ink, #3b1f6e);
-    text-decoration: none;
-  }
-
-  .nav-dd-viewall:hover {
-    background: rgba(var(--dn-primary-rgb), 0.07);
   }
 
   .nav-dd.is-open .nav-dd-chevron,
@@ -844,11 +819,6 @@ const mobileLinkClass = (active: boolean) =>
   .nav-mgroup-chevron {
     flex-shrink: 0;
     transition: transform 0.2s ease;
-  }
-
-  .nav-m-viewall {
-    font-weight: 600;
-    color: var(--dn-primary-ink, #3b1f6e) !important;
   }
 
   .nav-mgroup.is-open .nav-mgroup-chevron {
