@@ -30,11 +30,11 @@ export const familyVisualMeta: Record<SpecialtyFamilySlug, FamilyVisualMeta> = {
   },
   medical: {
     recipe: 'vocab',
-    image: '/images/remise-prix-lumiere-2023.jpg',
+    image: '/images/visite-medicale.jpg',
   },
   'primary-care': {
     recipe: 'pace',
-    image: '/images/visite-medicale.jpg',
+    image: '/images/dre_alice_gilson.jpg',
     mediaRight: true,
   },
   'acute-care': {
