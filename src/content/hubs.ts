@@ -189,9 +189,9 @@ const solutionsHubByLocale: Partial<Record<Locale, SolutionsHubCopy>> & {
   fr: SolutionsHubCopy
 } = {
   en: {
-    title: 'DocNote solutions | Who it is for and what makes it different',
+    title: 'AI Medical Scribe Solutions | DocNote',
     description:
-      'DocNote solutions for private practice, hospitals and departments, medical secretaries and clinic groups — plus what sets it apart: coding and billing suggestions, EHR integration, your Word templates, clinical context, day hospital, 61 specialties in 21 languages.',
+      'Find your DocNote solution by audience — private practice, hospitals, secretaries, clinic groups — or by differentiator: coding, EHR integration, templates.',
     hero: {
       badge: 'Solutions',
       title: 'Built for someone like you — and different from the rest',
