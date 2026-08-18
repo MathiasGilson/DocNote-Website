@@ -1,10 +1,28 @@
 ---
+import { getLocalizedPath, isValidLocale, type Locale } from "../utils/i18n"
+
 interface Props {
   translations: any
+  locale?: string
 }
 
-const { translations: t } = Astro.props
+const { translations: t, locale: rawLocale = "en" } = Astro.props
+const locale: Locale = isValidLocale(rawLocale) ? rawLocale : "en"
 const s = t.specificities
+
+/** Each homepage card is the hook of a Solutions page — link through to it. */
+const SPEC_LANDING: Record<string, string> = {
+  coding: "/medical-coding-and-billing",
+  tardoc: "/medical-coding-and-billing",
+  ehr: "/ehr-integration",
+  templates: "/custom-word-templates",
+  context: "/clinical-context",
+  hospital: "/hospital-documentation",
+  sync: "/for-private-practice",
+  dayHospital: "/day-hospital-documentation",
+}
+const specHref = (key: string) => getLocalizedPath(SPEC_LANDING[key] ?? "/solutions", locale)
+const readMoreLabel: string = t.blog?.readMore || "Read more"
 
 const keys = [
   "coding",
@@ -67,6 +85,10 @@ const keys = [
         >
           {s.coding.description}
         </p>
+
+        <a class="spec-more-link" href={specHref("coding")} data-spec-link>
+          {readMoreLabel} <span aria-hidden="true">→</span>
+        </a>
 
         <div class="spec-stage mt-5" data-spec-stage data-active="coding">
           <div class="spec-stage-panel" data-stage="coding">
@@ -195,17 +217,19 @@ const keys = [
       description: s.coding.description,
       descriptionCh: s.coding.descriptionCh,
       descriptionRow: s.coding.descriptionRow,
+      href: specHref("coding"),
     },
-    tardoc: { title: s.tardoc.title, impact: s.tardoc.impact, description: s.tardoc.description },
-    ehr: { title: s.ehr.title, impact: s.ehr.impact, description: s.ehr.description },
-    templates: { title: s.templates.title, impact: s.templates.impact, description: s.templates.description },
-    context: { title: s.context.title, impact: s.context.impact, description: s.context.description },
-    hospital: { title: s.hospital.title, impact: s.hospital.impact, description: s.hospital.description },
-    sync: { title: s.sync.title, impact: s.sync.impact, description: s.sync.description },
+    tardoc: { title: s.tardoc.title, impact: s.tardoc.impact, description: s.tardoc.description, href: specHref("tardoc") },
+    ehr: { title: s.ehr.title, impact: s.ehr.impact, description: s.ehr.description, href: specHref("ehr") },
+    templates: { title: s.templates.title, impact: s.templates.impact, description: s.templates.description, href: specHref("templates") },
+    context: { title: s.context.title, impact: s.context.impact, description: s.context.description, href: specHref("context") },
+    hospital: { title: s.hospital.title, impact: s.hospital.impact, description: s.hospital.description, href: specHref("hospital") },
+    sync: { title: s.sync.title, impact: s.sync.impact, description: s.sync.description, href: specHref("sync") },
     dayHospital: {
       title: s.dayHospital.title,
       impact: s.dayHospital.impact,
       description: s.dayHospital.description,
+      href: specHref("dayHospital"),
     },
   })}
 />
@@ -222,6 +246,7 @@ const keys = [
     const titleEl = root.querySelector("[data-spec-title]")
     const impactEl = root.querySelector("[data-spec-impact]")
     const descEl = root.querySelector("[data-spec-description]")
+    const linkEl = root.querySelector("[data-spec-link]") as HTMLAnchorElement | null
     const stage = root.querySelector("[data-spec-stage]")
     const panels = root.querySelectorAll("[data-stage]")
     let currency = "EUR"
@@ -279,6 +304,7 @@ const keys = [
       if (titleEl) titleEl.textContent = item.title
       if (impactEl) impactEl.textContent = item.impact
       if (descEl) descEl.textContent = resolveDescription(key)
+      if (linkEl && item.href) linkEl.href = item.href
 
       panels.forEach((panel) => {
         const match = panel.getAttribute("data-stage") === key
@@ -507,6 +533,22 @@ const keys = [
     border: 1px solid rgba(15, 23, 42, 0.06);
     border-radius: 0.65rem;
     padding: 0.9rem 1rem;
+  }
+
+  .spec-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.85rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--dn-primary-ink, #3b1f6e);
+    text-decoration: none;
+  }
+
+  .spec-more-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .spec-impact-label {
