@@ -1,6 +1,6 @@
 import { type Locale } from '../utils/i18n'
 import { specialtyLandingSlugs } from './landings'
-import { solutionsHubCopy } from '../utils/inline-content'
+import { solutionsHubCopy, specialtiesHubCopy, withEnFallback } from '../utils/inline-content'
 import type { FamilyRecipe } from './family-visuals'
 
 export const SPECIALTIES_HUB_PATH = '/specialties'
@@ -72,117 +72,12 @@ export type SolutionsHubCopy = {
   openMenuLabel: string
 }
 
-const specialtiesHubByLocale: Partial<Record<Locale, HubCopy>> & { en: HubCopy; fr: HubCopy } = {
-  en: {
-    title: 'AI medical scribe by specialty | DocNote',
-    description:
-      'Browse DocNote specialty families — surgical, medical, primary care, acute care, diagnostics, and allied health. 61 specialties, 227 templates, Swiss-hosted.',
-    hero: {
-      badge: 'Specialty Atlas',
-      title: 'Documentation written for your specialty',
-      subtitle: 'Seven family hubs — not one generic note repainted for every trade.',
-      lead: 'Pick the family that matches how you work. Each hub lists the specialty vocabulary, templates, and deep landings built for that path of care.',
-    },
-    media: {
-      badge: 'In the atlas',
-      title: 'Families mirror how care actually runs',
-      body: 'Surgical pathways, clinic pace, unit handoffs, diagnostic dictation — each family page uses a different visual recipe so the docs match the job.',
-      caption: '61 specialties · 7 families · templates that follow the path of care.',
-      imageAlt: 'Hospital corridor and clinical setting',
-    },
-    stats: [
-      { value: '61', label: 'Specialties' },
-      { value: '227', label: 'Templates' },
-      { value: '7', label: 'Families' },
-    ],
-    statsLine: '61 specialties · 227 templates · 7 specialty families',
-    featured: {
-      badge: 'Featured path',
-      title: 'Surgical family + AI operative report',
-      body: 'Theatre to coded discharge in one pathway — then open the operative-report landing when the case ends.',
-      primary: 'Open Surgical family',
-      secondary: 'AI operative report',
-    },
-    familiesBadge: 'Families',
-    familiesTitle: 'Seven specialty families',
-    familiesSubtitle: 'Atlas-aligned groups that mirror how DocNote ships templates and vocabulary.',
-    recipeLabels: {
-      pathway: 'Pathway',
-      'split-duo': 'Dual track',
-      vocab: 'Vocabulary',
-      pace: 'Pace',
-      unit: 'Unit',
-      dictation: 'Dictation',
-      pricing: 'Pricing',
-    },
-    exploreFamily: 'Explore family',
-    deepBadge: 'Deep landings',
-    deepTitle: 'Specialty-focused AI scribe pages',
-    deepSubtitle: 'Go deeper on high-traffic specialties with dedicated ambient documentation pages.',
-    cta: {
-      title: 'See DocNote on your specialty path',
-      body: 'Walk through a real note flow, or talk to us about hospital and practice rollouts.',
-      primary: 'Watch the tutorial',
-      secondary: 'Contact us',
-    },
-    viewAllLabel: 'All specialties',
-    openMenuLabel: 'Open specialties menu',
-  },
-  fr: {
-    title: 'Scribe médical IA par spécialité | DocNote',
-    description:
-      'Parcourez les familles de spécialités DocNote — chirurgicales, médicales, soins primaires, soins aigus, diagnostics et paramédical. 61 spécialités, 227 modèles, hébergement suisse.',
-    hero: {
-      badge: 'Atlas des spécialités',
-      title: 'Une documentation écrite pour votre spécialité',
-      subtitle: 'Sept hubs familiaux — pas une note générique repeinte pour chaque métier.',
-      lead: 'Choisissez la famille qui correspond à votre pratique. Chaque hub regroupe le vocabulaire, les modèles et les pages dédiées de ce parcours de soins.',
-    },
-    media: {
-      badge: 'Dans l’atlas',
-      title: 'Des familles calées sur le réel du soin',
-      body: 'Parcours chirurgical, rythme de cabinet, transmissions d’unité, dictée diagnostique — chaque page familiale a sa propre recette visuelle.',
-      caption: '61 spécialités · 7 familles · des modèles qui suivent le parcours de soins.',
-      imageAlt: 'Couloir d’hôpital et environnement clinique',
-    },
-    stats: [
-      { value: '61', label: 'Spécialités' },
-      { value: '227', label: 'Modèles' },
-      { value: '7', label: 'Familles' },
-    ],
-    statsLine: '61 spécialités · 227 modèles · 7 familles de spécialités',
-    featured: {
-      badge: 'Parcours mis en avant',
-      title: 'Famille chirurgicale + compte rendu opératoire IA',
-      body: 'Du bloc à la sortie codée en un parcours — puis la page CRO quand le cas est terminé.',
-      primary: 'Ouvrir la famille Chirurgicale',
-      secondary: 'Compte rendu opératoire IA',
-    },
-    familiesBadge: 'Familles',
-    familiesTitle: 'Sept familles de spécialités',
-    familiesSubtitle: 'Groupes alignés sur l’Atlas — comme DocNote livre les modèles et le vocabulaire.',
-    recipeLabels: {
-      pathway: 'Parcours',
-      'split-duo': 'Double voie',
-      vocab: 'Vocabulaire',
-      pace: 'Rythme',
-      unit: 'Unité',
-      dictation: 'Dictée',
-      pricing: 'Tarification',
-    },
-    exploreFamily: 'Explorer la famille',
-    deepBadge: 'Pages dédiées',
-    deepTitle: 'Pages scribe IA par spécialité',
-    deepSubtitle: 'Approfondissez les spécialités à fort volume avec des pages de documentation ambiante dédiées.',
-    cta: {
-      title: 'Voir DocNote sur votre parcours',
-      body: 'Parcourez un flux de note réel, ou parlons déploiement hôpital et cabinet.',
-      primary: 'Voir le tutoriel',
-      secondary: 'Nous contacter',
-    },
-    viewAllLabel: 'Toutes les spécialités',
-    openMenuLabel: 'Ouvrir le menu spécialités',
-  },
+/**
+ * Specialties hub copy lives in src/content/inline/specialties-hub/<locale>.json so
+ * the translate-locales pipeline (--bundle=specialties-hub) can localize it.
+ */
+const specialtiesHubByLocale = specialtiesHubCopy as Partial<Record<Locale, HubCopy>> & {
+  en: HubCopy
 }
 
 /**
@@ -194,10 +89,10 @@ const solutionsHubByLocale = solutionsHubCopy as Partial<Record<Locale, Solution
 }
 
 export const getSpecialtiesHub = (locale: Locale): HubCopy =>
-  specialtiesHubByLocale[locale] ?? specialtiesHubByLocale.en
+  withEnFallback(specialtiesHubByLocale.en, specialtiesHubByLocale[locale])
 
 export const getSolutionsHub = (locale: Locale): SolutionsHubCopy =>
-  solutionsHubByLocale[locale] ?? solutionsHubByLocale.en
+  withEnFallback(solutionsHubByLocale.en, solutionsHubByLocale[locale])
 
 export const specialtiesHubDeepSlugs = specialtyLandingSlugs
 

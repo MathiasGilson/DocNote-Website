@@ -8,7 +8,7 @@ import PageHero from '../ui/PageHero.astro';
 import LpSettingCard from '../ui/LpSettingCard.astro';
 import '../../styles/landing-page.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
-import { getLandingUi } from '../../utils/inline-content';
+import { getLandingUi, getSiteUi } from '../../utils/inline-content';
 import {
   getLanding,
   getLandingNavLabel,
@@ -36,6 +36,7 @@ interface Props {
 
 const { locale, pillar } = Astro.props;
 const lang = locale;
+const siteUi = getSiteUi(lang);
 
 if (!isLandingSlug(pillar)) {
   return Astro.redirect(getLocalizedPath('/', lang));
@@ -140,7 +141,7 @@ const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
 
 <Layout title={p.title} description={p.description} jsonLd={jsonLd}>
   <div class="lp-crumb-bar pt-28 sm:pt-32">
-    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+    <nav class="lp-crumb-inner" aria-label={siteUi.breadcrumb}>
       <ol class="flex flex-wrap items-center justify-center gap-2">
         <li>
           <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>

@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromUrl } from '../utils/i18n';
+import { getSiteUi } from '../utils/inline-content';
+
 interface Item {
   title: string;
   body: string;
@@ -12,6 +15,7 @@ interface Props {
 }
 
 const { badge, title, subtitle, items } = Astro.props;
+const siteUi = getSiteUi(getLocaleFromUrl(Astro.url));
 ---
 
   <!-- Benefits zig-zag -->
@@ -66,7 +70,7 @@ const { badge, title, subtitle, items } = Astro.props;
                         <span class="pb-eye"></span>
                         <span class="pb-eye"></span>
                       </span>
-                      <span class="pb-avatar-label">You</span>
+                      <span class="pb-avatar-label">{siteUi.you}</span>
                     </div>
                   </div>
                   <div class="pb-chat">
@@ -123,7 +127,7 @@ const { badge, title, subtitle, items } = Astro.props;
                     <div class="pb-time-wave">
                       <span></span><span></span><span></span><span></span><span></span>
                     </div>
-                    <span class="pb-time-badge">+care</span>
+                    <span class="pb-time-badge">{siteUi.careBadge}</span>
                   </div>
                 </div>
               )}

@@ -5,7 +5,7 @@ import '../../styles/landing-page.css';
 import '../../styles/family-landings.css';
 import '../../styles/hub-pages.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
-import { getLandingUi } from '../../utils/inline-content';
+import { getLandingUi, getSiteUi } from '../../utils/inline-content';
 import {
   getLandingNavDesc,
   getLandingNavLabel,
@@ -31,6 +31,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const lang = locale;
+const siteUi = getSiteUi(lang);
 const p = getSolutionsHub(lang);
 
 const ui = getLandingUi(lang);
@@ -89,7 +90,7 @@ const openLabel = ui.open;
 
 <Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>
   <div class="lp-crumb-bar pt-28 sm:pt-32">
-    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+    <nav class="lp-crumb-inner" aria-label={siteUi.breadcrumb}>
       <ol class="flex flex-wrap items-center justify-center gap-2">
         <li>
           <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>

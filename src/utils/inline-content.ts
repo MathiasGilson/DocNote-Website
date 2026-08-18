@@ -38,7 +38,16 @@ const seoModules = import.meta.glob('../content/inline/seo/*.json', { eager: tru
 const solutionsHubModules = import.meta.glob('../content/inline/solutions-hub/*.json', {
   eager: true,
 }) as Record<string, JsonModule>;
+const specialtiesHubModules = import.meta.glob('../content/inline/specialties-hub/*.json', {
+  eager: true,
+}) as Record<string, JsonModule>;
 const landingUiModules = import.meta.glob('../content/inline/landing-ui/*.json', {
+  eager: true,
+}) as Record<string, JsonModule>;
+const siteUiModules = import.meta.glob('../content/inline/site-ui/*.json', {
+  eager: true,
+}) as Record<string, JsonModule>;
+const familyUiModules = import.meta.glob('../content/inline/family-ui/*.json', {
   eager: true,
 }) as Record<string, JsonModule>;
 
@@ -69,6 +78,7 @@ export const specialtyFamiliesCopy = Object.keys(specialtyFamiliesModules).lengt
 export const pillarNavCopy = mapModules<Record<string, string>>(pillarNavModules);
 export const seoCopy = mapModules<Record<string, { title: string; description: string }>>(seoModules);
 export const solutionsHubCopy = mapModules<Record<string, unknown>>(solutionsHubModules);
+export const specialtiesHubCopy = mapModules<Record<string, unknown>>(specialtiesHubModules);
 
 /** Shared chrome of landing / hub templates: breadcrumbs, FAQ heading, related links, badges. */
 export type LandingUiCopy = {
@@ -90,6 +100,88 @@ export const landingUiCopy = mapModules<LandingUiCopy>(landingUiModules);
 /** Per-key fallback to EN so a partially translated locale never renders `undefined`. */
 export function getLandingUi(locale: Locale): LandingUiCopy {
   return { ...landingUiCopy.en, ...(landingUiCopy[locale] ?? {}) };
+}
+
+/** Site-wide chrome strings (header, footer, blog post chrome, misc a11y labels). */
+export type SiteUiCopy = {
+  breadcrumb: string;
+  toggleMenu: string;
+  selectLanguage: string;
+  languages: string;
+  products: string;
+  resources: string;
+  hostedInSwitzerland: string;
+  switzerland: string;
+  iosApp: string;
+  androidApp: string;
+  webApp: string;
+  closeModal: string;
+  demoVideo: string;
+  heroImageAlt: string;
+  aiMedicalDocumentation: string;
+  save: string;
+  teamMembers: string;
+  openInBrowser: string;
+  tutorialVideoTitle: string;
+  step: string;
+  tableOfContents: string;
+  tableOfContentsMobile: string;
+  shareOnX: string;
+  shareOnLinkedIn: string;
+  copyLink: string;
+  previousTestimonial: string;
+  nextTestimonial: string;
+  legalNoticeEn: string;
+  legalNoticeFr: string;
+  ctaSampleReport: string;
+  defaultDescription: string;
+  you: string;
+  careBadge: string;
+  testimonial: string;
+};
+export const siteUiCopy = mapModules<SiteUiCopy>(siteUiModules);
+export function getSiteUi(locale: Locale): SiteUiCopy {
+  return { ...siteUiCopy.en, ...(siteUiCopy[locale] ?? {}) };
+}
+
+/** Short chrome labels of the specialty-family visual recipes (pathway rail, unit board, etc.). */
+export type FamilyUiCopy = {
+  preop: string;
+  or: string;
+  ward: string;
+  discharge: string;
+  consult: string;
+  procedure: string;
+  vocab: string;
+  nextPatient: string;
+  unitBoard: string;
+  handoff: string;
+  dictating: string;
+  report: string;
+  actPricing: string;
+  ready: string;
+};
+export const familyUiCopy = mapModules<FamilyUiCopy>(familyUiModules);
+export function getFamilyUi(locale: Locale): FamilyUiCopy {
+  return { ...familyUiCopy.en, ...(familyUiCopy[locale] ?? {}) };
+}
+
+/** Deep per-leaf fallback to EN for nested content bundles (hubs, families). */
+export function withEnFallback<T>(en: T, loc: unknown): T {
+  if (loc === undefined || loc === null) return en;
+  if (Array.isArray(en)) {
+    if (!Array.isArray(loc)) return en;
+    return en.map((item, i) => withEnFallback(item, loc[i])) as unknown as T;
+  }
+  if (typeof en === 'object' && en !== null) {
+    if (typeof loc !== 'object' || Array.isArray(loc)) return en;
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(en as Record<string, unknown>)) {
+      out[k] = withEnFallback(v, (loc as Record<string, unknown>)[k]);
+    }
+    return out as T;
+  }
+  return (typeof loc === typeof en ? loc : en) as T;
 }
 
 export function getInline<T>(

@@ -1,5 +1,5 @@
 import { locales, type Locale } from '../utils/i18n'
-import { landingsCopy, pillarNavCopy } from '../utils/inline-content'
+import { landingsCopy, pillarNavCopy, withEnFallback } from '../utils/inline-content'
 import type { SpecialtyKey } from '../data/specialty-icons'
 
 /** Existing pillars — keep H1/intent; do not cannibalize. */
@@ -681,11 +681,11 @@ function mergeCopy(locale: Locale): Record<LandingSlug, LandingCopy> {
 
   const out = {} as Record<LandingSlug, LandingCopy>
   for (const slug of landingSlugs) {
-    const copy = landingData[slug] ?? enLanding[slug]
-    if (!copy) {
-      throw new Error(`Missing landing copy for ${slug} (${locale})`)
+    if (!enLanding[slug]) {
+      throw new Error(`Missing landing copy for ${slug} (en)`)
     }
-    out[slug] = copy
+    // Per-leaf EN fallback so a partially translated locale never renders `undefined`.
+    out[slug] = withEnFallback(enLanding[slug], landingData[slug])
   }
   return out
 }

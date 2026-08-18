@@ -6,7 +6,7 @@ import { getEntry, getCollection, render } from 'astro:content';
 import { getBlogAlternateUrls, isCanonicalBlogPostId } from '../../utils/blog-translations';
 import { buildBreadcrumbLd, SITE_URL, absoluteLocalizedUrl } from '../../utils/seo';
 import { getLandingNavLabel } from '../../content/landings';
-import { getLandingUi } from '../../utils/inline-content';
+import { getLandingUi, getSiteUi } from '../../utils/inline-content';
 
 interface Props {
   locale: Locale;
@@ -15,6 +15,7 @@ interface Props {
 }
 
 const { locale, slug, post } = Astro.props as Props;
+const siteUi = getSiteUi(locale);
 
 const entry = await getEntry('pages', locale);
 const t = entry!.data;
@@ -126,7 +127,7 @@ const homeLabel = getLandingUi(locale).home;
 
     <div class="relative z-10 pt-24 lg:pt-28 pb-24 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto mb-8">
-        <nav class="flex items-center gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
+        <nav class="flex items-center gap-2 text-sm text-slate-500" aria-label={siteUi.breadcrumb}>
           <a href={getLocalizedPath('/', locale)} class="hover:text-[var(--dn-primary-ink)] transition-colors">{homeLabel}</a>
           <span>/</span>
           <a href={getLocalizedPath('/blog', locale)} class="hover:text-[var(--dn-primary-ink)] transition-colors">{blog.title}</a>
@@ -141,7 +142,7 @@ const homeLabel = getLandingUi(locale).home;
             <div class="space-y-8">
               <div class="rounded-2xl border border-slate-100 bg-white/80 backdrop-blur-sm p-5 shadow-sm">
                 <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">{labels.onThisPage}</p>
-                <nav id="toc-nav" aria-label="Table of contents">
+                <nav id="toc-nav" aria-label={siteUi.tableOfContents}>
                   <ul id="toc-list" class="space-y-1 text-sm"></ul>
                 </nav>
               </div>
@@ -170,7 +171,7 @@ const homeLabel = getLandingUi(locale).home;
                       target="_blank"
                       rel="noopener noreferrer"
                       class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-100 hover:bg-[rgba(var(--dn-primary-rgb),0.12)] text-slate-500 hover:text-[var(--dn-primary-ink)] transition-colors"
-                      aria-label="Share on X"
+                      aria-label={siteUi.shareOnX}
                     >
                       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     </a>
@@ -179,7 +180,7 @@ const homeLabel = getLandingUi(locale).home;
                       target="_blank"
                       rel="noopener noreferrer"
                       class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-100 hover:bg-[rgba(var(--dn-primary-rgb),0.12)] text-slate-500 hover:text-[var(--dn-primary-ink)] transition-colors"
-                      aria-label="Share on LinkedIn"
+                      aria-label={siteUi.shareOnLinkedIn}
                     >
                       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
@@ -187,7 +188,7 @@ const homeLabel = getLandingUi(locale).home;
                       type="button"
                       data-copy-link
                       class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-100 hover:bg-[rgba(var(--dn-primary-rgb),0.12)] text-slate-500 hover:text-[var(--dn-primary-ink)] transition-colors"
-                      aria-label="Copy link"
+                      aria-label={siteUi.copyLink}
                     >
                       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
                     </button>
@@ -266,7 +267,7 @@ const homeLabel = getLandingUi(locale).home;
 
             <div class="lg:hidden mb-10 rounded-2xl border border-slate-100 bg-slate-50 p-5">
               <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">{labels.onThisPage}</p>
-              <nav aria-label="Table of contents (mobile)">
+              <nav aria-label={siteUi.tableOfContentsMobile}>
                 <ul id="toc-list-mobile" class="space-y-1 text-sm"></ul>
               </nav>
             </div>

@@ -5,7 +5,8 @@
  *
  * Targets:
  *   - src/content/pages/<locale>.json  (main UI store)
- *   - src/content/inline/<bundle>/<locale>.json  (patient, sondage, emploi, pillars, pillar-nav, seo, landings, solutions-hub)
+ *   - src/content/inline/<bundle>/<locale>.json  (patient, sondage, emploi, pillars, pillar-nav, seo, landings,
+ *     solutions-hub, landing-ui, specialty-families, specialties-hub, site-ui, family-ui)
  *
  * Usage:
  *   OPEN_ROUTER_API_KEY=… node scripts/translate-locales.mjs --dry-run
@@ -73,6 +74,10 @@ const BUNDLES = {
   landings: path.join(ROOT, 'src/content/inline/landings'),
   'solutions-hub': path.join(ROOT, 'src/content/inline/solutions-hub'),
   'landing-ui': path.join(ROOT, 'src/content/inline/landing-ui'),
+  'specialty-families': path.join(ROOT, 'src/content/inline/specialty-families'),
+  'specialties-hub': path.join(ROOT, 'src/content/inline/specialties-hub'),
+  'site-ui': path.join(ROOT, 'src/content/inline/site-ui'),
+  'family-ui': path.join(ROOT, 'src/content/inline/family-ui'),
 };
 
 /* Target-script sanity check: a "translation" that comes back in Latin script for
@@ -306,7 +311,8 @@ TRANSLATION RULES:
 6. Keep JSON keys EXACTLY as-is — including top-level landing slugs like "ai-medical-scribe", "ai-scribe-general-practice". NEVER translate, rename, or localize keys.
 7. Keep structure, arrays, nesting identical to the input.
 8. Output ONLY valid JSON — no markdown fences, no commentary, no preamble.
-9. Natural fluent ${langName}. No em dashes (—). Avoid marketing clichés.`,
+9. Natural fluent ${langName}. No em dashes (—). Avoid marketing clichés.
+10. Glossary: "specialty family" = a group of related medical specialties (surgical, medical, primary care, acute care, diagnostics, allied health); pick one natural term for it and use it consistently. "template" = document template in the app. "operative report" = surgical operation report. Keep the "Dentotar®" name as-is.`,
             },
             { role: 'user', content: jsonStr },
           ],

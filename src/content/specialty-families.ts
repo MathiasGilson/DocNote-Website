@@ -1,5 +1,5 @@
 import { locales, type Locale } from '../utils/i18n'
-import { specialtyFamiliesCopy } from '../utils/inline-content'
+import { specialtyFamiliesCopy, withEnFallback } from '../utils/inline-content'
 import type { LandingSlug, SpecialtyLandingSlug } from './landings'
 
 export const specialtyFamilySlugs = [
@@ -38,6 +38,8 @@ export type SpecialtyFamilyCopy = {
   relatedLabel: string
   cta: { title: string; body: string; primary: string; secondary: string }
   statsLine: string
+  /** Media band alt text + caption (see family-visuals.ts for the asset itself). */
+  visual?: { imageAlt: string; mediaCaption: string }
 }
 
 export type SpecialtyFamilyMeta = {
@@ -133,9 +135,9 @@ function mergeCopy(locale: Locale): Record<SpecialtyFamilySlug, SpecialtyFamilyC
   const en = (specialtyFamiliesCopy.en ?? {}) as Record<string, SpecialtyFamilyCopy>
   const out = {} as Record<SpecialtyFamilySlug, SpecialtyFamilyCopy>
   for (const slug of specialtyFamilySlugs) {
-    const copy = data[slug] ?? en[slug]
-    if (!copy) throw new Error(`Missing specialty family copy for ${slug} (${locale})`)
-    out[slug] = copy
+    if (!en[slug]) throw new Error(`Missing specialty family copy for ${slug} (en)`)
+    // Per-leaf EN fallback so a partially translated locale never renders `undefined`.
+    out[slug] = withEnFallback(en[slug], data[slug])
   }
   return out
 }

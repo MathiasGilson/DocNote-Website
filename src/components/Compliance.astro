@@ -1,9 +1,13 @@
 ---
+import { getLocaleFromUrl } from '../utils/i18n'
+import { getSiteUi } from '../utils/inline-content'
+
 interface Props {
   translations: any
 }
 
 const { translations: t } = Astro.props
+const siteUi = getSiteUi(getLocaleFromUrl(Astro.url))
 
 const protocols = [
   t.compliance.protocolEncryption,
@@ -98,7 +102,7 @@ const pillars = [
                 {pillar.key === "swiss" ? (
                   <img
                     src="/images/flags/ch.svg"
-                    alt="Switzerland"
+                    alt={siteUi.switzerland}
                     width="28"
                     height="28"
                     loading="lazy"

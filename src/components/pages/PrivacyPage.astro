@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { type Locale } from '../../utils/i18n';
 import { getPageMeta } from '../../utils/seo';
+import { getSiteUi } from '../../utils/inline-content';
 
 
 interface Props {
@@ -13,6 +14,7 @@ const { locale } = Astro.props;
 
 const meta = getPageMeta('privacy', locale);
 const layoutTitle = meta.title;
+const siteUi = getSiteUi(locale);
 ---
 
 <Layout title={meta.title} description={meta.description}>
@@ -21,6 +23,7 @@ const layoutTitle = meta.title;
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
         {layoutTitle}
       </h1>
+      {locale !== 'fr' && <p class="text-center text-sm text-gray-400 mb-6">{siteUi.legalNoticeFr}</p>}
       <p class="text-center text-gray-500 mb-12">DocNote · Gilson GmbH</p>
 
       <div class="privacy-content">

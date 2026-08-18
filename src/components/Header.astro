@@ -34,6 +34,7 @@ import {
   SPECIALTIES_HUB_PATH,
 } from '../content/hubs';
 import { landingNavIconMarkup } from '../data/landing-nav-icons';
+import { getSiteUi } from '../utils/inline-content';
 
 interface Props {
   locale: Locale;
@@ -115,6 +116,7 @@ const overflowItems = [
   { id: 'survey', href: surveyHref, label: t.nav.survey, active: surveyActive, priority: 3 },
 ] as const;
 const moreOpen = overflowItems.some((item) => item.active);
+const siteUi = getSiteUi(locale);
 const moreLabel = t.nav.more || 'More';
 
 const linkClass = (active: boolean) =>
@@ -321,7 +323,7 @@ const mobileLinkClass = (active: boolean) =>
           {t.nav.demo}
         </a>
 
-        <button id="mobile-menu-btn" class="xl:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Toggle menu">
+        <button id="mobile-menu-btn" class="xl:hidden p-2 rounded-lg hover:bg-gray-100" aria-label={siteUi.toggleMenu}>
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
           </svg>

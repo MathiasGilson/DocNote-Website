@@ -2,6 +2,7 @@
 import type { Locale } from '../../utils/i18n';
 import type { FamilyLeadItem } from '../../content/specialty-families';
 import type { FamilyRecipe } from '../../content/family-visuals';
+import { getFamilyUi } from '../../utils/inline-content';
 
 interface Props {
   locale: Locale;
@@ -14,58 +15,7 @@ interface Props {
 }
 
 const { locale, recipe, badge, title, items, specialtyNames = [] } = Astro.props;
-const lang = locale === 'fr' || locale === 'de' ? locale : 'en';
-
-const chrome = {
-  en: {
-    preop: 'Pre-op',
-    or: 'OR',
-    ward: 'Ward',
-    discharge: 'Discharge',
-    consult: 'Consult',
-    procedure: 'Procedure',
-    vocab: 'Vocabulary',
-    nextPatient: 'Next patient',
-    unitBoard: 'Unit board',
-    handoff: 'Handoff',
-    dictating: 'Dictating',
-    report: 'Report',
-    actPricing: 'Act pricing',
-    ready: 'Ready',
-  },
-  fr: {
-    preop: 'Pré-op',
-    or: 'Bloc',
-    ward: 'Étage',
-    discharge: 'Sortie',
-    consult: 'Consult',
-    procedure: 'Acte',
-    vocab: 'Vocabulaire',
-    nextPatient: 'Patient suivant',
-    unitBoard: 'Tableau unité',
-    handoff: 'Transmission',
-    dictating: 'Dictée',
-    report: 'Compte rendu',
-    actPricing: 'Tarification',
-    ready: 'Prêt',
-  },
-  de: {
-    preop: 'Prä-op',
-    or: 'OP',
-    ward: 'Station',
-    discharge: 'Entlassung',
-    consult: 'Konsult',
-    procedure: 'Eingriff',
-    vocab: 'Vokabular',
-    nextPatient: 'Nächster Patient',
-    unitBoard: 'Stationsboard',
-    handoff: 'Übergabe',
-    dictating: 'Diktat',
-    report: 'Bericht',
-    actPricing: 'Tarifierung',
-    ready: 'Bereit',
-  },
-}[lang];
+const chrome = getFamilyUi(locale);
 
 const pathwayLabels = [chrome.preop, chrome.or, chrome.ward, chrome.discharge];
 const vocabPreview = specialtyNames.slice(0, 8);

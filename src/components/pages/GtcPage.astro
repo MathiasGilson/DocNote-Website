@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { type Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
 import { getPageMeta } from '../../utils/seo';
+import { getSiteUi } from '../../utils/inline-content';
 
 
 interface Props {
@@ -16,6 +17,7 @@ const entry = await getEntry('pages', locale);
 const t = entry.data;
 const meta = getPageMeta('gtc', locale);
 const layoutTitle = meta.title;
+const siteUi = getSiteUi(locale);
 ---
 
 <Layout title={meta.title} description={meta.description}>
@@ -24,6 +26,7 @@ const layoutTitle = meta.title;
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
         {layoutTitle}
       </h1>
+      {locale !== 'en' && <p class="text-center text-sm text-gray-400 mb-6">{siteUi.legalNoticeEn}</p>}
 
       <!-- Switzerland version -->
       <div id="gtc-ch" class="gtc-content hidden">

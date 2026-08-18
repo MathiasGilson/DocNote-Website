@@ -8,7 +8,7 @@ import '../../styles/landing-page.css';
 import '../../styles/family-landings.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
 import { getLandingNavLabel, getNavGroupLabel } from '../../content/landings';
-import { getLandingUi } from '../../utils/inline-content';
+import { getLandingUi, getSiteUi } from '../../utils/inline-content';
 import {
   getSpecialtyFamily,
   getSpecialtyFamilyPath,
@@ -27,6 +27,7 @@ interface Props {
 
 const { locale, family } = Astro.props;
 const lang = locale;
+const siteUi = getSiteUi(lang);
 
 if (!isSpecialtyFamilySlug(family)) {
   return Astro.redirect(getLocalizedPath('/', lang));
@@ -42,7 +43,8 @@ const homeLabel = ui.home;
 const specialtiesCrumb = getNavGroupLabel('specialties', lang);
 
 const primaryHref = getLocalizedPath('/tutorial', lang);
-const secondaryUrl = /contact|contacter/i.test(p.cta.secondary)
+// Decide the secondary CTA target from the EN source so it does not depend on translated wording.
+const secondaryUrl = /contact/i.test(getSpecialtyFamily(slug, 'en').cta.secondary)
   ? getLocalizedPath('/contact', lang)
   : getLocalizedPath('/pricing', lang);
 
@@ -66,7 +68,7 @@ const toolkitSoft = visual.recipe === 'unit' || visual.recipe === 'dictation';
 
 <Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>
   <div class="lp-crumb-bar pt-28 sm:pt-32">
-    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+    <nav class="lp-crumb-inner" aria-label={siteUi.breadcrumb}>
       <ol class="flex flex-wrap items-center justify-center gap-2">
         <li>
           <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
@@ -98,6 +100,7 @@ const toolkitSoft = visual.recipe === 'unit' || visual.recipe === 'dictation';
 
   <FamilyMediaBand
     locale={lang}
+    slug={slug}
     visual={visual}
     badge={mediaBadge}
     title={mediaTitle}

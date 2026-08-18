@@ -19,6 +19,8 @@ const pagesCollection = defineCollection({
       solutions: z.string().optional(),
       /** Specialty landings */
       specialties: z.string().optional(),
+      /** Overflow ("More") menu trigger */
+      more: z.string().optional(),
     }),
     hero: z.object({
       badge: z.string(),
@@ -235,6 +237,8 @@ const pagesCollection = defineCollection({
       title: z.string(),
       subtitle: z.string(),
       items: z.array(z.string()),
+      countLabel: z.string().optional(),
+      familiesCta: z.string().optional(),
     }),
     testimonials: z.object({
       badge: z.string(),

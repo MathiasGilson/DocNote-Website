@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import { type Locale } from '../utils/i18n';
+import { getSiteUi } from '../utils/inline-content';
 
 interface Props {
   locale?: Locale | string;
@@ -43,14 +44,7 @@ const members = [
 
 const marqueeItems = [...members, ...members];
 
-const regionLabel =
-  locale === 'ru'
-    ? 'Команда'
-    : locale === 'fr'
-      ? "Membres de l'équipe"
-      : locale === 'de'
-        ? 'Teammitglieder'
-        : 'Team members';
+const regionLabel = getSiteUi(locale).teamMembers;
 ---
 
 <div
