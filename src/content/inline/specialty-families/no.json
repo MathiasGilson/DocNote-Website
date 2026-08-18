@@ -1,0 +1,628 @@
+{
+  "surgical": {
+    "title": "AI-medisinsk dokumentasjon for kirurgiske spesialiteter",
+    "description": "Pre-op konsultasjon, operasjonsrapport, sengepostnotater og kodet utskrivningsbrev – hele den kirurgiske pasientveien for 10 spesialiteter. 61 spesialiteter, 227 maler i DocNote.",
+    "navLabel": "Kirurgi",
+    "navDesc": "Operasjonssal + sengepost",
+    "hero": {
+      "badge": "10 spesialiteter · Sykehus & praksis",
+      "title": "Dokumentasjon for hvordan kirurgi faktisk utføres",
+      "subtitle": "Operasjonssal og konsultasjon i ett verktøysett – ikke en generell note som er ommalt for kirurger.",
+      "lead": "Fra preoperativ konsultasjon til kodet utskrivning: operasjonsrapport, morgennotater på sengeposten og SwissDRG/PMSI-forslag der oppholdets verdi avgjøres."
+    },
+    "toolkit": {
+      "badge": "Ditt verktøysett",
+      "title": "Tre lag – klart fra dag én",
+      "subtitle": "Velg en spesialitet og land på dine egne dokumenter, ikke en blank side.",
+      "layers": [
+        {
+          "title": "Delt kjerne",
+          "body": "Ti tverrfaglige maler som er nyttige nesten overalt: diktering, utskrivningsbrev, attester, e-post, korrekturlesing.",
+          "count": "10"
+        },
+        {
+          "title": "Spesialitetsett",
+          "body": "Fjorten maler per kirurgisk spesialitet, inkludert operasjonsrapporten – delt bare med medisinsk-kirurgiske fag og anestesi.",
+          "count": "14"
+        },
+        {
+          "title": "Dine egne maler",
+          "body": "Importer eksisterende Word- eller PDF-brever – brevhode, struktur og standardfraser gjengitt nøyaktig. Ubegrenset, delbart med kolleger.",
+          "count": "∞"
+        }
+      ],
+      "readyNote": "Ved registrering ser du først omtrent 8–9 KLARE maler. Valgfrie dokumenter (attester, e-postutkast, korrekturlesing...) er ett trykk unna som reserve – de overfyller ikke første skjerm."
+    },
+    "leadWith": {
+      "badge": "Bruk dette først",
+      "title": "Det kirurgiske team bruker hver dag",
+      "items": [
+        {
+          "title": "Full pasientvei",
+          "body": "Preoperativ konsultasjon → operasjonsrapport → sengepostnotater → kodet utskrivningsbrev."
+        },
+        {
+          "title": "Morgenrunde i én opptak",
+          "body": "Progresjonsnotater (aug 2026): samtaler med sykepleiere og pasienter, delt pasient for pasient når navn og rom nevnes høyt."
+        },
+        {
+          "title": "Koding som avgjør oppholdet",
+          "body": "SwissDRG/PMSI-forslag vedlagt utskrivningsbrevet."
+        }
+      ]
+    },
+    "specialties": {
+      "badge": "Dekket",
+      "title": "Kirurgiske spesialiteter",
+      "subtitle": "Hver mottar operasjonssal-til-utskrivning-settet.",
+      "items": [
+        "Visceral- og digestivkirurgi",
+        "Ortopedisk- og traumekirurgi",
+        "Kardiovaskulær kirurgi",
+        "Thorakalkirurgi",
+        "Nevrokirurgi",
+        "Plastisk, rekonstruktiv og estetisk kirurgi",
+        "Kjeve- og ansiktskirurgi og stomatologi",
+        "Barnekirurgi",
+        "Vaskulær kirurgi",
+        "Bariatrisk kirurgi"
+      ]
+    },
+    "setting": {
+      "badge": "Sykehus eller praksis",
+      "title": "Samme familie, to rytmer",
+      "body": "På sengeposten: progresjonsnotater og kodet utskrivning. I praksis: konsultasjonsrapporter og brev. Kirurger og medisinsk-kirurgiske spesialiteter – pluss anestesi – er de eneste fagene som mottar operasjonsrapporten."
+    },
+    "deepLinksLabel": "Dypdykk",
+    "relatedLabel": "Relatert",
+    "cta": {
+      "title": "Se den kirurgiske pasientveien i DocNote",
+      "body": "Start gratis, eller book en demo for operasjonssal- og sengepostteamene dine.",
+      "primary": "Start gratis",
+      "secondary": "Se priser"
+    },
+    "statsLine": "61 spesialiteter · 227 maler · 10 tverrfaglige",
+    "visual": {
+      "imageAlt": "Moderne universitetsykehus med terrassehager",
+      "mediaCaption": "Operasjonssal → sengepost → kodet utskrivning – én sammenhengende pasientvei."
+    }
+  },
+  "medical-surgical": {
+    "title": "AI-medisinsk dokumentasjon for medisinsk-kirurgiske spesialiteter",
+    "description": "Konsultasjonskvartett, brev til fastlegen og operasjonsrapport for planlagte inngrep – gynekologi, urologi, øre-nese-hals, oftalmologi.",
+    "navLabel": "Med-kirurgi",
+    "navDesc": "Konsultasjoner + prosedyrer",
+    "hero": {
+      "badge": "4 spesialiteter · Praksis & sykehus",
+      "title": "Konsultasjoner først, prosedyrer når planlagt",
+      "subtitle": "Samme verktøysett som kirurgi – inkludert operasjonsrapport – med vekt på poliklinisk volum.",
+      "lead": "Rapport og brev, konsist eller detaljert. Brev til fastlegen i spesialitetens vokabular. Operasjonsrapport klar for planlagte inngrep."
+    },
+    "toolkit": {
+      "badge": "Ditt verktøysett",
+      "title": "Tre lag – klart fra dag én",
+      "subtitle": "Fjorten maler per spesialitet, inkludert operasjonsrapport.",
+      "layers": [
+        {
+          "title": "Delt kjerne",
+          "body": "Ti tverrfaglige maler: diktering, utskrivningsbrev, attester, e-post, korrekturlesing.",
+          "count": "10"
+        },
+        {
+          "title": "Spesialitetsett",
+          "body": "Konsultasjonsrapport og brev på to detaljnivåer, pluss operasjonsrapport for planlagte inngrep.",
+          "count": "14"
+        },
+        {
+          "title": "Dine egne maler",
+          "body": "Importer institusjonens brev fra Word eller PDF og behold struktur og fraser identiske.",
+          "count": "∞"
+        }
+      ],
+      "readyNote": "Bruk KLARE maler først. Valgfrie elementer (attester, e-post, korrekturlesing) forblir tilgjengelige som reserve."
+    },
+    "leadWith": {
+      "badge": "Bruk dette først",
+      "title": "Det medisinsk-kirurgiske praksis trenger",
+      "items": [
+        {
+          "title": "Konsultasjonskvartett",
+          "body": "Rapport og brev, hver konsist eller detaljert – velg nivået i stedet for å korte ned en tekst som ble for lang."
+        },
+        {
+          "title": "Brev til fastlegen",
+          "body": "Skrevet i spesialitetens vokabular og riktig adressert («Kjære kollega»)."
+        },
+        {
+          "title": "Operasjonsrapport",
+          "body": "For planlagte inngrep – samme CRO-mal som kirurgene bruker."
+        }
+      ]
+    },
+    "specialties": {
+      "badge": "Dekket",
+      "title": "Medisinsk-kirurgiske spesialiteter",
+      "subtitle": "Konsultasjonsledede fag med planlagt operasjonstid.",
+      "items": [
+        "Gynekologi",
+        "Urologi",
+        "Øre-nese-hals (ØNH)",
+        "Oftalmologi"
+      ]
+    },
+    "setting": {
+      "badge": "Sykehus eller praksis",
+      "title": "Mest praksis, sykehus når nødvendig",
+      "body": "Volumet er konsultasjoner og brev. Utskrivningsbrev og sengepostnotater er der for sykehusoppdrag; referansedokumentet daglig er brevet til en kollega."
+    },
+    "deepLinksLabel": "Dypdykk",
+    "relatedLabel": "Relatert",
+    "cta": {
+      "title": "Dokumenter konsultasjoner og prosedyrer på ett sted",
+      "body": "Start gratis, eller snakk med oss om å rulle ut i din spesialistklinikk.",
+      "primary": "Start gratis",
+      "secondary": "Se priser"
+    },
+    "statsLine": "61 spesialiteter · 227 maler · 10 tverrfaglige",
+    "visual": {
+      "imageAlt": "Historiske akademiske sykehusbygninger om høsten",
+      "mediaCaption": "Poliklinisk volum først – operasjonsrapport klar når planlagt."
+    }
+  },
+  "medical": {
+    "title": "AI-medisinsk dokumentasjon for medisinske spesialiteter",
+    "description": "Spesialitetsvokabular i fire maler, oppfølgingkonsultasjon som beholder din layout, og kompleks filoppsummering – 26 medisinske spesialiteter.",
+    "navLabel": "Medisinsk",
+    "navDesc": "Spesialitetsvokabular",
+    "hero": {
+      "badge": "26 spesialiteter · Praksis & sykehus",
+      "title": "Analyse og syntese, i din spesialitets ord",
+      "subtitle": "Ingen operasjonssal – lange konsultasjoner, spesialistuttalelser og sengepostoppfølging når du har sykehusoppdrag.",
+      "lead": "Fire maler skrevet i hver disiplins vokabular. Oppfølgingkonsultasjon som oppdaterer ditt forrige brev. Kompleks filoppsummering for onkologi, transplantasjon og palliativ behandling."
+    },
+    "toolkit": {
+      "badge": "Ditt verktøysett",
+      "title": "Tre lag – klart fra dag én",
+      "subtitle": "Tretten maler for en typisk medisinsk spesialitet.",
+      "layers": [
+        {
+          "title": "Delt kjerne",
+          "body": "Ti tverrfaglige maler delt på tvers av DocNotes 61 spesialiteter.",
+          "count": "10"
+        },
+        {
+          "title": "Spesialitetsett",
+          "body": "Rapport og brev, konsist og detaljert – differensieringen mot et generelt dikteringsverktøy.",
+          "count": "~13"
+        },
+        {
+          "title": "Dine egne maler",
+          "body": "Ta med eksisterende Word/PDF-brever; DocNote gjengir dem for deg og din sekretær.",
+          "count": "∞"
+        }
+      ],
+      "readyNote": "KLARE maler leder menyen. Valgfrie dokumenter (oppfølgingkonsultasjon, attest, e-post, filoppsummering, korrekturlesing) er ett trykk unna."
+    },
+    "leadWith": {
+      "badge": "Bruk dette først",
+      "title": "Det medisinske spesialister åpner først",
+      "items": [
+        {
+          "title": "Spesialitetsvokabular ×4",
+          "body": "Hver disiplin har fire maler skrevet for seg – ikke én generell note med en spesialitetsetikett."
+        },
+        {
+          "title": "Oppfølgingkonsultasjon",
+          "body": "Legg ved et tidligere brev; DocNote oppdaterer det og beholder struktur og layout."
+        },
+        {
+          "title": "Kompleks filoppsummering",
+          "body": "Reduser en tett fil til noen få setninger – spesielt i onkologi, transplantasjonsmedisin og palliativ behandling."
+        }
+      ]
+    },
+    "specialties": {
+      "badge": "Dekket",
+      "title": "Medisinske spesialiteter",
+      "subtitle": "Den største familien – analyse levert skriftlig til en kollega.",
+      "items": [
+        "Kardiologi",
+        "Pulmonologi",
+        "Gastroenterologi og hepatologi",
+        "Nefrologi",
+        "Endokrinologi, diabetologi og ernæring",
+        "Revmatologi",
+        "Nevrologi",
+        "Dermatologi og venerologi",
+        "Hematologi",
+        "Medisinsk onkologi",
+        "Stråleterapi",
+        "Infeksjons- og tropesykdommer",
+        "Allergologi",
+        "Immunologi",
+        "Medisinsk genetikk",
+        "Fysisk og rehabiliteringsmedisin",
+        "Idrettsmedisin",
+        "Psykiatri",
+        "Avhengighetsmedisin og toksikologi",
+        "Transplantasjonsmedisin",
+        "Ammingmedisin",
+        "Smertebehandling",
+        "Palliativ behandling",
+        "Rehabiliteringsmedisin",
+        "Seksuologi",
+        "Fødselshjelp"
+      ]
+    },
+    "setting": {
+      "badge": "Sykehus eller praksis",
+      "title": "Sengepost om morgenen, poliklinikk om ettermiddagen",
+      "body": "Praksis: konsultasjonsrapport, brev til en kollega, konsise notater. Sykehus: progresjonsnotater og kodet utskrivning når du dekker sengeposten."
+    },
+    "deepLinksLabel": "Dypdykk",
+    "relatedLabel": "Relatert",
+    "cta": {
+      "title": "Skriv som din spesialitet allerede gjør",
+      "body": "Start gratis og velg din spesialitet – maler ankommer i ditt vokabular.",
+      "primary": "Start gratis",
+      "secondary": "Se priser"
+    },
+    "statsLine": "61 spesialiteter · 227 maler · 10 tverrfaglige",
+    "visual": {
+      "imageAlt": "Klinikere ved en generell internmedisinsk prisutdeling",
+      "mediaCaption": "Spesialitetsvokabular i rapporten, brevet og oppfølgingen – ikke en generell note."
+    }
+  },
+  "primary-care": {
+    "title": "AI-medisinsk dokumentasjon for primærhelsetjeneste",
+    "description": "Veldig konsise notater, medisinske attester og e-post/brevutkast – tid tilbake for allmennmedisin, pediatri og relaterte primærhelsespesialiteter.",
+    "navLabel": "Primærhelse",
+    "navDesc": "Konsise notater, tid tilbake",
+    "hero": {
+      "badge": "5 spesialiteter · Praksis",
+      "title": "Ferdig før neste pasient kommer inn",
+      "subtitle": "Mange pasienter, korte besøk og papirarbeid som pleide å renne utover kvelden.",
+      "lead": "Veldig konsise notater for journalen. Attester ett trykk unna. E-post- og brevutkast som gir tid tilbake – ikke litterær polering for sin egen del."
+    },
+    "toolkit": {
+      "badge": "Ditt verktøysett",
+      "title": "Tre lag – klart fra dag én",
+      "subtitle": "Tretten maler tilpasset høyvolumpraksis.",
+      "layers": [
+        {
+          "title": "Delt kjerne",
+          "body": "Ti tverrfaglige maler, inkludert attester og e-postutkast når du aktiverer dem.",
+          "count": "10"
+        },
+        {
+          "title": "Spesialitetsett",
+          "body": "Konsise konsultasjonsformater skrevet for primærhelsetempo.",
+          "count": "~13"
+        },
+        {
+          "title": "Dine egne maler",
+          "body": "Importer brevene og attestene din praksis allerede bruker.",
+          "count": "∞"
+        }
+      ],
+      "readyNote": "Bruk KLARE konsise notater først. Attester og e-postutkast er VALGFRI reserve – aktiver når du vil ha dem på første skjerm."
+    },
+    "leadWith": {
+      "badge": "Bruk dette først",
+      "title": "Det primærhelse trenger mest",
+      "items": [
+        {
+          "title": "Veldig konsise notater",
+          "body": "Det mest brukte formatet i praksis – noen få linjer i pasientens journal."
+        },
+        {
+          "title": "Medisinske attester",
+          "body": "Sykemelding, idrettsgodkjenning, unntak – ett trykk for å aktivere."
+        },
+        {
+          "title": "E-post og brev",
+          "body": "Papirarbeidet som pleide å renne utover kvelden."
+        }
+      ]
+    },
+    "specialties": {
+      "badge": "Dekket",
+      "title": "Primærhelsespesialiteter",
+      "subtitle": "Høy volum, korte konsultasjoner, uforholdsmessig administrasjon.",
+      "items": [
+        "Allmennmedisin",
+        "Indremedisin",
+        "Geriatri",
+        "Pediatri",
+        "Forebyggende medisin"
+      ]
+    },
+    "setting": {
+      "badge": "Praksis",
+      "title": "Én pasient, ett dokument",
+      "body": "Ferdig før neste konsultasjon starter. Sykehus utskrivningssett er ikke tyngdepunktet her."
+    },
+    "deepLinksLabel": "Dypdykk",
+    "relatedLabel": "Relatert",
+    "cta": {
+      "title": "Få notaten ferdig i rommet",
+      "body": "Start gratis for din praksis, eller sammenlign planer for en gruppe.",
+      "primary": "Start gratis",
+      "secondary": "Se priser"
+    },
+    "statsLine": "61 spesialiteter · 227 maler · 10 tverrfaglige",
+    "visual": {
+      "imageAlt": "Kliniker som vurderer en sengemonitor med en pasient",
+      "mediaCaption": "Ferdig før neste pasient – konsis note, attest, brev."
+    }
+  },
+  "acute-care": {
+    "title": "AI-medisinsk dokumentasjon for akuttmedisin",
+    "description": "Avdelingens dokumenter for akuttmedisin, intensiv og anestesi – ICU-progresjonsnotater som standard, sykepleiertriagering IAO, akutt v1/v2, anestesi pre-op og CRO.",
+    "navLabel": "Akuttmedisin",
+    "navDesc": "Akutt, intensiv, anestesi",
+    "hero": {
+      "badge": "3 spesialiteter · Sykehus",
+      "title": "Dokumenter modellert etter hvordan avdelingen fungerer",
+      "subtitle": "Det tydeligste beviset på at DocNote ikke er én mal ommalt per fag.",
+      "lead": "Akuttkonsultasjon v1/v2 og besøkskonklusjon. ICUs selvstendige sett – ingen generell utskrivningsbrev som standard. Anestesi pre-op konsultasjon pluss operasjonsrapport."
+    },
+    "toolkit": {
+      "badge": "Ditt verktøysett",
+      "title": "Skreddersydde sett – ikke en tynnet generell meny",
+      "subtitle": "Hver av disse tre disiplinene mottok sine egne dokumenter.",
+      "layers": [
+        {
+          "title": "Delt kjerne",
+          "body": "Tverrfaglige maler tar baksetet; avdelingens dokumenter leder.",
+          "count": "10"
+        },
+        {
+          "title": "Avdelingens spesialitetsett",
+          "body": "Akuttmedisin (12), intensiv (5), anestesi (11) – hver med sine standarddokumenter.",
+          "count": "5–12"
+        },
+        {
+          "title": "Dine egne maler",
+          "body": "Importer avdelingens brevhoder og lokale strukturer fra Word eller PDF.",
+          "count": "∞"
+        }
+      ],
+      "readyNote": "KLARE avdelingens maler leder. Valgfrie generiske maler forblir i reserve slik at første skjerm samsvarer med hvordan avdelingen fungerer."
+    },
+    "leadWith": {
+      "badge": "Bruk dette først",
+      "title": "Det akuttavdelinger åpner først",
+      "items": [
+        {
+          "title": "Avdelingen, ikke bare individet",
+          "body": "Runder, personalmøter, overlapp – kollektive dokumenter."
+        },
+        {
+          "title": "ICU-progresjonsnotater som standard",
+          "body": "Skrevet daglig; malen er standarddokumentet i intensivavdelingen."
+        },
+        {
+          "title": "Sykepleiertriagering (IAO)",
+          "body": "For akuttmottak som også utstyrer sykepleierteam."
+        },
+        {
+          "title": "Akutt v1 / v2 + besøkskonklusjon",
+          "body": "To skoler for skriving side om side, pluss sluttdokumentet."
+        },
+        {
+          "title": "Anestesi pre-op + CRO",
+          "body": "Preoperativ konsultasjon er forhåndsvalgt; operasjonsrapport inkludert."
+        }
+      ]
+    },
+    "specialties": {
+      "badge": "Dekket",
+      "title": "Akuttmedisinske spesialiteter",
+      "subtitle": "Skreddersydde malantall per avdeling.",
+      "items": [
+        "Akuttmedisin – konsultasjon v1/v2, besøkskonklusjon (12)",
+        "Intensivmedisin – innledende vurdering, progresjonsnotater, personalmøte, innleggelsesrapport (5)",
+        "Anestesi – anestesikonsultasjon + operasjonsrapport (11)"
+      ]
+    },
+    "setting": {
+      "badge": "Sykehus",
+      "title": "Avdelingens rytme",
+      "body": "Flere pasienter per opptak, flere forfattere per dokument. Progresjonsnotater og overlapp former dagen."
+    },
+    "highlight": {
+      "badge": "Intensiv",
+      "title": "Ingen utskrivningsbrev – med vilje",
+      "body": "ICU mottar et komplett, selvstendig sett: innledende medisinsk vurdering, progresjonsnotater, personalmøterapport og innleggelsesrapport. Det generelle utskrivningsbrevet tilbys ikke fordi disse fire dokumentene allerede dekker oppholdet fra ende til annen – det er et komplett spesialitetsett, ikke et hull."
+    },
+    "deepLinksLabel": "Dypdykk",
+    "relatedLabel": "Relatert",
+    "cta": {
+      "title": "Utstyr avdelingen, ikke bare ett skrivebord",
+      "body": "Start gratis, eller book en demo for akutt, intensiv eller anestesi.",
+      "primary": "Start gratis",
+      "secondary": "Kontakt oss"
+    },
+    "statsLine": "61 spesialiteter · 227 maler · 10 tverrfaglige",
+    "visual": {
+      "imageAlt": "Sykepleierteam som gjennomgår en journal sammen på avdelingen",
+      "mediaCaption": "Avdelingens overlapp, triagering og ICU-notater – dokumenter som samsvarer med hvordan gulvet fungerer."
+    }
+  },
+  "diagnostics": {
+    "title": "AI-medisinsk dokumentasjon for diagnostikk og ekspertvurdering",
+    "description": "Tro diktering, institusjonens rapportmaler og korrekturlesing for radiologi, rettsmedisin, yrkesmedisin og klinisk farmakologi.",
+    "navLabel": "Diagnostikk",
+    "navDesc": "Tro diktering",
+    "hero": {
+      "badge": "4 spesialiteter · Ingen inneliggende pleie",
+      "title": "Undersøkelses- og ekspertrapporter, diktert som sagt",
+      "subtitle": "Disse fagene følger ikke en innlagt pasient – de produserer en rapport, ofte lang, ofte diktert.",
+      "lead": "Ord-for-ord diktering uten omskriving. Din institusjons standardrapport fra Word. Korrekturlesing før signering."
+    },
+    "toolkit": {
+      "badge": "Ditt verktøysett",
+      "title": "Reduserte sett som samsvarer med arbeidet",
+      "subtitle": "Verken utskrivningsbrev eller sengepostnotater – tro diktering og strukturerte rapporter.",
+      "layers": [
+        {
+          "title": "Delt kjerne",
+          "body": "Diktering og korrekturlesing leder; inneliggende maler blir ikke presset.",
+          "count": "10"
+        },
+        {
+          "title": "Spesialitetsett",
+          "body": "Radiologirapport; rettsmedisinsk / yrkesmedisinsk / farmakologisk rapport- og brevsett.",
+          "count": "2–11"
+        },
+        {
+          "title": "Dine egne maler",
+          "body": "Importer institusjonens standardrapport og gjengi den identisk.",
+          "count": "∞"
+        }
+      ],
+      "readyNote": "KLARE: diktering og sentrale rapporter. VALGFRI korrekturlesing forblir tilgjengelig som reserve."
+    },
+    "leadWith": {
+      "badge": "Bruk dette først",
+      "title": "Det diagnostiske team forventer",
+      "items": [
+        {
+          "title": "Tro diktering",
+          "body": "Ord-for-ord transkripsjon, ingen omskriving – akkurat det disse fagene forventer."
+        },
+        {
+          "title": "Institusjonens mal",
+          "body": "Institusjonens standardrapport importert fra en Word-fil og gjengitt identisk."
+        },
+        {
+          "title": "Korrekturlesing",
+          "body": "Korriger en rapport utkastet av en assistent før signering."
+        }
+      ]
+    },
+    "specialties": {
+      "badge": "Dekket",
+      "title": "Diagnostikk og ekspertvurdering",
+      "subtitle": "Sentrale dokumenter varierer etter fag.",
+      "items": [
+        "Radiologi – radiologirapport, bilde for bilde (2)",
+        "Rettsmedisin – rapport og brev, konsist eller detaljert (11)",
+        "Yrkesmedisin – besøksrapport, arbeidsevnevurdering, attester (11)",
+        "Klinisk farmakologi – farmakologisk vurdering, rapport og brev (11)"
+      ]
+    },
+    "setting": {
+      "badge": "Ingen inneliggende pleie",
+      "title": "Rapportsentrert arbeid",
+      "body": "Utskrivningsbrev og sengepostnotater tilbys ikke – de samsvarer ikke med hvordan disse dagene er strukturert."
+    },
+    "deepLinksLabel": "Dypdykk",
+    "relatedLabel": "Relatert",
+    "cta": {
+      "title": "Dikter én gang, behold institusjonens format",
+      "body": "Start gratis, eller spør om å rulle ut i en radiologi- eller eksperttjeneste.",
+      "primary": "Start gratis",
+      "secondary": "Se priser"
+    },
+    "statsLine": "61 spesialiteter · 227 maler · 10 tverrfaglige",
+    "visual": {
+      "imageAlt": "Kliniker som vurderer diagnostiske bilder på en arbeidsstasjon",
+      "mediaCaption": "Dikter én gang inn i institusjonens mal – korrekturlesing er ett trykk unna."
+    }
+  },
+  "allied-health": {
+    "title": "AI-dokumentasjon for helsefagarbeidere og ikke-medisinske profiler",
+    "description": "Navngitte maler for odontologi (Dentotar®), fysioterapi, sykepleie, psykologi og mer – første sesjon / oppfølging, aldri sykehusettet.",
+    "navLabel": "Helsefag",
+    "navDesc": "Odontologi & terapier",
+    "hero": {
+      "badge": "9 profiler · Praksis",
+      "title": "Din jobbtittel på siden – ikke en legetoolkit",
+      "subtitle": "Hver profil mottar en eller to maler skrevet for den. En fysioterapeut bør aldri lande på en kardiologiside.",
+      "lead": "Nevn jobben. Første sesjon vs oppfølging for rehabiliteringsfag. Odontologi med Dentotar®-aktpris – den eneste aktprisen i utvalget."
+    },
+    "toolkit": {
+      "badge": "Ditt verktøysett",
+      "title": "Dedikerte sett – aldri sykehuspakken",
+      "body": "Dekning som viser hvor bredt DocNote går utover leger.",
+      "layers": [
+        {
+          "title": "Delt kjerne",
+          "body": "Bare det som passer praksisarbeidsflyt – ikke sengepost utskrivningssett.",
+          "count": "delmengde"
+        },
+        {
+          "title": "Profilspesifikt sett",
+          "body": "Maler navngitt for jobben: tannpleier, fotterapeut, psykoterapeut og mer.",
+          "count": "1–10"
+        },
+        {
+          "title": "Dine egne maler",
+          "body": "Importer praksisbrever og sesjonsnotater fra Word eller PDF.",
+          "count": "∞"
+        }
+      ],
+      "readyNote": "KLARE profilmaler leder. Attester er forhåndsaktivert for kiropraktikk; andre VALGFRI elementer forblir i reserve.",
+      "subtitle": "Dekning som viser hvor bredt DocNote går utover leger."
+    },
+    "leadWith": {
+      "badge": "Bruk dette først",
+      "title": "Det helsefagarbeidere trenger å se",
+      "items": [
+        {
+          "title": "Nevn jobben",
+          "body": "«Tannpleier», «fotterapeut», «psykoterapeut» – besøkende må lese sin egen tittel."
+        },
+        {
+          "title": "Første sesjon / oppfølging",
+          "body": "Delingen som strukturerer hvert rehabiliteringsfag."
+        },
+        {
+          "title": "Tannlegeaktpris (Dentotar®)",
+          "body": "Sveitsiske tannlegatariffer foreslått med privatpasientpoeng – unikt for odontologi i DocNote-utvalget."
+        }
+      ]
+    },
+    "specialties": {
+      "badge": "Dekket",
+      "title": "Helsefag og ikke-medisinske profiler",
+      "subtitle": "Dedikerte malantall per profil.",
+      "items": [
+        "Odontologi – tannlege, tannpleier, ortodont + Dentotar® (10)",
+        "Kiropraktikk – rapport/brev + medisinsk attest forhåndsaktivert (7)",
+        "Fysioterapi – første sesjon, oppfølgingsesjon (4)",
+        "Fotterapi – fotterapikonsultasjon (4)",
+        "Dietetikk og ernæring (3)",
+        "Psykologi – psykoterapisesjon (3)",
+        "Sykepleie – overlapp, akutttriagering IAO (3)",
+        "Veterinærmedisin (3)",
+        "Pasienter – pasientoppsummering (1)"
+      ]
+    },
+    "highlight": {
+      "badge": "Odontologi · Dentotar®",
+      "title": "Tre jobber i én praksis – med aktpris",
+      "body": "Tannlege, tannpleier og ortodont får hver sine distinkte maler. DocNote foreslår sveitsiske tannlegatariffer med privatpasientpoeng (Dentotar®) – den eneste aktprisen i produktet. Ideelt for praksiser som ønsker kliniske notater og økonomisk ramming i én arbeidsflyt."
+    },
+    "setting": {
+      "badge": "Praksis",
+      "title": "Utover sykehuslegen",
+      "body": "Aldri det inneliggende sykehusettet. Sesjonsnotater, rapporter og attester formet for poliklinisk pleie."
+    },
+    "deepLinksLabel": "Dypdykk",
+    "relatedLabel": "Relatert",
+    "cta": {
+      "title": "Se maler navngitt for din profesjon",
+      "body": "Start gratis som odontologi, fysio, sykepleie eller annen profil – eller book en praksisdemo.",
+      "primary": "Start gratis",
+      "secondary": "Se priser"
+    },
+    "statsLine": "61 spesialiteter · 227 maler · 10 tverrfaglige",
+    "visual": {
+      "imageAlt": "Sykehusområde med kliniske bygninger",
+      "mediaCaption": "Navngitt for jobben – inkludert tannlegeaktpris der det betyr noe."
+    }
+  }
+}
