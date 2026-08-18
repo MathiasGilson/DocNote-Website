@@ -1,5 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
+import { getLocaleFromUrl } from '../utils/i18n';
+import { getSiteUi } from '../utils/inline-content';
 
 interface Props {
   translations: any;
@@ -8,6 +10,7 @@ interface Props {
 type Item = { quote: string; author: string; role: string; image: string };
 
 const { translations: t } = Astro.props;
+const siteUi = getSiteUi(getLocaleFromUrl(Astro.url));
 const enEntry = await getEntry('pages', 'en');
 const enItems = (enEntry?.data.testimonials.items || []) as Item[];
 
@@ -72,7 +75,7 @@ const testimonials: Item[] =
     </div>
 
     <div class="flex items-center justify-center gap-3 mt-10">
-      <button id="testimonial-prev" class="w-10 h-10 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors" aria-label="Previous testimonial">
+      <button id="testimonial-prev" class="w-10 h-10 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors" aria-label={siteUi.previousTestimonial}>
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
       </button>
       <div class="flex flex-col items-center gap-2 min-w-[4.5rem]">
@@ -82,7 +85,7 @@ const testimonials: Item[] =
               type="button"
               class:list={['testimonial-dot h-1.5 rounded-full transition-all duration-300', index === 0 ? 'bg-violet-500 w-5' : 'bg-gray-300 w-1.5']}
               data-dot={index}
-              aria-label={`Testimonial ${index + 1}`}
+              aria-label={`${siteUi.testimonial} ${index + 1}`}
             />
           ))}
         </div>
@@ -90,7 +93,7 @@ const testimonials: Item[] =
           1 / {testimonials.length}
         </p>
       </div>
-      <button id="testimonial-next" class="w-10 h-10 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors" aria-label="Next testimonial">
+      <button id="testimonial-next" class="w-10 h-10 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-400 transition-colors" aria-label={siteUi.nextTestimonial}>
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
       </button>
     </div>

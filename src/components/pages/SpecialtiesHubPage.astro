@@ -5,7 +5,8 @@ import '../../styles/landing-page.css';
 import '../../styles/family-landings.css';
 import '../../styles/hub-pages.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
-import { getLandingNavLabel } from '../../content/landings';
+import { getLandingNavLabel, getNavGroupLabel } from '../../content/landings';
+import { getLandingUi, getSiteUi } from '../../utils/inline-content';
 import {
   getSpecialtyFamily,
   getSpecialtyFamilyPath,
@@ -29,11 +30,12 @@ interface Props {
 
 const { locale } = Astro.props;
 const lang = locale;
+const siteUi = getSiteUi(lang);
 const p = getSpecialtiesHub(lang);
 
-const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
-const specialtiesLabel =
-  lang === 'fr' ? 'Spécialités' : lang === 'de' ? 'Fachgebiete' : 'Specialties';
+const ui = getLandingUi(lang);
+const homeLabel = ui.home;
+const specialtiesLabel = getNavGroupLabel('specialties', lang);
 
 const hubPath = SPECIALTIES_HUB_PATH;
 const breadcrumbLd = buildBreadcrumbLd([
@@ -45,7 +47,7 @@ const families = specialtyFamilySlugs.map((slug) => {
   const copy = getSpecialtyFamily(slug, lang);
   const meta = specialtyFamilyMeta[slug];
   const visual = getFamilyVisual(slug);
-  const { imageAlt } = familyVisualCopy(visual, lang);
+  const { imageAlt } = familyVisualCopy(slug, lang);
   return {
     slug,
     href: getLocalizedPath(getSpecialtyFamilyPath(slug), lang),
@@ -71,12 +73,12 @@ const primaryHref = getLocalizedPath('/tutorial', lang);
 const secondaryHref = getLocalizedPath('/contact', lang);
 const surgicalHref = getLocalizedPath(getSpecialtyFamilyPath('surgical'), lang);
 const croHref = getLocalizedPath('/operative-report-ai', lang);
-const countSuffix = lang === 'fr' ? 'spécialités' : 'specialties';
+const countSuffix = ui.specialtiesCount;
 ---
 
 <Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>
   <div class="lp-crumb-bar pt-28 sm:pt-32">
-    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+    <nav class="lp-crumb-inner" aria-label={siteUi.breadcrumb}>
       <ol class="flex flex-wrap items-center justify-center gap-2">
         <li>
           <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>

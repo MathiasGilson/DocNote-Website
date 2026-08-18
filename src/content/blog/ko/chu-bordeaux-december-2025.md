@@ -12,7 +12,7 @@ readTime: 10
 
 CHU HealthTech Connexion Day에서 병원 혁신을 위한 주요 행사가 열렸으며, 스타트업 DocNote는 의사의 행정 업무 흐름을 자동화하도록 설계된 AI 어시스턴트를 선보였습니다. 대학 병원 관객들은 디지털 헬스 주장에 대해 가장 까다롭고 가치 있는 테스터들 중 하나입니다. 그들은 복잡한 EHR, 다중 전문 진료 경로, 엄격한 데이터 보호 검토 속에서 생활합니다. [AI 메디컬 스크라이브](/ai-medical-scribe/)에 대한 관심은 도구가 단일 외래 진료용 사이드 앱이 아닌 병원 인프라처럼 보일 때만 실현됩니다.
 
-![DocNote at CHU HealthTech Connexion Day](/images/bordeaux_12.25_-_2.jpg)
+![CHU HealthTech Connexion Day의 DocNote](/images/bordeaux_12.25_-_2.jpg)
 
 이 솔루션은 기록된 대화와 업로드된 의료 문서로부터 구조화된 임상 문서를 생성합니다. 여기에는 외래 진료, 입원 병동 노트, 수술 보고서, 퇴원 서신 등이 포함됩니다. 외래 진료에만 초점을 맞춘 도구와 달리 DocNote는 EHR 시스템과의 직접적인 통합을 통해 종합적인 병원 전체 접근 방식을 제시합니다. 보르도에서의 논의는 시간 절약, 워크플로 효율성, 의료팀에 가해지는 압력 속에서의 데이터 보호 준수에 집중되었습니다. 이 조합이 바로 이날의 진정한 이야기입니다. CHU들은 일상적인 진료에 내재된 AI를 원하며, 다른 임상 시스템처럼 관리되기를 바랍니다.
 
@@ -28,7 +28,7 @@ CHU는 하나의 템플릿을 가진 단일 클리닉이 아닙니다. 이는 �
 
 DocNote의 보르도 참여는 병원 문서의 폭과 EHR 중심 설계를 강조하며 이 체크리스트에 답했습니다. 이러한 대화 뒤에 있는 제품 범위는 [병원 문서화](/hospital-documentation/)에서 확인할 수 있습니다.
 
-![DocNote exhibition stand in Bordeaux](/images/bordeaux_12.25_-_3.jpg)
+![보르도의 DocNote 전시 부스](/images/bordeaux_12.25_-_3.jpg)
 
 ## CHU가 이미 측정하고 있는 시간 압박
 

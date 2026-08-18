@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { type Locale } from '../../utils/i18n';
 import { getPageMeta } from '../../utils/seo';
+import { getSiteUi } from '../../utils/inline-content';
 
 
 interface Props {
@@ -13,6 +14,7 @@ const { locale } = Astro.props;
 
 const meta = getPageMeta('privacy', locale);
 const layoutTitle = meta.title;
+const siteUi = getSiteUi(locale);
 ---
 
 <Layout title={meta.title} description={meta.description}>
@@ -21,6 +23,7 @@ const layoutTitle = meta.title;
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
         {layoutTitle}
       </h1>
+      {locale !== 'fr' && <p class="text-center text-sm text-gray-400 mb-6">{siteUi.legalNoticeFr}</p>}
       <p class="text-center text-gray-500 mb-12">DocNote · Gilson GmbH</p>
 
       <div class="privacy-content">
@@ -35,7 +38,7 @@ const layoutTitle = meta.title;
           <li>Les garanties prévues par la législation applicable lorsque vous interagissez avec nos services.</li>
         </ul>
         <p>
-          Elle s'applique exclusivement aux traitements pour lesquels DocNote agit en qualité de responsable du traitement, au sens de la loi fédérale suisse sur la protection des données (LPD) et, le cas échéant, du Règlement Général sur la Protection des Données (RGPD – Règlement (UE) 2016/679).
+          Elle s'applique exclusivement aux traitements pour lesquels DocNote agit en qualité de responsable du traitement, au sens de la loi fédérale suisse sur la protection des données (LPD) et, le cas échéant, du Règlement Général sur la Protection des Données (RGPD, Règlement (UE) 2016/679).
         </p>
         <p>
           Le Site ne collecte aucune donnée de santé. Les données de santé traitées par nos clients via la solution DocNote le sont pour leur compte, en qualité de sous-traitant, et font l'objet d'une documentation contractuelle distincte (accord de traitement des données).

@@ -38,7 +38,7 @@ Cette mission correspond aux réalités du système de santé suisse. Les soins 
 
 Testé dans tous les contextes cliniques, en hôpital, en soins ambulatoires et au chevet du patient, la solution couvre désormais une grande partie des variations quotidiennes de la pratique médicale. Cette couverture vient des retours des médecins de diverses spécialités, pas d'un seul script de démonstration.
 
-Si vous découvrez cette catégorie de produit, l'aperçu [AI medical scribe](/ai-medical-scribe/) explique la version non marketing du travail à accomplir. Pour un usage hospitalier et interservices, consultez [hospital documentation](/hospital-documentation/).
+Si vous découvrez cette catégorie de produit, l'aperçu [scribe médical IA](/ai-medical-scribe/) explique la version non marketing du travail à accomplir. Pour un usage hospitalier et interservices, consultez [documentation hospitalière](/hospital-documentation/).
 
 ## Pourquoi le soutien suisse en santétech est différent (et utile)
 
@@ -76,7 +76,7 @@ Les priorités d'exécution de DocNote restent claires :
 
 Les boucles de feedback des médecins sont le moteur. Quand un cardiologue, un chirurgien et un généraliste sollicitent la même plateforme, les cas limites apparaissent vite. Couvrir une grande partie de la pratique quotidienne signifie intégrer ces cas limites dans les modèles et comportements sans prétendre que la médecine est uniforme.
 
-Des lectures connexes sur la pression documentaire et les preuves IA incluent [moins de temps à documenter avec l'IA](/blog/less-time-documenting-ai-more-care/) et [réduire l'épuisement des médecins](/blog/reducing-physician-burnout/). Le contexte de conformité se trouve dans [DocNote GDPR et nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+Des lectures connexes sur la pression documentaire et les preuves IA incluent [moins de temps à documenter avec l'IA](/blog/less-time-documenting-ai-more-care/) et [réduire l'épuisement des médecins](/blog/reducing-physician-burnout/). Le contexte de conformité se trouve dans [conformité GDPR et nFADP de DocNote](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## Ce que les hôpitaux et cliniciens peuvent retirer de cette nouvelle
 
@@ -96,7 +96,7 @@ Questions à poser :
 - À quoi ressemble l'intégration pour un pilote de ligne de service ?
 - Comment le succès est-il mesuré après 30 et 90 jours ?
 
-La réponse de DocNote reste cohérente : l'IA rédige des documents structurés, les médecins restent responsables, et le déploiement doit partir de documents réels en retard plutôt que d'un enthousiasme abstrait pour l'IA. Les plans pour les équipes prêtes à évaluer sont sur [pricing](/pricing/).
+La réponse de DocNote reste cohérente : l'IA rédige des documents structurés, les médecins restent responsables, et le déploiement doit partir de documents réels en retard plutôt que d'un enthousiasme abstrait pour l'IA. Les plans pour les équipes prêtes à évaluer sont sur [tarifs](/pricing/).
 
 ## Construire en public sans sur-vendre
 
@@ -156,4 +156,4 @@ Pour les pairs de l'écosystème genevois, nous sommes heureux d'échanger sur l
 
 La sélection pour Initial Startup Support de FONGIT est un moment de fierté pour DocNote et un coup de pouce pratique dans la communauté d'innovation genevoise. La mission reste la même : redonner du temps aux médecins en automatisant la documentation médicale structurée avec soin, preuves et respect de la responsabilité clinique.
 
-Si vous êtes un dirigeant hospitalier, clinicien ou partenaire de l'écosystème suisse, nous préférons vous montrer une lettre de sortie finale sous contraintes réelles qu'une diapositive sur l'IA. Commencez par [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) et [pricing](/pricing/), et construisez à partir de là. Ce n'est que le début.
+Si vous êtes un dirigeant hospitalier, clinicien ou partenaire de l'écosystème suisse, nous préférons vous montrer une lettre de sortie finale sous contraintes réelles qu'une diapositive sur l'IA. Commencez par [scribe médical IA](/ai-medical-scribe/), [documentation hospitalière](/hospital-documentation/) et [tarifs](/pricing/), et construisez à partir de là. Ce n'est que le début.

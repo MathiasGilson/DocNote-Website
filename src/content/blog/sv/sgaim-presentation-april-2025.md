@@ -3,138 +3,136 @@ title: "AI-medicinsk dokumentation vid SSMIG: vad schweizisk internmedicin efter
 excerpt: "Vid SSMIG/SGAIM:s årskongress presenterades DocNote under Prix Lumière. Här är vad primärvårdsteam frågade om AI-skrivare, säkerhet och arbetsflödesanpassning."
 category: "news"
 author: "Dr. Vincent Tan"
-authorRole: "Läkare & verkställande direktör"
+authorRole: "Läkare & VD"
 authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/remise-prix-lumiere-2023.jpg"
 date: "2025-05-20"
 readTime: 10
 ---
 
-# DocNote bei der SSMIG-Jahrestagung: Wie Schweizer Internisten die Dokumentation neu denken  
+Vid den årliga SSMIG-kongressen (Swiss Society of General Internal Medicine / SGAIM), en av Schweiz främsta mötesplatser för internmedicin och primärvård, presenterades DocNote som ett praktiskt svar på ett välkänt problem: hur man minskar den administrativa bördan utan att försämra den kliniska kvaliteten eller dataskyddet. Intresset för [AI-medicinsk dokumentation](/ai-medical-scribe/) är inte längre teoretiskt i schweizisk öppen- och sjukhusvård. Kliniker vill ha verktyg som passar verkliga konsultationsrytmer, respekterar schweiziska och EU:s integritetsregler och låter läkaren behålla kontrollen över varje anteckning som hamnar i journalen.
 
-Auf dem Jahreskongress der Schweizerischen Gesellschaft für Allgemeine Innere Medizin (SSMIG/SGAIM), einem der wichtigsten Treffen für Innere Medizin und Grundversorgung in der Schweiz, wurde DocNote als praktische Lösung für ein bekanntes Problem präsentiert: Wie lässt sich der administrative Aufwand reduzieren, ohne die klinische Qualität oder den Datenschutz zu gefährden. Das Interesse an [KI-gestützter medizinischer Dokumentation](/ai-medical-scribe/) ist in der Schweizer ambulanten und stationären Praxis nicht mehr theoretisch. Ärztinnen und Ärzte wollen Tools, die sich in den Beratungsrhythmus einfügen, Schweizer und EU-Datenschutzvorschriften einhalten und die Kontrolle über jede Notiz in der Patientenakte beim Arzt belassen.
+![DocNote vid SSMIGs årliga konferens](/images/ssmig_-_2.jpg)
 
-![DocNote am SSMIG-Jahreskongress](/images/ssmig_-_2.jpg)
+Som en del av kongressprogrammet lyftes projektet fram under Prix Lumière, ett pris som uppmärksammar framåtblickande initiativ som syftar till att förbättra vårdkvaliteten och läkares arbetsförhållanden. Denna inramning är viktig. Den placerade AI-dokumentation bredvid andra strukturella svar på utmattning, tillgänglighet och kontinuitet i vården, inte bredvid spekulativa teknikdemonstrationer. Samtalen kring presentationen avslöjade var schweizisk internmedicin är öppen för adoption, var skepticism är hälsosam och vilka designval som skiljer en användbar skrivare från ännu en skärm som stjäl uppmärksamhet.
 
-Im Rahmen des Kongressprogramms wurde das Projekt im Rahmen des Prix Lumière vorgestellt, einer Auszeichnung für wegweisende Initiativen, die die Versorgungsqualität und die Arbeitsbedingungen von Ärzten verbessern sollen. Diese Einordnung ist entscheidend. Sie stellt KI-Dokumentation neben andere strukturelle Antworten auf Burnout, Zugang und Versorgungskontinuität – nicht neben spekulative Technologiedemos. Die Diskussionen rund um die Präsentation zeigten, wo die Schweizer Innere Medizin offen für Innovationen ist, wo Skepsis angebracht ist und welche Designentscheidungen einen nützlichen digitalen Assistenten von einem weiteren Bildschirm unterscheiden, der die Aufmerksamkeit stiehlt.
+## Varför SSMIG är en naturlig scen för dokumentationsinnovation
 
-## Warum die SSMIG eine natürliche Bühne für Dokumentationsinnovationen ist  
+Allmän internmedicin ligger i centrum för schweiziska vårdvägar. Läkare hanterar multimorbiditet, samordnar specialister, dokumenterar longitudinella historier och tar på sig ökade krav på kodning och spårbarhet. När anteckningsskrivandet expanderar syns kostnaden som kortare besök, försenade brev, kvällens "pyjamastid" och mindre ögonkontakt med patienter.
 
-Die Allgemeine Innere Medizin steht im Zentrum der Schweizer Versorgungspfade. Ärzte managen Multimorbidität, koordinieren Spezialisten, dokumentieren Verläufe und bewältigen steigende Anforderungen an Kodierung und Nachverfolgbarkeit. Wenn die Dokumentation mehr Zeit frisst, zeigt sich das in kürzeren Konsultationen, verzögerten Briefen, nächtlichem „Pajama Time“ und weniger Blickkontakt mit den Patienten.
+Kongressdeltagare kopplade upprepade gånger dokumentationsbördan till tre tryck:
 
-Kongressteilnehmer nannten drei Haupttreiber der Dokumentationslast:  
+- **Volym**: fler kroniska tillstånd, fler uppföljningar, fler multidisciplinära korrespondenser
+- **Fragmentering**: EHR-skärmar som tvingar till kopiering, duplicerad datainmatning och efterbesöksinhämtning
+- **Ansvarighet**: medicinsk-juridiska förväntningar att varje beslut ska kunna rekonstrueras från journalen
 
-- **Volumen**: mehr chronische Erkrankungen, mehr Nachsorge, mehr multidisziplinäre Korrespondenz  
-- **Fragmentierung**: EHR-Bildschirme, die Copy-Paste, doppelte Dateneingabe und Nachbearbeitung erfordern  
-- **Verantwortlichkeit**: medizinisch-juristische Erwartungen, dass jede Entscheidung aus der Akte rekonstruierbar sein muss  
+Dessa tryck förklarar varför ambient och assisterad dokumentation fortsätter att dyka upp på schweiziska medicinska agendor. De förklarar också varför adoptionen är försiktig. Internmedicinteam behöver inte ytterligare en generisk chattrobot. De behöver strukturerade utdata som matchar konsultationsstilar, specialitetsmallar och sjukhus- eller praktikens EHR. För en bredare titt på bevisen bakom tidsbesparingar och återvunnen uppmärksamhet, se vår översikt om [mindre tid på dokumentation med AI och mer tid för vård](/blog/less-time-documenting-ai-more-care).
 
-Diese Faktoren erklären, warum ambient und assistierte Dokumentation auf Schweizer Agenden auftauchen – und warum die Einführung vorsichtig erfolgt. Teams der Inneren Medizin brauchen keinen generischen Chatbot. Sie benötigen strukturierte Ausgaben, die zu Beratungsstilen, Fachvorlagen und Krankenhaus- oder Praxis-EHRs passen. Einen breiteren Überblick über die Evidenz hinter Zeitersparnis und Aufmerksamkeitsgewinn finden Sie in unserem Artikel [Weniger Dokumentation mit KI, mehr Zeit für Patienten](/blog/less-time-documenting-ai-more-care).  
+## Vad Prix Lumière-inramningen signalerade om kliniska prioriteringar
 
-## Was die Prix-Lumière-Einordnung über klinische Prioritäten aussagt  
+Prix Lumière-sammanhanget var inte en isolerad produktpresentation. Det inramade AI-dokumentation som ett arbetsförhållanden- och vårdkvalitetsämne. Det är så många schweiziska kliniker utvärderar nya verktyg: Minskar detta den kognitiva belastningen? Bevakar det läkare-patientrelationen? Skapar det nya ansvars- eller integritetsrisker?
 
-Der Prix Lumière kontextualisierte KI-Dokumentation nicht als isolierte Produktpräsentation, sondern als Thema der Arbeitsbedingungen und Versorgungsqualität. So bewerten viele Schweizer Kliniker neue Tools: Reduziert es die kognitive Last? Erhält es die Arzt-Patienten-Beziehung? Schafft es neue Haftungs- oder Datenschutzrisiken?  
+Under och efter presentationen återvände diskussionen till mätbara fördelar som betyder något i primärvård och sjukhusinternmedicin:
 
-Während und nach der Präsentation drehten sich die Diskussionen um messbare Vorteile für die Grundversorgung und stationäre Innere Medizin:  
+- Minskad tid på att skriva konsultationsanteckningar och uppföljningsbrev
+- Mer komplett inhämtning av anamnes, mediciner och planeringsdetaljer medan samtalet fortfarande är färskt
+- Bättre förmåga att vända sig mot patienten istället för tangentbordet under mötet
+- Tydligare överlämningar när anteckningar är strukturerade och konsekventa mellan kliniker
 
-- Weniger Zeit für das Verfassen von Konsultationsnotizen und Folgebriefen  
-- Vollständigere Erfassung von Anamnese, Medikation und Planung, während das Gespräch noch frisch ist  
-- Mehr Blickkontakt mit dem Patienten statt auf die Tastatur  
-- Klarere Übergaben, wenn Notizen strukturiert und konsistent sind  
+Dessa fördelar räknas bara om verktyget förblir kliniskt relevant. Deltagarna var lika intresserade av begränsningar: hallucinationer, överdrivet självsäkra formuleringar, ofullständiga medicinlistor och risken att "acceptera" ett utkast utan ordentlig granskning. Ansvarfull implementering börjar med den ärligheten. AI kan skriva utkast. Läkaren validerar, redigerar och undertecknar.
 
-Diese Vorteile zählen nur, wenn das Tool klinisch relevant bleibt. Ebenso interessiert waren die Teilnehmer an Grenzen: Halluzinationen, übermütige Formulierungen, unvollständige Medikationslisten und das Risiko, einen Entwurf ohne ausreichende Prüfung zu „akzeptieren“. Verantwortungsvolle Nutzung beginnt mit dieser Ehrlichkeit. KI kann entwerfen. Der Arzt prüft, bearbeitet und unterzeichnet.  
+## Frågor schweiziska internister ställde om AI-skrivare
 
-## Fragen Schweizer Internisten zu KI-Assistenten  
+Samtal under evenemang är ofta mer upplysande än bildspel. Vid SSMIG klustrade frågor kring fem teman som alla sjukhus eller praktiker som utvärderar en [AI-medicinsk skrivare](/ai-medical-scribe/) bör besvara innan en pilot.
 
-Diskussionen auf Veranstaltungen sind oft aufschlussreicher als Präsentationen. Bei der SSMIG konzentrierten sich die Fragen auf fünf Themen, die jedes Krankenhaus oder jede Praxis vor einem Pilotprojekt mit einem [KI-gestützten Assistenten](/ai-medical-scribe/) klären sollte.  
+### 1. Vart går ljudet, och för hur länge?
 
-### 1. Wohin gehen die Audiodaten und wie lange werden sie gespeichert?  
+Schweiziska och EU:s dataskyddsregler gör lagringsplats, kvarhållning och raderingspolicyer till förstahandsbekymmer. Kliniker frågade om inspelningar lämnar Schweiz eller EU, om transkriptioner återanvänds för modellträning och hur snabbt rå ljud raderas efter att en anteckning genererats. Tydliga svar, lokala lagringsalternativ och automatiska raderingspolicyer är inte längre "trevligt att ha". De är förutsättningar för förtroende. För kompatibilitetsaspekten i europeiska implementeringar, läs vår anteckning om [DocNote GDPR och nFADP-efterlevnad](/blog/docnote-gdpr-nfadp-compliance).
 
-Schweizer und EU-Datenschutzvorschriften machen Speicherort, Aufbewahrung und Löschung zu zentralen Themen. Kliniker fragten, ob Aufnahmen die Schweiz oder die EU verlassen, ob Transkripte für Modelltraining wiederverwendet werden und wie schnell Rohdaten nach der Notizgenerierung gelöscht werden. Klare Antworten, lokale Speicheroptionen und automatische Löschrichtlinien sind keine „Nice-to-haves“ mehr, sondern Voraussetzungen für Vertrauen. Zum Compliance-Aspekt lesen Sie unsere Notiz zu [DocNote und Einhaltung von DSGVO/nDSG](/blog/docnote-gdpr-nfadp-compliance).  
+### 2. Vem är ansvarig om anteckningen är fel?
 
-### 2. Wer haftet, wenn die Notiz fehlerhaft ist?  
+Medicinsk-juridiskt ansvar överförs inte till en leverantör bara för att ett utkast genererats automatiskt. Läkare ville ha explicita arbetsflöden som gör mänsklig granskning obligatorisk, visar vad AI föreslog och gör redigeringar enkla innan anteckningen hamnar i EHR. Den hälsosammaste mentala modellen är densamma som för en junior kollega som skriver ett brev: hjälpsam, aldrig oövervakad.
 
-Die medizinisch-juristische Verantwortung geht nicht auf den Anbieter über, nur weil ein Entwurf automatisch generiert wurde. Ärzte wollten explizite Workflows, die menschliche Prüfung verpflichtend machen, zeigen, was die KI vorgeschlagen hat, und Bearbeitungen vor der EHR-Übernahme erleichtern. Das gesündeste Modell ist das gleiche wie bei einem jungen Kollegen, der einen Brief entwirft: hilfreich, aber nie unbeaufsichtigt.  
+### 3. Kommer detta fungera för komplexa multimorbiditetsbesök?
 
-### 3. Funktioniert das bei komplexen Multimorbiditäts-Konsultationen?  
+Primärvårds- och internmedicinsbesök hoppar ofta mellan problem, social kontext och medicinavstämning. Deltagare ville få bekräftelse på att AI-dokumentation kan hantera flerproblemssituationer utan att platta ut nyanser till en vag bedömning. Specialitetsmedveten struktur och redigerbara sektioner är viktigare här än glamorösa demonstrationer på korta, enkla besök.
 
-Besuche in der Grundversorgung und Inneren Medizin springen oft zwischen Problemen, sozialem Kontext und Medikationsabgleich. Teilnehmer wollten sicher sein, dass KI-Dokumentation Mehrfachprobleme erfassen kann, ohne Nuancen in eine vage Beurteilung zu glätten. Fachspezifische Struktur und bearbeitbare Abschnitte sind hier wichtiger als beeindruckende Demos kurzer Einzelbeschwerden.  
+### 4. Hur kopplas det till system vi redan använder?
 
-### 4. Wie verbindet es sich mit bestehenden Systemen?  
+En skrivare som skapar vackra anteckningar utanför EHR skapar en andra inkorg. Integration, exportvägar och sjukhusomfattande dokumenttyper (avdelningsanteckningar, utskrivningsbrev, konsultationsrapporter) kom upp upprepade gånger. Dokumentationsinnovation skalar bara när den möter kliniker där de redan arbetar. Det är kärnlöftet bakom [sjukhusdokumentation](/hospital-documentation/) arbetsflöden som täcker mer än öppenvårdsrummet.
 
-Ein Assistent, der schöne Notizen außerhalb der EHR erstellt, schafft einen zweiten Posteingang. Integration, Exportpfade und klinikweite Dokumenttypen (Stationsnotizen, Entlassungsbriefe, Konsilberichte) wurden häufig angesprochen. Dokumentationsinnovation skaliert nur, wenn sie Kliniker dort abholt, wo sie bereits arbeiten. Das ist das Kernversprechen hinter [Krankenhausdokumentation](/hospital-documentation/), die mehr als nur den ambulanten Raum abdeckt.  
+### 5. Vad händer med språk och schweizisk klinisk verklighet?
 
-### 5. Was ist mit Sprachen und Schweizer Klinikalltag?  
+Schweiz mångspråkiga praktikmiljö är inte ett undantagsfall. Franska, tyska, italienska och blandade möten är rutin. Team frågade om taligenkänning och anteckningsgenerering håller måttet över språk och accenter, och om mallar kan matcha lokala rapportkonventioner snarare än enbart US-centrerade SOAP-standarder.
 
-Die mehrsprachige Praxisumgebung der Schweiz ist kein Sonderfall. Französisch, Deutsch, Italienisch und gemischte Konsultationen sind Routine. Teams fragten, ob Spracherkennung und Notizgenerierung über Sprachen und Akzente hinweg funktionieren und ob Vorlagen lokale Berichtskonventionen abbilden können – nicht nur US-zentrierte SOAP-Standards.  
+## Adoptionslärdomar för primärvård och sjukhusinternmedicin
 
-## Einführungserkenntnisse für Grundversorgung und stationäre Innere Medizin  
+Intresse vid SSMIG betyder inte omedelbar implementering. De praktiker och avdelningar som med störst sannolikhet lyckas med AI-dokumentation delar några mönster som framkom i sidosamtal och speglade vad vi ser i schweiziska och europeiska implementeringar.
 
-Interesse auf der SSMIG bedeutet nicht sofortige Einführung. Die Praxen und Abteilungen, die mit KI-Dokumentation am ehesten Erfolg haben, teilen Muster, die in Nebengesprächen auftauchten und unsere Erfahrungen in Schweizer und europäischen Projekten widerspiegeln.  
+**Börja med en definierad dokumenttyp.** Konsultationsrapporter eller utskrivningsbrev med tydlig struktur slår "dokumentera allt"-pilotprojekt. Omfång skapar mätbara före-och-efter-jämförelser.
 
-**Beginnen Sie mit einem definierten Dokumenttyp.** Konsilberichte oder Entlassungsbriefe mit klarer Struktur schlagen „alles dokumentieren“-Piloten. Der Rahmen ermöglicht messbare Vorher-Nachher-Vergleiche.  
+**Håll läkare i redigeringsloopen från dag ett.** Utbildning bör betona granskningsvanor, varningsflaggor (allergier, doser, diagnoser) och personliga stilpreferenser. Hastighet utan granskning är ingen vinst.
 
-**Halten Sie Ärzte von Tag eins im Bearbeitungskreislauf.** Schulungen sollten Prüfroutinen, Warnzeichen (Allergien, Dosierungen, Diagnosen) und persönliche Stilpräferenzen betonen. Geschwindigkeit ohne Prüfung ist kein Gewinn.  
+**Mät vad kliniker känner, inte bara klick.** Tid per anteckning spelar roll. Det gör även efterarbetsjournalföring, samma dag-anteckningsavslutning och subjektiv kognitiv belastning. Minskad utmattning handlar delvis om att återta uppmärksamhet. Vår relaterade artikel om [minska läkarutmattning](/blog/reducing-physician-burnout) utvecklar den länken.
 
-**Messen Sie, was Kliniker spüren, nicht nur Klicks.** Zeit pro Notiz zählt. Ebenso Nachtdokumentation, Notizabschluss am selben Tag und subjektive kognitive Last. Burnout-Reduktion hängt teilweise mit zurückgewonnener Aufmerksamkeit zusammen. Unser Artikel [Burnout bei Ärzten reduzieren](/blog/reducing-physician-burnout) vertieft diesen Zusammenhang.  
+**Behandla integritet som en klinisk funktion.** När personalen kan förklara kvarhållning och radering i en mening ökar förtroendet och governance-granskningar går snabbare.
 
-**Behandeln Sie Datenschutz als klinisches Feature.** Wenn Mitarbeiter Aufbewahrung und Löschung in einem Satz erklären können, steigt das Vertrauen und Governance-Prüfungen gehen schneller.  
+**Planera för blandad erfarenhet.** ST-läkare kan skriva fler utkast med AI. Erfarna läkare kan vilja ha snävare mallar. Båda grupperna behöver samma ansvarsstandard.
 
-**Planen Sie für gemischte Erfahrungsstufen.** Assistenzärzte nutzen KI vielleicht häufiger für Entwürfe. Erfahrene Ärzte möchten engere Vorlagen. Beide Gruppen brauchen denselben Verantwortungsstandard.  
+En praktisk pilotchecklista som många team lämnade kongressen och diskuterade såg ut så här:
 
-Eine praktische Pilot-Checkliste, die viele Teams diskutierten, sah so aus:  
+1. Välj en specialenhet eller praktikgrupp (8 till 15 kliniker)
+2. Definiera 2 till 3 dokumenttyper och framgångsmått för 6 till 8 veckor
+3. Bekräfta datalagring, kvarhållning och EHR-överlämning innan start
+4. Kör veckovisa feedbackrundor om hallucinationer, saknade fält och mallluckor
+5. Beslut om utökning / iteration / paus med kliniskt ledarskap, inte bara IT
 
-1. Wählen Sie eine Fachabteilung oder Praxisgruppe (8–15 Kliniker)  
-2. Definieren Sie 2–3 Dokumenttypen und Erfolgsmetriken für 6–8 Wochen  
-3. Bestätigen Sie Datenspeicherung, Aufbewahrung und EHR-Anbindung vor dem Start  
-4. Sammeln Sie wöchentlich Feedback zu Halluzinationen, fehlenden Feldern und Vorlagenlücken  
-5. Entscheiden Sie Ausweiten/Iterieren/Pausieren mit klinischer Leitung, nicht nur IT  
+## Specialitetstrender: varför internmedicin går från nyfikenhet till piloter
 
-## Fachtrends: Warum Innere Medizin von Neugier zu Piloten übergeht  
+Över hela Europa började ambient dokumentation i öppenvårdsmottagningar och kommer nu in på sjukhusavdelningar, akutvägar och specialkliniker. Internmedicin är en naturlig tidig användare av tre skäl:
 
-In Europa begann ambient Dokumentation in Ambulanzen und dringt nun in Stationen, Notfallpfade und Fachkliniken vor. Innere Medizin ist ein natürlicher Frühadoptier aus drei Gründen:  
+- Besök är samtalsintensiva och dokumentationsintensiva samtidigt
+- Kontinuitet i vården hänger på anteckningar som andra kliniker kan lita på
+- Administrativ belastning är en känd drivkraft för tidig karriärmissnöje
 
-- Besuche sind gesprächs- und dokumentationsintensiv zugleich  
-- Versorgungskontinuität hängt von vertrauenswürdigen Notizen ab  
-- Administrativer Aufwand ist ein bekannter Unzufriedenheitstreiber unter Berufseinsteigern  
+Trenden är inte "ersätt journalen". Det är "skriv utkast till journalen från mötet, sedan förfina." Denna förändring stämmer överens med ett bredare intresse för ansvarsfull klinisk AI: verktyg som tar bort repetitivt arbete samtidigt som de lämnar bedömning, empati och slutligt ansvar hos läkaren. DocNotes närvaro vid SSMIG reflekterade denna förändring inom schweizisk internmedicin: ökad efterfrågan på AI som är kliniskt relevant, säker och integrerad i vardagliga arbetsflöden snarare än parkerad i en sidoportal.
 
-Der Trend heißt nicht „Akte ersetzen“, sondern „Akte aus dem Gespräch entwerfen, dann verfeinern“. Dies passt zum breiteren Interesse an verantwortungsvoller klinischer KI: Tools, die repetitive Arbeit reduzieren, aber Urteil, Empathie und letzte Verantwortung beim Arzt belassen. DocNotes Präsenz auf der SSMIG spiegelte diesen Wandel in der Schweizer Inneren Medizin wider: wachsende Nachfrage nach KI, die klinisch relevant, sicher und in Arbeitsabläufe integriert ist – nicht in ein separates Portal abgeschoben.  
+Sjukhus som utvärderar bredare implementering frågar ofta hur öppenvårdsskrivning utvidgas till inneliggande anteckningar och utskrivningskommunikation. Det är precis det gap som en [sjukhusdokumentation](/hospital-documentation/) ansats är tänkt att täcka, från konsultationsrapporter genom avdelningsuppföljning till utskrivningsbrev.
 
-Krankenhäuser, die eine breitere Einführung prüfen, fragen oft, wie ambulante Dokumentation auf Stationsnotizen und Entlassungskommunikation ausgeweitet werden kann. Genau diese Lücke soll ein [Krankenhausdokumentations-Ansatz](/hospital-documentation/) schließen – von Konsilberichten über Stationsverläufe bis zu Entlassungsbriefen.  
+## FAQ
 
-## FAQ  
+<details>
+  <summary>Vad var DocNotes roll vid SSMIG/SGAIMs årliga kongress?</summary>
+  <p>DocNote presenterades som ett AI-dokumentationsinitiativ som syftar till att minska den administrativa bördan i klinisk praktik. Projektet lyftes också fram i samband med Prix Lumière, som uppmärksammar insatser som förbättrar vårdkvalitet och läkares arbetsförhållanden.</p>
+</details>
 
-<details>  
-  <summary>Welche Rolle spielte DocNote auf dem SSMIG/SGAIM-Jahreskongress?</summary>  
-  <p>DocNote wurde als KI-Dokumentationsinitiative vorgestellt, die den administrativen Aufwand in der klinischen Praxis reduzieren soll. Das Projekt wurde auch im Rahmen des Prix Lumière präsentiert, der Bemühungen um bessere Versorgungsqualität und Arbeitsbedingungen von Ärzten auszeichnet.</p>  
-</details>  
+<details>
+  <summary>Varför är schweiziska internmedicinteam intresserade av AI-medicinska skrivare?</summary>
+  <p>Dokumentationsvolym, EHR-friktion och medicinsk-juridisk spårbarhet tar upp stora delar av den kliniska dagen. Team vill ha verktyg som skriver strukturerade anteckningar från mötet så läkare kan lägga mer uppmärksamhet på patienter samtidigt som de fortfarande granskar och undertecknar varje journalanteckning.</p>
+</details>
 
-<details>  
-  <summary>Warum interessieren sich Schweizer Internisten-Teams für KI-Assistenten?</summary>  
-  <p>Dokumentationsvolumen, EHR-Reibungsverluste und Nachvollziehbarkeit verbrauchen viel klinische Zeit. Teams wollen Tools, die strukturierte Notizen aus Gesprächen entwerfen, damit Ärzte mehr Aufmerksamkeit für Patienten haben – bei gleichzeitiger Prüfung und Unterzeichnung jeder Akte.</p>  
-</details>  
+<details>
+  <summary>Vilka risker lyfte kliniker fram om AI-genererade anteckningar?</summary>
+  <p>Vanliga bekymmer inkluderade hallucinationer eller ofullständiga detaljer, oklar medicinsk-juridisk ansvarighet om ett utkast accepteras utan granskning och dataskyddsfrågor om var ljud och transkriptioner lagras och för hur länge.</p>
+</details>
 
-<details>  
-  <summary>Welche Risiken nannten Kliniker zu KI-generierten Notizen?</summary>  
-  <p>Häufige Bedenken waren Halluzinationen oder unvollständige Details, unklare Haftung bei ungeprüfter Übernahme und Datenschutzfragen zu Speicherort und -dauer von Audio und Transkripten.</p>  
-</details>  
+<details>
+  <summary>Hur borde en praktik eller sjukhus starta en AI-dokumentationspilot?</summary>
+  <p>Välj en liten klinikergrupp, begränsa piloten till några dokumenttyper, definiera mått som tid per anteckning och efterarbetsjournalföring, bekräfta integritet och EHR-integration i förväg och kräv läkargranskning av varje AI-utkast innan det hamnar i journalen.</p>
+</details>
 
-<details>  
-  <summary>Wie sollte eine Praxis oder Klinik einen KI-Dokumentationspilot starten?</summary>  
-  <p>Wählen Sie eine kleine Klinikergruppe, begrenzen Sie den Pilot auf wenige Dokumenttypen, definieren Sie Metriken wie Zeit pro Notiz und Nachtdokumentation, klären Sie Datenschutz und EHR-Anbindung vorab und verlangen Sie ärztliche Prüfung jedes KI-Entwurfs vor Aktenübernahme.</p>  
-</details>  
+<details>
+  <summary>Stöder DocNote bara öppenvårdskonsultationsanteckningar?</summary>
+  <p>Nej. DocNote är designad för sjukhus- och klinikarbetsflöden som inkluderar konsultationer, avdelningsanteckningar, operationsrapporter och utskrivningsbrev, med vägar in i befintliga EHR-miljöer. Se sjukhusdokumentation för hela omfattningen.</p>
+</details>
 
-<details>  
-  <summary>Unterstützt DocNote nur ambulante Konsultationsnotizen?</summary>  
-  <p>Nein. DocNote ist für Krankenhaus- und Klinikabläufe konzipiert, die Konsile, Stationsnotizen, OP-Berichte und Entlassungsbriefe umfassen – mit Anbindung an bestehende EHRs. Siehe Krankenhausdokumentation für den vollen Umfang.</p>  
-</details>  
+<details>
+  <summary>Var kan schweiziska team utvärdera DocNote efter kongressen?</summary>
+  <p>Team kan granska produktfunktioner på sidorna för AI-medicinsk skrivare och sjukhusdokumentation, sedan jämföra planer på prissättning för att planera en pilot som matchar specialitetsmix och efterlevnadskrav.</p>
+</details>
 
-<details>  
-  <summary>Wo können Schweizer Teams DocNote nach dem Kongress evaluieren?</summary>  
-  <p>Teams können Produktfunktionen auf der Seite [KI-gestützter medizinischer Assistent](/ai-medical-scribe/) und [Krankenhausdokumentation](/hospital-documentation/) prüfen, dann Pläne auf der [Preisseite](/pricing/) vergleichen, um einen Pilot passend zur Fachmischung und Compliance zu planen.</p>  
-</details>  
+## Slutsats: från kongressintresse till säkrare kliniska arbetsflöden
 
-## Fazit: Von Kongressinteresse zu sichereren klinischen Abläufen  
+SSMIG satte strålkastaren på en enkel idé med svåra implementeringsdetaljer. AI kan hjälpa schweizisk internmedicin återta tid och uppmärksamhet, men bara när dokumentationsverktyg är byggda för klinisk verklighet, integritetslagar och mänsklig ansvarighet. Prix Lumière-inramningen underströk att detta är en arbetskraft- och kvalitetsfråga, inte en gadgetkapplöpning.
 
-Die SSMIG beleuchtete eine einfache Idee mit komplexen Umsetzungsdetails. KI kann Schweizer Internisten helfen, Zeit und Aufmerksamkeit zurückzugewinnen – aber nur, wenn Dokumentationstools für klinische Realität, Datenschutz und menschliche Verantwortung gebaut sind. Die Prix-Lumière-Einordnung unterstrich: Dies ist ein Arbeitskräfte- und Qualitätsthema, kein Gadget-Wettlauf.  
-
-Wenn Ihre Abteilung nach den Kongressgesprächen ambient oder assistierte Dokumentation prüft, beginnen Sie mit einem fokussierten Pilot, bestehen Sie auf Prüfworkflows und wählen Sie eine Plattform, die für europäische Krankenhaus- und Praxisbedingungen designed ist. Erkunden Sie DocNotes [KI-gestützten medizinischen Assistenten](/ai-medical-scribe/), prüfen Sie die [Krankenhausdokumentationsabdeckung](/hospital-documentation/) und vergleichen Sie Optionen auf der [Preisseite](/pricing/), um mit klinischen und IT-Verantwortlichen den nächsten Schritt zu planen.
+Om din avdelning utforskar ambient eller assisterad dokumentation efter kongresssamtalen, börja med en avgränsad pilot, insistera på granskningsarbetsflöden och välj en plattform designad för europeiska sjukhus- och klinikbegränsningar. Utforska DocNotes [AI-medicinsk skrivare](/ai-medicinsk-skrivare), granska [sjukhusdokumentation](/hospital-documentation/) täckning och jämför alternativ på [prissättning](/pricing/) för att planera nästa steg med dina kliniska och IT-intressenter.

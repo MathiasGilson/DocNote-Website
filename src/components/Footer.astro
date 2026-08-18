@@ -1,6 +1,7 @@
 ---
 import { getLocalizedPath, getCareersPath, type Locale } from "../utils/i18n"
 import { footerLandingSlugs, getLandingNavLabel } from "../content/landings"
+import { getSiteUi } from "../utils/inline-content"
 
 interface Props {
     locale: Locale
@@ -11,38 +12,10 @@ const { locale, translations: t } = Astro.props
 const currentYear = new Date().getFullYear()
 const careersHref = getCareersPath(locale)
 
-const productsLabel =
-    locale === "fr"
-        ? "Produits"
-        : locale === "de"
-          ? "Produkte"
-          : locale === "ru"
-            ? "Продукты"
-            : locale === "es"
-              ? "Productos"
-              : "Products"
-
-const resourcesLabel =
-    locale === "fr"
-        ? "Ressources"
-        : locale === "de"
-          ? "Ressourcen"
-          : locale === "ru"
-            ? "Ресурсы"
-            : locale === "es"
-              ? "Recursos"
-              : "Resources"
-
-const hostedLabel =
-    locale === "fr"
-        ? "Hébergé en Suisse"
-        : locale === "de"
-          ? "Gehostet in der Schweiz"
-          : locale === "ru"
-            ? "Хостинг в Швейцарии"
-            : locale === "es"
-              ? "Alojado en Suiza"
-              : "Hosted in Switzerland"
+const siteUi = getSiteUi(locale)
+const productsLabel = siteUi.products
+const resourcesLabel = siteUi.resources
+const hostedLabel = siteUi.hostedInSwitzerland
 
 const APP_IOS = "https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204"
 const APP_ANDROID = "https://play.google.com/store/apps/details?id=app.docnote&pli=1"
@@ -84,7 +57,7 @@ const APP_WEB = "https://docnote.care/app/"
                     <span aria-hidden="true">·</span>
                     <span class="site-footer__trust-item">
                         <span class="site-footer__trust-icon site-footer__trust-icon--flag" aria-hidden="true">
-                            <img src="/images/flags/ch.svg" alt="Switzerland" width="14" height="14" loading="lazy" decoding="async" />
+                            <img src="/images/flags/ch.svg" alt={siteUi.switzerland} width="14" height="14" loading="lazy" decoding="async" />
                         </span>
                         <span>{hostedLabel}</span>
                     </span>
@@ -106,13 +79,13 @@ const APP_WEB = "https://docnote.care/app/"
                 <p class="site-footer__heading">{productsLabel}</p>
                 <ul class="site-footer__list">
                     <li>
-                        <a href={APP_IOS} target="_blank" rel="noopener noreferrer">iOS App</a>
+                        <a href={APP_IOS} target="_blank" rel="noopener noreferrer">{siteUi.iosApp}</a>
                     </li>
                     <li>
-                        <a href={APP_ANDROID} target="_blank" rel="noopener noreferrer">Android App</a>
+                        <a href={APP_ANDROID} target="_blank" rel="noopener noreferrer">{siteUi.androidApp}</a>
                     </li>
                     <li>
-                        <a href={APP_WEB} target="_blank" rel="noopener noreferrer">Web App</a>
+                        <a href={APP_WEB} target="_blank" rel="noopener noreferrer">{siteUi.webApp}</a>
                     </li>
                 </ul>
             </div>

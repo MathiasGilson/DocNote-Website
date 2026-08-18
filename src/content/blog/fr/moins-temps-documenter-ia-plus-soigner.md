@@ -27,7 +27,7 @@ Ces métriques objectives du DSE ont été renforcées par les retours des clini
 
 ### Au-delà de la productivité : redonner l'attention aux patients
 
-Fait important, les bénéfices allaient au-delà des gains de temps. Les cliniciens ont décrit un meilleur engagement lors des consultations, avec moins besoin de partager leur attention entre le patient et l'écran d'ordinateur. Dans un environnement de soins où les exigences documentaires continuent de s'étendre, ce changement n'est pas anodin — il affecte directement la qualité des soins, la satisfaction des médecins et potentiellement la confiance des patients.
+Fait important, les bénéfices allaient au-delà des gains de temps. Les cliniciens ont décrit un meilleur engagement lors des consultations, avec moins besoin de partager leur attention entre le patient et l'écran d'ordinateur. Dans un environnement de soins où les exigences documentaires continuent de s'étendre, ce changement n'est pas anodin : il affecte directement la qualité des soins, la satisfaction des médecins et potentiellement la confiance des patients.
 
 Cela dit, l'étude a également mis en lumière des limites actuelles. Les notes générées par l'IA nécessitaient encore une révision et des modifications occasionnelles pour la précision, l'exhaustivité et l'alignement stylistique avec les habitudes de pratique individuelles. La fiabilité et l'intégration transparente restent des domaines critiques d'amélioration.
 
@@ -35,7 +35,7 @@ Cela dit, l'étude a également mis en lumière des limites actuelles. Les notes
 
 Pris ensemble, les résultats suggèrent que les scribes IA ambiants passent d'outils expérimentaux à une infrastructure clinique fondamentale. En réduisant les frictions administratives et en récupérant de la bande passante cognitive, ces systèmes peuvent jouer un rôle significatif dans l'atténuation de l'épuisement professionnel tout en préservant la concentration clinique.
 
-Alors que les pressions documentaires augmentent dans le monde entier, la question n'est peut-être plus de savoir si l'IA a sa place dans la documentation clinique — mais comment la déployer de manière responsable, sécurisée et à grande échelle pour maximiser à la fois l'efficacité et la présence humaine dans les soins.
+Alors que les pressions documentaires augmentent dans le monde entier, la question n'est peut-être plus de savoir si l'IA a sa place dans la documentation clinique, mais comment la déployer de manière responsable, sécurisée et à grande échelle pour maximiser à la fois l'efficacité et la présence humaine dans les soins.
 
 ---
 

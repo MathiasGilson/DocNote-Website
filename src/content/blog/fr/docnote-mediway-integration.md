@@ -90,7 +90,7 @@ Déploiement suggéré :
 
 Pendant le pilote, gardez les chemins de support évidents. Les médecins doivent savoir qui contacter pour les questions côté Mediway versus côté DocNote. Une propriété ambiguë est une raison courante pour laquelle les intégrations stagnent après l'annonce.
 
-Si votre organisation évalue aussi les exigences de confidentialité suisses ou européennes, associez le pilote de flux de travail à la lecture sur la conformité dans [DocNote GDPR et nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/). Pour le contexte sur la charge de documentation et l'épuisement professionnel, consultez [réduire l'épuisement des médecins](/blog/reducing-physician-burnout/) et [moins de temps à documenter avec l'IA](/blog/less-time-documenting-ai-more-care/).
+Si votre organisation évalue aussi les exigences de confidentialité suisses ou européennes, associez le pilote de flux de travail à la lecture sur la conformité dans [conformité GDPR et nFADP de DocNote](/blog/docnote-gdpr-nfadp-compliance/). Pour le contexte sur la charge de documentation et l'épuisement professionnel, consultez [réduire l'épuisement des médecins](/blog/reducing-physician-burnout/) et [moins de temps à documenter avec l'IA](/blog/less-time-documenting-ai-more-care/).
 
 ### Gestion du changement sans théâtre
 

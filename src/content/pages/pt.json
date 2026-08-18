@@ -31,7 +31,7 @@
     "patients": "Pacientes",
     "templates": "Modelos",
     "settings": "Configurações",
-    "consultationTitle": "Consulta — Paciente #1247",
+    "consultationTitle": "Consulta: Paciente #1247",
     "consultationDate": "Hoje, 14:30 · Clínica Geral",
     "recording": "Gravação",
     "soapNoteGenerated": "Nota SOAP Gerada",
@@ -114,7 +114,7 @@
     "integration": {
       "title": "Integração com EHR",
       "description": "Integre-se perfeitamente ao seu sistema de Prontuário Eletrônico de Saúde existente.",
-      "animTitle": "EHR — Registro do Paciente",
+      "animTitle": "EHR: Registro do Paciente",
       "animPatient": "Paciente",
       "animDob": "Data de Nascimento",
       "animNotes": "Notas",
@@ -232,6 +232,8 @@
   "specialties": {
     "title": "Apoiando 61 especialidades médicas",
     "subtitle": "Da clínica geral ao cuidado especializado",
+    "countLabel": "61",
+    "familiesCta": "Explorar as sete famílias de especialidades",
     "items": [
       "Clínica Geral",
       "Medicina Interna",
@@ -249,8 +251,7 @@
       "Cirurgia",
       "Urologia",
       "Medicina de Emergência"
-    ],
-    "countLabel": "61"
+    ]
   },
   "testimonials": {
     "badge": "Depoimento",
@@ -294,7 +295,7 @@
   },
   "valueProp": {
     "title": "Documentação Médica Simplificada",
-    "subtitle": "Unifique seu fluxo de trabalho de documentação, economize horas todos os dias e foque no que mais importa — seus pacientes.",
+    "subtitle": "Unifique seu fluxo de trabalho de documentação, economize horas todos os dias e foque no que mais importa: seus pacientes.",
     "card1": {
       "title": "Comece rapidamente",
       "description": "Comece instantaneamente. Qualquer médico da sua equipe pode gravar, transcrever e compartilhar notas clínicas em minutos."
@@ -305,7 +306,7 @@
     },
     "card3": {
       "title": "Perfeito em todos os dispositivos",
-      "description": "Mantenha-se conectado, onde quer que trabalhe. O DocNote funciona perfeitamente em qualquer dispositivo — celular, tablet ou desktop."
+      "description": "Mantenha-se conectado, onde quer que trabalhe. O DocNote funciona perfeitamente em qualquer dispositivo: celular, tablet ou desktop."
     }
   },
   "compliance": {
@@ -438,7 +439,7 @@
       "q9": "Quanto tempo leva a integração?",
       "a9": "A maioria dos clínicos individuais começa no mesmo dia após o teste gratuito. As implantações em hospitais e clínicas geralmente levam algumas semanas, dependendo da integração com EHR, cronograma de treinamento e revisão interna de TI.",
       "q10": "Vários médicos em uma clínica podem compartilhar uma conta?",
-      "a10": "Pequenas clínicas podem começar no Profissional por clínico. Para departamentos compartilhados, funções administrativas ou acesso hospitalar amplo, o plano Empresarial é o mais adequado — entre em contato com vendas e dimensionaremos com você."
+      "a10": "Pequenas clínicas podem começar no Profissional por clínico. Para departamentos compartilhados, funções administrativas ou acesso hospitalar amplo, o plano Empresarial é o mais adequado. Entre em contato com vendas e dimensionaremos com você."
     },
     "compare": {
       "title": "Compare os planos",
@@ -447,7 +448,7 @@
       "pro": "Profissional",
       "enterprise": "Empresarial",
       "yes": "Incluído",
-      "no": "—",
+      "no": "-",
       "custom": "Personalizado",
       "rows": [
         {
@@ -603,26 +604,26 @@
       }
     },
     "highlightsTitle": "Como trabalhamos",
-    "highlightsLead": "O DocNote não começou como um pitch deck. Começou nos corredores dos hospitais — entre rodadas de enfermaria, listas cirúrgicas e noites gastas reescrevendo notas que deveriam ter se escrito sozinhas. Essa origem ainda molda cada contratação, cada lançamento e cada conversa que temos com uma clínica.",
+    "highlightsLead": "O DocNote não começou como um pitch deck. Começou nos corredores dos hospitais: entre rodadas de enfermaria, listas cirúrgicas e noites gastas reescrevendo notas que deveriam ter se escrito sozinhas. Essa origem ainda molda cada contratação, cada lançamento e cada conversa que temos com uma clínica.",
     "highlights": [
       {
         "title": "Médicos praticantes no centro",
-        "body": "Nossos fundadores ainda praticam medicina. Isso não é um slogan para a página Sobre — é o filtro para decisões de produto. Se um recurso não sobreviver a uma rodada de enfermaria movimentada, uma baia de emergência barulhenta ou uma clínica de sexta-feira à tarde, ele não é lançado.\n\nLinguagem clínica, estrutura por especialidade e o ritmo real da documentação hospitalar vêm primeiro. Projetamos para cartas de alta, relatórios cirúrgicos, arquivos colaborativos de hospital-dia e os momentos difíceis em que três cuidadores atendem o mesmo paciente em uma tarde.\n\nQuando os clínicos nos dizem que algo parece errado, tratamos isso como entrada de engenharia — não como um comentário de UX opcional."
+        "body": "Nossos fundadores ainda praticam medicina. Isso não é um slogan para a página Sobre; é o filtro para decisões de produto. Se um recurso não sobreviver a uma rodada de enfermaria movimentada, uma baia de emergência barulhenta ou uma clínica de sexta-feira à tarde, ele não é lançado.\n\nLinguagem clínica, estrutura por especialidade e o ritmo real da documentação hospitalar vêm primeiro. Projetamos para cartas de alta, relatórios cirúrgicos, arquivos colaborativos de hospital-dia e os momentos difíceis em que três cuidadores atendem o mesmo paciente em uma tarde.\n\nQuando os clínicos nos dizem que algo parece errado, tratamos isso como entrada de engenharia, não como um comentário de UX opcional."
       },
       {
         "title": "Privacidade hospedada na Suíça por padrão",
-        "body": "Dados de saúde não são um corpus de treinamento. O DocNote hospeda informações clínicas na Suíça, criptografa em trânsito e em repouso, e aplica regras de retenção que correspondem às expectativas europeias para sigilo médico.\n\nConstruímos para as realidades da FADP / nLPD, GDPR, HIPAA e ISO 27001 — revisões de TI hospitalar, questionários de compras e a pergunta silenciosa que todo médico faz: onde os dados do meu paciente realmente estão?\n\nNada na documentação ambiental vale a pena corroer a confiança. A privacidade é parte da arquitetura do produto, não um apêndice legal."
+        "body": "Dados de saúde não são um corpus de treinamento. O DocNote hospeda informações clínicas na Suíça, criptografa em trânsito e em repouso, e aplica regras de retenção que correspondem às expectativas europeias para sigilo médico.\n\nConstruímos para as realidades da FADP / nLPD, GDPR, HIPAA e ISO 27001, considerando revisões de TI hospitalar, questionários de compras e a pergunta silenciosa que todo médico faz: onde os dados do meu paciente realmente estão?\n\nNada na documentação ambiental vale a pena corroer a confiança. A privacidade é parte da arquitetura do produto, não um apêndice legal."
       },
       {
         "title": "Clínicos e engenheiros em um único ciclo",
-        "body": "Especialistas médicos, engenheiros de IA e colegas de produto estão no mesmo ciclo. Os modelos de relatório não são inventados isoladamente e depois \"adaptados\" para hospitais — são co-desenhados com pessoas que ainda escrevem esses relatórios à mão hoje.\n\nÉ por isso que o DocNote pode passar de ditado livre para notas estruturadas por especialidade, relatórios cirúrgicos, notas de acompanhamento e resumos de alta sem forçar os médicos a usar um modelo genérico de ambulatório dos EUA.\n\nA qualidade de engenharia aparece como velocidade, confiabilidade e interfaces calmas. A qualidade clínica aparece como vocabulário, estrutura e respeito por como as equipes de atendimento realmente trabalham."
+        "body": "Especialistas médicos, engenheiros de IA e colegas de produto estão no mesmo ciclo. Os modelos de relatório não são inventados isoladamente e depois \"adaptados\" para hospitais; são co-desenhados com pessoas que ainda escrevem esses relatórios à mão hoje.\n\nÉ por isso que o DocNote pode passar de ditado livre para notas estruturadas por especialidade, relatórios cirúrgicos, notas de acompanhamento e resumos de alta sem forçar os médicos a usar um modelo genérico de ambulatório dos EUA.\n\nA qualidade de engenharia aparece como velocidade, confiabilidade e interfaces calmas. A qualidade clínica aparece como vocabulário, estrutura e respeito por como as equipes de atendimento realmente trabalham."
       },
       {
         "title": "Do primeiro demo à implantação hospitalar",
-        "body": "Um bom demo de escriba ambiental é fácil. Uma implantação hospitalar confiável não é. Nossas equipes de vendas, integração e suporte ajudam as clínicas a mapear fluxos de trabalho, escolher os modelos de relatório certos, conectar caminhos de EHR quando necessário e treinar equipes sem interromper o atendimento.\n\nFicamos através de pilotos, compras e o meio confuso — exceções por especialidade, preferências de modelo, enfermarias multilíngues e a lista de verificação de TI que ninguém coloca no site de marketing.\n\nO objetivo é simples: mais tempo com os pacientes, menos noites perdidas com notas e um sistema de documentação que os clínicos estão dispostos a defender para seus colegas."
+        "body": "Um bom demo de escriba ambiental é fácil. Uma implantação hospitalar confiável não é. Nossas equipes de vendas, integração e suporte ajudam as clínicas a mapear fluxos de trabalho, escolher os modelos de relatório certos, conectar caminhos de EHR quando necessário e treinar equipes sem interromper o atendimento.\n\nFicamos através de pilotos, compras e o meio confuso: exceções por especialidade, preferências de modelo, enfermarias multilíngues e a lista de verificação de TI que ninguém coloca no site de marketing.\n\nO objetivo é simples: mais tempo com os pacientes, menos noites perdidas com notas e um sistema de documentação que os clínicos estão dispostos a defender para seus colegas."
       }
     ],
-    "highlightsClosing": "Hoje a equipe abrange liderança clínica, engenharia profunda, estratégia de mercado e comunicação — unidos por uma missão: transformar consultas em documentos clínicos confiáveis em segundos, com privacidade hospedada na Suíça no centro. Construímos com as pessoas que usarão o produto amanhã."
+    "highlightsClosing": "Hoje a equipe abrange liderança clínica, engenharia profunda, estratégia de mercado e comunicação, unidos por uma missão: transformar consultas em documentos clínicos confiáveis em segundos, com privacidade hospedada na Suíça no centro. Construímos com as pessoas que usarão o produto amanhã."
   },
   "tutorial": {
     "title": "Começando com o DocNote",
@@ -691,14 +692,14 @@
     "aliceName": "Dra. Alice Gilson",
     "vincentRole": "Médico & Diretor Administrativo",
     "aliceRole": "Médica & Diretora Administrativa",
-    "vincentFocus": "Hospitais e clínicas na Suíça — demos, pilotos e implantação de EHR.",
-    "aliceFocus": "Organizações de saúde francesas — hospitais, clínicas e conversas de compras.",
+    "vincentFocus": "Hospitais e clínicas na Suíça: demos, pilotos e implantação de EHR.",
+    "aliceFocus": "Organizações de saúde francesas: hospitais, clínicas e conversas de compras.",
     "vincentCity": "Genebra, Suíça",
     "aliceCity": "França",
     "writeEmail": "Enviar e-mail",
     "callPhone": "Ligar",
     "hoursLabel": "Disponibilidade",
-    "hoursValue": "Seg–Sex · resposta em um dia útil",
+    "hoursValue": "Seg-Sex · resposta em um dia útil",
     "responseLabel": "Melhor para",
     "responseValue": "Demos hospitalares, preços e perguntas sobre integração",
     "companyLabel": "Empresa",

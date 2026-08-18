@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { type Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
 import { getPageMeta } from '../../utils/seo';
+import { getSiteUi } from '../../utils/inline-content';
 
 
 interface Props {
@@ -16,6 +17,7 @@ const entry = await getEntry('pages', locale);
 const t = entry.data;
 const meta = getPageMeta('gtc', locale);
 const layoutTitle = meta.title;
+const siteUi = getSiteUi(locale);
 ---
 
 <Layout title={meta.title} description={meta.description}>
@@ -24,10 +26,11 @@ const layoutTitle = meta.title;
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
         {layoutTitle}
       </h1>
+      {locale !== 'en' && <p class="text-center text-sm text-gray-400 mb-6">{siteUi.legalNoticeEn}</p>}
 
       <!-- Switzerland version -->
       <div id="gtc-ch" class="gtc-content hidden">
-        <p class="text-center text-gray-500 mb-12">DocNote Service — Gilson GmbH · Version 1.3 · Effective date: January 27th 2026</p>
+        <p class="text-center text-gray-500 mb-12">DocNote Service · Gilson GmbH · Version 1.3 · Effective date: January 27th 2026</p>
 
         <p>These General Terms and Conditions (the "GTCs") govern access to and use of the DocNote solution (the "Service") offered by Gilson GmbH, having its registered office at Baarermattstrasse 8B, 6340 Baar, Switzerland, registered with the Swiss Commercial Register under number CH-170.4.018.382-0 (hereinafter "DocNote"). The Client acknowledges that it uses the Service exclusively in the course of its professional and institutional activities.</p>
 
@@ -114,7 +117,7 @@ const layoutTitle = meta.title;
 
       <!-- International version -->
       <div id="gtc-int" class="gtc-content hidden">
-        <p class="text-center text-gray-500 mb-12">DocNote Service — Gilson GmbH · Version 1.3 · Effective date: January 27th 2026</p>
+        <p class="text-center text-gray-500 mb-12">DocNote Service · Gilson GmbH · Version 1.3 · Effective date: January 27th 2026</p>
 
         <p>These General Terms and Conditions (the "GTCs") govern access to and use of the DocNote solution (the "Service") offered by Gilson GmbH, having its registered office at Baarermattstrasse 8B, 6340 Baar, Switzerland, registered with the Swiss Commercial Register under number CH-170.4.018.382-0 (hereinafter "DocNote"). The Client acknowledges that it uses the Service exclusively in the course of its professional and institutional activities.</p>
 

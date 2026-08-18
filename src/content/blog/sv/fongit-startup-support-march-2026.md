@@ -38,7 +38,7 @@ Detta uppdrag passar schweizisk sjukvårdsrealitet. Flerspråkig vård, höga do
 
 Testad över hela spektrumet av kliniska miljöer, i sjukhus, öppenvård och vid patientens sida, täcker lösningen nu en stor del av den vardagliga kliniska variationen i medicinsk praktik. Denna täckning kommer från läkarfeedback över olika specialiteter, inte från ett enda demoskript.
 
-Om du är ny i produktkategorin förklarar [AI medical scribe](/ai-medical-scribe/) översikten den icke-marknadsförda versionen av jobbet som ska göras. För inpatients- och tvärserviceanvändning, se [hospital documentation](/hospital-documentation/).
+Om du är ny i produktkategorin förklarar [AI-medicinsk skrivare](/ai-medical-scribe/) översikten den icke-marknadsförda versionen av jobbet som ska göras. För inpatients- och tvärserviceanvändning, se [sjukhusdokumentation](/hospital-documentation/).
 
 ## Varför schweiziskt hälsoteknikstöd är annorlunda (och användbart)
 
@@ -76,7 +76,7 @@ DocNotes utförandeprioriteringar förblir tydliga:
 
 Läkarnas feedbackloop är motorn. När en kardiolog, en kirurg och en allmänläkare var och en sträcker samma plattform, dyker kantfall upp snabbt. Att täcka en stor del av vardagspraktiken innebär att absorbera dessa kantfall i mallar och modellbeteende utan att låtsas att medicin är enhetlig.
 
-Relaterad läsning om dokumentationstryck och AI-bevis inkluderar [less time documenting with AI](/blog/less-time-documenting-ai-more-care/) och [reducing physician burnout](/blog/reducing-physician-burnout/). Komplianssammanhang finns i [DocNote GDPR and nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+Relaterad läsning om dokumentationstryck och AI-bevis inkluderar [mindre tid på dokumentation med AI](/blog/less-time-documenting-ai-more-care/) och [minska läkares utbrändhet](/blog/reducing-physician-burnout/). Komplianssammanhang finns i [DocNote GDPR- och nFADP-efterlevnad](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## Vad sjukhus och kliniker kan ta från denna nyhet
 
@@ -96,7 +96,7 @@ Fråga fortfarande:
 - Hur ser onboarding ut för en pilot inom en verksamhetslinje?
 - Hur mäts framgång efter 30 och 90 dagar?
 
-DocNotes svarsmönster förblir konsekvent: AI skapar strukturerade dokument, läkare förblir ansvariga och implementering bör börja från verkliga eftersläpningsdokument snarare än abstrakt AI-entusiasm. Planer för team redo att utvärdera finns på [pricing](/pricing/).
+DocNotes svarsmönster förblir konsekvent: AI skapar strukturerade dokument, läkare förblir ansvariga och implementering bör börja från verkliga eftersläpningsdokument snarare än abstrakt AI-entusiasm. Planer för team redo att utvärdera finns på [priser](/pricing/).
 
 ## Bygga offentligt utan att överdriva
 
@@ -156,4 +156,4 @@ För kollegor i Genève-ekosystemet är vi glada att utbyta anteckningar om sjuk
 
 Urvalet för FONGIT:s Initial Startup Support är ett stolt ögonblick för DocNote och en praktisk boost inom Genèves innovationsgemenskap. Uppdraget förblir detsamma: ge läkare tillbaka tid genom att automatisera strukturerad medicinsk dokumentation med omsorg, bevis och respekt för kliniskt ansvar.
 
-Om du är sjukhusledare, kliniker eller schweizisk ekosystempartner, vill vi hellre visa dig ett färdigt utskrivningsbrev under verkliga begränsningar än en bild om AI. Börja med [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) och [pricing](/pricing/), och bygg därifrån. Detta är bara början.
+Om du är sjukhusledare, kliniker eller schweizisk ekosystempartner, vill vi hellre visa dig ett färdigt utskrivningsbrev under verkliga begränsningar än en bild om AI. Börja med [AI-medicinsk skrivare](/ai-medical-scribe/), [sjukhusdokumentation](/hospital-documentation/) och [priser](/pricing/), och bygg därifrån. Detta är bara början.

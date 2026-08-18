@@ -121,7 +121,7 @@ En drie angsten:
 - "Het ziekenhuis verplicht een tool die mijn specialisme negeert."
 - "Opnames en data worden slordig behandeld."
 
-DocNote's taak is de hoop te verdienen en de angsten te beantwoorden met productgedrag en governance, niet slogans. Artsencontrole, specialismefeedback en compliancereview maken deel uit van dat antwoord. Commerciële en pilotframing staan op [pricing](/pricing/).
+DocNote's taak is de hoop te verdienen en de angsten te beantwoorden met productgedrag en governance, niet slogans. Artsencontrole, specialismefeedback en compliancereview maken deel uit van dat antwoord. Commerciële en pilotframing staan op [prijzen](/pricing/).
 
 ## FAQ: Buzz eSanté en ziekenhuis-AI-documentatie
 
@@ -159,4 +159,4 @@ DocNote's taak is de hoop te verdienen en de angsten te beantwoorden met product
 
 Buzz eSanté ving iets essentieels over DocNote: ziekenhuistempo is geen marketingachtergrond. Het is de ontwerpbeperking. Wanneer documentatie-automatisering visites, noodgevallen en ontslagdruk respecteert, kunnen clinici meer van hun schaarse medische tijd teruggeven aan patiënten.
 
-Als dat het probleem is waar uw teams mee leven, verken dan [ziekenhuisdocumentatie](/hospital-documentation/), de [AI-medische scribe](/ai-medical-scribe/) overview en [pricing](/pricing/). Beoordeel DocNote daarna op de enige manier die telt: aan de hand van de volgende stapel onafgemaakte notities die wachten na een echte dienst.
+Als dat het probleem is waar uw teams mee leven, verken dan [ziekenhuisdocumentatie](/hospital-documentation/), de [AI-medische scribe](/ai-medical-scribe/) overview en [prijzen](/pricing/). Beoordeel DocNote daarna op de enige manier die telt: aan de hand van de volgende stapel onafgemaakte notities die wachten na een echte dienst.

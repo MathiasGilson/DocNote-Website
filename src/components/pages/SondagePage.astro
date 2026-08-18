@@ -56,7 +56,7 @@ const QUESTION_STEPS = 3;
           aria-live="polite"
         ></p>
 
-        <!-- SCREEN 1 — Intro -->
+        <!-- SCREEN 1 - Intro -->
         <div data-screen="1" class="survey-screen survey-screen--intro">
           <div class="text-center survey-reveal">
             <p class="dn-page-hero__eyebrow mb-8">
@@ -84,7 +84,7 @@ const QUESTION_STEPS = 3;
           </div>
         </div>
 
-        <!-- SCREEN 2 — Profile -->
+        <!-- SCREEN 2 - Profile -->
         <div data-screen="2" class="survey-screen hidden">
           <div class="survey-card survey-reveal">
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 tracking-tight">{S.profileTitle}</h2>
@@ -164,7 +164,7 @@ const QUESTION_STEPS = 3;
           </div>
         </div>
 
-        <!-- SCREEN 3 — Burden -->
+        <!-- SCREEN 3 - Burden -->
         <div data-screen="3" class="survey-screen hidden">
           <div class="survey-card survey-reveal">
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 tracking-tight">{S.burdenTitle}</h2>
@@ -211,8 +211,8 @@ const QUESTION_STEPS = 3;
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" data-group="overtime" data-required role="group" aria-label={S.overtimeQ}>
                   <button type="button" data-value="0" class="opt">0 h</button>
                   <button type="button" data-value="1" class="opt">&lt; 2 h</button>
-                  <button type="button" data-value="2" class="opt">2–5 h</button>
-                  <button type="button" data-value="3" class="opt">5–10 h</button>
+                  <button type="button" data-value="2" class="opt">2-5 h</button>
+                  <button type="button" data-value="3" class="opt">5-10 h</button>
                   <button type="button" data-value="4" class="opt">&gt; 10 h</button>
                 </div>
               </fieldset>
@@ -226,7 +226,7 @@ const QUESTION_STEPS = 3;
           </div>
         </div>
 
-        <!-- SCREEN 4 — Contact -->
+        <!-- SCREEN 4 - Contact -->
         <div data-screen="4" class="survey-screen hidden">
           <div class="survey-card survey-reveal">
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 tracking-tight">{S.contactTitle}</h2>
@@ -295,7 +295,7 @@ const QUESTION_STEPS = 3;
           </div>
         </div>
 
-        <!-- SCREEN 5 — Results -->
+        <!-- SCREEN 5 - Results -->
         <div data-screen="5" class="survey-screen hidden">
           <div class="survey-reveal">
             <div class="text-center mb-10">
@@ -332,7 +332,7 @@ const QUESTION_STEPS = 3;
                 <div class="relative w-full" style="aspect-ratio:16/9;">
                   <iframe
                     class="absolute inset-0 h-full w-full"
-                    src={`https://www.youtube.com/embed/${VIDEO_ID}`}
+                    src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}`}
                     title={S.videoTitle}
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1093,7 +1093,7 @@ const QUESTION_STEPS = 3;
         });
       }
 
-      const OVERTIME_LABEL = ['0 h', '< 2 h', '2–5 h', '5–10 h', '> 10 h'];
+      const OVERTIME_LABEL = ['0 h', '< 2 h', '2-5 h', '5-10 h', '> 10 h'];
       const GENDER_LABEL = { homme: 'Homme', femme: 'Femme', autre: 'Non précisé' };
       const POSITION_LABEL = { interne: 'Interne', chef_clinique: 'Chef de clinique', adjoint: 'Adjoint', chef_service: 'Chef de service' };
       const FACILITY_LABEL = { hopital_universitaire: 'Hôpital universitaire', hopital_peripherique: 'Hôpital périphérique', prive_clinique: 'Hôpital privé / clinique', cabinet: 'Cabinet' };
@@ -1101,15 +1101,15 @@ const QUESTION_STEPS = 3;
 
       function sendLead(score, percentile) {
         if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf('YOUR_') === 0) {
-          console.warn('[survey] WEB3FORMS_KEY missing — lead not emailed.');
+          console.warn('[survey] WEB3FORMS_KEY missing - lead not emailed.');
           return;
         }
         const fullName = [answers.firstName, answers.lastName].filter(Boolean).join(' ');
-        const method = answers.method === 'autre' && answers.methodOther ? `Autre — ${answers.methodOther}` : (METHOD_LABEL[answers.method] || answers.method || '');
+        const method = answers.method === 'autre' && answers.methodOther ? `Autre : ${answers.methodOther}` : (METHOD_LABEL[answers.method] || answers.method || '');
         const payload = {
           access_key: WEB3FORMS_KEY,
-          subject: `🩺 Nouveau lead sondage — ${fullName || 'Médecin'} (${specLabelFr(answers.specialty)})`,
-          from_name: 'Sondage surcharge administrative — DocNote',
+          subject: `🩺 Nouveau lead sondage : ${fullName || 'Médecin'} (${specLabelFr(answers.specialty)})`,
+          from_name: 'Sondage surcharge administrative - DocNote',
           'Langue de la page': LANG.toUpperCase(),
           'Nom complet': fullName,
           'E-mail': answers.email || '',

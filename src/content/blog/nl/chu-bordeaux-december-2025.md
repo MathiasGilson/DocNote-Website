@@ -12,7 +12,7 @@ readTime: 10
 
 Tijdens de CHU HealthTech Connexion Day, een belangrijk evenement gewijd aan ziekenhuisinnovatie, presenteerde startup DocNote zijn AI-assistent die is ontworpen om administratieve workflows van artsen te automatiseren. Publiek van universitaire ziekenhuizen behoort tot de strengste en meest waardevolle testers van digitale gezondheidsclaims. Ze werken binnen complexe EHR-systemen, multidisciplinaire zorgpaden en strikte gegevensbeschermingsbeoordelingen. Interesse in een [AI-medische scribe](/ai-medical-scribe/) ontstaat alleen als het tool eruitziet als ziekenhuisinfrastructuur, niet als een losse app voor een enkele poliklinische niche.
 
-![DocNote at CHU HealthTech Connexion Day](/images/bordeaux_12.25_-_2.jpg)
+![DocNote op de CHU HealthTech Connexion Day](/images/bordeaux_12.25_-_2.jpg)
 
 De oplossing genereert gestructureerde klinische documenten, waaronder poliklinische consulten, klinische notities, operatieverslagen en ontslagbrieven, op basis van opgenomen gesprekken en geüploade medische documenten. In tegenstelling tot tools die zich alleen richten op poliklinische zorg, positioneert DocNote zich als een alomvattende aanpak voor het hele ziekenhuis, met directe integratie in elektronische patiëntendossiers (EHR). In Bordeaux gingen de gesprekken over tijdsbesparing, workflowefficiëntie en naleving van gegevensbescherming onder toenemende druk op zorgteams. Die combinatie is het echte verhaal van de dag: CHU's willen AI die is ingebed in de dagelijkse praktijk, beheerd zoals elk ander klinisch systeem.
 
@@ -28,7 +28,7 @@ Een CHU is geen enkele kliniek met één sjabloon. Het is een federatie van dien
 
 DocNote's aanwezigheid in Bordeaux sprak deze checklist aan door de breedte van ziekenhuisdocumenten en EHR-gericht ontwerp te benadrukken. Voor het productbereik achter deze gesprekken, zie [ziekenhuisdocumentatie](/hospital-documentation/).
 
-![DocNote exhibition stand in Bordeaux](/images/bordeaux_12.25_-_3.jpg)
+![DocNote-beursstand in Bordeaux](/images/bordeaux_12.25_-_3.jpg)
 
 ## De tijdsdruk die CHU's al meten
 

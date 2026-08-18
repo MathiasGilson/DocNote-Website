@@ -19,7 +19,7 @@
 @tailwind utilities;
 
 :root {
-  /* DocNote brand â€” soft azure â†’ indigo â†’ muted violet */
+  /* DocNote brand --- soft azure -†’ indigo -†’ muted violet */
   --dn-primary: #4f8af5;
   --dn-primary-mid: #6366f1;
   --dn-primary-end: #7a45e0;
@@ -331,7 +331,7 @@
   }
 }
 
-/* Site-wide scroll reveal â€” unlayered so opacity/transform beat Tailwind utilities */
+/* Site-wide scroll reveal --- unlayered so opacity/transform beat Tailwind utilities */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -374,7 +374,7 @@
   }
 }
 
-/* Soft square grid â€” densest at top, fades out downward */
+/* Soft square grid --- densest at top, fades out downward */
 .dn-bg-grid,
 .dn-bg-grid::before {
   pointer-events: none;
@@ -410,7 +410,7 @@
   );
 }
 
-/* Unified inner-page hero â€” centered, flat white, no atmosphere gradients */
+/* Unified inner-page hero --- centered, flat white, no atmosphere gradients */
 .dn-page-hero {
   position: relative;
   padding: 7.5rem 0 2.75rem;
@@ -421,7 +421,7 @@
   padding-bottom: 1.75rem;
 }
 
-/* Breadcrumb bar already clears the fixed header â€” don't double the top pad */
+/* Breadcrumb bar already clears the fixed header --- don't double the top pad */
 .lp-crumb-bar + .dn-page-hero {
   padding-top: 1.25rem;
 }

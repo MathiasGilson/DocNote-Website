@@ -142,7 +142,7 @@ Evenementen zijn nuttig wanneer ze de roadmap verscherpen. Adopt AI versterkte p
 - Implementatiepatronen die klinische acceptatie respecteren
 - Helderziende metrieken voor administratieve lastvermindering
 
-Als je het team in Parijs ontmoette, is de volgende nuttige stap geen nieuwe brochure. Het is een gescopte pilot op de documenten die je avonden verstoppen. Prijzen en planframing voor dat gesprek staan op [pricing](/pricing/).
+Als je het team in Parijs ontmoette, is de volgende nuttige stap geen nieuwe brochure. Het is een gescopte pilot op de documenten die je avonden verstoppen. Prijzen en planframing voor dat gesprek staan op [prijzen](/pricing/).
 
 ## FAQ: Adopt AI Parijs en ziekenhuis-AI-scribes
 
@@ -180,4 +180,4 @@ Als je het team in Parijs ontmoette, is de volgende nuttige stap geen nieuwe bro
 
 Adopt AI Parijs onderstreepte een les waar DocNote elke dag om bouwt. Ziekenhuis-AI slaagt wanneer governance, interoperabiliteit, cybersecurity en klinisch vertrouwen als productvereisten worden behandeld. Documentatie is een van de duidelijkste plaatsen om die les toe te passen, omdat de pijn dagelijks is en de impact meetbaar.
 
-Als je instelling Parijs verliet met de bereidheid om voorbij eindeloze pilots te gaan, begin dan met de notities die klinische tijd stelen. Zie [AI-medische scribe](/ai-medical-scribe/), [ziekenhuisdocumentatie](/hospital-documentation/) en [pricing](/pricing/), ontwerp dan een adoptiepad dat je artsen zouden herkennen als respectvol voor echt kliniekleven.
+Als je instelling Parijs verliet met de bereidheid om voorbij eindeloze pilots te gaan, begin dan met de notities die klinische tijd stelen. Zie [AI-medische scribe](/ai-medical-scribe/), [ziekenhuisdocumentatie](/hospital-documentation/) en [prijzen](/pricing/), ontwerp dan een adoptiepad dat je artsen zouden herkennen als respectvol voor echt kliniekleven.

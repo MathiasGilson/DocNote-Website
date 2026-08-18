@@ -38,7 +38,7 @@ Questa missione si adatta alle realtà sanitarie svizzere. Cure multilingue, sta
 
 Testato in tutti gli ambiti clinici, in ospedali, cure ambulatoriali e al fianco del paziente, la soluzione copre ora una vasta gamma delle variazioni cliniche quotidiane della pratica medica. Questa copertura deriva dal feedback di medici di diverse specialità, non da un singolo script dimostrativo.
 
-Se sei nuovo alla categoria di prodotto, la panoramica [AI medical scribe](/ai-medical-scribe/) spiega la versione non commerciale del lavoro da svolgere. Per l'uso ospedaliero e cross-servizio, vedi [hospital documentation](/hospital-documentation/).
+Se sei nuovo alla categoria di prodotto, la panoramica [scriba medico AI](/ai-medical-scribe/) spiega la versione non commerciale del lavoro da svolgere. Per l'uso ospedaliero e cross-servizio, vedi [documentazione ospedaliera](/hospital-documentation/).
 
 ## Perché il supporto all'healthtech svizzero è diverso (e utile)
 
@@ -76,7 +76,7 @@ Le priorità di esecuzione di DocNote rimangono chiare:
 
 I feedback dei medici sono il motore. Quando un cardiologo, un chirurgo e un medico di base mettono alla prova la stessa piattaforma, i casi limite emergono rapidamente. Coprire una vasta parte della pratica quotidiana significa assorbire questi casi limite in template e comportamenti del modello senza fingere che la medicina sia uniforme.
 
-Letture correlate su pressione documentale e prove dell'AI includono [meno tempo a documentare con l'AI](/blog/less-time-documenting-ai-more-care/) e [ridurre il burnout dei medici](/blog/reducing-physician-burnout/). Il contesto compliance è in [DocNote GDPR e nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+Letture correlate su pressione documentale e prove dell'AI includono [meno tempo a documentare con l'AI](/blog/less-time-documenting-ai-more-care/) e [ridurre il burnout dei medici](/blog/reducing-physician-burnout/). Il contesto compliance è in [conformità GDPR e nFADP di DocNote](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## Cosa possono trarre ospedali e clinici da questa notizia
 
@@ -96,7 +96,7 @@ Domande da porre:
 - Come si svolge l'onboarding per un pilota di linea di servizio?
 - Come si misura il successo dopo 30 e 90 giorni?
 
-La risposta di DocNote rimane coerente: l'AI genera bozze strutturate, i medici restano responsabili e il deployment dovrebbe partire da documenti reali arretrati, non da entusiasmo astratto per l'AI. I piani per team pronti a valutare sono su [pricing](/pricing/).
+La risposta di DocNote rimane coerente: l'AI genera bozze strutturate, i medici restano responsabili e il deployment dovrebbe partire da documenti reali arretrati, non da entusiasmo astratto per l'AI. I piani per team pronti a valutare sono su [prezzi](/pricing/).
 
 ## Costruire in pubblico senza esagerare
 
@@ -156,4 +156,4 @@ Per i peer nell'ecosistema ginevrino, siamo felici di scambiare note su piloti o
 
 La selezione per Initial Startup Support di FONGIT è un momento di orgoglio per DocNote e una spinta pratica nella comunità dell'innovazione ginevrina. La missione rimane la stessa: restituire tempo ai medici automatizzando la documentazione medica strutturata con cura, evidenza e rispetto per la responsabilità clinica.
 
-Se sei un leader ospedaliero, clinico o partner dell'ecosistema svizzero, preferiamo mostrarti una lettera di dimissione finita sotto vincoli reali piuttosto che una slide sull'AI. Inizia con [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) e [pricing](/pricing/), e costruisci da lì. Questo è solo l'inizio.
+Se sei un leader ospedaliero, clinico o partner dell'ecosistema svizzero, preferiamo mostrarti una lettera di dimissione finita sotto vincoli reali piuttosto che una slide sull'AI. Inizia con [scriba medico AI](/ai-medical-scribe/), [documentazione ospedaliera](/hospital-documentation/) e [prezzi](/pricing/), e costruisci da lì. Questo è solo l'inizio.

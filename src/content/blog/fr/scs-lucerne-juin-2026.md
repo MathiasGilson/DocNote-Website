@@ -14,6 +14,6 @@ readTime: 4
 
 Elle a participé à la session « AI, CAR-T Cells and Omics in the OR: Will Surgeons Still Be There? », autour d'une question de plus en plus présente chez les soignants : quel sera le rôle des chirurgiens à l'ère de l'intelligence artificielle ?
 
-L'intervention a exploré comment l'IA transforme déjà la chirurgie et la santé — au bloc opératoire, grâce à la robotique, à la chirurgie guidée par l'image et aux systèmes d'aide à la décision, et en dehors du bloc, grâce à la recherche médicale, à l'analyse de données et à la documentation clinique.
+L'intervention a exploré comment l'IA transforme déjà la chirurgie et la santé : au bloc opératoire, grâce à la robotique, à la chirurgie guidée par l'image et aux systèmes d'aide à la décision, et en dehors du bloc, grâce à la recherche médicale, à l'analyse de données et à la documentation clinique.
 
 Le message principal était clair : les chirurgiens ne vont pas disparaître, mais la profession va évoluer. Loin de remplacer le jugement clinique, l'expertise technique ou le lien humain avec le patient, l'IA peut supprimer les tâches administratives répétitives et libérer un temps précieux pour les soins.

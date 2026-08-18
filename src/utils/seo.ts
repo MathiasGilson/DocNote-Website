@@ -12,7 +12,7 @@ export const SITE_URL = String(
 /**
  * Preview SEO strategy (DocNote + MailMerge Deploy DocNote Website Preview):
  * Keep PUBLIC_SITE_URL as the workers.dev host so links/canonicals match the preview
- * origin, but never encourage indexing — meta robots noindex + robots.txt Disallow.
+ * origin, but never encourage indexing --- meta robots noindex + robots.txt Disallow.
  * Production (docnote.care, no PUBLIC_IS_PREVIEW) stays index,follow.
  */
 export const IS_PREVIEW_DEPLOY =
@@ -93,7 +93,7 @@ const getBlogPostCountByLocale = async (): Promise<Partial<Record<Locale, number
 };
 
 /**
- * Hreflang for `/blog/all/:page` — only locales that actually have that page.
+ * Hreflang for `/blog/all/:page` --- only locales that actually have that page.
  * Clamping to another page number breaks reciprocal return links.
  */
 const getBlogAllAlternates = async (

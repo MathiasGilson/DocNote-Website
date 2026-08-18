@@ -6,6 +6,7 @@ import { type Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
 import { getPageMeta } from '../../utils/seo';
 import { DEMO_BOOKING_URL } from '../../utils/links';
+import { getSiteUi } from '../../utils/inline-content';
 
 interface Props {
   locale: Locale;
@@ -26,19 +27,8 @@ const APP_IOS = 'https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204'
 const APP_ANDROID = 'https://play.google.com/store/apps/details?id=app.docnote&pli=1';
 const APP_WEB = 'https://docnote.care/app/';
 
-const STEP_LABELS: Record<string, string> = {
-  en: 'Step',
-  fr: 'Étape',
-  de: String.fromCharCode(83, 99, 104, 114, 105, 116, 116),
-  ru: 'Шаг',
-  es: 'Paso',
-  pt: 'Passo',
-  it: 'Passo',
-  nl: 'Stap',
-  sv: 'Steg',
-  no: 'Steg',
-};
-const STEP_LABEL = STEP_LABELS[locale] || STEP_LABELS.en;
+const siteUi = getSiteUi(locale);
+const STEP_LABEL = siteUi.step;
 
 const models = [
   t.tutorial.step3.models.dictation,
@@ -104,7 +94,7 @@ const downloads = [
                   <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                 </svg>
                 <span class="tutorial-download__text">
-                  <span class="tutorial-download__hint">{locale === 'ru' ? 'Открыть в браузере' : 'Open in browser'}</span>
+                  <span class="tutorial-download__hint">{siteUi.openInBrowser}</span>
                   <span class="tutorial-download__label">{t.nav.webApp}</span>
                 </span>
               </a>
@@ -148,8 +138,8 @@ const downloads = [
 
             <div class="tutorial-video">
               <iframe
-                src={`https://www.youtube.com/embed/${tutorialVideoId}`}
-                title="DocNote Tutorial"
+                src={`https://www.youtube-nocookie.com/embed/${tutorialVideoId}`}
+                title={siteUi.tutorialVideoTitle}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -184,8 +174,8 @@ const downloads = [
                 <p class="tutorial-step__desc">{t.tutorial.step4.description}</p>
                 <div class="tutorial-video">
                   <iframe
-                    src={`https://www.youtube.com/embed/${step4VideoId}`}
-                    title="DocNote — Templates"
+                    src={`https://www.youtube-nocookie.com/embed/${step4VideoId}`}
+                    title="DocNote - Templates"
                     loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
@@ -209,8 +199,8 @@ const downloads = [
                 <p class="tutorial-video-caption">SOKLE</p>
                 <div class="tutorial-video">
                   <iframe
-                    src={`https://www.youtube.com/embed/${step5VideoId}`}
-                    title="DocNote — SOKLE"
+                    src={`https://www.youtube-nocookie.com/embed/${step5VideoId}`}
+                    title="DocNote - SOKLE"
                     loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
@@ -221,8 +211,8 @@ const downloads = [
                     <p class="tutorial-video-caption">EDL</p>
                     <div class="tutorial-video">
                       <iframe
-                        src={`https://www.youtube.com/embed/${step5VideoIdEdl}`}
-                        title="DocNote — EDL"
+                        src={`https://www.youtube-nocookie.com/embed/${step5VideoIdEdl}`}
+                        title="DocNote - EDL"
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen

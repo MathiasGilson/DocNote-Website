@@ -1,8 +1,8 @@
 import { locales, type Locale } from '../utils/i18n'
-import { landingsCopy, pillarNavCopy } from '../utils/inline-content'
+import { landingsCopy, pillarNavCopy, withEnFallback } from '../utils/inline-content'
 import type { SpecialtyKey } from '../data/specialty-icons'
 
-/** Existing pillars — keep H1/intent; do not cannibalize. */
+/** Existing pillars --- keep H1/intent; do not cannibalize. */
 export const pillarSlugs = [
   'ai-medical-scribe',
   'hospital-documentation',
@@ -12,23 +12,43 @@ export const pillarSlugs = [
 export type PillarSlug = (typeof pillarSlugs)[number]
 
 /**
- * Batch A — use-case / category landings (HF, mid-KD targets).
- * Volumes/KD to re-check in Ahrefs (US/GB); seeds locked for v1.
+ * "Who it's for" audience landings (hospital-documentation is the pillar that
+ * fills the hospital slot of this column).
+ */
+export const audienceSlugs = [
+  'for-private-practice',
+  'for-medical-secretaries',
+  'for-clinic-groups',
+] as const
+
+export type AudienceSlug = (typeof audienceSlugs)[number]
+
+/** "What makes us different" landings --- one per homepage specificity card. */
+export const differentiatorSlugs = [
+  'medical-coding-and-billing',
+  'ehr-integration',
+  'custom-word-templates',
+  'clinical-context',
+  'day-hospital-documentation',
+  'multilingual-medical-documentation',
+] as const
+
+export type DifferentiatorSlug = (typeof differentiatorSlugs)[number]
+
+/**
+ * Use-case landings kept for search intent only --- out of the menu, canonical
+ * on themselves. Retired duplicates live in landing-redirects.ts (301).
  */
 export const usecaseSlugs = [
-  'ambient-clinical-documentation',
-  'ai-clinical-documentation',
   'ai-soap-notes',
   'ai-medical-transcription',
   'ai-discharge-summary',
   'operative-report-ai',
-  'ai-consultation-notes',
-  'multilingual-ai-medical-scribe',
 ] as const
 
 export type UsecaseSlug = (typeof usecaseSlugs)[number]
 
-/** Batch B — specialty landings first wave */
+/** Batch B --- specialty landings first wave */
 export const specialtyLandingSlugs = [
   'ai-scribe-general-practice',
   'ai-scribe-psychiatry',
@@ -44,13 +64,15 @@ export type SpecialtyLandingSlug = (typeof specialtyLandingSlugs)[number]
 
 export const landingSlugs = [
   ...pillarSlugs,
+  ...audienceSlugs,
+  ...differentiatorSlugs,
   ...usecaseSlugs,
   ...specialtyLandingSlugs,
 ] as const
 
 export type LandingSlug = (typeof landingSlugs)[number]
 
-export type LandingType = 'pillar' | 'usecase' | 'specialty'
+export type LandingType = 'pillar' | 'audience' | 'differentiator' | 'usecase' | 'specialty'
 
 export type LandingFaq = { q: string; a: string }
 export type LandingBlockItem = { title: string; body: string }
@@ -63,10 +85,10 @@ export type LandingCopy = {
   navLabel?: string
   /** One-line subtitle under navLabel in header dropdowns */
   navDesc?: string
-  hero: { badge: string; title: string; subtitle: string; lead: string }
+  hero: { badge: string; title: string; subtitle: string; lead?: string }
   story: { badge: string; title: string; paragraphs: string[] }
-  benefits: { badge: string; title: string; subtitle: string; items: LandingBlockItem[] }
-  steps: { badge: string; title: string; subtitle: string; items: LandingBlockItem[] }
+  benefits: { badge: string; title: string; subtitle?: string; items: LandingBlockItem[] }
+  steps?: { badge: string; title: string; subtitle: string; items: LandingBlockItem[] }
   proof: { badge: string; title: string; intro: string; points: LandingBlockItem[] }
   /** Optional extra SEO-depth sections beyond the fixed blocks above */
   sections?: { heading: string; body: string }[]
@@ -82,9 +104,31 @@ export type LandingMeta = {
   specialtyKey?: SpecialtyKey
   /** Related landing slugs for internal links */
   related: LandingSlug[]
-  primaryCta: 'tutorial' | 'pricing' | 'contact' | 'privacy'
-  secondaryCta: 'tutorial' | 'pricing' | 'contact' | 'privacy'
+  primaryCta: LandingCta
+  secondaryCta: LandingCta
+  /** Homepage specificity card reused as the hook of differentiator pages */
+  specificityKey?: SpecificityKey
 }
+
+/** CTA targets: internal pages, the web app, or the demo booking link. */
+export type LandingCta =
+  | 'tutorial'
+  | 'pricing'
+  | 'contact'
+  | 'privacy'
+  | 'compliance'
+  | 'app'
+  | 'demo'
+
+export type SpecificityKey =
+  | 'coding'
+  | 'tardoc'
+  | 'ehr'
+  | 'templates'
+  | 'context'
+  | 'hospital'
+  | 'sync'
+  | 'dayHospital'
 
 export const landingMeta: Record<LandingSlug, LandingMeta> = {
   'ai-medical-scribe': {
@@ -92,9 +136,9 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     type: 'pillar',
     primaryKeyword: 'ai medical scribe',
     related: [
-      'ambient-clinical-documentation',
+      'for-private-practice',
       'ai-soap-notes',
-      'ai-discharge-summary',
+      'ai-medical-transcription',
       'hospital-documentation',
     ],
     primaryCta: 'tutorial',
@@ -105,13 +149,15 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     type: 'pillar',
     primaryKeyword: 'hospital documentation AI',
     related: [
+      'medical-coding-and-billing',
+      'ehr-integration',
+      'custom-word-templates',
       'ai-discharge-summary',
       'operative-report-ai',
-      'ai-clinical-documentation',
       'clinical-compliance',
     ],
-    primaryCta: 'contact',
-    secondaryCta: 'tutorial',
+    primaryCta: 'demo',
+    secondaryCta: 'compliance',
   },
   'clinical-compliance': {
     slug: 'clinical-compliance',
@@ -120,33 +166,132 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     related: [
       'ai-medical-scribe',
       'hospital-documentation',
-      'multilingual-ai-medical-scribe',
+      'for-clinic-groups',
+      'ehr-integration',
     ],
     primaryCta: 'privacy',
     secondaryCta: 'contact',
   },
-  'ambient-clinical-documentation': {
-    slug: 'ambient-clinical-documentation',
-    type: 'usecase',
-    primaryKeyword: 'ambient clinical documentation',
+  'for-private-practice': {
+    slug: 'for-private-practice',
+    type: 'audience',
+    primaryKeyword: 'AI medical scribe for private practice',
     related: [
       'ai-medical-scribe',
-      'ai-clinical-documentation',
-      'ai-consultation-notes',
-      'clinical-compliance',
+      'custom-word-templates',
+      'medical-coding-and-billing',
+      'multilingual-medical-documentation',
+      'ai-soap-notes',
     ],
-    primaryCta: 'tutorial',
+    primaryCta: 'app',
     secondaryCta: 'pricing',
   },
-  'ai-clinical-documentation': {
-    slug: 'ai-clinical-documentation',
-    type: 'usecase',
-    primaryKeyword: 'AI clinical documentation',
+  'for-medical-secretaries': {
+    slug: 'for-medical-secretaries',
+    type: 'audience',
+    primaryKeyword: 'AI documentation for medical secretaries',
     related: [
-      'ambient-clinical-documentation',
+      'for-private-practice',
+      'custom-word-templates',
+      'clinical-context',
       'hospital-documentation',
-      'ai-medical-scribe',
+    ],
+    primaryCta: 'demo',
+    secondaryCta: 'contact',
+  },
+  'for-clinic-groups': {
+    slug: 'for-clinic-groups',
+    type: 'audience',
+    primaryKeyword: 'AI medical documentation for clinic groups',
+    related: [
+      'ehr-integration',
+      'custom-word-templates',
+      'day-hospital-documentation',
+      'clinical-compliance',
+      'hospital-documentation',
+    ],
+    primaryCta: 'contact',
+    secondaryCta: 'demo',
+  },
+  'medical-coding-and-billing': {
+    slug: 'medical-coding-and-billing',
+    type: 'differentiator',
+    primaryKeyword: 'medical coding and billing AI SwissDRG TARDOC',
+    specificityKey: 'coding',
+    related: [
+      'hospital-documentation',
       'ai-discharge-summary',
+      'custom-word-templates',
+      'ehr-integration',
+    ],
+    primaryCta: 'demo',
+    secondaryCta: 'pricing',
+  },
+  'ehr-integration': {
+    slug: 'ehr-integration',
+    type: 'differentiator',
+    primaryKeyword: 'EHR integration AI medical scribe',
+    specificityKey: 'ehr',
+    related: [
+      'hospital-documentation',
+      'for-clinic-groups',
+      'day-hospital-documentation',
+      'clinical-compliance',
+    ],
+    primaryCta: 'demo',
+    secondaryCta: 'contact',
+  },
+  'custom-word-templates': {
+    slug: 'custom-word-templates',
+    type: 'differentiator',
+    primaryKeyword: 'custom Word templates medical reports',
+    specificityKey: 'templates',
+    related: [
+      'hospital-documentation',
+      'for-private-practice',
+      'for-medical-secretaries',
+      'medical-coding-and-billing',
+    ],
+    primaryCta: 'demo',
+    secondaryCta: 'tutorial',
+  },
+  'clinical-context': {
+    slug: 'clinical-context',
+    type: 'differentiator',
+    primaryKeyword: 'clinical context attachments medical report AI',
+    specificityKey: 'context',
+    related: [
+      'ai-medical-scribe',
+      'for-medical-secretaries',
+      'ai-discharge-summary',
+      'custom-word-templates',
+    ],
+    primaryCta: 'tutorial',
+    secondaryCta: 'demo',
+  },
+  'day-hospital-documentation': {
+    slug: 'day-hospital-documentation',
+    type: 'differentiator',
+    primaryKeyword: 'day hospital documentation collaborative',
+    specificityKey: 'dayHospital',
+    related: [
+      'for-clinic-groups',
+      'ehr-integration',
+      'hospital-documentation',
+      'clinical-compliance',
+    ],
+    primaryCta: 'demo',
+    secondaryCta: 'contact',
+  },
+  'multilingual-medical-documentation': {
+    slug: 'multilingual-medical-documentation',
+    type: 'differentiator',
+    primaryKeyword: 'multilingual medical documentation 61 specialties',
+    related: [
+      'ai-medical-scribe',
+      'for-private-practice',
+      'ai-soap-notes',
+      'clinical-compliance',
     ],
     primaryCta: 'tutorial',
     secondaryCta: 'pricing',
@@ -157,9 +302,9 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     primaryKeyword: 'AI SOAP notes',
     related: [
       'ai-medical-scribe',
-      'ai-consultation-notes',
+      'for-private-practice',
       'ai-scribe-general-practice',
-      'ambient-clinical-documentation',
+      'multilingual-medical-documentation',
     ],
     primaryCta: 'tutorial',
     secondaryCta: 'pricing',
@@ -170,8 +315,8 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     primaryKeyword: 'AI medical transcription',
     related: [
       'ai-medical-scribe',
-      'ai-clinical-documentation',
-      'ambient-clinical-documentation',
+      'ai-soap-notes',
+      'clinical-context',
       'clinical-compliance',
     ],
     primaryCta: 'tutorial',
@@ -182,10 +327,10 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     type: 'usecase',
     primaryKeyword: 'AI discharge summary',
     related: [
+      'medical-coding-and-billing',
       'hospital-documentation',
       'operative-report-ai',
-      'ai-clinical-documentation',
-      'ai-medical-scribe',
+      'custom-word-templates',
     ],
     primaryCta: 'contact',
     secondaryCta: 'pricing',
@@ -198,36 +343,10 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
       'hospital-documentation',
       'ai-scribe-surgery',
       'ai-discharge-summary',
-      'ai-clinical-documentation',
+      'medical-coding-and-billing',
     ],
     primaryCta: 'contact',
     secondaryCta: 'tutorial',
-  },
-  'ai-consultation-notes': {
-    slug: 'ai-consultation-notes',
-    type: 'usecase',
-    primaryKeyword: 'AI consultation notes',
-    related: [
-      'ai-soap-notes',
-      'ai-medical-scribe',
-      'ai-scribe-general-practice',
-      'multilingual-ai-medical-scribe',
-    ],
-    primaryCta: 'tutorial',
-    secondaryCta: 'pricing',
-  },
-  'multilingual-ai-medical-scribe': {
-    slug: 'multilingual-ai-medical-scribe',
-    type: 'usecase',
-    primaryKeyword: 'multilingual AI medical scribe',
-    related: [
-      'ai-medical-scribe',
-      'clinical-compliance',
-      'ai-consultation-notes',
-      'hospital-documentation',
-    ],
-    primaryCta: 'tutorial',
-    secondaryCta: 'pricing',
   },
   'ai-scribe-general-practice': {
     slug: 'ai-scribe-general-practice',
@@ -236,7 +355,7 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     specialtyKey: 'general-practice',
     related: [
       'ai-soap-notes',
-      'ai-consultation-notes',
+      'for-private-practice',
       'ai-medical-scribe',
       'ai-scribe-pediatrics',
     ],
@@ -249,10 +368,10 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     primaryKeyword: 'AI medical scribe for psychiatry',
     specialtyKey: 'psychiatry',
     related: [
-      'ai-consultation-notes',
+      'for-private-practice',
       'ai-medical-scribe',
       'clinical-compliance',
-      'multilingual-ai-medical-scribe',
+      'multilingual-medical-documentation',
     ],
     primaryCta: 'tutorial',
     secondaryCta: 'pricing',
@@ -263,7 +382,7 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     primaryKeyword: 'AI medical scribe for cardiology',
     specialtyKey: 'cardiology',
     related: [
-      'ai-clinical-documentation',
+      'clinical-context',
       'hospital-documentation',
       'ai-medical-scribe',
       'ai-discharge-summary',
@@ -278,7 +397,7 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     specialtyKey: 'pediatrics',
     related: [
       'ai-scribe-general-practice',
-      'ai-consultation-notes',
+      'for-private-practice',
       'ai-soap-notes',
       'ai-medical-scribe',
     ],
@@ -292,7 +411,7 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     specialtyKey: 'emergency-medicine',
     related: [
       'hospital-documentation',
-      'ai-clinical-documentation',
+      'ehr-integration',
       'ai-discharge-summary',
       'ai-medical-scribe',
     ],
@@ -319,7 +438,7 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     primaryKeyword: 'AI medical scribe for dermatology',
     specialtyKey: 'dermatology',
     related: [
-      'ai-consultation-notes',
+      'clinical-context',
       'ai-soap-notes',
       'ai-medical-scribe',
       'ai-scribe-general-practice',
@@ -333,9 +452,9 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
     primaryKeyword: 'AI medical scribe for neurology',
     specialtyKey: 'neurology',
     related: [
-      'ai-clinical-documentation',
+      'clinical-context',
       'hospital-documentation',
-      'ai-consultation-notes',
+      'ai-soap-notes',
       'ai-medical-scribe',
     ],
     primaryCta: 'tutorial',
@@ -343,16 +462,25 @@ export const landingMeta: Record<LandingSlug, LandingMeta> = {
   },
 }
 
-/** Footer / resources: pillars + top use-cases only */
+/**
+ * Footer / resources: the "what DocNote is" pillar (out of the menu but linked
+ * from here), the other pillars, and the strongest kept use-case landings.
+ */
 export const footerLandingSlugs: LandingSlug[] = [
   ...pillarSlugs,
-  'ambient-clinical-documentation',
-  'ai-clinical-documentation',
+  'ai-soap-notes',
   'ai-discharge-summary',
 ]
 
-/** Header dropdown 1 — pillars + category / use-case landings */
-export const navSolutionsSlugs: LandingSlug[] = [...pillarSlugs, ...usecaseSlugs]
+/** Header Solutions mega-menu --- audiences + differentiators (+ compliance). */
+export const navSolutionsSlugs: LandingSlug[] = [
+  'for-private-practice',
+  'hospital-documentation',
+  'for-medical-secretaries',
+  'for-clinic-groups',
+  ...differentiatorSlugs,
+  'clinical-compliance',
+]
 
 /**
  * @deprecated Header Specialties nav now uses specialty family hubs
@@ -368,7 +496,7 @@ export const navSpecialtiesSlugs: LandingSlug[] = [
   'ai-scribe-neurology',
 ]
 
-export type NavSolutionsColumnId = 'platform' | 'documents' | 'careTrust'
+export type NavSolutionsColumnId = 'audiences' | 'differentiators'
 
 /** Homepage feature-card keys shown on each landing (after Story). */
 export type LandingFeatureKey =
@@ -383,10 +511,11 @@ export type LandingFeatureKey =
 export const landingZigZagSlugs = new Set<LandingSlug>([
   'ai-medical-scribe',
   'hospital-documentation',
-  'ambient-clinical-documentation',
+  'for-private-practice',
+  'for-medical-secretaries',
+  'for-clinic-groups',
   'ai-soap-notes',
-  'ai-consultation-notes',
-  'multilingual-ai-medical-scribe',
+  'multilingual-medical-documentation',
   'ai-scribe-general-practice',
   'ai-scribe-psychiatry',
   'ai-scribe-pediatrics',
@@ -401,14 +530,19 @@ export const landingFeatureKeys: Record<LandingSlug, LandingFeatureKey[]> = {
   'ai-medical-scribe': ['recording', 'summaries', 'security'],
   'hospital-documentation': ['summaries', 'integration', 'security'],
   'clinical-compliance': ['security', 'integration', 'languages'],
-  'ambient-clinical-documentation': ['recording', 'summaries', 'security'],
-  'ai-clinical-documentation': ['recording', 'summaries', 'integration'],
+  'for-private-practice': ['recording', 'summaries', 'languages'],
+  'for-medical-secretaries': ['summaries', 'recording', 'security'],
+  'for-clinic-groups': ['integration', 'security', 'summaries'],
+  'medical-coding-and-billing': ['summaries', 'integration', 'security'],
+  'ehr-integration': ['integration', 'summaries', 'security'],
+  'custom-word-templates': ['summaries', 'recording', 'integration'],
+  'clinical-context': ['summaries', 'recording', 'transcription'],
+  'day-hospital-documentation': ['integration', 'summaries', 'security'],
+  'multilingual-medical-documentation': ['languages', 'recording', 'summaries'],
   'ai-soap-notes': ['recording', 'summaries', 'transcription'],
   'ai-medical-transcription': ['transcription', 'recording', 'summaries'],
   'ai-discharge-summary': ['summaries', 'integration', 'security'],
   'operative-report-ai': ['summaries', 'integration', 'recording'],
-  'ai-consultation-notes': ['recording', 'summaries', 'transcription'],
-  'multilingual-ai-medical-scribe': ['languages', 'recording', 'security'],
   'ai-scribe-general-practice': ['recording', 'summaries', 'languages'],
   'ai-scribe-psychiatry': ['recording', 'security', 'summaries'],
   'ai-scribe-cardiology': ['recording', 'summaries', 'integration'],
@@ -419,30 +553,20 @@ export const landingFeatureKeys: Record<LandingSlug, LandingFeatureKey[]> = {
   'ai-scribe-neurology': ['recording', 'summaries', 'security'],
 }
 
-/** Mega-menu columns for Solutions (3 groups). */
+/** Mega-menu columns for Solutions --- "who it's for" × "what makes us different". */
 export const navSolutionsColumns: { id: NavSolutionsColumnId; slugs: LandingSlug[] }[] = [
   {
-    id: 'platform',
+    id: 'audiences',
     slugs: [
-      'ai-medical-scribe',
-      'ambient-clinical-documentation',
-      'ai-clinical-documentation',
-      'multilingual-ai-medical-scribe',
+      'for-private-practice',
+      'hospital-documentation',
+      'for-medical-secretaries',
+      'for-clinic-groups',
     ],
   },
   {
-    id: 'documents',
-    slugs: [
-      'ai-soap-notes',
-      'ai-consultation-notes',
-      'ai-medical-transcription',
-      'ai-discharge-summary',
-      'operative-report-ai',
-    ],
-  },
-  {
-    id: 'careTrust',
-    slugs: ['hospital-documentation', 'clinical-compliance'],
+    id: 'differentiators',
+    slugs: [...differentiatorSlugs, 'clinical-compliance'],
   },
 ]
 
@@ -450,59 +574,41 @@ const NAV_SOLUTIONS_COLUMN_LABELS: Record<
   NavSolutionsColumnId,
   Partial<Record<Locale, string>> & { en: string }
 > = {
-  platform: {
-    en: 'Platform',
-    fr: 'Plateforme',
-    de: 'Plattform',
-    es: 'Plataforma',
-    it: 'Piattaforma',
-    pt: 'Plataforma',
-    nl: 'Platform',
-    ru: 'Платформа',
-    ja: 'プラットフォーム',
-    ko: '플랫폼',
-    zh: '平台',
-    ar: 'المنصة',
-    hi: 'प्लेटफ़ॉर्म',
-    th: 'แพลตฟอร์ม',
-    sv: 'Plattform',
-    no: 'Plattform',
+  audiences: {
+    en: "Who it's for",
+    fr: 'Pour qui',
+    de: 'Für wen',
+    es: 'Para quién',
+    it: 'Per chi',
+    pt: 'Para quem',
+    nl: 'Voor wie',
+    ru: '�-ля кого',
+    ja: '対象�-�',
+    ko: '누구를 위�-�',
+    zh: '�-��-�对象',
+    ar: 'لمن هذا الحل',
+    hi: '�-िस�-े लिए',
+    th: '�-หมาะสำหรับใคร',
+    sv: 'För vem',
+    no: 'For hvem',
   },
-  documents: {
-    en: 'Document types',
-    fr: 'Types de documents',
-    de: 'Dokumenttypen',
-    es: 'Tipos de documentos',
-    it: 'Tipi di documenti',
-    pt: 'Tipos de documentos',
-    nl: 'Documenttypes',
-    ru: 'Типы документов',
-    ja: '文書タイプ',
-    ko: '문서 유형',
-    zh: '文档类型',
-    ar: 'أنواع المستندات',
-    hi: 'दस्तावेज़ प्रकार',
-    th: 'ประเภทเอกสาร',
-    sv: 'Dokumenttyper',
-    no: 'Dokumenttyper',
-  },
-  careTrust: {
-    en: 'Care & trust',
-    fr: 'Soins & confiance',
-    de: 'Versorgung & Vertrauen',
-    es: 'Atención y confianza',
-    it: 'Cura e fiducia',
-    pt: 'Cuidado e confiança',
-    nl: 'Zorg & vertrouwen',
-    ru: 'Уход и доверие',
-    ja: 'ケアと信頼',
-    ko: '케어 & 신뢰',
-    zh: '照护与信任',
-    ar: 'الرعاية والثقة',
-    hi: 'देखभाल और विश्वास',
-    th: 'การดูแลและความเชื่อถือ',
-    sv: 'Vård & förtroende',
-    no: 'Omsorg & tillit',
+  differentiators: {
+    en: 'What makes us different',
+    fr: 'Ce qui nous distingue',
+    de: 'Was uns unterscheidet',
+    es: 'Lo que nos diferencia',
+    it: 'Cosa ci distingue',
+    pt: 'O que nos diferencia',
+    nl: 'Wat ons onderscheidt',
+    ru: 'Чем мы отличаемся',
+    ja: '私たちの強み',
+    ko: '차별점',
+    zh: '我们的不同之处',
+    ar: 'ما يميزنا',
+    hi: 'हम अलग �-्यों हैं',
+    th: 'สิ่งที่ทำให้�-ราแ�-ก�-่าง',
+    sv: 'Det som skiljer oss',
+    no: 'Det som skiller oss',
   },
 }
 
@@ -522,7 +628,7 @@ const NAV_GROUP_LABELS: Record<'solutions' | 'specialties', Partial<Record<Local
     nl: 'Oplossingen',
     ru: 'Решения',
     ja: 'ソリューション',
-    ko: '솔루션',
+    ko: '�-루션',
     zh: '解决方案',
     ar: 'الحلول',
     hi: 'समाधान',
@@ -541,10 +647,10 @@ const NAV_GROUP_LABELS: Record<'solutions' | 'specialties', Partial<Record<Local
     ru: 'Специальности',
     ja: '診療科',
     ko: '전문과',
-    zh: '专科',
+    zh: '�-科',
     ar: 'التخصصات',
     hi: 'विशेषज्ञताएँ',
-    th: 'สาขาเฉพาะทาง',
+    th: 'สาขา�-ฉพาะทาง',
     sv: 'Specialiteter',
     no: 'Spesialiteter',
   },
@@ -575,11 +681,11 @@ function mergeCopy(locale: Locale): Record<LandingSlug, LandingCopy> {
 
   const out = {} as Record<LandingSlug, LandingCopy>
   for (const slug of landingSlugs) {
-    const copy = landingData[slug] ?? enLanding[slug]
-    if (!copy) {
-      throw new Error(`Missing landing copy for ${slug} (${locale})`)
+    if (!enLanding[slug]) {
+      throw new Error(`Missing landing copy for ${slug} (en)`)
     }
-    out[slug] = copy
+    // Per-leaf EN fallback so a partially translated locale never renders `undefined`.
+    out[slug] = withEnFallback(enLanding[slug], landingData[slug])
   }
   return out
 }
@@ -621,10 +727,10 @@ export const getLandingNavDesc = (slug: LandingSlug, locale: Locale): string => 
   if (raw.length <= 52) return raw
   const cut = raw.slice(0, 52)
   const sp = cut.lastIndexOf(' ')
-  return `${(sp > 28 ? cut.slice(0, sp) : cut).trim()}…`
+  return `${(sp > 28 ? cut.slice(0, sp) : cut).trim()}--�`
 }
 
-/** @deprecated use landingSlugs / getLanding — kept for existing imports */
+/** @deprecated use landingSlugs / getLanding --- kept for existing imports */
 export type PillarCopy = LandingCopy
 export const pillars = landings as unknown as Record<PillarSlug, Record<Locale, LandingCopy>>
 export const getPillar = (slug: PillarSlug, locale: Locale) => getLanding(slug, locale)

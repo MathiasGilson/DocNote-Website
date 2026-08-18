@@ -31,7 +31,7 @@
     "patients": "Pasienter",
     "templates": "Maler",
     "settings": "Innstillinger",
-    "consultationTitle": "Konsultasjon — Pasient #1247",
+    "consultationTitle": "Konsultasjon: Pasient #1247",
     "consultationDate": "I dag, 14:30 · Allmennpraksis",
     "recording": "Opptak",
     "soapNoteGenerated": "SOAP-notat generert",
@@ -114,7 +114,7 @@
     "integration": {
       "title": "EHR-integrasjon",
       "description": "Integrer sømløst med ditt eksisterende elektroniske pasientjournal (EHR)-system.",
-      "animTitle": "EHR — Pasientjournal",
+      "animTitle": "EHR: Pasientjournal",
       "animPatient": "Pasient",
       "animDob": "Fødselsdato",
       "animNotes": "Notater",
@@ -232,6 +232,8 @@
   "specialties": {
     "title": "Støtter 61 medisinske spesialiteter",
     "subtitle": "Fra allmennpraksis til spesialisert behandling",
+    "countLabel": "61",
+    "familiesCta": "Utforsk de sju spesialitetsfamiliene",
     "items": [
       "Allmennpraksis",
       "Indremedisin",
@@ -249,8 +251,7 @@
       "Kirurgi",
       "Urologi",
       "Akuttmedisin"
-    ],
-    "countLabel": "61"
+    ]
   },
   "testimonials": {
     "badge": "Tilbakemelding",
@@ -294,7 +295,7 @@
   },
   "valueProp": {
     "title": "Effektivisert medisinsk dokumentasjon",
-    "subtitle": "Forenkle dokumentasjonsarbeidsflyten din, spar timer hver dag og fokuser på det som betyr mest — pasientene dine.",
+    "subtitle": "Forenkle dokumentasjonsarbeidsflyten din, spar timer hver dag og fokuser på det som betyr mest: pasientene dine.",
     "card1": {
       "title": "Kom i gang raskt",
       "description": "Start umiddelbart. Enhver lege på teamet ditt kan ta opp, transkribere og dele kliniske notater på minutter."
@@ -305,7 +306,7 @@
     },
     "card3": {
       "title": "Sømløst på tvers av enheter",
-      "description": "Forbli tilkoblet, uansett hvor du jobber. DocNote kjører problemfritt på enhver enhet — mobil, nettbrett eller PC."
+      "description": "Forbli tilkoblet, uansett hvor du jobber. DocNote kjører problemfritt på enhver enhet, som mobil, nettbrett eller PC."
     }
   },
   "compliance": {
@@ -438,16 +439,16 @@
       "q9": "Hvor lang tid tar onboarding?",
       "a9": "De fleste enkeltklinikere starter samme dag etter gratis prøveperiode. Sykehus- og klinikkoppsett tar vanligvis noen uker avhengig av EHR-integrasjon, opplæringsskjema og intern IT-gjennomgang.",
       "q10": "Kan flere leger i en praksis dele en konto?",
-      "a10": "Små praksiser kan starte på Profesjonell per kliniker. For delte avdelinger, admin-roller eller sykehusomfattende tilgang er Enterprise-planen det rette valget — kontakt salg så vil vi dimensjonere det med deg."
+      "a10": "Små praksiser kan starte på Profesjonell per kliniker. For delte avdelinger, admin-roller eller sykehusomfattende tilgang er Enterprise-planen det rette valget. Kontakt salg så vil vi dimensjonere det med deg."
     },
     "compare": {
       "title": "Sammenlign planer",
       "subtitle": "Se hva som er inkludert for enkeltklinikere versus sykehus og klinikker.",
       "feature": "Funksjon",
       "pro": "Profesjonell",
-      "enterprise": "Enterprise",
+      "enterprise": "Bedrift",
       "yes": "Inkludert",
-      "no": "—",
+      "no": "-",
       "custom": "Tilpasset",
       "rows": [
         {
@@ -578,7 +579,7 @@
       },
       "hugoRoussel": {
         "name": "Hugo Roussel",
-        "role": "Team Lead Engineer",
+        "role": "Teamleder utvikling",
         "bio": "Utdannet ved ETH Zürich, leder teknisk leveranse med fokus på skalerbare systemer og ren arkitektur."
       },
       "ericWei": {
@@ -603,26 +604,26 @@
       }
     },
     "highlightsTitle": "Hvordan vi jobber",
-    "highlightsLead": "DocNote startet ikke som en pitch-deck. Det startet i sykehuskorridorer — mellom varderunder, operasjonslister og kvelder brukt på å omskrive notater som burde ha skrevet seg selv. Den opprinnelsen preger fortsatt hver ansettelse, hver utgivelse og hver samtale vi har med en klinikk.",
+    "highlightsLead": "DocNote startet ikke som en pitch-deck. Det startet i sykehuskorridorer, mellom varderunder, operasjonslister og kvelder brukt på å omskrive notater som burde ha skrevet seg selv. Den opprinnelsen preger fortsatt hver ansettelse, hver utgivelse og hver samtale vi har med en klinikk.",
     "highlights": [
       {
         "title": "Praktiserende leger i kjernen",
-        "body": "Våre grunnleggere praktiserer fortsatt medisin. Det er ikke et slagord for Om-siden — det er filteret for produktbeslutninger. Hvis en funksjon ikke overlever en travel varderunde, en støyende akuttavdeling eller en fredagsettermiddagsklinikk, blir den ikke lansert.\n\nKlinisk språk, spesialitetsstruktur og den virkelige rytmen i sykehusdokumentasjon kommer først. Vi designer for utskrivningsbrev, operasjonsrapporter, samarbeidsdagssykehusfiler og de vanskelige øyeblikkene når tre omsorgsgivere berører samme pasient på en ettermiddag.\n\nNår klinikere forteller oss at noe føles feil, behandler vi det som ingeniørinformasjon — ikke som en kosmetisk UX-kommentar."
+        "body": "Våre grunnleggere praktiserer fortsatt medisin. Det er ikke et slagord for Om-siden, det er filteret for produktbeslutninger. Hvis en funksjon ikke overlever en travel varderunde, en støyende akuttavdeling eller en fredagsettermiddagsklinikk, blir den ikke lansert.\n\nKlinisk språk, spesialitetsstruktur og den virkelige rytmen i sykehusdokumentasjon kommer først. Vi designer for utskrivningsbrev, operasjonsrapporter, samarbeidsdagssykehusfiler og de vanskelige øyeblikkene når tre omsorgsgivere berører samme pasient på en ettermiddag.\n\nNår klinikere forteller oss at noe føles feil, behandler vi det som ingeniørinformasjon, ikke som en kosmetisk UX-kommentar."
       },
       {
         "title": "Sveitsisk-hos personvern som standard",
-        "body": "Helsedata er ikke en treningskorpus. DocNote huser klinisk informasjon i Sveits, krypterer den under overføring og i ro, og bruker oppbevaringsregler som matcher europeiske forventninger til medisinsk hemmelighold.\n\nVi bygger for FADP / nLPD, GDPR, HIPAA og ISO 27001-realiteter — sykehus-IT-gjennomganger, anskaffelsesspørreskjemaer og det stille spørsmålet hver lege stiller: hvor bor pasientens data egentlig?\n\nIngenting ved ambient dokumentasjon er verdt å undergrave tillit. Personvern er en del av produktarkitekturen, ikke et juridisk vedlegg."
+        "body": "Helsedata er ikke en treningskorpus. DocNote huser klinisk informasjon i Sveits, krypterer den under overføring og i ro, og bruker oppbevaringsregler som matcher europeiske forventninger til medisinsk hemmelighold.\n\nVi bygger for FADP / nLPD, GDPR, HIPAA og ISO 27001-realiteter, som sykehus-IT-gjennomganger, anskaffelsesspørreskjemaer og det stille spørsmålet hver lege stiller: hvor bor pasientens data egentlig?\n\nIngenting ved ambient dokumentasjon er verdt å undergrave tillit. Personvern er en del av produktarkitekturen, ikke et juridisk vedlegg."
       },
       {
         "title": "Klinikere og ingeniører i samme løkke",
-        "body": "Medisinske spesialister, AI-ingeniører og produktmedarbeidere sitter i samme løkke. Rapportmodeller oppfinnes ikke i isolasjon og deretter \"tilpasses\" for sykehus — de er meddesignet av folk som fortsatt skriver disse rapportene for hånd i dag.\n\nDerfor kan DocNote gå fra fri diktering til strukturerte spesialitetsnotater, operasjonsrapporter, oppfølgningsnotater og utskrivningssammendrag uten å tvinge leger inn i en generell US-poliklinisk mal.\n\nIngeniørkvalitet vises som hastighet, pålitelighet og rolige grensesnitt. Klinisk kvalitet vises som vokabular, struktur og respekt for hvordan omsorgsteam faktisk jobber."
+        "body": "Medisinske spesialister, AI-ingeniører og produktmedarbeidere sitter i samme løkke. Rapportmodeller oppfinnes ikke i isolasjon og deretter \"tilpasses\" for sykehus, de er meddesignet av folk som fortsatt skriver disse rapportene for hånd i dag.\n\nDerfor kan DocNote gå fra fri diktering til strukturerte spesialitetsnotater, operasjonsrapporter, oppfølgningsnotater og utskrivningssammendrag uten å tvinge leger inn i en generell US-poliklinisk mal.\n\nIngeniørkvalitet vises som hastighet, pålitelighet og rolige grensesnitt. Klinisk kvalitet vises som vokabular, struktur og respekt for hvordan omsorgsteam faktisk jobber."
       },
       {
         "title": "Fra første demo til sykehusoppsett",
-        "body": "En god ambient skribentdemo er enkel. Et pålitelig sykehusoppsett er det ikke. Vårt salg, onboarding og supportteam hjelper klinikker med å kartlegge arbeidsflyter, velge riktige rapportmodeller, koble EHR-stier der nødvendig og trene team uten å avbryte omsorg.\n\nVi holder oss gjennom piloter, anskaffelser og det rotete midtpartiet — spesialitetsunntak, malpreferanser, flerspråklige avdelinger og IT-sjekklisten ingen setter på markedsføringssiden.\n\nMålet er enkelt: mer tid med pasienter, færre kvelder tapt på notater og et dokumentasjonssystem klinikere er villige til å forsvare overfor kolleger."
+        "body": "En god ambient skribentdemo er enkel. Et pålitelig sykehusoppsett er det ikke. Vårt salg, onboarding og supportteam hjelper klinikker med å kartlegge arbeidsflyter, velge riktige rapportmodeller, koble EHR-stier der nødvendig og trene team uten å avbryte omsorg.\n\nVi holder oss gjennom piloter, anskaffelser og det rotete midtpartiet: spesialitetsunntak, malpreferanser, flerspråklige avdelinger og IT-sjekklisten ingen setter på markedsføringssiden.\n\nMålet er enkelt: mer tid med pasienter, færre kvelder tapt på notater og et dokumentasjonssystem klinikere er villige til å forsvare overfor kolleger."
       }
     ],
-    "highlightsClosing": "I dag spenner teamet over klinisk lederskap, dypt ingeniørarbeid, go-to-market og kommunikasjon — forent av ett oppdrag: gjør konsultasjoner om til pålitelige kliniske dokumenter på sekunder, med sveitsisk-hos personvern i kjernen. Vi bygger med de som skal bruke produktet i morgen."
+    "highlightsClosing": "I dag spenner teamet over klinisk lederskap, dypt ingeniørarbeid, go-to-market og kommunikasjon, forent av ett oppdrag: gjør konsultasjoner om til pålitelige kliniske dokumenter på sekunder, med sveitsisk-hos personvern i kjernen. Vi bygger med de som skal bruke produktet i morgen."
   },
   "tutorial": {
     "title": "Kom i gang med DocNote",
@@ -691,15 +692,15 @@
     "aliceName": "Dr. Alice Gilson",
     "vincentRole": "Lege & Administrerende direktør",
     "aliceRole": "Lege & Administrerende direktør",
-    "vincentFocus": "Sykehus og klinikker i Sveits — demoer, piloter og EHR-oppsett.",
-    "aliceFocus": "Franske helseorganisasjoner — sykehus, klinikker og anskaffelsessamtaler.",
+    "vincentFocus": "Sykehus og klinikker i Sveits: demoer, piloter og EHR-oppsett.",
+    "aliceFocus": "Franske helseorganisasjoner: sykehus, klinikker og anskaffelsessamtaler.",
     "vincentCity": "Genève, Sveits",
     "aliceCity": "Frankrike",
     "writeEmail": "Skriv en e-post",
     "callPhone": "Ring",
     "hoursLabel": "Tilgjengelighet",
-    "hoursValue": "Man–Fre · svar innen én virkedag",
-    "responseLabel": "Best for",
+    "hoursValue": "Man-Fre · svar innen én virkedag",
+    "responseLabel": "Passer best for",
     "responseValue": "Sykehusdemoer, prising og integrasjonsspørsmål",
     "companyLabel": "Selskap",
     "companyValue": "DocNote · Sveitsisk-hos klinisk AI",

@@ -31,7 +31,7 @@
     "patients": "환자",
     "templates": "템플릿",
     "settings": "설정",
-    "consultationTitle": "진료 — 환자 #1247",
+    "consultationTitle": "진료: 환자 #1247",
     "consultationDate": "오늘, 14:30 · 일반 진료",
     "recording": "녹음 중",
     "soapNoteGenerated": "SOAP 노트 생성 완료",
@@ -83,10 +83,7 @@
         "이전에는",
         "편두통",
         "경험이",
-        "없습니다...",
-        "haven't",
-        "had",
-        "migraines"
+        "없습니다..."
       ]
     },
     "transcription": {
@@ -113,7 +110,7 @@
     "integration": {
       "title": "EHR 통합",
       "description": "기존 전자 건강 기록 시스템과 원활하게 통합됩니다.",
-      "animTitle": "EHR — 환자 기록",
+      "animTitle": "EHR: 환자 기록",
       "animPatient": "환자",
       "animDob": "생년월일",
       "animNotes": "기록",
@@ -231,6 +228,8 @@
   "specialties": {
     "title": "61개 의학 전문 분야 지원",
     "subtitle": "일반 진료부터 전문 치료까지",
+    "countLabel": "61",
+    "familiesCta": "7개 전문과 그룹 살펴보기",
     "items": [
       "일반 진료",
       "내과",
@@ -248,8 +247,7 @@
       "외과",
       "비뇨기과",
       "응급의학"
-    ],
-    "countLabel": "61"
+    ]
   },
   "testimonials": {
     "badge": "사용자 평가",
@@ -293,7 +291,7 @@
   },
   "valueProp": {
     "title": "간소화된 의료 문서화",
-    "subtitle": "문서화 워크플로우를 통합하고 매일 시간을 절약하며 가장 중요한 것—환자—에 집중하세요.",
+    "subtitle": "문서화 워크플로우를 통합하고 매일 시간을 절약하며 가장 중요한 것, 즉 환자에게 집중하세요.",
     "card1": {
       "title": "빠르게 시작하기",
       "description": "즉시 시작하세요. 팀 내 모든 의사가 몇 분 안에 진료를 녹음, 전사, 공유할 수 있습니다."
@@ -446,7 +444,7 @@
       "pro": "프로페셔널",
       "enterprise": "엔터프라이즈",
       "yes": "포함",
-      "no": "—",
+      "no": "-",
       "custom": "커스텀",
       "rows": [
         {
@@ -690,14 +688,14 @@
     "aliceName": "Dr. Alice Gilson",
     "vincentRole": "의사 & 관리 이사",
     "aliceRole": "의사 & 관리 이사",
-    "vincentFocus": "스위스의 병원 및 클리닉 — 데모, 파일럿, EHR 롤아웃.",
-    "aliceFocus": "프랑스 의료 기관 — 병원, 클리닉 및 조담 대화.",
+    "vincentFocus": "스위스의 병원 및 클리닉: 데모, 파일럿, EHR 롤아웃.",
+    "aliceFocus": "프랑스 의료 기관: 병원, 클리닉 및 조담 대화.",
     "vincentCity": "제네바, 스위스",
     "aliceCity": "프랑스",
     "writeEmail": "이메일 작성",
     "callPhone": "전화",
     "hoursLabel": "가능 시간",
-    "hoursValue": "월–금 · 영업일 기준 1일 이내 답변",
+    "hoursValue": "월~금 · 영업일 기준 1일 이내 답변",
     "responseLabel": "최적 용도",
     "responseValue": "병원 데모, 가격 및 통합 문의",
     "companyLabel": "회사",

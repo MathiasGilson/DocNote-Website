@@ -13,12 +13,14 @@ import {
 } from '../utils/i18n';
 import { getBlogAlternatePaths } from '../utils/blog-translations';
 import { getBlogAllAlternatePaths } from '../utils/seo';
+import { getSiteUi } from '../utils/inline-content';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
+const siteUi = getSiteUi(locale);
 const pathname = Astro.url.pathname;
 const basePath = getPathWithoutLocale(pathname);
 const blogAllMatch = basePath.match(/^\/blog\/all\/(\d+)\/?$/);
@@ -39,7 +41,7 @@ const hrefByLocale = blogAllMatch
   <button
     type="button"
     class="lang-switcher-btn inline-flex items-center justify-center gap-2 px-5 py-2.5 text-base font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all whitespace-nowrap"
-    aria-label="Select language"
+    aria-label={siteUi.selectLanguage}
     aria-haspopup="listbox"
     aria-expanded="false"
   >
@@ -52,7 +54,7 @@ const hrefByLocale = blogAllMatch
     </svg>
   </button>
 
-  <div class="lang-dropdown hidden absolute right-0 mt-2 w-44 max-h-72 overflow-y-auto overscroll-contain bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50" role="listbox" aria-label="Languages">
+  <div class="lang-dropdown hidden absolute right-0 mt-2 w-44 max-h-72 overflow-y-auto overscroll-contain bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50" role="listbox" aria-label={siteUi.languages}>
     {locales.map((code) => (
       <a
         href={hrefByLocale ? hrefByLocale[code] : getLocalizedPath(basePath, code)}

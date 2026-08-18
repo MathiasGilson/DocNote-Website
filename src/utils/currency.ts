@@ -7,7 +7,7 @@ export interface CurrencyInfo {
 
 const CURRENCY_INFO: Record<Currency, CurrencyInfo> = {
   USD: { code: 'USD', symbol: '$' },
-  EUR: { code: 'EUR', symbol: 'â‚¬' },
+  EUR: { code: 'EUR', symbol: '-‚¬' },
   CHF: { code: 'CHF', symbol: 'CHF' }
 };
 
@@ -100,7 +100,7 @@ export function getCountryByTimezone(): string | null {
 // Cloudflare Pages, so this returns Cloudflare's own geolocation of the
 // requesting client (more accurate than third-party IP databases like
 // ipapi.co, which has been observed to mislocate French IPs as Swiss). The
-// response is a plain-text key=value list â€” we parse the `loc=XX` line.
+// response is a plain-text key=value list --- we parse the `loc=XX` line.
 //
 // Fallback: ipapi.co/json/, used when /cdn-cgi/trace isn't reachable (local
 // dev server, ad blocker stripping cdn-cgi requests, etc.).

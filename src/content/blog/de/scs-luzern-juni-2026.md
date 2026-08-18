@@ -14,6 +14,6 @@ Auf Einladung von Professor Léo Bühler und der Association for Research in Sur
 
 Sie trug zur Session "AI, CAR-T Cells and Omics in the OR: Will Surgeons Still Be There?" bei und ging einer Frage nach, die Fachpersonen im Gesundheitswesen zunehmend beschäftigt: Welche Rolle werden Chirurginnen und Chirurgen im Zeitalter der künstlichen Intelligenz spielen?
 
-Der Vortrag beleuchtete, wie KI Chirurgie und Gesundheitswesen bereits verändert — im Operationssaal durch Robotik, bildgeführte Chirurgie und Entscheidungsunterstützungssysteme, und ausserhalb des OP durch medizinische Forschung, Datenanalyse und klinische Dokumentation.
+Der Vortrag beleuchtete, wie KI Chirurgie und Gesundheitswesen bereits verändert: im Operationssaal durch Robotik, bildgeführte Chirurgie und Entscheidungsunterstützungssysteme, und ausserhalb des OP durch medizinische Forschung, Datenanalyse und klinische Dokumentation.
 
 Die zentrale Erkenntnis war klar: Chirurgen werden nicht verschwinden, aber der Beruf wird sich wandeln. Statt klinisches Urteilsvermögen, technische Expertise oder die menschliche Beziehung zum Patienten zu ersetzen, kann KI repetitive administrative Aufgaben übernehmen und wertvolle Zeit für die Patientenversorgung freisetzen.

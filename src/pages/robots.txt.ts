@@ -1,6 +1,6 @@
 /**
  * Production: Allow all + sitemap.
- * Preview (workers.dev / PUBLIC_IS_PREVIEW): Disallow all — no sitemap pointer.
+ * Preview (workers.dev / PUBLIC_IS_PREVIEW): Disallow all --- no sitemap pointer.
  */
 import { IS_PREVIEW_DEPLOY, SITE_URL as SITE } from '../utils/seo';
 

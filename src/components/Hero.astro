@@ -1,6 +1,7 @@
 ---
 import { getLocaleFromUrl, getLocalizedPath } from "../utils/i18n"
 import { DEMO_BOOKING_URL } from "../utils/links"
+import { getSiteUi } from "../utils/inline-content"
 
 interface Props {
     translations: any
@@ -8,6 +9,7 @@ interface Props {
 
 const { translations: t } = Astro.props
 const locale = getLocaleFromUrl(Astro.url)
+const siteUi = getSiteUi(locale)
 
 const stats = [
     {
@@ -43,11 +45,7 @@ const badgeParts = String(t.hero.badge || "")
     <div class="absolute inset-0 z-0">
         <img
             src="/images/hero.jpeg"
-            alt={locale === 'fr'
-                ? 'Médecin en consultation utilisant DocNote pour la documentation clinique'
-                : locale === 'de'
-                  ? 'Ärztin in der Konsultation mit DocNote für klinische Dokumentation'
-                  : 'Physician in consultation using DocNote for clinical documentation'}
+            alt={siteUi.heroImageAlt}
             width="1200"
             height="880"
             fetchpriority="high"
@@ -75,7 +73,7 @@ const badgeParts = String(t.hero.badge || "")
                         <span class="hero-eyebrow-divider" aria-hidden="true"></span>
                         <span class="hero-eyebrow-chip">
                             <span class="hero-eyebrow-flag" aria-hidden="true">
-                                <img src="/images/flags/ch.svg" alt="Switzerland" width="14" height="14" />
+                                <img src="/images/flags/ch.svg" alt={siteUi.switzerland} width="14" height="14" />
                             </span>
                             <span>{badgeParts[1]}</span>
                         </span>
@@ -538,7 +536,7 @@ const badgeParts = String(t.hero.badge || "")
                 id="close-modal-btn"
                 type="button"
                 class="absolute -top-12 right-0 text-white/80 hover:text-white transition-colors"
-                aria-label="Close modal"
+                aria-label={siteUi.closeModal}
             >
                 <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"
@@ -550,7 +548,7 @@ const badgeParts = String(t.hero.badge || "")
                     id="youtube-iframe"
                     class="w-full h-full"
                     src=""
-                    title="Demo Video"
+                    title={siteUi.demoVideo}
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
@@ -849,7 +847,7 @@ const badgeParts = String(t.hero.badge || "")
     const modalContent = document.getElementById("modal-content")
     const closeModalBtn = document.getElementById("close-modal-btn")
     const youtubeIframe = document.getElementById("youtube-iframe") as HTMLIFrameElement
-    const videoUrl = "https://www.youtube.com/embed/AJCoJ9kOKrU?autoplay=1"
+    const videoUrl = "https://www.youtube-nocookie.com/embed/AJCoJ9kOKrU?autoplay=1"
 
     const closeModal = () => {
         videoModal?.classList.add("hidden")

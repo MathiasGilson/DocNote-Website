@@ -5,11 +5,14 @@ import '../../styles/landing-page.css';
 import '../../styles/family-landings.css';
 import '../../styles/hub-pages.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getLandingUi, getSiteUi } from '../../utils/inline-content';
 import {
   getLandingNavDesc,
   getLandingNavLabel,
+  getNavGroupLabel,
   getNavSolutionsColumnLabel,
   navSolutionsColumns,
+  usecaseSlugs,
   type LandingSlug,
   type NavSolutionsColumnId,
 } from '../../content/landings';
@@ -28,11 +31,12 @@ interface Props {
 
 const { locale } = Astro.props;
 const lang = locale;
+const siteUi = getSiteUi(lang);
 const p = getSolutionsHub(lang);
 
-const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
-const solutionsLabel =
-  lang === 'fr' ? 'Solutions' : lang === 'de' ? 'Lösungen' : 'Solutions';
+const ui = getLandingUi(lang);
+const homeLabel = ui.home;
+const solutionsLabel = getNavGroupLabel('solutions', lang);
 
 const hubPath = SOLUTIONS_HUB_PATH;
 const breadcrumbLd = buildBreadcrumbLd([
@@ -63,24 +67,30 @@ const columns = navSolutionsColumns.map((col) => ({
   ),
 }));
 
-const platform = columns.find((c) => c.id === 'platform')!;
-const documents = columns.find((c) => c.id === 'documents')!;
-const careTrust = columns.find((c) => c.id === 'careTrust')!;
+const audiences = columns.find((c) => c.id === 'audiences')!;
+const differentiators = columns.find((c) => c.id === 'differentiators')!;
 
-const ambientSlug = 'ambient-clinical-documentation' as LandingSlug;
-const ambientItem =
-  platform.items.find((item) => item.slug === ambientSlug) ?? platform.items[0];
-const platformRest = platform.items.filter((item) => item.slug !== ambientItem.slug);
+const toItem = (slug: LandingSlug): HubItem => ({
+  slug,
+  href: getLocalizedPath(`/${slug}`, lang),
+  label: getLandingNavLabel(slug, lang),
+  desc: getLandingNavDesc(slug, lang),
+  icon: landingNavIconMarkup(slug),
+});
+/* Kept out of the menu for search: the pillar + document-type landings. */
+const moreItems: HubItem[] = ['ai-medical-scribe' as LandingSlug, ...usecaseSlugs].map(toItem);
+
+const featuredSlug = 'hospital-documentation' as LandingSlug;
+const featuredHref = getLocalizedPath(`/${featuredSlug}`, lang);
 
 const primaryHref = getLocalizedPath('/tutorial', lang);
 const secondaryHref = getLocalizedPath('/pricing', lang);
-const ambientHref = getLocalizedPath(`/${ambientItem.slug}`, lang);
-const openLabel = lang === 'fr' ? 'Ouvrir' : 'Open';
+const openLabel = ui.open;
 ---
 
 <Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>
   <div class="lp-crumb-bar pt-28 sm:pt-32">
-    <nav class="lp-crumb-inner" aria-label="Breadcrumb">
+    <nav class="lp-crumb-inner" aria-label={siteUi.breadcrumb}>
       <ol class="flex flex-wrap items-center justify-center gap-2">
         <li>
           <a href={getLocalizedPath('/', lang)} class="hover:text-gray-900 transition-colors">{homeLabel}</a>
@@ -174,94 +184,115 @@ const openLabel = lang === 'fr' ? 'Ouvrir' : 'Open';
           <h2 class="hub-featured-title">{p.featured.title}</h2>
           <p class="hub-featured-body">{p.featured.body}</p>
           <div class="hub-featured-actions">
-            <a href={ambientHref} class="btn-primary">{p.featured.primary}</a>
-            <a href="#platform" class="btn-secondary">{p.featured.secondary}</a>
+            <a href={featuredHref} class="btn-primary">{p.featured.primary}</a>
+            <a href="#audiences" class="btn-secondary">{p.featured.secondary}</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="relative py-14 sm:py-20 lp-section-soft" id="platform">
+  <section class="relative py-14 sm:py-20 lp-section-soft" id="audiences">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mb-8 sm:mb-10 reveal">
         <span class="lp-eyebrow">
           <span class="lp-dot" aria-hidden="true"></span>
-          {platform.extra.badge}
+          {audiences.extra.badge}
         </span>
         <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
-          {platform.title}
+          {audiences.title}
         </h2>
-        <p class="hub-col-sub">{platform.extra.subtitle}</p>
+        <p class="hub-col-sub">{audiences.extra.subtitle}</p>
       </div>
 
-      <div class="hub-platform-spotlight">
-        <a
-          href={ambientItem.href}
-          class="hub-sol-card hub-sol-card--spotlight reveal"
-          style={`--hub-spot-image: url('${SOLUTIONS_FEATURED_IMAGE}')`}
-        >
-          <span class="hub-sol-spot-badge">{p.featuredInPlatform}</span>
-          <span class="hub-card-icon" aria-hidden="true">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.75"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              set:html={ambientItem.icon}
-            />
-          </span>
-          <h3 class="lp-card-title">{ambientItem.label}</h3>
-          {ambientItem.desc ? <p class="lp-card-text">{ambientItem.desc}</p> : null}
-        </a>
-
-        <div class="hub-sol-stack">
-          {platformRest.map((item, i) => (
+      <div class="hub-trust-grid">
+        {audiences.items.map((item, i) => {
+          const variant =
+            item.slug === 'hospital-documentation' || item.slug === 'for-clinic-groups'
+              ? 'hospital'
+              : 'practice';
+          return (
             <a
               href={item.href}
-              class:list={['hub-sol-card reveal', `reveal-delay-${i + 1}`]}
+              class:list={['hub-trust-card reveal', i > 0 && `reveal-delay-${i + 1}`]}
             >
-              <span class="hub-card-icon" aria-hidden="true">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  set:html={item.icon}
-                />
-              </span>
-              <h3 class="lp-card-title" style="margin-top: 0.85rem">{item.label}</h3>
-              {item.desc ? <p class="lp-card-text">{item.desc}</p> : null}
+              <div class:list={['lp-setting', `lp-setting--${variant}`]}>
+                <div class="lp-setting__grid">
+                  <div class="lp-setting__lead">
+                    <span class="lp-eyebrow">
+                      <span class="lp-dot" aria-hidden="true"></span>
+                      {audiences.extra.badge}
+                    </span>
+                    <h3 class="lp-setting__title">{item.label}</h3>
+                  </div>
+                  <div class="lp-setting__body">
+                    {item.desc ? <p>{item.desc}</p> : null}
+                    <span class="hub-trust-link">{openLabel} →</span>
+                  </div>
+                </div>
+              </div>
             </a>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <section class="relative py-14 sm:py-20 bg-white" id="documents">
+  <section class="relative py-14 sm:py-20 bg-white" id="differentiators">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mb-8 sm:mb-10 reveal">
         <span class="lp-eyebrow">
           <span class="lp-dot" aria-hidden="true"></span>
-          {documents.extra.badge}
+          {differentiators.extra.badge}
         </span>
         <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
-          {documents.title}
+          {differentiators.title}
         </h2>
-        <p class="hub-col-sub">{documents.extra.subtitle}</p>
+        <p class="hub-col-sub">{differentiators.extra.subtitle}</p>
+      </div>
+
+      <div class="hub-diff-grid">
+        {differentiators.items.map((item, i) => (
+          <a
+            href={item.href}
+            class:list={['hub-sol-card reveal', `reveal-delay-${(i % 3) + 1}`]}
+          >
+            <span class="hub-card-icon" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                set:html={item.icon}
+              />
+            </span>
+            <h3 class="lp-card-title" style="margin-top: 0.85rem">{item.label}</h3>
+            {item.desc ? <p class="lp-card-text">{item.desc}</p> : null}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-14 sm:py-20 lp-section-soft" id="more">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-8 sm:mb-10 reveal">
+        <span class="lp-eyebrow">
+          <span class="lp-dot" aria-hidden="true"></span>
+          {p.more.badge}
+        </span>
+        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
+          {p.more.title}
+        </h2>
+        <p class="hub-col-sub">{p.more.subtitle}</p>
       </div>
 
       <ul class="hub-doc-list">
-        {documents.items.map((item, i) => (
+        {moreItems.map((item, i) => (
           <li class:list={['reveal', `reveal-delay-${(i % 4) + 1}`]}>
             <a href={item.href} class="hub-doc-row">
               <span class="hub-card-icon" aria-hidden="true">
@@ -286,49 +317,6 @@ const openLabel = lang === 'fr' ? 'Ouvrir' : 'Open';
           </li>
         ))}
       </ul>
-    </div>
-  </section>
-
-  <section class="relative py-14 sm:py-20 lp-section-soft" id="care-trust">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-8 sm:mb-10 reveal">
-        <span class="lp-eyebrow">
-          <span class="lp-dot" aria-hidden="true"></span>
-          {careTrust.extra.badge}
-        </span>
-        <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug tracking-tight">
-          {careTrust.title}
-        </h2>
-        <p class="hub-col-sub">{careTrust.extra.subtitle}</p>
-      </div>
-
-      <div class="hub-trust-grid">
-        {careTrust.items.map((item, i) => {
-          const variant = item.slug === 'hospital-documentation' ? 'hospital' : 'practice';
-          return (
-            <a
-              href={item.href}
-              class:list={['hub-trust-card reveal', i === 1 && 'reveal-delay-2']}
-            >
-              <div class:list={['lp-setting', `lp-setting--${variant}`]}>
-                <div class="lp-setting__grid">
-                  <div class="lp-setting__lead">
-                    <span class="lp-eyebrow">
-                      <span class="lp-dot" aria-hidden="true"></span>
-                      {careTrust.extra.badge}
-                    </span>
-                    <h3 class="lp-setting__title">{item.label}</h3>
-                  </div>
-                  <div class="lp-setting__body">
-                    {item.desc ? <p>{item.desc}</p> : null}
-                    <span class="hub-trust-link">{openLabel} →</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
     </div>
   </section>
 

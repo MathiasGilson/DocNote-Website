@@ -123,7 +123,7 @@ const resolveCluster = (slug: string): Record<Locale, string> => {
 
 /**
  * FR/DE content folders keep EN-slug copies alongside localized slugs.
- * Those EN-slug pages must not be built/listed â€” they break reciprocal hreflang.
+ * Those EN-slug pages must not be built/listed --- they break reciprocal hreflang.
  */
 export const isSupersededBlogSlug = (locale: string, slug: string): boolean => {
   if (locale !== 'fr' && locale !== 'de') return false;
@@ -139,7 +139,7 @@ export const isCanonicalBlogPostId = (id: string): boolean => {
   return !isSupersededBlogSlug(locale, slugParts.join('/'));
 };
 
-/** Permanent redirects: /{fr|de}/blog/{en-slug}/ â†’ localized slug (when different). */
+/** Permanent redirects: /{fr|de}/blog/{en-slug}/ -†’ localized slug (when different). */
 export const getBlogSlugRedirects = (): Record<string, string> => {
   const redirects: Record<string, string> = {};
   for (const seed of seeds) {

@@ -4,17 +4,19 @@ import {
   familyVisualCopy,
   type FamilyVisualMeta,
 } from '../../content/family-visuals';
+import type { SpecialtyFamilySlug } from '../../content/specialty-families';
 
 interface Props {
   locale: Locale;
+  slug: SpecialtyFamilySlug;
   visual: FamilyVisualMeta;
   badge: string;
   title: string;
   body: string;
 }
 
-const { locale, visual, badge, title, body } = Astro.props;
-const { imageAlt, mediaCaption } = familyVisualCopy(visual, locale);
+const { locale, slug, visual, badge, title, body } = Astro.props;
+const { imageAlt, mediaCaption } = familyVisualCopy(slug, locale);
 ---
 
 <section class="relative py-14 sm:py-20 overflow-hidden bg-white">

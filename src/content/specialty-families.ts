@@ -1,5 +1,5 @@
 import { locales, type Locale } from '../utils/i18n'
-import { specialtyFamiliesCopy } from '../utils/inline-content'
+import { specialtyFamiliesCopy, withEnFallback } from '../utils/inline-content'
 import type { LandingSlug, SpecialtyLandingSlug } from './landings'
 
 export const specialtyFamilySlugs = [
@@ -38,6 +38,8 @@ export type SpecialtyFamilyCopy = {
   relatedLabel: string
   cta: { title: string; body: string; primary: string; secondary: string }
   statsLine: string
+  /** Media band alt text + caption (see family-visuals.ts for the asset itself). */
+  visual?: { imageAlt: string; mediaCaption: string }
 }
 
 export type SpecialtyFamilyMeta = {
@@ -63,7 +65,7 @@ export const specialtyFamilyMeta: Record<SpecialtyFamilySlug, SpecialtyFamilyMet
     specialtyCount: 4,
     setting: 'both',
     deepLandings: [],
-    relatedLandings: ['operative-report-ai', 'ai-consultation-notes', 'ai-soap-notes'],
+    relatedLandings: ['operative-report-ai', 'ai-soap-notes', 'hospital-documentation'],
   },
   medical: {
     slug: 'medical',
@@ -75,35 +77,35 @@ export const specialtyFamilyMeta: Record<SpecialtyFamilySlug, SpecialtyFamilyMet
       'ai-scribe-psychiatry',
       'ai-scribe-dermatology',
     ],
-    relatedLandings: ['ai-consultation-notes', 'ai-clinical-documentation', 'ai-medical-scribe'],
+    relatedLandings: ['ai-soap-notes', 'clinical-context', 'ai-medical-scribe'],
   },
   'primary-care': {
     slug: 'primary-care',
     specialtyCount: 5,
     setting: 'practice',
     deepLandings: ['ai-scribe-general-practice', 'ai-scribe-pediatrics'],
-    relatedLandings: ['ai-soap-notes', 'ai-consultation-notes', 'ai-medical-scribe'],
+    relatedLandings: ['ai-soap-notes', 'for-private-practice', 'ai-medical-scribe'],
   },
   'acute-care': {
     slug: 'acute-care',
     specialtyCount: 3,
     setting: 'hospital',
     deepLandings: ['ai-scribe-emergency-medicine'],
-    relatedLandings: ['operative-report-ai', 'hospital-documentation', 'ai-clinical-documentation'],
+    relatedLandings: ['operative-report-ai', 'hospital-documentation', 'ehr-integration'],
   },
   diagnostics: {
     slug: 'diagnostics',
     specialtyCount: 4,
     setting: 'diagnostics',
     deepLandings: [],
-    relatedLandings: ['ai-medical-transcription', 'ai-clinical-documentation'],
+    relatedLandings: ['ai-medical-transcription', 'clinical-context'],
   },
   'allied-health': {
     slug: 'allied-health',
     specialtyCount: 9,
     setting: 'practice',
     deepLandings: [],
-    relatedLandings: ['ai-consultation-notes', 'ai-medical-scribe'],
+    relatedLandings: ['for-private-practice', 'ai-medical-scribe'],
   },
 }
 
@@ -133,9 +135,9 @@ function mergeCopy(locale: Locale): Record<SpecialtyFamilySlug, SpecialtyFamilyC
   const en = (specialtyFamiliesCopy.en ?? {}) as Record<string, SpecialtyFamilyCopy>
   const out = {} as Record<SpecialtyFamilySlug, SpecialtyFamilyCopy>
   for (const slug of specialtyFamilySlugs) {
-    const copy = data[slug] ?? en[slug]
-    if (!copy) throw new Error(`Missing specialty family copy for ${slug} (${locale})`)
-    out[slug] = copy
+    if (!en[slug]) throw new Error(`Missing specialty family copy for ${slug} (en)`)
+    // Per-leaf EN fallback so a partially translated locale never renders `undefined`.
+    out[slug] = withEnFallback(en[slug], data[slug])
   }
   return out
 }

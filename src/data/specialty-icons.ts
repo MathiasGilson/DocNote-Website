@@ -1,4 +1,4 @@
-/** Stable keys — index-aligned with `specialties.items` in all locale JSON files. */
+/** Stable keys --- index-aligned with `specialties.items` in all locale JSON files. */
 export const SPECIALTY_KEYS = [
   'general-practice',
   'internal-medicine',

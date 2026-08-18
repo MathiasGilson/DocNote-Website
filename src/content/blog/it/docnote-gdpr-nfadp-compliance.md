@@ -12,7 +12,7 @@ readTime: 10
 
 La conformità GDPR e nFADP di DocNote non è uno slogan per il piè di pagina del sito. Per un prodotto di documentazione AI utilizzato in contesti clinici, la protezione dei dati è un prerequisito per la fiducia. A seguito di una revisione approfondita da parte dell'Ufficio per la protezione dei dati e l'informazione del Canton Vaud, la gestione dei dati di DocNote è stata confermata allineata ai requisiti del GDPR, della legge federale svizzera sulla protezione dei dati (nFADP) e della legge cantonale vodese sulla protezione dei dati (LPrD).
 
-Questo articolo spiega cosa ha coperto tale revisione, perché la conformità a più framework è importante per l'AI ambientale e cosa dovrebbero richiedere le organizzazioni sanitarie a qualsiasi fornitore di [AI medical scribe](/ai-medical-scribe/) operante in Europa o Svizzera.
+Questo articolo spiega cosa ha coperto tale revisione, perché la conformità a più framework è importante per l'AI ambientale e cosa dovrebbero richiedere le organizzazioni sanitarie a qualsiasi fornitore di [scriba medico AI](/ai-medical-scribe/) operante in Europa o Svizzera.
 
 ## Perché la documentazione medica con AI intensifica le aspettative sulla privacy
 
@@ -159,4 +159,4 @@ Il [futuro della documentazione medica con AI](/blog/future-of-ai-medical-docume
 
 L'allineamento confermato di DocNote con le aspettative GDPR, nFADP svizzera e LPrD vodese riflette una posizione semplice: l'AI può supportare la documentazione clinica solo quando la protezione dei dati è progettata fin dall'inizio. Le organizzazioni sanitarie meritano fornitori che accolgono lo scrutinio di politiche, sicurezza, conservazione e cancellazione.
 
-Se stai valutando la documentazione ambientale per un contesto europeo o svizzero, esplora lo [AI medical scribe](/ai-medical-scribe/) di DocNote, rivedi i [prezzi](/pricing/) e continua con le risorse per l'implementazione nel [tutorial](/tutorial/) e sul [blog di DocNote](/blog/). La chiarezza sulla conformità è il modo in cui l'AI clinica moderna si guadagna un posto nei flussi di lavoro reali di cura.
+Se stai valutando la documentazione ambientale per un contesto europeo o svizzero, esplora lo [scriba medico AI](/ai-medical-scribe/) di DocNote, rivedi i [prezzi](/pricing/) e continua con le risorse per l'implementazione nel [tutorial](/tutorial/) e sul [blog di DocNote](/blog/). La chiarezza sulla conformità è il modo in cui l'AI clinica moderna si guadagna un posto nei flussi di lavoro reali di cura.

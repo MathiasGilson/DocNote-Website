@@ -12,7 +12,7 @@ readTime: 10
 
 DocNote GDPR- und nFADP-Konformität ist kein bloßer Slogan für die Website-Fußzeile. Für ein KI-Dokumentationsprodukt, das in klinischen Umgebungen eingesetzt wird, ist Datenschutz eine Voraussetzung für Vertrauen. Nach einer eingehenden Prüfung durch das Datenschutz- und Informationsbüro des Kantons Waadt wurde bestätigt, dass das Datenmanagement von DocNote den Anforderungen der GDPR, des schweizerischen Bundesgesetzes über den Datenschutz (nFADP) und des waadtländischen kantonalen Datenschutzgesetzes (LPrD) entspricht.
 
-Dieser Artikel erklärt, was diese Prüfung umfasste, warum die Einhaltung mehrerer Rahmenbedingungen für Ambient AI wichtig ist und was Gesundheitsorganisationen von jedem [AI Medical Scribe](/ai-medical-scribe/)-Anbieter verlangen sollten, der in Europa oder der Schweiz tätig ist.
+Dieser Artikel erklärt, was diese Prüfung umfasste, warum die Einhaltung mehrerer Rahmenbedingungen für Ambient AI wichtig ist und was Gesundheitsorganisationen von jedem [KI-medizinischer Schreiber](/ai-medical-scribe/)-Anbieter verlangen sollten, der in Europa oder der Schweiz tätig ist.
 
 ## Warum KI-gestützte medizinische Dokumentation die Datenschutzerwartungen erhöht
 

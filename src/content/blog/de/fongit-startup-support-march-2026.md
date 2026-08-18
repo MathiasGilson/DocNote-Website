@@ -36,9 +36,9 @@ DocNote ist ein Assistent, der Ärzten helfen soll, den administrativen Aufwand 
 
 Diese Mission passt zu den Realitäten des Schweizer Gesundheitswesens. Mehrsprachige Versorgung, hohe Dokumentationsstandards und strenge Datenschutzerwartungen sind hier normal. Ein Scribe-Produkt, das diese Anforderungen ignoriert, würde eine Krankenhausprüfung nicht überstehen. DocNotes Entwicklungsweg hat daher klinische Variationen, strukturierte Outputs und compliance-orientierte Architektur betont.
 
-Getestet in allen klinischen Settings – in Krankenhäusern, der ambulanten Versorgung und am Patientenbett – deckt die Lösung nun einen großen Teil der alltäglichen klinischen Variationen der medizinischen Praxis ab. Diese Abdeckung basiert auf Feedback von Ärzten verschiedener Fachrichtungen, nicht auf einem einzigen Demo-Skript.
+Getestet in allen klinischen Settings (in Krankenhäusern, der ambulanten Versorgung und am Patientenbett), deckt die Lösung nun einen großen Teil der alltäglichen klinischen Variationen der medizinischen Praxis ab. Diese Abdeckung basiert auf Feedback von Ärzten verschiedener Fachrichtungen, nicht auf einem einzigen Demo-Skript.
 
-Für Neueinsteiger in diese Produktkategorie erklärt der Überblick [AI medical scribe](/ai-medical-scribe/) die nicht-marketing Version der zu erledigenden Aufgabe. Für stationäre und bereichsübergreifende Nutzung siehe [hospital documentation](/hospital-documentation/).
+Für Neueinsteiger in diese Produktkategorie erklärt der Überblick [KI-medizinischer Schreiber](/ai-medical-scribe/) die nicht-marketing Version der zu erledigenden Aufgabe. Für stationäre und bereichsübergreifende Nutzung siehe [Krankenhausdokumentation](/hospital-documentation/).
 
 ## Warum Schweizer Healthtech-Förderung anders (und nützlich) ist
 
@@ -76,7 +76,7 @@ DocNotes Umsetzungsprioritäten bleiben klar:
 
 Ärztliche Feedback-Schleifen sind der Motor. Wenn ein Kardiologe, ein Chirurg und ein Hausarzt dieselbe Plattform nutzen, werden Edge-Cases schnell sichtbar. Eine große Abdeckung der Alltagspraxis bedeutet, diese Edge-Cases in Vorlagen und Modellverhalten zu integrieren, ohne so zu tun, als sei Medizin uniform.
 
-Verwandte Lektüre zu Dokumentationsdruck und KI-Evidenz umfasst [less time documenting with AI](/blog/less-time-documenting-ai-more-care/) und [reducing physician burnout](/blog/reducing-physician-burnout/). Compliance-Kontext findet sich in [DocNote GDPR and nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+Verwandte Lektüre zu Dokumentationsdruck und KI-Evidenz umfasst [weniger Zeit für Dokumentation mit KI](/blog/less-time-documenting-ai-more-care/) und [Reduzierung von Arzt-Burnout](/blog/reducing-physician-burnout/). Compliance-Kontext findet sich in [DocNote GDPR- und nFADP-Compliance](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## Was Krankenhäuser und Kliniker aus dieser Nachricht mitnehmen können
 
@@ -96,7 +96,7 @@ Trotzdem fragen:
 - Wie sieht Onboarding für einen Pilot in einer Service-Line aus?
 - Wie wird Erfolg nach 30 und 90 Tagen gemessen?
 
-DocNotes Antwortmuster bleibt konsistent: KI erstellt strukturierte Dokumente, Ärzte bleiben verantwortlich, und der Einsatz sollte mit echten Backlog-Dokumenten beginnen, nicht mit abstrakter KI-Begeisterung. Pläne für evaluierungsbereite Teams finden sich unter [pricing](/pricing/).
+DocNotes Antwortmuster bleibt konsistent: KI erstellt strukturierte Dokumente, Ärzte bleiben verantwortlich, und der Einsatz sollte mit echten Backlog-Dokumenten beginnen, nicht mit abstrakter KI-Begeisterung. Pläne für evaluierungsbereite Teams finden sich unter [Preise](/pricing/).
 
 ## Öffentlich arbeiten, ohne zu überverkaufen
 
@@ -149,11 +149,11 @@ Für Kollegen im Genfer Ökosystem tauschen wir uns gerne über Krankenhauspilot
 
 <details>
   <summary>Wie können Teams nach dieser Ankündigung mit DocNote arbeiten?</summary>
-  <p>Erkunden Sie die Seiten [AI medical scribe](/ai-medical-scribe/) und [hospital documentation](/hospital-documentation/), prüfen Sie [pricing](/pricing/) für die Pilotplanung und beginnen Sie mit den Dokumenttypen, die in Ihrer Organisation die meiste Arztzeit verbrauchen.</p>
+  <p>Erkunden Sie die Seiten [KI-medizinischer Schreiber](/ai-medical-scribe/) und [Krankenhausdokumentation](/hospital-documentation/), prüfen Sie [Preise](/pricing/) für die Pilotplanung und beginnen Sie mit den Dokumenttypen, die in Ihrer Organisation die meiste Arztzeit verbrauchen.</p>
 </details>
 
 ## Fazit: Schweizer Wurzeln, klinischer Fokus
 
 Die Auswahl für FONGITs Initial Startup Support ist ein stolzer Moment für DocNote und ein praktischer Schub im Genfer Innovationsumfeld. Die Mission bleibt: Ärzten Zeit zurückgeben, indem strukturierte medizinische Dokumentation mit Sorgfalt, Evidenz und Respekt vor klinischer Verantwortung automatisiert wird.
 
-Wenn Sie Krankenhausleiter, Kliniker oder Schweizer Ökosystem-Partner sind, zeigen wir Ihnen lieber einen fertigen Entlassungsbrief unter realen Bedingungen als eine KI-Folie. Starten Sie mit [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) und [pricing](/pricing/) und bauen Sie darauf auf. Dies ist erst der Anfang.
+Wenn Sie Krankenhausleiter, Kliniker oder Schweizer Ökosystem-Partner sind, zeigen wir Ihnen lieber einen fertigen Entlassungsbrief unter realen Bedingungen als eine KI-Folie. Starten Sie mit [KI-medizinischer Schreiber](/ai-medical-scribe/), [Krankenhausdokumentation](/hospital-documentation/) und [Preise](/pricing/) und bauen Sie darauf auf. Dies ist erst der Anfang.

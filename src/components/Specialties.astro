@@ -22,7 +22,7 @@ const lang = locale as Locale
 const labels: string[] = t.specialties.items ?? []
 const mid = Math.ceil(labels.length / 2)
 const countLabel = t.specialties.countLabel || '61'
-const familiesCta = t.specialties.familiesCta || (lang === 'fr' ? 'Voir les 7 familles' : 'Browse 7 families')
+const familiesCta = t.specialties.familiesCta || 'Browse 7 families'
 const specialtiesHubHref = getLocalizedPath(SPECIALTIES_HUB_PATH, lang)
 
 const chips = labels.map((label, i) => {
@@ -84,7 +84,7 @@ const rowB = chips.slice(mid)
         <div class="specialties-fade specialties-fade--left" aria-hidden="true"></div>
         <div class="specialties-fade specialties-fade--right" aria-hidden="true"></div>
 
-        {/* Accessible list — visible under reduced motion; screen-reader source otherwise */}
+        {/* Accessible list --- visible under reduced motion; screen-reader source otherwise */}
         <ul class="specialties-static">
           {chips.map((c, i) => (
             <li>

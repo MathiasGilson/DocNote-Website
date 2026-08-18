@@ -10,7 +10,7 @@ date: "2025-05-21"
 readTime: 10
 ---
 
-Beim SCS-Kongress in Lausanne, der an der EPFL stattfand und die chirurgische Gemeinschaft der Schweiz versammelte, sprach Dr. Alice Gilson von der Abteilung für Viszeralchirurgie am HUG in Genf über die wachsende administrative Belastung in der Medizin und die Rolle, die künstliche Intelligenz bei der Transformation der medizinischen Dokumentation spielen könnte. Der Vortrag blieb nicht auf der Ebene des Futurismus. Er begann mit einer Zahl, die Schweizer Kliniker nur zu gut kennen: Ärzte können bis zu fünf Stunden pro Tag mit administrativen Aufgaben verbringen. Vor diesem Hintergrund geht es bei der [AI medical scribe](/ai-medical-scribe/) weniger um Neuheit als vielmehr darum, einen praktikablen klinischen Tag zurückzugewinnen.
+Beim SCS-Kongress in Lausanne, der an der EPFL stattfand und die chirurgische Gemeinschaft der Schweiz versammelte, sprach Dr. Alice Gilson von der Abteilung für Viszeralchirurgie am HUG in Genf über die wachsende administrative Belastung in der Medizin und die Rolle, die künstliche Intelligenz bei der Transformation der medizinischen Dokumentation spielen könnte. Der Vortrag blieb nicht auf der Ebene des Futurismus. Er begann mit einer Zahl, die Schweizer Kliniker nur zu gut kennen: Ärzte können bis zu fünf Stunden pro Tag mit administrativen Aufgaben verbringen. Vor diesem Hintergrund geht es bei der [KI-medizinischer Schreiber](/ai-medical-scribe/) weniger um Neuheit als vielmehr darum, einen praktikablen klinischen Tag zurückzugewinnen.
 
 ![DocNote am SCS-Kongress in Lausanne](/images/SCS%20Lausanne.jpeg)
 
@@ -25,7 +25,7 @@ Wenn Kongressteilnehmer "fünf Stunden" hören, ist die Reaktion selten Überras
 - **Medizinisch-rechtliche Nachvollziehbarkeit**: Akten, die Monate später rekonstruieren müssen, warum eine Entscheidung getroffen wurde
 - **Kodierungskomplexität**: Abrechnungs- und Klassifikationsregeln, die klinische Sprache in einen anderen Dialekt verwandeln
 
-KI-Dokumentation hebt diese Kräfte nicht auf. Sie kann einen Teil der Schreib- und Strukturierungsarbeit übernehmen, damit Ärzte ihre Aufmerksamkeit auf Entscheidungen und Patienten statt auf Tastaturen richten können. Zum Thema Burnout und Aufmerksamkeit siehe [reducing physician burnout](/blog/reducing-physician-burnout). Für evidenzbasierte Zeiteinsparungen siehe [less time documenting with AI](/blog/less-time-documenting-ai-more-care).
+KI-Dokumentation hebt diese Kräfte nicht auf. Sie kann einen Teil der Schreib- und Strukturierungsarbeit übernehmen, damit Ärzte ihre Aufmerksamkeit auf Entscheidungen und Patienten statt auf Tastaturen richten können. Zum Thema Burnout und Aufmerksamkeit siehe [Reduzierung von Arzt-Burnout](/blog/reducing-physician-burnout). Für evidenzbasierte Zeiteinsparungen siehe [weniger Zeit für Dokumentation mit KI](/blog/less-time-documenting-ai-more-care).
 
 ## Was eine ~20% Reduktion der Notizenzeit in einer chirurgischen Woche tatsächlich bedeutet
 
@@ -62,7 +62,7 @@ Wenn ein Entwurf poliert aussieht, könnten Kliniker ihn unterbearbeiten. Fakult
 
 ### Hilft dies nur ambulanten Kliniken?
 
-Chirurgie findet in Klinik, OP, Station und Entlassung statt. Leiter fragten, ob Dokumentations-KI OP-Berichte und stationäre Notizen oder nur ambulante Briefe abdeckt. Eine krankenhausweite Sicht ist wichtig für ROI und für Assistenzärzte, die in verschiedenen Bereichen rotieren. Das ist der Grundgedanke hinter [hospital documentation](/hospital-documentation/), das Konsultationen, Stationsnotizen, OP-Berichte und Entlassungsbriefe umfasst.
+Chirurgie findet in Klinik, OP, Station und Entlassung statt. Leiter fragten, ob Dokumentations-KI OP-Berichte und stationäre Notizen oder nur ambulante Briefe abdeckt. Eine krankenhausweite Sicht ist wichtig für ROI und für Assistenzärzte, die in verschiedenen Bereichen rotieren. Das ist der Grundgedanke hinter [Krankenhausdokumentation](/hospital-documentation/), das Konsultationen, Stationsnotizen, OP-Berichte und Entlassungsbriefe umfasst.
 
 ### Was ist mit mehrsprachiger Schweizer Praxis?
 
@@ -102,9 +102,9 @@ In den Jahren 2025 und 2026 haben Schweizer und europäische chirurgische Tagung
 - **Lokaler Datenschutz wird ein Kaufkriterium**, besonders für Universitätskliniken
 - **Krankenhausweite Dokumentenabdeckung schlägt Einzelnotiz-Gadgets**, wenn CMIO und CFO Skalierung bewerten
 
-Der letzte Punkt erklärt, warum es wichtig war, DocNote als mehr als ein Gadget zu präsentieren. Anonymisierte Konsultationsberichte mit strenger lokaler Speicherung und automatischer Löschung adressieren die Vertrauensbarriere. Die Ausweitung auf umfassendere [hospital documentation](/hospital-documentation/) adressiert die Skalierungsbarriere. Zusammen entsprechen sie dem, was SCS-Publikum als Bedarf nannte: weniger Administrationszeit ohne Kompromisse bei der Vertraulichkeit.
+Der letzte Punkt erklärt, warum es wichtig war, DocNote als mehr als ein Gadget zu präsentieren. Anonymisierte Konsultationsberichte mit strenger lokaler Speicherung und automatischer Löschung adressieren die Vertrauensbarriere. Die Ausweitung auf umfassendere [Krankenhausdokumentation](/hospital-documentation/) adressiert die Skalierungsbarriere. Zusammen entsprechen sie dem, was SCS-Publikum als Bedarf nannte: weniger Administrationszeit ohne Kompromisse bei der Vertraulichkeit.
 
-Wenn Ihr Team Kongressbehauptungen mit Produktrealität vergleicht, lesen Sie auch Dr. Gilsons verwandte SCS Luzern-Perspektive zu [AI and the future role of surgeons](/blog/scs-lucerne-june-2026), die die Diskussion über OP und Beruf über die Dokumentation hinaus erweitert.
+Wenn Ihr Team Kongressbehauptungen mit Produktrealität vergleicht, lesen Sie auch Dr. Gilsons verwandte SCS Luzern-Perspektive zu [KI und die künftige Rolle der Chirurgen](/blog/scs-lucerne-june-2026), die die Diskussion über OP und Beruf über die Dokumentation hinaus erweitert.
 
 ## FAQ
 
@@ -142,4 +142,4 @@ Wenn Ihr Team Kongressbehauptungen mit Produktrealität vergleicht, lesen Sie au
 
 SCS Lausanne gab einer gemeinsamen Frustration eine Schweizer Zahl und verband sie mit einer nüchternen KI-Botschaft. Dokumentationshilfe kann Zeit und Aufmerksamkeit der chirurgischen Versorgung zurückgeben. Sie kann professionelle Verantwortung nicht ersetzen oder Datenschutzrecht umgehen. Der Weg nach vorn sind gemessene Piloten, obligatorische Überprüfung und für lokale Datenrealitäten entwickelte Tools.
 
-Wenn Ihre Abteilung bereit ist, diesen Weg zu testen, erkunden Sie DocNote's [AI medical scribe](/ai-medical-scribe/), prüfen Sie [hospital documentation](/hospital-documentation/) für Pfadabdeckung und vergleichen Sie Optionen auf [pricing](/pricing/) mit Ihren klinischen und Compliance-Verantwortlichen.
+Wenn Ihre Abteilung bereit ist, diesen Weg zu testen, erkunden Sie DocNote's [KI-medizinischer Schreiber](/ai-medical-scribe/), prüfen Sie [Krankenhausdokumentation](/hospital-documentation/) für Pfadabdeckung und vergleichen Sie Optionen auf [Preise](/pricing/) mit Ihren klinischen und Compliance-Verantwortlichen.

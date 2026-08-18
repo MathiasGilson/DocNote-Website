@@ -7,15 +7,15 @@
       "badge": "Assistente medico AI",
       "title": "Assistente medico AI progettato per il lavoro clinico reale",
       "subtitle": "DocNote ascolta durante la consultazione, redige la nota e ti permette di tornare dal paziente.",
-      "lead": "I medici in Svizzera e in Europa utilizzano DocNote per trasformare i colloqui verbali in documenti clinici strutturati — note di consultazione, lettere di dimissione, note di reparto e referti operatori — in pochi secondi, invece che in serate."
+      "lead": "I medici in Svizzera e in Europa utilizzano DocNote per trasformare i colloqui verbali in documenti clinici strutturati (note di consultazione, lettere di dimissione, note di reparto e referti operatori) in pochi secondi, invece che in serate."
     },
     "story": {
       "badge": "In sintesi",
       "title": "Un assistente, ogni documento che il tuo studio produce realmente",
       "paragraphs": [
         "La maggior parte degli assistenti ambientali è costruita attorno a un unico modello SOAP ambulatoriale statunitense. DocNote è diverso: è stato progettato in Svizzera da un medico che voleva smettere di perdere serate con la burocrazia, quindi copre i documenti che i clinici e gli ospedali europei producono ogni giorno.",
-        "Avvia una registrazione su mobile o web durante la consultazione. Quando la visita termina, DocNote trasforma la conversazione in una bozza strutturata che corrisponde al tipo di nota selezionato — nota di consultazione, lettera di dimissione, nota di reparto o referto operatorio.",
-        "Leggi poi la bozza, correggi ciò che va corretto e la convalidi. Solo la versione che approvi diventa parte della cartella clinica — la stessa responsabilità che hai già, ma con molto meno digitazione."
+        "Avvia una registrazione su mobile o web durante la consultazione. Quando la visita termina, DocNote trasforma la conversazione in una bozza strutturata che corrisponde al tipo di nota selezionato: nota di consultazione, lettera di dimissione, nota di reparto o referto operatorio.",
+        "Leggi poi la bozza, correggi ciò che va corretto e la convalidi. Solo la versione che approvi diventa parte della cartella clinica, la stessa responsabilità che hai già, ma con molto meno digitazione."
       ]
     },
     "benefits": {
@@ -25,7 +25,7 @@
       "items": [
         {
           "title": "Progettato per la pratica svizzera ed europea",
-          "body": "Consultazioni multilingue, hosting dati in Svizzera e abitudini di documentazione che corrispondono a come i clinici europei scrivono realmente — non un modello ambulatoriale statunitense adattato per l'esportazione."
+          "body": "Consultazioni multilingue, hosting dati in Svizzera e abitudini di documentazione che corrispondono a come i clinici europei scrivono realmente, non un modello ambulatoriale statunitense adattato per l'esportazione."
         },
         {
           "title": "Copre anche i documenti ospedalieri",
@@ -33,7 +33,7 @@
         },
         {
           "title": "Rimani tu l'autore",
-          "body": "Ogni bozza è un punto di partenza. Modifichi, correggi i dettagli clinici e convalidi prima che qualsiasi cosa raggiunga la cartella — DocNote non scrive mai nell'EHR senza supervisione."
+          "body": "Ogni bozza è un punto di partenza. Modifichi, correggi i dettagli clinici e convalidi prima che qualsiasi cosa raggiunga la cartella. DocNote non scrive mai nell'EHR senza supervisione."
         },
         {
           "title": "Si integra con il tuo stack esistente",
@@ -56,11 +56,11 @@
         },
         {
           "title": "Rivedi la bozza",
-          "body": "Entro pochi secondi dalla fine della registrazione, una nota strutturata è pronta — organizzata secondo il tipo di documento selezionato."
+          "body": "Entro pochi secondi dalla fine della registrazione, una nota strutturata è pronta, organizzata secondo il tipo di documento selezionato."
         },
         {
           "title": "Modifica e convalida",
-          "body": "Correggi ciò che va corretto, poi approva. Il documento convalidato è ciò che entra nella tua cartella — mai la bozza grezza."
+          "body": "Correggi ciò che va corretto, poi approva. Il documento convalidato è ciò che entra nella tua cartella, mai la bozza grezza."
         }
       ]
     },
@@ -71,7 +71,7 @@
       "points": [
         {
           "title": "Dati ospitati in Svizzera",
-          "body": "I dati sanitari sono ospitati in Svizzera e processati secondo le aspettative del segreto medico — non instradati attraverso una regione cloud statunitense predefinita."
+          "body": "I dati sanitari sono ospitati in Svizzera e processati secondo le aspettative del segreto medico, non instradati attraverso una regione cloud statunitense predefinita."
         },
         {
           "title": "Conservazione audio breve",
@@ -120,7 +120,7 @@
       },
       {
         "q": "Quali tipi di documento supporta DocNote?",
-        "a": "Note di consultazione, lettere di dimissione, note di reparto, referti operatori e modelli specialistici — l'assistente si adatta al tipo di nota che selezioni."
+        "a": "Note di consultazione, lettere di dimissione, note di reparto, referti operatori e modelli specialistici: l'assistente si adatta al tipo di nota che selezioni."
       },
       {
         "q": "Quanto tempo ci vuole per ottenere una bozza?",
@@ -137,145 +137,88 @@
     "navDesc": "Ascolta in visita e redige la nota."
   },
   "hospital-documentation": {
-    "navLabel": "Documentazione ospedaliera",
-    "title": "Documentazione ospedaliera con AI",
-    "description": "AI per documentazione ospedaliera: lettere di dimissione, referti operatori, note di reparto e file di day-hospital. DocNote aiuta i team a documentare più velocemente senza lasciare l'hosting svizzero o il segreto medico.",
+    "navLabel": "Ospedale e reparto",
+    "navDesc": "Lettere di dimissione, referti operatori, codifica, EHR.",
+    "title": "AI Medical Scribe per Ospedali e Reparti | DocNote",
+    "description": "Lettere di dimissione, referti operatori e note di reparto nel formato del vostro reparto. Suggerimenti di codifica e invio unidirezionale in 7 EHR. Prenota una demo.",
     "hero": {
-      "badge": "Documentazione ospedaliera",
-      "title": "Documentazione ospedaliera senza l'arretrato serale",
-      "subtitle": "Lettere di dimissione, referti operatori e note di reparto — redatte dall'incontro, convalidate dal medico.",
-      "lead": "Il lavoro ospedaliero non è una singola nota SOAP ambulatoriale. DocNote supporta i documenti che riempiono realmente le serate di un clinico tra reparti, sale operatorie e servizi di day-hospital, mantenendo l'hosting in Svizzera."
+      "badge": "Per ospedali e reparti",
+      "title": "DocNote per ospedali e reparti",
+      "subtitle": "Lettere di dimissione, referti operatori e note di reparto, nel formato del vostro reparto, all'interno del vostro EHR."
     },
     "story": {
-      "badge": "In sintesi",
-      "title": "Costruito per i reparti, non solo per le ambulatoriali",
+      "badge": "Il problema",
+      "title": "La nota di consultazione non è il problema",
       "paragraphs": [
-        "Una giornata ospedaliera produce più che note di consultazione: lettere di dimissione alla fine di un ricovero, referti operatori dopo la sala operatoria, note di reparto ogni mattina e file condivisi di day-hospital toccati da più operatori. DocNote tratta tutti questi come tipi di documento di prima classe, non un ripensamento aggiunto a uno strumento ambulatoriale.",
-        "Cattura l'incontro, il giro di reparto o il debrief operatorio, poi lascia che DocNote rediga verso la struttura che il tuo servizio usa già — diagnosi, decorso, trattamento, follow-up, nell'ordine che la tua istituzione si aspetta.",
-        "Il medico responsabile rivede la bozza, corregge i dettagli clinici e la convalida prima che diventi parte della cartella. Modelli Word personalizzati preservano intestazione, blocco firma e ordine delle sezioni così l'output sembra sempre scritto internamente."
+        "In un ospedale, la nota di consultazione non è il problema. I problemi sono la lettera di dimissione lasciata incompleta per tre settimane, il referto operatorio dettato e poi riscritto, la codifica rivista successivamente dal reparto di codifica, e un EHR che deve essere compilato manualmente. Uno strumento progettato per lo studio privato non risolve nulla di tutto questo."
       ]
     },
     "benefits": {
-      "badge": "Perché gli ospedali lo adottano",
-      "title": "Documenti che corrispondono a come funziona realmente il tuo servizio",
-      "subtitle": "Non una demo costruita attorno a una singola visita ambulatoriale.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
-          "title": "Lettere di dimissione che riportano l'intero decorso",
-          "body": "Diagnosi, trattamento, complicazioni e follow-up finiscono nella struttura che la tua istituzione si aspetta, così il medico responsabile modifica la verità clinica invece della formattazione."
+          "title": "Formati ospedalieri nativi",
+          "body": "Lettera di dimissione, nota di reparto, referto operatorio: la struttura giusta, la lunghezza giusta, i destinatari giusti fin dalla prima bozza."
         },
         {
-          "title": "Referti operatori con struttura chirurgica",
-          "body": "Indicazione, reperti, passaggi della procedura e piano post-operatorio seguono un ordine chiaro, così le bozze leggono come un referto operatorio piuttosto che una trascrizione incollata in una lettera."
+          "title": "I vostri modelli Word",
+          "body": "Caricate una volta il documento del reparto. Ogni referto successivo uscirà con il vostro intestino, le vostre sezioni e la vostra firma."
         },
         {
-          "title": "File condivisi di day-hospital",
-          "body": "Quando più professionisti vedono lo stesso paziente in sequenza, DocNote supporta un file coerente invece di note frammentate e disconnesse."
+          "title": "Codifica integrata",
+          "body": "Le diagnosi secondarie significative vengono evidenziate nella lettera, con suggerimenti SwissDRG (Svizzera) o PMSI (Francia) alla fine del documento."
         },
         {
-          "title": "Modelli istituzionali, non generici",
-          "body": "Modelli Word personalizzati mantengono l'ordine delle sezioni, intestazione e blocco firma così le implementazioni non impongono un nuovo stile istituzionale al tuo servizio."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dal reparto o sala operatoria a un documento convalidato",
-      "subtitle": "La stessa disciplina di revisione e convalida che il tuo servizio segue già.",
-      "items": [
-        {
-          "title": "Cattura l'incontro",
-          "body": "Registra la consultazione, il giro di reparto o il debrief operatorio su mobile o web come parte della tua routine normale."
+          "title": "Inviato all'EHR",
+          "body": "Il referto validato viene inserito nella cartella del paziente, suddiviso per sezione. Niente copia-incolla."
         },
         {
-          "title": "Seleziona il tipo di documento",
-          "body": "Scegli lettera di dimissione, referto operatorio, nota di reparto o un altro modello supportato per quel servizio."
-        },
-        {
-          "title": "Rivedi la bozza strutturata",
-          "body": "Una bozza che corrisponde alla tua struttura istituzionale è pronta entro pochi secondi, usando l'ordine delle sezioni esistente."
-        },
-        {
-          "title": "Convalida e archivia",
-          "body": "Il medico responsabile corregge e approva il documento, poi passa nel tuo EHR o processo di esportazione — Mediway e SOKLE dove configurato."
+          "title": "Telefono in reparto, desktop in ufficio",
+          "body": "Stesso record, sincronizzato in tempo reale."
         }
       ]
     },
     "proof": {
-      "badge": "Costruito per la revisione istituzionale",
-      "title": "Sicurezza che IT e direttori medici possono approvare",
-      "intro": "Gli ospedali adottano la documentazione AI dopo un questionario di sicurezza, non una demo. DocNote è progettato per rispondere chiaramente a quelle domande.",
+      "badge": "Prova",
+      "title": "Già in uso in istituzioni",
+      "intro": "Le istituzioni sono già operative, gli EHR sono connessi e il ciclo di validazione funziona: il medico rimane l'autore e approva.",
       "points": [
         {
-          "title": "Hosting svizzero",
-          "body": "I dati sanitari rimangono ospitati in Svizzera e processati secondo le aspettative del segreto medico."
+          "title": "EHR connessi",
+          "body": "Il referto validato viene inviato nella cartella del paziente, suddiviso per sezione."
         },
         {
-          "title": "Conservazione audio breve",
-          "body": "L'audio è conservato solo brevemente per produrre il documento, poi cancellato automaticamente."
-        },
-        {
-          "title": "Convalida medica, sempre",
-          "body": "Nessun documento raggiunge la cartella senza che un clinico lo abbia prima revisionato e approvato."
-        },
-        {
-          "title": "Integrazioni Mediway e SOKLE",
-          "body": "Dove configurato, i documenti convalidati fluiscono nei sistemi che il tuo ospedale già utilizza."
+          "title": "Il medico approva",
+          "body": "DocNote redige un referto che voi validate. Rimani l'autore."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Implementare DocNote in un'istituzione",
-        "body": "Il percorso usuale inizia con un tipo di documento e un reparto o servizio. I modelli sono convalidati su casi reali prima di espandere l'implementazione ad altri dipartimenti. IT e direttori medici revisionano hosting, conservazione e integrazioni in parallelo — la stessa struttura che si applica a qualsiasi altro acquisto di software clinico."
-      },
-      {
-        "heading": "Quando più servizi condividono lo stesso file",
-        "body": "Day-hospital e reparti multidisciplinari beneficiano maggiormente di una struttura coerente, perché più professionisti contribuiscono alla stessa cartella paziente durante un ricovero. DocNote mantiene l'ordine delle sezioni coerente tra specialità così la cartella rimane leggibile indipendentemente da chi ha documentato per ultimo."
-      },
-      {
-        "heading": "Dove la documentazione ospedaliera differisce dalle note ambulatoriali",
-        "body": "Una nota di consultazione ambulatoriale e una lettera di dimissione portano informazioni e pubblico diversi — il medico di base che ha inviato, l'assicuratore, il paziente. DocNote tratta ogni tipo di documento come una struttura propria piuttosto che forzare un unico modello a servire ogni scopo, così la lettera che lascia il reparto legge realmente come una lettera."
-      },
-      {
-        "heading": "Gestire un reparto misto con più specialità",
-        "body": "I reparti di medicina interna generale spesso ospitano pazienti sotto diverse specialità contemporaneamente. Una struttura documentale coerente conta ancora di più qui, perché un medico di copertura che non ha ammesso il paziente ha bisogno di capire rapidamente il decorso dalla sola documentazione scritta. I modelli ospedalieri di DocNote sono progettati per essere leggibili da chi incontra il caso per la prima volta, non solo dal team che lo ha seguito dall'ammissione."
-      }
-    ],
     "faq": [
       {
         "q": "Quali documenti ospedalieri può redigere DocNote?",
-        "a": "Lettere di dimissione, referti operatori, note di reparto, note di consultazione e altri documenti clinici ad alto volume a seconda dei tuoi modelli."
+        "a": "Lettere di dimissione, referti operatori, note di reparto e referti di consultazione, sui modelli del vostro reparto."
       },
       {
-        "q": "Possiamo mantenere la nostra intestazione istituzionale?",
-        "a": "Sì. Modelli Word personalizzati preservano layout, blocco firma e ordine delle sezioni."
+        "q": "DocNote codifica il ricovero per noi?",
+        "a": "No. Aggiunge suggerimenti SwissDRG, TARDOC, Tarif 222 o PMSI alla fine del documento, come proposte da validare."
       },
       {
-        "q": "L'AI sostituisce la firma del medico?",
-        "a": "No. I clinici convalidano ogni documento prima che diventi parte della cartella."
+        "q": "Quali EHR sono supportati?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis. Il flusso è unidirezionale, da DocNote all'EHR."
       },
       {
-        "q": "È solo per note SOAP ambulatoriali?",
-        "a": "No. I tipi di documento ospedalieri sono parte integrante di DocNote."
-      },
-      {
-        "q": "Come condividono un file i team di day-hospital?",
-        "a": "Più operatori possono contribuire alla stessa cartella paziente durante un ricovero in day-hospital, così la documentazione rimane coerente invece che frammentata in note separate."
-      },
-      {
-        "q": "Quanto tempo richiede l'implementazione per un servizio ospedaliero?",
-        "a": "La maggior parte dei servizi inizia con un tipo di documento e un reparto o unità, convalida i modelli, poi si espande — tipicamente una questione di settimane, non mesi."
+        "q": "Possiamo mantenere il nostro intestino istituzionale?",
+        "a": "Sì. Caricate una volta il documento Word del reparto; ogni referto successivo uscirà con il vostro intestino, le vostre sezioni e la vostra firma."
       }
     ],
     "cta": {
-      "title": "Porta DocNote nel tuo reparto o servizio",
-      "body": "Parla con il nostro team per un pilota nel tuo ospedale, inclusa configurazione modelli e integrazione EHR.",
-      "primary": "Contatta il team",
-      "secondary": "Guarda tutorial"
+      "title": "Prenota una demo per il tuo reparto",
+      "body": "Vedi i formati ospedalieri, i suggerimenti di codifica e l'invio all'EHR sui tuoi tipi di documento.",
+      "primary": "Prenota una demo",
+      "secondary": "Vedi la nostra conformità"
     },
-    "relatedLabel": "Guide correlate",
-    "navDesc": "Dimissione, sala operatoria e reparto dall’incontro."
+    "relatedLabel": "Pagine correlate"
   },
   "clinical-compliance": {
     "navLabel": "Conformità clinica",
@@ -284,7 +227,7 @@
     "hero": {
       "badge": "Conformità AI clinica",
       "title": "AI clinica che può superare una revisione di conformità",
-      "subtitle": "Hosting svizzero, conservazione breve e segreto medico — integrati nel prodotto, non in una slide.",
+      "subtitle": "Hosting svizzero, conservazione breve e segreto medico: integrati nel prodotto, non in una slide.",
       "lead": "Gli ospedali non adottano la documentazione ambientale solo per le funzionalità. DocNote è progettato in modo che sicurezza, residenza dei dati e responsabilità clinica reggano sotto una vera revisione di acquisto."
     },
     "story": {
@@ -292,13 +235,13 @@
       "title": "Conformità come funzionalità, non ripensamento",
       "paragraphs": [
         "Molti assistenti ambientali sono costruiti prima, poi rattoppati con una pagina privacy quando gli acquirenti iniziano a fare domande. DocNote è stato progettato nell'ordine opposto: hosting svizzero, conservazione audio breve e convalida medica erano parte della prima versione, perché il prodotto è stato creato da un medico che capiva il segreto medico dall'interno.",
-        "Ciò significa che le risposte a un questionario di sicurezza ospedaliero non sono improvvisate. Residenza dati, finestre di conservazione e controllo accessi sono documentati, coerenti e uguali per ogni istituzione — non un'eccezione speciale negoziata per affare.",
-        "La conformità protegge anche le persone che usano il prodotto. I clinici rimangono gli unici autori di ogni documento convalidato, il che mantiene la responsabilità dove già sta — con il medico — piuttosto che spostarla su un modello opaco."
+        "Ciò significa che le risposte a un questionario di sicurezza ospedaliero non sono improvvisate. Residenza dati, finestre di conservazione e controllo accessi sono documentati, coerenti e uguali per ogni istituzione, non un'eccezione speciale negoziata per affare.",
+        "La conformità protegge anche le persone che usano il prodotto. I clinici rimangono gli unici autori di ogni documento convalidato, il che mantiene la responsabilità dove già sta (con il medico) piuttosto che spostarla su un modello opaco."
       ]
     },
     "benefits": {
       "badge": "Cosa verificano prima gli acquirenti",
-      "title": "Le domande che il tuo team sicurezza farà — risposte",
+      "title": "Le domande che il tuo team sicurezza farà: risposte",
       "subtitle": "Costruito per corrispondere a ciò che ospedali e studi verificano realmente prima di firmare.",
       "items": [
         {
@@ -311,7 +254,7 @@
         },
         {
           "title": "Conservazione che puoi spiegare a un paziente",
-          "body": "L'audio utilizzato per produrre documentazione è cancellato automaticamente entro una breve finestra — una politica semplice da dichiarare in una conversazione di consenso."
+          "body": "L'audio utilizzato per produrre documentazione è cancellato automaticamente entro una breve finestra, una politica semplice da dichiarare in una conversazione di consenso."
         },
         {
           "title": "Nessun addestramento sulle visite cliniche",
@@ -334,7 +277,7 @@
         },
         {
           "title": "Convalida sotto responsabilità medica",
-          "body": "Il clinico rivede, corregge e approva — la stessa struttura di responsabilità che gli ospedali usano già per carta e dettatura."
+          "body": "Il clinico rivede, corregge e approva: la stessa struttura di responsabilità che gli ospedali usano già per carta e dettatura."
         },
         {
           "title": "Cancella audio automaticamente",
@@ -349,7 +292,7 @@
       "points": [
         {
           "title": "FADP / nFADP",
-          "body": "Le aspettative svizzere di protezione dati sono affrontate per design — ubicazione hosting, conservazione e controllo accessi."
+          "body": "Le aspettative svizzere di protezione dati sono affrontate per design: ubicazione hosting, conservazione e controllo accessi."
         },
         {
           "title": "GDPR",
@@ -368,11 +311,11 @@
     "sections": [
       {
         "heading": "Cosa chiede realmente un questionario di sicurezza",
-        "body": "I team conformità raramente chiedono di affermazioni di marketing. Chiedono di ubicazione hosting, finestre di conservazione, log accessi e chi è responsabile per un documento convalidato. DocNote risponde chiaramente perché le risposte sono parte dell'architettura — non un team conformità separato che cerca di spiegare un prodotto dopo il fatto."
+        "body": "I team conformità raramente chiedono di affermazioni di marketing. Chiedono di ubicazione hosting, finestre di conservazione, log accessi e chi è responsabile per un documento convalidato. DocNote risponde chiaramente perché le risposte sono parte dell'architettura, non un team conformità separato che cerca di spiegare un prodotto dopo il fatto."
       },
       {
         "heading": "La responsabilità rimane al clinico",
-        "body": "Nessun sistema AI assume la responsabilità legale per una decisione clinica. DocNote redige, il medico convalida — e questa separazione è proprio ciò che permette alle istituzioni di integrare il prodotto nelle loro strutture di responsabilità e governance esistenti senza sollevare nuove domande."
+        "body": "Nessun sistema AI assume la responsabilità legale per una decisione clinica. DocNote redige, il medico convalida: questa separazione è proprio ciò che permette alle istituzioni di integrare il prodotto nelle loro strutture di responsabilità e governance esistenti senza sollevare nuove domande."
       },
       {
         "heading": "Prepararsi per una revisione di acquisto",
@@ -380,7 +323,7 @@
       },
       {
         "heading": "Cosa DocNote non afferma",
-        "body": "Un fornitore che afferma ogni certificazione esistente di solito esagera. DocNote è esplicito su ciò a cui è allineato — FADP/nFADP, GDPR, controlli allineati HIPAA, pratiche allineate ISO 27001 — e non afferma certificazioni non ottenute. Chiedici direttamente lo stato attuale di qualsiasi standard specifico richiesto dalla tua istituzione."
+        "body": "Un fornitore che afferma ogni certificazione esistente di solito esagera. DocNote è esplicito su ciò a cui è allineato: FADP/nFADP, GDPR, controlli allineati HIPAA, pratiche allineate ISO 27001, e non afferma certificazioni non ottenute. Chiedici direttamente lo stato attuale di qualsiasi standard specifico richiesto dalla tua istituzione."
       }
     ],
     "faq": [
@@ -402,11 +345,11 @@
       },
       {
         "q": "DocNote sostituisce il nostro processo di revisione sicurezza esistente?",
-        "a": "No. DocNote fornisce documentazione e risposte per la tua revisione di acquisto e sicurezza esistente — non sostituisce il processo di approvazione della tua istituzione."
+        "a": "No. DocNote fornisce documentazione e risposte per la tua revisione di acquisto e sicurezza esistente, non sostituisce il processo di approvazione della tua istituzione."
       },
       {
         "q": "Chi è responsabile per il documento convalidato?",
-        "a": "Il clinico che lo rivede e convalida — DocNote redige, ma non archivia mai nulla nella cartella senza supervisione."
+        "a": "Il clinico che lo rivede e convalida: DocNote redige, ma non archivia mai nulla nella cartella senza supervisione."
       }
     ],
     "cta": {
@@ -418,305 +361,745 @@
     "relatedLabel": "Guide correlate",
     "navDesc": "Hosting in Svizzera, breve retention, segreto medico."
   },
-  "ambient-clinical-documentation": {
-    "navLabel": "Documentazione clinica passiva",
-    "title": "Documentazione clinica ambientale AI | DocNote",
-    "description": "Documentazione clinica ambientale che ascolta durante l'incontro e redige note strutturate per la revisione medica. AI con hosting svizzero per ospedali e studi in Europa.",
+  "for-private-practice": {
+    "navLabel": "Studio privato",
+    "navDesc": "Valore in una sola consultazione, niente da installare.",
+    "title": "AI Medical Scribe per Studio Privato | DocNote",
+    "description": "Registra da telefono o browser, nessuna installazione. I rapporti seguono i tuoi modelli, adattati alla tua specialità, con suggerimenti di codifica da validare. Apri l'app web.",
     "hero": {
-      "badge": "Documentazione ambientale",
-      "title": "Documentazione clinica ambientale che rimane in stanza con te",
-      "subtitle": "Cattura passiva durante la visita, una bozza strutturata subito dopo — nessuna digitazione nel mezzo.",
-      "lead": "La documentazione clinica ambientale cattura la conversazione naturale tra clinico e paziente, poi redige la nota che altrimenti digiteresti dopo la visita. DocNote è costruito per quel flusso di lavoro — senza spedire dati sanitari fuori dalla Svizzera o forzare un modello ambulatoriale solo statunitense sui team europei."
+      "badge": "Per studio privato",
+      "title": "DocNote per studio privato",
+      "subtitle": "Chiudi la cartella nello stesso momento in cui chiudi la porta."
     },
     "story": {
-      "badge": "In sintesi",
-      "title": "Ascolta in background, redige in primo piano",
+      "badge": "Il problema",
+      "title": "Nessun reparto IT, nessun tempo per configurare uno strumento",
       "paragraphs": [
-        "L'AI ambientale ascolta mentre conduci una normale consultazione, giro di reparto o debrief procedurale. Non sostituisce il tuo giudizio clinico — redige un documento strutturato così rivedi e convalidi invece di partire da una pagina bianca. Il record duraturo è la nota che approvi, non l'audio grezzo.",
-        "Molti strumenti ambientali ottimizzano per una singola nota SOAP ambulatoriale. La documentazione europea reale include riepiloghi dimissioni, file collaborativi di day-hospital, incontri multilingue e intestazioni istituzionali — tutti supportati da DocNote."
+        "Un medico di studio privato documenta tra un paziente e l'altro o alla sera. Non ha un reparto IT, un budget istituzionale, né il tempo di configurare uno strumento. Vuole vedere il valore nella prima consultazione, senza dover installare nulla."
       ]
     },
     "benefits": {
-      "badge": "Perché i team scelgono la cattura ambientale",
-      "title": "Costruito per ospedali e cliniche, non demo",
-      "subtitle": "L'ascolto ambientale si guadagna il posto solo se sopravvive a una giornata clinica reale e rumorosa.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
-          "title": "Presente durante la visita",
-          "body": "Mantieni il contatto visivo e segui la conversazione invece di dividere l'attenzione con una tastiera, perché la nota è redatta dopo, non durante, l'incontro."
+          "title": "Registra dal telefono o dal browser",
+          "body": "Niente da installare."
         },
         {
-          "title": "Dalla cattura alla nota convalidata",
-          "body": "Avvia registrazione su mobile o web, termina l'incontro e rivedi una bozza in pochi secondi — poi modifica terminologia, stringi il piano e approva."
+          "title": "Il referto segue i tuoi modelli",
+          "body": "Scegli il formato una volta, viene riutilizzato."
         },
         {
-          "title": "Copre tipi di documento ospedalieri",
-          "body": "Oltre alle note ambulatoriali, DocNote redige lettere di dimissione, referti operatori e note di reparto dalla stessa cattura ambientale."
+          "title": "Modelli adattati alla tua specialità",
+          "body": "Modelli predefiniti adattati alla tua specialità al momento dell'iscrizione, per 61 specialità."
         },
         {
-          "title": "Conformità integrata, non aggiunta",
-          "body": "L'audio utilizzato per produrre documentazione è conservato solo brevemente, poi cancellato. I dati sanitari non sono usati per addestrare modelli di base."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dalla cattura ambientale a un documento convalidato",
-      "subtitle": "Quattro passi, la maggior parte dello sforzo avviene mentre parli con il paziente.",
-      "items": [
-        {
-          "title": "Inizia la cattura",
-          "body": "Avvia registrazione su mobile o web all'inizio della consultazione, giro di reparto o debrief procedurale."
+          "title": "Suggerimenti di codifica alla fine del documento",
+          "body": "Così il lavoro fatturabile non sfugge più."
         },
         {
-          "title": "Conduci l'incontro normalmente",
-          "body": "Parla, esamina e decidi come sempre — l'assistente ascolta in background senza interrompere il flusso."
-        },
-        {
-          "title": "Rivedi la bozza strutturata",
-          "body": "Entro pochi secondi dalla fine della cattura, una bozza organizzata per tipo di documento è pronta per la tua revisione."
-        },
-        {
-          "title": "Modifica, approva e procedi",
-          "body": "Correggi terminologia o dettagli, convalida, poi invia nel tuo processo usuale — incluso Mediway e SOKLE dove disponibile."
+          "title": "La bozza ti segue dal telefono al desktop",
+          "body": "Senza dover riscrivere."
         }
       ]
     },
     "proof": {
-      "badge": "La conformità è parte del prodotto",
-      "title": "Una storia privacy che puoi realmente spiegare",
-      "intro": "Gli acquirenti ottengono una storia chiara per FADP/nFADP, GDPR e questionari di sicurezza istituzionali — non una slide che dice 'prendiamo sul serio la privacy.'",
+      "badge": "Prova",
+      "title": "Una consultazione, dall'inizio alla fine",
+      "intro": "Un video di una consultazione completa: registrazione, referto generato, correzione, esportazione, senza tagli. È nella pagina dei tutorial.",
       "points": [
         {
-          "title": "Hosting svizzero",
-          "body": "L'elaborazione rimane allineata alle aspettative svizzere ed europee sui dati sanitari piuttosto che a regioni cloud statunitensi predefinite."
+          "title": "Registrato in un'unica ripresa",
+          "body": "Registrazione, referto generato, correzione, esportazione. Nessun taglio."
         },
         {
-          "title": "Conservazione audio breve",
-          "body": "L'audio utilizzato per produrre documentazione è conservato solo brevemente, poi cancellato automaticamente."
-        },
-        {
-          "title": "Mai usato per addestrare AI",
-          "body": "I dati sanitari non sono usati per addestrare modelli di base — le visite esistono solo per produrre i tuoi documenti."
-        },
-        {
-          "title": "Convalida medica, sempre",
-          "body": "Un medico o clinico autorizzato rivede e convalida la bozza prima che diventi parte della cartella clinica."
+          "title": "Giudica tu stesso la bozza",
+          "body": "Guarda il video nella pagina dei tutorial prima di iscriverti."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Cosa significa realmente documentazione ambientale",
-        "body": "L'AI ambientale ascolta in background mentre conduci una normale consultazione, giro di reparto o debrief procedurale. Non sostituisce il tuo giudizio clinico. Redige un documento strutturato — nota di consultazione, lettera di dimissione, referto operatorio o modello specialistico — così rivedi e approvi invece di partire da una pagina bianca. Il record duraturo è la nota che convalidi, non la registrazione grezza."
-      },
-      {
-        "heading": "Dalla cattura ambientale alla nota convalidata",
-        "body": "Avvia la registrazione su mobile o web, termina la consultazione e rivedi una bozza entro pochi secondi. Modifica terminologia, affina il piano, approva e spostalo nel tuo processo usuale — incluso Mediway e SOKLE dove disponibile, o modelli Word che corrispondono alla tua intestazione."
-      },
-      {
-        "heading": "Documentazione ambientale in una giornata clinica completa",
-        "body": "Il valore si compone in una giornata intera, non una singola visita. Un clinico che risparmia diversi minuti per incontro su una dozzina o più consultazioni riprende quel tempo per i pazienti invece che per digitare — che di solito è la vera ragione per cui i team adottano la cattura ambientale."
-      }
-    ],
     "faq": [
       {
-        "q": "La documentazione clinica ambientale è la stessa cosa di un assistente medico AI?",
-        "a": "Si sovrappongono. \"Documentazione clinica ambientale\" enfatizza la cattura passiva durante la visita; \"assistente medico AI\" è la categoria più ampia di strumenti che redigono note per la revisione clinica. DocNote copre entrambi."
+        "q": "Devo installare qualcosa?",
+        "a": "No. DocNote funziona nel browser e sul telefono."
       },
       {
-        "q": "L'AI scrive automaticamente nell'EHR?",
-        "a": "No. Un medico o clinico autorizzato rivede e convalida la bozza prima che diventi parte della cartella clinica."
+        "q": "Il referto assomiglierà alle mie lettere?",
+        "a": "Sì. Scegli il tuo formato una volta, o carica il tuo modello Word, e ogni referto successivo uscirà in quel formato."
       },
       {
-        "q": "Dove è processato l'audio ambientale?",
-        "a": "DocNote è progettato per l'hosting svizzero. L'elaborazione rimane allineata alle aspettative svizzere ed europee sui dati sanitari piuttosto che a regioni cloud statunitensi predefinite."
+        "q": "DocNote fattura per me?",
+        "a": "No. Propone suggerimenti di codifica alla fine del documento, da validare."
       },
       {
-        "q": "La documentazione ambientale gestisce tipi di documento ospedalieri?",
-        "a": "Sì. Oltre alle note ambulatoriali, DocNote supporta lettere di dimissione, referti operatori, note di reparto e altri output ospedalieri ad alto volume."
-      },
-      {
-        "q": "DocNote può funzionare in un reparto rumoroso con più letti?",
-        "a": "La cattura ambientale è legata al dispositivo e flusso di lavoro che scegli. Aiutiamo a mappare una configurazione pratica per reparti e stanze condivise durante l'onboarding."
-      },
-      {
-        "q": "I pazienti devono acconsentire alla registrazione ambientale?",
-        "a": "Segui le regole legali e istituzionali locali. DocNote supporta flussi di lavoro trasparenti e rispettosi della privacy; la tua organizzazione definisce il processo di consenso."
+        "q": "Quanto costa?",
+        "a": "I piani per gli studi individuali sono nella pagina dei prezzi. Puoi registrare la tua prima consultazione prima di decidere."
       }
     ],
     "cta": {
-      "title": "Prova la documentazione ambientale nella tua prossima consultazione",
-      "body": "Inizia una prova gratuita o parla con il nostro team per implementare la cattura ambientale nel tuo servizio.",
-      "primary": "Inizia prova gratuita",
-      "secondary": "Vedi prezzi"
+      "title": "Vedi il valore nella tua prima consultazione",
+      "body": "Self-service, non guidato dalle vendite. Apri l'app web e registra una consultazione, senza installare nulla.",
+      "primary": "Apri l'app web",
+      "secondary": "Vedi i prezzi"
     },
-    "relatedLabel": "Guide correlate",
-    "navDesc": "Acquisizione passiva, bozza strutturata dopo."
+    "relatedLabel": "Pagine correlate"
   },
-  "ai-clinical-documentation": {
-    "navLabel": "Documentazione clinica con AI",
-    "title": "Software per documentazione clinica con AI | DocNote",
-    "description": "Documentazione clinica con AI per medici e ospedali: note strutturate da consultazioni, lettere di dimissione e referti operatori. Hosting in Svizzera, progettato per l'Europa.",
+  "for-medical-secretaries": {
+    "navLabel": "Segretarie mediche",
+    "navDesc": "Lavora all'interno dell'account del medico, con i suoi modelli.",
+    "title": "Documentazione AI per segretarie mediche | DocNote",
+    "description": "Un account segretaria lavora all'interno del medico: stessi modelli, stesso intestazione, niente riscrittura. La segretaria formatta ed esporta; il medico convalida. Prenota una demo.",
     "hero": {
-      "badge": "Documentazione clinica con AI",
-      "title": "Documentazione clinica con AI senza l'arretrato serale",
-      "subtitle": "Bozze strutturate da consultazioni e attività in reparto, riviste dal clinico che ne è responsabile.",
-      "lead": "La documentazione clinica è dove i team perdono le serate. DocNote trasforma consultazioni e attività in reparto in bozze strutturate — così i clinici passano meno tempo a digitare e più tempo con i pazienti, rispettando le regole svizzere di hosting e segreto medico."
+      "badge": "Per segretarie mediche",
+      "title": "DocNote per segretarie mediche",
+      "subtitle": "La segretaria lavora all'interno dell'account del medico, con i suoi modelli e i suoi documenti."
     },
     "story": {
-      "badge": "In sintesi",
-      "title": "Documentazione che rispecchia il funzionamento del tuo servizio",
+      "badge": "Il problema",
+      "title": "Gli AI scribe sono venduti al medico",
       "paragraphs": [
-        "I generatori di note generici appiattiscono ogni specialità in un unico formato ambulatoriale statunitense. DocNote si adatta ai documenti che il tuo servizio produce realmente: note di consultazione, follow-up, lettere di dimissione, referti operatori e file collaborativi per day-hospital.",
-        "Bozze con AI; decisioni ai clinici. Questa divisione mantiene intatte responsabilità e segreto medico, riducendo la digitazione che causa burnout e lavoro notturno sui sistemi EHR."
+        "Nella maggior parte degli studi e dei reparti, non è il medico a formattare la lettera. È la segretaria. Eppure gli AI scribe sono venduti al medico, un account per medico. La segretaria resta fuori dal circuito, riscrivendo ciò che l'AI ha prodotto."
       ]
     },
     "benefits": {
-      "badge": "Perché i team cambiano",
-      "title": "Progettato per acquirenti e clinici",
-      "subtitle": "IT e direttori medici tengono a hosting e adozione quanto i clinici alla velocità.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
-          "title": "Supera un questionario di sicurezza",
-          "body": "Hosting svizzero chiaro, conservazione audio breve e validazione medica prima che qualsiasi cosa raggiunga la cartella — la storia che IT e direttori medici vogliono sentire."
+          "title": "Account collegati",
+          "body": "Un account segretaria è collegato a un medico. L'intera sessione agisce come quel medico: i suoi modelli, i suoi referti, il suo intestino."
         },
         {
-          "title": "Si adatta a ogni tipo di documento",
-          "body": "Non solo note SOAP ambulatoriali — lettere di dimissione, referti operatori e file per day-hospital sono supportati pienamente."
+          "title": "La segretaria rivede, completa, formatta ed esporta",
+          "body": "Il medico valida e firma."
         },
         {
-          "title": "Stessa responsabilità clinica di oggi",
-          "body": "Bozze con AI, validazione del clinico — il modello di responsabilità che la tua istituzione già conosce rimane identico."
+          "title": "Niente riscrittura",
+          "body": "Il referto corrisponde già al formato della lettera dello studio."
         },
         {
-          "title": "Si connette alla tua infrastruttura esistente",
-          "body": "Invia note validate in Mediway o SOKLE dove configurato, o esporta in un template Word che corrisponde alla struttura della tua istituzione."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dall'incontro a un documento di cui il tuo team si fida",
-      "subtitle": "Un flusso di lavoro che i clinici possono spiegare all'IT in una slide.",
-      "items": [
-        {
-          "title": "Cattura l'incontro",
-          "body": "Registra la consultazione o l'interazione in reparto su mobile o web come parte normale della visita."
-        },
-        {
-          "title": "Scegli il tipo di documento",
-          "body": "Seleziona nota di consultazione, lettera di dimissione, referto operatorio o un altro template supportato."
-        },
-        {
-          "title": "Rivedi la bozza strutturata",
-          "body": "Una bozza che corrisponde alle tue abitudini di documentazione è pronta in pochi secondi."
-        },
-        {
-          "title": "Valida e archivia",
-          "body": "Correggi e approva, poi invia nel percorso EHR o nel processo di esportazione."
+          "title": "Il contesto può essere aggiunto dopo",
+          "body": "Un risultato di laboratorio che arriva successivamente, un'immagine o una lettera precedente, senza ricominciare da capo."
         }
       ]
     },
     "proof": {
-      "badge": "Progettato per superare gli acquisti",
-      "title": "La storia di compliance che gli acquirenti chiedono",
-      "intro": "Un pilota diventa un rollout solo dopo l'approvazione di sicurezza e direttori medici.",
+      "badge": "Perché è importante",
+      "title": "Il tempo della segretaria è misurabile",
+      "intro": "Il tempo risparmiato dalla segretaria è misurabile e budgettato, a differenza di quello del medico. In uno studio, spesso è la segretaria la prima a provare lo strumento.",
       "points": [
         {
-          "title": "Hosting svizzero",
-          "body": "I dati sanitari sono ospitati e processati in Svizzera, allineati alle aspettative di segreto medico."
+          "title": "Un vero account, non una soluzione alternativa",
+          "body": "La segretaria lavora all'interno dell'account del medico, con i suoi modelli e i suoi documenti."
         },
         {
-          "title": "Conservazione audio breve",
-          "body": "L'audio viene cancellato automaticamente poco dopo la produzione del documento."
-        },
-        {
-          "title": "Nessun training sulle tue visite",
-          "body": "Le consultazioni sono usate solo per produrre i tuoi documenti, mai per addestrare modelli di base."
-        },
-        {
-          "title": "Validazione medica, sempre",
-          "body": "Ogni documento è rivisto e approvato da un clinico prima di entrare nella cartella."
+          "title": "La lettera esce corretta",
+          "body": "Niente riscrivere ciò che l'AI ha prodotto. Il referto corrisponde già al formato dello studio."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Documentazione che rispecchia il funzionamento del tuo servizio",
-        "body": "I generatori di note generici appiattiscono ogni specialità in un unico formato ambulatoriale statunitense. DocNote si adatta ai documenti che il tuo servizio produce realmente: note di consultazione, visite di follow-up, lettere di dimissione, referti operatori e file condivisi per day-hospital."
-      },
-      {
-        "heading": "Per acquirenti e clinici",
-        "body": "Un pilota convince rapidamente i team clinici. Un rollout su tutta l'istituzione richiede anche una risposta chiara per IT e direttori medici — la risposta esatta che DocNote fornisce dall'inizio, invece di improvvisarla dopo."
-      },
-      {
-        "heading": "Scegliere tra pilota e rollout completo",
-        "body": "Molti servizi iniziano con un tipo di documento ad alto volume e un piccolo gruppo di clinici, lo testano per qualche settimana, e solo allora decidono un rollout più ampio. Questa sequenza dà ai direttori medici prove reali invece di una demo, e ai clinici voce su come i template sono adattati prima che tutti ne dipendano."
-      },
-      {
-        "heading": "Documentazione clinica con AI versus un semplice scriba ambientale",
-        "body": "Alcuni strumenti si fermano a produrre testo che sembra una nota. La documentazione clinica con AI, come la costruisce DocNote, significa che l'output è strutturato nelle sezioni che il tuo servizio archivia realmente — campi codificati, intestazioni e terminologia che corrispondono alla tua cartella esistente — non solo prosa fluente che deve ancora essere riorganizzata a mano prima di essere utilizzabile."
-      },
-      {
-        "heading": "Misurare l'adozione onestamente",
-        "body": "Il segno più chiaro che uno strumento di documentazione funziona è che i clinici continuano a usarlo dopo che la novità svanisce, non la reazione alla demo del primo giorno. Traccia quante bozze vengono riscritte pesantemente versus leggermente modificate nel primo mese — questa tendenza dice più sull'adattamento di qualsiasi confronto di funzionalità."
-      },
-      {
-        "heading": "Coinvolgere l'IT presto, non alla fine",
-        "body": "I rollout che coinvolgono l'IT solo dopo che i clinici si sono già impegnati tendono a bloccarsi su domande che avrebbero potuto essere risposte settimane prima. Coinvolgere la revisione IT e sicurezza insieme al pilota clinico, invece che dopo, mantiene realistico il timeline del rollout."
-      }
-    ],
     "faq": [
       {
-        "q": "Per chi è la documentazione clinica con AI?",
-        "a": "Medici indipendenti, gruppi e servizi ospedalieri che vogliono note strutturate più veloci senza rinunciare alla validazione clinica o alle regole europee sui dati."
+        "q": "La segretaria ha bisogno dei propri modelli?",
+        "a": "No. L'account segretaria lavora all'interno dell'account del medico e utilizza i modelli, i referti e l'intestino del medico."
       },
       {
-        "q": "Come è diverso dal speech-to-text?",
-        "a": "Il speech-to-text dà parole. DocNote struttura un documento clinico — intestazioni, linguaggio specialistico e il tipo di nota selezionato — pronto per la revisione."
+        "q": "Chi valida il referto?",
+        "a": "Il medico. La segretaria rivede, completa, formatta ed esporta; il medico valida e firma."
       },
       {
-        "q": "DocNote è solo per note SOAP ambulatoriali?",
-        "a": "No. I tipi di documento ospedalieri sono parte centrale del prodotto, non un ripensamento."
+        "q": "Si può aggiungere un risultato di laboratorio dopo la generazione del referto?",
+        "a": "Sì. Allegalo successivamente; il referto viene aggiornato senza ricominciare da capo."
       },
       {
-        "q": "Possiamo fare un pilota con una specialità prima?",
-        "a": "Sì. Molti team iniziano con un servizio ad alto volume, validano i template, poi espandono."
-      },
-      {
-        "q": "Cosa comporta l'onboarding?",
-        "a": "Mappatura dei template ai tuoi documenti, un breve pilota con incontri reali e feedback dei clinici prima del rollout."
-      },
-      {
-        "q": "I clinici non medici possono usare DocNote?",
-        "a": "Sì, entro i limiti definiti dalla tua istituzione — la responsabilità di validazione segue la tua governance clinica esistente."
+        "q": "Come si inizia?",
+        "a": "Prenota una demo per il tuo studio. Configuriamo l'account collegato con te."
       }
     ],
     "cta": {
-      "title": "Porta la documentazione clinica con AI nel tuo servizio",
-      "body": "Inizia una prova gratuita o parla con il nostro team per un pilota per il tuo studio o ospedale.",
-      "primary": "Inizia prova gratuita",
-      "secondary": "Vedi prezzi"
+      "title": "Prenota una demo per il tuo studio",
+      "body": "Vedi come un account segretaria lavora all'interno dell'account del medico, sui tuoi formati di lettera.",
+      "primary": "Prenota una demo",
+      "secondary": "Contattaci"
     },
-    "relatedLabel": "Guide correlate",
-    "navDesc": "Bozze strutturate che revisioni e firmi."
+    "relatedLabel": "Pagine correlate"
+  },
+  "for-clinic-groups": {
+    "navLabel": "Gruppi & cliniche",
+    "navDesc": "Rollout multi-sede, politica applicata, fatturazione centralizzata.",
+    "title": "Documentazione medica AI per gruppi clinici | DocNote",
+    "description": "Rollout su più sedi con una politica applicata: conservazione, logout, modelli condivisi e supporto nativo per EHR. Parla con il team del tuo rollout.",
+    "hero": {
+      "badge": "Per gruppi e cliniche",
+      "title": "DocNote per gruppi e cliniche",
+      "subtitle": "Implementa su più sedi senza lasciare che ogni clinico inventi le proprie regole."
+    },
+    "story": {
+      "badge": "Il problema",
+      "title": "Un gruppo fa altre tre domande",
+      "paragraphs": [
+        "Un gruppo non chiede \"scrive bene\". Fa altre tre domande: posso applicare una politica di sicurezza su tutti i miei clinici, si adatta ai miei sistemi, e posso fatturare e monitorarlo centralmente."
+      ]
+    },
+    "benefits": {
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
+      "items": [
+        {
+          "title": "Politica a livello di organizzazione",
+          "body": "Applica impostazioni su tutti gli account del gruppo: conservazione delle trascrizioni, riproduzione audio disabilitata, logout automatico. Senza dipendere dalle impostazioni individuali di ogni medico."
+        },
+        {
+          "title": "Modelli armonizzati",
+          "body": "I documenti del gruppo vengono distribuiti a ogni clinico, con branding e sezioni condivisi."
+        },
+        {
+          "title": "Si adatta allo stack esistente",
+          "body": "Gli EHR di gruppo sono supportati nativamente."
+        },
+        {
+          "title": "Documentazione collaborativa",
+          "body": "In un day hospital, più clinici alimentano la stessa cartella paziente."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Prova",
+      "title": "Implementato, non una promessa",
+      "intro": "La politica a livello di organizzazione è già in produzione per un gruppo pilota.",
+      "points": [
+        {
+          "title": "Politica applicata in produzione",
+          "body": "Regole di conservazione, riproduzione e logout applicate oggi agli account di un gruppo pilota."
+        },
+        {
+          "title": "Fatturazione e monitoraggio centralizzati",
+          "body": "Gli account di gruppo sono fatturati e monitorati centralmente."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Possiamo forzare le stesse impostazioni su ogni clinico?",
+        "a": "Sì. La politica a livello di organizzazione applica conservazione delle trascrizioni, riproduzione audio e logout automatico su tutti gli account del gruppo."
+      },
+      {
+        "q": "Ogni sede può usare gli stessi modelli di lettera?",
+        "a": "Sì. I modelli Word del gruppo vengono distribuiti a ogni clinico, con branding e sezioni condivisi."
+      },
+      {
+        "q": "Quali EHR sono supportati?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis. Esiste un'API di integrazione documentata per altri fornitori."
+      },
+      {
+        "q": "La fatturazione è per clinico o per gruppo?",
+        "a": "Gli account di gruppo sono fatturati e monitorati centralmente. Parla con il team per i dettagli del tuo setup."
+      }
+    ],
+    "cta": {
+      "title": "Parla con il team della tua implementazione",
+      "body": "Dicci il numero di clinici, il tuo EHR e il tuo paese, e ti risponderemo con un piano di implementazione.",
+      "primary": "Parla con il team",
+      "secondary": "Prenota una demo"
+    },
+    "relatedLabel": "Pagine correlate"
+  },
+  "medical-coding-and-billing": {
+    "navLabel": "Codifica & fatturazione",
+    "navDesc": "SwissDRG, PMSI, TARDOC, Tarif 222.",
+    "title": "Software di codifica SwissDRG, TARDOC & PMSI | DocNote",
+    "description": "Le diagnosi fatturabili emergono nella lettera stessa: suggerimenti SwissDRG, TARDOC, Tarif 222 e PMSI da convalidare, non una seconda passata di codifica. Prenota una demo.",
+    "hero": {
+      "badge": "Codifica e fatturazione",
+      "title": "Codifica e fatturazione integrate nel referto",
+      "subtitle": "Le diagnosi fatturabili emergono dalla lettera stessa, non da una seconda passata."
+    },
+    "story": {
+      "badge": "Perché è importante",
+      "title": "Un vantaggio strutturale, non un'altra funzionalità",
+      "paragraphs": [
+        "Nessuno scribe anglo-americano generalista conosce TARDOC, SwissDRG o Tarif 222. Questo è un vantaggio strutturale nel mercato svizzero, non un'altra funzionalità. La codifica smette di essere una seconda passata di documentazione: meno comorbilità perse, meno recuperi alla sera."
+      ]
+    },
+    "benefits": {
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
+      "items": [
+        {
+          "title": "Emergono all'interno della lettera",
+          "body": "Le diagnosi secondarie significative vengono evidenziate all'interno della lettera di dimissione."
+        },
+        {
+          "title": "Suggerimenti alla fine del documento",
+          "body": "Nella loro sezione dedicata: non inquinano il testo clinico e possono essere posizionati dove vuoi nel tuo modello Word."
+        },
+        {
+          "title": "Svizzera e Francia",
+          "body": "Svizzera: SwissDRG (ICD-10 / CHOP), TARDOC, Tarif 222 per odontoiatria. Francia: PMSI."
+        },
+        {
+          "title": "TARDOC nella pratica",
+          "body": "Una breve dettatura al letto del paziente diventa una descrizione completa e fatturabile dell'esame. Documenti una volta per l'assistenza e per la fatturazione, non due."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Disciplina",
+      "title": "Suggerimenti da validare, sempre",
+      "intro": "DocNote scrive suggerimenti e proposte di codifica da validare. La responsabilità della codifica rimane al medico e al reparto di codifica.",
+      "points": [
+        {
+          "title": "Proposte, non decisioni",
+          "body": "Ogni suggerimento viene validato o scartato da te."
+        },
+        {
+          "title": "Nella loro sezione dedicata",
+          "body": "I suggerimenti si trovano alla fine del documento, separati dal testo clinico."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "DocNote codifica i miei ricoveri per me?",
+        "a": "No. Aggiunge suggerimenti di codifica alla fine del documento, come proposte da validare. La responsabilità rimane al medico e al reparto di codifica."
+      },
+      {
+        "q": "Quali sistemi di codifica sono coperti?",
+        "a": "Svizzera: SwissDRG (ICD-10 / CHOP), TARDOC e Tarif 222 per odontoiatria. Francia: PMSI."
+      },
+      {
+        "q": "I suggerimenti appaiono all'interno del testo clinico?",
+        "a": "No. Si trovano nella loro sezione dedicata alla fine del documento, posizionati dove vuoi nel tuo modello Word."
+      },
+      {
+        "q": "Come funziona il supporto TARDOC nella pratica?",
+        "a": "Una breve dettatura al letto del paziente diventa una descrizione completa e fatturabile dell'esame. Documenti una volta, per l'assistenza e per la fatturazione."
+      }
+    ],
+    "cta": {
+      "title": "Vedi i suggerimenti di codifica sulle tue lettere",
+      "body": "Prenota una demo con una lettera di dimissione o una consultazione del tuo servizio.",
+      "primary": "Prenota una demo",
+      "secondary": "Vedi i prezzi"
+    },
+    "relatedLabel": "Pagine correlate"
+  },
+  "ehr-integration": {
+    "navLabel": "Integrazione con l'EHR",
+    "navDesc": "7 sistemi, inviati sezione per sezione.",
+    "title": "Integrazione EHR per Scribe Medici AI | DocNote",
+    "description": "DocNote invia report validati in SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis, suddivisi per sezione: flusso unidirezionale, senza copia-incolla. Prenota una demo.",
+    "hero": {
+      "badge": "Integrazione EHR",
+      "title": "Integrazione con la cartella elettronica del paziente",
+      "subtitle": "Il referto validato viene inserito nella cartella, suddiviso per sezione."
+    },
+    "story": {
+      "badge": "Come funziona",
+      "title": "Unidirezionale, per design",
+      "paragraphs": [
+        "Il flusso è unidirezionale: DocNote invia all'EHR. DocNote non legge la tua cartella paziente, e la ricerca del paziente è una ricerca, non un'importazione della cartella. La documentazione è completata quando il referto è nella cartella: niente copia-incolla, nessuna versione fluttuante fuori dall'EHR."
+      ]
+    },
+    "benefits": {
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
+      "items": [
+        {
+          "title": "Sette sistemi supportati",
+          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
+        },
+        {
+          "title": "Collegato una volta, via OAuth2",
+          "body": "Il clinico collega il suo account DocNote al suo account EHR una volta."
+        },
+        {
+          "title": "Ricerca del paziente da dentro DocNote",
+          "body": "Cerca il tuo paziente nell'EHR senza uscire da DocNote."
+        },
+        {
+          "title": "Inviato suddiviso per sezione",
+          "body": "Il referto validato viene inviato nella cartella di quel paziente, suddiviso per sezione."
+        },
+        {
+          "title": "Un'API per i fornitori EHR",
+          "body": "Esiste un'API di integrazione documentata per i fornitori che vogliono connettersi."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Precisione",
+      "title": "Cos'è l'integrazione, e cosa non è",
+      "intro": "Una direzione, nessuna lettura, nessun copia-incolla.",
+      "points": [
+        {
+          "title": "DocNote invia, non legge",
+          "body": "Il referto va da DocNote all'EHR. Niente torna indietro."
+        },
+        {
+          "title": "Nessuna versione fuori dalla cartella",
+          "body": "La documentazione è completata quando il referto validato è nella cartella del paziente."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Quali EHR sono supportati?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis."
+      },
+      {
+        "q": "DocNote legge anche dall'EHR?",
+        "a": "No. Il flusso è unidirezionale: DocNote invia il referto validato nell'EHR."
+      },
+      {
+        "q": "Come funziona la ricerca del paziente?",
+        "a": "Cerca il paziente nell'EHR da dentro DocNote e seleziona la cartella a cui inviare. È una ricerca, non un'importazione della cartella."
+      },
+      {
+        "q": "Il nostro EHR non è nella lista. E allora?",
+        "a": "Esiste un'API di integrazione documentata per i fornitori EHR che vogliono connettersi. Parla con il team."
+      }
+    ],
+    "cta": {
+      "title": "Vedi il referto arrivare nel tuo EHR",
+      "body": "Prenota una demo sul tuo sistema, dalla ricerca del paziente al referto suddiviso per sezione.",
+      "primary": "Prenota una demo",
+      "secondary": "Contattaci"
+    },
+    "relatedLabel": "Pagine correlate"
+  },
+  "custom-word-templates": {
+    "navLabel": "I tuoi modelli Word",
+    "navDesc": "Il tuo intestazione, sezioni e firma.",
+    "title": "Modelli Word Personalizzati per Report Medici | DocNote",
+    "description": "Carica il tuo modello Word una volta: ogni report mantiene la tua intestazione, sezioni e firma. La revisione rimane clinica, non estetica. Scopri come funziona.",
+    "hero": {
+      "badge": "Modelli Word personalizzati",
+      "title": "I tuoi documenti Word, non quelli dell'IA",
+      "subtitle": "Carica il tuo modello una volta sola. Ogni referto successivo avrà la tua struttura e branding esatti."
+    },
+    "story": {
+      "badge": "Perché è importante",
+      "title": "L'obiezione principale nelle demo ospedaliere",
+      "paragraphs": [
+        "\"Il vostro output è bello, ma non assomiglia alla nostra lettera.\" DocNote risponde a questa obiezione prima che venga sollevata: niente più riformattazione dell'output dell'IA per adattarlo all'intestazione dell'ospedale. Ogni referto è già il tuo documento."
+      ]
+    },
+    "benefits": {
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
+      "items": [
+        {
+          "title": "La tua intestazione, i tuoi margini, le tue sezioni, la tua firma",
+          "body": "Tutto proviene dal documento Word che carichi una volta sola."
+        },
+        {
+          "title": "La codifica ha il suo spazio dedicato",
+          "body": "Separato dal testo principale, posizionato dove vuoi nel modello."
+        },
+        {
+          "title": "Allineamento preservato all'esportazione",
+          "body": "Giustificato, centrato e allineato a destra come progettato."
+        },
+        {
+          "title": "La revisione torna ad essere clinica",
+          "body": "Correggi la sostanza, non il layout."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Impatto",
+      "title": "La revisione rimane clinica, non estetica",
+      "intro": "Niente più riformattazione dell'output dell'IA per adattarlo all'intestazione dell'ospedale.",
+      "points": [
+        {
+          "title": "Già il tuo documento",
+          "body": "Ogni referto esce con la tua intestazione, le tue sezioni e la tua firma."
+        },
+        {
+          "title": "Niente da ricostruire",
+          "body": "Carica il documento Word esistente una volta sola. Nessun editor di modelli da imparare."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Devo ricostruire il mio modello all'interno di DocNote?",
+        "a": "No. Carica il tuo documento Word esistente una volta sola; ogni referto successivo seguirà la sua struttura e branding."
+      },
+      {
+        "q": "L'intestazione e il blocco firma saranno preservati?",
+        "a": "Sì. Intestazione, margini, sezioni e firma provengono dal tuo modello."
+      },
+      {
+        "q": "Dove vanno i suggerimenti di codifica?",
+        "a": "Nel loro spazio dedicato nel modello, separato dal testo principale, posizionato dove vuoi."
+      },
+      {
+        "q": "Possono coesistere più modelli?",
+        "a": "Sì. Ad esempio uno per tipo di documento: lettera di dimissione, referto operatorio, nota di reparto."
+      }
+    ],
+    "cta": {
+      "title": "Vedi la tua lettera uscire da DocNote",
+      "body": "Prenota una demo con il tuo modello Word, o guarda prima il flusso nel tutorial.",
+      "primary": "Prenota una demo",
+      "secondary": "Vedi il tutorial"
+    },
+    "relatedLabel": "Pagine correlate"
+  },
+  "clinical-context": {
+    "navLabel": "Contesto clinico",
+    "navDesc": "Esami, imaging, foto, lettere precedenti.",
+    "title": "Contesto Clinico per Report Medici AI | DocNote",
+    "description": "Allega lettere precedenti, esami, imaging e foto prima o dopo la registrazione. Elementi tardivi aggiornano il report senza ricominciare. Guarda il tutorial.",
+    "hero": {
+      "badge": "Contesto clinico",
+      "title": "Il referto riflette la cartella, non solo ciò che è stato detto ad alta voce",
+      "subtitle": "Allega lettere precedenti, risultati di laboratorio, imaging e foto."
+    },
+    "story": {
+      "badge": "Perché è importante",
+      "title": "Meno omissioni",
+      "paragraphs": [
+        "Una consultazione è più di ciò che è stato detto ad alta voce. Lettere precedenti, risultati di laboratorio, imaging e foto appartengono al referto. Con il contesto allegato, ci sono meno omissioni e meno messaggi del tipo \"per favore aggiungi i laboratori\" dopo."
+      ]
+    },
+    "benefits": {
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
+      "items": [
+        {
+          "title": "Allega prima o dopo la registrazione",
+          "body": "Documenti allegati prima o dopo la registrazione sono integrati nel referto."
+        },
+        {
+          "title": "Elementi tardivi vengono raccolti",
+          "body": "Un risultato che arriva dopo viene aggiunto senza rigenerare tutto."
+        },
+        {
+          "title": "Modalità conversazionale",
+          "body": "Richiedi una modifica o un'aggiunta dopo la generazione."
+        },
+        {
+          "title": "Tu scegli cosa allegare",
+          "body": "DocNote non legge la cartella del paziente. Alleghi i file tu stesso."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Impatto",
+      "title": "Aggiungi contesto dopo, mantieni le tue correzioni",
+      "intro": "Elementi aggiunti dopo sono integrati senza ricominciare da zero.",
+      "points": [
+        {
+          "title": "Nessuna rigenerazione da zero",
+          "body": "Aggiunte tardive non sovrascrivono le correzioni che hai già fatto."
+        },
+        {
+          "title": "Chiedi la modifica",
+          "body": "Una modalità conversazionale ti permette di richiedere una modifica o un'aggiunta dopo la generazione."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Cosa posso allegare?",
+        "a": "Lettere precedenti, risultati di laboratorio, referti di imaging e foto."
+      },
+      {
+        "q": "Devo allegare tutto prima della registrazione?",
+        "a": "No. Documenti allegati prima o dopo la registrazione sono integrati nel referto."
+      },
+      {
+        "q": "Se un risultato di laboratorio arriva dopo, devo rigenerare tutto il referto?",
+        "a": "No. Elementi tardivi vengono raccolti senza rigenerare tutto; le tue correzioni sono mantenute."
+      },
+      {
+        "q": "DocNote estrae documenti dal mio EHR?",
+        "a": "No. Alleghi i file tu stesso; DocNote non legge la cartella del paziente."
+      }
+    ],
+    "cta": {
+      "title": "Vedi come nel tutorial",
+      "body": "Il tutorial mostra un referto aggiornato con documenti allegati prima e dopo la registrazione.",
+      "primary": "Vedi il tutorial",
+      "secondary": "Prenota una demo"
+    },
+    "relatedLabel": "Pagine correlate"
+  },
+  "day-hospital-documentation": {
+    "navLabel": "Day hospital",
+    "navDesc": "Più clinici, un unico referto.",
+    "title": "Software per la documentazione del Day Hospital | DocNote",
+    "description": "Più clinici, un unico referto del paziente: DocNote unisce i contributi del team in un unico referto strutturato. Disponibile per gruppi con un EHR integrato.",
+    "hero": {
+      "badge": "Day hospital",
+      "title": "Day hospital: più clinici, una cartella",
+      "subtitle": "DocNote unisce i contributi del team in una cartella affidabile."
+    },
+    "story": {
+      "badge": "Perché è importante",
+      "title": "Ogni scriba sul mercato è single-clinico",
+      "paragraphs": [
+        "Nessuno affronta questo caso d'uso, perché richiede un modello dati multi-autore. Ogni scriba sul mercato è single-clinico. In un day hospital, questo lascia il team a riconciliare note parziali alla fine della giornata."
+      ]
+    },
+    "benefits": {
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
+      "items": [
+        {
+          "title": "Più clinici, una cartella",
+          "body": "Più clinici contribuiscono alla stessa cartella paziente durante la giornata."
+        },
+        {
+          "title": "Una cartella strutturata alla fine della giornata",
+          "body": "Non quattro note parziali da riconciliare."
+        },
+        {
+          "title": "Per gruppi con un EHR integrato",
+          "body": "Disponibile per gruppi il cui EHR è integrato."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Impatto",
+      "title": "La qualità segue il team",
+      "intro": "Alla fine della giornata hai una cartella paziente strutturata, non quattro note parziali da riconciliare. La qualità della documentazione segue il team invece di frammentarsi.",
+      "points": [
+        {
+          "title": "Una cartella da validare",
+          "body": "Il medico responsabile rivede e convalida la cartella unita."
+        },
+        {
+          "title": "Nel EHR",
+          "body": "La cartella convalidata viene inviata nella cartella paziente nel EHR del gruppo."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Chi può contribuire alla cartella?",
+        "a": "I clinici del servizio day hospital, ciascuno dal proprio account DocNote, sulla stessa cartella paziente."
+      },
+      {
+        "q": "È un documento unito o una lista di note?",
+        "a": "Una cartella unita e strutturata."
+      },
+      {
+        "q": "Chi convalida la cartella unita?",
+        "a": "Il medico responsabile rivede e convalida prima che venga inviata nel EHR."
+      },
+      {
+        "q": "È disponibile per il mio gruppo?",
+        "a": "È disponibile per gruppi il cui EHR è integrato. Parla con il team riguardo ai tuoi sistemi."
+      }
+    ],
+    "cta": {
+      "title": "Parla con il team del tuo day hospital",
+      "body": "Raccontaci come è organizzato il tuo servizio e quale EHR utilizzi.",
+      "primary": "Prenota una demo",
+      "secondary": "Contattaci"
+    },
+    "relatedLabel": "Pagine correlate"
+  },
+  "multilingual-medical-documentation": {
+    "navLabel": "Multilingue & specialità",
+    "navDesc": "61 specialità, 21 lingue dell'interfaccia.",
+    "title": "AI per documentazione medica multilingue | DocNote",
+    "description": "61 specialità, 21 lingue dell'interfaccia: la lingua con cui parli con il paziente non detta la lingua o il vocabolario del referto. Vedi in azione.",
+    "hero": {
+      "badge": "Multilingue e specialità",
+      "title": "61 specialità, 21 lingue dell'interfaccia",
+      "subtitle": "Una consultazione in portoghese, un referto in francese, nel vocabolario della tua specialità."
+    },
+    "story": {
+      "badge": "Perché è importante",
+      "title": "La lingua con cui parli non detta il referto",
+      "paragraphs": [
+        "Gli incontri multilingue sono normali nell'assistenza. La lingua con cui parli al paziente non detta la lingua del referto, e il vocabolario segue la specialità piuttosto che un gergo SOAP generico importato dagli USA."
+      ]
+    },
+    "benefits": {
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
+      "items": [
+        {
+          "title": "61 specialità mediche",
+          "body": "Ciascuna con i propri modelli di referto predefiniti."
+        },
+        {
+          "title": "21 lingue dell'interfaccia",
+          "body": "L'interfaccia è disponibile in 21 lingue."
+        },
+        {
+          "title": "Incontri multilingue",
+          "body": "La lingua con cui parli al paziente non detta la lingua del referto."
+        },
+        {
+          "title": "Vocabolario specialistico",
+          "body": "Termini e struttura seguono la tua specialità, non una nota generica."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Prova",
+      "title": "Costruito per l'assistenza multilingue",
+      "intro": "Una consultazione in portoghese può produrre un referto in francese, nel vocabolario della tua specialità.",
+      "points": [
+        {
+          "title": "La lingua del referto è tua scelta",
+          "body": "Parla con il paziente nella sua lingua; il referto esce nella tua."
+        },
+        {
+          "title": "I modelli seguono la specialità",
+          "body": "I modelli di referto predefiniti sono abbinati alla tua specialità all'iscrizione."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Posso parlare una lingua e ottenere il referto in un'altra?",
+        "a": "Sì. La lingua con cui parli al paziente non detta la lingua del referto."
+      },
+      {
+        "q": "Quante specialità sono coperte?",
+        "a": "61 specialità mediche, ciascuna con i propri modelli di referto predefiniti."
+      },
+      {
+        "q": "In quante lingue è disponibile l'interfaccia?",
+        "a": "21."
+      },
+      {
+        "q": "Il vocabolario è specifico per la specialità?",
+        "a": "Sì. Termini e struttura seguono la tua specialità piuttosto che una nota SOAP generica."
+      }
+    ],
+    "cta": {
+      "title": "Vedi nella tua lingua",
+      "body": "Guarda il tutorial, poi registra una consultazione nella lingua che usi con i tuoi pazienti.",
+      "primary": "Vedi il tutorial",
+      "secondary": "Vedi i prezzi"
+    },
+    "relatedLabel": "Pagine correlate"
   },
   "ai-soap-notes": {
     "navLabel": "Note SOAP con AI",
     "title": "Note SOAP con AI per clinici | DocNote",
-    "description": "Genera note SOAP con AI da consultazioni per la revisione medica. Strutturate in Soggettivo, Obiettivo, Valutazione e Piano — con hosting svizzero e flussi di lavoro clinici europei.",
+    "description": "Genera note SOAP con AI da consultazioni per la revisione medica. Strutturate in Soggettivo, Obiettivo, Valutazione e Piano, con hosting svizzero e flussi di lavoro clinici europei.",
     "hero": {
       "badge": "Note SOAP con AI",
       "title": "Note SOAP con AI che suonano ancora come la tua clinica",
-      "subtitle": "Soggettivo, Obiettivo, Valutazione e Piano — bozzate dalla visita, non da un template generico.",
+      "subtitle": "Soggettivo, Obiettivo, Valutazione e Piano, bozzate dalla visita, non da un template generico.",
       "lead": "SOAP rimane la spina dorsale di molte note ambulatoriali. DocNote bozza Soggettivo, Obiettivo, Valutazione e Piano dalla consultazione così puoi modificare e firmare invece di ricostruire la nota da zero dopo ogni visita."
     },
     "story": {
       "badge": "In sintesi",
       "title": "SOAP strutturato senza linguaggio robotico",
       "paragraphs": [
-        "Una nota SOAP con AI utile preserva le sfumature cliniche: le parole del paziente dove contano, i reperti dell'esame effettivamente dichiarati e una Valutazione/Piano che riflette il tuo ragionamento — non un riassunto generico che potrebbe appartenere a qualsiasi paziente.",
+        "Una nota SOAP con AI utile preserva le sfumature cliniche: le parole del paziente dove contano, i reperti dell'esame effettivamente dichiarati e una Valutazione/Piano che riflette il tuo ragionamento, non un riassunto generico che potrebbe appartenere a qualsiasi paziente.",
         "Se la tua giornata è principalmente SOAP ambulatoriale, inizia lì. Quando hai bisogno anche di lettere di dimissione o referti specialistici, lo stesso spazio di lavoro DocNote copre quei tipi di documento senza cambiare fornitore."
       ]
     },
@@ -727,11 +1110,11 @@
       "items": [
         {
           "title": "Mantiene la tua voce clinica",
-          "body": "Le bozze preservano le parole del paziente dove rilevanti e i reperti dell'esame che hai effettivamente dichiarato — non un riassunto appiattito."
+          "body": "Le bozze preservano le parole del paziente dove rilevanti e i reperti dell'esame che hai effettivamente dichiarato, non un riassunto appiattito."
         },
         {
           "title": "Revisione prima della cartella",
-          "body": "Correggi una diagnosi differenziale, aggiungi un dettaglio rilevante per la codifica, rimuovi chiacchiere sovrappesate dal modello — poi approva."
+          "body": "Correggi una diagnosi differenziale, aggiungi un dettaglio rilevante per la codifica, rimuovi chiacchiere sovrappesate dal modello, poi approva."
         },
         {
           "title": "Uno spazio di lavoro per più di SOAP",
@@ -762,14 +1145,14 @@
         },
         {
           "title": "Modifica e firma",
-          "body": "Aggiusta la formulazione o i dettagli, poi approva — la nota validata è quella che entra nella cartella."
+          "body": "Aggiusta la formulazione o i dettagli, poi approva: la nota validata è quella che entra nella cartella."
         }
       ]
     },
     "proof": {
       "badge": "Privacy per le conversazioni dei pazienti",
       "title": "La stessa storia di fiducia per ogni visita",
-      "intro": "Le note SOAP portano dettagli sensibili ogni giorno — la storia della privacy deve reggere ogni volta, non solo nel pilota.",
+      "intro": "Le note SOAP portano dettagli sensibili ogni giorno: la storia della privacy deve reggere ogni volta, non solo nel pilota.",
       "points": [
         {
           "title": "Hosting svizzero",
@@ -792,7 +1175,7 @@
     "sections": [
       {
         "heading": "Adattare i template SOAP alla tua specialità",
-        "body": "SOAP è una struttura di partenza, non un formato rigido. Durante l'onboarding, i team adattano intestazioni e enfasi delle sezioni così la nota riflette come il tuo servizio documenta realmente — dalla medicina generale ai servizi ambulatoriali specializzati."
+        "body": "SOAP è una struttura di partenza, non un formato rigido. Durante l'onboarding, i team adattano intestazioni e enfasi delle sezioni così la nota riflette come il tuo servizio documenta realmente, dalla medicina generale ai servizi ambulatoriali specializzati."
       },
       {
         "heading": "Usare SOAP insieme ad altri tipi di documento",
@@ -800,11 +1183,11 @@
       },
       {
         "heading": "Cosa rende utile una bozza SOAP, non solo veloce",
-        "body": "Una nota SOAP veloce che perde sfumature cliniche costa più tempo di quanto risparmi, perché finisci per riscrivere Valutazione e Piano comunque. DocNote è progettato per mantenere il ragionamento che conta — diagnosi differenziali considerate, perché un piano è cambiato — così modificare significa affinare, non ricostruire."
+        "body": "Una nota SOAP veloce che perde sfumature cliniche costa più tempo di quanto risparmi, perché finisci per riscrivere Valutazione e Piano comunque. DocNote è progettato per mantenere il ragionamento che conta (diagnosi differenziali considerate, perché un piano è cambiato) così modificare significa affinare, non ricostruire."
       },
       {
         "heading": "Note SOAP e accuratezza di codifica",
-        "body": "La codifica si basa su dettagli specifici e ben documentati — il motivo esatto della visita, la complessità decisionale, il tempo speso in consulenza dove rilevante. Una bozza SOAP che appiattisce questi in frasi generiche rende la codifica più difficile, non più facile. Le bozze di DocNote mirano a preservare proprio i dettagli che supportano una codifica accurata, lasciando la decisione di codifica a te."
+        "body": "La codifica si basa su dettagli specifici e ben documentati: il motivo esatto della visita, la complessità decisionale, il tempo speso in consulenza dove rilevante. Una bozza SOAP che appiattisce questi in frasi generiche rende la codifica più difficile, non più facile. Le bozze di DocNote mirano a preservare proprio i dettagli che supportano una codifica accurata, lasciando la decisione di codifica a te."
       },
       {
         "heading": "SOAP per visite di follow-up versus prime visite",
@@ -858,14 +1241,14 @@
       "badge": "Trascrizione medica con AI",
       "title": "Trascrizione medica con AI che non si ferma alla trascrizione",
       "subtitle": "Il parlato diventa un documento clinico strutturato, non solo testo grezzo da modificare.",
-      "lead": "La trascrizione medica tradizionale dà testo. I clinici devono ancora trasformare quel testo in una nota utilizzabile. DocNote parte dal parlato e bozza il documento clinico strutturato che ti serve — così la trascrizione diventa documentazione, non un altro lavoro di editing."
+      "lead": "La trascrizione medica tradizionale dà testo. I clinici devono ancora trasformare quel testo in una nota utilizzabile. DocNote parte dal parlato e bozza il documento clinico strutturato che ti serve, così la trascrizione diventa documentazione, non un altro lavoro di editing."
     },
     "story": {
       "badge": "In sintesi",
       "title": "Oltre il speech-to-text",
       "paragraphs": [
         "Una trascrizione è un punto di partenza, non una cartella medica. DocNote mappa il contenuto parlato nelle sezioni, terminologia e tipo di documento che il tuo studio o ospedale si aspetta, poi lascia la formulazione finale al clinico.",
-        "Molti acquirenti usano \"trascrizione medica con AI\" per scriba ambientali e generatori di note. Se il tuo obiettivo è meno digitazione fuori orario, valuta output strutturato, adattamento alla specialità, ubicazione di hosting e flusso di validazione — non solo il tasso di errore sulle parole."
+        "Molti acquirenti usano \"trascrizione medica con AI\" per scriba ambientali e generatori di note. Se il tuo obiettivo è meno digitazione fuori orario, valuta output strutturato, adattamento alla specialità, ubicazione di hosting e flusso di validazione, non solo il tasso di errore sulle parole."
       ]
     },
     "benefits": {
@@ -875,7 +1258,7 @@
       "items": [
         {
           "title": "Strutturato, non solo trascritto",
-          "body": "Il contenuto parlato è mappato in sezioni e terminologia che corrispondono al tuo tipo di documento — nessun passaggio di editing separato necessario."
+          "body": "Il contenuto parlato è mappato in sezioni e terminologia che corrispondono al tuo tipo di documento, nessun passaggio di editing separato necessario."
         },
         {
           "title": "Meno ore di trascrizione",
@@ -906,7 +1289,7 @@
         },
         {
           "title": "Rivedi la bozza",
-          "body": "Una nota strutturata — non una trascrizione grezza — è pronta per la tua revisione in pochi secondi."
+          "body": "Una nota strutturata (non una trascrizione grezza) è pronta per la tua revisione in pochi secondi."
         },
         {
           "title": "Modifica e valida",
@@ -933,7 +1316,7 @@
         },
         {
           "title": "Adatto alla documentazione europea",
-          "body": "Da note di consultazione a lettere di dimissione e referti operatori — non solo un template SOAP ambulatoriale."
+          "body": "Da note di consultazione a lettere di dimissione e referti operatori, non solo un template SOAP ambulatoriale."
         }
       ]
     },
@@ -970,7 +1353,7 @@
       },
       {
         "q": "Abbiamo ancora bisogno di trascrittori umani?",
-        "a": "Molti team riducono o eliminano la trascrizione di routine per i tipi di nota supportati. Casi complessi o medico-legali beneficiano ancora della supervisione clinica — che DocNote richiede sempre."
+        "a": "Molti team riducono o eliminano la trascrizione di routine per i tipi di nota supportati. Casi complessi o medico-legali beneficiano ancora della supervisione clinica, che DocNote richiede sempre."
       },
       {
         "q": "Quali lingue sono supportate?",
@@ -1001,11 +1384,11 @@
   "ai-discharge-summary": {
     "navLabel": "Lettera di dimissione con AI",
     "title": "Lettera di dimissione con AI | DocNote",
-    "description": "Bozza lettere di dimissione e riepiloghi ospedalieri con AI più velocemente. Documenti strutturati e revisionabili con hosting svizzero — progettati per flussi di lavoro ospedalieri europei.",
+    "description": "Bozza lettere di dimissione e riepiloghi ospedalieri con AI più velocemente. Documenti strutturati e revisionabili con hosting svizzero, progettati per flussi di lavoro ospedalieri europei.",
     "hero": {
       "badge": "Lettera di dimissione con AI",
       "title": "Riepiloghi di dimissione con AI senza l'arretrato notturno",
-      "subtitle": "Diagnosi, decorso, trattamento e follow-up — bozzati prima che la lettera diventi urgente.",
+      "subtitle": "Diagnosi, decorso, trattamento e follow-up, bozzati prima che la lettera diventi urgente.",
       "lead": "Le lettere di dimissione sono ad alto rischio e alto volume. DocNote aiuta i team ospedalieri a bozzare riepiloghi di dimissione strutturati dal contesto clinico così i medici validano una lettera completa invece di ricostruirla sotto pressione."
     },
     "story": {
@@ -1013,13 +1396,13 @@
       "title": "Documenti che gli ospedali producono realmente",
       "paragraphs": [
         "Un riepilogo di dimissione deve contenere diagnosi, decorso, trattamenti, follow-up e il tono che la tua istituzione si aspetta. DocNote bozza verso quella struttura così il primario modifica la verità clinica, non la formattazione.",
-        "Ritmo di reparto, file condivisi per day-hospital e team multilingue sono normali in Svizzera e Europa. DocNote è progettato intorno a questi vincoli — incluso hosting svizzero e segreto medico — piuttosto che una demo di clinica statunitense."
+        "Ritmo di reparto, file condivisi per day-hospital e team multilingue sono normali in Svizzera e Europa. DocNote è progettato intorno a questi vincoli (incluso hosting svizzero e segreto medico) piuttosto che una demo di clinica statunitense."
       ]
     },
     "benefits": {
       "badge": "Perché i team ospedalieri cambiano",
       "title": "Passaggi di consegna più sicuri e veloci",
-      "subtitle": "Le lettere di dimissione sono ad alto rischio e alto volume — entrambi devono essere rispettati.",
+      "subtitle": "Le lettere di dimissione sono ad alto rischio e alto volume: entrambi devono essere rispettati.",
       "items": [
         {
           "title": "Decorso completo, non solo un riassunto",
@@ -1031,7 +1414,7 @@
         },
         {
           "title": "Passaggi ambulatoriali più precoci",
-          "body": "Lettere più veloci significano passaggi più precoci all'assistenza ambulatoriale — senza saltare il passaggio di validazione medica."
+          "body": "Lettere più veloci significano passaggi più precoci all'assistenza ambulatoriale, senza saltare il passaggio di validazione medica."
         },
         {
           "title": "Progettato per il ritmo europeo di reparto",
@@ -1065,7 +1448,7 @@
     "proof": {
       "badge": "Progettato per la realtà ospedaliera europea",
       "title": "Compliance che regge la pressione di reparto",
-      "intro": "Le lettere di dimissione si muovono veloci sotto pressione — la storia di compliance deve tenere il passo.",
+      "intro": "Le lettere di dimissione si muovono veloci sotto pressione: la storia di compliance deve tenere il passo.",
       "points": [
         {
           "title": "Hosting svizzero",
@@ -1088,7 +1471,7 @@
     "sections": [
       {
         "heading": "Iniziare la pianificazione della dimissione prima",
-        "body": "Molti team aspettano l'ultimo giorno per scrivere la lettera, anche se il contesto clinico esiste da giorni. Quando note di consultazione e reparto sono già catturate in struttura, la bozza di dimissione può iniziare prima — lasciando al primario di rivedere e aggiungere dettagli l'ultimo giorno invece di scrivere da zero."
+        "body": "Molti team aspettano l'ultimo giorno per scrivere la lettera, anche se il contesto clinico esiste da giorni. Quando note di consultazione e reparto sono già catturate in struttura, la bozza di dimissione può iniziare prima, lasciando al primario di rivedere e aggiungere dettagli l'ultimo giorno invece di scrivere da zero."
       },
       {
         "heading": "Template per dipartimento, non un formato per tutti",
@@ -1134,7 +1517,7 @@
       },
       {
         "q": "Cosa succede se la lettera ha bisogno di modifiche urgenti?",
-        "a": "Il primario può modificare liberamente prima della validazione — nulla è archiviato automaticamente."
+        "a": "Il primario può modificare liberamente prima della validazione: nulla è archiviato automaticamente."
       }
     ],
     "cta": {
@@ -1153,14 +1536,14 @@
     "hero": {
       "badge": "Referto operatorio AI",
       "title": "Referti operatori AI che rispettano la struttura chirurgica",
-      "subtitle": "Indicazione, reperti, procedura e piano — nell'ordine richiesto da un vero referto operatorio.",
+      "subtitle": "Indicazione, reperti, procedura e piano: nell'ordine richiesto da un vero referto operatorio.",
       "lead": "I referti operatori sono precisi, ripetitivi sotto pressione e legalmente importanti. DocNote aiuta i team chirurgici a redigere note operatorie strutturate, permettendo ai chirurghi di perfezionare dettagli tecnici e reperti invece di partire da un modello vuoto alla fine di una lunga lista."
     },
     "story": {
       "badge": "In sintesi",
       "title": "Documentazione chirurgica, non una generica nota",
       "paragraphs": [
-        "Indicazione, reperti, passaggi della procedura, impianti, complicazioni e piano post-operatorio devono seguire un ordine chiaro. DocNote mira a quella struttura affinché la bozza legga come un referto operatorio — non come la trascrizione di una conversazione incollata in una lettera.",
+        "Indicazione, reperti, passaggi della procedura, impianti, complicazioni e piano post-operatorio devono seguire un ordine chiaro. DocNote mira a quella struttura affinché la bozza legga come un referto operatorio, non come la trascrizione di una conversazione incollata in una lettera.",
         "Quando il caso si conclude, la documentazione compete ancora con il paziente successivo. Una bozza solida riduce questo divario mantenendo il chirurgo responsabile della formulazione finale."
       ]
     },
@@ -1194,7 +1577,7 @@
       "items": [
         {
           "title": "Fare il debrief del caso",
-          "body": "Registra il debrief operatorio — indicazione, reperti, passaggi e piano — subito dopo la procedura."
+          "body": "Registra il debrief operatorio (indicazione, reperti, passaggi e piano) subito dopo la procedura."
         },
         {
           "title": "DocNote struttura il referto",
@@ -1213,7 +1596,7 @@
     "proof": {
       "badge": "Controlli ospedalieri",
       "title": "Progettato per servizi chirurgici sotto conformità",
-      "intro": "I referti operatori sono legalmente importanti — i controlli dietro di essi devono corrispondere a questo peso.",
+      "intro": "I referti operatori sono legalmente importanti: i controlli dietro di essi devono corrispondere a questo peso.",
       "points": [
         {
           "title": "Hosting svizzero",
@@ -1225,7 +1608,7 @@
         },
         {
           "title": "Validazione del chirurgo, sempre",
-          "body": "Nessun referto operatorio viene archiviato automaticamente — il chirurgo rivede e approva ogni referto."
+          "body": "Nessun referto operatorio viene archiviato automaticamente: il chirurgo rivede e approva ogni referto."
         },
         {
           "title": "Modelli istituzionali",
@@ -1236,7 +1619,7 @@
     "sections": [
       {
         "heading": "Dall'ultimo punto a un referto chiuso",
-        "body": "La maggiore perdita di tempo intorno ai referti operatori di solito non è la dettatura — è aspettare la sera per digitare un referto che nessuno ricorda più nei dettagli. Una bozza pronta subito dopo il debrief mantiene i dettagli freschi e riduce significativamente il tempo per l'archiviazione."
+        "body": "La maggiore perdita di tempo intorno ai referti operatori di solito non è la dettatura: è aspettare la sera per digitare un referto che nessuno ricorda più nei dettagli. Una bozza pronta subito dopo il debrief mantiene i dettagli freschi e riduce significativamente il tempo per l'archiviazione."
       },
       {
         "heading": "Specialità multiple, un formato condiviso",
@@ -1248,11 +1631,11 @@
       },
       {
         "heading": "Registrare impianti e materiali con precisione",
-        "body": "Il tracciamento degli impianti è spesso un requisito normativo, non una gentilezza opzionale. Nomi, numeri di lotto e dettagli di posizionamento devono finire nella sezione corretta in modo coerente per poter essere recuperati in seguito — durante un richiamo, un audit o una procedura di follow-up. I modelli operatori di DocNote riservano un posto dedicato a questi dettagli invece di lasciarli menzionati di passaggio."
+        "body": "Il tracciamento degli impianti è spesso un requisito normativo, non una gentilezza opzionale. Nomi, numeri di lotto e dettagli di posizionamento devono finire nella sezione corretta in modo coerente per poter essere recuperati in seguito, durante un richiamo, un audit o una procedura di follow-up. I modelli operatori di DocNote riservano un posto dedicato a questi dettagli invece di lasciarli menzionati di passaggio."
       },
       {
         "heading": "Debrief delle complicazioni con onestà",
-        "body": "Una complicazione documentata con onestà e precisione è più difendibile in seguito di una vaga — e più utile al team che gestisce il paziente dopo. I modelli di DocNote includono una sezione chiara per le complicazioni invece di mescolarle in una narrazione generale dove è facile sottovalutarle o nasconderle."
+        "body": "Una complicazione documentata con onestà e precisione è più difendibile in seguito di una vaga, e più utile al team che gestisce il paziente dopo. I modelli di DocNote includono una sezione chiara per le complicazioni invece di mescolarle in una narrazione generale dove è facile sottovalutarle o nasconderle."
       },
       {
         "heading": "Referti operatori per ospedali di formazione",
@@ -1282,7 +1665,7 @@
       },
       {
         "q": "Questo rallenta il turnover tra i casi?",
-        "a": "Il debrief richiede minuti e avviene insieme alla normale routine post-operatoria — è progettato per ridurre, non aggiungere, il tempo di turnover."
+        "a": "Il debrief richiede minuti e avviene insieme alla normale routine post-operatoria: è progettato per ridurre, non aggiungere, il tempo di turnover."
       }
     ],
     "cta": {
@@ -1294,306 +1677,10 @@
     "relatedLabel": "Guide correlate",
     "navDesc": "Dall’indicazione al piano, ordine operatorio."
   },
-  "ai-consultation-notes": {
-    "navLabel": "Note di consulto AI",
-    "title": "Note di consulto AI per medici | DocNote",
-    "description": "Note di consulto AI dalla visita — bozze strutturate per la revisione del medico. Progettato per consulti ambulatoriali e ospedalieri europei con hosting svizzero.",
-    "hero": {
-      "badge": "Note di consulto AI",
-      "title": "Note di consulto AI pronte per la tua revisione",
-      "subtitle": "Anamnesi, reperti, valutazione e piano — redatti nell'ordine che il tuo servizio si aspetta.",
-      "lead": "Le note di consulto sono la valuta quotidiana dell'assistenza ambulatoriale e specialistica. DocNote le redige dall'incontro così che tu esca dalla stanza con una nota strutturata da convalidare — non una serata a digitare."
-    },
-    "story": {
-      "badge": "In sintesi",
-      "title": "Flussi di lavoro orientati al consulto",
-      "paragraphs": [
-        "Cattura la visita, scegli il modello di consulto e rivedi una bozza che riflette anamnesi, reperti, valutazione e piano nell'ordine che il tuo servizio si aspetta.",
-        "Molti clinici europei cercano note di consulto piuttosto che il gergo SOAP statunitense. DocNote supporta entrambi i modelli mentali rimanendo orientato alle abitudini documentali svizzere ed europee, inclusi gli incontri multilingue."
-      ]
-    },
-    "benefits": {
-      "badge": "Perché i clinici lo tengono aperto tutto il giorno",
-      "title": "Una nota pronta quando la visita termina",
-      "subtitle": "Progettato per consulti ambulatoriali e specialistici durante un'intera giornata clinica.",
-      "items": [
-        {
-          "title": "Formulazione europea, non solo gergo SOAP",
-          "body": "Le note di consulto seguono modelli locali invece di imporre un unico modello mentale statunitense su ogni specialità."
-        },
-        {
-          "title": "Incontri multilingue",
-          "body": "I consulti spesso cambiano lingua — DocNote è progettato per ambienti clinici multilingue comuni in Svizzera e nell'assistenza transfrontaliera."
-        },
-        {
-          "title": "Linguaggio specialistico in 61 campi",
-          "body": "Terminologia e modelli sono adattati affinché le bozze corrispondano a come la tua specialità documenta realmente l'assistenza."
-        },
-        {
-          "title": "Una storia di privacy che i pazienti comprendono",
-          "body": "Conservazione audio breve, hosting svizzero e nessun training sulle tue visite — la stessa storia che puoi spiegare a pazienti e team di conformità."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dalla visita a una nota di consulto rivista",
-      "subtitle": "Esci dalla stanza con una bozza pronta per la convalida.",
-      "items": [
-        {
-          "title": "Cattura il consulto",
-          "body": "Registra la visita su mobile o web, seguendo il processo di consenso della tua istituzione."
-        },
-        {
-          "title": "Scegli il modello di consulto",
-          "body": "Seleziona il modello di consulto che corrisponde alla tua specialità e servizio."
-        },
-        {
-          "title": "Rivedi anamnesi, reperti, piano",
-          "body": "Una bozza strutturata che copre anamnesi, reperti, valutazione e piano è pronta in pochi secondi."
-        },
-        {
-          "title": "Modifica tanto o poco, poi firma",
-          "body": "La bozza è sempre un punto di partenza sotto la tua responsabilità clinica."
-        }
-      ]
-    },
-    "proof": {
-      "badge": "Privacy che pazienti e team di conformità comprendono",
-      "title": "La stessa storia di fiducia, ogni consulto",
-      "intro": "Le note di consulto sono la valuta quotidiana dell'assistenza ambulatoriale — la storia della privacy deve essere semplice abbastanza da ripetere ogni giorno.",
-      "points": [
-        {
-          "title": "Hosting svizzero",
-          "body": "I dati sanitari rimangono ospitati e processati secondo le aspettative svizzere."
-        },
-        {
-          "title": "Conservazione audio breve",
-          "body": "L'audio della visita viene cancellato in una finestra di conservazione breve una volta prodotta la nota."
-        },
-        {
-          "title": "Nessun training sulle visite",
-          "body": "I consulti sono usati solo per produrre il tuo documento, mai per addestrare modelli di base."
-        },
-        {
-          "title": "Modelli pronti per specialisti",
-          "body": "Linguaggio specialistico e modelli fanno parte di come DocNote è progettato in molti campi della medicina."
-        }
-      ]
-    },
-    "sections": [
-      {
-        "heading": "Note di consulto versus SOAP",
-        "body": "Molte pratiche europee documentano usando modelli locali di consulto piuttosto che la struttura SOAP statunitense. DocNote supporta entrambi i modelli mentali contemporaneamente, così una pratica con background misti non è bloccata in un unico formato."
-      },
-      {
-        "heading": "Da una prima visita a un follow-up",
-        "body": "Una prima nota chiaramente strutturata rende ogni follow-up successivo più veloce da preparare, perché anamnesi e valutazioni precedenti sono immediatamente reperibili invece di essere sparse in testo libero non strutturato."
-      },
-      {
-        "heading": "Note di consulto per specialisti, non solo medici di base",
-        "body": "I consulti specialistici spesso richiedono un equilibrio diverso di anamnesi, reperti e ragionamento rispetto a una visita di medicina generale. DocNote adatta i modelli per specialità invece di assumere che ogni nota di consulto abbia lo stesso aspetto, così un follow-up di cardiologia e una prima visita di dermatologia non condividono una struttura che non si adatta bene a nessuna delle due."
-      },
-      {
-        "heading": "Note di consulto come spina dorsale della cartella",
-        "body": "Nel corso di una relazione di cura a lungo termine, le note di consulto sono ciò che un nuovo clinico legge per primo per comprendere la storia del paziente. Una serie di note chiare e strutturate rende quella storia facile da seguire anni dopo; una serie di note frettolose e incoerenti rende ogni futura visita più lenta da preparare, indipendentemente da quanto buona fosse una singola nota al momento."
-      },
-      {
-        "heading": "Note di consulto per coperture e clinici sostituti",
-        "body": "Un clinico che copre per un collega o lavora come sostituto non ha memoria personale del paziente su cui fare affidamento. Note di consulto chiare e coerenti sono ciò che rende sicura la copertura — la struttura di DocNote è progettata pensando a quel lettore, non solo al clinico che ha scritto la nota."
-      },
-      {
-        "heading": "Mantenere le note di consulto concise senza perdere sostanza",
-        "body": "Una nota lunga non è automaticamente approfondita, e una nota breve non è automaticamente incompleta. Le bozze di DocNote puntano al livello di dettaglio di cui il tuo tipo di documento ha realmente bisogno, così la modifica di solito significa tagliare o aggiungere un punto specifico piuttosto che ristrutturare l'intera nota da zero."
-      }
-    ],
-    "faq": [
-      {
-        "q": "Le note di consulto AI sono le stesse delle note SOAP?",
-        "a": "SOAP è una struttura comune. Le note di consulto possono seguire modelli locali. DocNote redige la struttura che selezioni."
-      },
-      {
-        "q": "Anche gli specialisti possono usarlo?",
-        "a": "Sì. Linguaggio specialistico e modelli fanno parte di come DocNote è progettato in 61 specialità."
-      },
-      {
-        "q": "I pazienti devono dare il consenso alla registrazione?",
-        "a": "Segui le regole legali e istituzionali locali. DocNote supporta pratiche documentali trasparenti e rispettose della privacy; la tua organizzazione imposta il flusso di consenso."
-      },
-      {
-        "q": "Posso modificare molto prima di firmare?",
-        "a": "Sempre. La bozza è un punto di partenza sotto la tua responsabilità clinica."
-      },
-      {
-        "q": "Le note di consulto possono seguire il mio modello locale?",
-        "a": "Sì. Modelli locali e preferenze di sezione possono essere mappati durante l'onboarding."
-      },
-      {
-        "q": "Come aiuta con le visite di follow-up?",
-        "a": "Una nota chiara e strutturata dalla prima visita rende il follow-up successivo più veloce da preparare e rivedere."
-      }
-    ],
-    "cta": {
-      "title": "Lascia ogni consulto con una nota pronta per la revisione",
-      "body": "Inizia una prova gratuita e scopri come DocNote gestisce il tuo carico di consulti.",
-      "primary": "Inizia prova gratuita",
-      "secondary": "Vedi prezzi"
-    },
-    "relatedLabel": "Guide correlate",
-    "navDesc": "Dall’anamnesi al piano, nell’ordine del servizio."
-  },
-  "multilingual-ai-medical-scribe": {
-    "navLabel": "Assistente AI multilingue",
-    "title": "Scribe AI medico multilingue | DocNote",
-    "description": "Scribe AI medico multilingue per cliniche svizzere ed europee. Documenta consulti in più lingue con hosting svizzero e segreto medico.",
-    "hero": {
-      "badge": "Scribe AI multilingue",
-      "title": "Scribe AI medico multilingue per cliniche europee reali",
-      "subtitle": "Documenta consulti in più lingue senza inviare dati sanitari a uno stack solo per gli USA.",
-      "lead": "L'assistenza in Svizzera e in Europa raramente è monolingue. DocNote è uno scribe medico AI progettato per consulti multilingue — così i team documentano nelle lingue in cui lavorano realmente, senza inviare dati sanitari a uno stack ambientale solo per gli USA."
-    },
-    "story": {
-      "badge": "In sintesi",
-      "title": "Progettato dove il cambio lingua è normale",
-      "paragraphs": [
-        "Una singola giornata clinica può includere francese, tedesco, inglese, italiano o altre lingue. Gli strumenti di documentazione che assumono una sola lingua rompono questa realtà. DocNote è orientato al lavoro clinico multilingue fin dall'inizio.",
-        "L'assistenza multilingue richiede ancora confini dati rigorosi. Hosting in Svizzera, conservazione audio breve e nessun training sulle visite fanno parte di come DocNote si guadagna la fiducia di ospedali e pazienti tra gruppi linguistici."
-      ]
-    },
-    "benefits": {
-      "badge": "Perché i team multilingue scelgono DocNote",
-      "title": "Uno scribe, molte lingue, un flusso di lavoro",
-      "subtitle": "Progettato per assistenza transfrontaliera e internazionale, non per una demo monolingue.",
-      "items": [
-        {
-          "title": "Gestisce il mix linguistico reale di una giornata clinica",
-          "body": "Francese, tedesco, inglese, italiano o altre lingue nello stesso giorno — la documentazione tiene il passo senza cambiare strumenti."
-        },
-        {
-          "title": "Stesso scribe, molti tipi di documento",
-          "body": "Che tu abbia bisogno di note di consulto, lettere di dimissione o referti specialistici, la cattura multilingue alimenta lo stesso flusso di revisione e convalida."
-        },
-        {
-          "title": "Hosting svizzero per ogni lingua",
-          "body": "I confini dei dati non si allentano solo perché l'incontro ha cambiato lingua a metà visita."
-        },
-        {
-          "title": "Progettato per servizi pazienti internazionali",
-          "body": "Cliniche private, centri accademici e team transfrontalieri hanno bisogno di documentazione che tenga il passo con la diversità linguistica senza sacrificare la conformità."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Da un incontro multilingue a una nota chiara",
-      "subtitle": "Il cambio lingua non interrompe il flusso di lavoro.",
-      "items": [
-        {
-          "title": "Cattura l'incontro come viene parlato",
-          "body": "Registra il consulto come avviene, in qualsiasi lingua o mix di lingue la visita utilizzi."
-        },
-        {
-          "title": "DocNote struttura il contenuto",
-          "body": "Il contenuto parlato viene mappato nel tipo di nota e nella struttura che il tuo servizio si aspetta."
-        },
-        {
-          "title": "Rivedi nella lingua di output preferita",
-          "body": "Parlaci della tua lingua di output preferita e dei modelli per il tuo team."
-        },
-        {
-          "title": "Convalida come al solito",
-          "body": "Il clinico rivede e approva — la stessa responsabilità di qualsiasi altro incontro."
-        }
-      ]
-    },
-    "proof": {
-      "badge": "Hosting svizzero come caratteristica del prodotto",
-      "title": "Fiducia che non dipende dalla lingua parlata",
-      "intro": "L'assistenza multilingue richiede ancora confini dati rigorosi e coerenti.",
-      "points": [
-        {
-          "title": "Hosting svizzero",
-          "body": "L'hosting in Svizzera si applica a ogni incontro, indipendentemente dalla lingua."
-        },
-        {
-          "title": "Conservazione audio breve",
-          "body": "L'audio viene cancellato automaticamente poco dopo la produzione del documento."
-        },
-        {
-          "title": "Nessun training sulle visite",
-          "body": "I consulti multilingue non sono mai usati per addestrare modelli di base."
-        },
-        {
-          "title": "Non uno stack ambientale solo per gli USA",
-          "body": "Elaborazione e hosting allineati con le aspettative svizzere ed europee, un differenziale chiave rispetto a molti strumenti statunitensi."
-        }
-      ]
-    },
-    "sections": [
-      {
-        "heading": "Quando un consulto cambia lingua a metà frase",
-        "body": "Nella pratica, pazienti e clinici spesso passano tra lingue nello stesso consulto, specialmente nelle regioni di confine e nei centri internazionali. DocNote è progettato per gestire questi cambiamenti senza configurazione separata per lingua, invece di interrompere la cattura ogni volta che la lingua cambia."
-      },
-      {
-        "heading": "Configurare la lingua di output separatamente dalla visita",
-        "body": "Un team può documentare in una lingua e produrre output in un'altra se corrisponde allo standard istituzionale. Questo è configurato per team durante l'onboarding, non per singolo consulto."
-      },
-      {
-        "heading": "Documentazione multilingue per servizi pazienti internazionali",
-        "body": "Cliniche private e centri accademici che vedono pazienti dall'estero spesso hanno bisogno di documentazione che tenga il passo con più lingue di una pratica regionale tipica. DocNote è costruito intorno a questa realtà fin dall'inizio, invece di trattare lingue aggiuntive come una funzionalità aggiunta a un prodotto monolingue."
-      },
-      {
-        "heading": "Perché gli strumenti ambientali generici faticano con il cambio lingua",
-        "body": "La maggior parte degli scribe ambientali sono addestrati e sintonizzati su una singola lingua principale, con altre lingue trattate come un ripensamento. Questo si manifesta come cali di precisione proprio quando un consulto cambia lingua a metà frase — spesso il momento in cui un paziente spiega il suo sintomo più importante. L'attenzione multilingue di DocNote è una scelta di design, non un livello di traduzione aggiunto."
-      },
-      {
-        "heading": "Supportare consulti con interprete",
-        "body": "Alcuni incontri coinvolgono un interprete professionale piuttosto che un clinico bilingue che parla direttamente con il paziente. DocNote può catturare e strutturare anche queste conversazioni a tre; parlaci dello schema specifico che il tuo servizio usa per le visite con interprete durante l'onboarding."
-      },
-      {
-        "heading": "Implementare documentazione multilingue in un gruppo",
-        "body": "Un gruppo di cliniche che opera in più regioni linguistiche tipicamente standardizza prima su modelli condivisi, poi permette a singoli siti di configurare le loro lingue di consulto e output preferite. Questa sequenza mantiene la struttura della cartella comparabile nel gruppo rispettando ancora le esigenze linguistiche locali in ogni singolo sito."
-      }
-    ],
-    "faq": [
-      {
-        "q": "Quali lingue può gestire DocNote?",
-        "a": "DocNote è progettato per ambienti multilingue svizzeri ed europei. Conferma il tuo mix linguistico con il nostro team durante l'onboarding."
-      },
-      {
-        "q": "La nota può essere prodotta in una lingua diversa dalla visita?",
-        "a": "I flussi di lavoro variano per organizzazione. Parlaci della tua lingua di output preferita e dei modelli."
-      },
-      {
-        "q": "Il supporto multilingue è solo per l'assistenza ambulatoriale?",
-        "a": "No. Sono supportati tipi di documento ospedalieri insieme alle note di consulto."
-      },
-      {
-        "q": "L'elaborazione multilingue lascia la Svizzera?",
-        "a": "DocNote è progettato affinché l'hosting e l'elaborazione dei dati sanitari siano allineati con le aspettative svizzere — un differenziale chiave rispetto a molti strumenti ambientali statunitensi."
-      },
-      {
-        "q": "I clinici devono parlare ogni lingua supportata?",
-        "a": "No. DocNote è costruito per gestire la lingua che paziente e clinico usano realmente, inclusi incontri in lingue miste."
-      },
-      {
-        "q": "Diverse cliniche nello stesso gruppo possono usare lingue di output diverse?",
-        "a": "Sì, lingua di output e modelli possono essere configurati per team durante l'onboarding."
-      }
-    ],
-    "cta": {
-      "title": "Documenta l'assistenza nelle lingue in cui lavori realmente",
-      "body": "Inizia una prova gratuita o parlaci del tuo mix linguistico.",
-      "primary": "Inizia prova gratuita",
-      "secondary": "Vedi prezzi"
-    },
-    "relatedLabel": "Guide correlate",
-    "navDesc": "Note multilingue su infrastruttura svizzera."
-  },
   "ai-scribe-general-practice": {
     "navLabel": "Assistente AI per MMG",
     "title": "Scribe AI medico per medicina generale | DocNote",
-    "description": "Scribe AI medico per medicina generale e medicina di famiglia. Note di consulto e follow-up più veloci con hosting svizzero — progettato per cliniche di MMG impegnate.",
+    "description": "Scribe AI medico per medicina generale e medicina di famiglia. Note di consulto e follow-up più veloci con hosting svizzero, progettato per cliniche di MMG impegnate.",
     "hero": {
       "badge": "Scribe AI per medicina generale",
       "title": "Scribe AI medico per medicina generale",
@@ -1605,7 +1692,7 @@
       "title": "Progettato per il ritmo del MMG",
       "paragraphs": [
         "Consulti consecutivi, multimorbidità e follow-up amministrativi lasciano poco spazio alla digitazione. Cattura ambientale più una bozza strutturata riduce il divario tra l'ultimo paziente e una nota chiusa.",
-        "Note di consulto, lettere di riferimento e piani di follow-up — non solo una demo SOAP. I modelli si adattano a come la tua pratica documenta l'assistenza, che tu lavori da solo o insieme ad altri clinici nella stessa pratica."
+        "Note di consulto, lettere di riferimento e piani di follow-up, non solo una demo SOAP. I modelli si adattano a come la tua pratica documenta l'assistenza, che tu lavori da solo o insieme ad altri clinici nella stessa pratica."
       ]
     },
     "benefits": {
@@ -1623,7 +1710,7 @@
         },
         {
           "title": "Privacy per la pratica comunitaria",
-          "body": "I pazienti si fidano del loro MMG con storie sensibili — hosting svizzero e conservazione audio breve supportano quella fiducia."
+          "body": "I pazienti si fidano del loro MMG con storie sensibili: hosting svizzero e conservazione audio breve supportano quella fiducia."
         },
         {
           "title": "Coerente in tutta la pratica",
@@ -1646,7 +1733,7 @@
         },
         {
           "title": "Modifica rapidamente",
-          "body": "Modifica tra pazienti — la maggior parte delle bozze necessita solo di piccole correzioni."
+          "body": "Modifica tra pazienti: la maggior parte delle bozze necessita solo di piccole correzioni."
         },
         {
           "title": "Convalida e vai avanti",
@@ -1657,7 +1744,7 @@
     "proof": {
       "badge": "Privacy per la pratica comunitaria",
       "title": "La fiducia che i tuoi pazienti ti danno già",
-      "intro": "La pratica comunitaria funziona su fiducia a lungo termine — lo strumento di documentazione deve guadagnarsi il suo posto in quella relazione.",
+      "intro": "La pratica comunitaria funziona su fiducia a lungo termine: lo strumento di documentazione deve guadagnarsi il suo posto in quella relazione.",
       "points": [
         {
           "title": "Hosting svizzero",
@@ -1688,7 +1775,7 @@
       },
       {
         "heading": "Lettere di riferimento della medicina generale che vengono lette",
-        "body": "Una lettera di riferimento compete per l'attenzione di uno specialista con dozzine di altre. DocNote redige lettere di riferimento con lo stesso approccio strutturato delle note di consulto — motivo del riferimento, storia rilevante e la domanda specifica a cui vuoi una risposta — così la lettera ha più probabilità di ottenere una risposta utile."
+        "body": "Una lettera di riferimento compete per l'attenzione di uno specialista con dozzine di altre. DocNote redige lettere di riferimento con lo stesso approccio strutturato delle note di consulto (motivo del riferimento, storia rilevante e la domanda specifica a cui vuoi una risposta) così la lettera ha più probabilità di ottenere una risposta utile."
       },
       {
         "heading": "Perché la medicina generale ha bisogno dei suoi modelli",
@@ -1696,7 +1783,7 @@
       },
       {
         "heading": "Supportare visite domiciliari e assistenza fuori orario",
-        "body": "La medicina generale non si ferma alla porta della clinica — visite domiciliari e coperture fuori orario fanno parte della routine di molti MMG. La cattura mobile significa che lo stesso flusso strutturato si applica sia che il consulto avvenga in una sala visita sia al tavolo della cucina di un paziente, senza un processo separato per visite fuori dalla pratica."
+        "body": "La medicina generale non si ferma alla porta della clinica: visite domiciliari e coperture fuori orario fanno parte della routine di molti MMG. La cattura mobile significa che lo stesso flusso strutturato si applica sia che il consulto avvenga in una sala visita sia al tavolo della cucina di un paziente, senza un processo separato per visite fuori dalla pratica."
       },
       {
         "heading": "Documentazione di cure preventive senza click extra",
@@ -1714,7 +1801,7 @@
       },
       {
         "q": "Possiamo usarlo per consulti telefonici o video?",
-        "a": "I flussi supportati dipendono dal tuo setup — chiedi durante l'onboarding della cattura telehealth."
+        "a": "I flussi supportati dipendono dal tuo setup: chiedi durante l'onboarding della cattura telehealth."
       },
       {
         "q": "Come aiuta con la documentazione serale?",
@@ -1726,7 +1813,7 @@
       },
       {
         "q": "DocNote può aiutare con follow-up di malattie croniche?",
-        "a": "Sì — strutture di follow-up ricorrenti possono essere adattate così che le visite con multimorbidità rimangano organizzate tra appuntamenti."
+        "a": "Sì: strutture di follow-up ricorrenti possono essere adattate così che le visite con multimorbidità rimangano organizzate tra appuntamenti."
       },
       {
         "q": "C'è una curva di apprendimento per MMG singoli?",
@@ -1745,7 +1832,7 @@
   "ai-scribe-psychiatry": {
     "navLabel": "Assistente AI per psichiatria",
     "title": "Assistente medico AI per psichiatria | DocNote",
-    "description": "Assistente medico AI per psichiatria e consultazioni di salute mentale. Note strutturate con privacy elevata — hosting svizzero e segreto medico.",
+    "description": "Assistente medico AI per psichiatria e consultazioni di salute mentale. Note strutturate con privacy elevata, hosting svizzero e segreto medico.",
     "hero": {
       "badge": "Assistente AI per psichiatria",
       "title": "Assistente medico AI per psichiatria",
@@ -1757,7 +1844,7 @@
       "title": "Note che rispettano le sfumature psichiatriche",
       "paragraphs": [
         "Lo stato mentale, il rischio, i cambiamenti di terapia e il contesto terapeutico richiedono una formulazione attenta. DocNote crea una bozza strutturata; lo psichiatra mantiene il pieno controllo su ciò che entra nella cartella.",
-        "Le conversazioni psichiatriche richiedono confini rigorosi. DocNote non utilizza le visite per addestrare modelli di base, è ospitato in Svizzera e cancella gli audio in breve tempo — le stesse aspettative che i pazienti hanno per qualsiasi incontro di salute mentale."
+        "Le conversazioni psichiatriche richiedono confini rigorosi. DocNote non utilizza le visite per addestrare modelli di base, è ospitato in Svizzera e cancella gli audio in breve tempo, le stesse aspettative che i pazienti hanno per qualsiasi incontro di salute mentale."
       ]
     },
     "benefits": {
@@ -1767,11 +1854,11 @@
       "items": [
         {
           "title": "Stato mentale e rischio, redatti con cura",
-          "body": "Punti di partenza strutturati per lo stato mentale, il rischio e i cambiamenti di terapia — sempre sotto il pieno controllo del clinico."
+          "body": "Punti di partenza strutturati per lo stato mentale, il rischio e i cambiamenti di terapia, sempre sotto il pieno controllo del clinico."
         },
         {
           "title": "Privacy più rigorosa per impostazione predefinita",
-          "body": "Nessun addestramento sulle visite, hosting svizzero e breve conservazione degli audio — i confini che richiede la cura psichiatrica."
+          "body": "Nessun addestramento sulle visite, hosting svizzero e breve conservazione degli audio: i confini che richiede la cura psichiatrica."
         },
         {
           "title": "Ambulatori e contesti istituzionali",
@@ -1779,7 +1866,7 @@
         },
         {
           "title": "Progettato per pazienti multilingue",
-          "body": "La salute mentale spesso attraversa lingue diverse — DocNote è pensato per ambienti clinici europei multilingue."
+          "body": "La salute mentale spesso attraversa lingue diverse: DocNote è pensato per ambienti clinici europei multilingue."
         }
       ]
     },
@@ -1802,7 +1889,7 @@
         },
         {
           "title": "Modifica liberamente prima della validazione",
-          "body": "Le bozze non vengono mai archiviate automaticamente — lo psichiatra modifica e approva ogni nota."
+          "body": "Le bozze non vengono mai archiviate automaticamente: lo psichiatra modifica e approva ogni nota."
         }
       ]
     },
@@ -1832,7 +1919,7 @@
     "sections": [
       {
         "heading": "Quando la cattura ambientale ha senso in psichiatria",
-        "body": "Non tutte le sedute si prestano alla registrazione ambientale. Le prime sedute emotivamente intense, le conversazioni di crisi o i contenuti particolarmente sensibili sono spesso meglio gestiti con la documentazione tradizionale. DocNote supporta questa decisione piuttosto che imporla — il giudizio clinico rimane sempre al clinico."
+        "body": "Non tutte le sedute si prestano alla registrazione ambientale. Le prime sedute emotivamente intense, le conversazioni di crisi o i contenuti particolarmente sensibili sono spesso meglio gestiti con la documentazione tradizionale. DocNote supporta questa decisione piuttosto che imporla: il giudizio clinico rimane sempre al clinico."
       },
       {
         "heading": "Documentare attraverso più sedute",
@@ -1840,11 +1927,11 @@
       },
       {
         "heading": "Perché la psichiatria ha bisogno di impostazioni predefinite più rigorose",
-        "body": "Le cartelle di salute mentale comportano un particolare rischio di stigma se perdute o gestite con negligenza. Le impostazioni predefinite più rigorose di DocNote — nessun addestramento sulle visite, breve conservazione, hosting svizzero — non sono un'aggiunta speciale per la psichiatria; sono gli stessi impegni che la piattaforma assume ovunque, applicati a una specialità dove i pazienti sentono maggiormente le poste in gioco."
+        "body": "Le cartelle di salute mentale comportano un particolare rischio di stigma se perdute o gestite con negligenza. Le impostazioni predefinite più rigorose di DocNote (nessun addestramento sulle visite, breve conservazione, hosting svizzero) non sono un'aggiunta speciale per la psichiatria; sono gli stessi impegni che la piattaforma assume ovunque, applicati a una specialità dove i pazienti sentono maggiormente le poste in gioco."
       },
       {
         "heading": "Lavorare accanto alle note di psicoterapia esistenti",
-        "body": "Molti psichiatri già tengono note separate per il contenuto terapeutico che rimane fuori dalla cartella clinica formale. DocNote redige la nota clinica strutturata — stato mentale, rischio, piano — senza richiedere di cambiare come gestisci quelle note separate."
+        "body": "Molti psichiatri già tengono note separate per il contenuto terapeutico che rimane fuori dalla cartella clinica formale. DocNote redige la nota clinica strutturata (stato mentale, rischio, piano) senza richiedere di cambiare come gestisci quelle note separate."
       },
       {
         "heading": "Documentare la valutazione del rischio in modo coerente",
@@ -1852,7 +1939,7 @@
       },
       {
         "heading": "Psichiatria istituzionale versus studio privato",
-        "body": "Un servizio di psichiatria ospedaliera e uno studio privato individuale hanno obblighi di documentazione diversi — modelli istituzionali, requisiti assicurativi e doveri di reporting possono variare. I modelli di DocNote sono configurati per contesto durante l'onboarding piuttosto che assumere che una forma vada bene per entrambi."
+        "body": "Un servizio di psichiatria ospedaliera e uno studio privato individuale hanno obblighi di documentazione diversi: modelli istituzionali, requisiti assicurativi e doveri di reporting possono variare. I modelli di DocNote sono configurati per contesto durante l'onboarding piuttosto che assumere che una forma vada bene per entrambi."
       },
       {
         "heading": "Tracciare i cambiamenti di terapia in un lungo percorso di trattamento",
@@ -1878,11 +1965,11 @@
       },
       {
         "q": "Il contenuto terapeutico può essere escluso dalle bozze di documentazione?",
-        "a": "I clinici controllano esattamente cosa includere prima della validazione — nulla viene archiviato senza revisione."
+        "a": "I clinici controllano esattamente cosa includere prima della validazione: nulla viene archiviato senza revisione."
       },
       {
         "q": "Funziona per i reparti di psichiatria ospedaliera?",
-        "a": "Sì, insieme allo studio privato — i modelli e i flussi istituzionali applicano la stessa disciplina di revisione."
+        "a": "Sì, insieme allo studio privato: i modelli e i flussi istituzionali applicano la stessa disciplina di revisione."
       }
     ],
     "cta": {
@@ -1909,7 +1996,7 @@
       "title": "Linguaggio specialistico che conta",
       "paragraphs": [
         "Sintomi, reperti dell'esame, contesto di imaging e cambiamenti del piano richiedono un vocabolario cardiologico. DocNote mira a bozze consapevoli della specialità così i cardiologi passano meno tempo a digitare e più tempo sulle decisioni cliniche.",
-        "Follow-up ambulatoriali e documentazione ospedaliera possono vivere nello stesso stack di documentazione AI — inclusi percorsi verso le lettere di dimissione quando un paziente è ricoverato."
+        "Follow-up ambulatoriali e documentazione ospedaliera possono vivere nello stesso stack di documentazione AI, inclusi percorsi verso le lettere di dimissione quando un paziente è ricoverato."
       ]
     },
     "benefits": {
@@ -1996,7 +2083,7 @@
       },
       {
         "heading": "Perché il vocabolario cardiologico conta per l'adozione",
-        "body": "Un assistente che fraintende o struttura male i termini specifici della cardiologia — classe NYHA, frazione di eiezione, tipi specifici di aritmia — crea più lavoro di correzione di quanto risparmi. Il linguaggio specialistico di DocNote fa la differenza tra uno strumento che i clinici tollerano e uno che tengono effettivamente aperto tutto il giorno."
+        "body": "Un assistente che fraintende o struttura male i termini specifici della cardiologia (classe NYHA, frazione di eiezione, tipi specifici di aritmia) crea più lavoro di correzione di quanto risparmi. Il linguaggio specialistico di DocNote fa la differenza tra uno strumento che i clinici tollerano e uno che tengono effettivamente aperto tutto il giorno."
       },
       {
         "heading": "Collegare la cardiologia ambulatoriale alle cure ospedaliere",
@@ -2008,7 +2095,7 @@
       },
       {
         "heading": "Documentare i fattori di rischio in modo coerente",
-        "body": "Fattori di rischio cardiovascolare — fumo, storia familiare, trend di lipidi e pressione — devono essere visibili tra le visite, non sepolti in una singola consultazione. I modelli cardiologici di DocNote mantengono un posto coerente per questi fattori così si trasmettono in modo leggibile invece di dover essere reimpostati da zero ogni volta."
+        "body": "Fattori di rischio cardiovascolare (fumo, storia familiare, trend di lipidi e pressione) devono essere visibili tra le visite, non sepolti in una singola consultazione. I modelli cardiologici di DocNote mantengono un posto coerente per questi fattori così si trasmettono in modo leggibile invece di dover essere reimpostati da zero ogni volta."
       },
       {
         "heading": "Prepararsi alle revisioni multidisciplinari del team cardiaco",
@@ -2030,7 +2117,7 @@
       },
       {
         "q": "Chi convalida la nota cardiologica?",
-        "a": "Il clinico responsabile — sempre."
+        "a": "Il clinico responsabile, sempre."
       },
       {
         "q": "I reperti di imaging possono essere inclusi nella bozza?",
@@ -2038,7 +2125,7 @@
       },
       {
         "q": "DocNote supporta le visite di follow-up delle procedure?",
-        "a": "Sì — i follow-up ambulatoriali dopo le procedure sono un caso d'uso comune insieme alle prime consultazioni."
+        "a": "Sì: i follow-up ambulatoriali dopo le procedure sono un caso d'uso comune insieme alle prime consultazioni."
       }
     ],
     "cta": {
@@ -2064,7 +2151,7 @@
       "badge": "In sintesi",
       "title": "Note che si adattano alle visite pediatriche",
       "paragraphs": [
-        "Anamnesi dai caregiver, reperti dell'esame, guida anticipatoria e follow-up — redatti in una struttura che puoi modificare rapidamente tra pazienti.",
+        "Anamnesi dai caregiver, reperti dell'esame, guida anticipatoria e follow-up: redatti in una struttura che puoi modificare rapidamente tra pazienti.",
         "I caregiver possono parlare lingue diverse da quella della nota e le visite sono centrate sulla famiglia e veloci. DocNote è costruito per cliniche europee multilingue e il ritmo particolare della cura pediatrica."
       ]
     },
@@ -2087,7 +2174,7 @@
         },
         {
           "title": "Costruito per famiglie multilingue",
-          "body": "I caregiver possono parlare una lingua diversa da quella della nota — DocNote è costruito per cliniche europee multilingue."
+          "body": "I caregiver possono parlare una lingua diversa da quella della nota: DocNote è costruito per cliniche europee multilingue."
         }
       ]
     },
@@ -2117,7 +2204,7 @@
     "proof": {
       "badge": "Privacy per bambini e famiglie",
       "title": "La fiducia elevata che richiede la cura pediatrica",
-      "intro": "La documentazione per i bambini ha un peso extra — la storia della privacy deve corrispondere.",
+      "intro": "La documentazione per i bambini ha un peso extra: la storia della privacy deve corrispondere.",
       "points": [
         {
           "title": "Hosting svizzero",
@@ -2152,7 +2239,7 @@
       },
       {
         "heading": "Documentare la guida anticipatoria in modo coerente",
-        "body": "La guida anticipatoria — consigli di sicurezza, traguardi di sviluppo da monitorare, quando cercare assistenza — è facile da saltare quando una visita si prolunga. Un modello strutturato mantiene un segnaposto per questa guida in ogni nota, rendendo più facile confermare che è stata effettivamente coperta piuttosto che data per scontata."
+        "body": "La guida anticipatoria (consigli di sicurezza, traguardi di sviluppo da monitorare, quando cercare assistenza) è facile da saltare quando una visita si prolunga. Un modello strutturato mantiene un segnaposto per questa guida in ogni nota, rendendo più facile confermare che è stata effettivamente coperta piuttosto che data per scontata."
       },
       {
         "heading": "Lavorare con caregiver divorziati o separati",
@@ -2160,7 +2247,7 @@
       },
       {
         "heading": "Documentare le note per la scuola e l'asilo in modo efficiente",
-        "body": "Oltre alla nota clinica stessa, gli studi pediatrici spesso hanno bisogno di brevi lettere amministrative — per la scuola, l'idoneità sportiva o l'asilo — che fanno riferimento alla stessa visita. Poiché la visita sottostante è già strutturata, generare questi documenti più brevi richiede meno lavoro rispetto a partire da una nota non strutturata ogni volta."
+        "body": "Oltre alla nota clinica stessa, gli studi pediatrici spesso hanno bisogno di brevi lettere amministrative (per la scuola, l'idoneità sportiva o l'asilo) che fanno riferimento alla stessa visita. Poiché la visita sottostante è già strutturata, generare questi documenti più brevi richiede meno lavoro rispetto a partire da una nota non strutturata ogni volta."
       },
       {
         "heading": "Seguire crescita e sviluppo nel corso degli anni",
@@ -2178,7 +2265,7 @@
       },
       {
         "q": "Le visite di controllo sono supportate?",
-        "a": "Sì — note di tipo consultazione per visite di routine e acute possono usare i tuoi modelli preferiti."
+        "a": "Sì: note di tipo consultazione per visite di routine e acute possono usare i tuoi modelli preferiti."
       },
       {
         "q": "DocNote è solo per ospedali?",
@@ -2194,7 +2281,7 @@
       },
       {
         "q": "DocNote gestisce visite di controllo e acute in modo diverso?",
-        "a": "Sì — possono essere selezionati modelli diversi a seconda del tipo di visita."
+        "a": "Sì: possono essere selezionati modelli diversi a seconda del tipo di visita."
       }
     ],
     "cta": {
@@ -2204,12 +2291,12 @@
       "secondary": "Vedi prezzi"
     },
     "relatedLabel": "Guide correlate",
-    "navDesc": "Crescita, sintomi, piano — occhi sul bambino."
+    "navDesc": "Crescita, sintomi, piano: occhi sul bambino."
   },
   "ai-scribe-emergency-medicine": {
     "navLabel": "Assistente AI per pronto soccorso",
     "title": "Assistente medico AI per medicina d'urgenza | DocNote",
-    "description": "Assistente medico AI per medicina d'urgenza e cure urgenti. Note strutturate più veloci in ambienti ad alto ritmo — ospitato in Svizzera per team ospedalieri.",
+    "description": "Assistente medico AI per medicina d'urgenza e cure urgenti. Note strutturate più veloci in ambienti ad alto ritmo, ospitato in Svizzera per team ospedalieri.",
     "hero": {
       "badge": "Assistente AI per medicina d'urgenza",
       "title": "Assistente medico AI per medicina d'urgenza",
@@ -2221,7 +2308,7 @@
       "title": "Velocità senza trascurare la registrazione",
       "paragraphs": [
         "Il motivo del ricovero, la cronologia, l'esame, gli accertamenti e la disposizione devono essere registrati. Una bozza solida riduce il tempo di chiusura mentre il clinico rimane responsabile.",
-        "Le cure d'emergenza sono rumorose, incomplete e linguisticamente miste. DocNote è progettato per reparti e box reali — non per stanze demo silenziose — e si connette alla stessa piattaforma di documentazione ospedaliera utilizzata per ammissioni e dimissioni."
+        "Le cure d'emergenza sono rumorose, incomplete e linguisticamente miste. DocNote è progettato per reparti e box reali (non per stanze demo silenziose) e si connette alla stessa piattaforma di documentazione ospedaliera utilizzata per ammissioni e dimissioni."
       ]
     },
     "benefits": {
@@ -2235,7 +2322,7 @@
         },
         {
           "title": "Progettato per ambienti rumorosi e reali",
-          "body": "Ideato per box e reparti rumorosi e linguisticamente misti — non per stanze demo silenziose."
+          "body": "Ideato per box e reparti rumorosi e linguisticamente misti, non per stanze demo silenziose."
         },
         {
           "title": "Si connette alla piattaforma di documentazione ospedaliera",
@@ -2300,11 +2387,11 @@
       },
       {
         "heading": "Gestione di incontri interrotti",
-        "body": "Nel PS, la documentazione raramente viene completata in un'unica passata — le interruzioni per nuovi casi sono normali. DocNote riassume ciò che è stato effettivamente catturato e lascia al medico curante il compito di colmare le lacune durante la revisione, piuttosto che presupporre una cattura ininterrotta."
+        "body": "Nel PS, la documentazione raramente viene completata in un'unica passata: le interruzioni per nuovi casi sono normali. DocNote riassume ciò che è stato effettivamente catturato e lascia al medico curante il compito di colmare le lacune durante la revisione, piuttosto che presupporre una cattura ininterrotta."
       },
       {
         "heading": "Riduzione del tempo di chiusura senza tagliare gli angoli",
-        "body": "I pronto soccorso sono spesso misurati su quanto velocemente un caso viene chiuso dopo la disposizione, insieme alle metriche di qualità clinica. Una bozza più veloce riduce questo gap, ma il passo di validazione non scompare mai — DocNote è progettato per accelerare la digitazione, non per rimuovere il controllo finale del medico."
+        "body": "I pronto soccorso sono spesso misurati su quanto velocemente un caso viene chiuso dopo la disposizione, insieme alle metriche di qualità clinica. Una bozza più veloce riduce questo gap, ma il passo di validazione non scompare mai: DocNote è progettato per accelerare la digitazione, non per rimuovere il controllo finale del medico."
       },
       {
         "heading": "Integrazione nei flussi di lavoro dal triage alla dimissione",
@@ -2312,11 +2399,11 @@
       },
       {
         "heading": "Documentazione sotto reale pressione temporale",
-        "body": "La medicina d'urgenza è uno dei pochi contesti in cui la documentazione compete davvero con la prossima decisione critica, non solo con il prossimo paziente. Una bozza che è per lo più corretta dopo la cattura, necessitando solo di correzioni piuttosto che di composizione, è ciò che effettivamente fa risparmiare tempo qui — scrivere da una pagina bianca durante un turno intenso raramente è realistico."
+        "body": "La medicina d'urgenza è uno dei pochi contesti in cui la documentazione compete davvero con la prossima decisione critica, non solo con il prossimo paziente. Una bozza che è per lo più corretta dopo la cattura, necessitando solo di correzioni piuttosto che di composizione, è ciò che effettivamente fa risparmiare tempo qui: scrivere da una pagina bianca durante un turno intenso raramente è realistico."
       },
       {
         "heading": "Collegamento delle note del PS alle consulenze specialistiche",
-        "body": "Molti casi al PS coinvolgono una consulenza specialistica a metà visita — cardiologia, chirurgia, psichiatria — che deve essere riflessa nella nota finale insieme ai risultati del team del PS. La piattaforma ospedaliera di DocNote significa che la nota di consulenza dello specialista e la nota del PS possono riferirsi allo stesso caso in modo coerente invece di vivere in sistemi disconnessi."
+        "body": "Molti casi al PS coinvolgono una consulenza specialistica a metà visita (cardiologia, chirurgia, psichiatria) che deve essere riflessa nella nota finale insieme ai risultati del team del PS. La piattaforma ospedaliera di DocNote significa che la nota di consulenza dello specialista e la nota del PS possono riferirsi allo stesso caso in modo coerente invece di vivere in sistemi disconnessi."
       },
       {
         "heading": "Pilota senza interrompere un reparto attivo",
@@ -2338,11 +2425,11 @@
       },
       {
         "q": "Chi possiede la nota finale del PS?",
-        "a": "Il medico curante o il firmatario autorizzato — mai solo il modello."
+        "a": "Il medico curante o il firmatario autorizzato, mai solo il modello."
       },
       {
         "q": "DocNote può gestire incontri interrotti o incompleti?",
-        "a": "Sì — le bozze riflettono ciò che è stato catturato, e i medici completano o correggono le lacune durante la revisione."
+        "a": "Sì: le bozze riflettono ciò che è stato catturato, e i medici completano o correggono le lacune durante la revisione."
       },
       {
         "q": "Come possiamo fare un pilota senza interrompere un turno?",
@@ -2383,7 +2470,7 @@
       "items": [
         {
           "title": "Documentazione operatoria e clinica insieme",
-          "body": "Usa DocNote per bozze di referti operatori e consultazioni chirurgiche ambulatoriali — una piattaforma per il percorso perioperatorio."
+          "body": "Usa DocNote per bozze di referti operatori e consultazioni chirurgiche ambulatoriali: una piattaforma per il percorso perioperatorio."
         },
         {
           "title": "Modelli che corrispondono al tuo servizio",
@@ -2448,7 +2535,7 @@
     "sections": [
       {
         "heading": "Copertura dell'intero percorso perioperatorio",
-        "body": "Un caso chirurgico genera documentazione prima, durante e dopo la procedura — dalla visita pre-operatoria al controllo post-operatorio. Poiché la stessa piattaforma copre tutti questi passaggi, nessun team deve passare tra più strumenti per seguire lo stesso caso."
+        "body": "Un caso chirurgico genera documentazione prima, durante e dopo la procedura: dalla visita pre-operatoria al controllo post-operatorio. Poiché la stessa piattaforma copre tutti questi passaggi, nessun team deve passare tra più strumenti per seguire lo stesso caso."
       },
       {
         "heading": "Coerenza tra più chirurghi",
@@ -2456,11 +2543,11 @@
       },
       {
         "heading": "Collegamento dei follow-up clinici al referto operatorio originale",
-        "body": "Una visita post-operatoria si legge meglio quando può riferirsi chiaramente alla procedura originale — cosa è stato fatto, quali complicazioni sono state notate, quale era il piano. Poiché DocNote gestisce entrambi i tipi di documento, questa continuità è più facile da mantenere rispetto a quando le note cliniche e i referti operatori vivono in sistemi separati."
+        "body": "Una visita post-operatoria si legge meglio quando può riferirsi chiaramente alla procedura originale: cosa è stato fatto, quali complicazioni sono state notate, quale era il piano. Poiché DocNote gestisce entrambi i tipi di documento, questa continuità è più facile da mantenere rispetto a quando le note cliniche e i referti operatori vivono in sistemi separati."
       },
       {
         "heading": "Onboarding di un reparto chirurgico per linea specialistica",
-        "body": "Ortopedia, chirurgia generale e altre linee chirurgiche raramente condividono abitudini di documentazione identiche anche nello stesso ospedale. Un lancio a livello di reparto tipicamente mappa prima i modelli esistenti di ogni linea, poi addestra su casi reali prima di espandersi — la stessa sequenza che funziona per qualsiasi specialità."
+        "body": "Ortopedia, chirurgia generale e altre linee chirurgiche raramente condividono abitudini di documentazione identiche anche nello stesso ospedale. Un lancio a livello di reparto tipicamente mappa prima i modelli esistenti di ogni linea, poi addestra su casi reali prima di espandersi, la stessa sequenza che funziona per qualsiasi specialità."
       },
       {
         "heading": "Documentazione di un episodio chirurgico completo, dall'inizio alla fine",
@@ -2494,7 +2581,7 @@
       },
       {
         "q": "Possiamo iniziare con note cliniche prima dei referti operatori?",
-        "a": "Sì — i team possono iniziare con entrambi i tipi di documento e aggiungere l'altro una volta che il flusso di lavoro è convalidato."
+        "a": "Sì: i team possono iniziare con entrambi i tipi di documento e aggiungere l'altro una volta che il flusso di lavoro è convalidato."
       },
       {
         "q": "Come condividono i modelli più chirurghi in un servizio?",
@@ -2525,7 +2612,7 @@
       "title": "Alto volume, note chiare",
       "paragraphs": [
         "Descrizioni delle lesioni, valutazioni, procedure e piani devono essere registrati accuratamente. Una bozza consapevole della specialità riduce la digitazione ripetitiva tra incontri brevi e in rapido movimento.",
-        "Cattura la visita, rivedi la bozza orientata alla dermatologia, convalida e prosegui — senza un fornitore di trascrizione separato o interrompendo il ritmo di una clinica ad alto volume."
+        "Cattura la visita, rivedi la bozza orientata alla dermatologia, convalida e prosegui, senza un fornitore di trascrizione separato o interrompendo il ritmo di una clinica ad alto volume."
       ]
     },
     "benefits": {
@@ -2539,7 +2626,7 @@
         },
         {
           "title": "Un flusso di lavoro, nessun fornitore separato",
-          "body": "Cattura, revisione, convalida — senza un fornitore di trascrizione separato che rallenta la clinica."
+          "body": "Cattura, revisione, convalida: senza un fornitore di trascrizione separato che rallenta la clinica."
         },
         {
           "title": "Privacy per condizioni visibili e sensibili",
@@ -2608,7 +2695,7 @@
       },
       {
         "heading": "Documentazione dei reperti visivi in parole",
-        "body": "La dermatologia si basa pesantemente sulla valutazione visiva, ma la registrazione scritta deve ancora descrivere le lesioni in modo preciso — dimensioni, morfologia, distribuzione, evoluzione — per continuità e per eventuali confronti successivi. I modelli di DocNote mantengono spazio per questa descrizione strutturata, piuttosto che lasciarla come un ripensamento in una nota generale."
+        "body": "La dermatologia si basa pesantemente sulla valutazione visiva, ma la registrazione scritta deve ancora descrivere le lesioni in modo preciso (dimensioni, morfologia, distribuzione, evoluzione) per continuità e per eventuali confronti successivi. I modelli di DocNote mantengono spazio per questa descrizione strutturata, piuttosto che lasciarla come un ripensamento in una nota generale."
       },
       {
         "heading": "Supporto per consultazioni estetiche affini",
@@ -2616,7 +2703,7 @@
       },
       {
         "heading": "Monitoraggio delle lesioni tra visite di follow-up",
-        "body": "Molti casi dermatologici richiedono il confronto dell'aspetto di una lesione tra diverse visite a mesi di distanza — un neo monitorato, un trattamento valutato per la risposta. Note strutturate in modo coerente rendono questo confronto più facile perché gli stessi dettagli sono registrati nello stesso posto ogni volta, piuttosto che affidarsi alla memoria o a testo libero disperso."
+        "body": "Molti casi dermatologici richiedono il confronto dell'aspetto di una lesione tra diverse visite a mesi di distanza: un neo monitorato, un trattamento valutato per la risposta. Note strutturate in modo coerente rendono questo confronto più facile perché gli stessi dettagli sono registrati nello stesso posto ogni volta, piuttosto che affidarsi alla memoria o a testo libero disperso."
       },
       {
         "heading": "Documentazione per pazienti riferiti e auto-riferiti",
@@ -2624,7 +2711,7 @@
       },
       {
         "heading": "Bilanciamento tra velocità e precisione descrittiva",
-        "body": "Una bozza dermatologica veloce che descrive una lesione in modo troppo vago crea ambiguità per il confronto alla visita successiva. I modelli di DocNote richiedono i campi descrittivi specifici che contano — dimensioni, colore, bordi, distribuzione — piuttosto che lasciare questa precisione a ciò che il dermatologo dice a voce in una visita veloce e intensa."
+        "body": "Una bozza dermatologica veloce che descrive una lesione in modo troppo vago crea ambiguità per il confronto alla visita successiva. I modelli di DocNote richiedono i campi descrittivi specifici che contano (dimensioni, colore, bordi, distribuzione) piuttosto che lasciare questa precisione a ciò che il dermatologo dice a voce in una visita veloce e intensa."
       },
       {
         "heading": "Coordinamento con i risultati di patologia",
@@ -2646,11 +2733,11 @@
       },
       {
         "q": "Chi modifica le descrizioni delle lesioni?",
-        "a": "Il dermatologo — le bozze sono sempre modificabili prima della convalida."
+        "a": "Il dermatologo: le bozze sono sempre modificabili prima della convalida."
       },
       {
         "q": "Le note di procedure possono riferirsi a tecniche specifiche utilizzate?",
-        "a": "Sì, dove i tuoi modelli includono sezioni per procedure — molte cliniche iniziano con note di consultazione e le aggiungono successivamente."
+        "a": "Sì, dove i tuoi modelli includono sezioni per procedure: molte cliniche iniziano con note di consultazione e le aggiungono successivamente."
       },
       {
         "q": "DocNote funziona in cliniche multi-stanza con ricambio rapido?",
@@ -2764,7 +2851,7 @@
       },
       {
         "heading": "Strutturare un esame neurologico dettagliato",
-        "body": "Un esame neurologico completo copre nervi cranici, motricità, sensibilità, riflessi, coordinazione e andatura — molti reperti discreti che è facile perdere nel testo libero. DocNote mantiene ogni categoria distinta nella bozza, in modo che un reperto normale e uno anomalo siano ugualmente facili da trovare in fase di revisione."
+        "body": "Un esame neurologico completo copre nervi cranici, motricità, sensibilità, riflessi, coordinazione e andatura: molti reperti discreti che è facile perdere nel testo libero. DocNote mantiene ogni categoria distinta nella bozza, in modo che un reperto normale e uno anomalo siano ugualmente facili da trovare in fase di revisione."
       },
       {
         "heading": "Follow-up di condizioni croniche nel tempo",
@@ -2772,7 +2859,7 @@
       },
       {
         "heading": "Collegare consulenze neurologiche a imaging ed EMG",
-        "body": "La valutazione neurologica spesso dipende da risultati di imaging o EMG che risiedono in sistemi separati. La nota di DocNote cattura ciò che è stato discusso su quei reperti durante l'incontro, mentre i rapporti originali rimangono nei loro sistemi — i due sono pensati per integrarsi, non per fondersi in un unico strumento."
+        "body": "La valutazione neurologica spesso dipende da risultati di imaging o EMG che risiedono in sistemi separati. La nota di DocNote cattura ciò che è stato discusso su quei reperti durante l'incontro, mentre i rapporti originali rimangono nei loro sistemi: i due sono pensati per integrarsi, non per fondersi in un unico strumento."
       },
       {
         "heading": "Supportare diagnosi differenziali complesse",
@@ -2806,7 +2893,7 @@
       },
       {
         "q": "DocNote può gestire follow-up multi-visita per condizioni neurologiche croniche?",
-        "a": "Sì — una struttura coerente tra le visite aiuta a monitorare i cambiamenti nel tempo per condizioni croniche."
+        "a": "Sì: una struttura coerente tra le visite aiuta a monitorare i cambiamenti nel tempo per condizioni croniche."
       },
       {
         "q": "I reperti di imaging o EMG sono inclusi automaticamente?",

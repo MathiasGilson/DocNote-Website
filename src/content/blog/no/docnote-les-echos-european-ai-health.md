@@ -1,6 +1,6 @@
 ---
-title: "DocNote in Les Echos: mapping Europe’s AI health assistants"
-excerpt: "Les Echos surveyed Europe’s AI health assistant market and placed DocNote among key medical scribing and document generation players. What that coverage means for hospitals."
+title: "DocNote i Les Echos: kartlegging av Europas AI-helseassistenter"
+excerpt: "Les Echos kartla det europeiske markedet for AI-helseassistenter og plasserte DocNote blant de sentrale aktørene innen medisinsk dokumentasjon og dokumentgenerering. Hva denne omtalen betyr for sykehus."
 category: "news"
 author: "Dr. Vincent Tan"
 authorRole: "Lege & administrerende direktør"
@@ -39,7 +39,7 @@ Europeiske kjøpere legger til begrensninger som USAsentriske produkter noen gan
 - EHR-landskap som varierer etter land og region
 - Klinikerkulturer som krever spesialitetsbevisst struktur, ikke generiske SOAP-dumper
 
-DocNotes produktretning er i tråd med disse begrensningene: sykehusvide dokumenttyper, strukturerte utdata og en komplianseholdning som passer for sveitsiske og EU-forhold. For detaljer om compliance, se [DocNote GDPR og nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+DocNotes produktretning er i tråd med disse begrensningene: sykehusvide dokumenttyper, strukturerte utdata og en komplianseholdning som passer for sveitsiske og EU-forhold. For detaljer om compliance, se [DocNote GDPR- og nFADP-samsvar](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## Konkurranse er et tegn på en modnende kategori
 

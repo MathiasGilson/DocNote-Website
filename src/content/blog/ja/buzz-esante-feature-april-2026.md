@@ -75,7 +75,7 @@ DocNoteのアプローチは、この範囲を自動化しながら医師を検�
 
 Buzz eSantéが本物の病院ペースに焦点を当てたことは有益な解毒剤です。評価委員会がデモを気に入ったら、実際の午後のリストや回診シミュレーション中に次回セッションを予約してください。医師が中断された時の様子を観察しましょう。それが真の製品テストです。
 
-ドキュメンテーションAIに関する欧州市場の背景は[DocNote in Les Echos](/blog/docnote-les-echos-european-ai-health/)を、イベントレベルの導入テーマは[Adopt AI Paris](/blog/adopt-ai-paris-november-2025/)を、プライバシー方針は[DocNote GDPR and nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/)をご覧ください。
+ドキュメンテーションAIに関する欧州市場の背景は[Les Echos紙に掲載されたDocNote](/blog/docnote-les-echos-european-ai-health/)を、イベントレベルの導入テーマは[Adopt AI Paris](/blog/adopt-ai-paris-november-2025/)を、プライバシー方針は[DocNoteのGDPRおよびnFADP準拠](/blog/docnote-gdpr-nfadp-compliance/)をご覧ください。
 
 ## DocNoteがBuzz eSantéの論考をどう実践するか
 
