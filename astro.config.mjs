@@ -3,6 +3,24 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import rehypeFixInternalLinks from './scripts/rehype-fix-internal-links.mjs';
 import { getBlogSlugRedirects } from './src/utils/blog-translations.ts';
+import { landingRedirects } from './src/content/landing-redirects.ts';
+import { locales, defaultLocale } from './src/utils/i18n.ts';
+
+/** Retired solution landings → canonical page, for every locale prefix (no chains). */
+function getLandingRedirects() {
+  /** @type {Record<string, string>} */
+  const out = {};
+  for (const [from, to] of Object.entries(landingRedirects)) {
+    for (const locale of locales) {
+      const prefix = locale === defaultLocale ? '' : `/${locale}`;
+      // trailingSlash: 'always' — the slash-less form is handled in public/_redirects.
+      out[`${prefix}/${from}/`] = `${prefix}/${to}/`;
+    }
+    // Legacy /en/ prefix goes straight to the final EN URL.
+    out[`/en/${from}/`] = `/${to}/`;
+  }
+  return out;
+}
 
 export default defineConfig({
   site: (process.env.PUBLIC_SITE_URL || 'https://docnote.care').replace(/\/+$/, ''),
@@ -37,6 +55,7 @@ export default defineConfig({
   },
   redirects: {
     ...getBlogSlugRedirects(),
+    ...getLandingRedirects(),
     '/en': '/',
     '/en/': '/',
     '/en/pricing/': '/pricing/',
