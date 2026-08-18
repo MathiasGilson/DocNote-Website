@@ -917,7 +917,6 @@
     "relatedLabel": "صفحات ذات صلة"
   },
   "ehr-integration": {
-    "navLabel": "EHR integration",
     "navDesc": "7 أنظمة، يتم إرسالها قسمًا تلو الآخر.",
     "title": "تكامل السجل الطبي الإلكتروني لمساعدي التوثيق الطبي بالذكاء الاصطناعي | DocNote",
     "description": "يرسل DocNote التقارير المعتمدة إلى SOKLE وMediway وAxenita وEDL وElsan وRamsay وArdentis، مقسمة حسب الأقسام - باتجاه واحد، دون نسخ ولصق. احجز عرضًا تجريبيًا.",
@@ -1033,10 +1032,10 @@
       "primary": "احجز عرضًا تجريبيًا",
       "secondary": "اتصل بالفريق"
     },
-    "relatedLabel": "صفحات ذات صلة"
+    "relatedLabel": "صفحات ذات صلة",
+    "navLabel": "تكامل السجل الطبي الإلكتروني"
   },
   "custom-word-templates": {
-    "navLabel": "Your Word templates",
     "title": "قوالب Word المخصصة للتقارير الطبية | DocNote",
     "description": "قم بتحميل قالب Word الخاص بك مرة واحدة - يحتفظ كل تقرير برأس الرسالة والأقسام والتوقيع الخاص بك. يبقى المراجعة سريريًا، وليس تجميليًا. شاهد كيف يعمل.",
     "hero": {
@@ -1152,10 +1151,10 @@
       "secondary": "شاهد البرنامج التعليمي"
     },
     "relatedLabel": "صفحات ذات صلة",
-    "navDesc": "الترويسة الخاصة بك، الأقسام والتوقيع."
+    "navDesc": "الترويسة الخاصة بك، الأقسام والتوقيع.",
+    "navLabel": "قوالب وورد المخصصة"
   },
   "clinical-context": {
-    "navLabel": "Clinical context",
     "title": "السياق السريري للتقارير الطبية بالذكاء الاصطناعي | DocNote",
     "description": "أرفق الرسائل السابقة، المختبرات، التصوير والصور قبل أو بعد التسجيل. العناصر المتأخرة تحدث التقرير دون البدء من جديد. شاهدها في البرنامج التعليمي.",
     "hero": {
@@ -1271,7 +1270,8 @@
       "secondary": "احجز عرضًا تجريبيًا"
     },
     "relatedLabel": "صفحات ذات صلة",
-    "navDesc": "المختبرات، التصوير، الصور، المراسلات السابقة."
+    "navDesc": "المختبرات، التصوير، الصور، المراسلات السابقة.",
+    "navLabel": "السياق السريري"
   },
   "day-hospital-documentation": {
     "navLabel": "العيادة النهارية",
@@ -3020,160 +3020,160 @@
     "navDesc": "عمليات وعيادة وخروج في منظومة واحدة."
   },
   "ai-scribe-dermatology": {
-    "navLabel": "مساعد ذكاء اصطناعي للأمراض الجلدية",
-    "title": "AI medical scribe for dermatology | DocNote",
-    "description": "AI medical scribe for dermatology clinics. Structured consultation notes for high-throughput dermatology with Swiss hosting.",
+    "navLabel": "مساعد الذكاء الاصطناعي لطب الجلد",
+    "title": "مساعد الذكاء الاصطناعي الطبي لطب الجلد | DocNote",
+    "description": "مساعد الذكاء الاصطناعي الطبي لعيادات الجلد. ملاحظات استشارية منظمة لطب الجلد عالي الإنتاجية مع استضافة سويسرية.",
     "hero": {
-      "badge": "AI scribe for dermatology",
-      "title": "AI medical scribe for dermatology",
-      "subtitle": "Keep visual attention on the patient while documentation still gets done.",
-      "lead": "Dermatology clinics move quickly across many short encounters. DocNote drafts structured consultation notes so dermatologists keep visual attention on the patient while documentation still gets done."
+      "badge": "مساعد الذكاء الاصطناعي لطب الجلد",
+      "title": "مساعد الذكاء الاصطناعي الطبي لطب الجلد",
+      "subtitle": "حافظ على تركيزك البصري على المريض بينما يتم إنجاز التوثيق.",
+      "lead": "تتحرك عيادات الجلد بسرعة عبر العديد من الزيارات القصيرة. يقوم DocNote بصياغة ملاحظات استشارية منظمة حتى يتمكن أطباء الجلد من الحفاظ على تركيزهم البصري على المريض بينما يتم إنجاز التوثيق."
     },
     "story": {
-      "badge": "In a nutshell",
-      "title": "High throughput, clear notes",
+      "badge": "باختصار",
+      "title": "إنتاجية عالية، ملاحظات واضحة",
       "paragraphs": [
-        "Lesion descriptions, assessments, procedures, and plans need to land accurately. A specialty-aware draft reduces repetitive typing between short, fast-moving encounters.",
-        "Capture the visit, review the dermatology-oriented draft, validate, and move on — without a separate transcription vendor or breaking the rhythm of a high-throughput clinic."
+        "يجب توثيق أوصاف الآفات، والتقييمات، والإجراءات، والخطط بدقة. تقوم المسودة الموجهة للتخصص بتقليل الكتابة المتكررة بين الزيارات القصيرة سريعة الحركة.",
+        "سجل الزيارة، راجع المسودة الموجهة لطب الجلد، قم بالتحقق، وتابع - دون الحاجة إلى موفر نقل نص منفصل أو تعطيل إيقاع العيادة عالية الإنتاجية."
       ]
     },
     "benefits": {
-      "badge": "Why dermatology clinics adopt it",
-      "title": "Documentation that keeps up with the room turnover",
-      "subtitle": "Built for many short encounters, not a single long consultation.",
+      "badge": "لماذا تتبناه عيادات الجلد",
+      "title": "توثيق يواكب سرعة تغيير الغرف",
+      "subtitle": "مصمم للعديد من الزيارات القصيرة، وليس لاستشارة واحدة طويلة.",
       "items": [
         {
-          "title": "Accurate lesion documentation",
-          "body": "Lesion descriptions, assessments, procedures, and plans are drafted accurately for quick review."
+          "title": "توثيق دقيق للآفات",
+          "body": "يتم صياغة أوصاف الآفات، والتقييمات، والإجراءات، والخطط بدقة للمراجعة السريعة."
         },
         {
-          "title": "One workflow, no separate vendor",
-          "body": "Capture, review, validate — without a separate transcription vendor slowing down the clinic."
+          "title": "سير عمل واحد، بدون موفر منفصل",
+          "body": "سجل، راجع، تحقق - دون الحاجة إلى موفر نقل نص منفصل يبطئ العيادة."
         },
         {
-          "title": "Privacy for visible, sensitive conditions",
-          "body": "Swiss hosting and short audio retention support patient trust in dermatology and aesthetic-adjacent care."
+          "title": "خصوصية للحالات الحساسة والمرئية",
+          "body": "تساهم الاستضافة السويسرية والاحتفاظ القصير بالتسجيلات الصوتية في تعزيز ثقة المريض في رعاية الجلد والتجميل."
         },
         {
-          "title": "Clear handoffs to referring GPs",
-          "body": "Clear consultation notes improve handoffs back to general practice and other specialists."
+          "title": "تسليم واضح لأطباء الرعاية الأولية",
+          "body": "تحسن الملاحظات الاستشارية الواضحة عملية التسليم مرة أخرى إلى الممارسة العامة والمتخصصين الآخرين."
         }
       ]
     },
     "steps": {
-      "badge": "How it works",
-      "title": "From a short visit to a clear note",
-      "subtitle": "Fast enough for high-throughput dermatology clinics.",
+      "badge": "كيف يعمل",
+      "title": "من زيارة قصيرة إلى ملاحظة واضحة",
+      "subtitle": "سريع بما يكفي لعيادات الجلد عالية الإنتاجية.",
       "items": [
         {
-          "title": "Capture the visit",
-          "body": "Record the consultation on mobile or web between rooms."
+          "title": "سجل الزيارة",
+          "body": "سجل الاستشارة على الهاتف المحمول أو الويب بين الغرف."
         },
         {
-          "title": "Review the dermatology-oriented draft",
-          "body": "Lesion findings, assessment, and plan are organised into a structured draft."
+          "title": "راجع المسودة الموجهة لطب الجلد",
+          "body": "يتم تنظيم نتائج الآفات، والتقييم، والخطة في مسودة منظمة."
         },
         {
-          "title": "Adjust lesion descriptions",
-          "body": "The dermatologist edits descriptions and plan details before approving."
+          "title": "اضبط أوصاف الآفات",
+          "body": "يقوم طبيب الجلد بتحرير الأوصاف وتفاصيل الخطة قبل الموافقة."
         },
         {
-          "title": "Validate and move to the next room",
-          "body": "Approve the note without breaking clinic rhythm."
+          "title": "تحقق وانتقل إلى الغرفة التالية",
+          "body": "وافق على الملاحظة دون تعطيل إيقاع العيادة."
         }
       ]
     },
     "proof": {
-      "badge": "Privacy for visible conditions",
-      "title": "Trust for sensitive and visible care",
-      "intro": "Dermatology and aesthetic-adjacent care carry their own privacy sensitivities.",
+      "badge": "خصوصية للحالات المرئية",
+      "title": "ثقة للرعاية الحساسة والمرئية",
+      "intro": "تحمل رعاية الجلد والتجميل حساسياتها الخاصة فيما يتعلق بالخصوصية.",
       "points": [
         {
-          "title": "Swiss hosting",
-          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+          "title": "استضافة سويسرية",
+          "body": "يتم استضافة ومعالجة بيانات الصحة وفقًا لتوقعات السرية الطبية السويسرية."
         },
         {
-          "title": "Short audio retention",
-          "body": "Audio is deleted automatically shortly after the note is produced."
+          "title": "احتفاظ قصير بالتسجيلات الصوتية",
+          "body": "يتم حذف التسجيلات الصوتية تلقائيًا بعد وقت قصير من إنتاج الملاحظة."
         },
         {
-          "title": "No training on visits",
-          "body": "Consultations are used only to produce your notes, never to train foundation models."
+          "title": "لا يوجد تدريب على الزيارات",
+          "body": "تستخدم الاستشارات فقط لإنتاج ملاحظاتك، وليس لتدريب النماذج الأساسية."
         },
         {
-          "title": "Clear referral documentation",
-          "body": "Structured notes support clear handoffs to and from general practice."
+          "title": "توثيق واضح للإحالات",
+          "body": "تدعم الملاحظات المنظمة التسليم الواضح من وإلى الممارسة العامة."
         }
       ]
     },
     "sections": [
       {
-        "heading": "Procedure notes alongside consultation notes",
-        "body": "Many dermatology clinics run both consultations and minor procedures in the same appointment. DocNote supports both document types, so a biopsy or excision can be documented right after the consultation without switching to a separate form."
+        "heading": "ملاحظات الإجراءات بجانب الملاحظات الاستشارية",
+        "body": "تدير العديد من عيادات الجلد كلًا من الاستشارات والإجراءات البسيطة في نفس الموعد. يدعم DocNote كلا نوعي المستندات، بحيث يمكن توثيق الخزعة أو الاستئصال مباشرة بعد الاستشارة دون الحاجة إلى التبديل إلى نموذج منفصل."
       },
       {
-        "heading": "Multi-room clinics with fast turnover",
-        "body": "When several treatment rooms run in parallel, quick per-room capture helps keep waiting time between patients short. The practical setup per room is mapped together with your team during onboarding."
+        "heading": "العيادات متعددة الغرف مع تغيير سريع",
+        "body": "عند تشغيل عدة غرف علاج بالتوازي، يساعد التسجيل السريع لكل غرفة في تقصير وقت الانتظار بين المرضى. يتم تخطيط الإعداد العملي لكل غرفة مع فريقك أثناء عملية الدمج."
       },
       {
-        "heading": "Documenting visual findings in words",
-        "body": "Dermatology relies heavily on visual assessment, but the written record still needs to describe lesions precisely — size, morphology, distribution, evolution — for continuity and for any later comparison. DocNote's templates keep space for that description structured, rather than leaving it as an afterthought in a general note."
+        "heading": "توثيق النتائج البصرية بالكلمات",
+        "body": "يعتمد طب الجلد بشكل كبير على التقييم البصري، ولكن لا يزال يتعين على السجل المكتوب وصف الآفات بدقة - الحجم، والشكل، والتوزيع، والتطور - من أجل الاستمرارية ولأي مقارنة لاحقة. تحافظ قوالب DocNote على مساحة لهذا الوصف منظمة، بدلاً من تركه كفكرة لاحقة في ملاحظة عامة."
       },
       {
-        "heading": "Supporting aesthetic-adjacent consultations",
-        "body": "Many dermatology practices also see aesthetic-adjacent visits alongside medical dermatology. Documentation needs and privacy sensitivities can differ slightly between the two; talk to our team about mapping both visit types during onboarding so each gets the structure it needs."
+        "heading": "دعم الاستشارات المجاورة للتجميل",
+        "body": "تقدم العديد من ممارسات الجلد أيضًا زيارات مجاورة للتجميل بجانب طب الجلد الطبي. يمكن أن تختلف احتياجات التوثيق وحساسيات الخصوصية قليلاً بين الاثنين؛ تحدث مع فريقنا حول تخطيط كلا نوعي الزيارة أثناء عملية الدمج حتى يحصل كل منهما على الهيكل الذي يحتاجه."
       },
       {
-        "heading": "Tracking lesions across follow-up visits",
-        "body": "Many dermatology cases require comparing a lesion's appearance across several visits months apart — a mole being monitored, a treatment being assessed for response. Consistently structured notes make that comparison easier because the same details are recorded in the same place each time, rather than relying on memory or scattered free text."
+        "heading": "تتبع الآفات عبر زيارات المتابعة",
+        "body": "تتطلب العديد من حالات الجلد مقارنة مظهر الآفة عبر عدة زيارات متباعدة بضعة أشهر - مثل شامة تحت المراقبة، أو علاج يتم تقييم استجابته. تجعل الملاحظات المنظمة باستمرار هذه المقارنة أسهل لأن نفس التفاصيل مسجلة في نفس المكان في كل مرة، بدلاً من الاعتماد على الذاكرة أو النص الحر المتناثر."
       },
       {
-        "heading": "Documentation for referred and self-referred patients",
-        "body": "Dermatology sees both GP referrals and self-referred patients, each arriving with a different amount of prior context. DocNote's consultation templates capture the referral reason and relevant history clearly regardless of entry point, so the note reads consistently either way."
+        "heading": "توثيق للمرضى المحالين أو الذين يحيلون أنفسهم",
+        "body": "يستقبل طب الجلد كلًا من المرضى المحالين من أطباء الرعاية الأولية والذين يحيلون أنفسهم، ويصل كل منهم بكمية مختلفة من السياق السابق. تلتقط قوالب الاستشارة في DocNote سبب الإحالة والتاريخ ذي الصلة بوضوح بغض النظر عن نقطة الدخول، بحيث تكون الملاحظة متسقة في كلا الحالتين."
       },
       {
-        "heading": "Balancing speed with descriptive precision",
-        "body": "A fast dermatology draft that describes a lesion too loosely creates ambiguity for the next visit's comparison. DocNote's templates prompt for the specific descriptive fields that matter — size, colour, borders, distribution — rather than leaving that precision to whatever the dermatologist happens to say out loud in a quick, busy visit."
+        "heading": "التوازن بين السرعة والدقة الوصفية",
+        "body": "المسودة السريعة لطب الجلد التي تصف الآفة بشكل فضفاض للغاية تخلق غموضًا لمقارنة الزيارة التالية. تدفع قوالب DocNote للحقول الوصفية المحددة التي تهم - الحجم، اللون، الحدود، التوزيع - بدلاً من ترك هذه الدقة لما يحدث أن يقوله طبيب الجلد بصوت عالٍ في زيارة سريعة ومشغولة."
       },
       {
-        "heading": "Coordinating with pathology results",
-        "body": "When a biopsy is sent for pathology, the consultation note and the eventual pathology result need to connect clearly for the next visit. DocNote keeps the original clinical impression documented precisely, so comparing it against the pathology report later is straightforward rather than relying on memory alone."
+        "heading": "التنسيق مع نتائج الباثولوجيا",
+        "body": "عند إرسال خزعة للباثولوجيا، تحتاج ملاحظة الاستشارة ونتيجة الباثولوجيا النهائية إلى الاتصال بوضوح للزيارة التالية. يحتفظ DocNote بالانطباع السريري الأصلي موثقًا بدقة، بحيث تكون مقارنته بتقرير الباثولوجيا لاحقًا مباشرة بدلاً من الاعتماد على الذاكرة وحدها."
       }
     ],
     "faq": [
       {
-        "q": "Can procedure notes be drafted too?",
-        "a": "Yes where your templates include them. Many clinics start with consultation notes."
+        "q": "هل يمكن صياغة ملاحظات الإجراءات أيضًا؟",
+        "a": "نعم إذا كانت قوالبك تتضمنها. تبدأ العديد من العيادات بملاحظات الاستشارة."
       },
       {
-        "q": "Does ambient listening work in multi-room clinics?",
-        "a": "Capture is tied to the device and workflow you choose. We help map a practical room setup during onboarding."
+        "q": "هل يعمل الاستماع المحيطي في العيادات متعددة الغرف؟",
+        "a": "يرتبط التسجيل بالجهاز وسير العمل الذي تختاره. نساعد في تخطيط إعداد عملي للغرف أثناء عملية الدمج."
       },
       {
-        "q": "Is DocNote only for medical dermatology?",
-        "a": "Medical documentation is the focus; talk to us about your mix of visit types."
+        "q": "هل DocNote مخصص لطب الجلد الطبي فقط؟",
+        "a": "التركيز على التوثيق الطبي؛ تحدث معنا حول مزيج أنواع الزيارات لديك."
       },
       {
-        "q": "Who edits lesion descriptions?",
-        "a": "The dermatologist — drafts are always editable before validation."
+        "q": "من يقوم بتحرير أوصاف الآفات؟",
+        "a": "طبيب الجلد - يمكن دائمًا تحرير المسودات قبل التحقق."
       },
       {
-        "q": "Can procedure notes reference specific techniques used?",
-        "a": "Yes, where your templates include procedure sections — many clinics start with consultation notes and add these later."
+        "q": "هل يمكن أن تشير ملاحظات الإجراءات إلى تقنيات محددة مستخدمة؟",
+        "a": "نعم، إذا كانت قوالبك تتضمن أقسامًا للإجراءات - تبدأ العديد من العيادات بملاحظات الاستشارة وتضيف هذه لاحقًا."
       },
       {
-        "q": "Does DocNote work in multi-room clinics with fast turnover?",
-        "a": "Capture is tied to the device and workflow you choose; we help map a practical multi-room setup during onboarding."
+        "q": "هل يعمل DocNote في العيادات متعددة الغرف مع تغيير سريع؟",
+        "a": "يرتبط التسجيل بالجهاز وسير العمل الذي تختاره؛ نساعد في تخطيط إعداد عملي متعدد الغرف أثناء عملية الدمج."
       }
     ],
     "cta": {
-      "title": "Keep pace without losing documentation quality",
-      "body": "Start a free trial and see how DocNote fits a high-throughput dermatology day.",
-      "primary": "Start free trial",
-      "secondary": "See pricing"
+      "title": "حافظ على السرعة دون فقدان جودة التوثيق",
+      "body": "ابدأ تجربة مجانية وشاهد كيف يتناسب DocNote مع يوم عالي الإنتاجية في طب الجلد.",
+      "primary": "ابدأ تجربة مجانية",
+      "secondary": "انظر الأسعار"
     },
-    "relatedLabel": "Related guides",
-    "navDesc": "العين على المريض؛ الملاحظة تُنجز."
+    "relatedLabel": "أدلة ذات صلة",
+    "navDesc": "عيون على المريض؛ الملاحظات لا تزال تُنجز."
   },
   "ai-scribe-neurology": {
     "navLabel": "مساعد ذكاء اصطناعي لطب الأعصاب",

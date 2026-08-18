@@ -548,7 +548,6 @@
     "relatedLabel": "संबंधित पेज"
   },
   "for-medical-secretaries": {
-    "navLabel": "Medical secretaries",
     "navDesc": "डॉक्टर के अकाउंट के अंदर काम करें, उनके टेम्प्लेट्स के साथ।",
     "title": "मेडिकल सेक्रेटरीज़ के लिए AI डॉक्यूमेंटेशन | DocNote",
     "description": "एक सेक्रेटरी अकाउंट डॉक्टर के अकाउंट के अंदर काम करता है — समान टेम्प्लेट्स, समान लेटरहेड, दोबारा टाइपिंग नहीं। सेक्रेटरी फॉर्मेट करती है और एक्सपोर्ट करती है; फिजिशियन वैलिडेट करता है। डेमो बुक करें।",
@@ -670,10 +669,10 @@
       "primary": "अपनी प्रैक्टिस के लिए डेमो बुक करें",
       "secondary": "टीम से संपर्क करें"
     },
-    "relatedLabel": "संबंधित पेज"
+    "relatedLabel": "संबंधित पेज",
+    "navLabel": "मेडिकल सचिव"
   },
   "for-clinic-groups": {
-    "navLabel": "Groups & clinics",
     "navDesc": "मल्टी-साइट रोलआउट, लागू पॉलिसी, सेंट्रल बिलिंग।",
     "title": "क्लिनिक ग्रुप्स के लिए AI मेडिकल डॉक्यूमेंटेशन | DocNote",
     "description": "एक लागू पॉलिसी के साथ सभी साइट्स पर रोल आउट करें: रिटेंशन, लॉगआउट, शेयर्ड टेम्प्लेट्स और नेटिव EHR सपोर्ट। अपने रोलआउट के बारे में टीम से बात करें।",
@@ -795,10 +794,10 @@
       "primary": "टीम से बात करें",
       "secondary": "डेमो बुक करें"
     },
-    "relatedLabel": "संबंधित पेज"
+    "relatedLabel": "संबंधित पेज",
+    "navLabel": "समूह और क्लीनिक"
   },
   "medical-coding-and-billing": {
-    "navLabel": "Coding & billing",
     "navDesc": "SwissDRG, PMSI, TARDOC, Tarif 222।",
     "title": "SwissDRG, TARDOC & PMSI कोडिंग सॉफ्टवेयर | DocNote",
     "description": "बिल करने योग्य डायग्नोसिस पत्र के अंदर सामने आते हैं — SwissDRG, TARDOC, Tarif 222 और PMSI सुझाव वैलिडेट करने के लिए, दूसरा कोडिंग पास नहीं। डेमो बुक करें।",
@@ -914,7 +913,8 @@
       "primary": "डेमो बुक करें",
       "secondary": "मूल्य देखें"
     },
-    "relatedLabel": "संबंधित पेज"
+    "relatedLabel": "संबंधित पेज",
+    "navLabel": "कोडिंग और बिलिंग"
   },
   "ehr-integration": {
     "navLabel": "EHR एकीकरण",
@@ -2404,316 +2404,316 @@
     "navDesc": "गोपनीयता और बारीकी के साथ सत्र नोट्स।"
   },
   "ai-scribe-cardiology": {
-    "navLabel": "कार्डियोलॉजी के लिए AI असिस्टेंट",
-    "title": "AI medical scribe for cardiology | DocNote",
-    "description": "AI medical scribe for cardiology clinics and hospital services. Structured consultation and follow-up documentation with Swiss hosting.",
+    "navLabel": "कार्डियोलॉजी के लिए AI स्क्राइब",
+    "title": "कार्डियोलॉजी के लिए AI मेडिकल स्क्राइब | DocNote",
+    "description": "कार्डियोलॉजी क्लीनिक और अस्पताल सेवाओं के लिए AI मेडिकल स्क्राइब। स्विस होस्टिंग के साथ संरचित परामर्श और फॉलो-अप डॉक्यूमेंटेशन।",
     "hero": {
-      "badge": "AI scribe for cardiology",
-      "title": "AI medical scribe for cardiology",
-      "subtitle": "Specialty-aware drafts for dense consultations and procedure follow-ups.",
-      "lead": "Cardiology combines dense data, procedure follow-ups, and high documentation load. DocNote drafts structured notes from consultations so cardiologists spend less time typing and more time on clinical decisions."
+      "badge": "कार्डियोलॉजी के लिए AI स्क्राइब",
+      "title": "कार्डियोलॉजी के लिए AI मेडिकल स्क्राइब",
+      "subtitle": "घने परामर्श और प्रक्रिया फॉलो-अप के लिए विशेषता-जागरूक ड्राफ्ट।",
+      "lead": "कार्डियोलॉजी में घना डेटा, प्रक्रिया फॉलो-अप और उच्च डॉक्यूमेंटेशन भार शामिल होता है। DocNote परामर्श से संरचित नोट्स का ड्राफ्ट तैयार करता है ताकि कार्डियोलॉजिस्ट टाइपिंग में कम समय बिताएं और नैदानिक निर्णयों पर अधिक ध्यान दें।"
     },
     "story": {
-      "badge": "In a nutshell",
-      "title": "Specialty language that matters",
+      "badge": "संक्षेप में",
+      "title": "महत्वपूर्ण विशेषता भाषा",
       "paragraphs": [
-        "Symptoms, exam findings, imaging context, and plan changes need cardiology vocabulary. DocNote targets specialty-aware drafts so cardiologists spend less time typing and more time on clinical decisions.",
-        "Outpatient follow-ups and inpatient documentation can live in the same AI documentation stack — including pathways toward discharge summaries when a patient is admitted."
+        "लक्षण, परीक्षा निष्कर्ष, इमेजिंग संदर्भ और योजना परिवर्तनों के लिए कार्डियोलॉजी शब्दावली की आवश्यकता होती है। DocNote विशेषता-जागरूक ड्राफ्ट प्रदान करता है ताकि कार्डियोलॉजिस्ट टाइपिंग में कम समय बिताएं और नैदानिक निर्णयों पर अधिक ध्यान दें।",
+        "आउटपेशेंट फॉलो-अप और इनपेशेंट डॉक्यूमेंटेशन एक ही AI डॉक्यूमेंटेशन स्टैक में हो सकते हैं - जिसमें डिस्चार्ज सारांश की ओर रास्ते शामिल हैं जब कोई मरीज भर्ती होता है।"
       ]
     },
     "benefits": {
-      "badge": "Why cardiology services adopt it",
-      "title": "Faster closed notes, same clinical rigor",
-      "subtitle": "Built for dense data and high documentation load.",
+      "badge": "कार्डियोलॉजी सेवाएं इसे क्यों अपनाती हैं",
+      "title": "तेजी से बंद नोट्स, समान नैदानिक कठोरता",
+      "subtitle": "घने डेटा और उच्च डॉक्यूमेंटेशन भार के लिए बनाया गया।",
       "items": [
         {
-          "title": "Cardiology-aware vocabulary",
-          "body": "Symptoms, exam findings, imaging context, and plan changes are drafted with specialty-aware language."
+          "title": "कार्डियोलॉजी-जागरूक शब्दावली",
+          "body": "लक्षण, परीक्षा निष्कर्ष, इमेजिंग संदर्भ और योजना परिवर्तन विशेषता-जागरूक भाषा के साथ ड्राफ्ट किए जाते हैं।"
         },
         {
-          "title": "Clinic and hospital continuity",
-          "body": "Outpatient follow-ups and inpatient documentation share the same stack, including pathways to discharge summaries."
+          "title": "क्लिनिक और अस्पताल निरंतरता",
+          "body": "आउटपेशेंट फॉलो-अप और इनपेशेंट डॉक्यूमेंटेशन एक ही स्टैक साझा करते हैं, जिसमें डिस्चार्ज सारांश के लिए रास्ते शामिल हैं।"
         },
         {
-          "title": "Compliance for cardiac services",
-          "body": "Swiss hosting and short audio retention help hospital cardiology services pass security and privacy review."
+          "title": "कार्डियक सेवाओं के लिए अनुपालन",
+          "body": "स्विस होस्टिंग और छोटी ऑडियो प्रतिधारण अस्पताल कार्डियोलॉजी सेवाओं को सुरक्षा और गोपनीयता समीक्षा पास करने में मदद करती है।"
         },
         {
-          "title": "Faster closed notes",
-          "body": "Draft during or after the encounter, validate, and keep the record moving without evening backlog."
+          "title": "तेजी से बंद नोट्स",
+          "body": "मुलाकात के दौरान या बाद में ड्राफ्ट करें, सत्यापित करें और शाम के बैकलॉग के बिना रिकॉर्ड को आगे बढ़ाएं।"
         }
       ]
     },
     "steps": {
-      "badge": "How it works",
-      "title": "From consultation to a specialty-ready note",
-      "subtitle": "Built for dense visits and procedure follow-ups.",
+      "badge": "यह कैसे काम करता है",
+      "title": "परामर्श से विशेषता-तैयार नोट तक",
+      "subtitle": "घने दौरे और प्रक्रिया फॉलो-अप के लिए बनाया गया।",
       "items": [
         {
-          "title": "Capture the consultation or follow-up",
-          "body": "Record the visit on mobile or web, including procedure follow-up discussions."
+          "title": "परामर्श या फॉलो-अप कैप्चर करें",
+          "body": "मोबाइल या वेब पर दौरे को रिकॉर्ड करें, जिसमें प्रक्रिया फॉलो-अप चर्चाएं शामिल हैं।"
         },
         {
-          "title": "DocNote applies cardiology structure",
-          "body": "Symptoms, findings, and plan changes are organised with specialty-aware language."
+          "title": "DocNote कार्डियोलॉजी संरचना लागू करता है",
+          "body": "लक्षण, निष्कर्ष और योजना परिवर्तन विशेषता-जागरूक भाषा के साथ व्यवस्थित किए जाते हैं।"
         },
         {
-          "title": "Review the draft",
-          "body": "A structured note is ready within seconds for your review."
+          "title": "ड्राफ्ट की समीक्षा करें",
+          "body": "आपकी समीक्षा के लिए सेकंडों में एक संरचित नोट तैयार हो जाता है।"
         },
         {
-          "title": "Validate and continue",
-          "body": "Approve the note; the responsible clinician always signs off."
+          "title": "सत्यापित करें और जारी रखें",
+          "body": "नोट को मंजूरी दें; जिम्मेदार क्लिनिशियन हमेशा साइन ऑफ करता है।"
         }
       ]
     },
     "proof": {
-      "badge": "Compliance for cardiac services",
-      "title": "Security that supports procurement",
-      "intro": "Hospital cardiology services need a clear compliance answer, not a features list.",
+      "badge": "कार्डियक सेवाओं के लिए अनुपालन",
+      "title": "खरीद को समर्थन देने वाली सुरक्षा",
+      "intro": "अस्पताल कार्डियोलॉजी सेवाओं को सुविधाओं की सूची नहीं, बल्कि एक स्पष्ट अनुपालन उत्तर की आवश्यकता होती है।",
       "points": [
         {
-          "title": "Swiss hosting",
-          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+          "title": "स्विस होस्टिंग",
+          "body": "स्विस मेडिकल गोपनीयता अपेक्षाओं के तहत स्वास्थ्य डेटा होस्ट और प्रोसेस किया जाता है।"
         },
         {
-          "title": "Short audio retention",
-          "body": "Audio is deleted automatically shortly after the note is produced."
+          "title": "छोटी ऑडियो प्रतिधारण",
+          "body": "नोट तैयार होने के कुछ समय बाद ऑडियो स्वचालित रूप से हटा दिया जाता है।"
         },
         {
-          "title": "No training on visits",
-          "body": "Consultations are used only to produce documents, never to train foundation models."
+          "title": "दौरों पर कोई प्रशिक्षण नहीं",
+          "body": "परामर्श का उपयोग केवल दस्तावेज़ उत्पन्न करने के लिए किया जाता है, फाउंडेशन मॉडल को प्रशिक्षित करने के लिए कभी नहीं।"
         },
         {
-          "title": "Mediway and SOKLE where configured",
-          "body": "Integrations are available where set up, supporting hospital cardiology workflows."
+          "title": "जहां कॉन्फ़िगर किया गया हो वहां Mediway और SOKLE",
+          "body": "एकीकरण उपलब्ध हैं जहां सेट अप किया गया है, अस्पताल कार्डियोलॉजी वर्कफ़्लो का समर्थन करते हैं।"
         }
       ]
     },
     "sections": [
       {
-        "heading": "From a follow-up visit to an admission",
-        "body": "When an outpatient cardiology patient is admitted, documentation needs to continue seamlessly. Because DocNote uses the same platform for consultation notes and discharge summaries, clinical context doesn't get lost at the transition from outpatient to inpatient care."
+        "heading": "फॉलो-अप दौरे से भर्ती तक",
+        "body": "जब एक आउटपेशेंट कार्डियोलॉजी रोगी को भर्ती किया जाता है, तो डॉक्यूमेंटेशन निर्बाध रूप से जारी रहना चाहिए। क्योंकि DocNote परामर्श नोट्स और डिस्चार्ज सारांश के लिए एक ही प्लेटफ़ॉर्म का उपयोग करता है, आउटपेशेंट से इनपेशेंट देखभाल में संक्रमण पर नैदानिक संदर्भ खोता नहीं है।"
       },
       {
-        "heading": "Keeping dense data readable",
-        "body": "Cardiology consultations often pack many measurements, medication changes, and course comparisons into a short visit. A structured template helps keep that density legible instead of losing it in a long block of free text."
+        "heading": "घने डेटा को पठनीय बनाए रखना",
+        "body": "कार्डियोलॉजी परामर्श अक्सर कई माप, दवा परिवर्तन और कोर्स तुलनाओं को एक छोटे दौरे में पैक करते हैं। एक संरचित टेम्पलेट उस घनत्व को पठनीय बनाए रखने में मदद करता है बजाय इसे लंबे फ्री टेक्स्ट ब्लॉक में खोने के।"
       },
       {
-        "heading": "Documenting procedure follow-ups clearly",
-        "body": "A follow-up visit after a catheterisation, ablation, or device implant needs to reference the procedure clearly while focusing on current symptoms and next steps. DocNote's cardiology templates keep that link explicit, so the note reads as a continuation of the case rather than a disconnected visit."
+        "heading": "प्रक्रिया फॉलो-अप को स्पष्ट रूप से दस्तावेज़ करना",
+        "body": "कैथीटेराइजेशन, एब्लेशन या डिवाइस इम्प्लांट के बाद एक फॉलो-अप दौरे को प्रक्रिया को स्पष्ट रूप से संदर्भित करने की आवश्यकता होती है जबकि वर्तमान लक्षणों और अगले चरणों पर ध्यान केंद्रित करना होता है। DocNote के कार्डियोलॉजी टेम्पलेट उस लिंक को स्पष्ट रखते हैं, ताकि नोट केस की निरंतरता के रूप में पढ़ा जाए बजाय एक असंबंधित दौरे के।"
       },
       {
-        "heading": "Why cardiology vocabulary matters for adoption",
-        "body": "A scribe that mishears or mis-structures cardiology-specific terms — NYHA class, ejection fraction, specific arrhythmia types — creates more correction work than it saves. DocNote's specialty-aware language is what makes the difference between a tool clinicians tolerate and one they actually keep open all day."
+        "heading": "कार्डियोलॉजी शब्दावली गोद लेने के लिए क्यों मायने रखती है",
+        "body": "एक स्क्राइब जो कार्डियोलॉजी-विशिष्ट शर्तों को गलत सुनता है या गलत ढंग से संरचित करता है - NYHA वर्ग, इजेक्शन फ्रैक्शन, विशिष्ट अतालता प्रकार - यह सुधार कार्य को बचाने से अधिक बनाता है। DocNote की विशेषता-जागरूक भाषा वह अंतर है जो एक उपकरण को क्लिनिशियन सहन करते हैं और एक को वे वास्तव में पूरे दिन खुले रखते हैं।"
       },
       {
-        "heading": "Connecting outpatient cardiology to inpatient care",
-        "body": "Heart failure and arrhythmia patients often move between clinic follow-ups and hospital admissions over months or years. Because DocNote covers both outpatient consultation notes and inpatient discharge summaries, the documentation trail stays connected across that back-and-forth instead of resetting with each new setting."
+        "heading": "आउटपेशेंट कार्डियोलॉजी को इनपेशेंट देखभाल से जोड़ना",
+        "body": "हार्ट फेल्योर और अतालता रोगी अक्सर क्लिनिक फॉलो-अप और अस्पताल में भर्ती के बीच महीनों या वर्षों तक आगे-पीछे होते हैं। क्योंकि DocNote आउटपेशेंट परामर्श नोट्स और इनपेशेंट डिस्चार्ज सारांश दोनों को कवर करता है, डॉक्यूमेंटेशन ट्रेल उस आगे-पीछे में जुड़ा रहता है बजाय हर नई सेटिंग के साथ रीसेट होने के।"
       },
       {
-        "heading": "Tracking medication changes precisely",
-        "body": "Cardiology visits frequently involve dose adjustments and drug substitutions that need to be unambiguous for the next clinician reading the note, including pharmacists reviewing for interactions. DocNote keeps medication changes in a consistent, clearly labelled place in the draft rather than mixed into a general narrative."
+        "heading": "दवा परिवर्तनों को सटीक रूप से ट्रैक करना",
+        "body": "कार्डियोलॉजी दौरे में अक्सर खुराक समायोजन और दवा प्रतिस्थापन शामिल होते हैं जो अगले क्लिनिशियन के लिए नोट पढ़ने के लिए स्पष्ट होने चाहिए, जिसमें इंटरैक्शन की समीक्षा करने वाले फार्मासिस्ट शामिल हैं। DocNote दवा परिवर्तनों को ड्राफ्ट में एक सुसंगत, स्पष्ट रूप से लेबल किए गए स्थान पर रखता है बजाय एक सामान्य कथा में मिलाने के।"
       },
       {
-        "heading": "Documenting risk factors consistently",
-        "body": "Cardiovascular risk factors — smoking, family history, lipid and blood pressure trends — need to be visible across visits, not buried in a single consultation. DocNote's cardiology templates keep a consistent place for these factors so they carry forward legibly rather than needing to be re-established from scratch each time."
+        "heading": "जोखिम कारकों को लगातार दस्तावेज़ करना",
+        "body": "कार्डियोवैस्कुलर जोखिम कारक - धूम्रपान, पारिवारिक इतिहास, लिपिड और रक्तचाप रुझान - दौरों में दिखाई देने चाहिए, एकल परामर्श में दफन नहीं। DocNote के कार्डियोलॉजी टेम्पलेट इन कारकों के लिए एक सुसंगत स्थान रखते हैं ताकि वे आगे स्पष्ट रूप से आगे बढ़ें बजाय हर बार खरोंच से फिर से स्थापित करने की आवश्यकता के।"
       },
       {
-        "heading": "Preparing for multidisciplinary heart team reviews",
-        "body": "Complex cardiology cases are often discussed in a multidisciplinary heart team meeting before a major decision. A clear, structured note makes it faster for the team to get up to speed on the case at the start of that meeting, rather than spending the first minutes reconstructing the history from scratch together and cross-checking prior visits."
+        "heading": "बहु-विषयक हार्ट टीम समीक्षा के लिए तैयारी",
+        "body": "जटिल कार्डियोलॉजी मामलों पर अक्सर एक बड़े निर्णय से पहले बहु-विषयक हार्ट टीम बैठक में चर्चा की जाती है। एक स्पष्ट, संरचित नोट टीम के लिए उस बैठक की शुरुआत में मामले पर गति प्राप्त करने में तेजी लाता है, बजाय पहले कुछ मिनटों को खरोंच से इतिहास को पुनर्निर्माण करने और पिछले दौरों को क्रॉस-चेक करने में बिताने के।"
       }
     ],
     "faq": [
       {
-        "q": "Can cardiology procedure notes be supported?",
-        "a": "Document types depend on your templates. Many services start with consultation and follow-up notes, then expand."
+        "q": "क्या कार्डियोलॉजी प्रक्रिया नोट्स समर्थित हो सकते हैं?",
+        "a": "दस्तावेज़ प्रकार आपके टेम्पलेट पर निर्भर करते हैं। कई सेवाएं परामर्श और फॉलो-अप नोट्स से शुरू होती हैं, फिर विस्तार करती हैं।"
       },
       {
-        "q": "Does DocNote integrate with hospital systems?",
-        "a": "Integrations such as Mediway and SOKLE are available where configured."
+        "q": "क्या DocNote अस्पताल प्रणालियों के साथ एकीकृत होता है?",
+        "a": "एकीकरण जैसे Mediway और SOKLE जहां कॉन्फ़िगर किया गया हो वहां उपलब्ध हैं।"
       },
       {
-        "q": "Is this only for private clinics?",
-        "a": "No. Hospital services are a primary use case."
+        "q": "क्या यह केवल निजी क्लीनिक के लिए है?",
+        "a": "नहीं। अस्पताल सेवाएं एक प्राथमिक उपयोग मामला हैं।"
       },
       {
-        "q": "Who validates the cardiology note?",
-        "a": "The responsible clinician — always."
+        "q": "कार्डियोलॉजी नोट को कौन सत्यापित करता है?",
+        "a": "जिम्मेदार क्लिनिशियन - हमेशा।"
       },
       {
-        "q": "Can imaging findings be included in the draft?",
-        "a": "Findings discussed during the encounter can be captured; imaging reports themselves remain in their own systems."
+        "q": "क्या ड्राफ्ट में इमेजिंग निष्कर्ष शामिल किए जा सकते हैं?",
+        "a": "मुलाकात के दौरान चर्चा किए गए निष्कर्षों को कैप्चर किया जा सकता है; इमेजिंग रिपोर्ट स्वयं अपने स्वयं के सिस्टम में रहती हैं।"
       },
       {
-        "q": "Does DocNote support procedure follow-up visits?",
-        "a": "Yes — outpatient follow-ups after procedures are a common use case alongside first consultations."
+        "q": "क्या DocNote प्रक्रिया फॉलो-अप दौरों का समर्थन करता है?",
+        "a": "हाँ - प्रक्रियाओं के बाद आउटपेशेंट फॉलो-अप पहले परामर्श के साथ-साथ एक सामान्य उपयोग मामला हैं।"
       }
     ],
     "cta": {
-      "title": "Bring specialty-aware notes to your cardiology service",
-      "body": "Start a free trial and see how DocNote handles your consultation load.",
-      "primary": "Start free trial",
-      "secondary": "See pricing"
+      "title": "विशेषता-जागरूक नोट्स को अपनी कार्डियोलॉजी सेवा में लाएं",
+      "body": "एक निःशुल्क परीक्षण शुरू करें और देखें कि DocNote आपके परामर्श भार को कैसे संभालता है।",
+      "primary": "निःशुल्क परीक्षण शुरू करें",
+      "secondary": "मूल्य निर्धारण देखें"
     },
-    "relatedLabel": "Related guides",
-    "navDesc": "घनी परामर्श और प्रक्रिया फॉलो-अप।"
+    "relatedLabel": "संबंधित गाइड",
+    "navDesc": "घने परामर्श और प्रक्रिया फॉलो-अप।"
   },
   "ai-scribe-pediatrics": {
-    "navLabel": "पीडियाट्रिक्स के लिए AI असिस्टेंट",
-    "title": "AI medical scribe for pediatrics | DocNote",
-    "description": "AI medical scribe for pediatrics: structured consultation notes for paediatric clinics with Swiss hosting and careful privacy defaults.",
+    "navLabel": "बाल रोग के लिए AI स्क्राइब",
+    "title": "बाल रोग के लिए AI मेडिकल स्क्राइब | DocNote",
+    "description": "बाल रोग के लिए AI मेडिकल स्क्राइब: स्विस होस्टिंग और सावधान गोपनीयता डिफ़ॉल्ट के साथ बाल चिकित्सा क्लीनिक के लिए संरचित परामर्श नोट्स।",
     "hero": {
-      "badge": "AI scribe for pediatrics",
-      "title": "AI medical scribe for pediatrics",
-      "subtitle": "Capture growth, symptoms, and plans without losing attention on the child and caregivers.",
-      "lead": "Paediatric visits are fast, family-centred, and documentation-heavy. DocNote helps paediatricians draft consultation notes from the encounter so growth, symptoms, and plans are captured without stealing attention from the child and caregivers."
+      "badge": "बाल रोग के लिए AI स्क्राइब",
+      "title": "बाल रोग के लिए AI मेडिकल स्क्राइब",
+      "subtitle": "बच्चे और देखभाल करने वालों पर ध्यान खोए बिना विकास, लक्षण और योजनाओं को कैप्चर करें।",
+      "lead": "बाल चिकित्सा दौरे तेज, परिवार-केंद्रित और डॉक्यूमेंटेशन-भारी होते हैं। DocNote बाल रोग विशेषज्ञों को मुलाकात से परामर्श नोट्स का ड्राफ्ट तैयार करने में मदद करता है ताकि विकास, लक्षण और योजनाएं कैप्चर हो सकें बिना बच्चे और देखभाल करने वालों से ध्यान चुराए।"
     },
     "story": {
-      "badge": "In a nutshell",
-      "title": "Notes that fit paediatric visits",
+      "badge": "संक्षेप में",
+      "title": "नोट्स जो बाल चिकित्सा दौरों में फिट होते हैं",
       "paragraphs": [
-        "History from caregivers, exam findings, anticipatory guidance, and follow-up — drafted into a structure you can edit quickly between patients.",
-        "Caregivers may speak different languages than the note language, and visits are family-centred and fast. DocNote is built for multilingual European clinics and the particular rhythm of paediatric care."
+        "देखभाल करने वालों से इतिहास, परीक्षा निष्कर्ष, प्रत्याशी मार्गदर्शन और फॉलो-अप - एक संरचना में ड्राफ्ट किया गया जिसे आप रोगियों के बीच जल्दी से संपादित कर सकते हैं।",
+        "देखभाल करने वाले नोट भाषा से अलग भाषा बोल सकते हैं, और दौरे परिवार-केंद्रित और तेज होते हैं। DocNote बहुभाषी यूरोपीय क्लीनिक और बाल चिकित्सा देखभाल की विशेष लय के लिए बनाया गया है।"
       ]
     },
     "benefits": {
-      "badge": "Why paediatric clinics adopt it",
-      "title": "Privacy for children and families, speed for busy clinics",
-      "subtitle": "Built for family-centred, fast-paced visits.",
+      "badge": "बाल चिकित्सा क्लीनिक इसे क्यों अपनाते हैं",
+      "title": "बच्चों और परिवारों के लिए गोपनीयता, व्यस्त क्लीनिक के लिए गति",
+      "subtitle": "परिवार-केंद्रित, तेज-गति वाले दौरों के लिए बनाया गया।",
       "items": [
         {
-          "title": "Captures caregiver history clearly",
-          "body": "History from parents or guardians, exam findings, and anticipatory guidance land in a structure you can edit quickly."
+          "title": "देखभाल करने वाले इतिहास को स्पष्ट रूप से कैप्चर करता है",
+          "body": "माता-पिता या अभिभावकों से इतिहास, परीक्षा निष्कर्ष और प्रत्याशी मार्गदर्शन एक संरचना में आते हैं जिसे आप जल्दी से संपादित कर सकते हैं।"
         },
         {
-          "title": "Heightened privacy by default",
-          "body": "Swiss hosting, short audio retention, and no training on visits support the elevated privacy expectations of paediatric care."
+          "title": "डिफ़ॉल्ट रूप से बढ़ी हुई गोपनीयता",
+          "body": "स्विस होस्टिंग, छोटी ऑडियो प्रतिधारण और दौरों पर कोई प्रशिक्षण नहीं बाल चिकित्सा देखभाल की उच्च गोपनीयता अपेक्षाओं का समर्थन करते हैं।"
         },
         {
-          "title": "Consistent GP-to-specialist handoffs",
-          "body": "Consistent AI documentation habits reduce friction when children move between general practice and paediatrics."
+          "title": "सुसंगत GP-से-विशेषज्ञ हैंडऑफ",
+          "body": "सुसंगत AI डॉक्यूमेंटेशन आदतें घर्षण को कम करती हैं जब बच्चे सामान्य अभ्यास और बाल रोग के बीच आगे बढ़ते हैं।"
         },
         {
-          "title": "Built for multilingual families",
-          "body": "Caregivers may speak a different language than the note — DocNote is built for multilingual European clinics."
+          "title": "बहुभाषी परिवारों के लिए बनाया गया",
+          "body": "देखभाल करने वाले नोट से अलग भाषा बोल सकते हैं - DocNote बहुभाषी यूरोपीय क्लीनिक के लिए बनाया गया है।"
         }
       ]
     },
     "steps": {
-      "badge": "How it works",
-      "title": "From a family visit to a clear note",
-      "subtitle": "Fast enough between short, high-turnover appointments.",
+      "badge": "यह कैसे काम करता है",
+      "title": "एक परिवार दौरे से एक स्पष्ट नोट तक",
+      "subtitle": "छोटे, उच्च टर्नओवर नियुक्तियों के बीच पर्याप्त तेज।",
       "items": [
         {
-          "title": "Capture the visit",
-          "body": "Record the consultation with caregivers on mobile or web, following consent rules."
+          "title": "दौरे को कैप्चर करें",
+          "body": "सहमति नियमों का पालन करते हुए मोबाइल या वेब पर देखभाल करने वालों के साथ परामर्श रिकॉर्ड करें।"
         },
         {
-          "title": "Review the draft",
-          "body": "A structured note covering history, exam, and plan is ready within seconds."
+          "title": "ड्राफ्ट की समीक्षा करें",
+          "body": "इतिहास, परीक्षा और योजना को कवर करने वाला एक संरचित नोट सेकंडों में तैयार हो जाता है।"
         },
         {
-          "title": "Check age-specific detail",
-          "body": "Clinicians review for growth, safety-critical, and age-specific accuracy."
+          "title": "आयु-विशिष्ट विवरण की जांच करें",
+          "body": "क्लिनिशियन विकास, सुरक्षा-महत्वपूर्ण और आयु-विशिष्ट सटीकता के लिए समीक्षा करते हैं।"
         },
         {
-          "title": "Validate and continue",
-          "body": "Approve the note between patients without losing pace."
+          "title": "सत्यापित करें और जारी रखें",
+          "body": "रोगियों के बीच गति खोए बिना नोट को मंजूरी दें।"
         }
       ]
     },
     "proof": {
-      "badge": "Privacy for children and families",
-      "title": "The elevated trust paediatric care requires",
-      "intro": "Documentation for children carries extra weight — the privacy story has to match it.",
+      "badge": "बच्चों और परिवारों के लिए गोपनीयता",
+      "title": "बाल चिकित्सा देखभाल के लिए आवश्यक उच्च विश्वास",
+      "intro": "बच्चों के लिए डॉक्यूमेंटेशन में अतिरिक्त वजन होता है - गोपनीयता कहानी को इसके अनुरूप होना चाहिए।",
       "points": [
         {
-          "title": "Swiss hosting",
-          "body": "Health data hosted and processed under Swiss medical secrecy expectations."
+          "title": "स्विस होस्टिंग",
+          "body": "स्विस मेडिकल गोपनीयता अपेक्षाओं के तहत स्वास्थ्य डेटा होस्ट और प्रोसेस किया जाता है।"
         },
         {
-          "title": "Short audio retention",
-          "body": "Audio is deleted automatically shortly after the note is produced."
+          "title": "छोटी ऑडियो प्रतिधारण",
+          "body": "नोट तैयार होने के कुछ समय बाद ऑडियो स्वचालित रूप से हटा दिया जाता है।"
         },
         {
-          "title": "No training on visits",
-          "body": "Family consultations are never used to train foundation models."
+          "title": "दौरों पर कोई प्रशिक्षण नहीं",
+          "body": "परिवार परामर्श का उपयोग कभी भी फाउंडेशन मॉडल को प्रशिक्षित करने के लिए नहीं किया जाता है।"
         },
         {
-          "title": "Family-centred workflow",
-          "body": "Documentation supports the visit without stealing attention from the child and caregivers."
+          "title": "परिवार-केंद्रित वर्कफ़्लो",
+          "body": "डॉक्यूमेंटेशन दौरे का समर्थन करता है बिना बच्चे और देखभाल करने वालों से ध्यान चुराए।"
         }
       ]
     },
     "sections": [
       {
-        "heading": "Documenting well-child visits consistently",
-        "body": "Routine well-child checks often follow a recurring pattern of growth data, developmental questions, and vaccination status. A consistent template makes these visits easier to compare across appointments, without re-entering everything each time."
+        "heading": "वेल-चाइल्ड दौरों को लगातार दस्तावेज़ करना",
+        "body": "रूटीन वेल-चाइल्ड चेक अक्सर विकास डेटा, विकासात्मक प्रश्न और टीकाकरण स्थिति के एक आवर्ती पैटर्न का पालन करते हैं। एक सुसंगत टेम्पलेट इन दौरों को नियुक्तियों में आसानी से तुलना करने योग्य बनाता है, बिना हर बार सब कुछ फिर से दर्ज करने के।"
       },
       {
-        "heading": "When caregivers and the note use different languages",
-        "body": "In multilingual families, the consultation often happens in one language while the institution documents in another. DocNote supports that separation so the family's linguistic diversity doesn't affect the quality of the record."
+        "heading": "जब देखभाल करने वाले और नोट अलग-अलग भाषाओं का उपयोग करते हैं",
+        "body": "बहुभाषी परिवारों में, परामर्श अक्सर एक भाषा में होता है जबकि संस्थान दूसरी भाषा में दस्तावेज़ करता है। DocNote उस अलगाव का समर्थन करता है ताकि परिवार की भाषाई विविधता रिकॉर्ड की गुणवत्ता को प्रभावित न करे।"
       },
       {
-        "heading": "Keeping attention on the child, not the screen",
-        "body": "Paediatric visits depend on building quick rapport with a child who may already be anxious about the appointment. A clinician who spends the visit typing loses some of that connection. Ambient capture is designed to let you keep eye contact and body language focused on the child and caregiver throughout."
+        "heading": "बच्चे पर ध्यान केंद्रित रखना, स्क्रीन पर नहीं",
+        "body": "बाल चिकित्सा दौरे एक बच्चे के साथ त्वरित रैपोर्ट बनाने पर निर्भर करते हैं जो पहले से ही नियुक्ति के बारे में चिंतित हो सकता है। एक क्लिनिशियन जो दौरे को टाइपिंग में बिताता है वह उस कनेक्शन का कुछ हिस्सा खो देता है। एम्बिएंट कैप्चर आपको बच्चे और देखभाल करने वाले पर आंखों के संपर्क और बॉडी लैंग्वेज को पूरे समय केंद्रित रखने देने के लिए डिज़ाइन किया गया है।"
       },
       {
-        "heading": "Documenting anticipatory guidance consistently",
-        "body": "Anticipatory guidance — safety advice, developmental milestones to watch for, when to seek care — is easy to skip when a visit runs long. A structured template keeps a placeholder for this guidance in every note, making it easier to confirm it was actually covered rather than assumed."
+        "heading": "प्रत्याशी मार्गदर्शन को लगातार दस्तावेज़ करना",
+        "body": "प्रत्याशी मार्गदर्शन - सुरक्षा सलाह, देखने के लिए विकासात्मक माइलस्टोन, देखभाल कब लेनी है - यह छोड़ना आसान है जब एक दौरा लंबा चलता है। एक संरचित टेम्पलेट हर नोट में इस मार्गदर्शन के लिए एक प्लेसहोल्डर रखता है, जिससे यह पुष्टि करना आसान हो जाता है कि यह वास्तव में कवर किया गया था बजाय मान लेने के।"
       },
       {
-        "heading": "Working with divorced or separated caregivers",
-        "body": "Family situations affecting who receives information or makes decisions come up often in paediatric practice. DocNote's note structure doesn't decide who has parental authority, but a clear, well-organised record makes it easier for the practice to apply its own policy consistently when questions arise."
+        "heading": "तलाकशुदा या अलग हुए देखभाल करने वालों के साथ काम करना",
+        "body": "परिवार की स्थितियां जो प्रभावित करती हैं कि कौन जानकारी प्राप्त करता है या निर्णय लेता है, बाल चिकित्सा अभ्यास में अक्सर आती हैं। DocNote का नोट संरचना यह तय नहीं करती कि किसके पास माता-पिता का अधिकार है, लेकिन एक स्पष्ट, अच्छी तरह से संगठित रिकॉर्ड प्रैक्टिस के लिए अपनी नीति को लगातार लागू करना आसान बनाता है जब प्रश्न उठते हैं।"
       },
       {
-        "heading": "Documenting school and childcare notes efficiently",
-        "body": "Beyond the clinical note itself, paediatric practices often need short administrative letters — for school, sports clearance, or childcare — that reference the same visit. Because the underlying visit is already structured, generating these shorter documents takes less rework than starting from an unstructured note each time."
+        "heading": "स्कूल और चाइल्डकेयर नोट्स को कुशलता से दस्तावेज़ करना",
+        "body": "नैदानिक नोट के अलावा, बाल चिकित्सा प्रैक्टिस को अक्सर छोटे प्रशासनिक पत्रों की आवश्यकता होती है - स्कूल, खेल मंजूरी, या चाइल्डकेयर के लिए - जो एक ही दौरे को संदर्भित करते हैं। क्योंकि अंतर्निहित दौरा पहले से ही संरचित है, इन छोटे दस्तावेज़ों को उत्पन्न करने में हर बार एक असंरचित नोट से शुरू करने की तुलना में कम पुन: कार्य लगता है।"
       },
       {
-        "heading": "Following growth and development over years",
-        "body": "A child's record is read across many years by clinicians who may never have met the family before. Consistent structure across visits makes it easier to trace growth trends and developmental milestones over time, rather than reconstructing that history from inconsistent past notes each time a new question comes up."
+        "heading": "वर्षों में विकास और विकास का पालन करना",
+        "body": "एक बच्चे का रिकॉर्ड कई वर्षों तक क्लिनिशियन द्वारा पढ़ा जाता है जिन्होंने शायद परिवार से पहले कभी मुलाकात नहीं की हो। दौरों में सुसंगत संरचना समय के साथ विकास रुझान और विकासात्मक माइलस्टोन को ट्रेस करना आसान बनाती है, बजाय हर बार एक नए प्रश्न आने पर असंगत पिछले नोट्स से उस इतिहास को पुनर्निर्माण करने के।"
       },
       {
-        "heading": "Supporting locum and rotating paediatric staff",
-        "body": "Paediatric practices often rely on locum clinicians or rotating trainees who see a child for the first time without the benefit of a long-standing relationship with the family. A well-structured previous note gives that clinician the context they need in a fraction of the time it would take to read through years of loosely organised free text."
+        "heading": "लोकम और रोटेटिंग बाल चिकित्सा स्टाफ का समर्थन करना",
+        "body": "बाल चिकित्सा प्रैक्टिस अक्सर लोकम क्लिनिशियन या रोटेटिंग ट्रेनी पर निर्भर करती हैं जो परिवार के साथ लंबे समय तक संबंध के लाभ के बिना पहली बार एक बच्चे को देखते हैं। एक अच्छी तरह से संरचित पिछला नोट उस क्लिनिशियन को वह संदर्भ देता है जिसकी उन्हें आवश्यकता होती है, उस समय के एक अंश में जो ढीले से संगठित फ्री टेक्स्ट के वर्षों को पढ़ने में लगेगा।"
       }
     ],
     "faq": [
       {
-        "q": "Can parents refuse recording?",
-        "a": "Consent and local rules govern recording. DocNote does not change your obligation to follow them."
+        "q": "क्या माता-पिता रिकॉर्डिंग से इनकार कर सकते हैं?",
+        "a": "सहमति और स्थानीय नियम रिकॉर्डिंग को नियंत्रित करते हैं। DocNote आपके दायित्व को उनका पालन करने के लिए नहीं बदलता है।"
       },
       {
-        "q": "Are well-child visits supported?",
-        "a": "Yes — consultation-style notes for routine and acute visits can use your preferred templates."
+        "q": "क्या वेल-चाइल्ड दौरे समर्थित हैं?",
+        "a": "हाँ - रूटीन और एक्यूट दौरों के लिए परामर्श-शैली नोट्स आपके पसंदीदा टेम्पलेट का उपयोग कर सकते हैं।"
       },
       {
-        "q": "Is DocNote only for hospitals?",
-        "a": "No. Paediatric clinics and mixed practices are in scope."
+        "q": "क्या DocNote केवल अस्पतालों के लिए है?",
+        "a": "नहीं। बाल चिकित्सा क्लीनिक और मिश्रित प्रैक्टिस स्कोप में हैं।"
       },
       {
-        "q": "How accurate are paediatric drafts?",
-        "a": "Drafts are starting points. Clinicians always review for age-specific details and safety-critical information."
+        "q": "बाल चिकित्सा ड्राफ्ट कितने सटीक हैं?",
+        "a": "ड्राफ्ट शुरुआती बिंदु हैं। क्लिनिशियन हमेशा आयु-विशिष्ट विवरण और सुरक्षा-महत्वपूर्ण जानकारी के लिए समीक्षा करते हैं।"
       },
       {
-        "q": "Can growth charts or measurements be referenced in the note?",
-        "a": "Measurements discussed during the visit can be captured in the note; charting systems remain in their own tools."
+        "q": "क्या नोट में ग्रोथ चार्ट या माप संदर्भित किए जा सकते हैं?",
+        "a": "दौरे के दौरान चर्चा किए गए माप नोट में कैप्चर किए जा सकते हैं; चार्टिंग सिस्टम अपने स्वयं के टूल्स में रहते हैं।"
       },
       {
-        "q": "Does DocNote handle well-child and acute visits differently?",
-        "a": "Yes — different templates can be selected depending on the visit type."
+        "q": "क्या DocNote वेल-चाइल्ड और एक्यूट दौरों को अलग तरह से संभालता है?",
+        "a": "हाँ - दौरे के प्रकार के आधार पर अलग-अलग टेम्पलेट चुने जा सकते हैं।"
       }
     ],
     "cta": {
-      "title": "Keep attention on the child, not the keyboard",
-      "body": "Start a free trial and see how DocNote fits your paediatric clinic.",
-      "primary": "Start free trial",
-      "secondary": "See pricing"
+      "title": "ध्यान बच्चे पर रखें, कीबोर्ड पर नहीं",
+      "body": "एक निःशुल्क परीक्षण शुरू करें और देखें कि DocNote आपके बाल चिकित्सा क्लिनिक में कैसे फिट होता है।",
+      "primary": "निःशुल्क परीक्षण शुरू करें",
+      "secondary": "मूल्य निर्धारण देखें"
     },
-    "relatedLabel": "Related guides",
-    "navDesc": "विकास, लक्षण, योजना — नज़र बच्चे पर।"
+    "relatedLabel": "संबंधित गाइड",
+    "navDesc": "विकास, लक्षण, योजनाएं - बच्चे पर ध्यान।"
   },
   "ai-scribe-emergency-medicine": {
     "navLabel": "इमरजेंसी मेडिसिन के लिए AI असिस्टेंट",

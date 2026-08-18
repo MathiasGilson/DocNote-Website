@@ -548,7 +548,6 @@
     "relatedLabel": "Pagine correlate"
   },
   "for-medical-secretaries": {
-    "navLabel": "Medical secretaries",
     "navDesc": "Lavora all'interno dell'account del medico, con i suoi modelli.",
     "title": "Documentazione AI per segretarie mediche | DocNote",
     "description": "Un account segretaria lavora all'interno del medico — stessi modelli, stesso intestazione, niente riscrittura. La segretaria formatta ed esporta; il medico convalida. Prenota una demo.",
@@ -670,7 +669,8 @@
       "primary": "Prenota una demo per il tuo studio",
       "secondary": "Contatta il team"
     },
-    "relatedLabel": "Pagine correlate"
+    "relatedLabel": "Pagine correlate",
+    "navLabel": "Segretarie mediche"
   },
   "for-clinic-groups": {
     "navLabel": "Gruppi & cliniche",
@@ -917,7 +917,6 @@
     "relatedLabel": "Pagine correlate"
   },
   "ehr-integration": {
-    "navLabel": "EHR integration",
     "navDesc": "7 sistemi, inviati sezione per sezione.",
     "title": "Integrazione EHR per Scribe Medici AI | DocNote",
     "description": "DocNote invia report validati in SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis, suddivisi per sezione — flusso unidirezionale, senza copia-incolla. Prenota una demo.",
@@ -1033,7 +1032,8 @@
       "primary": "Prenota una demo",
       "secondary": "Contatta il team"
     },
-    "relatedLabel": "Pagine correlate"
+    "relatedLabel": "Pagine correlate",
+    "navLabel": "Integrazione con l'EHR"
   },
   "custom-word-templates": {
     "navLabel": "I tuoi modelli Word",
@@ -1274,15 +1274,14 @@
     "relatedLabel": "Pagine correlate"
   },
   "day-hospital-documentation": {
-    "navLabel": "Day hospital",
     "navDesc": "Più clinici, un unico referto.",
     "title": "Software per la documentazione del Day Hospital | DocNote",
     "description": "Più clinici, un unico referto del paziente: DocNote unisce i contributi del team in un unico referto strutturato. Disponibile per gruppi con un EHR integrato.",
     "hero": {
-      "badge": "Day hospital",
       "title": "Day hospital: più clinici, un unico referto",
       "subtitle": "DocNote unisce i contributi del team in un referto affidabile.",
-      "lead": "Alla fine della giornata avrai un unico referto strutturato del paziente, non quattro note parziali da riconciliare. La qualità della documentazione segue il team invece di frammentarsi."
+      "lead": "Alla fine della giornata avrai un unico referto strutturato del paziente, non quattro note parziali da riconciliare. La qualità della documentazione segue il team invece di frammentarsi.",
+      "badge": "Day hospital"
     },
     "story": {
       "badge": "Nel prodotto",
@@ -1386,7 +1385,8 @@
       "primary": "Prenota una demo",
       "secondary": "Contatta il team"
     },
-    "relatedLabel": "Pagine correlate"
+    "relatedLabel": "Pagine correlate",
+    "navLabel": "Day hospital"
   },
   "multilingual-medical-documentation": {
     "navLabel": "Multilingue & specialità",

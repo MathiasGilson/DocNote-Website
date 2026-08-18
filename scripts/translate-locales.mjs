@@ -13,6 +13,8 @@
  *   OPEN_ROUTER_API_KEY=… node scripts/translate-locales.mjs --only=es,it --bundle=pages,patient
  *   OPEN_ROUTER_API_KEY=… node scripts/translate-locales.mjs --max-locales=2
  *   OPEN_ROUTER_API_KEY=… node scripts/translate-locales.mjs --force
+ *   OPEN_ROUTER_API_KEY=… node scripts/translate-locales.mjs --only=zh --bundle=landings --keys=ehr-integration,clinical-context
+ *     (--keys: force-retranslate only these top-level keys of the bundle, even if present)
  *
  * Env: OPEN_ROUTER_API_KEY (Keychain: openrouter-qualtir)
  *      TRANSLATE_MODEL (default: deepseek/deepseek-chat-v3-0324)
@@ -70,7 +72,37 @@ const BUNDLES = {
   'seo-content': path.join(ROOT, 'src/content/inline/seo-content'),
   landings: path.join(ROOT, 'src/content/inline/landings'),
   'solutions-hub': path.join(ROOT, 'src/content/inline/solutions-hub'),
+  'landing-ui': path.join(ROOT, 'src/content/inline/landing-ui'),
 };
+
+/* Target-script sanity check: a "translation" that comes back in Latin script for
+ * these locales is almost certainly untranslated English (seen with zh in Aug 2026). */
+const LOCALE_SCRIPT = {
+  ar: /[\u0600-\u06FF]/,
+  hi: /[\u0900-\u097F]/,
+  ja: /[\u3040-\u30FF\u4E00-\u9FFF]/,
+  ko: /[\uAC00-\uD7AF]/,
+  ru: /[\u0400-\u04FF]/,
+  th: /[\u0E00-\u0E7F]/,
+  zh: /[\u4E00-\u9FFF]/,
+};
+
+function collectStrings(node, out = []) {
+  if (typeof node === 'string') out.push(node);
+  else if (Array.isArray(node)) node.forEach((v) => collectStrings(v, out));
+  else if (node && typeof node === 'object') Object.values(node).forEach((v) => collectStrings(v, out));
+  return out;
+}
+
+/** Fraction of "translatable" strings (has 4+ latin letters) that carry no target-script char. */
+function untranslatedRatio(translated, locale) {
+  const re = LOCALE_SCRIPT[locale];
+  if (!re) return 0;
+  const strings = collectStrings(translated).filter((s) => /[a-zA-Z]{4,}/.test(s) && s.length > 12);
+  if (!strings.length) return 0;
+  const bad = strings.filter((s) => !re.test(s)).length;
+  return bad / strings.length;
+}
 
 const rawArgs = process.argv.slice(2);
 const flags = {
@@ -78,6 +110,7 @@ const flags = {
   dryRun: rawArgs.includes('--dry-run'),
   only: null,
   bundles: null,
+  keys: null,
   maxLocales: null,
   maxApiCalls: null,
 };
@@ -85,6 +118,7 @@ const flags = {
 for (const arg of rawArgs) {
   if (arg.startsWith('--only=')) flags.only = arg.slice(7).split(',').filter(Boolean);
   if (arg.startsWith('--bundle=')) flags.bundles = arg.slice(9).split(',').filter(Boolean);
+  if (arg.startsWith('--keys=')) flags.keys = arg.slice(7).split(',').filter(Boolean);
   if (arg.startsWith('--max-locales=')) flags.maxLocales = parseInt(arg.slice(14), 10);
   if (arg.startsWith('--max-api-calls=')) flags.maxApiCalls = parseInt(arg.slice(16), 10);
 }
@@ -128,6 +162,22 @@ function findMissingSubtree(source, target) {
   }
   if (flags.force) return source;
   return undefined;
+}
+
+/** Diff for a bundle/locale: normal missing-leaves diff, or forced subset when --keys is set. */
+function computeMissing(enData, locData) {
+  if (flags.keys) {
+    const subset = {};
+    for (const k of flags.keys) {
+      if (!(k in enData)) {
+        console.error(`--keys: unknown top-level key "${k}" in EN source`);
+        process.exit(1);
+      }
+      subset[k] = enData[k];
+    }
+    return Object.keys(subset).length ? subset : undefined;
+  }
+  return findMissingSubtree(enData, flags.force ? undefined : locData);
 }
 
 function unwrapArrPatches(node) {
@@ -294,7 +344,14 @@ TRANSLATION RULES:
         usageTotals.cost += Number(data.usage.cost || 0);
       }
       await sleep(DELAY_BETWEEN_CALLS_MS);
-      return JSON.parse(content);
+      const parsed = JSON.parse(content);
+      const ratio = untranslatedRatio(parsed, locale);
+      if (ratio > 0.3) {
+        throw new Error(
+          `output looks untranslated (${Math.round(ratio * 100)}% of strings without ${langName} script)`
+        );
+      }
+      return parsed;
     } catch (err) {
       if (attempt < retries) {
         const backoff = 2000 * (attempt + 1);
@@ -314,7 +371,7 @@ async function processBundleLocale(bundleName, dir, locale, enData, semaphore) {
     locData = JSON.parse(fs.readFileSync(locPath, 'utf8'));
   }
 
-  const missing = findMissingSubtree(enData, flags.force ? undefined : locData);
+  const missing = computeMissing(enData, locData);
   if (
     missing === undefined ||
     (typeof missing === 'object' && !Array.isArray(missing) && Object.keys(missing).length === 0)
@@ -387,6 +444,7 @@ async function main() {
   console.log(`Locales: ${targetLocales.join(', ')}`);
   if (flags.dryRun) console.log('Dry-run mode');
   if (flags.force) console.log('Force retranslate');
+  if (flags.keys) console.log(`Forced keys: ${flags.keys.join(', ')}`);
   if (flags.maxApiCalls != null) console.log(`API call cap: ${flags.maxApiCalls}`);
   console.log();
 
@@ -407,7 +465,7 @@ async function main() {
       if (fs.existsSync(locPath)) {
         locData = JSON.parse(fs.readFileSync(locPath, 'utf8'));
       }
-      const missing = findMissingSubtree(enData, flags.force ? undefined : locData);
+      const missing = computeMissing(enData, locData);
       const count =
         missing === undefined
           ? 0
@@ -427,7 +485,7 @@ async function main() {
     // rough: 1+ chunks from missing size
     const locPath = path.join(t.dir, `${t.locale}.json`);
     let locData = fs.existsSync(locPath) ? JSON.parse(fs.readFileSync(locPath, 'utf8')) : {};
-    const missing = findMissingSubtree(t.enData, flags.force ? undefined : locData);
+    const missing = computeMissing(t.enData, locData);
     const chunks = missing ? chunkNestedObject(missing) : [];
     return s + chunks.length;
   }, 0);

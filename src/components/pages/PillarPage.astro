@@ -8,9 +8,11 @@ import PageHero from '../ui/PageHero.astro';
 import LpSettingCard from '../ui/LpSettingCard.astro';
 import '../../styles/landing-page.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getLandingUi } from '../../utils/inline-content';
 import {
   getLanding,
   getLandingNavLabel,
+  getNavGroupLabel,
   landingMeta,
   landingFeatureKeys,
   landingZigZagSlugs,
@@ -47,27 +49,14 @@ const pagesT = pagesEntry!.data;
 const featureKeys = landingFeatureKeys[slug];
 const useZigZagBenefits = landingZigZagSlugs.has(slug);
 
-const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
-const solutionsCrumb =
-  lang === 'fr' ? 'Solutions' : lang === 'de' ? 'Lösungen' : 'Solutions';
-const specialtiesCrumb =
-  lang === 'fr' ? 'Spécialités' : lang === 'de' ? 'Fachgebiete' : 'Specialties';
-const faqHeading =
-  lang === 'fr' ? 'Questions fréquentes' : lang === 'de' ? 'Häufige Fragen' : 'Frequently asked questions';
-const faqSubtitle =
-  lang === 'fr'
-    ? 'Réponses claires sur la confidentialité, la validation clinique et le fonctionnement au quotidien.'
-    : lang === 'de'
-      ? 'Klare Antworten zu Datenschutz, klinischer Validierung und dem täglichen Ablauf.'
-      : 'Straight answers on privacy, clinical validation, and how this fits your daily workflow.';
-const depthBadge =
-  lang === 'fr' ? 'En pratique' : lang === 'de' ? 'In der Praxis' : 'In practice';
-const depthTitle =
-  lang === 'fr'
-    ? 'Ce qu’il faut savoir avant de déployer'
-    : lang === 'de'
-      ? 'Was vor dem Rollout zählt'
-      : 'What to know before you roll out';
+const ui = getLandingUi(lang);
+const homeLabel = ui.home;
+const solutionsCrumb = getNavGroupLabel('solutions', lang);
+const specialtiesCrumb = getNavGroupLabel('specialties', lang);
+const faqHeading = ui.faqHeading;
+const faqSubtitle = ui.faqSubtitle;
+const depthBadge = ui.depthBadge;
+const depthTitle = ui.depthTitle;
 
 const ctaHref = (key: typeof meta.primaryCta) => {
   if (key === 'app') return WEB_APP_URL;
@@ -104,8 +93,7 @@ const parentFamily = parentFamilySlug ? getSpecialtyFamily(parentFamilySlug, lan
 const parentFamilyHref = parentFamilySlug
   ? getLocalizedPath(getSpecialtyFamilyPath(parentFamilySlug), lang)
   : null;
-const familyHubLabel =
-  lang === 'fr' ? 'Famille de spécialités' : lang === 'de' ? 'Fachfamilie' : 'Specialty family';
+const familyHubLabel = ui.familyHubLabel;
 const pageLabel = p.navLabel || p.hero.title;
 const isSpecialtyLanding = meta.type === 'specialty';
 
@@ -447,9 +435,7 @@ const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
             {familyHubLabel}
           </h2>
           <p class="text-base text-gray-600 mb-3">
-            {lang === 'fr'
-              ? 'Voir toutes les spécialités de cette famille :'
-              : 'See all specialties in this family:'}
+            {ui.familyHubSeeAll}
           </p>
           <a
             href={parentFamilyHref}
@@ -477,7 +463,7 @@ const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
               href={getLocalizedPath('/pricing', lang)}
               class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
             >
-              {lang === 'fr' ? 'Tarifs' : lang === 'de' ? 'Preise' : 'Pricing'}
+              {ui.pricing}
             </a>
           </li>
           <li>
@@ -485,7 +471,7 @@ const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
               href={getLocalizedPath('/blog', lang)}
               class="text-base text-gray-800 hover:text-primary-700 transition-colors underline-offset-2 hover:underline"
             >
-              {lang === 'fr' ? 'Actualités' : lang === 'de' ? 'Neuigkeiten' : 'News & insights'}
+              {ui.news}
             </a>
           </li>
         </ul>

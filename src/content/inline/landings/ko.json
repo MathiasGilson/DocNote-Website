@@ -548,7 +548,6 @@
     "relatedLabel": "관련 페이지"
   },
   "for-medical-secretaries": {
-    "navLabel": "Medical secretaries",
     "navDesc": "의사 계정 내에서 작업하며, 의사의 템플릿을 사용합니다.",
     "title": "의무기록사들을 위한 AI 문서화 | DocNote",
     "description": "비서 계정은 의사 계정 내에서 작동합니다 — 동일한 템플릿, 동일한 레터헤드, 재입력 불필요. 비서는 형식을 지정하고 내보내며, 의사는 검증합니다. 데모 예약.",
@@ -670,10 +669,10 @@
       "primary": "진료실 데모 예약",
       "secondary": "팀에 문의"
     },
-    "relatedLabel": "관련 페이지"
+    "relatedLabel": "관련 페이지",
+    "navLabel": "의료 비서"
   },
   "for-clinic-groups": {
-    "navLabel": "Groups & clinics",
     "navDesc": "다중 사이트 롤아웃, 강제 정책, 중앙 청구.",
     "title": "클리닉 그룹을 위한 AI 의료 문서화 | DocNote",
     "description": "보존, 로그아웃, 공유 템플릿 및 기본 EHR 지원과 함께 사이트 전반에 롤아웃하세요. 팀과 롤아웃에 대해 논의하세요.",
@@ -795,10 +794,10 @@
       "primary": "팀에 문의",
       "secondary": "데모 예약"
     },
-    "relatedLabel": "관련 페이지"
+    "relatedLabel": "관련 페이지",
+    "navLabel": "그룹 및 클리닉"
   },
   "medical-coding-and-billing": {
-    "navLabel": "Coding & billing",
     "navDesc": "SwissDRG, PMSI, TARDOC, Tarif 222.",
     "title": "SwissDRG, TARDOC & PMSI 코딩 소프트웨어 | DocNote",
     "description": "청구 가능한 진단이 편지 자체 내에 표시됩니다 — SwissDRG, TARDOC, Tarif 222 및 PMSI 제안을 검증하세요, 두 번째 코딩 단계가 아닙니다. 데모 예약.",
@@ -914,7 +913,8 @@
       "primary": "데모 예약",
       "secondary": "가격 확인"
     },
-    "relatedLabel": "관련 페이지"
+    "relatedLabel": "관련 페이지",
+    "navLabel": "코딩 및 청구"
   },
   "ehr-integration": {
     "navLabel": "EHR 통합",

@@ -917,361 +917,361 @@
     "relatedLabel": "相关页面"
   },
   "ehr-integration": {
-    "navLabel": "EHR integration",
-    "navDesc": "7 systems, sent section by section",
-    "title": "EHR Integration for Medical Scribes | DocNote",
-    "description": "DocNote sends validated reports into SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis, split by section. One-way transfer, no copy-paste. Book a demo.",
+    "navLabel": "电子病历集成",
+    "navDesc": "7种系统支持，按章节发送",
+    "title": "AI医疗文书电子病历集成 | DocNote",
+    "description": "DocNote将验证后的报告按章节拆分，单向发送至SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay和Ardentis系统——无需复制粘贴。预约演示",
     "hero": {
-      "badge": "EHR integration",
-      "title": "Integration with electronic records",
-      "subtitle": "Validated reports transfer to the record, organized by section",
-      "lead": "Documentation is complete when it's in the record, with no copy-paste and no versions outside the EHR."
+      "badge": "电子病历集成",
+      "title": "与电子病历系统无缝对接",
+      "subtitle": "验证后的报告按章节拆分存入病历",
+      "lead": "文档工作并非在笔记美观时完成，而是当它存入病历时才算完成：无需复制粘贴，没有游离在电子病历系统之外的版本"
     },
     "story": {
-      "badge": "In the product",
-      "title": "Seven systems, one workflow",
+      "badge": "产品功能",
+      "title": "七大系统，统一流程：从DocNote到病历",
       "paragraphs": [
-        "DocNote sends validated reports to seven electronic record systems: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis. Clinicians link their DocNote and EHR accounts once via OAuth2, then search for patients in the EHR from DocNote.",
-        "After validation, the report transfers to the patient record with sections matched to the EHR structure, not as a single block.",
-        "The transfer is one-way: DocNote sends to the EHR but doesn't read records. Patient search finds records without importing them. An integration API exists for EHR vendors."
+        "DocNote将验证后的报告发送至七种电子病历系统：SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay和Ardentis。临床医生通过OAuth2一次性关联DocNote与电子病历账户，并可直接在DocNote内检索患者病历",
+        "报告验证通过后，将按章节拆分存入对应患者的病历——各章节内容精准对应病历中的相应模块，而非整段粘贴",
+        "数据流向为单向传输：DocNote发送至电子病历系统。DocNote不会读取患者病历；患者搜索仅为检索功能，而非病历导入。已为希望对接的电子病历供应商提供标准化集成API"
       ]
     },
     "benefits": {
-      "badge": "Features",
-      "title": "Reports and records stay synchronized",
-      "subtitle": "One-time setup, section-by-section transfer",
+      "badge": "核心优势",
+      "title": "报告与病历始终保持一致性",
+      "subtitle": "一次关联，DocNote内检索，按章节发送",
       "items": [
         {
-          "title": "Seven supported systems",
-          "body": "Works with SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis hospital and group EHRs in Switzerland and France."
+          "title": "支持七大系统",
+          "body": "SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay、Ardentis——覆盖瑞士和法国的医院及集团电子病历系统"
         },
         {
-          "title": "One-time OAuth2 connection",
-          "body": "Clinicians link accounts once without shared passwords or manual exports."
+          "title": "OAuth2一次性关联",
+          "body": "临床医生一次性完成DocNote与电子病历账户关联。无需共享密码，无需手动导出"
         },
         {
-          "title": "In-app patient search",
-          "body": "Find patients in the EHR without leaving DocNote."
+          "title": "DocNote内患者检索",
+          "body": "无需切换应用即可在电子病历中查找患者，确保报告关联至正确病历"
         },
         {
-          "title": "Section-by-section transfer",
-          "body": "Reports integrate directly into the correct EHR sections without copy-paste."
+          "title": "按章节拆分发送",
+          "body": "验证后的报告按章节存入患者病历——杜绝复制粘贴，避免系统外游离版本"
         }
       ]
     },
     "steps": {
-      "badge": "Workflow",
-      "title": "From draft to patient record",
-      "subtitle": "One-way transfer after validation",
+      "badge": "工作原理",
+      "title": "从验证草稿到患者病历",
+      "subtitle": "单向传输，人工确认，始终在验证后执行",
       "items": [
         {
-          "title": "Connect accounts",
-          "body": "Clinicians authorize DocNote with their EHR account via OAuth2."
+          "title": "一次性账户关联",
+          "body": "临床医生通过OAuth2授权DocNote访问其电子病历账户"
         },
         {
-          "title": "Find the patient",
-          "body": "Search for patients in the EHR from DocNote."
+          "title": "检索患者",
+          "body": "在DocNote内直接检索电子病历中的患者并选择对应记录"
         },
         {
-          "title": "Review and validate",
-          "body": "Physicians review and approve before any transfer."
+          "title": "验证报告",
+          "body": "医师审核确认。未经验证不会发送任何内容"
         },
         {
-          "title": "Section transfer",
-          "body": "The report integrates into the patient record by sections."
+          "title": "按章节发送",
+          "body": "报告按章节拆分存入指定患者的病历"
         }
       ]
     },
     "proof": {
-      "badge": "Security",
-      "title": "One-way by design",
-      "intro": "Hospital IT teams review these specific integration details:",
+      "badge": "精准保障",
+      "title": "单向传输设计",
+      "intro": "明确界定集成功能的边界至关重要——这种精确性正是医院IT部门审核的重点",
       "points": [
         {
-          "title": "DocNote to EHR only",
-          "body": "Data flows to the patient record with no return path."
+          "title": "DocNote发送至电子病历",
+          "body": "数据流向为DocNote→患者病历。不存在从电子病历到DocNote的逆向传输"
         },
         {
-          "title": "No record access",
-          "body": "Patient search locates records without importing their contents."
+          "title": "DocNote不读取患者病历",
+          "body": "患者检索仅用于确定关联目标，不会将病历内容导入DocNote"
         },
         {
-          "title": "Validated reports only",
-          "body": "Only physician-approved reports transfer."
+          "title": "仅发送验证后的报告",
+          "body": "草稿在医师确认前始终保留在DocNote内"
         },
         {
-          "title": "Documented API",
-          "body": "EHR vendors can integrate using our API."
+          "title": "标准化集成API",
+          "body": "尚未对接的电子病历供应商可通过标准化API进行集成"
         }
       ]
     },
     "faq": [
       {
-        "q": "Which EHRs are supported?",
-        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis."
+        "q": "支持哪些电子病历系统？",
+        "a": "SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay和Ardentis"
       },
       {
-        "q": "Does DocNote read from the EHR?",
-        "a": "No. The transfer is one-way from DocNote to the EHR."
+        "q": "DocNote是否也会从电子病历读取数据？",
+        "a": "不会。数据流向为单向：DocNote发送验证报告至电子病历系统，不读取患者病历内容"
       },
       {
-        "q": "How does patient search work?",
-        "a": "Clinicians search for patients in the EHR from DocNote to select the correct record."
+        "q": "患者检索如何运作？",
+        "a": "临床医生在DocNote内直接检索电子病历中的患者并选择发送目标。此为检索功能，非病历导入"
       },
       {
-        "q": "How are accounts connected?",
-        "a": "Via one-time OAuth2 authorization."
+        "q": "账户如何关联？",
+        "a": "通过OAuth2一次性关联临床医生的DocNote账户与电子病历账户"
       },
       {
-        "q": "Our EHR isn't listed?",
-        "a": "EHR vendors can integrate using our API. Contact us."
+        "q": "我们的电子病历不在列表中怎么办？",
+        "a": "已为希望对接的电子病历供应商提供标准化集成API。请联系团队咨询"
       }
     ],
     "cta": {
-      "title": "See the integration",
-      "body": "Book a demo with your EHR system or ask about our API.",
-      "primary": "Book a demo",
-      "secondary": "Contact us"
+      "title": "见证报告直达您的电子病历",
+      "body": "预约演示查看您所用系统（SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay或Ardentis）的实际效果，或咨询集成API事宜",
+      "primary": "预约演示",
+      "secondary": "联系团队"
     },
-    "relatedLabel": "Related"
+    "relatedLabel": "相关页面"
   },
   "custom-word-templates": {
-    "navLabel": "Word templates",
-    "navDesc": "Your letterhead, sections and signature",
-    "description": "Upload your Word template once. Reports maintain your letterhead, sections and signature. Focus on clinical review, not formatting. See how it works.",
+    "navLabel": "自定义Word模板",
+    "navDesc": "您的信头、章节与签名",
+    "description": "一次性上传Word模板——每份报告自动保持您的信头、章节和签名样式。审核聚焦临床内容而非格式调整。查看工作原理",
     "hero": {
-      "badge": "Word templates",
-      "title": "Your documents, your format",
-      "subtitle": "Upload your template once. All reports follow your structure.",
-      "lead": "No reformatting AI output. Reports match your document format automatically. Focus on clinical content, not layout."
+      "badge": "自定义Word模板",
+      "title": "生成属于您的文档，而非AI的",
+      "subtitle": "一次性上传模板。此后每份报告都将遵循您的精确结构与品牌样式",
+      "lead": "无需再为匹配医院信头而调整AI输出格式。每份报告生来就是您的文档。审核回归临床本质，告别格式调整"
     },
     "story": {
-      "badge": "In the product",
-      "title": "Your document structure preserved",
+      "badge": "产品功能",
+      "title": "医院演示中最常见的质疑，在提出前就已解决",
       "paragraphs": [
-        "Every department has refined document formats over years. Tools that ignore these create extra formatting work.",
-        "With DocNote, upload your Word template once. Reports maintain your structure: letterhead, margins, sections and signature. Coding gets its own template section, separate from clinical content.",
-        "Paragraph alignment preserves in exports. Review focuses on clinical content, not layout."
+        "「输出内容不错，但不符合我们的信件格式」每个科室都有一份历经多年打磨的文档——信头、页边距、章节顺序、签名区块。一个生成优质内容但格式错误的工具只会给人增加排版负担",
+        "使用DocNote只需一次性上传Word模板。此后每份报告都将呈现您的精确结构与品牌样式：您的信头、您的页边距、您的章节、您的签名。编码建议在模板中有独立区域，与正文分离，确保临床内容不受干扰",
+        "导出时保持段落对齐方式——两端对齐、居中、右对齐——您在DocNote所见即所得（Word或PDF格式）。审核回归本质：您只需修正实质内容，无需调整版式"
       ]
     },
     "benefits": {
-      "badge": "Features",
-      "title": "Reports in your format",
-      "subtitle": "Structure and branding preserved",
+      "badge": "核心优势",
+      "title": "每份报告生来就是您的文档",
+      "subtitle": "结构、品牌标识与专用区域一次性定义，永久复用",
       "items": [
         {
-          "title": "Your document format",
-          "body": "Reports match your letterhead, margins, sections and signature."
+          "title": "您的信头、页边距、章节、签名",
+          "body": "科室现有Word文档即为模板标准。DocNote将严格按照该结构与品牌样式生成后续报告"
         },
         {
-          "title": "Separate coding section",
-          "body": "Coding suggestions stay separate from clinical text."
+          "title": "编码专用区域，与正文分离",
+          "body": "编码建议在模板中拥有独立位置——完全按照编码部门预期设置——绝不混杂临床文本"
         },
         {
-          "title": "Alignment preserved",
-          "body": "Justified, centered and right alignment maintain in exports."
+          "title": "导出保持对齐方式",
+          "body": "两端对齐、居中、右对齐——模板中的段落对齐方式在导出Word或PDF时完整保留"
         },
         {
-          "title": "Clinical review focus",
-          "body": "Review clinical content without layout adjustments."
+          "title": "审核回归临床本质",
+          "body": "您只需修正实质内容，无需调整版式。格式调整从验证环节彻底消失"
         }
       ]
     },
     "steps": {
-      "badge": "Workflow",
-      "title": "Template to report",
-      "subtitle": "Your Word file as the source",
+      "badge": "工作原理",
+      "title": "一次设置模板，永久生成报告",
+      "subtitle": "无需学习模板编辑器——您的Word文件就是标准",
       "items": [
         {
-          "title": "Upload template",
-          "body": "Add your department's Word document once."
+          "title": "上传Word模板",
+          "body": "一次性导入科室或诊所的文档——包含信头、章节、签名区块、编码区域"
         },
         {
-          "title": "Record and draft",
-          "body": "DocNote drafts within your structure."
+          "title": "录音与起草",
+          "body": "DocNote直接在该结构框架下起草报告"
         },
         {
-          "title": "Review content",
-          "body": "Physicians focus on clinical accuracy."
+          "title": "修正实质内容",
+          "body": "医师审核临床内容；版式已自动合规"
         },
         {
-          "title": "Export or send",
-          "body": "Word, PDF or direct EHR transfer with preserved formatting."
+          "title": "导出或发送",
+          "body": "保持对齐方式的Word或PDF文件，或直接发送至已对接的电子病历系统"
         }
       ]
     },
     "proof": {
-      "badge": "Why it matters",
-      "title": "Your document, automatically",
-      "intro": "DocNote uses your existing documents, which solves department formatting concerns.",
+      "badge": "差异化价值",
+      "title": "通用输出引发质疑，您的文档才是答案",
+      "intro": "多数文书工具采用固定笔记模板，将信头格式留给他人处理。DocNote以您的文档为模板，这正是科室不再提出该问题的原因",
       "points": [
         {
-          "title": "Your existing file",
-          "body": "DocNote reproduces your trusted Word document."
+          "title": "您的文件，非模板构建器",
+          "body": "DocNote复现的是科室既有的可信Word文档"
         },
         {
-          "title": "Group consistency",
-          "body": "Groups standardize templates across clinicians."
+          "title": "集团内部统一标准",
+          "body": "集团可将相同模板部署至每位临床医生，确保品牌标识与章节结构统一"
         },
         {
-          "title": "Secretary workflow",
-          "body": "Secretaries use the same templates as physicians."
+          "title": "秘书同样适用",
+          "body": "在医师账户内工作的秘书使用相同模板——无需维护第二套副本"
         },
         {
-          "title": "Coding placement",
-          "body": "You control where coding suggestions appear."
+          "title": "编码区域自主定义",
+          "body": "建议内容的位置由模板决定，而非工具强制指定"
         }
       ]
     },
     "faq": [
       {
-        "q": "Do I rebuild my template?",
-        "a": "No. Upload your existing Word document once."
+        "q": "需要在DocNote内重建模板吗？",
+        "a": "不需要。一次性上传现有Word文档；DocNote将按其结构与品牌样式生成后续报告"
       },
       {
-        "q": "Is letterhead preserved?",
-        "a": "Yes, along with margins, sections and signature."
+        "q": "会保留信头和签名区块吗？",
+        "a": "会——信头、页边距、章节和签名均源自您的模板"
       },
       {
-        "q": "Where do coding suggestions go?",
-        "a": "In their own template section, separate from clinical text."
+        "q": "编码建议存放在哪里？",
+        "a": "模板中的独立区域，与正文分离，位置完全由您决定"
       },
       {
-        "q": "Is alignment preserved?",
-        "a": "Yes, including justified, centered and right alignment."
+        "q": "导出时保持对齐方式吗？",
+        "a": "是的。两端对齐、居中和右对齐在导出时均会保留"
       },
       {
-        "q": "Multiple templates?",
-        "a": "Yes, for different document types or services."
+        "q": "支持多模板并存吗？",
+        "a": "支持——例如按文档类型（出院信、手术报告、病房记录）或科室分类"
       }
     ],
     "cta": {
-      "title": "See your document format",
-      "body": "Send us your Word template and see reports in your format.",
-      "primary": "Book a demo",
-      "secondary": "Watch tutorial"
+      "title": "带着您的信头来看演示",
+      "body": "发送科室的Word模板，我们将展示报告如何以您的文档形式输出，而非我们的",
+      "primary": "预约演示",
+      "secondary": "观看教程"
     },
-    "relatedLabel": "Related",
+    "relatedLabel": "相关页面",
     "title": "医疗报告自定义Word模板 | DocNote"
   },
   "clinical-context": {
-    "navLabel": "Clinical context",
-    "navDesc": "Labs, imaging, prior letters",
-    "title": "Clinical Context for Medical Reports | DocNote",
-    "description": "Attach prior letters, labs, imaging and photos before or after recording. Late items update reports without restarting. See the tutorial.",
+    "navLabel": "临床背景",
+    "navDesc": "检验、影像、照片、既往信件",
+    "title": "AI医疗报告临床背景支持 | DocNote",
+    "description": "可在录音前后附加既往信件、检验结果、影像和照片。后期补充项目可更新报告而无需重写。查看教程演示",
     "hero": {
-      "badge": "Clinical context",
-      "title": "Complete clinical picture",
-      "subtitle": "Include prior letters, labs, imaging and photos",
-      "lead": "Reports reflect the full clinical context, not just the conversation, reducing omissions and corrections."
+      "badge": "临床背景",
+      "title": "报告反映完整病历，而不仅是口述内容",
+      "subtitle": "附加既往信件、检验结果、影像和照片",
+      "lead": "笔记呈现完整临床图景，而非仅记录口头交流：减少遗漏，降低事后「请补充检验结果」的修正需求"
     },
     "story": {
-      "badge": "In the product",
-      "title": "Audio plus attachments",
+      "badge": "产品功能",
+      "title": "录音文件与附加资料，时间灵活",
       "paragraphs": [
-        "Consultations include prior records, labs, imaging and photos. DocNote incorporates these when structuring reports.",
-        "Attachments added before or after recording integrate into reports. Late items update without regenerating the entire report.",
-        "Conversational editing allows changes after generation, reducing follow-up requests."
+        "诊疗过程很少能通过单次咨询完整呈现。既往出院记录、当日晨间检验报告、影像资料、创口照片都可能是重要组成部分。DocNote支持附加这些资料，模型将在结构化报告时予以利用",
+        "录音前后附加的文件都将整合进报告。后期补充项目——如下午送达的检验结果——可在不重新生成全文的情况下更新，确保您已做的修正得以保留",
+        "对话模式支持生成后请求修改或补充：要求添加检验数据、缩短某个章节、变更收件人等。减少遗漏，降低后续补充需求"
       ]
     },
     "benefits": {
-      "badge": "Features",
-      "title": "More complete notes",
-      "subtitle": "Context included, omissions reduced",
+      "badge": "核心优势",
+      "title": "同等问诊，更完善的报告",
+      "subtitle": "背景入卷，遗漏消除",
       "items": [
         {
-          "title": "Attach documents",
-          "body": "Include prior letters, labs, imaging and photos."
+          "title": "附加既往信件、检验、影像和照片",
+          "body": "将文件与录音并列存放；模型在结构化报告时予以利用"
         },
         {
-          "title": "Flexible timing",
-          "body": "Add documents before or after recording."
+          "title": "录音前后均可添加",
+          "body": "任何时间点附加的文件都将整合进报告——无需在开始录音前准备全部资料"
         },
         {
-          "title": "Late additions",
-          "body": "Update reports with new information."
+          "title": "后期补充不影响已有修正",
+          "body": "后续送达的结果将被采纳，同时保留您先前所做的编辑"
         },
         {
-          "title": "Conversational editing",
-          "body": "Request changes after generation."
+          "title": "生成后对话模式",
+          "body": "草案生成后可通过自然语言请求修改或补充"
         }
       ]
     },
     "steps": {
-      "badge": "Workflow",
-      "title": "From consultation to report",
-      "subtitle": "Complete clinical picture",
+      "badge": "工作原理",
+      "title": "从问诊与资料到完整报告",
+      "subtitle": "相同验证流程，草案包含更全面的临床图景",
       "items": [
         {
-          "title": "Record",
-          "body": "Capture the encounter as usual."
+          "title": "记录诊疗过程",
+          "body": "通过电话或浏览器，如常进行"
         },
         {
-          "title": "Attach",
-          "body": "Add relevant documents."
+          "title": "附加背景资料",
+          "body": "既往出院记录、检验报告、影像资料、照片——录音前后均可添加"
         },
         {
-          "title": "Review",
-          "body": "Check the complete draft."
+          "title": "审核草案",
+          "body": "报告反映病历记录与诊疗对话；您只需修正实质内容"
         },
         {
-          "title": "Edit",
-          "body": "Request changes as needed."
+          "title": "提出修改需求",
+          "body": "通过对话模式请求补充或修改；验证后导出"
         }
       ]
     },
     "proof": {
-      "badge": "Why it matters",
-      "title": "Fewer corrections",
-      "intro": "Complete context means fewer follow-up requests.",
+      "badge": "核心价值",
+      "title": "减少遗漏，降低后续修正",
+      "intro": "价值不在于生成更长的笔记，而在于避免因检验结果缺失导致重新打开文档",
       "points": [
         {
-          "title": "Complete reports",
-          "body": "Fewer missing findings with context included."
+          "title": "报告完整性",
+          "body": "包含背景资料后，草案中缺失的发现更少——报告反映完整临床图景"
         },
         {
-          "title": "Preserved edits",
-          "body": "Late additions keep previous corrections."
+          "title": "后期补充，修正保留",
+          "body": "后续添加结果时更新报告，同时保留您已完成的编辑"
         },
         {
-          "title": "Secretary workflow",
-          "body": "Staff can add late documents."
+          "title": "秘书同样受益",
+          "body": "在医师账户内工作的秘书可添加迟到的检验结果或既往记录，无需重新开始"
         },
         {
-          "title": "Physician validation",
-          "body": "Doctors still review all content."
+          "title": "始终需要医师验证",
+          "body": "背景资料提升草案质量；但仍需医师审核签字"
         }
       ]
     },
     "faq": [
       {
-        "q": "What can I attach?",
-        "a": "Prior letters, labs, imaging and photos."
+        "q": "可以附加哪些资料？",
+        "a": "既往信件、检验结果、影像报告和照片"
       },
       {
-        "q": "Timing for attachments?",
-        "a": "Add before or after recording."
+        "q": "必须在录音前附加所有文件吗？",
+        "a": "不需要。录音前后附加的文件都将整合进报告"
       },
       {
-        "q": "Late lab results?",
-        "a": "Add them without regenerating the full report."
+        "q": "如果检验结果后期送达，需要重新生成全文吗？",
+        "a": "不需要。后期补充项目可在不重新生成全文的情况下更新，保留您的既有修正"
       },
       {
-        "q": "Post-generation changes?",
-        "a": "Request changes conversationally."
+        "q": "草案生成后可以请求修改吗？",
+        "a": "可以。对话模式支持生成后通过自然语言请求修改或补充"
       },
       {
-        "q": "EHR integration?",
-        "a": "You attach files; DocNote doesn't read records."
+        "q": "DocNote会从电子病历自动提取文档吗？",
+        "a": "不会。您需自行附加文件；DocNote不读取患者病历"
       }
     ],
     "cta": {
-      "title": "See the difference",
-      "body": "Watch the tutorial or book a demo with your documents.",
-      "primary": "Watch tutorial",
-      "secondary": "Book demo"
+      "title": "见证背景资料的差异",
+      "body": "观看教程了解附加资料如何影响报告生成——或使用您自己的文档预约演示",
+      "primary": "观看教程",
+      "secondary": "预约演示"
     },
-    "relatedLabel": "Related"
+    "relatedLabel": "相关页面"
   },
   "day-hospital-documentation": {
     "navLabel": "日间医院",

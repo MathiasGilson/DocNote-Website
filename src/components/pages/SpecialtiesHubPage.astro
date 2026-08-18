@@ -5,7 +5,8 @@ import '../../styles/landing-page.css';
 import '../../styles/family-landings.css';
 import '../../styles/hub-pages.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
-import { getLandingNavLabel } from '../../content/landings';
+import { getLandingNavLabel, getNavGroupLabel } from '../../content/landings';
+import { getLandingUi } from '../../utils/inline-content';
 import {
   getSpecialtyFamily,
   getSpecialtyFamilyPath,
@@ -31,9 +32,9 @@ const { locale } = Astro.props;
 const lang = locale;
 const p = getSpecialtiesHub(lang);
 
-const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
-const specialtiesLabel =
-  lang === 'fr' ? 'Spécialités' : lang === 'de' ? 'Fachgebiete' : 'Specialties';
+const ui = getLandingUi(lang);
+const homeLabel = ui.home;
+const specialtiesLabel = getNavGroupLabel('specialties', lang);
 
 const hubPath = SPECIALTIES_HUB_PATH;
 const breadcrumbLd = buildBreadcrumbLd([
@@ -71,7 +72,7 @@ const primaryHref = getLocalizedPath('/tutorial', lang);
 const secondaryHref = getLocalizedPath('/contact', lang);
 const surgicalHref = getLocalizedPath(getSpecialtyFamilyPath('surgical'), lang);
 const croHref = getLocalizedPath('/operative-report-ai', lang);
-const countSuffix = lang === 'fr' ? 'spécialités' : 'specialties';
+const countSuffix = ui.specialtiesCount;
 ---
 
 <Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>

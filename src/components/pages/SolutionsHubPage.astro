@@ -5,9 +5,11 @@ import '../../styles/landing-page.css';
 import '../../styles/family-landings.css';
 import '../../styles/hub-pages.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getLandingUi } from '../../utils/inline-content';
 import {
   getLandingNavDesc,
   getLandingNavLabel,
+  getNavGroupLabel,
   getNavSolutionsColumnLabel,
   navSolutionsColumns,
   usecaseSlugs,
@@ -31,9 +33,9 @@ const { locale } = Astro.props;
 const lang = locale;
 const p = getSolutionsHub(lang);
 
-const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
-const solutionsLabel =
-  lang === 'fr' ? 'Solutions' : lang === 'de' ? 'Lösungen' : 'Solutions';
+const ui = getLandingUi(lang);
+const homeLabel = ui.home;
+const solutionsLabel = getNavGroupLabel('solutions', lang);
 
 const hubPath = SOLUTIONS_HUB_PATH;
 const breadcrumbLd = buildBreadcrumbLd([
@@ -82,7 +84,7 @@ const featuredHref = getLocalizedPath(`/${featuredSlug}`, lang);
 
 const primaryHref = getLocalizedPath('/tutorial', lang);
 const secondaryHref = getLocalizedPath('/pricing', lang);
-const openLabel = lang === 'fr' ? 'Ouvrir' : 'Open';
+const openLabel = ui.open;
 ---
 
 <Layout title={p.title} description={p.description} jsonLd={breadcrumbLd}>

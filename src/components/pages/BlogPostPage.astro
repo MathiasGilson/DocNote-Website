@@ -6,6 +6,7 @@ import { getEntry, getCollection, render } from 'astro:content';
 import { getBlogAlternateUrls, isCanonicalBlogPostId } from '../../utils/blog-translations';
 import { buildBreadcrumbLd, SITE_URL, absoluteLocalizedUrl } from '../../utils/seo';
 import { getLandingNavLabel } from '../../content/landings';
+import { getLandingUi } from '../../utils/inline-content';
 
 interface Props {
   locale: Locale;
@@ -106,7 +107,7 @@ const labels = {
   minRead: blog.minRead,
 };
 
-const homeLabel = locale === 'fr' ? 'Accueil' : locale === 'de' ? 'Start' : 'Home';
+const homeLabel = getLandingUi(locale).home;
 ---
 
 <Layout

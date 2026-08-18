@@ -7,7 +7,8 @@ import FamilyLeadVariant from '../family/FamilyLeadVariant.astro';
 import '../../styles/landing-page.css';
 import '../../styles/family-landings.css';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
-import { getLandingNavLabel } from '../../content/landings';
+import { getLandingNavLabel, getNavGroupLabel } from '../../content/landings';
+import { getLandingUi } from '../../utils/inline-content';
 import {
   getSpecialtyFamily,
   getSpecialtyFamilyPath,
@@ -36,9 +37,9 @@ const p = getSpecialtyFamily(slug, lang);
 const meta = specialtyFamilyMeta[slug];
 const visual = getFamilyVisual(slug);
 
-const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
-const specialtiesCrumb =
-  lang === 'fr' ? 'Spécialités' : lang === 'de' ? 'Fachgebiete' : 'Specialties';
+const ui = getLandingUi(lang);
+const homeLabel = ui.home;
+const specialtiesCrumb = getNavGroupLabel('specialties', lang);
 
 const primaryHref = getLocalizedPath('/tutorial', lang);
 const secondaryUrl = /contact|contacter/i.test(p.cta.secondary)
@@ -55,8 +56,7 @@ const breadcrumbLd = buildBreadcrumbLd([
 const deepLinks = meta.deepLandings;
 const relatedLinks = meta.relatedLandings;
 
-const mediaBadge =
-  lang === 'fr' ? 'Sur le terrain' : lang === 'de' ? 'Im Alltag' : 'In the field';
+const mediaBadge = ui.fieldBadge;
 const mediaTitle = p.hero.subtitle;
 const mediaBody = p.hero.lead;
 
