@@ -144,130 +144,77 @@
     "hero": {
       "badge": "For sykehus og avdelinger",
       "title": "DocNote for sykehus og avdelinger",
-      "subtitle": "Utskrivningsbrev, operasjonsrapporter og avdelingsopptegnelser, i avdelingens format, inne i din EHR.",
-      "lead": "På sykehus er det ikke konsultasjonsnotatet som er problemet. Problemet er utskrivningsbrevet som ligger uferdig i tre uker, operasjonsrapporten som dikteres og deretter skrives inn på nytt, kodingen som gjennomgås på nytt av kodingavdelingen, og en EHR som må fylles ut manuelt. Et verktøy designet for privatpraksis løser ingen av disse utfordringene."
+      "subtitle": "Utskrivningsbrev, operasjonsrapporter og avdelingsopptegnelser, i avdelingens format, inne i din EHR."
     },
     "story": {
       "badge": "Problemet",
-      "title": "Sykehusarbeid er ikke et enkelt poliklinisk notat",
+      "title": "Konsultasjonsnotatet er ikke problemet",
       "paragraphs": [
-        "En avdeling produserer dokumenter med ulike strukturer, lengder og mottakere: utskrivningsbrevet som går til fastlegen og forsikringsselskapet, operasjonsrapporten som avslutter saken, avdelingsopptegnelsen som den vikarierende legen leser neste morgen. Hver enkelt må være riktig første gang, på avdelingens brevpapir, og havne i pasientjournalen, ikke i en sideapp.",
-        "DocNote behandler disse sykehusformatene som førsteklasses dokumenttyper. Du registrerer avdelingsturen, operasjonsgjennomgangen eller konsultasjonen på telefonen eller i nettleseren, velger dokumentet, og DocNote utarbeider et utkast du validerer, med viktige bidiagnoser fremhevet i brevet og kodingsforslag plassert på slutten av dokumentet, i sin egen seksjon.",
-        "Etter validering sendes rapporten inn i pasientens journal i din EHR, delt opp etter seksjoner, uten kopiering og liming. Legen forblir forfatteren og signerer; DocNote leser ikke pasientjournalen og koder ikke på dine vegne: det foreslår, du validerer."
+        "På sykehus er ikke konsultasjonsnotatet problemet. Problemene er utskrivningsbrevet som ligger uferdig i tre uker, operasjonsrapporten som dikteres og deretter skrives inn på nytt, koding som revideres etterpå av kodingsavdelingen, og en EHR som må fylles ut manuelt. Et verktøy designet for privat praksis løser ikke dette."
       ]
     },
     "benefits": {
       "badge": "Hva DocNote gjør",
-      "title": "Bygget for dokumentene som fyller en avdelings kveld",
-      "subtitle": "Innebygde sykehusformater, dine maler, kodingsforslag, EHR-levering.",
+      "title": "Hva DocNote gjør",
       "items": [
         {
           "title": "Innebygde sykehusformater",
-          "body": "Utskrivningsbrev, avdelingsopptegnelse, operasjonsrapport: riktig struktur, riktig lengde, riktige mottakere fra første utkast. Ikke et poliklinisk SOAP-notat som strekkes for å passe."
+          "body": "Utskrivningsbrev, avdelingsopptegnelse, operasjonsrapport: riktig struktur, riktig lengde, riktige mottakere fra første utkast."
         },
         {
           "title": "Dine Word-maler",
-          "body": "Last opp avdelingens dokument én gang. Hver rapport etter det kommer ut på ditt brevpapir, med dine seksjoner og din signatur. Gjennomgangen forblir klinisk, ikke kosmetisk."
+          "body": "Last opp avdelingens dokument en gang. Hver rapport etter det kommer ut på ditt brevhode, med dine seksjoner og din signatur."
         },
         {
           "title": "Koding innebygd",
-          "body": "Viktige bidiagnoser fremheves i brevet, med SwissDRG (Sveits) eller PMSI (Frankrike) forslag på slutten av dokumentet, som legen og kodingavdelingen validerer."
+          "body": "Vesentlige bidiagnoser fremheves i brevet, med SwissDRG (Sveits) eller PMSI (Frankrike) forslag på slutten av dokumentet."
         },
         {
           "title": "Sendt til EHR",
-          "body": "Den validerte rapporten sendes inn i pasientjournalen, delt opp etter seksjoner, uten kopiering og liming. Telefon på avdelingen, skrivebord på kontoret: samme journal, synkronisert i sanntid."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra avdeling eller operasjonssal til et validert dokument i journalen",
-      "subtitle": "Den samme gjennomgangs- og valideringsdisiplinen din avdeling allerede følger.",
-      "items": [
-        {
-          "title": "Registrer konsultasjonen",
-          "body": "Ta opp avdelingsturen, operasjonsgjennomgangen eller konsultasjonen på telefonen eller i nettleseren, som en del av den vanlige rutinen."
+          "body": "Den validerte rapporten går inn i pasientjournalen, delt opp etter seksjon. Ingen kopiering og liming."
         },
         {
-          "title": "Velg sykehusdokumentet",
-          "body": "Utskrivningsbrev, operasjonsrapport, avdelingsopptegnelse eller en annen mal fra din avdeling, på ditt brevpapir, med dine seksjoner."
-        },
-        {
-          "title": "Gjennomgå utkastet og kodingsforslagene",
-          "body": "Den behandlende legen korrigerer klinisk innhold, sjekker de fremhevede diagnosene og kodingsforslagene på slutten av dokumentet, og signerer."
-        },
-        {
-          "title": "Send til pasientjournalen",
-          "body": "Den validerte rapporten sendes inn i EHR-en, delt opp etter seksjoner, til SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay eller Ardentis der det er tilkoblet."
+          "title": "Telefon på avdelingen, skrivebord på kontoret",
+          "body": "Samme journal, synkronisert i sanntid."
         }
       ]
     },
     "proof": {
-      "badge": "Bevis, ikke løfter",
-      "title": "I bruk i institusjoner, tilkoblet EHR-er, validert av leger",
-      "intro": "Sykehus adopterer dokumentasjonsprogramvare etter en sikkerhetsvurdering og en pilot på virkelige tilfeller, ikke etter en demo. DocNote er bygget for å bestå begge.",
+      "badge": "Bevis",
+      "title": "Allerede i bruk i institusjoner",
+      "intro": "Institusjoner er allerede i drift, EHR-er er tilkoblet, og valideringsløkken holder: legen forblir forfatteren og signerer.",
       "points": [
         {
-          "title": "Institusjoner allerede i bruk",
-          "body": "DocNote kjører i sykehusavdelinger i dag, på utskrivningsbrev, operasjonsrapporter og avdelingsopptegnelser, ikke på en roadmap."
+          "title": "EHR-er tilkoblet",
+          "body": "Den validerte rapporten sendes inn i pasientjournalen, delt opp etter seksjon."
         },
         {
-          "title": "Syv EHR-er tilkoblet",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay og Ardentis mottar validerte rapporter seksjon for seksjon. En dokumentert integrasjons-API finnes for andre leverandører."
-        },
-        {
-          "title": "Legen forblir forfatteren",
-          "body": "Ingen dokument når journalen uten at en kliniker har gjennomgått og validert det først. Koding forblir et forslag til legen og kodingavdelingen bekrefter det."
-        },
-        {
-          "title": "Sveitsisk hosting, kort lydlagring",
-          "body": "Helsedata lagres i Sveits; lyd beholdes kun kort for å produsere dokumentet, deretter slettes. Se vår compliance-side for hele bildet."
+          "title": "Legen signerer",
+          "body": "DocNote lager et utkast du validerer. Du forblir forfatteren."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Rullende ut DocNote over en avdeling",
-        "body": "Den vanlige veien starter med én dokumenttype og én avdeling eller tjeneste. Avdelingens Word-mal lastes opp, utkast valideres mot virkelige tilfeller, deretter utvides utrullingen til andre tjenester. IT- og medisinske ledere gjennomgår hosting, lagring og integrasjoner parallelt, samme struktur som gjelder for annen klinisk programvareanskaffelse."
-      },
-      {
-        "heading": "Hvor kodingsforslagene går",
-        "body": "Kodingsforslag vises på slutten av dokumentet, i sin egen seksjon, slik at de aldri forurenser den kliniske teksten. I din Word-mal kan denne seksjonen plasseres der kodingavdelingen forventer den. Sveits: SwissDRG (ICD-10 / CHOP), TARDOC og Tarif 222 for tannpleie. Frankrike: PMSI."
-      },
-      {
-        "heading": "Flere klinikere, én journal",
-        "body": "I et dagsykehus fyller flere klinikere inn i samme pasientjournal gjennom dagen. På slutten av dagen har du én strukturert journal, ikke fire delvise notater å avstemme. Tilgjengelig for grupper hvis EHR er integrert."
-      }
-    ],
     "faq": [
       {
-        "q": "Hvilke sykehusdokumenter kan DocNote utarbeide?",
-        "a": "Utskrivningsbrev, operasjonsrapporter, avdelingsopptegnelser og konsultasjonsrapporter, på avdelingens maler. Legen gjennomgår og validerer hvert utkast før det blir en del av journalen."
+        "q": "Hvilke sykehusdokumenter kan DocNote lage utkast til?",
+        "a": "Utskrivningsbrev, operasjonsrapporter, avdelingsopptegnelser og konsultasjonsrapporter, på avdelingens maler."
       },
       {
         "q": "Koder DocNote oppholdet for oss?",
-        "a": "Nei. DocNote fremhever viktige bidiagnoser i brevet og legger til kodingsforslag på slutten av dokumentet: SwissDRG, TARDOC, Tarif 222 eller PMSI. De er forslag å validere; ansvaret forblir hos legen og kodingavdelingen."
+        "a": "Nei. Den legger til SwissDRG, TARDOC, Tarif 222 eller PMSI forslag på slutten av dokumentet, som forslag å validere."
       },
       {
         "q": "Hvilke EHR-er støttes?",
-        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay og Ardentis. Klinikeren kobler til kontoene én gang, søker pasienten fra innsiden av DocNote og den validerte rapporten sendes inn i den pasientens journal, delt opp etter seksjoner. Flyten er enveis, fra DocNote til EHR-en."
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay og Ardentis. Flyten er enveis, fra DocNote til EHR."
       },
       {
-        "q": "Kan vi beholde vårt institusjonelle brevpapir?",
-        "a": "Ja. Last opp avdelingens Word-dokument én gang; hver rapport etter det kommer ut med ditt brevpapir, seksjoner og signatur."
-      },
-      {
-        "q": "Erstatter AI-en legens signatur?",
-        "a": "Nei. DocNote utarbeider et utkast du validerer. Legen forblir forfatteren og signerer."
-      },
-      {
-        "q": "Hvor lang tid tar utrulling for en sykehusavdeling?",
-        "a": "De fleste tjenester starter med én dokumenttype og én avdeling, validerer malen på virkelige tilfeller, deretter utvider. Tempoet avhenger av din IT-gjennomgang, ikke av verktøyet."
+        "q": "Kan vi beholde vårt institusjonelle brevhode?",
+        "a": "Ja. Last opp avdelingens Word-dokument en gang; hver rapport etter det kommer ut med ditt brevhode, seksjoner og signatur."
       }
     ],
     "cta": {
-      "title": "Ta DocNote til din avdeling",
-      "body": "Book en demo med teamet på dine egne dokumenttyper, som utskrivningsbrev, operasjonsrapporter, avdelingsopptegnelser, med din mal og din EHR i bildet.",
+      "title": "Book en demo for din avdeling",
+      "body": "Se sykehusformatene, kodingsforslagene og EHR-leveringen på dine egne dokumenttyper.",
       "primary": "Book en demo",
       "secondary": "Se vår compliance"
     },
@@ -420,128 +367,79 @@
     "title": "AI Medical Scribe for privatpraksis | DocNote",
     "description": "Ta opp fra telefon eller nettleser, ingen installasjon. Rapporter følger dine maler, tilpasset din spesialitet, med kodingsforslag å validere. Åpne webappen.",
     "hero": {
-      "badge": "For privatpraksis",
-      "title": "DocNote for privatpraksis",
-      "subtitle": "Du lukker journalen samtidig som døren.",
-      "lead": "En lege i privatpraksis dokumenterer mellom pasienter eller om kvelden. Du har ingen IT-avdeling, ingen institusjonell budsjett og ingen tid til å konfigurere et verktøy. Du vil se verdien i den første konsultasjonen, uten noe å installere."
+      "badge": "For privat praksis",
+      "title": "DocNote for privat praksis",
+      "subtitle": "Du lukker journalen samtidig som døren."
     },
     "story": {
       "badge": "Problemet",
-      "title": "Legen bestemmer alene, og ønsker verdi innen én konsultasjon",
+      "title": "Ingen IT-avdeling, ingen tid til å konfigurere et verktøy",
       "paragraphs": [
-        "I en praksis ruller ingen ut programvare for deg. Hvis et verktøy trenger et prosjekt, en treningsdag eller en integrasjonsbudsjett, blir det ikke brukt. Det som blir brukt er det du kan åpne på telefonen mellom to pasienter og som produserer et brev du faktisk ville sendt.",
-        "DocNote registrerer konsultasjonen fra telefonen eller nettleseren, utarbeider et utkast du validerer, og følger dine maler: velg formatet én gang, det gjenbrukes. Ved registrering tilpasses standardmaler til din spesialitet, slik at den første rapporten allerede bruker ditt vokabular.",
-        "Kodingsforslag plasseres på slutten av dokumentet, slik at fakturerbart arbeid ikke unnslipper, som forslag du bekrefter, aldri påført på dine vegne. Og utkastet følger deg fra telefon til skrivebord uten å måtte skrives inn på nytt."
+        "En lege i privat praksis dokumenterer mellom pasienter eller om kvelden. De har ingen IT-avdeling, ingen institusjonell budsjett, og ingen tid til å konfigurere et verktøy. De ønsker å se verdien i den første konsultasjonen, uten noe å installere."
       ]
     },
     "benefits": {
       "badge": "Hva DocNote gjør",
-      "title": "Alt du trenger, ingenting du må installere",
-      "subtitle": "Ta opp, få rapporten på din mal, valider, eksporter.",
+      "title": "Hva DocNote gjør",
       "items": [
         {
-          "title": "Ta opp fra telefonen eller nettleseren",
-          "body": "Ingenting å installere. Åpne DocNote på telefonen i konsultasjonsrommet eller i en nettleserfane på skrivebordet; opptaket starter med ett trykk."
+          "title": "Spill inn fra telefonen eller nettleseren",
+          "body": "Ingenting å installere."
         },
         {
           "title": "Rapporten følger dine maler",
-          "body": "Velg formatet én gang: dine seksjoner, ditt brevpapir, din signatur, og det gjenbrukes for hver konsultasjon etter det. Standardmaler tilpasset din spesialitet ved registrering, over 61 spesialiteter."
+          "body": "Velg formatet en gang, det gjenbrukes."
+        },
+        {
+          "title": "Maler tilpasset din spesialitet",
+          "body": "Standardmaler tilpasset din spesialitet ved registrering, over 61 spesialiteter."
         },
         {
           "title": "Kodingsforslag på slutten av dokumentet",
-          "body": "Fakturerbare diagnoser og handlinger foreslås i sin egen seksjon på slutten av rapporten, for deg å validere, slik at fakturerbart arbeid ikke unnslipper uten å gjøre koding til et ekstra steg."
+          "body": "Så fakturerbart arbeid ikke unnslipper."
         },
         {
-          "title": "Telefon til skrivebord, ingen nyinnskriving",
-          "body": "Ta opp på telefonen, fullfør og valider på skrivebordet. Samme utkast, synkronisert i sanntid: du bygger aldri notatet på nytt når du bytter enheter."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Én konsultasjon, ende til ende",
-      "subtitle": "Den samme flyten du vil se i veiledningsvideoen: ta opp, generert rapport, korreksjon, eksport, uten kutt.",
-      "items": [
-        {
-          "title": "Ta opp",
-          "body": "Trykk ta opp på telefonen eller i nettleseren ved starten av konsultasjonen. Legg til tidligere brev, laboratorieprøver eller bilder hvis du har dem."
-        },
-        {
-          "title": "Få rapporten på din mal",
-          "body": "Innen kort tid er et utkast klart i formatet du valgte én gang, i din spesialitets vokabular."
-        },
-        {
-          "title": "Korriger og valider",
-          "body": "Du redigerer innhold, ikke layout, bekrefter eller avviser kodingsforslagene på slutten, og signerer. Du forblir forfatteren."
-        },
-        {
-          "title": "Eksporter eller send",
-          "body": "Eksporter brevet som Word eller PDF, eller send det inn i din praksisprogramvare der en integrasjon finnes."
+          "title": "Utkastet følger deg fra telefon til skrivebord",
+          "body": "Uten å skrive på nytt."
         }
       ]
     },
     "proof": {
-      "badge": "Bevis å vise",
-      "title": "Se én full konsultasjon, ingen kutt",
-      "intro": "Det sterkeste argumentet for en praksis er ikke en funksjonsliste; det er én virkelig konsultasjon fra opptak til eksportert rapport. Den videoen finnes allerede på veiledningssiden.",
+      "badge": "Bevis",
+      "title": "Én konsultasjon, ende til ende",
+      "intro": "Én ende-til-ende konsultasjonsvideo: innspilling, generert rapport, korreksjon, eksport, uten kutt. Den er på opplæringssiden.",
       "points": [
         {
-          "title": "Ta opp, rapport, korreksjon, eksport",
-          "body": "Veiledningen viser hele flyten på en virkelig konsultasjon, i ett take, slik at du kan bedømme utkastkvaliteten selv."
+          "title": "Innspilt i ett forsøk",
+          "body": "Innspilling, generert rapport, korreksjon, eksport. Ingen kutt."
         },
         {
-          "title": "61 spesialiteter, 21 grensesnittspråk",
-          "body": "Standardmaler tilpasset din spesialitet ved registrering; grensesnitt på ditt språk; språket du snakker med pasienten dikterer ikke rapportens språk."
-        },
-        {
-          "title": "Sveitsisk hosting, kort lydlagring",
-          "body": "Helsedata lagres i Sveits; lyd beholdes kun kort for å produsere dokumentet, deretter slettes."
-        },
-        {
-          "title": "Du validerer hver rapport",
-          "body": "DocNote utarbeider; du korrigerer og signerer. Ingenting forlater appen uten din validering."
+          "title": "Vurder utkastet selv",
+          "body": "Se videoen på opplæringssiden før du registrerer deg."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Ingenting å konfigurere før den første konsultasjonen",
-        "body": "Registrer deg, velg din spesialitet, og DocNote foreslår standardmaler for den. Du kan ta opp din første konsultasjon umiddelbart, deretter justere malen senere, eller laste opp ditt eget Word-dokument én gang slik at hver rapport kommer ut på ditt brevpapir."
-      },
-      {
-        "heading": "Arbeide med en sekretær",
-        "body": "Hvis en medisinsk sekretær formaterer dine brev, kan DocNote knytte en sekretærkonto til din: sekretæren arbeider innen din konto, med dine maler og dokumenter, gjennomgår og formaterer, og du validerer og signerer. Se siden for medisinske sekretærer."
-      }
-    ],
     "faq": [
       {
         "q": "Må jeg installere noe?",
-        "a": "Nei. DocNote kjører i nettleseren og på telefonen. Åpne webappen eller mobilappen og ta opp."
+        "a": "Nei. DocNote kjører i nettleseren og på telefonen."
       },
       {
         "q": "Vil rapporten se ut som mine brev?",
-        "a": "Ja. Velg ditt format én gang, eller last opp din egen Word-mal, og hver rapport etter det gjenbrukes i det formatet, med dine seksjoner og din signatur."
+        "a": "Ja. Velg ditt format en gang, eller last opp din egen Word-mal, og hver rapport etter det kommer ut i det formatet."
       },
       {
         "q": "Fakturerer DocNote for meg?",
-        "a": "Nei. Det foreslår kodingsforslag på slutten av dokumentet, i sin egen seksjon, for deg å validere. Kodingsansvaret forblir hos deg."
-      },
-      {
-        "q": "Hvilke spesialiteter dekkes?",
-        "a": "61 spesialiteter, hver med standardrapportmaler tilpasset ved registrering. Grensesnittet er tilgjengelig på 21 språk."
-      },
-      {
-        "q": "Kan jeg starte på telefonen og fullføre på skrivebordet?",
-        "a": "Ja. Utkastet følger deg fra telefon til skrivebord i sanntid, uten nyinnskriving."
+        "a": "Nei. Den foreslår kodingsforslag på slutten av dokumentet, for deg å validere."
       },
       {
         "q": "Hva koster det?",
-        "a": "Abonnement for individuelle praksiser finnes på prissiden. Du kan åpne webappen og ta opp din første konsultasjon før du bestemmer deg."
+        "a": "Abonnement for individuelle praksiser er på prissiden. Du kan spille inn din første konsultasjon før du bestemmer deg."
       }
     ],
     "cta": {
       "title": "Se verdien i din første konsultasjon",
-      "body": "Åpne webappen, velg din spesialitet og ta opp én konsultasjon. Ingenting å installere, ingenting å konfigurere.",
+      "body": "Selvbetjent, ikke salgsdrevet. Åpne webappen og spill inn én konsultasjon, uten noe å installere.",
       "primary": "Åpne webappen",
       "secondary": "Se priser"
     },
@@ -555,97 +453,56 @@
     "hero": {
       "badge": "For medisinske sekretærer",
       "title": "DocNote for medisinske sekretærer",
-      "subtitle": "Sekretæren jobber innenfor legens konto, med deres maler og dokumenter.",
-      "lead": "I de fleste praksiser og avdelinger er det ikke legen som formaterer brevet, det er sekretæren. Likevel selges AI-skribenter til legen, én konto per lege. Sekretæren blir stående utenfor, og må skrive på nytt det AI-en har produsert."
+      "subtitle": "Sekretæren jobber innenfor legens konto, med deres maler og dokumenter."
     },
     "story": {
       "badge": "Problemet",
-      "title": "Personen som formaterer brevet er ikke personen som har kontoen",
+      "title": "AI-scribes selges til legen",
       "paragraphs": [
-        "Legen registrerer, AI-en utkaster, og så lander utkastet i sekretærens innboks som tekst som må skrives inn på nytt i praksisens brevformat. Tiden som spares på den ene siden, brukes på nytt på den andre.",
-        "DocNote lukker denne løkken med tilknyttede kontoer. En sekretærkonto er knyttet til en lege; hele økten fungerer som den legen: deres maler, deres rapporter, deres brevhode. Sekretæren gjennomgår, fullfører, formaterer og eksporterer; legen validerer og signerer.",
-        "Fordi rapporten allerede matcher praksisens brevformat, er det ingen nyinnskriving. Og kontekst kan legges til senere, som et laboratorieresultat som kommer etterpå, bildediagnostikk eller et tidligere brev, uten å måtte starte rapporten på nytt."
+        "I de fleste praksiser og avdelinger er det ikke legen som formaterer brevet. Det er sekretæren. Likevel selges AI-scribes til legen, én konto per lege. Sekretæren står utenfor, og skriver på nytt det AI-en produserte."
       ]
     },
     "benefits": {
       "badge": "Hva DocNote gjør",
-      "title": "Bygget rundt hvordan en praksis faktisk produserer sine brev",
-      "subtitle": "Tilknyttede kontoer, klar rollefordeling, ingen nyinnskriving.",
+      "title": "Hva DocNote gjør",
       "items": [
         {
-          "title": "Tilknyttede kontoer",
+          "title": "Koblede kontoer",
           "body": "En sekretærkonto er knyttet til en lege. Hele økten fungerer som den legen: deres maler, deres rapporter, deres brevhode."
         },
         {
           "title": "Sekretæren gjennomgår, fullfører, formaterer og eksporterer",
-          "body": "Legen validerer og signerer. Alle beholder sin rolle; ingen gjør den andres arbeid på nytt."
+          "body": "Legen validerer og signerer."
         },
         {
           "title": "Ingen nyinnskriving",
-          "body": "Rapporten matcher allerede praksisens brevformat: dine seksjoner, dine marger, ditt signaturfelt."
+          "body": "Rapporten matcher allerede praksisens brevformat."
         },
         {
           "title": "Kontekst kan legges til senere",
-          "body": "Et laboratorieresultat som kommer etterpå, bildediagnostikk, et tidligere brev: legg det ved, og rapporten oppdateres uten å måtte starte på nytt."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra legens opptak til et brev klart til sending",
-      "subtitle": "Én registrering, to roller, ingen kopiering og liming i mellom.",
-      "items": [
-        {
-          "title": "Legen registrerer",
-          "body": "I konsultasjonsrommet eller på avdelingen, fra telefonen eller nettleseren."
-        },
-        {
-          "title": "DocNote utkaster på praksisens mal",
-          "body": "Rapporten kommer ut i praksisens brevformat, i legens spesialitetsvokabular."
-        },
-        {
-          "title": "Sekretæren gjennomgår, fullfører og formaterer",
-          "body": "Innenfor legens konto: legg til det sene laboratorieresultatet, juster mottakerne, sjekk layouten, eksporter."
-        },
-        {
-          "title": "Legen validerer og signerer",
-          "body": "Legen forblir forfatteren. Ingenting går ut uten deres validering."
+          "body": "Et laboratorieresultat som kommer etterpå, bildediagnostikk eller et tidligere brev, uten å starte på nytt."
         }
       ]
     },
     "proof": {
       "badge": "Hvorfor det betyr noe",
-      "title": "Beslutningstakeren alle andre skribenter overser",
-      "intro": "I en praksis er sekretæren ofte den første som prøver ut et dokumentasjonsverktøy, og den første som ser om det sparer arbeid eller skaper mer. Sekretærens tid er målbart og budsjettert, i motsetning til legens tid.",
+      "title": "Sekretærtid er målbart",
+      "intro": "Sekretærtid spart er målbart og budsjettert, i motsetning til legens tid. I en praksis er sekretæren ofte den første som prøver verktøyet.",
       "points": [
         {
-          "title": "Allerede i produksjon",
-          "body": "Sekretærkontoer er i bruk i praksiser i dag, knyttet til legers kontoer, med deres maler og dokumenter."
+          "title": "En ekte konto, ikke en omvei",
+          "body": "Sekretæren jobber innenfor legens konto, med deres maler og dokumenter."
         },
         {
-          "title": "Samme maler, samme brevhode",
-          "body": "Fordi sekretæren jobber innenfor legens konto, er det én sannhetskilde for formatet, ikke en kopi som må holdes synkronisert."
-        },
-        {
-          "title": "Klart ansvar",
-          "body": "Sekretæren formaterer og eksporterer; legen validerer og signerer. DocNote utkaster en rapport legen validerer. Den erstatter ikke noen av rollene."
-        },
-        {
-          "title": "Sveitsisk hosting, kort lydbevaring",
-          "body": "Helsedata lagret i Sveits; lyd beholdes kun kort for å produsere dokumentet, deretter slettes."
+          "title": "Brevet kommer ut riktig",
+          "body": "Ingen nyinnskriving av det AI-en produserte. Rapporten matcher allerede praksisens format."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Sette opp en sekretærkonto for din praksis",
-        "body": "Sekretærkontoer knyttes til en leges konto av DocNote-teamet. Book en demo for din praksis, så går vi gjennom dine brevformater, hvordan sekretæren og legen i dag overlater arbeid, og hvordan den tilknyttede kontoen passer inn."
-      }
-    ],
     "faq": [
       {
         "q": "Trenger sekretæren sine egne maler?",
-        "a": "Nei. Sekretærkontoen fungerer innenfor legens konto og bruker legens maler, rapporter og brevhode."
+        "a": "Nei. Sekretærkontoen jobber innenfor legens konto og bruker legens maler, rapporter og brevhode."
       },
       {
         "q": "Hvem validerer rapporten?",
@@ -653,22 +510,18 @@
       },
       {
         "q": "Kan et laboratorieresultat legges til etter at rapporten er generert?",
-        "a": "Ja. Legg ved resultatet, bildediagnostikk eller et tidligere brev etterpå; rapporten oppdateres uten å måtte starte på nytt."
-      },
-      {
-        "q": "Kan én sekretær jobbe for flere leger?",
-        "a": "Snakk med teamet om din oppsett: hvordan sekretærkontoer knyttes til avhenger av hvordan din praksis eller avdeling er organisert."
+        "a": "Ja. Legg det til etterpå; rapporten oppdateres uten å starte på nytt."
       },
       {
         "q": "Hvordan kommer vi i gang?",
-        "a": "Book en demo for din praksis. Vi setter opp den tilknyttede kontoen med deg og sjekker brevformatene på virkelige tilfeller."
+        "a": "Book en demo for din praksis. Vi setter opp den koblede kontoen med deg."
       }
     ],
     "cta": {
-      "title": "Se det med dine egne brevformater",
-      "body": "Book en demo for din praksis, så setter vi opp den tilknyttede kontoen sammen og sjekker formatet på virkelige tilfeller.",
-      "primary": "Book en demo for din praksis",
-      "secondary": "Kontakt teamet"
+      "title": "Book en demo for din praksis",
+      "body": "Se hvordan en sekretærkonto fungerer innenfor legens konto, på dine egne brevformater.",
+      "primary": "Book en demo",
+      "secondary": "Kontakt oss"
     },
     "relatedLabel": "Relaterte sider"
   },
@@ -680,118 +533,73 @@
     "hero": {
       "badge": "For grupper og klinikker",
       "title": "DocNote for grupper og klinikker",
-      "subtitle": "Rull ut på tvers av avdelinger uten at hver kliniker lager sine egne regler.",
-      "lead": "En gruppe spør ikke 'skriver den bra'. Den spør tre andre spørsmål: kan jeg håndheve en sikkerhetspolicy på alle mine klinikere, passer den til mine systemer, og kan jeg fakturere og spore den sentralt."
+      "subtitle": "Rull ut på tvers av steder uten å la hver kliniker finne opp sine egne regler."
     },
     "story": {
       "badge": "Problemet",
-      "title": "Tre spørsmål en gruppe spør før den spør om notatkvalitet",
+      "title": "En gruppe stiller tre andre spørsmål",
       "paragraphs": [
-        "Når et verktøy utrulles til dusinvis av klinikere på tvers av flere avdelinger, er kvaliteten på et enkelt notat den enkle delen. Det som avgjør, er om gruppen kan sette reglene én gang, som bevaring, utlogging og lydavspilling, og vite at de gjelder overalt, om den validerte rapporten lander i gruppens egen EHR, og om hele greia kan faktureres og spores fra ett sted.",
-        "DocNote svarer med organisasjonsnivå-policy: en gruppe kan håndheve innstillinger på tvers av alle sine kontoer, som transkriptbevaring, lydavspilling deaktivert og automatisk utlogging, uten å avhenge av hver enkelt leges individuelle innstillinger. Maler harmoniseres også: gruppens dokumenter rulles ut til hver kliniker, med delt merkevarebygging og seksjoner.",
-        "Gruppens EHR-er støttes nativt, og i en døgnklinikk matcher flere klinikere inn i samme pasientoppføring. Organisasjonsnivå-policy er ikke et løfte på veikartet: den kjører allerede i produksjon for en pilotgruppe."
+        "En gruppe spør ikke \"skriver den bra\". Den stiller tre andre spørsmål: kan jeg håndheve en sikkerhetspolicy på alle mine klinikere, passer den til mine systemer, og kan jeg fakturere og spore den sentralt."
       ]
     },
     "benefits": {
       "badge": "Hva DocNote gjør",
-      "title": "Sett reglene én gang, bruk dem på hver kliniker",
-      "subtitle": "Policy, maler, systemer og fakturering på gruppenivå.",
+      "title": "Hva DocNote gjør",
       "items": [
         {
-          "title": "Policy på organisasjonsnivå",
-          "body": "Håndhev innstillinger på tvers av alle gruppens kontoer, som transkriptbevaring, lydavspilling deaktivert og automatisk utlogging, uten å avhenge av hver leges individuelle innstillinger."
+          "title": "Organisasjonsnivå-policy",
+          "body": "Håndhev innstillinger på tvers av alle gruppens kontoer: oppbevaring av transkripsjoner, lydavspilling deaktivert, automatisk utlogging. Uten å avhenge av hver enkelt leges individuelle innstillinger."
         },
         {
           "title": "Harmoniserte maler",
-          "body": "Gruppens dokumenter rulles ut til hver kliniker, med delt merkevarebygging og seksjoner. Én husstil, ikke én per lege."
+          "body": "Gruppens dokumenter rulles ut til hver kliniker, med delt merkevarebygging og seksjoner."
         },
         {
-          "title": "Passer til den eksisterende stabelen",
-          "body": "Gruppe-EHR-er støttes nativt: den validerte rapporten sendes inn i pasientoppføringen, delt opp etter seksjon. SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
+          "title": "Passer til eksisterende stack",
+          "body": "Gruppe-EHR-er støttes innebygd."
         },
         {
           "title": "Samarbeidsdokumentasjon",
-          "body": "I en døgnklinikk matcher flere klinikere inn i samme pasientoppføring. På slutten av dagen: én strukturert oppføring, ikke fire delvise notater som må avstemmes."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra én pilotavdeling til hele gruppen",
-      "subtitle": "Utrullingen følger din styring, ikke omvendt.",
-      "items": [
-        {
-          "title": "Definer policyen",
-          "body": "Bevaring, utlogging, lydavspilling og de delte malene settes på organisasjonsnivå og brukes på hver konto."
-        },
-        {
-          "title": "Koble til systemene",
-          "body": "Kontoer kobles til gruppens EHR; den validerte rapporten går inn i pasientoppføringen, delt opp etter seksjon."
-        },
-        {
-          "title": "Pilot på én avdeling",
-          "body": "Én avdeling, virkelige tilfeller, dine maler, deretter utvides samme konfigurasjon til de andre avdelingene."
-        },
-        {
-          "title": "Fakturer og spor sentralt",
-          "body": "Kontoer, bruk og fakturering håndteres på gruppenivå i stedet for kliniker for kliniker."
+          "body": "I en døgnklinikk fyller flere klinikere inn samme pasientjournal."
         }
       ]
     },
     "proof": {
-      "badge": "Utrullet, ikke lovet",
-      "title": "Policy på organisasjonsnivå kjører allerede i produksjon",
-      "intro": "Det sterkeste argumentet på denne siden er at gruppepolicy ikke er på et veikart: den er utrullet for en pilotgruppe i dag, og det er det en direktør bør be om å se først.",
+      "badge": "Bevis",
+      "title": "I produksjon, ikke en løfte på veikartet",
+      "intro": "Organisasjonsnivå-policy er allerede i produksjon for en pilotgruppe.",
       "points": [
         {
           "title": "Policy håndhevet i produksjon",
-          "body": "Transkriptbevaring, lydavspilling deaktivert og automatisk utlogging brukes på tvers av en pilotgruppes kontoer i dag."
+          "body": "Oppbevaring, avspilling og utloggingsregler brukt på en pilotgruppes kontoer i dag."
         },
         {
-          "title": "Syv EHR-er tilkoblet",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay og Ardentis; et dokumentert integrasjons-API for andre leverandører."
-        },
-        {
-          "title": "Sveitsisk hosting, kort lydbevaring",
-          "body": "Helsedata lagret i Sveits; lyd beholdes kun kort for å produsere dokumentet, deretter slettes."
-        },
-        {
-          "title": "Legens validering, alltid",
-          "body": "DocNote utkaster en rapport legen validerer. Policy styrer verktøyet; klinikeren forblir forfatteren."
+          "title": "Sentral fakturering og sporing",
+          "body": "Gruppekontoer faktureres og spores sentralt."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Hva vi trenger for å skissere en gruppeutrulling",
-        "body": "Antall klinikere og avdelinger, EHR(ene) i bruk, landet (Sveits eller Frankrike endrer kodingsforslagene: SwissDRG, TARDOC, Tarif 222 eller PMSI), og om en døgnklinikktjeneste er en del av omfanget. Med disse fire svarene kan vi foreslå en pilotkonfigurasjon."
-      }
-    ],
     "faq": [
       {
         "q": "Kan vi tvinge de samme innstillingene på hver kliniker?",
-        "a": "Ja. Policy på organisasjonsnivå bruker transkriptbevaring, lydavspilling og automatisk utlogging på tvers av alle gruppens kontoer, uavhengig av individuelle innstillinger."
+        "a": "Ja. Organisasjonsnivå-policy bruker oppbevaring av transkripsjoner, lydavspilling og automatisk utlogging på tvers av alle gruppens kontoer."
       },
       {
-        "q": "Kan hver avdeling bruke de samme brevmalene?",
+        "q": "Kan hvert sted bruke de samme brevmalene?",
         "a": "Ja. Gruppens Word-maler rulles ut til hver kliniker, med delt merkevarebygging og seksjoner."
       },
       {
         "q": "Hvilke EHR-er støttes?",
-        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay og Ardentis, med enveislevering av den validerte rapporten inn i pasientoppføringen. Et dokumentert integrasjons-API finnes for andre leverandører."
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay og Ardentis. En dokumentert integrasjons-API finnes for andre leverandører."
       },
       {
-        "q": "Er fakturering per kliniker eller per gruppe?",
+        "q": "Faktureres det per kliniker eller per gruppe?",
         "a": "Gruppekontoer faktureres og spores sentralt. Snakk med teamet for detaljene i din oppsett."
-      },
-      {
-        "q": "Er døgnklinikkmodusen tilgjengelig for oss?",
-        "a": "Samarbeidsdokumentasjon for døgnklinikk er tilgjengelig for grupper hvis EHR er integrert."
       }
     ],
     "cta": {
-      "title": "Snakk med teamet om din gruppe",
-      "body": "Fortell oss hvor mange klinikere, hvilken EHR og hvilket land, så kommer vi tilbake med en pilotkonfigurasjon.",
+      "title": "Snakk med teamet om din utrulling",
+      "body": "Fortell oss antall klinikere, din EHR og ditt land, og vi kommer tilbake med en utrullingsplan.",
       "primary": "Snakk med teamet",
       "secondary": "Book en demo"
     },
@@ -803,114 +611,75 @@
     "title": "SwissDRG, TARDOC & PMSI-kodingsprogramvare | DocNote",
     "description": "Fakturerbare diagnoser dukker opp inne i brevet selv: SwissDRG, TARDOC, Tarif 222 og PMSI-forslag å validere, ikke en ekstra kodingsrunde. Book en demo.",
     "hero": {
-      "badge": "Koding og fakturering",
-      "title": "Koding og fakturering bygget inn i rapporten",
-      "subtitle": "Fakturerbare diagnoser kommer ut av brevet selv, ikke fra en ekstra runde.",
-      "lead": "Koding slutter å være en ekstra dokumentasjonsrunde. Brevet selv viser de fakturerbare diagnosene: færre oversete komorbiditeter, mindre å ta igjen om kvelden, som forslag legen og kodingsavdelingen validerer."
+      "badge": "Koding & fakturering",
+      "title": "Koding og fakturering innebygd i rapporten",
+      "subtitle": "Fakturerbare diagnoser kommer ut av brevet selv, ikke fra en ekstra runde."
     },
     "story": {
-      "badge": "I produktet",
-      "title": "Forslag i sin egen plass, aldri i den kliniske teksten",
+      "badge": "Hvorfor det betyr noe",
+      "title": "En strukturell fordel, ikke én funksjon til",
       "paragraphs": [
-        "Vesentlige bidiagnoser vises inne i utskrivningsbrevet, der klinikeren allerede leser. Kodingsforslag vises på slutten av dokumentet, i sin egen plass. De forurenser ikke den kliniske teksten og kan plasseres hvor du vil i din Word-mal.",
-        "I Sveits følger forslagene SwissDRG (ICD-10 / CHOP), TARDOC og Tarif 222 for tannlegevirksomhet. I Frankrike følger de PMSI. Med TARDOC blir en kort sengekantdiktat til en komplett, fakturerbar undersøkelsesbeskrivelse: du dokumenterer én gang for behandling og fakturering, ikke to ganger.",
-        "Formuleringen er viktig: dette er kodingsforslag og forslag å validere. Kodingsansvaret forblir hos legen og kodingsavdelingen. DocNote koder ikke på dine vegne og sertifiserer ikke faktureringskompatibilitet. Den sørger for at ingenting fakturerbart blir glemt i brevet."
+        "Ingen generell anglo-amerikansk scribe kjenner til TARDOC, SwissDRG eller Tarif 222. Dette er en strukturell fordel i det sveitsiske markedet, ikke én funksjon til. Koding slutter å være en ekstra dokumentasjonsrunde: færre oversåtte komorbiditeter, mindre å ta igjen om kvelden."
       ]
     },
     "benefits": {
-      "badge": "Hva du får",
-      "title": "Dokumenter én gang, for behandling og fakturering",
-      "subtitle": "Den kliniske teksten forblir klinisk; kodingsplassen gjør resten.",
+      "badge": "Hva DocNote gjør",
+      "title": "Hva DocNote gjør",
       "items": [
         {
-          "title": "Vesentlige bidiagnoser i brevet",
-          "body": "Komorbiditeter som betyr noe for oppholdet vises inne i utskrivningsbrevet, så de ikke gjenoppdages uker senere av kodingsavdelingen."
+          "title": "Fremhevet inne i brevet",
+          "body": "Vesentlige bidiagnoser fremheves inne i utskrivningsbrevet."
         },
         {
-          "title": "Kodingsforslag på slutten av dokumentet",
-          "body": "I sin egen plass, separat fra hovedteksten, plassert hvor din Word-mal forventer dem."
+          "title": "Forslag på slutten av dokumentet",
+          "body": "I sin egen plass: de forurenser ikke den kliniske teksten og kan plasseres hvor du vil i din Word-mal."
         },
         {
-          "title": "Sveits: SwissDRG, TARDOC, Tarif 222",
-          "body": "SwissDRG (ICD-10 / CHOP) for innleggelser, TARDOC for polikliniske tjenester, Tarif 222 for tannlegevirksomhet."
+          "title": "Sveits og Frankrike",
+          "body": "Sveits: SwissDRG (ICD-10 / CHOP), TARDOC, Tarif 222 for tannlege. Frankrike: PMSI."
         },
         {
-          "title": "Frankrike: PMSI",
-          "body": "PMSI-forslag på slutten av brevet, for legen og DIM å validere."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra diktat til et brev med sin kodingsplass",
-      "subtitle": "Ingen ekstra runde, ingen separat kodingsverktøy.",
-      "items": [
-        {
-          "title": "Registrer og utkast",
-          "body": "Konsultasjonen eller sengekantdiktatet fanges; DocNote utkaster rapporten på din mal."
-        },
-        {
-          "title": "Diagnoser vises i teksten",
-          "body": "Vesentlige bidiagnoser fremheves inne i brevet mens det utkastes."
-        },
-        {
-          "title": "Forslag i kodingsplassen",
-          "body": "SwissDRG, TARDOC, Tarif 222 eller PMSI-forslag vises på slutten av dokumentet, i sin egen plass."
-        },
-        {
-          "title": "Legen og kodingsavdelingen validerer",
-          "body": "Forslag bekreftes, korrigeres eller forkastes. Ansvaret forblir der det hører hjemme."
+          "title": "TARDOC i praksis",
+          "body": "En kort sengekantsdiktat blir en fullstendig, fakturerbar undersøkelsesbeskrivelse. Du dokumenterer én gang for behandling og fakturering, ikke to ganger."
         }
       ]
     },
     "proof": {
-      "badge": "Hvorfor dette er en differensierer",
-      "title": "Ingen generell skribent kjenner TARDOC, SwissDRG eller Tarif 222",
-      "intro": "Dette er en strukturell fordel i det sveitsiske markedet, ikke én funksjon til: tariffene er lokale, og et dokumentasjonsverktøy bygget andre steder snakker dem ikke.",
+      "badge": "Disiplin",
+      "title": "Forslag å validere, alltid",
+      "intro": "DocNote skriver kodingsforslag og forslag å validere. Kodingsansvar forblir hos legen og kodingsavdelingen.",
       "points": [
         {
-          "title": "Lokale tariff, nativt",
-          "body": "SwissDRG, TARDOC og Tarif 222 for Sveits; PMSI for Frankrike, bygget inn i rapporten, ikke påmontert."
+          "title": "Forslag, ikke beslutninger",
+          "body": "Hvert forslag valideres eller forkastes av deg."
         },
         {
-          "title": "TARDOC-klar undersøkelsestekst",
-          "body": "Et kort sengekantdiktat utvides til den strukturerte undersøkelsesbeskrivelsen forsikringsselskaper og TARDOC forventer, uten å måtte skrive undersøkelsen på nytt."
-        },
-        {
-          "title": "Forslag, å validere",
-          "body": "Aldri brukt på dine vegne, aldri sertifisert. Legen og kodingsavdelingen har det siste ordet."
-        },
-        {
-          "title": "Din mal bestemmer hvor plassen går",
-          "body": "Koding får sin egen plass i Word-malen, separat fra hovedteksten."
+          "title": "I sin egen plass",
+          "body": "Forslag sitter på slutten av dokumentet, adskilt fra den kliniske teksten."
         }
       ]
     },
     "faq": [
       {
-        "q": "Koder DocNote mine opphold automatisk?",
-        "a": "Nei. Den viser vesentlige bidiagnoser i brevet og legger til kodingsforslag på slutten av dokumentet. De er forslag å validere; kodingsansvaret forblir hos legen og kodingsavdelingen."
+        "q": "Koder DocNote mine opphold for meg?",
+        "a": "Nei. Den legger til kodingsforslag på slutten av dokumentet, som forslag å validere. Ansvar forblir hos legen og kodingsavdelingen."
       },
       {
         "q": "Hvilke kodingssystemer dekkes?",
-        "a": "Sveits: SwissDRG (ICD-10 / CHOP), TARDOC og Tarif 222 for tannlegevirksomhet. Frankrike: PMSI."
+        "a": "Sveits: SwissDRG (ICD-10 / CHOP), TARDOC og Tarif 222 for tannlege. Frankrike: PMSI."
       },
       {
         "q": "Dukker forslagene opp inne i den kliniske teksten?",
-        "a": "Nei. De sitter i sin egen plass på slutten av dokumentet, og den plassen kan plasseres hvor du vil i din Word-mal."
+        "a": "Nei. De sitter i sin egen plass på slutten av dokumentet, plassert hvor du vil i din Word-mal."
       },
       {
         "q": "Hvordan ser TARDOC-støtte ut i praksis?",
-        "a": "Et kort sengekantdiktat blir en komplett, fakturerbar undersøkelsesbeskrivelse: du dokumenterer én gang for behandling og fakturering, ikke to ganger."
-      },
-      {
-        "q": "Erstatter dette vår kodingsgjennomgang?",
-        "a": "Nei. DocNote foreslår; legen og kodingsavdelingen validerer. Ingenting her erstatter din kodingsgjennomgang."
+        "a": "Et kort sengekantsdiktat blir en fullstendig, fakturerbar undersøkelsesbeskrivelse. Du dokumenterer én gang, for behandling og fakturering."
       }
     ],
     "cta": {
-      "title": "Se kodingsplassen på dine egne brev",
-      "body": "Book en demo med et utskrivningsbrev fra din avdeling, så viser vi hvor diagnosene vises og hvor forslagene lander.",
+      "title": "Se kodingsforslagene på dine egne brev",
+      "body": "Book en demo med et utskrivningsbrev eller en konsultasjon fra din tjeneste.",
       "primary": "Book en demo",
       "secondary": "Se priser"
     },
@@ -924,84 +693,53 @@
     "hero": {
       "badge": "EHR-integrasjon",
       "title": "Integrasjon med den elektroniske pasientjournalen",
-      "subtitle": "Den validerte rapporten går inn i journalen, delt opp etter seksjoner.",
-      "lead": "Dokumentasjon er ikke ferdig når notatet ser bra ut. Den er ferdig når den er i journalen: ingen kopiering og liming, ingen versjon som flyter utenfor EHR."
+      "subtitle": "Den validerte rapporten går inn i journalen, delt opp etter seksjon."
     },
     "story": {
-      "badge": "I produktet",
-      "title": "Syv systemer, én flyt: fra DocNote til journalen",
+      "badge": "Hvordan det fungerer",
+      "title": "Enveis, etter design",
       "paragraphs": [
-        "DocNote sender validerte rapporter til syv elektroniske pasientjournalsystemer: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay og Ardentis. Klinikeren kobler sin DocNote-konto til sin EHR-konto én gang, via OAuth2, og søker etter pasienten i EHR fra innsiden av DocNote.",
-        "Når rapporten er validert, sendes den inn i pasientens journal, delt opp etter seksjoner: rapportens seksjoner havner i journalens seksjoner, ikke som én limt blokk.",
-        "Flyten er enveis: DocNote sender til EHR. DocNote leser ikke pasientjournalen; pasientsøk er et søk, ikke en journalimport. Det finnes en dokumentert integrasjons-API for EHR-leverandører som ønsker å koble seg til."
+        "Flyten er enveis: DocNote sender til EHR. DocNote leser ikke din pasientjournal, og pasientsøk er et søk, ikke en journalimport. Dokumentasjon er ferdig når rapporten er i journalen: ingen kopiering og liming, ingen versjon som flyter utenfor EHR."
       ]
     },
     "benefits": {
-      "badge": "Hva du får",
-      "title": "Rapporten og journalen forblir det samme objektet",
-      "subtitle": "Koblet én gang, søkes fra innsiden av DocNote, sendt seksjon for seksjon.",
+      "badge": "Hva DocNote gjør",
+      "title": "Hva DocNote gjør",
       "items": [
         {
           "title": "Syv støttede systemer",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis: sykehus- og gruppe-EHR-er i Sveits og Frankrike."
+          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
         },
         {
-          "title": "Koblet én gang, via OAuth2",
-          "body": "Klinikeren kobler sin DocNote-konto til sin EHR-konto én gang. Ingen delte passord, ingen manuell eksport."
+          "title": "Koblet én gang, over OAuth2",
+          "body": "Klinikeren kobler sin DocNote-konto til sin EHR-konto én gang."
         },
         {
           "title": "Pasientsøk fra innsiden av DocNote",
-          "body": "Finn pasienten i EHR uten å forlate appen, og fest deretter rapporten til riktig journal."
+          "body": "Søk etter din pasient i EHR uten å forlate DocNote."
         },
         {
-          "title": "Sendt delt opp etter seksjoner",
-          "body": "Den validerte rapporten går inn i pasientens journal seksjon for seksjon, uten kopiering og liming, uten versjon som flyter utenfor EHR."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra validerte utkast til pasientjournal",
-      "subtitle": "Enveis, bevisst og alltid etter validering.",
-      "items": [
-        {
-          "title": "Koble kontiene én gang",
-          "body": "Klinikeren autoriserer DocNote mot sin EHR-konto via OAuth2."
+          "title": "Sendt delt opp etter seksjon",
+          "body": "Den validerte rapporten sendes inn i den pasientens journal, delt opp etter seksjon."
         },
         {
-          "title": "Søk etter pasienten",
-          "body": "Fra innsiden av DocNote, søk etter pasienten i EHR og velg journalen."
-        },
-        {
-          "title": "Valider rapporten",
-          "body": "Legen gjennomgår og godkjenner. Ingenting sendes før validering."
-        },
-        {
-          "title": "Send seksjon for seksjon",
-          "body": "Rapporten leveres til pasientens journal, delt opp etter seksjoner."
+          "title": "En API for EHR-leverandører",
+          "body": "En dokumentert integrasjons-API finnes for leverandører som ønsker å koble til."
         }
       ]
     },
     "proof": {
-      "badge": "Nøyaktighet å bevare",
-      "title": "Enveis, etter design",
-      "intro": "Det er verdt å være presis på hva integrasjonen gjør og ikke gjør. Presisjonen er det sykehusets IT gjennomgår.",
+      "badge": "Nøyaktighet",
+      "title": "Hva integrasjonen er, og ikke er",
+      "intro": "En retning, ingen lesing, ingen kopiering og liming.",
       "points": [
         {
-          "title": "DocNote sender til EHR",
-          "body": "Retningen er DocNote → pasientjournal. Det er ingen returflyt fra EHR til DocNote."
+          "title": "DocNote sender, den leser ikke",
+          "body": "Rapporten går fra DocNote inn i EHR. Ingenting kommer tilbake den andre veien."
         },
         {
-          "title": "DocNote leser ikke pasientjournalen",
-          "body": "Pasientsøk returnerer journalen å feste til; den importerer ikke journalens innhold til DocNote."
-        },
-        {
-          "title": "Kun validerte rapporter sendes",
-          "body": "Utkast forblir i DocNote til legen godkjenner."
-        },
-        {
-          "title": "Dokumentert integrasjons-API",
-          "body": "EHR-leverandører som ikke er koblet til ennå, kan integrere mot en dokumentert API."
+          "title": "Ingen versjon utenfor journalen",
+          "body": "Dokumentasjon er ferdig når den validerte rapporten er i pasientjournalen."
         }
       ]
     },
@@ -1012,26 +750,22 @@
       },
       {
         "q": "Leser DocNote også fra EHR?",
-        "a": "Nei. Flyten er enveis: DocNote sender den validerte rapporten til EHR. DocNote leser ikke pasientjournalen."
+        "a": "Nei. Flyten er enveis: DocNote sender den validerte rapporten inn i EHR."
       },
       {
         "q": "Hvordan fungerer pasientsøket?",
-        "a": "Klinikeren søker etter pasienten i EHR fra innsiden av DocNote og velger journalen å sende til. Det er et søk, ikke en journalimport."
+        "a": "Du søker etter pasienten i EHR fra innsiden av DocNote og velger journalen å sende til. Det er et søk, ikke en journalimport."
       },
       {
-        "q": "Hvordan kobles kontoen?",
-        "a": "Én gang, via OAuth2, mellom klinikerens DocNote-konto og deres EHR-konto."
-      },
-      {
-        "q": "Vår EHR er ikke på listen, hva da?",
-        "a": "Det finnes en dokumentert integrasjons-API for EHR-leverandører som ønsker å koble seg til. Snakk med teamet."
+        "q": "Vår EHR er ikke på listen. Hva da?",
+        "a": "En dokumentert integrasjons-API finnes for EHR-leverandører som ønsker å koble til. Snakk med teamet."
       }
     ],
     "cta": {
       "title": "Se rapporten lande i din EHR",
-      "body": "Book en demo med ditt system i bildet, som SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay eller Ardentis, eller spør om integrasjons-API-en.",
+      "body": "Book en demo på ditt eget system, fra pasientsøk til rapporten delt opp etter seksjon.",
       "primary": "Book en demo",
-      "secondary": "Kontakt teamet"
+      "secondary": "Kontakt oss"
     },
     "relatedLabel": "Relaterte sider"
   },
@@ -1043,114 +777,75 @@
     "hero": {
       "badge": "Tilpassede Word-maler",
       "title": "Dine Word-dokumenter, ikke AI-ens",
-      "subtitle": "Last opp malen din én gang. Hver rapport etter det kommer ut med din eksakte struktur og merkevare.",
-      "lead": "Ikke mer omformatering av AI-utdata for å matche sykehusets brevhode. Hver rapport er allerede ditt dokument. Gjennomgangen forblir klinisk, ikke kosmetisk."
+      "subtitle": "Last opp malen din én gang. Hver rapport etter det kommer ut med din eksakte struktur og merkevare."
     },
     "story": {
-      "badge": "I produktet",
-      "title": "Det største innvendingen på sykehusdemoer, besvart før den reises",
+      "badge": "Hvorfor det er viktig",
+      "title": "Den største innvendingen på hospitalsdemonstrasjoner",
       "paragraphs": [
-        "\"Dine utdata er fine, men de ser ikke ut som brevet vårt.\" Hver avdeling har et dokument de har finjustert over år: brevhodet, margene, rekkefølgen på seksjonene, signaturblokken. Et verktøy som produserer god tekst i feil dokument skaper en formateringsjobb for noen.",
-        "Med DocNote laster du opp Word-malen din én gang. Derfra kommer hver rapport ut med din eksakte struktur og merkevare: ditt brevhode, dine marger, dine seksjoner, din signatur. Koding får sin egen plass i malen, separat fra hovedteksten, så forslag aldri blandes med klinisk innhold.",
-        "Avsnittsjustering bevares ved eksport, enten blokkjustert, sentrert eller høyrejustert, så det du ser i DocNote er det som forlater som Word eller PDF. Gjennomgangen blir klinisk igjen: du korrigerer innholdet, ikke layouten."
+        "\"Deres utdata er fine, men det ser ikke ut som brevet vårt.\" DocNote besvarer den innvendingen før den blir reist: ikke mer omformatering av AI-utdata for å matche hospitalsbrevhodet. Hver rapport er allerede ditt dokument."
       ]
     },
     "benefits": {
-      "badge": "Hva du får",
-      "title": "Hver rapport er allerede ditt dokument",
-      "subtitle": "Struktur, merkevare og plasser definert én gang, gjenbrukt hver gang.",
+      "badge": "Hva DocNote gjør",
+      "title": "Hva DocNote gjør",
       "items": [
         {
-          "title": "Ditt brevhode, marger, seksjoner, signatur",
-          "body": "Avdelingens Word-dokument er modellen. DocNote gjenskaper fremtidige rapporter med den eksakte strukturen og merkevaren."
+          "title": "Ditt brevhode, dine marger, dine seksjoner, din signatur",
+          "body": "Alt kommer fra Word-dokumentet du laster opp én gang."
         },
         {
-          "title": "En plass for koding, separat fra hovedteksten",
-          "body": "Kodingsforslag får sin egen plass i malen, akkurat der kodeavdelingen din forventer dem, og forurenser aldri den kliniske teksten."
+          "title": "Koding får sin egen plass",
+          "body": "Separat fra hovedteksten, plassert hvor du vil i malen."
         },
         {
           "title": "Justering bevart ved eksport",
-          "body": "Blokkjustert, sentrert eller høyrejustert: avsnittsjusteringen i malen din overlever eksporten til Word og PDF."
+          "body": "Blokkjustert, sentrert og høyrejustering kommer ut som designet."
         },
         {
-          "title": "Gjennomgangen blir klinisk igjen",
-          "body": "Du korrigerer innholdet, ikke layouten. Kosmetisk omformatering forsvinner fra valideringstrinnet."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Én gang for malen, deretter hver gang for rapporten",
-      "subtitle": "Ingen malredigerer å lære: din Word-fil er kilden.",
-      "items": [
-        {
-          "title": "Last opp Word-malen",
-          "body": "Last opp avdelingens eller praksisens dokument én gang: brevhode, seksjoner, signaturblokk, kodingsplass."
-        },
-        {
-          "title": "Spill inn og utkast",
-          "body": "DocNote lager utkastet til rapporten direkte inn i den strukturen."
-        },
-        {
-          "title": "Korriger innholdet",
-          "body": "Legen gjennomgår klinisk innhold; layouten er allerede riktig."
-        },
-        {
-          "title": "Eksporter eller send",
-          "body": "Word eller PDF med justering bevart, eller rett inn i EHR der koblet."
+          "title": "Gjennomgang blir klinisk igjen",
+          "body": "Du korrigerer innholdet, ikke layouten."
         }
       ]
     },
     "proof": {
-      "badge": "Hvorfor dette er en differensierer",
-      "title": "Generisk utdata er innvendingen; ditt dokument er svaret",
-      "intro": "De fleste skrivere leverer et fast notatlayout og overlater brevhodet til noen andre. DocNote tar dokumentet ditt som mal, og det er derfor avdelinger slutter å stille spørsmålet.",
+      "badge": "Effekt",
+      "title": "Gjennomgang forblir klinisk, ikke kosmetisk",
+      "intro": "Ikke mer omformatering av AI-utdata for å matche hospitalsbrevhodet.",
       "points": [
         {
-          "title": "Din fil, ikke en malbygger",
-          "body": "Word-dokumentet din avdeling allerede stoler på er det DocNote gjenskaper."
+          "title": "Allerede ditt dokument",
+          "body": "Hver rapport kommer ut på ditt brevhode, med dine seksjoner og din signatur."
         },
         {
-          "title": "Harmonisert på tvers av en gruppe",
-          "body": "Grupper ruller ut de samme malene til hver kliniker, med delt merkevare og seksjoner."
-        },
-        {
-          "title": "Fungerer for sekretærer også",
-          "body": "En sekretær som jobber innenfor legens konto bruker de samme malene, uten andre kopier å holde synkronisert."
-        },
-        {
-          "title": "Kodingsplass plassert av deg",
-          "body": "Hvor forslagene lander bestemmes i malen, ikke av verktøyet."
+          "title": "Ingenting å bygge på nytt",
+          "body": "Last opp det eksisterende Word-dokumentet én gang. Ingen malredigerer å lære."
         }
       ]
     },
     "faq": [
       {
         "q": "Må jeg bygge malen min på nytt inne i DocNote?",
-        "a": "Nei. Last opp ditt eksisterende Word-dokument én gang; DocNote gjenskaper fremtidige rapporter med dets struktur og merkevare."
+        "a": "Nei. Last opp det eksisterende Word-dokumentet én gang; hver rapport etter det følger dens struktur og merkevare."
       },
       {
         "q": "Vil brevhodet og signaturblokken bli bevart?",
-        "a": "Ja, brevhode, marger, seksjoner og signatur kommer fra malen din."
+        "a": "Ja. Brevhode, marger, seksjoner og signatur kommer fra malen din."
       },
       {
-        "q": "Hvor går kodingsforslagene?",
-        "a": "I sin egen plass i malen, separat fra hovedteksten, plassert hvor enn du ønsker."
-      },
-      {
-        "q": "Bevares justering når jeg eksporterer?",
-        "a": "Ja. Blokkjustert, sentrert og høyrejustert justering bevares ved eksport."
+        "q": "Hvor går kodeforslagene?",
+        "a": "I sin egen plass i malen, separat fra hovedteksten, plassert hvor du vil."
       },
       {
         "q": "Kan flere maler sameksistere?",
-        "a": "Ja, for eksempel én per dokumenttype (utskrivningsbrev, operasjonsrapport, sengepostnotat) eller per tjeneste."
+        "a": "Ja. For eksempel én per dokumenttype: utskrivningsbrev, operasjonsrapport, avdelingsoppføring."
       }
     ],
     "cta": {
-      "title": "Ta med ditt brevhode til demoen",
-      "body": "Send oss avdelingens Word-mal, og vi viser rapporten som kommer ut i ditt dokument, ikke vårt.",
+      "title": "Se ditt eget brev komme ut av DocNote",
+      "body": "Book en demo med din Word-mal, eller se flyten i veiledningen først.",
       "primary": "Book en demo",
-      "secondary": "Se opplæringen"
+      "secondary": "Se veiledningen"
     },
     "relatedLabel": "Relaterte sider"
   },
@@ -1162,103 +857,64 @@
     "hero": {
       "badge": "Klinisk kontekst",
       "title": "Rapporten reflekterer journalen, ikke bare det som ble sagt høyt",
-      "subtitle": "Legg ved tidligere brev, laboratorieresultater, bilder og bilder.",
-      "lead": "Notatet reflekterer det fulle kliniske bildet, ikke bare det som ble sagt høyt: færre utelatelser, færre \"vennligst legg til laboratorieresultatet\"-korrigeringer etterpå."
+      "subtitle": "Legg ved tidligere brev, laboratorieresultater, bildediagnostikk og bilder."
     },
     "story": {
-      "badge": "I produktet",
-      "title": "Lyd pluss filer, før eller etter opptak",
+      "badge": "Hvorfor det er viktig",
+      "title": "Færre utelatelser",
       "paragraphs": [
-        "En konsultasjon er sjelden hele historien. Det er det tidligere utskrivningsbrevet, laboratoriepanelet fra i morges, bilderapporten, sårbildet. DocNote lar deg legge dem ved, og modellen bruker dem når den strukturerer rapporten.",
-        "Dokumenter vedlagt før eller etter opptak foldes inn i rapporten. Elementer lagt til sent, som et laboratorieresultat som kommer om ettermiddagen, blir plukket opp uten å regenerere alt, slik at korrigeringene du allerede har gjort blir beholdt.",
-        "En samtale-modus lar deg be om en endring eller et tillegg etter generering: be om at laboratoriene legges til, en seksjon forkortes, en mottaker endres. Færre utelatelser, færre \"vennligst legg til laboratoriene\"-meldinger etterpå."
+        "En konsultasjon er mer enn det som ble sagt høyt. Tidligere brev, laboratorieresultater, bildediagnostikk og bilder hører også hjemme i rapporten. Med konteksten vedlagt er det færre utelatelser og færre \"vennligst legg til laboratoriene\"-meldinger etterpå."
       ]
     },
     "benefits": {
-      "badge": "Hva du får",
-      "title": "Et sterkere notat fra samme konsultasjon",
-      "subtitle": "Kontekst inn, utelatelser ut.",
+      "badge": "Hva DocNote gjør",
+      "title": "Hva DocNote gjør",
       "items": [
         {
-          "title": "Legg ved tidligere brev, laboratorier, bilder og bilder",
-          "body": "Slipp filene ved siden av opptaket; modellen bruker dem når den strukturerer rapporten."
+          "title": "Legg ved før eller etter opptak",
+          "body": "Dokumenter vedlagt før eller etter opptak blir foldet inn i rapporten."
         },
         {
-          "title": "Før eller etter opptak",
-          "body": "Dokumenter vedlagt når som helst foldes inn i rapporten. Du trenger ikke ha alt klart før du trykker på opptak."
+          "title": "Sene elementer blir plukket opp",
+          "body": "Et resultat som kommer senere blir lagt til uten å generere alt på nytt."
         },
         {
-          "title": "Sene elementer uten å regenerere alt",
-          "body": "Et resultat som kommer etterpå blir plukket opp mens dine tidligere korrigeringer bevares."
+          "title": "Samtalemodus",
+          "body": "Be om en endring eller et tillegg etter generering."
         },
         {
-          "title": "Samtale-modus etter generering",
-          "body": "Be om en endring eller et tillegg på vanlig språk når utkastet eksisterer."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra konsultasjon og filer til en komplett rapport",
-      "subtitle": "Det samme valideringstrinnet; mer av bildet i utkastet.",
-      "items": [
-        {
-          "title": "Spill inn møtet",
-          "body": "Telefon eller nettleser, som vanlig."
-        },
-        {
-          "title": "Legg ved konteksten",
-          "body": "Tidligere utskrivningsbrev, laboratorier, bilder, bilder, før eller etter opptaket."
-        },
-        {
-          "title": "Gjennomgå utkastet",
-          "body": "Rapporten reflekterer journalen og samtalen; du korrigerer innholdet."
-        },
-        {
-          "title": "Be om endringen du trenger",
-          "body": "I samtale-modus, be om et tillegg eller en endring; valider og eksporter."
+          "title": "Du velger hva du vil legge ved",
+          "body": "DocNote leser ikke pasientjournalen din. Du legger ved filene selv."
         }
       ]
     },
     "proof": {
-      "badge": "Hvorfor det betyr noe",
-      "title": "Færre utelatelser, færre oppfølgingskorrigeringer",
-      "intro": "Verdien er ikke et større notat; det er et notat som ikke må åpnes på nytt fordi laboratoriene manglet.",
+      "badge": "Effekt",
+      "title": "Legg til kontekst sent, behold dine korreksjoner",
+      "intro": "Elementer lagt til sent blir foldet inn uten å starte på nytt.",
       "points": [
         {
-          "title": "Rapportens fullstendighet",
-          "body": "Med kontekst inkludert, mangler færre funn i utkastet, og rapporten reflekterer det fulle kliniske bildet."
+          "title": "Ingen regenerering fra scratch",
+          "body": "Sene tillegg overskriver ikke korreksjonene du allerede har gjort."
         },
         {
-          "title": "Sen kontekst, bevarte korrigeringer",
-          "body": "Å legge til et resultat etterpå oppdaterer rapporten uten å kaste det du allerede har redigert."
-        },
-        {
-          "title": "Nyttig for sekretærer også",
-          "body": "En sekretær som jobber innenfor legens konto kan legge til det sene laboratorieresultatet eller det tidligere brevet uten å starte på nytt."
-        },
-        {
-          "title": "Legens validering, alltid",
-          "body": "Kontekst gjør utkastet bedre; legen gjennomgår og signerer fortsatt."
+          "title": "Be om endringen",
+          "body": "En samtalemodus lar deg be om en endring eller et tillegg etter generering."
         }
       ]
     },
     "faq": [
       {
         "q": "Hva kan jeg legge ved?",
-        "a": "Tidligere brev, laboratorieresultater, bilderapporter og bilder."
+        "a": "Tidligere brev, laboratorieresultater, bildediagnostikkrapporter og bilder."
       },
       {
         "q": "Må jeg legge ved alt før opptak?",
-        "a": "Nei. Dokumenter vedlagt før eller etter opptak foldes inn i rapporten."
+        "a": "Nei. Dokumenter vedlagt før eller etter opptak blir foldet inn i rapporten."
       },
       {
-        "q": "Hvis et laboratorieresultat kommer senere, må jeg regenerere hele rapporten?",
-        "a": "Nei. Sene elementer blir plukket opp uten å regenerere alt; dine korrigeringer blir beholdt."
-      },
-      {
-        "q": "Kan jeg be om en endring etter at utkastet er generert?",
-        "a": "Ja. En samtale-modus lar deg be om en endring eller et tillegg etter generering."
+        "q": "Hvis et laboratorieresultat kommer senere, må jeg generere hele rapporten på nytt?",
+        "a": "Nei. Sene elementer blir plukket opp uten å generere alt på nytt; dine korreksjoner blir beholdt."
       },
       {
         "q": "Henter DocNote dokumenter fra min EHR?",
@@ -1266,9 +922,9 @@
       }
     ],
     "cta": {
-      "title": "Se forskjellen kontekst gjør",
-      "body": "Se opplæringen for å se en rapport utarbeidet med vedlegg, eller book en demo med dine egne dokumenter.",
-      "primary": "Se opplæringen",
+      "title": "Se det i veiledningen",
+      "body": "Veiledningen viser en rapport oppdatert med dokumenter vedlagt før og etter opptak.",
+      "primary": "Se veiledningen",
       "secondary": "Book en demo"
     },
     "relatedLabel": "Relaterte sider"
@@ -1279,100 +935,61 @@
     "title": "Dokumentasjonsprogram for dagsykehus | DocNote",
     "description": "Flere klinikere, én pasientjournal: DocNote slår sammen teamets bidrag til én strukturert notat. Tilgjengelig for grupper med integrert EHR.",
     "hero": {
-      "badge": "Dagsykehus",
-      "title": "Dagsykehus: flere klinikere, én journal",
-      "subtitle": "DocNote slår sammen teamets bidrag til én pålitelig journal.",
-      "lead": "På slutten av dagen har du én strukturert pasientjournal, ikke fire delnotater som må samordnes. Dokumentasjonskvaliteten følger teamet i stedet for å fragmenteres."
+      "badge": "Daghospital",
+      "title": "Daghospital: flere klinikere, én journal",
+      "subtitle": "DocNote slår sammen teamets bidrag til én pålitelig journal."
     },
     "story": {
-      "badge": "I produktet",
-      "title": "En flerforfatterjournal for en flerforfatterdag",
+      "badge": "Hvorfor det er viktig",
+      "title": "Hver skriver på markedet er én-kliniker",
       "paragraphs": [
-        "På et dagsykehus møter pasienten flere klinikere i rekkefølge: sykepleieren ved opptak, legen, spesialisten, sykepleieren igjen ved utskrivning. Hver enkelt dokumenterer sin del; noen må deretter samordne fire delnotater til en journal som leses som én.",
-        "DocNote lar flere klinikere bidra til samme pasientjournal gjennom dagen. Bidragene slås sammen til én strukturert journal, slik at det på slutten av dagen er ett dokument, ikke fire fragmenter som må settes sammen.",
-        "Dette er tilgjengelig for grupper hvis EHR er integrert: den sammenslåtte, validerte journalen sendes inn i pasientens fil, delt opp etter seksjon, som alle andre DocNote-rapporter."
+        "Ingen adresserer denne brukssaken, fordi den krever en flerforfatter-datamodell. Hver skriver på markedet er én-kliniker. I et daghospital etterlater det teamet med å avstemme delvise notater på slutten av dagen."
       ]
     },
     "benefits": {
-      "badge": "Hva du får",
-      "title": "En strukturert journal på slutten av dagen",
-      "subtitle": "Teamet dokumenterer; journalen forblir hel.",
+      "badge": "Hva DocNote gjør",
+      "title": "Hva DocNote gjør",
       "items": [
         {
-          "title": "Flere klinikere, samme journal",
-          "body": "Sykepleier, lege, spesialist: hver bidrar til samme pasientjournal gjennom dagen."
+          "title": "Flere klinikere, én journal",
+          "body": "Flere klinikere bidrar til samme pasientjournal gjennom dagen."
         },
         {
-          "title": "Bidrag slått sammen, ikke stablet",
-          "body": "DocNote slår sammen teamets bidrag til én pålitelig journal i stedet for å legge til fire delnotater."
+          "title": "Én strukturert journal på slutten av dagen",
+          "body": "Ikke fire delvise notater å avstemme."
         },
         {
-          "title": "Kvalitet følger teamet",
-          "body": "Dokumentasjonskvaliteten skalerer med teamet i stedet for å fragmenteres på tvers av forfattere."
-        },
-        {
-          "title": "Inn i gruppens EHR",
-          "body": "Tilgjengelig for grupper hvis EHR er integrert; den validerte journalen sendes inn i pasientens fil, delt opp etter seksjon."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra første kontakt til utskrivningsjournal",
-      "subtitle": "Hver kliniker dokumenterer sin del; DocNote holder det som ett dokument.",
-      "items": [
-        {
-          "title": "Opptak",
-          "body": "Den første klinikeren åpner pasientens dagsykehusjournal og dokumenterer sin del."
-        },
-        {
-          "title": "Gjennom dagen",
-          "body": "Hver påfølgende kliniker bidrar til samme journal fra sin egen konto."
-        },
-        {
-          "title": "Sammenslåing",
-          "body": "DocNote slår sammen bidragene til én strukturert journal."
-        },
-        {
-          "title": "Valider og send",
-          "body": "Den ansvarlige legen validerer; journalen sendes inn i gruppens EHR, delt opp etter seksjon."
+          "title": "For grupper med integrert EHR",
+          "body": "Tilgjengelig for grupper hvis EHR er integrert."
         }
       ]
     },
     "proof": {
-      "badge": "Hvorfor dette er en differensierer",
-      "title": "Ingen andre adresserer denne brukssaken",
-      "intro": "Det krever en flerforfatter-datamodell, og hver klinisk skriver på markedet er én-kliniker. DocNote ble bygget med dagsykehus i tankene.",
+      "badge": "Effekt",
+      "title": "Kvalitet følger teamet",
+      "intro": "På slutten av dagen har du én strukturert pasientjournal, ikke fire delvise notater å avstemme. Dokumentasjonskvalitet følger teamet i stedet for å fragmentere.",
       "points": [
         {
-          "title": "Flerforfatter etter design",
-          "body": "Flere kontoer som mater én journal er en egenskap ved datamodellen, ikke en omvei."
+          "title": "Én journal å validere",
+          "body": "Den ansvarlige legen gjennomgår og validerer den sammenførte journalen."
         },
         {
-          "title": "For integrerte grupper",
-          "body": "Tilgjengelig for grupper hvis EHR er integrert: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
-        },
-        {
-          "title": "Styrt av gruppepolicy",
-          "body": "Oppbevarings-, utloggings- og lydavspillingsregler satt på organisasjonsnivå gjelder for hver bidragsyter."
-        },
-        {
-          "title": "Leges validering, alltid",
-          "body": "Den sammenslåtte journalen utkastes av DocNote og valideres av den ansvarlige legen før den sendes."
+          "title": "Inn i EHR",
+          "body": "Den validerte journalen sendes inn i pasientjournalen i gruppens EHR."
         }
       ]
     },
     "faq": [
       {
         "q": "Hvem kan bidra til journalen?",
-        "a": "Klinikerne på dagsykehuset, hver fra sin egen DocNote-konto, på samme pasientjournal."
+        "a": "Klinikerne i daghospitaltjenesten, hver fra sin egen DocNote-konto, på samme pasientjournal."
       },
       {
-        "q": "Er det én sammenslått dokument eller en liste over notater?",
-        "a": "En sammenslått, strukturert journal, ikke fire delnotater som må samordnes."
+        "q": "Er det ett sammenslått dokument eller en liste over notater?",
+        "a": "Én sammenslått, strukturert journal."
       },
       {
-        "q": "Hvem validerer den sammenslåtte journalen?",
+        "q": "Hvem validerer den sammenførte journalen?",
         "a": "Den ansvarlige legen gjennomgår og validerer før den sendes inn i EHR."
       },
       {
@@ -1381,10 +998,10 @@
       }
     ],
     "cta": {
-      "title": "Se en dagsykehusjournal bygget av teamet",
-      "body": "Bestill en demo med ditt dagsykehus og din EHR i bildet.",
-      "primary": "Bestill en demo",
-      "secondary": "Kontakt teamet"
+      "title": "Snakk med teamet om ditt daghospital",
+      "body": "Fortell oss hvordan tjenesten din er organisert og hvilken EHR du kjører.",
+      "primary": "Book en demo",
+      "secondary": "Kontakt oss"
     },
     "relatedLabel": "Relaterte sider"
   },
@@ -1396,84 +1013,49 @@
     "hero": {
       "badge": "Flerspråklig & spesialiteter",
       "title": "61 spesialiteter, 21 grensesnittspråk",
-      "subtitle": "En konsultasjon på portugisisk, en rapport på fransk, i din spesialitets vokabular.",
-      "lead": "Språket du snakker med pasienten dikterer ikke rapportens språk, og vokabularet følger din spesialitet, heller enn generisk SOAP-sjargong importert fra USA."
+      "subtitle": "En konsultasjon på portugisisk, en rapport på fransk, i din spesialitets vokabular."
     },
     "story": {
-      "badge": "I produktet",
-      "title": "Din spesialitets ord, i rapportens språk",
+      "badge": "Hvorfor det er viktig",
+      "title": "Språket du snakker dikterer ikke rapporten",
       "paragraphs": [
-        "DocNote dekker 61 medisinske spesialiteter, hver med sine egne standardrapportmaler. Ved registrering tilpasses malene til din spesialitet, slik at førsteutkastet allerede bruker strukturen og begrepene din disiplin forventer, ikke et generelt konsultasjonsnotat omformet for hvert fag.",
-        "Grensesnittet er tilgjengelig på 21 språk. Og møter er flerspråklige av natur: en konsultasjon holdt på portugisisk, arabisk eller tysk kan produsere en rapport på fransk. Språket du snakker med pasienten dikterer ikke dokumentets språk.",
-        "Vokabularet følger spesialiteten. Et kardiologibrev, en psykiatrinotat og en operasjonsrapport leses ikke likt, og DocNote tvinger dem ikke inn i én mal."
+        "Flerspråklige møter er normale i omsorg. Språket du snakker med pasienten dikterer ikke rapportens språk, og vokabularet følger spesialiteten heller enn generisk SOAP-jargon importert fra USA."
       ]
     },
     "benefits": {
-      "badge": "Hva du får",
-      "title": "Spesialitet først, språk andre: begge håndteres",
-      "subtitle": "61 spesialiteter, 21 grensesnittspråk, flerspråklige møter.",
+      "badge": "Hva DocNote gjør",
+      "title": "Hva DocNote gjør",
       "items": [
         {
           "title": "61 medisinske spesialiteter",
-          "body": "Hver med sine egne standardrapportmaler, tilpasset ved registrering."
+          "body": "Hver med sine standard rapportmaler."
         },
         {
-          "title": "Grensesnitt på 21 språk",
-          "body": "Jobb på ditt språk på telefonen og på skrivebordet."
+          "title": "21 grensesnittspråk",
+          "body": "Grensesnittet er tilgjengelig på 21 språk."
         },
         {
           "title": "Flerspråklige møter",
           "body": "Språket du snakker med pasienten dikterer ikke rapportens språk."
         },
         {
-          "title": "Vokabular følger spesialiteten",
-          "body": "Begreper og struktur følger din disiplin, heller enn generisk SOAP-sjargong importert fra USA."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Hvordan det fungerer",
-      "title": "Fra en konsultasjon på ett språk til en rapport på et annet",
-      "subtitle": "Ingen innstillinger å jonglere midt i konsultasjonen.",
-      "items": [
-        {
-          "title": "Velg din spesialitet og språk",
-          "body": "En gang, ved registrering: standardmaler for din spesialitet, grensesnitt på ditt språk."
-        },
-        {
-          "title": "Opptak på rommets språk",
-          "body": "Snakk med pasienten på det språket dere deler."
-        },
-        {
-          "title": "Få rapporten på journalens språk",
-          "body": "Utkastet produseres på rapportens språk du valgte, i din spesialitets vokabular."
-        },
-        {
-          "title": "Valider og eksporter",
-          "body": "Du gjennomgår, korrigerer og signerer, som med alle DocNote-rapporter."
+          "title": "Spesialitetsvokabular",
+          "body": "Termer og struktur følger din spesialitet, ikke et generisk notat."
         }
       ]
     },
     "proof": {
-      "badge": "I praksis",
-      "title": "Bygget for flerspråklige omsorgsinnstillinger",
-      "intro": "Sveitsiske og franske sykehus og praksiser jobber på tvers av språk hver dag. DocNote behandler det som normaltilfellet, ikke et unntakstilfelle.",
+      "badge": "Bevis",
+      "title": "Bygget for flerspråklig omsorg",
+      "intro": "En konsultasjon på portugisisk kan produsere en rapport på fransk, i din spesialitets vokabular.",
       "points": [
         {
-          "title": "61 spesialiteter, 227 maler",
-          "body": "Standardrapportmaler for hver spesialitet; last opp din egen Word-mal for å erstatte dem."
+          "title": "Rapportspråk er ditt valg",
+          "body": "Snakk med pasienten på deres språk; rapporten kommer ut på ditt."
         },
         {
-          "title": "21 grensesnittspråk",
-          "body": "Telefon- og skrivebordsgrensesnitt på ditt språk."
-        },
-        {
-          "title": "Sveitsisk hosting, kort lydoppbevaring",
-          "body": "Helsedata lagret i Sveits; lyd beholdes kun kort for å produsere dokumentet, deretter slettet."
-        },
-        {
-          "title": "Leges validering, alltid",
-          "body": "Uansett språk, utkaster DocNote en rapport du validerer."
+          "title": "Maler følger spesialiteten",
+          "body": "Standard rapportmaler er tilpasset din spesialitet ved registrering."
         }
       ]
     },
@@ -1483,8 +1065,8 @@
         "a": "Ja. Språket du snakker med pasienten dikterer ikke rapportens språk."
       },
       {
-        "q": "Hvor mange spesialiteter dekkes?",
-        "a": "61 medisinske spesialiteter, hver med sine egne standardrapportmaler."
+        "q": "Hvor mange spesialiteter er dekket?",
+        "a": "61 medisinske spesialiteter, hver med sine standard rapportmaler."
       },
       {
         "q": "På hvor mange språk er grensesnittet tilgjengelig?",
@@ -1492,17 +1074,13 @@
       },
       {
         "q": "Er vokabularet spesialitetsspesifikt?",
-        "a": "Ja. Begreper og struktur følger din spesialitet heller enn et generelt SOAP-notat."
-      },
-      {
-        "q": "Kan jeg bruke mine egne maler i stedet for standardene?",
-        "a": "Ja. Last opp din Word-mal en gang, og hver rapport etter det følger den."
+        "a": "Ja. Termer og struktur følger din spesialitet heller enn et generisk SOAP-notat."
       }
     ],
     "cta": {
-      "title": "Prøv det i din spesialitet og ditt språk",
-      "body": "Se opplæringen, åpne deretter nettappen og ta opp en konsultasjon i din spesialitet.",
-      "primary": "Se opplæringen",
+      "title": "Se det på ditt språk",
+      "body": "Se veiledningen, ta deretter opp en konsultasjon på språket du bruker med dine pasienter.",
+      "primary": "Se veiledningen",
       "secondary": "Se priser"
     },
     "relatedLabel": "Relaterte sider"

@@ -142,134 +142,81 @@
     "title": "AI Medical Scribe für Krankenhäuser & Abteilungen | DocNote",
     "description": "Entlassbriefe, Operationsberichte und Stationsnotizen im Format Ihrer Abteilung. Kodierungsvorschläge und einseitige Übermittlung in 7 KIS-Systeme. Demo buchen.",
     "hero": {
-      "badge": "Für Krankenhäuser und Abteilungen",
-      "title": "DocNote für Krankenhäuser und Abteilungen",
-      "subtitle": "Entlassbriefe, Operationsberichte und Stationsnotizen: im Format Ihrer Abteilung, direkt in Ihrem KIS.",
-      "lead": "Im Krankenhaus ist die Konsultationsnotiz nicht das Problem. Die Probleme sind der seit drei Wochen unfertige Entlassbrief, der diktierte und dann abgetippte Operationsbericht, die nachträgliche Überarbeitung durch die Kodierabteilung und ein KIS, das manuell ausgefüllt werden muss. Ein Tool für die Privatpraxis löst nichts davon."
+      "badge": "Für Spitäler und Abteilungen",
+      "title": "DocNote für Spitäler und Abteilungen",
+      "subtitle": "Austrittsbriefe, Operationsberichte und Stationsnotizen im Format Ihrer Abteilung, direkt in Ihrem KIS."
     },
     "story": {
       "badge": "Das Problem",
-      "title": "Krankenhausarbeit besteht nicht aus einer einzigen ambulanten Notiz",
+      "title": "Die Konsultationsnotiz ist nicht das Problem",
       "paragraphs": [
-        "Eine Abteilung erstellt Dokumente mit unterschiedlichen Strukturen, Längen und Empfängern: der Entlassbrief für den Hausarzt und die Versicherung, der Operationsbericht, der den Fall abschließt, die Stationsnotiz, die der Vertretungsarzt am nächsten Morgen liest. Jedes muss sofort richtig sein, auf dem Briefpapier der Abteilung, und in der Patientenakte landen, nicht in einer Neben-App.",
-        "DocNote behandelt diese Krankenhausformate als eigenständige Dokumententypen. Sie erfassen die Visite, das OP-Debriefing oder die Konsultation per Telefon oder im Browser, wählen das Dokument aus, und DocNote erstellt einen Berichtsentwurf, den Sie validieren, mit den relevanten Nebendiagnosen im Brief und Kodierungsvorschlägen am Ende des Dokuments in einem eigenen Abschnitt.",
-        "Nach der Validierung wird der Bericht in die Patientenakte Ihres KIS übertragen, nach Abschnitten getrennt, ohne Copy-Paste. Der Arzt bleibt der Autor und unterzeichnet; DocNote liest nicht die Patientenakte und kodiert nicht in Ihrem Namen: Es schlägt vor, Sie validieren."
+        "Im Spital ist die Konsultationsnotiz nicht das Problem. Die Probleme sind der unvollendete Austrittsbrief, der drei Wochen liegen bleibt, der diktierte und dann abgetippte Operationsbericht, die nachträgliche Kodierung durch die Kodierabteilung und ein KIS, das manuell ausgefüllt werden muss. Ein Tool für die Privatpraxis löst nichts davon."
       ]
     },
     "benefits": {
       "badge": "Was DocNote leistet",
-      "title": "Für die Dokumente, die den Abend einer Abteilung füllen",
-      "subtitle": "Eigene Krankenhausformate, Ihre Vorlagen, Kodierungsvorschläge, KIS-Übermittlung.",
+      "title": "Was DocNote leistet",
       "items": [
         {
-          "title": "Eigene Krankenhausformate",
-          "body": "Entlassbrief, Stationsnotiz, Operationsbericht: richtige Struktur, richtige Länge, richtige Empfänger ab dem ersten Entwurf. Keine ambulante SOAP-Notiz, die gestreckt wird."
+          "title": "Spitalspezifische Formate",
+          "body": "Austrittsbrief, Stationsnotiz, Operationsbericht: richtige Struktur, richtige Länge, richtige Empfänger ab dem ersten Entwurf."
         },
         {
           "title": "Ihre Word-Vorlagen",
-          "body": "Laden Sie das Dokument der Abteilung einmal hoch. Jeder spätere Bericht erscheint auf Ihrem Briefpapier, mit Ihren Abschnitten und Ihrer Unterschrift, die Überprüfung bleibt klinisch, nicht kosmetisch."
+          "body": "Laden Sie das Dokument der Abteilung einmal hoch. Jeder Bericht danach erscheint auf Ihrem Briefpapier, mit Ihren Abschnitten und Ihrer Unterschrift."
         },
         {
           "title": "Integrierte Kodierung",
-          "body": "Relevante Nebendiagnosen werden im Brief hervorgehoben, mit SwissDRG (Schweiz) oder PMSI (Frankreich)-Vorschlägen am Ende des Dokuments, Vorschläge zur Validierung durch den Arzt und die Kodierabteilung."
+          "body": "Relevante Nebendiagnosen werden im Brief hervorgehoben, mit SwissDRG (Schweiz) oder PMSI (Frankreich) Vorschlägen am Ende des Dokuments."
         },
         {
           "title": "An das KIS gesendet",
-          "body": "Der validierte Bericht geht in die Patientenakte, nach Abschnitten getrennt, kein Copy-Paste. Telefon auf der Station, Desktop im Büro: dieselbe Akte, in Echtzeit synchronisiert."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "So funktioniert es",
-      "title": "Von Station oder OP-Saal zu einem validierten Dokument in der Akte",
-      "subtitle": "Die gleiche Überprüfungs- und Validierungsdisziplin, die Ihr Dienst bereits befolgt.",
-      "items": [
-        {
-          "title": "Erfassung der Begegnung",
-          "body": "Nehmen Sie die Visite, das OP-Debriefing oder die Konsultation per Telefon oder im Browser auf, als Teil der normalen Routine."
+          "body": "Der validierte Bericht geht in die Patientenakte, nach Abschnitten getrennt. Kein Kopieren-Einfügen."
         },
         {
-          "title": "Wählen Sie das Krankenhausdokument aus",
-          "body": "Entlassbrief, Operationsbericht, Stationsnotiz oder eine andere Vorlage Ihrer Abteilung, auf Ihrem Briefpapier, mit Ihren Abschnitten."
-        },
-        {
-          "title": "Überprüfen Sie den Entwurf und die Kodierungsvorschläge",
-          "body": "Der behandelnde Arzt korrigiert die klinische Substanz, prüft die hervorgehobenen Diagnosen und die Kodierungsvorschläge am Ende des Dokuments und gibt ihn frei."
-        },
-        {
-          "title": "An die Patientenakte senden",
-          "body": "Der validierte Bericht wird in das KIS gesendet, nach Abschnitten getrennt: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay oder Ardentis, wo verbunden."
+          "title": "Telefon auf der Station, Desktop im Büro",
+          "body": "Derselbe Bericht, in Echtzeit synchronisiert."
         }
       ]
     },
     "proof": {
-      "badge": "Beweise, keine Versprechen",
-      "title": "In Institutionen im Einsatz, mit KIS verbunden, von Ärzten validiert",
-      "intro": "Krankenhäuser führen Dokumentationssoftware nach einem Sicherheitsfragebogen und einem Pilotversuch mit echten Fällen ein, nicht nach einer Demo. DocNote ist für beides ausgelegt.",
+      "badge": "Beweis",
+      "title": "Bereits in Institutionen im Einsatz",
+      "intro": "Institutionen sind bereits live, KIS-Systeme sind verbunden, und der Validierungskreis hält: Der Arzt bleibt der Autor und unterschreibt.",
       "points": [
         {
-          "title": "Bereits in Institutionen im Einsatz",
-          "body": "DocNote wird heute in Krankenhausabteilungen für Entlassbriefe, Operationsberichte und Stationsnotizen verwendet, nicht auf einer Roadmap."
+          "title": "Verbundene KIS-Systeme",
+          "body": "Der validierte Bericht wird in die Patientenakte gesendet, nach Abschnitten getrennt."
         },
         {
-          "title": "Sieben KIS-Systeme verbunden",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis erhalten validierte Berichte abschnittsweise. Für andere Anbieter gibt es eine dokumentierte Integrations-API."
-        },
-        {
-          "title": "Der Arzt bleibt der Autor",
-          "body": "Kein Dokument gelangt in die Akte, ohne dass ein Kliniker es zuvor überprüft und validiert hat. Die Kodierung bleibt ein Vorschlag, bis Arzt und Kodierabteilung ihn bestätigen."
-        },
-        {
-          "title": "Schweizer Hosting, kurze Audioaufbewahrung",
-          "body": "Gesundheitsdaten werden in der Schweiz gehostet; Audio wird nur kurz zur Erstellung des Dokuments aufbewahrt und dann gelöscht. Siehe unsere Compliance-Seite für das vollständige Bild."
+          "title": "Der Arzt unterschreibt",
+          "body": "DocNote erstellt einen Berichtsentwurf, den Sie validieren. Sie bleiben der Autor."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Einführung von DocNote in einer Abteilung",
-        "body": "Der übliche Weg beginnt mit einem Dokumententyp und einer Station oder einem Dienst. Die Word-Vorlage der Abteilung wird hochgeladen, Entwürfe werden anhand realer Fälle validiert, dann wird die Einführung auf andere Dienste ausgeweitet. IT und medizinische Leitung prüfen Hosting, Aufbewahrung und Integrationen parallel, dieselbe Struktur wie bei jeder anderen klinischen Softwarebeschaffung."
-      },
-      {
-        "heading": "Wo die Kodierungsvorschläge platziert werden",
-        "body": "Kodierungsvorschläge erscheinen am Ende des Dokuments in einem eigenen Abschnitt, sodass sie niemals den klinischen Text verunreinigen. In Ihrer Word-Vorlage kann dieser Abschnitt dort platziert werden, wo Ihre Kodierabteilung ihn erwartet. Schweiz: SwissDRG (ICD-10 / CHOP), TARDOC und Tarif 222 für Zahnmedizin. Frankreich: PMSI."
-      },
-      {
-        "heading": "Mehrere Kliniker, eine Akte",
-        "body": "In einer Tagesklinik speisen mehrere Kliniker im Laufe des Tages dieselbe Patientenakte. Am Ende des Tages haben Sie eine strukturierte Akte, nicht vier Teilnotizen, die abgeglichen werden müssen, verfügbar für Gruppen, deren KIS integriert ist."
-      }
-    ],
     "faq": [
       {
-        "q": "Welche Krankenhausdokumente kann DocNote erstellen?",
-        "a": "Entlassbriefe, Operationsberichte, Stationsnotizen und Konsultationsberichte, basierend auf den Vorlagen Ihrer Abteilung. Der Arzt überprüft und validiert jeden Entwurf, bevor er Teil der Akte wird."
+        "q": "Welche Spitalsdokumente kann DocNote erstellen?",
+        "a": "Austrittsbriefe, Operationsberichte, Stationsnotizen und Konsultationsberichte, auf den Vorlagen Ihrer Abteilung."
       },
       {
         "q": "Kodiert DocNote den Aufenthalt für uns?",
-        "a": "Nein. DocNote hebt relevante Nebendiagnosen im Brief hervor und fügt Kodierungsvorschläge am Ende des Dokuments hinzu: SwissDRG, TARDOC, Tarif 222 oder PMSI. Es sind Vorschläge zur Validierung; die Verantwortung bleibt bei Arzt und Kodierabteilung."
+        "a": "Nein. Es fügt SwissDRG, TARDOC, Tarif 222 oder PMSI Vorschläge am Ende des Dokuments hinzu, als zu validierende Vorschläge."
       },
       {
         "q": "Welche KIS-Systeme werden unterstützt?",
-        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis. Der Kliniker verknüpft die Konten einmal, sucht den Patienten innerhalb von DocNote, und der validierte Bericht wird in die Akte dieses Patienten gesendet, nach Abschnitten getrennt. Der Fluss ist einseitig, von DocNote zum KIS."
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis. Der Fluss ist einseitig, von DocNote zum KIS."
       },
       {
         "q": "Können wir unser institutionelles Briefpapier behalten?",
-        "a": "Ja. Laden Sie das Word-Dokument Ihrer Abteilung einmal hoch; jeder spätere Bericht erscheint mit Ihrem Briefpapier, Ihren Abschnitten und Ihrer Unterschrift."
-      },
-      {
-        "q": "Ersetzt die KI die Unterschrift des Arztes?",
-        "a": "Nein. DocNote erstellt einen Berichtsentwurf, den Sie validieren. Der Arzt bleibt der Autor und unterzeichnet."
-      },
-      {
-        "q": "Wie lange dauert die Einführung für einen Krankenhausdienst?",
-        "a": "Die meisten Dienste beginnen mit einem Dokumententyp und einer Station, validieren die Vorlage anhand realer Fälle und weiten dann aus, das Tempo hängt von Ihrer IT-Überprüfung ab, nicht vom Tool."
+        "a": "Ja. Laden Sie das Word-Dokument der Abteilung einmal hoch; jeder Bericht danach erscheint mit Ihrem Briefpapier, Ihren Abschnitten und Ihrer Unterschrift."
       }
     ],
     "cta": {
-      "title": "Bringen Sie DocNote in Ihre Abteilung",
-      "body": "Buchen Sie eine Demo mit dem Team für Ihre eigenen Dokumententypen (Entlassbriefe, Operationsberichte, Stationsnotizen), mit Ihrer Vorlage und Ihrem KIS im Bild.",
+      "title": "Demo für Ihre Abteilung buchen",
+      "body": "Sehen Sie die Spitalsformate, die Kodierungsvorschläge und die KIS-Übermittlung an Ihren eigenen Dokumententypen.",
       "primary": "Demo buchen",
-      "secondary": "Siehe unsere Compliance"
+      "secondary": "Unsere Compliance ansehen"
     },
     "relatedLabel": "Verwandte Seiten"
   },
@@ -422,126 +369,77 @@
     "hero": {
       "badge": "Für Privatpraxen",
       "title": "DocNote für Privatpraxen",
-      "subtitle": "Sie schließen die Akte gleichzeitig mit der Tür.",
-      "lead": "Ein Arzt in der Privatpraxis dokumentiert zwischen den Patienten oder am Abend. Sie haben keine IT-Abteilung, kein institutionelles Budget und keine Zeit, ein Tool zu konfigurieren. Sie wollen den Wert in der ersten Konsultation sehen, ohne etwas installieren zu müssen."
+      "subtitle": "Sie schliessen die Akte gleichzeitig mit der Tür."
     },
     "story": {
       "badge": "Das Problem",
-      "title": "Der Arzt entscheidet allein und will Wert innerhalb einer Konsultation",
+      "title": "Keine IT-Abteilung, keine Zeit zur Konfiguration",
       "paragraphs": [
-        "In einer Praxis rollt niemand Software für Sie aus. Wenn ein Tool ein Projekt, einen Schulungstag oder ein Integrationsbudget benötigt, wird es nicht genutzt. Was genutzt wird, ist das, was Sie zwischen zwei Patienten auf Ihrem Telefon öffnen können und das einen Brief erstellt, den Sie tatsächlich versenden würden.",
-        "DocNote nimmt die Konsultation per Telefon oder Browser auf, erstellt einen Berichtsentwurf, den Sie validieren, und folgt Ihren Vorlagen: Wählen Sie das Format einmal, es wird wiederverwendet. Bei der Anmeldung werden Standardvorlagen Ihrer Fachrichtung zugeordnet, sodass der erste Bericht bereits Ihre Fachsprache spricht.",
-        "Kodierungsvorschläge befinden sich am Ende des Dokuments, damit abrechenbare Arbeit nicht durchrutscht, als Vorschläge, die Sie bestätigen, niemals in Ihrem Namen angewendet. Und der Entwurf folgt Ihnen vom Telefon zum Desktop ohne erneutes Tippen."
+        "Ein Arzt in Privatpraxis dokumentiert zwischen Patienten oder am Abend. Er hat keine IT-Abteilung, kein institutionelles Budget und keine Zeit, ein Tool zu konfigurieren. Er will den Wert in der ersten Konsultation sehen, ohne etwas installieren zu müssen."
       ]
     },
     "benefits": {
       "badge": "Was DocNote leistet",
-      "title": "Alles, was Sie brauchen, nichts, was Sie installieren müssen",
-      "subtitle": "Aufnehmen, Bericht auf Ihrer Vorlage erhalten, validieren, exportieren.",
+      "title": "Was DocNote leistet",
       "items": [
         {
           "title": "Aufnahme per Telefon oder Browser",
-          "body": "Nichts zu installieren. Öffnen Sie DocNote auf Ihrem Telefon im Behandlungszimmer oder in einem Browser-Tab am Schreibtisch; die Aufnahme beginnt mit einem Klick."
+          "body": "Nichts zu installieren."
         },
         {
           "title": "Der Bericht folgt Ihren Vorlagen",
-          "body": "Wählen Sie das Format einmal aus (Ihre Abschnitte, Ihr Briefpapier, Ihre Unterschrift), und es wird für jede spätere Konsultation wiederverwendet. Standardvorlagen, die bei der Anmeldung Ihrer Fachrichtung zugeordnet werden, über 61 Fachrichtungen hinweg."
+          "body": "Wählen Sie das Format einmal, es wird wiederverwendet."
+        },
+        {
+          "title": "Auf Ihre Fachrichtung abgestimmte Vorlagen",
+          "body": "Standardvorlagen, die bei der Anmeldung auf Ihre Fachrichtung abgestimmt sind, über 61 Fachrichtungen hinweg."
         },
         {
           "title": "Kodierungsvorschläge am Ende des Dokuments",
-          "body": "Abrechenbare Diagnosen und Leistungen werden in einem eigenen Abschnitt am Ende des Berichts vorgeschlagen, zur Validierung durch Sie, damit abrechenbare Arbeit nicht durchrutscht, ohne die Kodierung zu einem zweiten Durchgang zu machen."
+          "body": "Damit abrechenbare Arbeit nicht durchrutscht."
         },
         {
-          "title": "Vom Telefon zum Desktop, kein erneutes Tippen",
-          "body": "Aufnahme auf dem Telefon, Fertigstellung und Validierung auf dem Desktop. Derselbe Entwurf, in Echtzeit synchronisiert: Sie bauen die Notiz nie neu auf, wenn Sie das Gerät wechseln."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "So funktioniert es",
-      "title": "Eine Konsultation, von Anfang bis Ende",
-      "subtitle": "Derselbe Ablauf, den Sie im Tutorial-Video sehen werden (Aufnahme, generierter Bericht, Korrektur, Export), ohne Schnitte.",
-      "items": [
-        {
-          "title": "Aufnahme",
-          "body": "Klicken Sie zu Beginn der Konsultation auf Aufnahme auf dem Telefon oder im Browser. Fügen Sie vorherige Briefe, Laborergebnisse oder Fotos hinzu, falls vorhanden."
-        },
-        {
-          "title": "Erhalten Sie den Bericht auf Ihrer Vorlage",
-          "body": "Innerhalb von Momenten ist ein Entwurf in dem Format bereit, das Sie einmal gewählt haben, in der Fachsprache Ihrer Fachrichtung."
-        },
-        {
-          "title": "Korrigieren und validieren",
-          "body": "Sie bearbeiten die Substanz, nicht das Layout, bestätigen oder verwerfen die Kodierungsvorschläge am Ende und geben ihn frei. Sie bleiben der Autor."
-        },
-        {
-          "title": "Exportieren oder senden",
-          "body": "Exportieren Sie den Brief als Word oder PDF, oder senden Sie ihn in Ihre Praxissoftware, wo eine Integration existiert."
+          "title": "Der Entwurf folgt Ihnen vom Telefon zum Desktop",
+          "body": "Ohne Neuabtippen."
         }
       ]
     },
     "proof": {
-      "badge": "Beweise zum Zeigen",
-      "title": "Sehen Sie eine vollständige Konsultation, ohne Schnitte",
-      "intro": "Das stärkste Argument für eine Praxis ist keine Feature-Liste; es ist eine echte Konsultation von der Aufnahme bis zum exportierten Bericht. Dieses Video existiert bereits auf der Tutorial-Seite.",
+      "badge": "Beweis",
+      "title": "Eine Konsultation, Ende zu Ende",
+      "intro": "Ein End-to-End-Konsultationsvideo: Aufnahme, generierter Bericht, Korrektur, Export, ohne Schnitte. Es ist auf der Tutorial-Seite.",
       "points": [
         {
-          "title": "Aufnahme, Bericht, Korrektur, Export",
-          "body": "Das Tutorial zeigt den gesamten Ablauf an einer echten Konsultation, in einem Take, damit Sie die Qualität des Entwurfs selbst beurteilen können."
+          "title": "In einem Take aufgenommen",
+          "body": "Aufnahme, generierter Bericht, Korrektur, Export. Keine Schnitte."
         },
         {
-          "title": "61 Fachrichtungen, 21 Interface-Sprachen",
-          "body": "Standardvorlagen, die bei der Anmeldung Ihrer Fachrichtung zugeordnet werden; Interface in Ihrer Sprache; die Sprache, die Sie mit dem Patienten sprechen, bestimmt nicht die Sprache des Berichts."
-        },
-        {
-          "title": "Schweizer Hosting, kurze Audioaufbewahrung",
-          "body": "Gesundheitsdaten werden in der Schweiz gehostet; Audio wird nur kurz zur Erstellung des Dokuments aufbewahrt und dann gelöscht."
-        },
-        {
-          "title": "Sie validieren jeden Bericht",
-          "body": "DocNote erstellt Entwürfe; Sie korrigieren und unterzeichnen. Nichts verlässt die App ohne Ihre Validierung."
+          "title": "Beurteilen Sie den Entwurf selbst",
+          "body": "Sehen Sie sich das Video auf der Tutorial-Seite an, bevor Sie sich anmelden."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Nichts vor der ersten Konsultation konfigurieren",
-        "body": "Melden Sie sich an, wählen Sie Ihre Fachrichtung, und DocNote schlägt Standardvorlagen dafür vor. Sie können Ihre erste Konsultation sofort aufnehmen, dann die Vorlage später anpassen, oder Ihr eigenes Word-Dokument einmal hochladen, damit jeder Bericht auf Ihrem Briefpapier erscheint."
-      },
-      {
-        "heading": "Arbeiten mit einer Sekretärin",
-        "body": "Wenn eine medizinische Sekretärin Ihre Briefe formatiert, kann DocNote ein Sekretärinnenkonto mit Ihrem verknüpfen: Die Sekretärin arbeitet in Ihrem Konto, mit Ihren Vorlagen und Ihren Dokumenten, überprüft und formatiert, und Sie validieren und unterschreiben. Siehe die Seite für medizinische Sekretärinnen."
-      }
-    ],
     "faq": [
       {
         "q": "Muss ich etwas installieren?",
-        "a": "Nein. DocNote läuft im Browser und auf dem Telefon. Öffnen Sie die Web-App oder die Mobile App und nehmen Sie auf."
+        "a": "Nein. DocNote läuft im Browser und auf dem Telefon."
       },
       {
         "q": "Wird der Bericht wie meine Briefe aussehen?",
-        "a": "Ja. Wählen Sie Ihr Format einmal aus, oder laden Sie Ihre eigene Word-Vorlage hoch, und jeder spätere Bericht wird in diesem Format wiederverwendet, mit Ihren Abschnitten und Ihrer Unterschrift."
+        "a": "Ja. Wählen Sie Ihr Format einmal oder laden Sie Ihre eigene Word-Vorlage hoch, und jeder Bericht danach erscheint in diesem Format."
       },
       {
         "q": "Rechnet DocNote für mich ab?",
-        "a": "Nein. Es schlägt Kodierungsvorschläge am Ende des Dokuments in einem eigenen Abschnitt vor, zur Validierung durch Sie. Die Kodierungsverantwortung bleibt bei Ihnen."
-      },
-      {
-        "q": "Welche Fachrichtungen werden abgedeckt?",
-        "a": "61 Fachrichtungen, jede mit Standardberichtsvorlagen, die bei der Anmeldung zugeordnet werden. Das Interface ist in 21 Sprachen verfügbar."
-      },
-      {
-        "q": "Kann ich auf dem Telefon beginnen und auf dem Desktop fertigstellen?",
-        "a": "Ja. Der Entwurf folgt Ihnen in Echtzeit vom Telefon zum Desktop, ohne erneutes Tippen."
+        "a": "Nein. Es schlägt Kodierungsvorschläge am Ende des Dokuments vor, die Sie validieren können."
       },
       {
         "q": "Was kostet es?",
-        "a": "Pläne für einzelne Praxen finden Sie auf der Preiseseite. Sie können die Web-App öffnen und Ihre erste Konsultation aufnehmen, bevor Sie entscheiden."
+        "a": "Pläne für Einzelpraxen finden Sie auf der Preisseite. Sie können Ihre erste Konsultation aufnehmen, bevor Sie sich entscheiden."
       }
     ],
     "cta": {
       "title": "Sehen Sie den Wert in Ihrer ersten Konsultation",
-      "body": "Öffnen Sie die Web-App, wählen Sie Ihre Fachrichtung und nehmen Sie eine Konsultation auf. Nichts zu installieren, nichts zu konfigurieren.",
+      "body": "Self-Service statt Verkaufsprozess. Öffnen Sie die Web-App und nehmen Sie eine Konsultation auf, ohne etwas installieren zu müssen.",
       "primary": "Web-App öffnen",
       "secondary": "Preise ansehen"
     },
@@ -555,97 +453,56 @@
     "hero": {
       "badge": "Für medizinische Sekretariate",
       "title": "DocNote für medizinische Sekretariate",
-      "subtitle": "Das Sekretariat arbeitet im Konto des Arztes, mit dessen Vorlagen und Dokumenten.",
-      "lead": "In den meisten Praxen und Abteilungen ist nicht der Arzt für die Formatierung des Briefes verantwortlich, sondern das Sekretariat. Dennoch werden KI-Scribes an den Arzt verkauft, ein Konto pro Arzt. Das Sekretariat bleibt außen vor und tippt alles, was die KI produziert hat, erneut ab."
+      "subtitle": "Das Sekretariat arbeitet im Arztkonto, mit dessen Vorlagen und Dokumenten."
     },
     "story": {
       "badge": "Das Problem",
-      "title": "Die Person, die den Brief formatiert, ist nicht die Person, die das Konto hat",
+      "title": "AI-Scribes werden an den Arzt verkauft",
       "paragraphs": [
-        "Der Arzt nimmt auf, die KI erstellt einen Entwurf, und dann landet dieser Entwurf im Posteingang des Sekretariats als Text, der in das Briefformat der Praxis neu abgetippt werden muss. Die auf der einen Seite gesparte Zeit wird auf der anderen Seite wieder aufgewendet.",
-        "DocNote schließt diese Lücke mit verknüpften Konten. Ein Sekretariatskonto ist mit einem Arztkonto verbunden; die gesamte Sitzung agiert als dieser Arzt: dessen Vorlagen, dessen Berichte, dessen Briefkopf. Das Sekretariat überprüft, ergänzt, formatiert und exportiert; der Arzt validiert und unterschreibt.",
-        "Da der Bericht bereits dem Briefformat der Praxis entspricht, gibt es kein erneutes Abtippen. Und Kontext kann später hinzugefügt werden (ein nachträgliches Laborergebnis, Bildgebung, ein früherer Brief), ohne den Bericht neu beginnen zu müssen."
+        "In den meisten Praxen und Abteilungen ist nicht der Arzt derjenige, der den Brief formatiert. Es ist das Sekretariat. Dennoch werden AI-Scribes an den Arzt verkauft, ein Konto pro Arzt. Das Sekretariat bleibt aussen vor und tippt ab, was die KI produziert hat."
       ]
     },
     "benefits": {
       "badge": "Was DocNote leistet",
-      "title": "Auf die tatsächliche Briefproduktion in einer Praxis ausgerichtet",
-      "subtitle": "Verknüpfte Konten, klare Rollenaufteilung, kein erneutes Abtippen.",
+      "title": "Was DocNote leistet",
       "items": [
         {
           "title": "Verknüpfte Konten",
-          "body": "Ein Sekretariatskonto ist mit einem Arztkonto verbunden. Die gesamte Sitzung agiert als dieser Arzt: dessen Vorlagen, dessen Berichte, dessen Briefkopf."
+          "body": "Ein Sekretariatskonto ist mit einem Arzt verknüpft. Die gesamte Sitzung agiert als dieser Arzt: dessen Vorlagen, dessen Berichte, dessen Briefpapier."
         },
         {
           "title": "Das Sekretariat überprüft, ergänzt, formatiert und exportiert",
-          "body": "Der Arzt validiert und unterschreibt. Jeder behält seine Rolle; niemand macht die Arbeit des anderen noch einmal."
+          "body": "Der Arzt validiert und unterschreibt."
         },
         {
-          "title": "Kein erneutes Abtippen",
-          "body": "Der Bericht entspricht bereits dem Briefformat Ihrer Praxis: Ihre Abschnitte, Ihre Ränder, Ihr Unterschriftsblock."
+          "title": "Kein Neuabtippen",
+          "body": "Der Bericht entspricht bereits dem Briefformat der Praxis."
         },
         {
           "title": "Kontext kann später hinzugefügt werden",
-          "body": "Ein nachträgliches Laborergebnis, Bildgebung, ein früherer Brief: fügen Sie es an, und der Bericht wird aktualisiert, ohne von vorne beginnen zu müssen."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "So funktioniert es",
-      "title": "Von der Aufnahme des Arztes bis zum versandbereiten Brief",
-      "subtitle": "Eine Aufnahme, zwei Rollen, kein Kopieren und Einfügen dazwischen.",
-      "items": [
-        {
-          "title": "Der Arzt nimmt auf",
-          "body": "Im Behandlungszimmer oder auf der Station, vom Telefon oder Browser aus."
-        },
-        {
-          "title": "DocNote erstellt den Entwurf auf der Vorlage der Praxis",
-          "body": "Der Bericht erscheint im Briefformat der Praxis, in der Fachsprache des Arztes."
-        },
-        {
-          "title": "Das Sekretariat überprüft, ergänzt und formatiert",
-          "body": "Im Konto des Arztes: das nachträgliche Laborergebnis hinzufügen, die Empfänger anpassen, das Layout prüfen, exportieren."
-        },
-        {
-          "title": "Der Arzt validiert und unterschreibt",
-          "body": "Der Arzt bleibt der Autor. Nichts geht ohne seine Validierung hinaus."
+          "body": "Ein später eintreffendes Laborergebnis, eine Bildgebung oder ein vorheriger Brief, ohne von vorne anzufangen."
         }
       ]
     },
     "proof": {
-      "badge": "Warum das wichtig ist",
-      "title": "Der Entscheidungsträger, den jeder andere Scribe ignoriert",
-      "intro": "In einer Praxis ist das Sekretariat oft die erste Person, die ein Dokumentationstool testet, und die erste, die sieht, ob es Arbeit spart oder schafft. Sekretariatszeit ist messbar und budgetiert, anders als die Zeit des Arztes.",
+      "badge": "Warum es wichtig ist",
+      "title": "Sekretariatszeit ist messbar",
+      "intro": "Gesparte Sekretariatszeit ist messbar und budgetiert, anders als Arztzeit. In einer Praxis ist das Sekretariat oft die erste Person, die das Tool testet.",
       "points": [
         {
-          "title": "Bereits im produktiven Einsatz",
-          "body": "Sekretariatskonten sind heute in Praxen live, mit den Arztkonten verknüpft, mit deren Vorlagen und Dokumenten."
+          "title": "Ein echtes Konto, keine Notlösung",
+          "body": "Das Sekretariat arbeitet im Arztkonto, mit dessen Vorlagen und Dokumenten."
         },
         {
-          "title": "Dieselben Vorlagen, derselbe Briefkopf",
-          "body": "Da das Sekretariat im Konto des Arztes arbeitet, gibt es eine einzige Quelle für das Format, keine Kopie, die synchron gehalten werden muss."
-        },
-        {
-          "title": "Klare Verantwortung",
-          "body": "Das Sekretariat formatiert und exportiert; der Arzt validiert und unterschreibt. DocNote erstellt einen Bericht, den der Arzt validiert, es ersetzt keine der beiden Rollen."
-        },
-        {
-          "title": "Schweizer Hosting, kurze Audioaufbewahrung",
-          "body": "Gesundheitsdaten in der Schweiz gehostet; Audio wird nur kurz zur Dokumentenerstellung behalten, dann gelöscht."
+          "title": "Der Brief kommt richtig heraus",
+          "body": "Kein Neuabtippen dessen, was die KI produziert hat. Der Bericht entspricht bereits dem Praxisformat."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Einrichten eines Sekretariatskontos für Ihre Praxis",
-        "body": "Sekretariatskonten werden vom DocNote-Team mit einem Arztkonto verknüpft. Buchen Sie eine Demo für Ihre Praxis, und wir besprechen Ihre Briefformate, wie Sekretariat und Arzt heute die Arbeit übergeben und wie das verknüpfte Konto sich einfügt."
-      }
-    ],
     "faq": [
       {
         "q": "Braucht das Sekretariat eigene Vorlagen?",
-        "a": "Nein. Das Sekretariatskonto arbeitet im Konto des Arztes und verwendet dessen Vorlagen, Berichte und Briefkopf."
+        "a": "Nein. Das Sekretariatskonto arbeitet im Arztkonto und verwendet dessen Vorlagen, Berichte und Briefpapier."
       },
       {
         "q": "Wer validiert den Bericht?",
@@ -653,22 +510,18 @@
       },
       {
         "q": "Kann ein Laborergebnis nachträglich hinzugefügt werden?",
-        "a": "Ja. Fügen Sie das Ergebnis, Bildgebung oder einen früheren Brief nachträglich an; der Bericht wird aktualisiert, ohne neu beginnen zu müssen."
-      },
-      {
-        "q": "Kann ein Sekretariat für mehrere Ärzte arbeiten?",
-        "a": "Sprechen Sie mit dem Team über Ihre Struktur: Wie Sekretariatskonten verknüpft werden, hängt davon ab, wie Ihre Praxis oder Abteilung organisiert ist."
+        "a": "Ja. Hängen Sie es später an; der Bericht wird aktualisiert, ohne von vorne anzufangen."
       },
       {
         "q": "Wie starten wir?",
-        "a": "Buchen Sie eine Demo für Ihre Praxis. Wir richten das verknüpfte Konto mit Ihnen ein und prüfen die Briefformate an realen Fällen."
+        "a": "Buchen Sie eine Demo für Ihre Praxis. Wir richten das verknüpfte Konto mit Ihnen ein."
       }
     ],
     "cta": {
-      "title": "Sehen Sie es mit Ihren eigenen Briefformaten",
-      "body": "Buchen Sie eine Demo für Ihre Praxis, wir richten das verknüpfte Konto gemeinsam ein und prüfen das Format an realen Fällen.",
-      "primary": "Demo für Ihre Praxis buchen",
-      "secondary": "Team kontaktieren"
+      "title": "Demo für Ihre Praxis buchen",
+      "body": "Sehen Sie, wie ein Sekretariatskonto im Arztkonto arbeitet, an Ihren eigenen Briefformaten.",
+      "primary": "Demo buchen",
+      "secondary": "Kontaktieren Sie uns"
     },
     "relatedLabel": "Verwandte Seiten"
   },
@@ -680,119 +533,74 @@
     "hero": {
       "badge": "Für Gruppen und Kliniken",
       "title": "DocNote für Gruppen und Kliniken",
-      "subtitle": "Rollout über mehrere Standorte, ohne dass jeder Kliniker seine eigenen Regeln erfindet.",
-      "lead": "Eine Gruppe fragt nicht \"schreibt es gut\". Sie stellt drei andere Fragen: Kann ich eine Sicherheitsrichtlinie für alle meine Kliniker durchsetzen, passt es zu meinen Systemen, und kann ich es zentral abrechnen und verfolgen."
+      "subtitle": "Rollout über Standorte hinweg, ohne dass jeder Kliniker seine eigenen Regeln erfindet."
     },
     "story": {
       "badge": "Das Problem",
-      "title": "Drei Fragen, die eine Gruppe stellt, bevor sie nach der Qualität der Notiz fragt",
+      "title": "Eine Gruppe stellt drei andere Fragen",
       "paragraphs": [
-        "Wenn ein Tool an Dutzende von Klinikern an mehreren Standorten ausgerollt wird, ist die Qualität einer einzelnen Notiz der einfache Teil. Was den Deal entscheidet, ist, ob die Gruppe die Regeln einmal festlegen kann (Aufbewahrung, Logout, Audiowiedergabe) und weiß, dass sie überall gelten, ob der validierte Bericht in der eigenen EHR der Gruppe landet und ob das Ganze von einem Ort aus abgerechnet und verfolgt werden kann.",
-        "DocNote antwortet mit Richtlinien auf Organisationsebene: Eine Gruppe kann Einstellungen über alle ihre Konten hinweg durchsetzen (Transkriptaufbewahrung, deaktivierte Audiowiedergabe, automatisches Logout), ohne von den individuellen Einstellungen jedes Arztes abhängig zu sein. Auch die Vorlagen werden harmonisiert: Die Dokumente der Gruppe werden an jeden Kliniker ausgerollt, mit gemeinsamer Markierung und Abschnitten.",
-        "Die EHRs der Gruppe werden nativ unterstützt, und in einer Tagesklinik speisen mehrere Kliniker dieselbe Patientenakte. Richtlinien auf Organisationsebene sind keine Roadmap-Versprechen: Sie laufen bereits im produktiven Einsatz für eine Pilotgruppe."
+        "Eine Gruppe fragt nicht \"schreibt es gut\". Sie stellt drei andere Fragen: Kann ich eine Sicherheitsrichtlinie für alle meine Kliniker durchsetzen, passt es zu meinen Systemen, und kann ich es zentral abrechnen und verfolgen."
       ]
     },
     "benefits": {
       "badge": "Was DocNote leistet",
-      "title": "Setzen Sie die Regeln einmal, wenden Sie sie auf jeden Kliniker an",
-      "subtitle": "Richtlinien, Vorlagen, Systeme und Abrechnung auf Gruppenebene.",
+      "title": "Was DocNote leistet",
       "items": [
         {
-          "title": "Richtlinien auf Organisationsebene",
-          "body": "Setzen Sie Einstellungen über alle Konten der Gruppe durch (Transkriptaufbewahrung, deaktivierte Audiowiedergabe, automatisches Logout), ohne von den individuellen Einstellungen jedes Arztes abhängig zu sein."
+          "title": "Organisationsweite Richtlinie",
+          "body": "Erzwingen Sie Einstellungen über alle Konten der Gruppe hinweg: Aufbewahrung von Transkripten, deaktivierte Tonwiedergabe, automatische Abmeldung. Ohne von den individuellen Einstellungen jedes Arztes abhängig zu sein."
         },
         {
           "title": "Harmonisierte Vorlagen",
-          "body": "Die Dokumente der Gruppe werden an jeden Kliniker ausgerollt, mit gemeinsamer Markierung und Abschnitten. Ein einheitlicher Stil, nicht einer pro Arzt."
+          "body": "Die Dokumente der Gruppe werden an jeden Kliniker ausgerollt, mit gemeinsamer Markierung und Abschnitten."
         },
         {
           "title": "Passt zum bestehenden Stack",
-          "body": "Gruppen-EHRs werden nativ unterstützt: Der validierte Bericht wird in die Patientenakte gesendet, nach Abschnitten getrennt. SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
+          "body": "Gruppen-KIS werden nativ unterstützt."
         },
         {
           "title": "Kollaborative Dokumentation",
-          "body": "In einer Tagesklinik speisen mehrere Kliniker dieselbe Patientenakte. Am Ende des Tages: eine strukturierte Akte, nicht vier Teilnotizen, die abgeglichen werden müssen."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "So funktioniert es",
-      "title": "Von einer Pilot-Site zur gesamten Gruppe",
-      "subtitle": "Der Rollout folgt Ihrer Governance, nicht umgekehrt.",
-      "items": [
-        {
-          "title": "Definieren Sie die Richtlinie",
-          "body": "Aufbewahrung, Logout, Audiowiedergabe und die gemeinsamen Vorlagen werden auf Organisationsebene festgelegt und auf jedes Konto angewendet."
-        },
-        {
-          "title": "Verbinden Sie die Systeme",
-          "body": "Konten werden mit der EHR der Gruppe verknüpft; der validierte Bericht geht in die Patientenakte, nach Abschnitten getrennt."
-        },
-        {
-          "title": "Pilot auf einer Site",
-          "body": "Eine Abteilung, reale Fälle, Ihre Vorlagen, dann wird dieselbe Konfiguration auf die anderen Standorte ausgeweitet."
-        },
-        {
-          "title": "Zentral abrechnen und verfolgen",
-          "body": "Konten, Nutzung und Abrechnung werden auf Gruppenebene und nicht Kliniker für Kliniker gehandhabt."
+          "body": "In einer Tagesklinik speisen mehrere Kliniker dieselbe Patientenakte."
         }
       ]
     },
     "proof": {
-      "badge": "Eingesetzt, nicht versprochen",
-      "title": "Richtlinien auf Organisationsebene laufen bereits im produktiven Einsatz",
-      "intro": "Das stärkste Argument auf dieser Seite ist, dass Gruppenrichtlinien nicht auf einer Roadmap stehen: Sie sind heute für eine Pilotgruppe im Einsatz, und das ist, was ein Direktor zuerst sehen sollte.",
+      "badge": "Beweis",
+      "title": "Bereits im Einsatz, keine Roadmap-Versprechen",
+      "intro": "Organisationsweite Richtlinien laufen bereits in der Produktion für eine Pilotgruppe.",
       "points": [
         {
-          "title": "Richtlinien im produktiven Einsatz durchgesetzt",
-          "body": "Transkriptaufbewahrung, deaktivierte Audiowiedergabe und automatisches Logout werden heute über die Konten einer Pilotgruppe hinweg angewendet."
+          "title": "Richtlinien in Produktion durchgesetzt",
+          "body": "Aufbewahrungs-, Wiedergabe- und Abmelde-Regeln, die heute auf die Konten einer Pilotgruppe angewendet werden."
         },
         {
-          "title": "Sieben EHRs verbunden",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis; eine dokumentierte Integrations-API für andere Anbieter."
-        },
-        {
-          "title": "Schweizer Hosting, kurze Audioaufbewahrung",
-          "body": "Gesundheitsdaten in der Schweiz gehostet; Audio wird nur kurz zur Dokumentenerstellung behalten, dann gelöscht."
-        },
-        {
-          "title": "Arztvalidierung, immer",
-          "body": "DocNote erstellt einen Bericht, den der Arzt validiert. Die Richtlinie steuert das Tool; der Kliniker bleibt der Autor."
+          "title": "Zentrale Abrechnung und Verfolgung",
+          "body": "Gruppenkonten werden zentral abgerechnet und verfolgt."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Was wir für die Planung eines Gruppen-Rollouts benötigen",
-        "body": "Anzahl der Kliniker und Standorte, die verwendeten EHR(s), das Land (Schweiz oder Frankreich ändern die Kodierungsvorschläge: SwissDRG, TARDOC, Tarif 222 oder PMSI) und ob ein Tagesklinik-Service Teil des Umfangs ist. Mit diesen vier Antworten können wir eine Pilotkonfiguration vorschlagen."
-      }
-    ],
     "faq": [
       {
         "q": "Können wir dieselben Einstellungen für jeden Kliniker erzwingen?",
-        "a": "Ja. Richtlinien auf Organisationsebene wenden Transkriptaufbewahrung, Audiowiedergabe und automatisches Logout auf alle Konten der Gruppe an, unabhängig von individuellen Einstellungen."
+        "a": "Ja. Organisationsweite Richtlinien wenden die Aufbewahrung von Transkripten, Tonwiedergabe und automatische Abmeldung auf alle Konten der Gruppe an."
       },
       {
-        "q": "Können alle Standorte dieselben Briefvorlagen verwenden?",
+        "q": "Kann jeder Standort dieselben Briefvorlagen verwenden?",
         "a": "Ja. Die Word-Vorlagen der Gruppe werden an jeden Kliniker ausgerollt, mit gemeinsamer Markierung und Abschnitten."
       },
       {
-        "q": "Welche EHRs werden unterstützt?",
-        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis, mit einseitiger Lieferung des validierten Berichts in die Patientenakte. Eine dokumentierte Integrations-API existiert für andere Anbieter."
+        "q": "Welche KIS werden unterstützt?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis. Eine dokumentierte Integrations-API existiert für andere Anbieter."
       },
       {
-        "q": "Wird die Abrechnung pro Kliniker oder pro Gruppe durchgeführt?",
+        "q": "Wird pro Kliniker oder pro Gruppe abgerechnet?",
         "a": "Gruppenkonten werden zentral abgerechnet und verfolgt. Sprechen Sie mit dem Team über die Details Ihrer Einrichtung."
-      },
-      {
-        "q": "Steht der Tagesklinik-Modus für uns zur Verfügung?",
-        "a": "Kollaborative Tagesklinik-Dokumentation ist für Gruppen verfügbar, deren EHR integriert ist."
       }
     ],
     "cta": {
-      "title": "Sprechen Sie mit dem Team über Ihre Gruppe",
-      "body": "Teilen Sie uns mit, wie viele Kliniker, welche EHR und welches Land, wir kommen mit einer Pilotkonfiguration zurück.",
-      "primary": "Team kontaktieren",
+      "title": "Sprechen Sie mit dem Team über Ihren Rollout",
+      "body": "Teilen Sie uns Ihre Anzahl Kliniker, Ihr KIS und Ihr Land mit, und wir kommen mit einem Rollout-Plan zurück.",
+      "primary": "Mit dem Team sprechen",
       "secondary": "Demo buchen"
     },
     "relatedLabel": "Verwandte Seiten"
@@ -805,91 +613,56 @@
     "hero": {
       "badge": "Kodierung & Abrechnung",
       "title": "Kodierung und Abrechnung in den Bericht integriert",
-      "subtitle": "Abrechenbare Diagnosen kommen aus dem Brief selbst, nicht aus einem zweiten Schritt.",
-      "lead": "Kodierung ist kein zweiter Dokumentationsschritt mehr. Der Brief selbst zeigt die abrechenbaren Diagnosen: weniger übersehene Komorbiditäten, weniger Nacharbeit am Abend, als Vorschläge, die der Arzt und die Kodierungsabteilung validieren."
+      "subtitle": "Abrechenbare Diagnosen kommen aus dem Brief selbst, nicht aus einem zweiten Durchgang."
     },
     "story": {
-      "badge": "Im Produkt",
-      "title": "Vorschläge in ihrem eigenen Slot, nie im klinischen Text",
+      "badge": "Warum es wichtig ist",
+      "title": "Ein struktureller Vorteil, nicht nur ein weiteres Feature",
       "paragraphs": [
-        "Relevante Sekundärdiagnosen werden im Entlassungsbrief hervorgehoben, wo der Kliniker bereits liest. Kodierungsvorschläge erscheinen am Ende des Dokuments in ihrem eigenen Slot, sie verschmutzen nicht den klinischen Text und können in Ihrer Word-Vorlage platziert werden, wo immer Sie möchten.",
-        "In der Schweiz folgen die Vorschläge SwissDRG (ICD-10 / CHOP), TARDOC und Tarif 222 für die Zahnmedizin. In Frankreich folgen sie PMSI. Mit TARDOC wird eine kurze Bettendiktat zu einer vollständigen, abrechenbaren Untersuchungsbeschreibung: Sie dokumentieren einmal für die Versorgung und die Abrechnung, nicht zweimal.",
-        "Die Formulierung ist wichtig: Dies sind Kodierungsvorschläge und -vorschläge zur Validierung. Die Kodierungsverantwortung bleibt beim Arzt und der Kodierungsabteilung. DocNote kodiert nicht in Ihrem Namen und zertifiziert keine Abrechnungskonformität: Es stellt sicher, dass nichts Abrechenbares im Brief vergessen wird."
+        "Kein allgemeiner anglo-amerikanischer Scribe kennt TARDOC, SwissDRG oder Tarif 222. Dies ist ein struktureller Vorteil im Schweizer Markt, nicht nur ein weiteres Feature. Kodierung ist kein zweiter Dokumentationsdurchgang mehr: weniger verpasste Komorbiditäten, weniger Nacharbeit am Abend."
       ]
     },
     "benefits": {
-      "badge": "Was Sie erhalten",
-      "title": "Einmal dokumentieren, für Versorgung und Abrechnung",
-      "subtitle": "Der klinische Text bleibt klinisch; der Kodierungs-Slot erledigt den Rest.",
+      "badge": "Was DocNote leistet",
+      "title": "Was DocNote leistet",
       "items": [
         {
-          "title": "Relevante Sekundärdiagnosen im Brief",
-          "body": "Komorbiditäten, die für den Aufenthalt wichtig sind, werden im Entlassungsbrief hervorgehoben, damit sie nicht Wochen später von der Kodierungsabteilung wiederentdeckt werden."
+          "title": "Im Brief hervorgehoben",
+          "body": "Relevante Nebendiagnosen werden im Austrittsbrief hervorgehoben."
         },
         {
-          "title": "Kodierungsvorschläge am Ende des Dokuments",
-          "body": "In ihrem eigenen Slot, getrennt vom Haupttext, platziert, wo immer Ihre Word-Vorlage sie erwartet."
+          "title": "Vorschläge am Ende des Dokuments",
+          "body": "In ihrem eigenen Bereich: Sie verschmutzen nicht den klinischen Text und können in Ihrer Word-Vorlage platziert werden, wo immer Sie möchten."
         },
         {
-          "title": "Schweiz: SwissDRG, TARDOC, Tarif 222",
-          "body": "SwissDRG (ICD-10 / CHOP) für stationäre Aufenthalte, TARDOC für ambulante Leistungen, Tarif 222 für Zahnmedizin."
+          "title": "Schweiz und Frankreich",
+          "body": "Schweiz: SwissDRG (ICD-10 / CHOP), TARDOC, Tarif 222 für Zahnmedizin. Frankreich: PMSI."
         },
         {
-          "title": "Frankreich: PMSI",
-          "body": "PMSI-Vorschläge am Ende des Briefs, zur Validierung durch den Arzt und die DIM."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "So funktioniert es",
-      "title": "Von der Diktat bis zum Brief mit seinem Kodierungs-Slot",
-      "subtitle": "Kein zweiter Schritt, kein separates Kodierungstool.",
-      "items": [
-        {
-          "title": "Aufnehmen und entwerfen",
-          "body": "Die Begegnung oder das Bettendiktat wird erfasst; DocNote erstellt den Bericht auf Ihrer Vorlage."
-        },
-        {
-          "title": "Diagnosen im Text hervorgehoben",
-          "body": "Relevante Sekundärdiagnosen werden im Brief hervorgehoben, während er erstellt wird."
-        },
-        {
-          "title": "Vorschläge im Kodierungs-Slot",
-          "body": "SwissDRG, TARDOC, Tarif 222 oder PMSI-Vorschläge erscheinen am Ende des Dokuments in ihrem eigenen Slot."
-        },
-        {
-          "title": "Arzt und Kodierungsabteilung validieren",
-          "body": "Vorschläge werden bestätigt, korrigiert oder verworfen. Die Verantwortung bleibt, wo sie hingehört."
+          "title": "TARDOC in der Praxis",
+          "body": "Ein kurzes Bettendiktat wird zu einer vollständigen, abrechenbaren Untersuchungsbeschreibung. Sie dokumentieren einmal für die Versorgung und die Abrechnung, nicht zweimal."
         }
       ]
     },
     "proof": {
-      "badge": "Warum dies ein Unterscheidungsmerkmal ist",
-      "title": "Kein allgemeiner Scribe kennt TARDOC, SwissDRG oder Tarif 222",
-      "intro": "Dies ist ein struktureller Vorteil auf dem Schweizer Markt, nicht nur ein weiteres Feature: Die Tarife sind lokal, und ein Dokumentationstool, das anderswo gebaut wurde, spricht sie nicht.",
+      "badge": "Disziplin",
+      "title": "Vorschläge zur Validierung, immer",
+      "intro": "DocNote erstellt Kodierungsvorschläge und Validierungsvorschläge. Die Kodierungsverantwortung bleibt beim Arzt und der Kodierungsabteilung.",
       "points": [
         {
-          "title": "Lokale Tarife, nativ",
-          "body": "SwissDRG, TARDOC und Tarif 222 für die Schweiz; PMSI für Frankreich, in den Bericht integriert, nicht angehängt."
+          "title": "Vorschläge, keine Entscheidungen",
+          "body": "Jeder Vorschlag wird von Ihnen validiert oder verworfen."
         },
         {
-          "title": "TARDOC-fähiger Untersuchungstext",
-          "body": "Ein kurzes Bettendiktat wird in die strukturierte Untersuchungsbeschreibung erweitert, die Versicherer und TARDOC erwarten, ohne die Untersuchung neu zu schreiben."
-        },
-        {
-          "title": "Vorschläge, zur Validierung",
-          "body": "Nie in Ihrem Namen angewendet, nie zertifiziert. Der Arzt und die Kodierungsabteilung haben das letzte Wort."
-        },
-        {
-          "title": "Ihre Vorlage entscheidet, wo der Slot platziert wird",
-          "body": "Kodierung erhält ihren eigenen Slot in der Word-Vorlage, getrennt vom Haupttext."
+          "title": "In ihrem eigenen Bereich",
+          "body": "Vorschläge befinden sich am Ende des Dokuments, getrennt vom klinischen Text."
         }
       ]
     },
     "faq": [
       {
-        "q": "Kodiert DocNote meine Aufenthalte automatisch?",
-        "a": "Nein. Es zeigt relevante Sekundärdiagnosen im Brief an und fügt Kodierungsvorschläge am Ende des Dokuments hinzu. Dies sind Vorschläge zur Validierung; die Kodierungsverantwortung bleibt beim Arzt und der Kodierungsabteilung."
+        "q": "Kodiert DocNote meine Aufenthalte für mich?",
+        "a": "Nein. Es fügt Kodierungsvorschläge am Ende des Dokuments hinzu, als zu validierende Vorschläge. Die Verantwortung bleibt beim Arzt und der Kodierungsabteilung."
       },
       {
         "q": "Welche Kodierungssysteme werden abgedeckt?",
@@ -897,143 +670,104 @@
       },
       {
         "q": "Erscheinen die Vorschläge im klinischen Text?",
-        "a": "Nein. Sie befinden sich in ihrem eigenen Slot am Ende des Dokuments, und dieser Slot kann platziert werden, wo immer Sie in Ihrer Word-Vorlage möchten."
+        "a": "Nein. Sie befinden sich in ihrem eigenen Bereich am Ende des Dokuments, platziert, wo immer Sie in Ihrer Word-Vorlage möchten."
       },
       {
-        "q": "Wie sieht die TARDOC-Unterstützung in der Praxis aus?",
-        "a": "Ein kurzes Bettendiktat wird zu einer vollständigen, abrechenbaren Untersuchungsbeschreibung: Sie dokumentieren einmal für Versorgung und Abrechnung, nicht zweimal."
-      },
-      {
-        "q": "Ersetzt dies unsere Kodierungsprüfung?",
-        "a": "Nein. DocNote schlägt vor; der Arzt und die Kodierungsabteilung validieren. Nichts hier ersetzt Ihre Kodierungsprüfung."
+        "q": "Wie sieht TARDOC-Unterstützung in der Praxis aus?",
+        "a": "Ein kurzes Bettendiktat wird zu einer vollständigen, abrechenbaren Untersuchungsbeschreibung. Sie dokumentieren einmal, für Versorgung und Abrechnung."
       }
     ],
     "cta": {
-      "title": "Sehen Sie den Kodierungs-Slot auf Ihren eigenen Briefen",
-      "body": "Buchen Sie eine Demo mit einem Entlassungsbrief aus Ihrer Abteilung, wir zeigen, wo die Diagnosen erscheinen und wo die Vorschläge landen.",
+      "title": "Sehen Sie die Kodierungsvorschläge an Ihren eigenen Briefen",
+      "body": "Buchen Sie eine Demo mit einem Austrittsbrief oder einer Konsultation aus Ihrer Abteilung.",
       "primary": "Demo buchen",
       "secondary": "Preise ansehen"
     },
     "relatedLabel": "Verwandte Seiten"
   },
   "ehr-integration": {
+    "navLabel": "EHR-Integration",
     "navDesc": "7 Systeme, Abschnitt für Abschnitt gesendet.",
     "title": "EHR-Integration für AI Medical Scribes | DocNote",
     "description": "DocNote sendet validierte Berichte in SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis, nach Abschnitten getrennt, einseitig, kein Kopieren-Einfügen. Demo buchen.",
     "hero": {
-      "badge": "EHR-Integration",
+      "badge": "KIS-Integration",
       "title": "Integration mit der elektronischen Patientenakte",
-      "subtitle": "Der validierte Bericht geht in die Akte, nach Abschnitten getrennt.",
-      "lead": "Die Dokumentation ist nicht fertig, wenn die Notiz gut aussieht. Sie ist fertig, wenn sie in der Akte ist: kein Kopieren-Einfügen, keine Version außerhalb der EHR."
+      "subtitle": "Der validierte Bericht geht in die Akte, abschnittsweise."
     },
     "story": {
-      "badge": "Im Produkt",
-      "title": "Sieben Systeme, ein Fluss: von DocNote in die Akte",
+      "badge": "Wie es funktioniert",
+      "title": "Einseitig, per Design",
       "paragraphs": [
-        "DocNote sendet validierte Berichte in sieben elektronische Patientenaktensysteme: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis. Der Kliniker verbindet sein DocNote-Konto einmalig über OAuth2 mit seinem EHR-Konto und sucht den Patienten in der EHR direkt aus DocNote heraus.",
-        "Sobald der Bericht validiert ist, wird er in die Akte des Patienten gesendet, nach Abschnitten getrennt: Die Abschnitte des Berichts landen in den Abschnitten der Akte, nicht als ein eingefügter Block.",
-        "Der Fluss ist einseitig: DocNote sendet an die EHR. DocNote liest die Patientenakte nicht; die Patientensuche ist eine Suche, kein Import der Akte. Eine dokumentierte Integrations-API steht für EHR-Anbieter zur Verfügung, die eine Verbindung herstellen möchten."
+        "Der Fluss ist einseitig: DocNote sendet an das KIS. DocNote liest nicht Ihre Patientenakte, und die Patientensuche ist eine Suche, kein Aktenimport. Die Dokumentation ist abgeschlossen, wenn der Bericht in der Akte ist: kein Kopieren-Einfügen, keine Version ausserhalb des KIS."
       ]
     },
     "benefits": {
-      "badge": "Was Sie erhalten",
-      "title": "Bericht und Akte bleiben dasselbe Objekt",
-      "subtitle": "Einmal verbunden, aus DocNote heraus gesucht, Abschnitt für Abschnitt gesendet.",
+      "badge": "Was DocNote leistet",
+      "title": "Was DocNote leistet",
       "items": [
         {
           "title": "Sieben unterstützte Systeme",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis: Krankenhaus- und Gruppen-EHRs in der Schweiz und Frankreich."
+          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
         },
         {
-          "title": "Einmalig über OAuth2 verbunden",
-          "body": "Der Kliniker verbindet sein DocNote-Konto einmalig mit seinem EHR-Konto. Keine gemeinsamen Passwörter, kein manueller Export."
+          "title": "Einmal über OAuth2 verknüpft",
+          "body": "Der Kliniker verknüpft sein DocNote-Konto einmal mit seinem KIS-Konto."
         },
         {
-          "title": "Patientensuche direkt aus DocNote",
-          "body": "Finden Sie den Patienten in der EHR, ohne die App zu verlassen, und hängen Sie den Bericht an die richtige Akte an."
+          "title": "Patientensuche von DocNote aus",
+          "body": "Suchen Sie nach Ihrem Patienten im KIS, ohne DocNote zu verlassen."
         },
         {
-          "title": "Nach Abschnitten getrennt gesendet",
-          "body": "Der validierte Bericht geht Abschnitt für Abschnitt in die Patientenakte, kein Kopieren-Einfügen, keine Version außerhalb der EHR."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Wie es funktioniert",
-      "title": "Von der validierten Entwurfsversion zur Patientenakte",
-      "subtitle": "Einseitig, bewusst und immer nach der Validierung.",
-      "items": [
-        {
-          "title": "Konten einmalig verbinden",
-          "body": "Der Kliniker autorisiert DocNote über OAuth2 gegenüber seinem EHR-Konto."
+          "title": "Abschnittsweise gesendet",
+          "body": "Der validierte Bericht wird in die Akte dieses Patienten gesendet, abschnittsweise."
         },
         {
-          "title": "Patient suchen",
-          "body": "Suchen Sie direkt aus DocNote heraus nach dem Patienten in der EHR und wählen Sie die Akte aus."
-        },
-        {
-          "title": "Bericht validieren",
-          "body": "Der Arzt überprüft und bestätigt. Nichts wird vor der Validierung gesendet."
-        },
-        {
-          "title": "Abschnitt für Abschnitt senden",
-          "body": "Der Bericht wird in die Patientenakte gesendet, nach Abschnitten getrennt."
+          "title": "Eine API für KIS-Anbieter",
+          "body": "Eine dokumentierte Integrations-API existiert für Anbieter, die sich verbinden möchten."
         }
       ]
     },
     "proof": {
-      "badge": "Zu erhaltende Genauigkeit",
-      "title": "Einseitig, von Design",
-      "intro": "Es lohnt sich, präzise zu sein, was die Integration tut und nicht tut, diese Präzision ist es, was die Krankenhaus-IT überprüft.",
+      "badge": "Genauigkeit",
+      "title": "Was die Integration ist und was nicht",
+      "intro": "Eine Richtung, kein Lesen, kein Kopieren-Einfügen.",
       "points": [
         {
-          "title": "DocNote sendet an die EHR",
-          "body": "Die Richtung ist DocNote → Patientenakte. Es gibt keinen Rückfluss von der EHR in DocNote."
+          "title": "DocNote sendet, es liest nicht",
+          "body": "Der Bericht geht von DocNote ins KIS. Nichts kommt zurück."
         },
         {
-          "title": "DocNote liest die Patientenakte nicht",
-          "body": "Die Patientensuche gibt die Akte zurück, an die angehängt werden soll; sie importiert nicht den Inhalt der Akte in DocNote."
-        },
-        {
-          "title": "Nur validierte Berichte werden gesendet",
-          "body": "Entwürfe bleiben in DocNote, bis der Arzt sie freigibt."
-        },
-        {
-          "title": "Dokumentierte Integrations-API",
-          "body": "EHR-Anbieter, die noch nicht verbunden sind, können gegen eine dokumentierte API integrieren."
+          "title": "Keine Version ausserhalb der Akte",
+          "body": "Die Dokumentation ist abgeschlossen, wenn der validierte Bericht in der Patientenakte ist."
         }
       ]
     },
     "faq": [
       {
-        "q": "Welche EHRs werden unterstützt?",
+        "q": "Welche KIS werden unterstützt?",
         "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay und Ardentis."
       },
       {
-        "q": "Liest DocNote auch aus der EHR?",
-        "a": "Nein. Der Fluss ist einseitig: DocNote sendet den validierten Bericht in die EHR. DocNote liest die Patientenakte nicht."
+        "q": "Liest DocNote auch aus dem KIS?",
+        "a": "Nein. Der Fluss ist einseitig: DocNote sendet den validierten Bericht ins KIS."
       },
       {
         "q": "Wie funktioniert die Patientensuche?",
-        "a": "Der Kliniker sucht den Patienten in der EHR direkt aus DocNote heraus und wählt die Akte aus, an die gesendet werden soll. Es ist eine Suche, kein Import der Akte."
+        "a": "Sie suchen nach dem Patienten im KIS von DocNote aus und wählen die Akte zum Senden aus. Es ist eine Suche, kein Aktenimport."
       },
       {
-        "q": "Wie werden die Konten verbunden?",
-        "a": "Einmalig über OAuth2 zwischen dem DocNote-Konto des Klinikers und seinem EHR-Konto."
-      },
-      {
-        "q": "Unsere EHR steht nicht auf der Liste, was dann?",
-        "a": "Eine dokumentierte Integrations-API steht für EHR-Anbieter zur Verfügung, die eine Verbindung herstellen möchten. Sprechen Sie mit dem Team."
+        "q": "Unser KIS ist nicht auf der Liste. Was dann?",
+        "a": "Eine dokumentierte Integrations-API existiert für KIS-Anbieter, die sich verbinden möchten. Sprechen Sie mit dem Team."
       }
     ],
     "cta": {
-      "title": "Sehen Sie, wie der Bericht in Ihrer EHR landet",
-      "body": "Buchen Sie eine Demo mit Ihrem System im Bild (SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay oder Ardentis), oder fragen Sie nach der Integrations-API.",
+      "title": "Sehen Sie, wie der Bericht in Ihrem KIS landet",
+      "body": "Buchen Sie eine Demo auf Ihrem eigenen System, von der Patientensuche bis zum abschnittsweise gesendeten Bericht.",
       "primary": "Demo buchen",
-      "secondary": "Team kontaktieren"
+      "secondary": "Kontaktieren Sie uns"
     },
-    "relatedLabel": "Verwandte Seiten",
-    "navLabel": "EHR-Integration"
+    "relatedLabel": "Verwandte Seiten"
   },
   "custom-word-templates": {
     "navLabel": "Ihre Word-Vorlagen",
@@ -1041,114 +775,75 @@
     "title": "Benutzerdefinierte Word-Vorlagen für medizinische Berichte | DocNote",
     "description": "Laden Sie Ihre Word-Vorlage einmal hoch, jeder Bericht behält Ihren Briefkopf, Abschnitte und Unterschrift. Die Überprüfung bleibt klinisch, nicht kosmetisch. Sehen Sie, wie es funktioniert.",
     "hero": {
-      "badge": "Benutzerdefinierte Word-Vorlagen",
+      "badge": "Individuelle Word-Vorlagen",
       "title": "Ihre Word-Dokumente, nicht die der KI",
-      "subtitle": "Laden Sie Ihre Vorlage einmal hoch. Jeder Bericht danach kommt mit Ihrer exakten Struktur und Marke heraus.",
-      "lead": "Kein Neuformatieren mehr von KI-Output, um dem Krankenhaus-Briefkopf zu entsprechen. Jeder Bericht ist bereits Ihr Dokument. Die Überprüfung bleibt klinisch, nicht kosmetisch."
+      "subtitle": "Laden Sie Ihre Vorlage einmal hoch. Jeder folgende Bericht entspricht exakt Ihrer Struktur und Ihrem Branding."
     },
     "story": {
-      "badge": "Im Produkt",
-      "title": "Das häufigste Einwand in Krankenhaus-Demos, beantwortet bevor er gestellt wird",
+      "badge": "Warum es wichtig ist",
+      "title": "Das häufigste Einwand in Krankenhaus-Demos",
       "paragraphs": [
-        "\"Ihr Output ist schön, aber er sieht nicht aus wie unser Brief.\" Jede Abteilung hat ein Dokument, das sie über Jahre verfeinert hat: der Briefkopf, die Ränder, die Reihenfolge der Abschnitte, der Unterschriftsblock. Ein Tool, das guten Text im falschen Dokument produziert, schafft einen Formatierungsjob für jemanden.",
-        "Mit DocNote laden Sie Ihre Word-Vorlage einmal hoch. Von da an kommt jeder Bericht mit Ihrer exakten Struktur und Marke heraus: Ihr Briefkopf, Ihre Ränder, Ihre Abschnitte, Ihre Unterschrift. Die Kodierung erhält ihren eigenen Platz in der Vorlage, getrennt vom Haupttext, sodass Vorschläge nie mit klinischem Inhalt vermischt werden.",
-        "Die Absatzausrichtung bleibt beim Export erhalten (Blocksatz, zentriert, rechtsbündig), sodass das, was Sie in DocNote sehen, als Word oder PDF ausgegeben wird. Die Überprüfung wird wieder klinisch: Sie korrigieren die Substanz, nicht das Layout."
+        "\"Ihre Ausgabe ist schön, aber sie sieht nicht wie unser Brief aus.\" DocNote beantwortet diesen Einwand, bevor er überhaupt aufkommt: Kein erneutes Formatieren der KI-Ausgabe, um dem Krankenhausbriefkopf zu entsprechen. Jeder Bericht ist bereits Ihr Dokument."
       ]
     },
     "benefits": {
-      "badge": "Was Sie erhalten",
-      "title": "Jeder Bericht ist bereits Ihr Dokument",
-      "subtitle": "Struktur, Marke und Plätze einmal definiert, jedes Mal wiederverwendet.",
+      "badge": "Was DocNote leistet",
+      "title": "Was DocNote leistet",
       "items": [
         {
-          "title": "Ihr Briefkopf, Ränder, Abschnitte, Unterschrift",
-          "body": "Das Word-Dokument Ihrer Abteilung ist das Modell. DocNote reproduziert zukünftige Berichte mit dieser exakten Struktur und Marke."
+          "title": "Ihr Briefkopf, Ihre Ränder, Ihre Abschnitte, Ihre Unterschrift",
+          "body": "Alles stammt aus dem Word-Dokument, das Sie einmal hochladen."
         },
         {
-          "title": "Ein Platz für Kodierung, getrennt vom Haupttext",
-          "body": "Kodierungsvorschläge erhalten ihren eigenen Platz in der Vorlage (wo immer Ihre Kodierungsabteilung sie erwartet) und verunreinigen nie den klinischen Text."
+          "title": "Codierung erhält ihren eigenen Platz",
+          "body": "Getrennt vom Haupttext, platziert wo immer Sie es in der Vorlage wünschen."
         },
         {
           "title": "Ausrichtung beim Export erhalten",
-          "body": "Blocksatz, zentriert, rechtsbündig: Die Absatzausrichtung Ihrer Vorlage überlebt den Export nach Word und PDF."
+          "body": "Blocksatz, zentriert und rechtsbündig kommen wie gestaltet heraus."
         },
         {
-          "title": "Überprüfung wird wieder klinisch",
-          "body": "Sie korrigieren die Substanz, nicht das Layout. Kosmetische Neuformatierung verschwindet aus dem Validierungsschritt."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Wie es funktioniert",
-      "title": "Einmal für die Vorlage, dann jedes Mal für den Bericht",
-      "subtitle": "Keinen Vorlageneditor zu lernen: Ihre Word-Datei ist die Quelle.",
-      "items": [
-        {
-          "title": "Word-Vorlage hochladen",
-          "body": "Laden Sie das Dokument der Abteilung oder Praxis einmal hoch: Briefkopf, Abschnitte, Unterschriftsblock, Kodierungsplatz."
-        },
-        {
-          "title": "Aufzeichnen und Entwurf erstellen",
-          "body": "DocNote erstellt den Bericht direkt in dieser Struktur."
-        },
-        {
-          "title": "Substanz korrigieren",
-          "body": "Der Arzt überprüft den klinischen Inhalt; das Layout ist bereits korrekt."
-        },
-        {
-          "title": "Exportieren oder senden",
-          "body": "Word oder PDF mit erhaltener Ausrichtung, oder direkt in die EHR, wo verbunden."
+          "title": "Überprüfung bleibt klinisch",
+          "body": "Sie korrigieren den Inhalt, nicht das Layout."
         }
       ]
     },
     "proof": {
-      "badge": "Warum dies ein Unterscheidungsmerkmal ist",
-      "title": "Generischer Output ist der Einwand; Ihr Dokument ist die Antwort",
-      "intro": "Die meisten Scribes liefern ein festes Notizenlayout und überlassen den Briefkopf jemand anderem. DocNote nimmt Ihr Dokument als Vorlage, weshalb Abteilungen aufhören, die Frage zu stellen.",
+      "badge": "Auswirkung",
+      "title": "Überprüfung bleibt klinisch, nicht kosmetisch",
+      "intro": "Kein erneutes Formatieren der KI-Ausgabe, um dem Krankenhausbriefkopf zu entsprechen.",
       "points": [
         {
-          "title": "Ihre Datei, kein Vorlagen-Builder",
-          "body": "Das Word-Dokument, dem Ihre Abteilung bereits vertraut, ist das, was DocNote reproduziert."
+          "title": "Bereits Ihr Dokument",
+          "body": "Jeder Bericht kommt mit Ihrem Briefkopf, Ihren Abschnitten und Ihrer Unterschrift heraus."
         },
         {
-          "title": "Harmonisiert über eine Gruppe",
-          "body": "Gruppen rollen dieselben Vorlagen für jeden Kliniker aus, mit gemeinsamer Marke und Abschnitten."
-        },
-        {
-          "title": "Funktioniert auch für Sekretärinnen",
-          "body": "Eine Sekretärin, die im Konto des Arztes arbeitet, verwendet dieselben Vorlagen, keine zweite Kopie, die synchron gehalten werden muss."
-        },
-        {
-          "title": "Kodierungsplatz von Ihnen platziert",
-          "body": "Wo die Vorschläge landen, entscheiden Sie in der Vorlage, nicht das Tool."
+          "title": "Nichts neu aufbauen",
+          "body": "Laden Sie das bestehende Word-Dokument einmal hoch. Kein Vorlageneditor, den Sie lernen müssen."
         }
       ]
     },
     "faq": [
       {
         "q": "Muss ich meine Vorlage in DocNote neu aufbauen?",
-        "a": "Nein. Laden Sie Ihr bestehendes Word-Dokument einmal hoch; DocNote reproduziert zukünftige Berichte mit seiner Struktur und Marke."
+        "a": "Nein. Laden Sie Ihr bestehendes Word-Dokument einmal hoch; jeder folgende Bericht folgt dessen Struktur und Branding."
       },
       {
         "q": "Werden Briefkopf und Unterschriftsblock erhalten bleiben?",
-        "a": "Ja: Briefkopf, Ränder, Abschnitte und Unterschrift stammen aus Ihrer Vorlage."
+        "a": "Ja. Briefkopf, Ränder, Abschnitte und Unterschrift stammen aus Ihrer Vorlage."
       },
       {
-        "q": "Wo gehen die Kodierungsvorschläge hin?",
-        "a": "In ihren eigenen Platz in der Vorlage, getrennt vom Haupttext, platziert wo immer Sie möchten."
+        "q": "Wo gehen die Codierungsvorschläge hin?",
+        "a": "In ihren eigenen Platz in der Vorlage, getrennt vom Haupttext, platziert wo immer Sie es wünschen."
       },
       {
-        "q": "Bleibt die Ausrichtung beim Export erhalten?",
-        "a": "Ja. Blocksatz, zentriert und rechtsbündig bleiben beim Export erhalten."
-      },
-      {
-        "q": "Können mehrere Vorlagen nebeneinander existieren?",
-        "a": "Ja, zum Beispiel eine pro Dokumenttyp (Entlassungsbrief, Operationsbericht, Stationsnotiz) oder pro Dienst."
+        "q": "Können mehrere Vorlagen gleichzeitig existieren?",
+        "a": "Ja. Zum Beispiel eine pro Dokumenttyp: Entlassungsbrief, Operationsbericht, Stationsnotiz."
       }
     ],
     "cta": {
-      "title": "Bringen Sie Ihren Briefkopf zur Demo",
-      "body": "Senden Sie uns die Word-Vorlage Ihrer Abteilung und wir zeigen Ihnen, wie der Bericht in Ihrem Dokument herauskommt, nicht in unserem.",
+      "title": "Sehen Sie Ihren eigenen Brief aus DocNote kommen",
+      "body": "Buchen Sie eine Demo mit Ihrer Word-Vorlage oder sehen Sie sich den Ablauf zuerst im Tutorial an.",
       "primary": "Demo buchen",
       "secondary": "Tutorial ansehen"
     },
@@ -1161,85 +856,50 @@
     "description": "Fügen Sie vorherige Briefe, Laborergebnisse, Bildgebung und Fotos vor oder nach der Aufzeichnung hinzu. Späte Elemente aktualisieren den Bericht ohne Neustart. Sehen Sie es im Tutorial.",
     "hero": {
       "badge": "Klinischer Kontext",
-      "title": "Der Bericht spiegelt die Akte wider, nicht nur das, was laut gesagt wurde",
-      "subtitle": "Fügen Sie vorherige Briefe, Laborergebnisse, Bildgebung und Fotos hinzu.",
-      "lead": "Die Notiz spiegelt das vollständige klinische Bild wider, nicht nur das, was laut gesagt wurde: weniger Auslassungen, weniger \"bitte fügen Sie das Laborergebnis hinzu\" Korrekturen im Nachhinein."
+      "title": "Der Bericht spiegelt die Akte wider, nicht nur das Gesagte",
+      "subtitle": "Fügen Sie vorherige Briefe, Laborergebnisse, Bildgebung und Fotos hinzu."
     },
     "story": {
-      "badge": "Im Produkt",
-      "title": "Audio plus Dateien, vor oder nach der Aufzeichnung",
+      "badge": "Warum es wichtig ist",
+      "title": "Weniger Auslassungen",
       "paragraphs": [
-        "Eine Konsultation ist selten die ganze Geschichte. Da ist der vorherige Entlassungsbrief, das Laborpanel von heute Morgen, der Bildgebungsbericht, das Wundfoto. DocNote lässt Sie sie anhängen, und das Modell verwendet sie beim Strukturieren des Berichts.",
-        "Dokumente, die vor oder nach der Aufzeichnung angehängt werden, werden in den Bericht eingefügt. Spät hinzugefügte Elemente (ein Laborergebnis, das am Nachmittag eintrifft) werden aufgenommen, ohne alles neu zu generieren, sodass die bereits vorgenommenen Korrekturen erhalten bleiben.",
-        "Ein Konversationsmodus lässt Sie nach der Generierung eine Änderung oder Ergänzung anfordern: bitten Sie darum, die Laborergebnisse hinzuzufügen, einen Abschnitt zu kürzen, einen Empfänger zu ändern. Weniger Auslassungen, weniger \"bitte fügen Sie die Laborergebnisse hinzu\" Nachrichten danach."
+        "Eine Konsultation ist mehr als das, was laut gesagt wurde. Vorherige Briefe, Laborergebnisse, Bildgebung und Fotos gehören ebenfalls in den Bericht. Mit dem angehängten Kontext gibt es weniger Auslassungen und weniger \"bitte fügen Sie die Laborwerte hinzu\"-Nachrichten danach."
       ]
     },
     "benefits": {
-      "badge": "Was Sie erhalten",
-      "title": "Eine stärkere Notiz aus derselben Konsultation",
-      "subtitle": "Kontext rein, Auslassungen raus.",
+      "badge": "Was DocNote leistet",
+      "title": "Was DocNote leistet",
       "items": [
         {
-          "title": "Fügen Sie vorherige Briefe, Laborergebnisse, Bildgebung und Fotos hinzu",
-          "body": "Legen Sie die Dateien neben der Aufzeichnung ab; das Modell verwendet sie beim Strukturieren des Berichts."
+          "title": "Vor oder nach der Aufnahme anhängen",
+          "body": "Dokumente, die vor oder nach der Aufnahme angehängt werden, werden in den Bericht integriert."
         },
         {
-          "title": "Vor oder nach der Aufzeichnung",
-          "body": "Dokumente, die zu jedem Zeitpunkt angehängt werden, werden in den Bericht eingefügt: Sie müssen nicht alles bereit haben, bevor Sie auf Aufnahme drücken."
+          "title": "Späte Elemente werden erfasst",
+          "body": "Ein später eintreffendes Ergebnis wird hinzugefügt, ohne alles neu zu generieren."
         },
         {
-          "title": "Späte Elemente ohne Neugenerierung",
-          "body": "Ein später eintreffendes Ergebnis wird aufgenommen, während Ihre früheren Korrekturen erhalten bleiben."
+          "title": "Konversationsmodus",
+          "body": "Fordern Sie eine Änderung oder Ergänzung nach der Generierung an."
         },
         {
-          "title": "Konversationsmodus nach der Generierung",
-          "body": "Fordern Sie eine Änderung oder Ergänzung in einfacher Sprache an, sobald der Entwurf existiert."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Wie es funktioniert",
-      "title": "Von der Konsultation und Dateien zu einem vollständigen Bericht",
-      "subtitle": "Derselbe Validierungsschritt; mehr vom Bild im Entwurf.",
-      "items": [
-        {
-          "title": "Aufzeichnung der Begegnung",
-          "body": "Telefon oder Browser, wie üblich."
-        },
-        {
-          "title": "Kontext anhängen",
-          "body": "Vorheriger Entlassungsbrief, Laborergebnisse, Bildgebung, Fotos: vor oder nach der Aufzeichnung."
-        },
-        {
-          "title": "Entwurf überprüfen",
-          "body": "Der Bericht spiegelt die Akte und das Gespräch wider; Sie korrigieren die Substanz."
-        },
-        {
-          "title": "Fordern Sie die benötigte Änderung an",
-          "body": "Im Konversationsmodus fordern Sie eine Ergänzung oder Änderung an; validieren und exportieren."
+          "title": "Sie wählen aus, was angehängt wird",
+          "body": "DocNote liest Ihre Patientenakte nicht. Sie hängen die Dateien selbst an."
         }
       ]
     },
     "proof": {
-      "badge": "Warum es wichtig ist",
-      "title": "Weniger Auslassungen, weniger Nachkorrekturen",
-      "intro": "Der Wert liegt nicht in einer größeren Notiz; er liegt in einer Notiz, die nicht wieder geöffnet werden muss, weil die Laborergebnisse fehlten.",
+      "badge": "Auswirkung",
+      "title": "Kontext später hinzufügen, Ihre Korrekturen behalten",
+      "intro": "Spät hinzugefügte Elemente werden integriert, ohne von vorne zu beginnen.",
       "points": [
         {
-          "title": "Vollständigkeit des Berichts",
-          "body": "Mit eingeschlossenem Kontext fehlen weniger Befunde im Entwurf: Der Bericht spiegelt das vollständige klinische Bild wider."
+          "title": "Keine Neugenerierung von Grund auf",
+          "body": "Späte Ergänzungen überschreiben nicht die Korrekturen, die Sie bereits vorgenommen haben."
         },
         {
-          "title": "Später Kontext, erhaltene Korrekturen",
-          "body": "Das Hinzufügen eines Ergebnisses danach aktualisiert den Bericht, ohne das bereits Bearbeitete zu verwerfen."
-        },
-        {
-          "title": "Auch für Sekretärinnen nützlich",
-          "body": "Eine Sekretärin, die im Konto des Arztes arbeitet, kann das späte Laborergebnis oder den vorherigen Brief hinzufügen, ohne von vorne zu beginnen."
-        },
-        {
-          "title": "Immer ärztliche Validierung",
-          "body": "Kontext macht den Entwurf besser; der Arzt überprüft und unterschreibt trotzdem."
+          "title": "Fordern Sie die Änderung an",
+          "body": "Ein Konversationsmodus ermöglicht es Ihnen, nach der Generierung eine Änderung oder Ergänzung anzufordern."
         }
       ]
     },
@@ -1249,16 +909,12 @@
         "a": "Vorherige Briefe, Laborergebnisse, Bildgebungsberichte und Fotos."
       },
       {
-        "q": "Muss ich alles vor der Aufzeichnung anhängen?",
-        "a": "Nein. Dokumente, die vor oder nach der Aufzeichnung angehängt werden, werden in den Bericht eingefügt."
+        "q": "Muss ich alles vor der Aufnahme anhängen?",
+        "a": "Nein. Dokumente, die vor oder nach der Aufnahme angehängt werden, werden in den Bericht integriert."
       },
       {
         "q": "Wenn ein Laborergebnis später eintrifft, muss ich dann den gesamten Bericht neu generieren?",
-        "a": "Nein. Späte Elemente werden aufgenommen, ohne alles neu zu generieren; Ihre Korrekturen bleiben erhalten."
-      },
-      {
-        "q": "Kann ich nach der Generierung des Entwurfs eine Änderung anfordern?",
-        "a": "Ja. Ein Konversationsmodus lässt Sie nach der Generierung eine Änderung oder Ergänzung anfordern."
+        "a": "Nein. Späte Elemente werden erfasst, ohne alles neu zu generieren; Ihre Korrekturen bleiben erhalten."
       },
       {
         "q": "Zieht DocNote Dokumente aus meiner EHR?",
@@ -1266,8 +922,8 @@
       }
     ],
     "cta": {
-      "title": "Sehen Sie den Unterschied, den Kontext macht",
-      "body": "Sehen Sie sich das Tutorial an, um einen Bericht mit Anhängen zu sehen, oder buchen Sie eine Demo mit Ihren eigenen Dokumenten.",
+      "title": "Sehen Sie es im Tutorial",
+      "body": "Das Tutorial zeigt einen Bericht, der mit Dokumenten aktualisiert wurde, die vor und nach der Aufnahme angehängt wurden.",
       "primary": "Tutorial ansehen",
       "secondary": "Demo buchen"
     },
@@ -1281,95 +937,56 @@
     "hero": {
       "badge": "Tagesklinik",
       "title": "Tagesklinik: mehrere Kliniker, eine Akte",
-      "subtitle": "DocNote vereint die Beiträge des Teams in einer zuverlässigen Akte.",
-      "lead": "Am Ende des Tages haben Sie eine strukturierte Patientenakte, nicht vier Teilnotizen, die abgeglichen werden müssen. Die Dokumentationsqualität folgt dem Team statt sich zu fragmentieren."
+      "subtitle": "DocNote fasst die Beiträge des Teams in einer zuverlässigen Akte zusammen."
     },
     "story": {
-      "badge": "Im Produkt",
-      "title": "Eine Multi-Autoren-Akte für einen Multi-Autoren-Tag",
+      "badge": "Warum es wichtig ist",
+      "title": "Jeder Scribe auf dem Markt ist für einzelne Kliniker",
       "paragraphs": [
-        "In einer Tagesklinik sieht der Patient mehrere Kliniker in Folge: die Pflegekraft bei der Aufnahme, den Arzt, den Spezialisten, die Pflegekraft erneut bei der Entlassung. Jeder dokumentiert seinen Teil; jemand muss dann vier Teilnotizen zu einer Akte zusammenführen, die als eine lesbar ist.",
-        "DocNote ermöglicht mehreren Klinikern, im Laufe des Tages zur gleichen Patientenakte beizutragen. Die Beiträge werden zu einer strukturierten Akte zusammengeführt, sodass am Ende des Tages ein Dokument vorliegt, nicht vier Fragmente, die zusammengefügt werden müssen.",
-        "Dies ist für Gruppen verfügbar, deren EHR integriert ist: Die zusammengeführte, validierte Akte wird in die Patientenakte gesendet, nach Abschnitten getrennt, wie jeder andere DocNote-Bericht."
+        "Niemand adressiert diesen Anwendungsfall, weil er ein Multi-Autoren-Datenmodell erfordert. Jeder Scribe auf dem Markt ist für einzelne Kliniker. In einer Tagesklinik bleibt dem Team am Ende des Tages die Abstimmung von Teilnotizen."
       ]
     },
     "benefits": {
-      "badge": "Was Sie erhalten",
-      "title": "Eine strukturierte Akte am Ende des Tages",
-      "subtitle": "Das Team dokumentiert; die Akte bleibt ganz.",
+      "badge": "Was DocNote leistet",
+      "title": "Was DocNote leistet",
       "items": [
         {
-          "title": "Mehrere Kliniker, gleiche Akte",
-          "body": "Pflegekraft, Arzt, Spezialist: jeder trägt im Laufe des Tages zur gleichen Patientenakte bei."
+          "title": "Mehrere Kliniker, eine Akte",
+          "body": "Mehrere Kliniker tragen im Laufe des Tages zur selben Patientenakte bei."
         },
         {
-          "title": "Beiträge zusammengeführt, nicht gestapelt",
-          "body": "DocNote fasst die Beiträge des Teams in einer zuverlässigen Akte zusammen, anstatt vier Teilnotizen anzuhängen."
+          "title": "Eine strukturierte Akte am Ende des Tages",
+          "body": "Keine vier Teilnotizen, die abgestimmt werden müssen."
         },
         {
-          "title": "Qualität folgt dem Team",
-          "body": "Die Dokumentationsqualität skaliert mit dem Team statt sich über mehrere Autoren zu fragmentieren."
-        },
-        {
-          "title": "In die EHR der Gruppe",
-          "body": "Verfügbar für Gruppen mit integriertem EHR; die validierte Akte wird in die Patientenakte gesendet, nach Abschnitten getrennt."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Wie es funktioniert",
-      "title": "Vom ersten Kontakt zum Entlassungsbericht",
-      "subtitle": "Jeder Kliniker dokumentiert seinen Teil; DocNote hält es in einem Dokument.",
-      "items": [
-        {
-          "title": "Aufnahme",
-          "body": "Der erste Kliniker öffnet die Tagesklinik-Akte des Patienten und dokumentiert seinen Teil."
-        },
-        {
-          "title": "Im Laufe des Tages",
-          "body": "Jeder nachfolgende Kliniker trägt vom eigenen Konto aus zur gleichen Akte bei."
-        },
-        {
-          "title": "Zusammenführen",
-          "body": "DocNote fasst die Beiträge zu einer strukturierten Akte zusammen."
-        },
-        {
-          "title": "Validieren und senden",
-          "body": "Der verantwortliche Arzt validiert; die Akte wird in die EHR der Gruppe gesendet, nach Abschnitten getrennt."
+          "title": "Für Gruppen mit integrierter EHR",
+          "body": "Verfügbar für Gruppen, deren EHR integriert ist."
         }
       ]
     },
     "proof": {
-      "badge": "Warum dies ein Unterscheidungsmerkmal ist",
-      "title": "Niemand sonst adressiert diesen Anwendungsfall",
-      "intro": "Es erfordert ein Multi-Autoren-Datenmodell, und jeder andere Scribe auf dem Markt ist für einzelne Kliniker. DocNote wurde mit der Tagesklinik im Hinterkopf entwickelt.",
+      "badge": "Auswirkung",
+      "title": "Qualität folgt dem Team",
+      "intro": "Am Ende des Tages haben Sie eine strukturierte Patientenakte, nicht vier Teilnotizen, die abgestimmt werden müssen. Die Dokumentationsqualität folgt dem Team statt sich zu fragmentieren.",
       "points": [
         {
-          "title": "Von Grund auf für mehrere Autoren",
-          "body": "Mehrere Konten, die eine Akte speisen, sind eine Eigenschaft des Datenmodells, keine Notlösung."
+          "title": "Eine Akte zur Validierung",
+          "body": "Der verantwortliche Arzt überprüft und validiert die zusammengeführte Akte."
         },
         {
-          "title": "Für integrierte Gruppen",
-          "body": "Verfügbar für Gruppen mit integriertem EHR: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
-        },
-        {
-          "title": "Durch Gruppenrichtlinien gesteuert",
-          "body": "Aufbewahrungs-, Abmelde- und Audio-Wiedergabe-Regeln, die auf Organisationsebene festgelegt sind, gelten für jeden Beitragenden."
-        },
-        {
-          "title": "Immer ärztliche Validierung",
-          "body": "Die zusammengeführte Akte wird von DocNote erstellt und vom verantwortlichen Arzt validiert, bevor sie gesendet wird."
+          "title": "In die EHR",
+          "body": "Die validierte Akte wird in die Patientenakte der EHR der Gruppe gesendet."
         }
       ]
     },
     "faq": [
       {
         "q": "Wer kann zur Akte beitragen?",
-        "a": "Die Kliniker des Tagesklinikdienstes, jeder von seinem eigenen DocNote-Konto aus, in der gleichen Patientenakte."
+        "a": "Die Kliniker des Tagesklinikdienstes, jeder von seinem eigenen DocNote-Konto aus, an derselben Patientenakte."
       },
       {
         "q": "Ist es ein zusammengeführtes Dokument oder eine Liste von Notizen?",
-        "a": "Eine zusammengeführte, strukturierte Akte, nicht vier Teilnotizen, die abgeglichen werden müssen."
+        "a": "Eine zusammengeführte, strukturierte Akte."
       },
       {
         "q": "Wer validiert die zusammengeführte Akte?",
@@ -1377,14 +994,14 @@
       },
       {
         "q": "Ist es für meine Gruppe verfügbar?",
-        "a": "Es ist für Gruppen mit integriertem EHR verfügbar. Sprechen Sie mit dem Team über Ihre Systeme."
+        "a": "Es ist für Gruppen verfügbar, deren EHR integriert ist. Sprechen Sie mit dem Team über Ihre Systeme."
       }
     ],
     "cta": {
-      "title": "Sehen Sie eine Tagesklinik-Akte, die vom Team erstellt wurde",
-      "body": "Buchen Sie eine Demo mit Ihrem Tagesklinikdienst und Ihrer EHR im Bild.",
+      "title": "Sprechen Sie mit dem Team über Ihre Tagesklinik",
+      "body": "Erzählen Sie uns, wie Ihr Dienst organisiert ist und welche EHR Sie verwenden.",
       "primary": "Demo buchen",
-      "secondary": "Team kontaktieren"
+      "secondary": "Kontaktieren Sie uns"
     },
     "relatedLabel": "Verwandte Seiten"
   },
@@ -1395,113 +1012,74 @@
     "description": "61 Fachgebiete, 21 Oberflächensprachen: die Sprache, in der Sie mit dem Patienten sprechen, bestimmt nicht die Sprache oder das Vokabular des Berichts. Sehen Sie es in Aktion.",
     "hero": {
       "badge": "Mehrsprachig & Fachgebiete",
-      "title": "61 Fachgebiete, 21 Oberflächensprachen",
-      "subtitle": "Eine Konsultation auf Portugiesisch, ein Bericht auf Französisch, im Vokabular Ihres Fachgebiets.",
-      "lead": "Die Sprache, in der Sie mit dem Patienten sprechen, bestimmt nicht die Sprache des Berichts, und das Vokabular folgt Ihrem Fachgebiet, nicht generischem SOAP-Jargon aus den USA."
+      "title": "61 Fachgebiete, 21 Interface-Sprachen",
+      "subtitle": "Eine Konsultation auf Portugiesisch, ein Bericht auf Französisch, im Wortschatz Ihres Fachgebiets."
     },
     "story": {
-      "badge": "Im Produkt",
-      "title": "Die Worte Ihres Fachgebiets, in der Sprache des Berichts",
+      "badge": "Warum es wichtig ist",
+      "title": "Die Sprache, in der Sie sprechen, diktiert nicht den Bericht",
       "paragraphs": [
-        "DocNote deckt 61 medizinische Fachgebiete ab, jedes mit seinen eigenen Standard-Berichtsvorlagen. Bei der Anmeldung werden die Vorlagen Ihrem Fachgebiet zugeordnet, sodass der erste Entwurf bereits die Struktur und die Begriffe verwendet, die Ihre Disziplin erwartet, keine generische Konsultationsnotiz, die für jedes Fachgebiet umgestaltet wurde.",
-        "Die Oberfläche ist in 21 Sprachen verfügbar. Und Begegnungen sind von Natur aus mehrsprachig: Eine Konsultation auf Portugiesisch, Arabisch oder Deutsch kann einen Bericht auf Französisch erzeugen: die Sprache, in der Sie mit dem Patienten sprechen, bestimmt nicht die Sprache des Dokuments.",
-        "Das Vokabular folgt dem Fachgebiet. Ein kardiologischer Brief, eine psychiatrische Notiz und ein Operationsbericht lesen sich nicht gleich, und DocNote zwingt sie nicht in eine Vorlage."
+        "Mehrsprachige Begegnungen sind in der Pflege normal. Die Sprache, in der Sie mit dem Patienten sprechen, diktiert nicht die Sprache des Berichts, und der Wortschatz folgt dem Fachgebiet und nicht dem generischen SOAP-Jargon aus den USA."
       ]
     },
     "benefits": {
-      "badge": "Was Sie erhalten",
-      "title": "Fachgebiet zuerst, Sprache zweit, beides berücksichtigt",
-      "subtitle": "61 Fachgebiete, 21 Oberflächensprachen, mehrsprachige Begegnungen.",
+      "badge": "Was DocNote leistet",
+      "title": "Was DocNote leistet",
       "items": [
         {
           "title": "61 medizinische Fachgebiete",
-          "body": "Jedes mit seinen eigenen Standard-Berichtsvorlagen, bei der Anmeldung zugeordnet."
+          "body": "Jedes mit seinen eigenen Standard-Berichtsvorlagen."
         },
         {
-          "title": "Oberfläche in 21 Sprachen",
-          "body": "Arbeiten Sie in Ihrer Sprache am Telefon und am Desktop."
+          "title": "21 Interface-Sprachen",
+          "body": "Das Interface ist in 21 Sprachen verfügbar."
         },
         {
           "title": "Mehrsprachige Begegnungen",
-          "body": "Die Sprache, in der Sie mit dem Patienten sprechen, bestimmt nicht die Sprache des Berichts."
+          "body": "Die Sprache, in der Sie mit dem Patienten sprechen, diktiert nicht die Sprache des Berichts."
         },
         {
-          "title": "Vokabular folgt dem Fachgebiet",
-          "body": "Begriffe und Struktur folgen Ihrer Disziplin, nicht generischem SOAP-Jargon aus den USA."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Wie es funktioniert",
-      "title": "Von einer Konsultation in einer Sprache zu einem Bericht in einer anderen",
-      "subtitle": "Keine Einstellungen, die während der Konsultation geändert werden müssen.",
-      "items": [
-        {
-          "title": "Wählen Sie Ihr Fachgebiet und Ihre Sprache",
-          "body": "Einmal bei der Anmeldung: Standardvorlagen für Ihr Fachgebiet, Oberfläche in Ihrer Sprache."
-        },
-        {
-          "title": "Aufnahme in der Sprache des Raums",
-          "body": "Sprechen Sie mit dem Patienten in der Sprache, die Sie teilen."
-        },
-        {
-          "title": "Erhalten Sie den Bericht in der Sprache der Akte",
-          "body": "Der Entwurf wird in der von Ihnen gewählten Berichtssprache erstellt, im Vokabular Ihres Fachgebiets."
-        },
-        {
-          "title": "Validieren und exportieren",
-          "body": "Sie überprüfen, korrigieren und unterschreiben, wie bei jedem DocNote-Bericht."
+          "title": "Fachspezifischer Wortschatz",
+          "body": "Begriffe und Struktur folgen Ihrem Fachgebiet, nicht einer generischen Notiz."
         }
       ]
     },
     "proof": {
-      "badge": "In der Praxis",
-      "title": "Für mehrsprachige Versorgungsumgebungen entwickelt",
-      "intro": "Schweizer und französische Krankenhäuser und Praxen arbeiten täglich über Sprachen hinweg. DocNote behandelt das als Normalfall, nicht als Sonderfall.",
+      "badge": "Beweis",
+      "title": "Für mehrsprachige Pflege gebaut",
+      "intro": "Eine Konsultation auf Portugiesisch kann einen Bericht auf Französisch erzeugen, im Wortschatz Ihres Fachgebiets.",
       "points": [
         {
-          "title": "61 Fachgebiete, 227 Vorlagen",
-          "body": "Standard-Berichtsvorlagen für jedes Fachgebiet; laden Sie Ihre eigene Word-Vorlage hoch, um sie zu ersetzen."
+          "title": "Berichtssprache ist Ihre Wahl",
+          "body": "Sprechen Sie mit dem Patienten in dessen Sprache; der Bericht kommt in Ihrer Sprache heraus."
         },
         {
-          "title": "21 Oberflächensprachen",
-          "body": "Telefon- und Desktop-Oberfläche in Ihrer Sprache."
-        },
-        {
-          "title": "Schweizer Hosting, kurze Audio-Aufbewahrung",
-          "body": "Gesundheitsdaten in der Schweiz gehostet; Audio wird nur kurz zur Erstellung des Dokuments aufbewahrt, dann gelöscht."
-        },
-        {
-          "title": "Immer ärztliche Validierung",
-          "body": "Egal in welcher Sprache, DocNote erstellt einen Bericht, den Sie validieren."
+          "title": "Vorlagen folgen dem Fachgebiet",
+          "body": "Standard-Berichtsvorlagen werden bei der Anmeldung Ihrem Fachgebiet zugeordnet."
         }
       ]
     },
     "faq": [
       {
         "q": "Kann ich in einer Sprache sprechen und den Bericht in einer anderen erhalten?",
-        "a": "Ja. Die Sprache, in der Sie mit dem Patienten sprechen, bestimmt nicht die Sprache des Berichts."
+        "a": "Ja. Die Sprache, in der Sie mit dem Patienten sprechen, diktiert nicht die Sprache des Berichts."
       },
       {
         "q": "Wie viele Fachgebiete werden abgedeckt?",
         "a": "61 medizinische Fachgebiete, jedes mit seinen eigenen Standard-Berichtsvorlagen."
       },
       {
-        "q": "In wie vielen Sprachen ist die Oberfläche verfügbar?",
+        "q": "In wie vielen Sprachen ist das Interface verfügbar?",
         "a": "21."
       },
       {
-        "q": "Ist das Vokabular fachspezifisch?",
-        "a": "Ja. Begriffe und Struktur folgen Ihrem Fachgebiet, nicht einer generischen SOAP-Notiz."
-      },
-      {
-        "q": "Kann ich meine eigenen Vorlagen anstelle der Standardvorlagen verwenden?",
-        "a": "Ja. Laden Sie Ihre Word-Vorlage einmal hoch, und jeder folgende Bericht folgt ihr."
+        "q": "Ist der Wortschatz fachspezifisch?",
+        "a": "Ja. Begriffe und Struktur folgen Ihrem Fachgebiet und nicht einer generischen SOAP-Notiz."
       }
     ],
     "cta": {
-      "title": "Probieren Sie es in Ihrem Fachgebiet und Ihrer Sprache aus",
-      "body": "Sehen Sie sich das Tutorial an, öffnen Sie dann die Web-App und nehmen Sie eine Konsultation in Ihrem Fachgebiet auf.",
+      "title": "Sehen Sie es in Ihrer Sprache",
+      "body": "Sehen Sie sich das Tutorial an und nehmen Sie dann eine Konsultation in der Sprache auf, die Sie mit Ihren Patienten verwenden.",
       "primary": "Tutorial ansehen",
       "secondary": "Preise ansehen"
     },

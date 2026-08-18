@@ -85,10 +85,10 @@ export type LandingCopy = {
   navLabel?: string
   /** One-line subtitle under navLabel in header dropdowns */
   navDesc?: string
-  hero: { badge: string; title: string; subtitle: string; lead: string }
+  hero: { badge: string; title: string; subtitle: string; lead?: string }
   story: { badge: string; title: string; paragraphs: string[] }
-  benefits: { badge: string; title: string; subtitle: string; items: LandingBlockItem[] }
-  steps: { badge: string; title: string; subtitle: string; items: LandingBlockItem[] }
+  benefits: { badge: string; title: string; subtitle?: string; items: LandingBlockItem[] }
+  steps?: { badge: string; title: string; subtitle: string; items: LandingBlockItem[] }
   proof: { badge: string; title: string; intro: string; points: LandingBlockItem[] }
   /** Optional extra SEO-depth sections beyond the fixed blocks above */
   sections?: { heading: string; body: string }[]

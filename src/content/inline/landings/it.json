@@ -144,130 +144,77 @@
     "hero": {
       "badge": "Per ospedali e reparti",
       "title": "DocNote per ospedali e reparti",
-      "subtitle": "Lettere di dimissione, referti operatori e note di reparto: nel formato del vostro reparto, all'interno del vostro EHR.",
-      "lead": "In un ospedale, la nota della visita non è il problema. I problemi sono la lettera di dimissione lasciata incompleta per tre settimane, il referto operatorio dettato e poi riscritto, la codifica rivista successivamente dal reparto di codifica, e un EHR che deve essere compilato manualmente. Uno strumento progettato per lo studio privato non risolve nulla di tutto questo."
+      "subtitle": "Lettere di dimissione, referti operatori e note di reparto, nel formato del vostro reparto, all'interno del vostro EHR."
     },
     "story": {
       "badge": "Il problema",
-      "title": "Il lavoro in ospedale non è una singola nota ambulatoriale",
+      "title": "La nota di consultazione non è il problema",
       "paragraphs": [
-        "Un reparto produce documenti con strutture, lunghezze e destinatari diversi: la lettera di dimissione che va al medico di base e all'assicurazione, il referto operatorio che chiude il caso, la nota di reparto che il medico sostituto legge la mattina seguente. Ognuno deve essere corretto fin dal primo tentativo, sul carta intestata del reparto, e finire nella cartella clinica, non in un'app separata.",
-        "DocNote tratta questi formati ospedalieri come tipi di documento di prima classe. Registrate il giro di reparto, il debriefing operatorio o la consultazione, scegliete il documento, e DocNote redige un rapporto che validate, con le diagnosi secondarie significative evidenziate nella lettera e i suggerimenti di codifica posizionati alla fine del documento, nella loro sezione dedicata.",
-        "Una volta validato, il rapporto viene inviato nella cartella del paziente nel vostro EHR, suddiviso per sezione, senza copia-incolla. Il medico rimane l'autore e approva; DocNote non legge la cartella clinica e non codifica per vostro conto: propone, voi validate."
+        "In un ospedale, la nota di consultazione non è il problema. I problemi sono la lettera di dimissione lasciata incompleta per tre settimane, il referto operatorio dettato e poi riscritto, la codifica rivista successivamente dal reparto di codifica, e un EHR che deve essere compilato manualmente. Uno strumento progettato per lo studio privato non risolve nulla di tutto questo."
       ]
     },
     "benefits": {
       "badge": "Cosa fa DocNote",
-      "title": "Progettato per i documenti che riempiono la serata di un reparto",
-      "subtitle": "Formati ospedalieri nativi, i vostri modelli, suggerimenti di codifica, invio all'EHR.",
+      "title": "Cosa fa DocNote",
       "items": [
         {
           "title": "Formati ospedalieri nativi",
-          "body": "Lettera di dimissione, nota di reparto, referto operatorio: struttura corretta, lunghezza corretta, destinatari corretti fin dalla prima bozza. Non una nota SOAP ambulatoriale allungata per adattarsi."
+          "body": "Lettera di dimissione, nota di reparto, referto operatorio: la struttura giusta, la lunghezza giusta, i destinatari giusti fin dalla prima bozza."
         },
         {
           "title": "I vostri modelli Word",
-          "body": "Caricate il documento del reparto una volta. Ogni rapporto successivo esce sul vostro carta intestata, con le vostre sezioni e la vostra firma, la revisione rimane clinica, non estetica."
+          "body": "Caricate una volta il documento del reparto. Ogni referto successivo uscirà con il vostro intestino, le vostre sezioni e la vostra firma."
         },
         {
           "title": "Codifica integrata",
-          "body": "Le diagnosi secondarie significative sono evidenziate nella lettera, con suggerimenti SwissDRG (Svizzera) o PMSI (Francia) alla fine del documento, proposte per il medico e il reparto di codifica da validare."
+          "body": "Le diagnosi secondarie significative vengono evidenziate nella lettera, con suggerimenti SwissDRG (Svizzera) o PMSI (Francia) alla fine del documento."
         },
         {
           "title": "Inviato all'EHR",
-          "body": "Il rapporto validato viene inviato nella cartella clinica, suddiviso per sezione: nessun copia-incolla. Telefono in reparto, desktop in ufficio: stesso record, sincronizzato in tempo reale."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dal reparto o dalla sala operatoria a un documento validato nella cartella",
-      "subtitle": "La stessa disciplina di revisione e validazione che il vostro servizio già segue.",
-      "items": [
-        {
-          "title": "Registrate l'incontro",
-          "body": "Registrate il giro di reparto, il debriefing operatorio o la consultazione al telefono o nel browser, come parte della routine normale."
+          "body": "Il referto validato viene inserito nella cartella del paziente, suddiviso per sezione. Niente copia-incolla."
         },
         {
-          "title": "Scegliete il documento ospedaliero",
-          "body": "Lettera di dimissione, referto operatorio, nota di reparto o un altro modello del vostro reparto, sul vostro carta intestata, con le vostre sezioni."
-        },
-        {
-          "title": "Rivedete la bozza e i suggerimenti di codifica",
-          "body": "Il medico curante corregge la sostanza clinica, controlla le diagnosi evidenziate e le proposte di codifica alla fine del documento, e approva."
-        },
-        {
-          "title": "Inviate alla cartella clinica",
-          "body": "Il rapporto validato viene inviato nell'EHR, suddiviso per sezione: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay o Ardentis dove connessi."
+          "title": "Telefono in reparto, desktop in ufficio",
+          "body": "Stesso record, sincronizzato in tempo reale."
         }
       ]
     },
     "proof": {
-      "badge": "Prove, non promesse",
-      "title": "Attivo in istituzioni, connesso a EHR, validato da medici",
-      "intro": "Gli ospedali adottano software di documentazione dopo un questionario di sicurezza e un pilota su casi reali, non dopo una demo. DocNote è progettato per superare entrambi.",
+      "badge": "Prova",
+      "title": "Già in uso in istituzioni",
+      "intro": "Le istituzioni sono già operative, gli EHR sono connessi e il ciclo di validazione funziona: il medico rimane l'autore e approva.",
       "points": [
         {
-          "title": "Istituzioni già operative",
-          "body": "DocNote è già in uso in reparti ospedalieri oggi, su lettere di dimissione, referti operatori e note di reparto, non in un piano futuro."
+          "title": "EHR connessi",
+          "body": "Il referto validato viene inviato nella cartella del paziente, suddiviso per sezione."
         },
         {
-          "title": "Sette EHR connessi",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis ricevono rapporti validati sezione per sezione. Esiste un'API di integrazione documentata per altri fornitori."
-        },
-        {
-          "title": "Il medico rimane l'autore",
-          "body": "Nessun documento raggiunge la cartella senza che un clinico lo abbia prima rivisto e validato. La codifica rimane un suggerimento finché il medico e il reparto di codifica non la confermano."
-        },
-        {
-          "title": "Hosting svizzero, conservazione audio breve",
-          "body": "I dati sanitari sono ospitati in Svizzera; l'audio viene conservato solo brevemente per produrre il documento, poi eliminato. Consultate la nostra pagina di conformità per il quadro completo."
+          "title": "Il medico approva",
+          "body": "DocNote redige un referto che voi validate. Rimani l'autore."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Implementare DocNote in un reparto",
-        "body": "Il percorso abituale inizia con un tipo di documento e un reparto o servizio. Il modello Word del reparto viene caricato, le bozze vengono validate su casi reali, poi l'implementazione si espande ad altri servizi. IT e direttori medici esaminano hosting, conservazione e integrazioni in parallelo, la stessa struttura che si applica a qualsiasi altro acquisto di software clinico."
-      },
-      {
-        "heading": "Dove vanno i suggerimenti di codifica",
-        "body": "I suggerimenti di codifica appaiono alla fine del documento, nella loro sezione dedicata, in modo da non inquinare mai il testo clinico. Nel vostro modello Word quella sezione può essere posizionata dove il vostro reparto di codifica si aspetta che sia. Svizzera: SwissDRG (ICD-10 / CHOP), TARDOC e Tarif 222 per odontoiatria. Francia: PMSI."
-      },
-      {
-        "heading": "Più clinici, una cartella",
-        "body": "In un day hospital, più clinici alimentano la stessa cartella clinica durante il giorno. Alla fine della giornata avete un record strutturato, non quattro note parziali da riconciliare, disponibile per gruppi il cui EHR è integrato."
-      }
-    ],
     "faq": [
       {
         "q": "Quali documenti ospedalieri può redigere DocNote?",
-        "a": "Lettere di dimissione, referti operatori, note di reparto e rapporti di consultazione, sui modelli del vostro reparto. Il medico rivede e valida ogni bozza prima che diventi parte della cartella."
+        "a": "Lettere di dimissione, referti operatori, note di reparto e referti di consultazione, sui modelli del vostro reparto."
       },
       {
         "q": "DocNote codifica il ricovero per noi?",
-        "a": "No. DocNote evidenzia le diagnosi secondarie significative nella lettera e aggiunge suggerimenti di codifica alla fine del documento: SwissDRG, TARDOC, Tarif 222 o PMSI. Sono proposte da validare; la responsabilità rimane con il medico e il reparto di codifica."
+        "a": "No. Aggiunge suggerimenti SwissDRG, TARDOC, Tarif 222 o PMSI alla fine del documento, come proposte da validare."
       },
       {
         "q": "Quali EHR sono supportati?",
-        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis. Il clinico collega gli account una volta, cerca il paziente da dentro DocNote e il rapporto validato viene inviato nella cartella di quel paziente, suddiviso per sezione. Il flusso è unidirezionale, da DocNote all'EHR."
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis. Il flusso è unidirezionale, da DocNote all'EHR."
       },
       {
-        "q": "Possiamo mantenere il nostro carta intestata istituzionale?",
-        "a": "Sì. Caricate il documento Word del reparto una volta; ogni rapporto successivo esce con il vostro carta intestata, sezioni e firma."
-      },
-      {
-        "q": "L'AI sostituisce la firma del medico?",
-        "a": "No. DocNote redige un rapporto che validate. Il medico rimane l'autore e approva."
-      },
-      {
-        "q": "Quanto tempo richiede l'implementazione per un servizio ospedaliero?",
-        "a": "La maggior parte dei servizi inizia con un tipo di documento e un reparto, valida il modello su casi reali, poi si espande, il ritmo dipende dalla vostra revisione IT, non dallo strumento."
+        "q": "Possiamo mantenere il nostro intestino istituzionale?",
+        "a": "Sì. Caricate una volta il documento Word del reparto; ogni referto successivo uscirà con il vostro intestino, le vostre sezioni e la vostra firma."
       }
     ],
     "cta": {
-      "title": "Porta DocNote nel tuo reparto",
-      "body": "Prenota una demo con il team sui tuoi tipi di documento (lettere di dimissione, referti operatori, note di reparto) con il tuo modello e il tuo EHR nel quadro.",
+      "title": "Prenota una demo per il tuo reparto",
+      "body": "Vedi i formati ospedalieri, i suggerimenti di codifica e l'invio all'EHR sui tuoi tipi di documento.",
       "primary": "Prenota una demo",
       "secondary": "Vedi la nostra conformità"
     },
@@ -422,255 +369,161 @@
     "hero": {
       "badge": "Per studio privato",
       "title": "DocNote per studio privato",
-      "subtitle": "Chiudi la cartella nello stesso momento in cui chiudi la porta.",
-      "lead": "Un medico di studio privato documenta tra un paziente e l'altro o alla sera. Non hai un reparto IT, un budget istituzionale e tempo per configurare uno strumento. Vuoi vedere il valore nella prima consultazione, senza dover installare nulla."
+      "subtitle": "Chiudi la cartella nello stesso momento in cui chiudi la porta."
     },
     "story": {
       "badge": "Il problema",
-      "title": "Il medico decide da solo, e vuole valore in una sola consultazione",
+      "title": "Nessun reparto IT, nessun tempo per configurare uno strumento",
       "paragraphs": [
-        "In uno studio, nessuno implementa software per te. Se uno strumento richiede un progetto, un giorno di formazione o un budget di integrazione, non viene usato. Ciò che viene usato è la cosa che puoi aprire sul telefono tra due pazienti e che produce una lettera che invieresti davvero.",
-        "DocNote registra la consultazione dal telefono o dal browser, redige un rapporto che validate, e segue i vostri modelli: scegliete il formato una volta, viene riutilizzato. All'iscrizione, i modelli predefiniti sono abbinati alla vostra specialità, quindi il primo rapporto già parla il vostro vocabolario.",
-        "I suggerimenti di codifica si trovano alla fine del documento, così il lavoro fatturabile smette di sfuggire: come proposte che confermate, mai applicate per vostro conto. E la bozza vi segue dal telefono al desktop senza riscrittura."
+        "Un medico di studio privato documenta tra un paziente e l'altro o alla sera. Non ha un reparto IT, un budget istituzionale, né il tempo di configurare uno strumento. Vuole vedere il valore nella prima consultazione, senza dover installare nulla."
       ]
     },
     "benefits": {
       "badge": "Cosa fa DocNote",
-      "title": "Tutto ciò che ti serve, niente che devi installare",
-      "subtitle": "Registra, ottieni il rapporto sul tuo modello, valida, esporta.",
+      "title": "Cosa fa DocNote",
       "items": [
         {
           "title": "Registra dal telefono o dal browser",
-          "body": "Niente da installare. Apri DocNote sul telefono in ambulatorio o in una scheda del browser alla scrivania; la registrazione inizia con un tocco."
+          "body": "Niente da installare."
         },
         {
-          "title": "Il rapporto segue i tuoi modelli",
-          "body": "Scegli il formato una volta (le tue sezioni, il tuo carta intestata, la tua approvazione) e viene riutilizzato per ogni consultazione successiva. Modelli predefiniti abbinati alla tua specialità all'iscrizione, in 61 specialità."
+          "title": "Il referto segue i tuoi modelli",
+          "body": "Scegli il formato una volta, viene riutilizzato."
+        },
+        {
+          "title": "Modelli adattati alla tua specialità",
+          "body": "Modelli predefiniti adattati alla tua specialità al momento dell'iscrizione, per 61 specialità."
         },
         {
           "title": "Suggerimenti di codifica alla fine del documento",
-          "body": "Diagnosi e atti fatturabili sono proposti nella loro sezione alla fine del rapporto, da validare, così il lavoro fatturabile smette di sfuggire senza trasformare la codifica in un secondo passaggio."
+          "body": "Così il lavoro fatturabile non sfugge più."
         },
         {
-          "title": "Dal telefono al desktop, senza riscrittura",
-          "body": "Registra sul telefono, termina e valida sul desktop. Stessa bozza, sincronizzata in tempo reale, non ricostruisci mai la nota quando cambi dispositivo."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Una consultazione, dall'inizio alla fine",
-      "subtitle": "Lo stesso flusso che vedrai nel video tutorial (registrazione, rapporto generato, correzione, esportazione) senza tagli.",
-      "items": [
-        {
-          "title": "Registra",
-          "body": "Tocca registra sul telefono o nel browser all'inizio della consultazione. Aggiungi lettere precedenti, esami o foto se le hai."
-        },
-        {
-          "title": "Ottieni il rapporto sul tuo modello",
-          "body": "In pochi istanti una bozza è pronta nel formato che hai scelto una volta, nel vocabolario della tua specialità."
-        },
-        {
-          "title": "Correggi e valida",
-          "body": "Modifichi la sostanza, non il layout, confermi o scarti i suggerimenti di codifica alla fine, e approvi. Rimani l'autore."
-        },
-        {
-          "title": "Esporta o invia",
-          "body": "Esporta la lettera come Word o PDF, o inviala nel tuo software di studio dove esiste un'integrazione."
+          "title": "La bozza ti segue dal telefono al desktop",
+          "body": "Senza dover riscrivere."
         }
       ]
     },
     "proof": {
-      "badge": "Prove da mostrare",
-      "title": "Guarda una consultazione completa, senza tagli",
-      "intro": "L'argomento più forte per uno studio non è un elenco di funzionalità; è una vera consultazione dalla registrazione al rapporto esportato. Quel video esiste già nella pagina del tutorial.",
+      "badge": "Prova",
+      "title": "Una consultazione, dall'inizio alla fine",
+      "intro": "Un video di una consultazione completa: registrazione, referto generato, correzione, esportazione, senza tagli. È nella pagina dei tutorial.",
       "points": [
         {
-          "title": "Registrazione, rapporto, correzione, esportazione",
-          "body": "Il tutorial mostra l'intero flusso su una vera consultazione, in un'unica ripresa, così puoi giudicare tu stesso la qualità della bozza."
+          "title": "Registrato in un'unica ripresa",
+          "body": "Registrazione, referto generato, correzione, esportazione. Nessun taglio."
         },
         {
-          "title": "61 specialità, 21 lingue dell'interfaccia",
-          "body": "Modelli predefiniti abbinati alla tua specialità all'iscrizione; interfaccia nella tua lingua; la lingua in cui parli con il paziente non determina la lingua del rapporto."
-        },
-        {
-          "title": "Hosting svizzero, conservazione audio breve",
-          "body": "Dati sanitari ospitati in Svizzera; audio conservato solo brevemente per produrre il documento, poi eliminato."
-        },
-        {
-          "title": "Validi ogni rapporto",
-          "body": "DocNote redige; tu correggi e firmi. Niente esce dall'app senza la tua validazione."
+          "title": "Giudica tu stesso la bozza",
+          "body": "Guarda il video nella pagina dei tutorial prima di iscriverti."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Niente da configurare prima della prima consultazione",
-        "body": "Iscriviti, scegli la tua specialità, e DocNote propone modelli predefiniti per essa. Puoi registrare la tua prima consultazione immediatamente, poi modificare il modello più tardi, o caricare il tuo documento Word una volta così ogni rapporto esce sul tuo carta intestata."
-      },
-      {
-        "heading": "Lavorare con un segretario",
-        "body": "Se un segretario medico formatta le tue lettere, DocNote può collegare un account segretario al tuo: il segretario lavora dentro il tuo account, con i tuoi modelli e i tuoi documenti, rivede e formatta, e tu validi e firmi. Vedi la pagina dei segretari medici."
-      }
-    ],
     "faq": [
       {
         "q": "Devo installare qualcosa?",
-        "a": "No. DocNote funziona nel browser e sul telefono. Apri l'app web o l'app mobile e registra."
+        "a": "No. DocNote funziona nel browser e sul telefono."
       },
       {
-        "q": "Il rapporto assomiglierà alle mie lettere?",
-        "a": "Sì. Scegli il tuo formato una volta (o carica il tuo modello Word) e ogni rapporto successivo viene riutilizzato in quel formato, con le tue sezioni e la tua firma."
+        "q": "Il referto assomiglierà alle mie lettere?",
+        "a": "Sì. Scegli il tuo formato una volta, o carica il tuo modello Word, e ogni referto successivo uscirà in quel formato."
       },
       {
         "q": "DocNote fattura per me?",
-        "a": "No. Propone suggerimenti di codifica alla fine del documento, nella loro sezione, da validare. La responsabilità della codifica rimane con te."
-      },
-      {
-        "q": "Quali specialità sono coperte?",
-        "a": "61 specialità, ciascuna con modelli di rapporto predefiniti abbinati all'iscrizione. L'interfaccia è disponibile in 21 lingue."
-      },
-      {
-        "q": "Posso iniziare sul telefono e finire sul desktop?",
-        "a": "Sì. La bozza ti segue dal telefono al desktop in tempo reale, senza riscrittura."
+        "a": "No. Propone suggerimenti di codifica alla fine del documento, da validare."
       },
       {
         "q": "Quanto costa?",
-        "a": "I piani per studi individuali sono nella pagina dei prezzi. Puoi aprire l'app web e registrare la tua prima consultazione prima di decidere."
+        "a": "I piani per gli studi individuali sono nella pagina dei prezzi. Puoi registrare la tua prima consultazione prima di decidere."
       }
     ],
     "cta": {
       "title": "Vedi il valore nella tua prima consultazione",
-      "body": "Apri l'app web, scegli la tua specialità e registra una consultazione. Niente da installare, niente da configurare.",
+      "body": "Self-service, non guidato dalle vendite. Apri l'app web e registra una consultazione, senza installare nulla.",
       "primary": "Apri l'app web",
       "secondary": "Vedi i prezzi"
     },
     "relatedLabel": "Pagine correlate"
   },
   "for-medical-secretaries": {
+    "navLabel": "Segretarie mediche",
     "navDesc": "Lavora all'interno dell'account del medico, con i suoi modelli.",
     "title": "Documentazione AI per segretarie mediche | DocNote",
     "description": "Un account segretaria lavora all'interno del medico: stessi modelli, stesso intestazione, niente riscrittura. La segretaria formatta ed esporta; il medico convalida. Prenota una demo.",
     "hero": {
       "badge": "Per segretarie mediche",
       "title": "DocNote per segretarie mediche",
-      "subtitle": "La segretaria lavora all'interno dell'account del medico, con i suoi modelli e i suoi documenti.",
-      "lead": "Nella maggior parte degli studi e reparti, non è il medico a formattare la lettera: è la segretaria. Eppure gli scribe AI sono venduti al medico, un account per medico. La segretaria resta fuori dal ciclo, riscrivendo ciò che l'AI ha prodotto."
+      "subtitle": "La segretaria lavora all'interno dell'account del medico, con i suoi modelli e i suoi documenti."
     },
     "story": {
       "badge": "Il problema",
-      "title": "La persona che formatta la lettera non è quella che detiene l'account",
+      "title": "Gli AI scribe sono venduti al medico",
       "paragraphs": [
-        "Il medico registra, l'AI redige, e poi la bozza arriva nella casella della segretaria come testo da riscrivere nel formato dello studio. Il tempo risparmiato da una parte viene speso dall'altra.",
-        "DocNote chiude questo ciclo con account collegati. Un account segretaria è collegato a un medico; l'intera sessione agisce come quel medico: i suoi modelli, i suoi referti, il suo intestazione. La segretaria rivede, completa, formatta ed esporta; il medico convalida e firma.",
-        "Poiché il referto corrisponde già al formato della lettera dello studio, non c'è riscrittura. E il contesto può essere aggiunto dopo (un risultato di laboratorio che arriva successivamente, immagini, una lettera precedente) senza dover ricominciare il referto."
+        "Nella maggior parte degli studi e dei reparti, non è il medico a formattare la lettera. È la segretaria. Eppure gli AI scribe sono venduti al medico, un account per medico. La segretaria resta fuori dal circuito, riscrivendo ciò che l'AI ha prodotto."
       ]
     },
     "benefits": {
       "badge": "Cosa fa DocNote",
-      "title": "Costruito intorno a come uno studio produce realmente le sue lettere",
-      "subtitle": "Account collegati, una chiara divisione dei ruoli, niente riscrittura.",
+      "title": "Cosa fa DocNote",
       "items": [
         {
           "title": "Account collegati",
-          "body": "Un account segretaria è collegato a un medico. L'intera sessione agisce come quel medico: i suoi modelli, i suoi referti, il suo intestazione."
+          "body": "Un account segretaria è collegato a un medico. L'intera sessione agisce come quel medico: i suoi modelli, i suoi referti, il suo intestino."
         },
         {
           "title": "La segretaria rivede, completa, formatta ed esporta",
-          "body": "Il medico convalida e firma. Ognuno mantiene il proprio ruolo; nessuno rifà il lavoro dell'altro."
+          "body": "Il medico valida e firma."
         },
         {
           "title": "Niente riscrittura",
-          "body": "Il referto corrisponde già al formato della lettera dello studio: le tue sezioni, i tuoi margini, il tuo blocco firma."
+          "body": "Il referto corrisponde già al formato della lettera dello studio."
         },
         {
           "title": "Il contesto può essere aggiunto dopo",
-          "body": "Un risultato di laboratorio che arriva successivamente, immagini, una lettera precedente: allegalo e il referto viene aggiornato senza ricominciare."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dalla registrazione del medico a una lettera pronta per l'invio",
-      "subtitle": "Una registrazione, due ruoli, nessun copia-incolla nel mezzo.",
-      "items": [
-        {
-          "title": "Il medico registra",
-          "body": "Nella sala visite o in reparto, dal telefono o dal browser."
-        },
-        {
-          "title": "DocNote redige sul modello dello studio",
-          "body": "Il referto esce nel formato della lettera dello studio, nel vocabolario della specialità del medico."
-        },
-        {
-          "title": "La segretaria rivede, completa e formatta",
-          "body": "All'interno dell'account del medico: aggiungi il risultato di laboratorio tardivo, regola i destinatari, controlla il layout, esporta."
-        },
-        {
-          "title": "Il medico convalida e firma",
-          "body": "Il medico rimane l'autore. Niente esce senza la sua convalida."
+          "body": "Un risultato di laboratorio che arriva successivamente, un'immagine o una lettera precedente, senza ricominciare da capo."
         }
       ]
     },
     "proof": {
       "badge": "Perché è importante",
-      "title": "Il decisore che ogni altro scribe ignora",
-      "intro": "In uno studio, la segretaria è spesso la prima persona a provare uno strumento di documentazione, la prima a vedere se risparmia lavoro o lo crea. Il tempo della segretaria è misurabile e budgettato, a differenza del tempo del medico.",
+      "title": "Il tempo della segretaria è misurabile",
+      "intro": "Il tempo risparmiato dalla segretaria è misurabile e budgettato, a differenza di quello del medico. In uno studio, spesso è la segretaria la prima a provare lo strumento.",
       "points": [
         {
-          "title": "Già in produzione",
-          "body": "Gli account segretaria sono attivi oggi negli studi, collegati agli account dei medici, con i loro modelli e i loro documenti."
+          "title": "Un vero account, non una soluzione alternativa",
+          "body": "La segretaria lavora all'interno dell'account del medico, con i suoi modelli e i suoi documenti."
         },
         {
-          "title": "Stessi modelli, stesso intestazione",
-          "body": "Poiché la segretaria lavora all'interno dell'account del medico, c'è una sola fonte di verità per il formato, non una copia da mantenere sincronizzata."
-        },
-        {
-          "title": "Chiare responsabilità",
-          "body": "La segretaria formatta ed esporta; il medico convalida e firma. DocNote redige un referto che il medico convalida, non sostituisce nessuno dei due ruoli."
-        },
-        {
-          "title": "Hosting svizzero, breve conservazione audio",
-          "body": "Dati sanitari ospitati in Svizzera; audio conservato solo brevemente per produrre il documento, poi eliminato."
+          "title": "La lettera esce corretta",
+          "body": "Niente riscrivere ciò che l'AI ha prodotto. Il referto corrisponde già al formato dello studio."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Configurare un account segretaria per il tuo studio",
-        "body": "Gli account segretaria sono collegati all'account di un medico dal team DocNote. Prenota una demo per il tuo studio e ti guideremo attraverso i tuoi formati di lettera, come la segretaria e il medico si passano il lavoro oggi e come l'account collegato si inserisce."
-      }
-    ],
     "faq": [
       {
         "q": "La segretaria ha bisogno dei propri modelli?",
-        "a": "No. L'account segretaria lavora all'interno dell'account del medico e utilizza i modelli, i referti e l'intestazione del medico."
+        "a": "No. L'account segretaria lavora all'interno dell'account del medico e utilizza i modelli, i referti e l'intestino del medico."
       },
       {
-        "q": "Chi convalida il referto?",
-        "a": "Il medico. La segretaria rivede, completa, formatta ed esporta; il medico convalida e firma."
+        "q": "Chi valida il referto?",
+        "a": "Il medico. La segretaria rivede, completa, formatta ed esporta; il medico valida e firma."
       },
       {
         "q": "Si può aggiungere un risultato di laboratorio dopo la generazione del referto?",
-        "a": "Sì. Allega il risultato, le immagini o una lettera precedente dopo; il referto viene aggiornato senza ricominciare."
+        "a": "Sì. Allegalo successivamente; il referto viene aggiornato senza ricominciare da capo."
       },
       {
-        "q": "Una segretaria può lavorare per più medici?",
-        "a": "Parla con il team della tua configurazione: come gli account segretaria sono collegati dipende da come è organizzato il tuo studio o reparto."
-      },
-      {
-        "q": "Come iniziamo?",
-        "a": "Prenota una demo per il tuo studio. Configuriamo l'account collegato con te e controlliamo i formati di lettera su casi reali."
+        "q": "Come si inizia?",
+        "a": "Prenota una demo per il tuo studio. Configuriamo l'account collegato con te."
       }
     ],
     "cta": {
-      "title": "Vedilo con i tuoi formati di lettera",
-      "body": "Prenota una demo per il tuo studio: configuriamo l'account collegato insieme e controlliamo il formato su casi reali.",
-      "primary": "Prenota una demo per il tuo studio",
-      "secondary": "Contatta il team"
+      "title": "Prenota una demo per il tuo studio",
+      "body": "Vedi come un account segretaria lavora all'interno dell'account del medico, sui tuoi formati di lettera.",
+      "primary": "Prenota una demo",
+      "secondary": "Contattaci"
     },
-    "relatedLabel": "Pagine correlate",
-    "navLabel": "Segretarie mediche"
+    "relatedLabel": "Pagine correlate"
   },
   "for-clinic-groups": {
     "navLabel": "Gruppi & cliniche",
@@ -680,97 +533,56 @@
     "hero": {
       "badge": "Per gruppi e cliniche",
       "title": "DocNote per gruppi e cliniche",
-      "subtitle": "Rollout su più sedi senza lasciare che ogni clinico inventi le proprie regole.",
-      "lead": "Un gruppo non chiede \"scrive bene\". Chiede altre tre domande: posso applicare una politica di sicurezza su tutti i miei clinici, si adatta ai miei sistemi e posso fatturarlo e monitorarlo centralmente."
+      "subtitle": "Implementa su più sedi senza lasciare che ogni clinico inventi le proprie regole."
     },
     "story": {
       "badge": "Il problema",
-      "title": "Tre domande che un gruppo si pone prima di chiedere sulla qualità della nota",
+      "title": "Un gruppo fa altre tre domande",
       "paragraphs": [
-        "Quando uno strumento viene distribuito a decine di clinici su più sedi, la qualità di una singola nota è la parte facile. Ciò che decide è se il gruppo può impostare le regole una volta (conservazione, logout, riproduzione audio) e sapere che si applicano ovunque, se il referto convalidato arriva nell'EHR del gruppo e se il tutto può essere fatturato e monitorato da un unico posto.",
-        "DocNote risponde con una politica a livello di organizzazione: un gruppo può applicare impostazioni su tutti i suoi account (conservazione trascrizioni, riproduzione audio disabilitata, logout automatico) senza dipendere dalle impostazioni individuali di ogni medico. Anche i modelli sono armonizzati: i documenti del gruppo vengono distribuiti a ogni clinico, con branding e sezioni condivisi.",
-        "Gli EHR del gruppo sono supportati nativamente e in un day hospital più clinici alimentano la stessa cartella clinica. La politica a livello di organizzazione non è una promessa: è già in produzione per un gruppo pilota."
+        "Un gruppo non chiede \"scrive bene\". Fa altre tre domande: posso applicare una politica di sicurezza su tutti i miei clinici, si adatta ai miei sistemi, e posso fatturare e monitorarlo centralmente."
       ]
     },
     "benefits": {
       "badge": "Cosa fa DocNote",
-      "title": "Imposta le regole una volta, applicale a ogni clinico",
-      "subtitle": "Politica, modelli, sistemi e fatturazione a livello di gruppo.",
+      "title": "Cosa fa DocNote",
       "items": [
         {
           "title": "Politica a livello di organizzazione",
-          "body": "Applica impostazioni su tutti gli account del gruppo (conservazione trascrizioni, riproduzione audio disabilitata, logout automatico) senza dipendere dalle impostazioni individuali di ogni medico."
+          "body": "Applica impostazioni su tutti gli account del gruppo: conservazione delle trascrizioni, riproduzione audio disabilitata, logout automatico. Senza dipendere dalle impostazioni individuali di ogni medico."
         },
         {
           "title": "Modelli armonizzati",
-          "body": "I documenti del gruppo vengono distribuiti a ogni clinico, con branding e sezioni condivisi. Uno stile unico, non uno per medico."
+          "body": "I documenti del gruppo vengono distribuiti a ogni clinico, con branding e sezioni condivisi."
         },
         {
           "title": "Si adatta allo stack esistente",
-          "body": "Gli EHR del gruppo sono supportati nativamente: il referto convalidato viene inviato nella cartella clinica, suddiviso per sezione. SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
+          "body": "Gli EHR di gruppo sono supportati nativamente."
         },
         {
           "title": "Documentazione collaborativa",
-          "body": "In un day hospital, più clinici alimentano la stessa cartella clinica. Alla fine della giornata: un record strutturato, non quattro note parziali da riconciliare."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Da un sito pilota all'intero gruppo",
-      "subtitle": "Il rollout segue la tua governance, non il contrario.",
-      "items": [
-        {
-          "title": "Definisci la politica",
-          "body": "Conservazione, logout, riproduzione audio e i modelli condivisi sono impostati a livello di organizzazione e applicati a ogni account."
-        },
-        {
-          "title": "Collega i sistemi",
-          "body": "Gli account sono collegati all'EHR del gruppo; il referto convalidato va nella cartella clinica, suddiviso per sezione."
-        },
-        {
-          "title": "Pilota su un sito",
-          "body": "Un reparto, casi reali, i tuoi modelli: poi la stessa configurazione viene estesa alle altre sedi."
-        },
-        {
-          "title": "Fattura e monitora centralmente",
-          "body": "Account, utilizzo e fatturazione sono gestiti a livello di gruppo anziché clinico per clinico."
+          "body": "In un day hospital, più clinici alimentano la stessa cartella paziente."
         }
       ]
     },
     "proof": {
-      "badge": "Distribuito, non promesso",
-      "title": "La politica a livello di organizzazione è già in produzione",
-      "intro": "L'argomento più forte su questa pagina è che la politica di gruppo non è in roadmap: è distribuita per un gruppo pilota oggi ed è ciò che un direttore dovrebbe chiedere di vedere per primo.",
+      "badge": "Prova",
+      "title": "Implementato, non una promessa",
+      "intro": "La politica a livello di organizzazione è già in produzione per un gruppo pilota.",
       "points": [
         {
           "title": "Politica applicata in produzione",
-          "body": "Conservazione trascrizioni, riproduzione audio disabilitata e logout automatico sono applicati sugli account di un gruppo pilota oggi."
+          "body": "Regole di conservazione, riproduzione e logout applicate oggi agli account di un gruppo pilota."
         },
         {
-          "title": "Sette EHR collegati",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis; un'API di integrazione documentata per altri vendor."
-        },
-        {
-          "title": "Hosting svizzero, breve conservazione audio",
-          "body": "Dati sanitari ospitati in Svizzera; audio conservato solo brevemente per produrre il documento, poi eliminato."
-        },
-        {
-          "title": "Convalida del medico, sempre",
-          "body": "DocNote redige un referto che il medico convalida. La politica governa lo strumento; il clinico rimane l'autore."
+          "title": "Fatturazione e monitoraggio centralizzati",
+          "body": "Gli account di gruppo sono fatturati e monitorati centralmente."
         }
       ]
     },
-    "sections": [
-      {
-        "heading": "Cosa ci serve per pianificare un rollout di gruppo",
-        "body": "Numero di clinici e sedi, l'EHR in uso, il paese (Svizzera o Francia cambiano i suggerimenti di codifica: SwissDRG, TARDOC, Tarif 222 o PMSI) e se un servizio day-hospital è incluso. Con queste quattro risposte possiamo proporre una configurazione pilota."
-      }
-    ],
     "faq": [
       {
         "q": "Possiamo forzare le stesse impostazioni su ogni clinico?",
-        "a": "Sì. La politica a livello di organizzazione applica conservazione trascrizioni, riproduzione audio e logout automatico su tutti gli account del gruppo, indipendentemente dalle impostazioni individuali."
+        "a": "Sì. La politica a livello di organizzazione applica conservazione delle trascrizioni, riproduzione audio e logout automatico su tutti gli account del gruppo."
       },
       {
         "q": "Ogni sede può usare gli stessi modelli di lettera?",
@@ -778,20 +590,16 @@
       },
       {
         "q": "Quali EHR sono supportati?",
-        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis, con consegna unidirezionale del referto convalidato nella cartella clinica. Esiste un'API di integrazione documentata per altri vendor."
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis. Esiste un'API di integrazione documentata per altri fornitori."
       },
       {
         "q": "La fatturazione è per clinico o per gruppo?",
-        "a": "Gli account di gruppo sono fatturati e monitorati centralmente. Parla con il team per i dettagli della tua configurazione."
-      },
-      {
-        "q": "La modalità day-hospital è disponibile per noi?",
-        "a": "La documentazione collaborativa day-hospital è disponibile per i gruppi il cui EHR è integrato."
+        "a": "Gli account di gruppo sono fatturati e monitorati centralmente. Parla con il team per i dettagli del tuo setup."
       }
     ],
     "cta": {
-      "title": "Parla con il team del tuo gruppo",
-      "body": "Dicci quanti clinici, quale EHR e quale paese: ti rispondiamo con una configurazione pilota.",
+      "title": "Parla con il team della tua implementazione",
+      "body": "Dicci il numero di clinici, il tuo EHR e il tuo paese, e ti risponderemo con un piano di implementazione.",
       "primary": "Parla con il team",
       "secondary": "Prenota una demo"
     },
@@ -803,204 +611,135 @@
     "title": "Software di codifica SwissDRG, TARDOC & PMSI | DocNote",
     "description": "Le diagnosi fatturabili emergono nella lettera stessa: suggerimenti SwissDRG, TARDOC, Tarif 222 e PMSI da convalidare, non una seconda passata di codifica. Prenota una demo.",
     "hero": {
-      "badge": "Codifica & fatturazione",
+      "badge": "Codifica e fatturazione",
       "title": "Codifica e fatturazione integrate nel referto",
-      "subtitle": "Le diagnosi fatturabili escono dalla lettera stessa, non da una seconda passata.",
-      "lead": "La codifica smette di essere una seconda passata di documentazione. La lettera stessa fa emergere le diagnosi fatturabili: meno comorbilità dimenticate, meno recuperi la sera: come suggerimenti che il medico e il reparto codifica convalidano."
+      "subtitle": "Le diagnosi fatturabili emergono dalla lettera stessa, non da una seconda passata."
     },
     "story": {
-      "badge": "Nel prodotto",
-      "title": "Suggerimenti nel loro slot, mai nel testo clinico",
+      "badge": "Perché è importante",
+      "title": "Un vantaggio strutturale, non un'altra funzionalità",
       "paragraphs": [
-        "Le diagnosi secondarie significative emergono all'interno della lettera di dimissione, dove il clinico sta già leggendo. I suggerimenti di codifica appaiono alla fine del documento, nel loro slot, non inquinano il testo clinico e possono essere posizionati dove vuoi nel tuo modello Word.",
-        "In Svizzera i suggerimenti seguono SwissDRG (ICD-10 / CHOP), TARDOC e Tarif 222 per odontoiatria. In Francia seguono PMSI. Con TARDOC, una breve dettatura al letto diventa una descrizione d'esame completa e fatturabile: documenti una volta per la cura e la fatturazione, non due.",
-        "La formulazione è importante: questi sono suggerimenti e proposte di codifica da convalidare. La responsabilità della codifica rimane al medico e al reparto codifica. DocNote non codifica per tuo conto e non certifica la conformità della fatturazione, si assicura che nulla di fatturabile sia dimenticato nella lettera."
+        "Nessuno scribe anglo-americano generalista conosce TARDOC, SwissDRG o Tarif 222. Questo è un vantaggio strutturale nel mercato svizzero, non un'altra funzionalità. La codifica smette di essere una seconda passata di documentazione: meno comorbilità perse, meno recuperi alla sera."
       ]
     },
     "benefits": {
-      "badge": "Cosa ottieni",
-      "title": "Documenta una volta, per la cura e la fatturazione",
-      "subtitle": "Il testo clinico rimane clinico; lo slot di codifica fa il resto.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
-          "title": "Diagnosi secondarie significative nella lettera",
-          "body": "Le comorbilità importanti per il ricovero emergono all'interno della lettera di dimissione, così non vengono riscoperte settimane dopo dal reparto codifica."
+          "title": "Emergono all'interno della lettera",
+          "body": "Le diagnosi secondarie significative vengono evidenziate all'interno della lettera di dimissione."
         },
         {
-          "title": "Suggerimenti di codifica alla fine del documento",
-          "body": "Nel loro slot, separato dal testo principale, posizionato dove il tuo modello Word li aspetta."
+          "title": "Suggerimenti alla fine del documento",
+          "body": "Nella loro sezione dedicata: non inquinano il testo clinico e possono essere posizionati dove vuoi nel tuo modello Word."
         },
         {
-          "title": "Svizzera: SwissDRG, TARDOC, Tarif 222",
-          "body": "SwissDRG (ICD-10 / CHOP) per ricoveri, TARDOC per servizi ambulatoriali, Tarif 222 per odontoiatria."
+          "title": "Svizzera e Francia",
+          "body": "Svizzera: SwissDRG (ICD-10 / CHOP), TARDOC, Tarif 222 per odontoiatria. Francia: PMSI."
         },
         {
-          "title": "Francia: PMSI",
-          "body": "Suggerimenti PMSI alla fine della lettera, per il medico e il DIM da convalidare."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dalla dettatura a una lettera con il suo slot di codifica",
-      "subtitle": "Nessuna seconda passata, nessuno strumento di codifica separato.",
-      "items": [
-        {
-          "title": "Registra e redigi",
-          "body": "L'incontro o la dettatura al letto viene catturata; DocNote redige il referto sul tuo modello."
-        },
-        {
-          "title": "Diagnosi emerse nel testo",
-          "body": "Le diagnosi secondarie significative sono evidenziate all'interno della lettera mentre viene redatta."
-        },
-        {
-          "title": "Suggerimenti nello slot di codifica",
-          "body": "Suggerimenti SwissDRG, TARDOC, Tarif 222 o PMSI appaiono alla fine del documento, nel loro slot."
-        },
-        {
-          "title": "Il medico e il reparto codifica convalidano",
-          "body": "I suggerimenti sono confermati, corretti o respinti. La responsabilità rimane dove appartiene."
+          "title": "TARDOC nella pratica",
+          "body": "Una breve dettatura al letto del paziente diventa una descrizione completa e fatturabile dell'esame. Documenti una volta per l'assistenza e per la fatturazione, non due."
         }
       ]
     },
     "proof": {
-      "badge": "Perché è un differenziatore",
-      "title": "Nessuno scribe generalista conosce TARDOC, SwissDRG o Tarif 222",
-      "intro": "Questo è un vantaggio strutturale nel mercato svizzero, non un'altra feature: le tariffe sono locali e uno strumento di documentazione costruito altrove non le parla.",
+      "badge": "Disciplina",
+      "title": "Suggerimenti da validare, sempre",
+      "intro": "DocNote scrive suggerimenti e proposte di codifica da validare. La responsabilità della codifica rimane al medico e al reparto di codifica.",
       "points": [
         {
-          "title": "Tariffe locali, nativamente",
-          "body": "SwissDRG, TARDOC e Tarif 222 per la Svizzera; PMSI per la Francia: integrati nel referto, non aggiunti dopo."
+          "title": "Proposte, non decisioni",
+          "body": "Ogni suggerimento viene validato o scartato da te."
         },
         {
-          "title": "Testo d'esame pronto per TARDOC",
-          "body": "Una breve dettatura al letto viene espansa nella descrizione strutturata dell'esame che gli assicuratori e TARDOC si aspettano, senza riscrivere l'esame da zero."
-        },
-        {
-          "title": "Suggerimenti, da convalidare",
-          "body": "Mai applicati per tuo conto, mai certificati. Il medico e il reparto codifica hanno l'ultima parola."
-        },
-        {
-          "title": "Il tuo modello decide dove va lo slot",
-          "body": "La codifica ottiene il suo slot nel modello Word, separato dal testo principale."
+          "title": "Nella loro sezione dedicata",
+          "body": "I suggerimenti si trovano alla fine del documento, separati dal testo clinico."
         }
       ]
     },
     "faq": [
       {
-        "q": "DocNote codifica automaticamente i miei ricoveri?",
-        "a": "No. Fa emergere diagnosi secondarie significative nella lettera e aggiunge suggerimenti di codifica alla fine del documento. Sono proposte da convalidare; la responsabilità della codifica rimane al medico e al reparto codifica."
+        "q": "DocNote codifica i miei ricoveri per me?",
+        "a": "No. Aggiunge suggerimenti di codifica alla fine del documento, come proposte da validare. La responsabilità rimane al medico e al reparto di codifica."
       },
       {
         "q": "Quali sistemi di codifica sono coperti?",
         "a": "Svizzera: SwissDRG (ICD-10 / CHOP), TARDOC e Tarif 222 per odontoiatria. Francia: PMSI."
       },
       {
-        "q": "I suggerimenti appaiono nel testo clinico?",
-        "a": "No. Si trovano nel loro slot alla fine del documento e quello slot può essere posizionato dove vuoi nel tuo modello Word."
+        "q": "I suggerimenti appaiono all'interno del testo clinico?",
+        "a": "No. Si trovano nella loro sezione dedicata alla fine del documento, posizionati dove vuoi nel tuo modello Word."
       },
       {
         "q": "Come funziona il supporto TARDOC nella pratica?",
-        "a": "Una breve dettatura al letto diventa una descrizione d'esame completa e fatturabile: documenti una volta per la cura e la fatturazione, non due."
-      },
-      {
-        "q": "Questo sostituisce la nostra revisione di codifica?",
-        "a": "No. DocNote propone; il medico e il reparto codifica convalidano. Niente qui sostituisce la tua revisione di codifica."
+        "a": "Una breve dettatura al letto del paziente diventa una descrizione completa e fatturabile dell'esame. Documenti una volta, per l'assistenza e per la fatturazione."
       }
     ],
     "cta": {
-      "title": "Vedi lo slot di codifica sulle tue lettere",
-      "body": "Prenota una demo con una lettera di dimissione del tuo reparto: ti mostriamo dove emergono le diagnosi e dove atterrano i suggerimenti.",
+      "title": "Vedi i suggerimenti di codifica sulle tue lettere",
+      "body": "Prenota una demo con una lettera di dimissione o una consultazione del tuo servizio.",
       "primary": "Prenota una demo",
       "secondary": "Vedi i prezzi"
     },
     "relatedLabel": "Pagine correlate"
   },
   "ehr-integration": {
+    "navLabel": "Integrazione con l'EHR",
     "navDesc": "7 sistemi, inviati sezione per sezione.",
     "title": "Integrazione EHR per Scribe Medici AI | DocNote",
     "description": "DocNote invia report validati in SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis, suddivisi per sezione: flusso unidirezionale, senza copia-incolla. Prenota una demo.",
     "hero": {
       "badge": "Integrazione EHR",
-      "title": "Integrazione con la cartella clinica elettronica",
-      "subtitle": "Il report validato viene inserito nella cartella, suddiviso per sezione.",
-      "lead": "La documentazione non è completa quando la nota sembra buona. È completa quando è nella cartella: niente copia-incolla, nessuna versione fluttuante al di fuori dell'EHR."
+      "title": "Integrazione con la cartella elettronica del paziente",
+      "subtitle": "Il referto validato viene inserito nella cartella, suddiviso per sezione."
     },
     "story": {
-      "badge": "Nel prodotto",
-      "title": "Sette sistemi, un flusso: da DocNote alla cartella",
+      "badge": "Come funziona",
+      "title": "Unidirezionale, per design",
       "paragraphs": [
-        "DocNote invia report validati in sette sistemi di cartella clinica elettronica: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay e Ardentis. Il medico collega il proprio account DocNote al proprio account EHR una volta, tramite OAuth2, e cerca il paziente nell'EHR direttamente da DocNote.",
-        "Una volta che il report è validato, viene inviato nella cartella del paziente, suddiviso per sezione: le sezioni del report vanno nelle sezioni della cartella, non come un unico blocco incollato.",
-        "Il flusso è unidirezionale: DocNote invia all'EHR. DocNote non legge la cartella clinica; la ricerca del paziente è una ricerca, non un'importazione della cartella. Esiste un'API di integrazione documentata per i fornitori di EHR che desiderano connettersi."
+        "Il flusso è unidirezionale: DocNote invia all'EHR. DocNote non legge la tua cartella paziente, e la ricerca del paziente è una ricerca, non un'importazione della cartella. La documentazione è completata quando il referto è nella cartella: niente copia-incolla, nessuna versione fluttuante fuori dall'EHR."
       ]
     },
     "benefits": {
-      "badge": "Cosa ottieni",
-      "title": "Il report e la cartella rimangono lo stesso oggetto",
-      "subtitle": "Collegati una volta, cercati da DocNote, inviati sezione per sezione.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
           "title": "Sette sistemi supportati",
-          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis: EHR ospedalieri e di gruppo in Svizzera e Francia."
+          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
         },
         {
-          "title": "Collegati una volta, tramite OAuth2",
-          "body": "Il medico collega il proprio account DocNote al proprio account EHR una volta. Nessuna condivisione di password, nessun esportazione manuale."
+          "title": "Collegato una volta, via OAuth2",
+          "body": "Il clinico collega il suo account DocNote al suo account EHR una volta."
         },
         {
-          "title": "Ricerca del paziente da DocNote",
-          "body": "Trova il paziente nell'EHR senza uscire dall'app, quindi collega il report alla cartella corretta."
+          "title": "Ricerca del paziente da dentro DocNote",
+          "body": "Cerca il tuo paziente nell'EHR senza uscire da DocNote."
         },
         {
-          "title": "Inviati suddivisi per sezione",
-          "body": "Il report validato va nella cartella del paziente sezione per sezione: niente copia-incolla, nessuna versione fluttuante al di fuori dell'EHR."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Da bozza validata a cartella clinica",
-      "subtitle": "Unidirezionale, deliberato e sempre dopo la validazione.",
-      "items": [
-        {
-          "title": "Collega gli account una volta",
-          "body": "Il medico autorizza DocNote rispetto al proprio account EHR tramite OAuth2."
+          "title": "Inviato suddiviso per sezione",
+          "body": "Il referto validato viene inviato nella cartella di quel paziente, suddiviso per sezione."
         },
         {
-          "title": "Cerca il paziente",
-          "body": "Da DocNote, cerca il paziente nell'EHR e seleziona la cartella."
-        },
-        {
-          "title": "Valida il report",
-          "body": "Il medico rivede e approva. Niente viene inviato prima della validazione."
-        },
-        {
-          "title": "Invia sezione per sezione",
-          "body": "Il report viene consegnato nella cartella del paziente, suddiviso per sezione."
+          "title": "Un'API per i fornitori EHR",
+          "body": "Esiste un'API di integrazione documentata per i fornitori che vogliono connettersi."
         }
       ]
     },
     "proof": {
-      "badge": "Precisione da preservare",
-      "title": "Unidirezionale, per design",
-      "intro": "Vale la pena essere precisi su ciò che l'integrazione fa e non fa: la precisione è ciò che viene esaminato dall'IT ospedaliero.",
+      "badge": "Precisione",
+      "title": "Cos'è l'integrazione, e cosa non è",
+      "intro": "Una direzione, nessuna lettura, nessun copia-incolla.",
       "points": [
         {
-          "title": "DocNote invia all'EHR",
-          "body": "La direzione è DocNote → cartella clinica. Non c'è un flusso di ritorno dall'EHR a DocNote."
+          "title": "DocNote invia, non legge",
+          "body": "Il referto va da DocNote all'EHR. Niente torna indietro."
         },
         {
-          "title": "DocNote non legge la cartella clinica",
-          "body": "La ricerca del paziente restituisce la cartella a cui allegare; non importa il contenuto della cartella in DocNote."
-        },
-        {
-          "title": "Solo i report validati vengono inviati",
-          "body": "Le bozze rimangono in DocNote fino all'approvazione del medico."
-        },
-        {
-          "title": "API di integrazione documentata",
-          "body": "I fornitori di EHR non ancora connessi possono integrare un'API documentata."
+          "title": "Nessuna versione fuori dalla cartella",
+          "body": "La documentazione è completata quando il referto validato è nella cartella del paziente."
         }
       ]
     },
@@ -1011,29 +750,24 @@
       },
       {
         "q": "DocNote legge anche dall'EHR?",
-        "a": "No. Il flusso è unidirezionale: DocNote invia il report validato nell'EHR. DocNote non legge la cartella clinica."
+        "a": "No. Il flusso è unidirezionale: DocNote invia il referto validato nell'EHR."
       },
       {
         "q": "Come funziona la ricerca del paziente?",
-        "a": "Il medico cerca il paziente nell'EHR da DocNote e seleziona la cartella a cui inviare. È una ricerca, non un'importazione della cartella."
+        "a": "Cerca il paziente nell'EHR da dentro DocNote e seleziona la cartella a cui inviare. È una ricerca, non un'importazione della cartella."
       },
       {
-        "q": "Come viene collegato l'account?",
-        "a": "Una volta, tramite OAuth2, tra l'account DocNote del medico e il suo account EHR."
-      },
-      {
-        "q": "Il nostro EHR non è nella lista: cosa fare?",
-        "a": "Esiste un'API di integrazione documentata per i fornitori di EHR che desiderano connettersi. Parla con il team."
+        "q": "Il nostro EHR non è nella lista. E allora?",
+        "a": "Esiste un'API di integrazione documentata per i fornitori EHR che vogliono connettersi. Parla con il team."
       }
     ],
     "cta": {
-      "title": "Vedi il report arrivare nel tuo EHR",
-      "body": "Prenota una demo con il tuo sistema (SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay o Ardentis) o chiedi informazioni sull'API di integrazione.",
+      "title": "Vedi il referto arrivare nel tuo EHR",
+      "body": "Prenota una demo sul tuo sistema, dalla ricerca del paziente al referto suddiviso per sezione.",
       "primary": "Prenota una demo",
-      "secondary": "Contatta il team"
+      "secondary": "Contattaci"
     },
-    "relatedLabel": "Pagine correlate",
-    "navLabel": "Integrazione con l'EHR"
+    "relatedLabel": "Pagine correlate"
   },
   "custom-word-templates": {
     "navLabel": "I tuoi modelli Word",
@@ -1042,115 +776,76 @@
     "description": "Carica il tuo modello Word una volta: ogni report mantiene la tua intestazione, sezioni e firma. La revisione rimane clinica, non estetica. Scopri come funziona.",
     "hero": {
       "badge": "Modelli Word personalizzati",
-      "title": "I tuoi documenti Word, non quelli dell'AI",
-      "subtitle": "Carica il tuo modello una volta. Ogni report successivo avrà la tua struttura e branding esatti.",
-      "lead": "Niente più riformattazione dell'output AI per adattarlo all'intestazione dell'ospedale. Ogni report è già il tuo documento. La revisione rimane clinica, non estetica."
+      "title": "I tuoi documenti Word, non quelli dell'IA",
+      "subtitle": "Carica il tuo modello una volta sola. Ogni referto successivo avrà la tua struttura e branding esatti."
     },
     "story": {
-      "badge": "Nel prodotto",
-      "title": "L'obiezione numero uno nelle demo ospedaliere, risolta prima che venga sollevata",
+      "badge": "Perché è importante",
+      "title": "L'obiezione principale nelle demo ospedaliere",
       "paragraphs": [
-        "\"Il tuo output è bello ma non assomiglia alla nostra lettera.\" Ogni reparto ha un documento perfezionato negli anni: l'intestazione, i margini, l'ordine delle sezioni, il blocco firma. Uno strumento che produce buon testo nel documento sbagliato crea un lavoro di formattazione per qualcuno.",
-        "Con DocNote carichi il tuo modello Word una volta. Da quel momento ogni report avrà la tua struttura e branding esatti: la tua intestazione, i tuoi margini, le tue sezioni, la tua firma. La codifica ha il suo spazio nel modello, separato dal testo clinico, così i suggerimenti non si mescolano mai con il contenuto clinico.",
-        "L'allineamento dei paragrafi viene preservato all'esportazione (giustificato, centrato, a destra) così ciò che vedi in DocNote è ciò che esce come Word o PDF. La revisione torna a essere clinica: correggi la sostanza, non il layout."
+        "\"Il vostro output è bello, ma non assomiglia alla nostra lettera.\" DocNote risponde a questa obiezione prima che venga sollevata: niente più riformattazione dell'output dell'IA per adattarlo all'intestazione dell'ospedale. Ogni referto è già il tuo documento."
       ]
     },
     "benefits": {
-      "badge": "Cosa ottieni",
-      "title": "Ogni report è già il tuo documento",
-      "subtitle": "Struttura, branding e spazi definiti una volta, riutilizzati ogni volta.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
-          "title": "La tua intestazione, margini, sezioni, firma",
-          "body": "Il documento Word del reparto è il modello. DocNote ricrea i report futuri con quella struttura e branding esatti."
+          "title": "La tua intestazione, i tuoi margini, le tue sezioni, la tua firma",
+          "body": "Tutto proviene dal documento Word che carichi una volta sola."
         },
         {
-          "title": "Uno spazio per la codifica, separato dal testo",
-          "body": "I suggerimenti di codifica hanno il loro posto nel modello (ovunque il tuo reparto di codifica li aspetti) e non inquinano mai il testo clinico."
+          "title": "La codifica ha il suo spazio dedicato",
+          "body": "Separato dal testo principale, posizionato dove vuoi nel modello."
         },
         {
           "title": "Allineamento preservato all'esportazione",
-          "body": "Giustificato, centrato, a destra: l'allineamento dei paragrafi del tuo modello sopravvive all'esportazione in Word e PDF."
+          "body": "Giustificato, centrato e allineato a destra come progettato."
         },
         {
-          "title": "La revisione torna a essere clinica",
-          "body": "Correggi la sostanza, non il layout. La riformattazione estetica scompare dal passaggio di validazione."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Una volta per il modello, poi ogni volta per il report",
-      "subtitle": "Nessun editor di modelli da imparare: il tuo file Word è la fonte.",
-      "items": [
-        {
-          "title": "Carica il modello Word",
-          "body": "Carica il documento del reparto o dello studio una volta: intestazione, sezioni, blocco firma, spazio per la codifica."
-        },
-        {
-          "title": "Registra e abbozza",
-          "body": "DocNote abbozza il report direttamente in quella struttura."
-        },
-        {
-          "title": "Correggi la sostanza",
-          "body": "Il medico rivede il contenuto clinico; il layout è già corretto."
-        },
-        {
-          "title": "Esporta o invia",
-          "body": "Word o PDF con allineamento preservato, o direttamente nell'EHR dove connesso."
+          "title": "La revisione torna ad essere clinica",
+          "body": "Correggi la sostanza, non il layout."
         }
       ]
     },
     "proof": {
-      "badge": "Perché questo è un differenziatore",
-      "title": "L'output generico è l'obiezione; il tuo documento è la risposta",
-      "intro": "La maggior parte degli scribe offre un layout fisso e lascia l'intestazione a qualcun altro. DocNote prende il tuo documento come modello, ecco perché i reparti smettono di fare la domanda.",
+      "badge": "Impatto",
+      "title": "La revisione rimane clinica, non estetica",
+      "intro": "Niente più riformattazione dell'output dell'IA per adattarlo all'intestazione dell'ospedale.",
       "points": [
         {
-          "title": "Il tuo file, non un costruttore di modelli",
-          "body": "Il documento Word che il tuo reparto già conosce è ciò che DocNote riproduce."
+          "title": "Già il tuo documento",
+          "body": "Ogni referto esce con la tua intestazione, le tue sezioni e la tua firma."
         },
         {
-          "title": "Armonizzato in un gruppo",
-          "body": "I gruppi distribuiscono gli stessi modelli a ogni medico, con branding e sezioni condivise."
-        },
-        {
-          "title": "Funziona anche per i segretari",
-          "body": "Un segretario che lavora nell'account del medico usa gli stessi modelli, nessuna seconda copia da sincronizzare."
-        },
-        {
-          "title": "Spazio per la codifica deciso da te",
-          "body": "Dove vanno i suggerimenti è deciso nel modello, non dallo strumento."
+          "title": "Niente da ricostruire",
+          "body": "Carica il documento Word esistente una volta sola. Nessun editor di modelli da imparare."
         }
       ]
     },
     "faq": [
       {
-        "q": "Devo ricostruire il mio modello in DocNote?",
-        "a": "No. Carica il tuo documento Word esistente una volta; DocNote ricrea i report futuri con la sua struttura e branding."
+        "q": "Devo ricostruire il mio modello all'interno di DocNote?",
+        "a": "No. Carica il tuo documento Word esistente una volta sola; ogni referto successivo seguirà la sua struttura e branding."
       },
       {
         "q": "L'intestazione e il blocco firma saranno preservati?",
-        "a": "Sì: intestazione, margini, sezioni e firma provengono dal tuo modello."
+        "a": "Sì. Intestazione, margini, sezioni e firma provengono dal tuo modello."
       },
       {
         "q": "Dove vanno i suggerimenti di codifica?",
-        "a": "Nel loro spazio nel modello, separato dal testo, posizionato dove vuoi."
-      },
-      {
-        "q": "L'allineamento viene mantenuto all'esportazione?",
-        "a": "Sì. Allineamento giustificato, centrato e a destra vengono preservati all'esportazione."
+        "a": "Nel loro spazio dedicato nel modello, separato dal testo principale, posizionato dove vuoi."
       },
       {
         "q": "Possono coesistere più modelli?",
-        "a": "Sì: ad esempio uno per tipo di documento (lettera di dimissione, referto operatorio, nota di reparto) o per servizio."
+        "a": "Sì. Ad esempio uno per tipo di documento: lettera di dimissione, referto operatorio, nota di reparto."
       }
     ],
     "cta": {
-      "title": "Porta la tua intestazione alla demo",
-      "body": "Inviaci il modello Word del reparto e ti mostreremo il report che esce nel tuo documento, non nel nostro.",
+      "title": "Vedi la tua lettera uscire da DocNote",
+      "body": "Prenota una demo con il tuo modello Word, o guarda prima il flusso nel tutorial.",
       "primary": "Prenota una demo",
-      "secondary": "Guarda il tutorial"
+      "secondary": "Vedi il tutorial"
     },
     "relatedLabel": "Pagine correlate"
   },
@@ -1161,85 +856,50 @@
     "description": "Allega lettere precedenti, esami, imaging e foto prima o dopo la registrazione. Elementi tardivi aggiornano il report senza ricominciare. Guarda il tutorial.",
     "hero": {
       "badge": "Contesto clinico",
-      "title": "Il report riflette la cartella, non solo ciò che è stato detto ad alta voce",
-      "subtitle": "Allega lettere precedenti, risultati di laboratorio, imaging e foto.",
-      "lead": "La nota riflette il quadro clinico completo, non solo ciò che è stato detto ad alta voce: meno omissioni, meno correzioni \"per favore aggiungi i risultati degli esami\" dopo il fatto."
+      "title": "Il referto riflette la cartella, non solo ciò che è stato detto ad alta voce",
+      "subtitle": "Allega lettere precedenti, risultati di laboratorio, imaging e foto."
     },
     "story": {
-      "badge": "Nel prodotto",
-      "title": "Audio più file, prima o dopo la registrazione",
+      "badge": "Perché è importante",
+      "title": "Meno omissioni",
       "paragraphs": [
-        "Una consultazione raramente è tutta la storia. C'è la lettera di dimissione precedente, il pannello di laboratorio di questa mattina, il referto di imaging, la foto della ferita. DocNote ti permette di allegarli, e il modello li utilizza quando struttura il report.",
-        "I documenti allegati prima o dopo la registrazione vengono incorporati nel report. Gli elementi aggiunti in ritardo (un risultato di laboratorio che arriva nel pomeriggio) vengono presi in considerazione senza rigenerare tutto, così le correzioni che hai già fatto vengono mantenute.",
-        "Una modalità conversazionale ti permette di richiedere una modifica o un'aggiunta dopo la generazione: chiedi di aggiungere gli esami, di abbreviare una sezione, di cambiare un destinatario. Meno omissioni, meno messaggi \"per favore aggiungi gli esami\" dopo."
+        "Una consultazione è più di ciò che è stato detto ad alta voce. Lettere precedenti, risultati di laboratorio, imaging e foto appartengono al referto. Con il contesto allegato, ci sono meno omissioni e meno messaggi del tipo \"per favore aggiungi i laboratori\" dopo."
       ]
     },
     "benefits": {
-      "badge": "Cosa ottieni",
-      "title": "Una nota più forte dalla stessa consultazione",
-      "subtitle": "Contesto dentro, omissioni fuori.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
-          "title": "Allega lettere precedenti, esami, imaging e foto",
-          "body": "Aggiungi i file accanto alla registrazione; il modello li utilizza quando struttura il report."
+          "title": "Allega prima o dopo la registrazione",
+          "body": "Documenti allegati prima o dopo la registrazione sono integrati nel referto."
         },
         {
-          "title": "Prima o dopo la registrazione",
-          "body": "I documenti allegati in qualsiasi momento vengono incorporati nel report, non devi avere tutto pronto prima di premere registra."
+          "title": "Elementi tardivi vengono raccolti",
+          "body": "Un risultato che arriva dopo viene aggiunto senza rigenerare tutto."
         },
         {
-          "title": "Elementi tardivi senza rigenerare tutto",
-          "body": "Un risultato che arriva dopo viene preso in considerazione mentre le tue correzioni precedenti vengono preservate."
+          "title": "Modalità conversazionale",
+          "body": "Richiedi una modifica o un'aggiunta dopo la generazione."
         },
         {
-          "title": "Modalità conversazionale dopo la generazione",
-          "body": "Richiedi una modifica o un'aggiunta in linguaggio naturale una volta che la bozza esiste."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dalla consultazione e dai file a un report completo",
-      "subtitle": "Lo stesso passaggio di validazione; più del quadro nella bozza.",
-      "items": [
-        {
-          "title": "Registra l'incontro",
-          "body": "Telefono o browser, come al solito."
-        },
-        {
-          "title": "Allega il contesto",
-          "body": "Lettera di dimissione precedente, esami, imaging, foto: prima o dopo la registrazione."
-        },
-        {
-          "title": "Rivedi la bozza",
-          "body": "Il report riflette la cartella e la conversazione; correggi la sostanza."
-        },
-        {
-          "title": "Chiedi la modifica di cui hai bisogno",
-          "body": "In modalità conversazionale, richiedi un'aggiunta o una modifica; valida ed esporta."
+          "title": "Tu scegli cosa allegare",
+          "body": "DocNote non legge la cartella del paziente. Alleghi i file tu stesso."
         }
       ]
     },
     "proof": {
-      "badge": "Perché è importante",
-      "title": "Meno omissioni, meno correzioni successive",
-      "intro": "Il valore non è una nota più grande; è una nota che non deve essere riaperta perché mancavano gli esami.",
+      "badge": "Impatto",
+      "title": "Aggiungi contesto dopo, mantieni le tue correzioni",
+      "intro": "Elementi aggiunti dopo sono integrati senza ricominciare da zero.",
       "points": [
         {
-          "title": "Completezza del report",
-          "body": "Con il contesto incluso, meno risultati mancano dalla bozza: il report riflette il quadro clinico completo."
+          "title": "Nessuna rigenerazione da zero",
+          "body": "Aggiunte tardive non sovrascrivono le correzioni che hai già fatto."
         },
         {
-          "title": "Contesto tardivo, correzioni preservate",
-          "body": "Aggiungere un risultato dopo aggiorna il report senza buttare via ciò che hai già modificato."
-        },
-        {
-          "title": "Utile anche per i segretari",
-          "body": "Un segretario che lavora nell'account del medico può aggiungere il risultato di laboratorio tardivo o la lettera precedente senza ricominciare."
-        },
-        {
-          "title": "Validazione del medico, sempre",
-          "body": "Il contesto migliora la bozza; il medico rivede e firma comunque."
+          "title": "Chiedi la modifica",
+          "body": "Una modalità conversazionale ti permette di richiedere una modifica o un'aggiunta dopo la generazione."
         }
       ]
     },
@@ -1250,129 +910,87 @@
       },
       {
         "q": "Devo allegare tutto prima della registrazione?",
-        "a": "No. I documenti allegati prima o dopo la registrazione vengono incorporati nel report."
+        "a": "No. Documenti allegati prima o dopo la registrazione sono integrati nel referto."
       },
       {
-        "q": "Se un risultato di laboratorio arriva dopo, devo rigenerare tutto il report?",
-        "a": "No. Gli elementi tardivi vengono presi in considerazione senza rigenerare tutto; le tue correzioni vengono mantenute."
-      },
-      {
-        "q": "Posso chiedere una modifica dopo che la bozza è stata generata?",
-        "a": "Sì. Una modalità conversazionale ti permette di richiedere una modifica o un'aggiunta dopo la generazione."
+        "q": "Se un risultato di laboratorio arriva dopo, devo rigenerare tutto il referto?",
+        "a": "No. Elementi tardivi vengono raccolti senza rigenerare tutto; le tue correzioni sono mantenute."
       },
       {
         "q": "DocNote estrae documenti dal mio EHR?",
-        "a": "No. Alleghi i file tu stesso; DocNote non legge la cartella clinica."
+        "a": "No. Alleghi i file tu stesso; DocNote non legge la cartella del paziente."
       }
     ],
     "cta": {
-      "title": "Vedi la differenza che fa il contesto",
-      "body": "Guarda il tutorial per vedere un report abbozzato con allegati, o prenota una demo con i tuoi documenti.",
-      "primary": "Guarda il tutorial",
+      "title": "Vedi come nel tutorial",
+      "body": "Il tutorial mostra un referto aggiornato con documenti allegati prima e dopo la registrazione.",
+      "primary": "Vedi il tutorial",
       "secondary": "Prenota una demo"
     },
     "relatedLabel": "Pagine correlate"
   },
   "day-hospital-documentation": {
+    "navLabel": "Day hospital",
     "navDesc": "Più clinici, un unico referto.",
     "title": "Software per la documentazione del Day Hospital | DocNote",
     "description": "Più clinici, un unico referto del paziente: DocNote unisce i contributi del team in un unico referto strutturato. Disponibile per gruppi con un EHR integrato.",
     "hero": {
-      "title": "Day hospital: più clinici, un unico referto",
-      "subtitle": "DocNote unisce i contributi del team in un referto affidabile.",
-      "lead": "Alla fine della giornata avrai un unico referto strutturato del paziente, non quattro note parziali da riconciliare. La qualità della documentazione segue il team invece di frammentarsi.",
-      "badge": "Day hospital"
+      "badge": "Day hospital",
+      "title": "Day hospital: più clinici, una cartella",
+      "subtitle": "DocNote unisce i contributi del team in una cartella affidabile."
     },
     "story": {
-      "badge": "Nel prodotto",
-      "title": "Un referto multi-autore per una giornata multi-autore",
+      "badge": "Perché è importante",
+      "title": "Ogni scriba sul mercato è single-clinico",
       "paragraphs": [
-        "In un day hospital, il paziente vede diversi clinici in sequenza: l'infermiere all'ammissione, il medico, lo specialista, di nuovo l'infermiere alla dimissione. Ognuno documenta la propria parte; qualcuno poi deve riconciliare quattro note parziali in un referto che si legge come uno solo.",
-        "DocNote permette a più clinici di contribuire allo stesso referto del paziente durante la giornata. I contributi vengono uniti in un unico referto strutturato, così alla fine della giornata c'è un unico documento, non quattro frammenti da cucire insieme.",
-        "Questo è disponibile per gruppi il cui EHR è integrato: il referto unito e validato viene inviato nel file del paziente, suddiviso per sezione, come qualsiasi altro report di DocNote."
+        "Nessuno affronta questo caso d'uso, perché richiede un modello dati multi-autore. Ogni scriba sul mercato è single-clinico. In un day hospital, questo lascia il team a riconciliare note parziali alla fine della giornata."
       ]
     },
     "benefits": {
-      "badge": "Cosa ottieni",
-      "title": "Un referto strutturato alla fine della giornata",
-      "subtitle": "Il team documenta; il referto rimane integro.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
-          "title": "Più clinici, stesso referto",
-          "body": "Infermiere, medico, specialista: ognuno contribuisce allo stesso referto del paziente durante la giornata."
+          "title": "Più clinici, una cartella",
+          "body": "Più clinici contribuiscono alla stessa cartella paziente durante la giornata."
         },
         {
-          "title": "Contributi uniti, non accatastati",
-          "body": "DocNote unisce i contributi del team in un referto affidabile invece di aggiungere quattro note parziali."
+          "title": "Una cartella strutturata alla fine della giornata",
+          "body": "Non quattro note parziali da riconciliare."
         },
         {
-          "title": "La qualità segue il team",
-          "body": "La qualità della documentazione scala con il team invece di frammentarsi tra gli autori."
-        },
-        {
-          "title": "Nell'EHR del gruppo",
-          "body": "Disponibile per gruppi il cui EHR è integrato; il referto validato viene inviato nel file del paziente, suddiviso per sezione."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Dal primo contatto al referto di dimissione",
-      "subtitle": "Ogni clinico documenta la sua parte; DocNote mantiene un unico documento.",
-      "items": [
-        {
-          "title": "Ammissione",
-          "body": "Il primo clinico apre il referto del day hospital del paziente e documenta la sua parte."
-        },
-        {
-          "title": "Durante la giornata",
-          "body": "Ogni clinico successivo contribuisce allo stesso referto dal proprio account."
-        },
-        {
-          "title": "Unione",
-          "body": "DocNote unisce i contributi in un unico referto strutturato."
-        },
-        {
-          "title": "Validazione e invio",
-          "body": "Il medico responsabile valida; il referto viene inviato nell'EHR del gruppo, suddiviso per sezione."
+          "title": "Per gruppi con un EHR integrato",
+          "body": "Disponibile per gruppi il cui EHR è integrato."
         }
       ]
     },
     "proof": {
-      "badge": "Perché è un differenziatore",
-      "title": "Nessun altro affronta questo caso d'uso",
-      "intro": "Richiede un modello di dati multi-autore, e ogni scribe sul mercato è single-clinico. DocNote è stato pensato per il day hospital.",
+      "badge": "Impatto",
+      "title": "La qualità segue il team",
+      "intro": "Alla fine della giornata hai una cartella paziente strutturata, non quattro note parziali da riconciliare. La qualità della documentazione segue il team invece di frammentarsi.",
       "points": [
         {
-          "title": "Multi-autore per design",
-          "body": "Più account che alimentano un unico referto è una proprietà del modello di dati, non un ripiego."
+          "title": "Una cartella da validare",
+          "body": "Il medico responsabile rivede e convalida la cartella unita."
         },
         {
-          "title": "Per gruppi integrati",
-          "body": "Disponibile per gruppi il cui EHR è integrato: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
-        },
-        {
-          "title": "Governato dalla policy del gruppo",
-          "body": "Le regole di conservazione, logout e riproduzione audio impostate a livello organizzativo si applicano a ogni contributore."
-        },
-        {
-          "title": "Validazione medica, sempre",
-          "body": "Il referto unito è redatto da DocNote e validato dal medico responsabile prima di essere inviato."
+          "title": "Nel EHR",
+          "body": "La cartella convalidata viene inviata nella cartella paziente nel EHR del gruppo."
         }
       ]
     },
     "faq": [
       {
-        "q": "Chi può contribuire al referto?",
-        "a": "I clinici del servizio di day hospital, ognuno dal proprio account DocNote, sullo stesso referto del paziente."
+        "q": "Chi può contribuire alla cartella?",
+        "a": "I clinici del servizio day hospital, ciascuno dal proprio account DocNote, sulla stessa cartella paziente."
       },
       {
         "q": "È un documento unito o una lista di note?",
-        "a": "Un unico referto strutturato, non quattro note parziali da riconciliare."
+        "a": "Una cartella unita e strutturata."
       },
       {
-        "q": "Chi valida il referto unito?",
-        "a": "Il medico responsabile rivede e convalida prima che venga inviato nell'EHR."
+        "q": "Chi convalida la cartella unita?",
+        "a": "Il medico responsabile rivede e convalida prima che venga inviata nel EHR."
       },
       {
         "q": "È disponibile per il mio gruppo?",
@@ -1380,13 +998,12 @@
       }
     ],
     "cta": {
-      "title": "Guarda un referto di day hospital costruito dal team",
-      "body": "Prenota una demo con il tuo servizio di day hospital e il tuo EHR nel quadro.",
+      "title": "Parla con il team del tuo day hospital",
+      "body": "Raccontaci come è organizzato il tuo servizio e quale EHR utilizzi.",
       "primary": "Prenota una demo",
-      "secondary": "Contatta il team"
+      "secondary": "Contattaci"
     },
-    "relatedLabel": "Pagine correlate",
-    "navLabel": "Day hospital"
+    "relatedLabel": "Pagine correlate"
   },
   "multilingual-medical-documentation": {
     "navLabel": "Multilingue & specialità",
@@ -1394,115 +1011,76 @@
     "title": "AI per documentazione medica multilingue | DocNote",
     "description": "61 specialità, 21 lingue dell'interfaccia: la lingua con cui parli con il paziente non detta la lingua o il vocabolario del referto. Vedi in azione.",
     "hero": {
-      "badge": "Multilingue & specialità",
+      "badge": "Multilingue e specialità",
       "title": "61 specialità, 21 lingue dell'interfaccia",
-      "subtitle": "Una visita in portoghese, un referto in francese, nel vocabolario della tua specialità.",
-      "lead": "La lingua con cui parli con il paziente non detta la lingua del referto: il vocabolario segue la tua specialità, piuttosto che il gergo SOAP generico importato dagli USA."
+      "subtitle": "Una consultazione in portoghese, un referto in francese, nel vocabolario della tua specialità."
     },
     "story": {
-      "badge": "Nel prodotto",
-      "title": "Le parole della tua specialità, nella lingua del referto",
+      "badge": "Perché è importante",
+      "title": "La lingua con cui parli non detta il referto",
       "paragraphs": [
-        "DocNote copre 61 specialità mediche, ognuna con i propri modelli di referto predefiniti. All'iscrizione i modelli vengono abbinati alla tua specialità, così la prima bozza usa già la struttura e i termini che la tua disciplina si aspetta, non una nota generica di consultazione ridipinta per ogni mestiere.",
-        "L'interfaccia è disponibile in 21 lingue. E gli incontri sono multilingue per natura: una visita tenuta in portoghese, arabo o tedesco può produrre un referto in francese: la lingua con cui parli con il paziente non detta la lingua del documento.",
-        "Il vocabolario segue la specialità. Una lettera di cardiologia, una nota di psichiatria e un referto operatorio non si leggono allo stesso modo, e DocNote non li forza in un unico modello."
+        "Gli incontri multilingue sono normali nell'assistenza. La lingua con cui parli al paziente non detta la lingua del referto, e il vocabolario segue la specialità piuttosto che un gergo SOAP generico importato dagli USA."
       ]
     },
     "benefits": {
-      "badge": "Cosa ottieni",
-      "title": "Prima la specialità, poi la lingua, entrambe gestite",
-      "subtitle": "61 specialità, 21 lingue dell'interfaccia, incontri multilingue.",
+      "badge": "Cosa fa DocNote",
+      "title": "Cosa fa DocNote",
       "items": [
         {
           "title": "61 specialità mediche",
-          "body": "Ognuna con i propri modelli di referto predefiniti, abbinati all'iscrizione."
+          "body": "Ciascuna con i propri modelli di referto predefiniti."
         },
         {
-          "title": "Interfaccia in 21 lingue",
-          "body": "Lavora nella tua lingua al telefono e sul desktop."
+          "title": "21 lingue dell'interfaccia",
+          "body": "L'interfaccia è disponibile in 21 lingue."
         },
         {
           "title": "Incontri multilingue",
-          "body": "La lingua con cui parli con il paziente non detta la lingua del referto."
+          "body": "La lingua con cui parli al paziente non detta la lingua del referto."
         },
         {
-          "title": "Vocabolario che segue la specialità",
-          "body": "Termini e struttura seguono la tua disciplina, piuttosto che il gergo SOAP generico importato dagli USA."
-        }
-      ]
-    },
-    "steps": {
-      "badge": "Come funziona",
-      "title": "Da una visita in una lingua a un referto in un'altra",
-      "subtitle": "Nessuna impostazione da gestire durante la visita.",
-      "items": [
-        {
-          "title": "Scegli la tua specialità e lingua",
-          "body": "Una volta, all'iscrizione: modelli predefiniti per la tua specialità, interfaccia nella tua lingua."
-        },
-        {
-          "title": "Registra nella lingua della stanza",
-          "body": "Parla con il paziente in qualsiasi lingua condividiate."
-        },
-        {
-          "title": "Ottieni il referto nella lingua della cartella",
-          "body": "La bozza è prodotta nella lingua del referto che hai scelto, nel vocabolario della tua specialità."
-        },
-        {
-          "title": "Valida ed esporta",
-          "body": "Rivedi, correggi e firmi, come con ogni referto DocNote."
+          "title": "Vocabolario specialistico",
+          "body": "Termini e struttura seguono la tua specialità, non una nota generica."
         }
       ]
     },
     "proof": {
-      "badge": "Nella pratica",
-      "title": "Costruito per contesti di cura multilingue",
-      "intro": "Ospedali e studi medici svizzeri e francesi lavorano ogni giorno tra lingue diverse. DocNote tratta questo come il caso normale, non un'eccezione.",
+      "badge": "Prova",
+      "title": "Costruito per l'assistenza multilingue",
+      "intro": "Una consultazione in portoghese può produrre un referto in francese, nel vocabolario della tua specialità.",
       "points": [
         {
-          "title": "61 specialità, 227 modelli",
-          "body": "Modelli di referto predefiniti per ogni specialità; carica il tuo modello Word per sostituirli."
+          "title": "La lingua del referto è tua scelta",
+          "body": "Parla con il paziente nella sua lingua; il referto esce nella tua."
         },
         {
-          "title": "21 lingue dell'interfaccia",
-          "body": "Interfaccia telefono e desktop nella tua lingua."
-        },
-        {
-          "title": "Hosting svizzero, breve conservazione audio",
-          "body": "Dati sanitari ospitati in Svizzera; audio conservato solo brevemente per produrre il documento, poi eliminato."
-        },
-        {
-          "title": "Validazione medica, sempre",
-          "body": "Qualunque sia la lingua, DocNote redige un referto che tu convalidi."
+          "title": "I modelli seguono la specialità",
+          "body": "I modelli di referto predefiniti sono abbinati alla tua specialità all'iscrizione."
         }
       ]
     },
     "faq": [
       {
         "q": "Posso parlare una lingua e ottenere il referto in un'altra?",
-        "a": "Sì. La lingua con cui parli con il paziente non detta la lingua del referto."
+        "a": "Sì. La lingua con cui parli al paziente non detta la lingua del referto."
       },
       {
         "q": "Quante specialità sono coperte?",
-        "a": "61 specialità mediche, ognuna con i propri modelli di referto predefiniti."
+        "a": "61 specialità mediche, ciascuna con i propri modelli di referto predefiniti."
       },
       {
         "q": "In quante lingue è disponibile l'interfaccia?",
         "a": "21."
       },
       {
-        "q": "Il vocabolario è specifico per specialità?",
+        "q": "Il vocabolario è specifico per la specialità?",
         "a": "Sì. Termini e struttura seguono la tua specialità piuttosto che una nota SOAP generica."
-      },
-      {
-        "q": "Posso usare i miei modelli invece di quelli predefiniti?",
-        "a": "Sì. Carica il tuo modello Word una volta e ogni referto successivo lo seguirà."
       }
     ],
     "cta": {
-      "title": "Provalo nella tua specialità e nella tua lingua",
-      "body": "Guarda il tutorial, poi apri l'app web e registra una visita nella tua specialità.",
-      "primary": "Guarda il tutorial",
+      "title": "Vedi nella tua lingua",
+      "body": "Guarda il tutorial, poi registra una consultazione nella lingua che usi con i tuoi pazienti.",
+      "primary": "Vedi il tutorial",
       "secondary": "Vedi i prezzi"
     },
     "relatedLabel": "Pagine correlate"
