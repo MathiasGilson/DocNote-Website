@@ -10,7 +10,7 @@ const { translations: t, locale: rawLocale = "en" } = Astro.props
 const locale: Locale = isValidLocale(rawLocale) ? rawLocale : "en"
 const s = t.specificities
 
-/** Each homepage card is the hook of a Solutions page â€” link through to it. */
+/** Each homepage card is the hook of a Solutions page --- link through to it. */
 const SPEC_LANDING: Record<string, string> = {
   coding: "/medical-coding-and-billing",
   tardoc: "/medical-coding-and-billing",
@@ -87,7 +87,7 @@ const keys = [
         </p>
 
         <a class="spec-more-link" href={specHref("coding")} data-spec-link>
-          {readMoreLabel} <span aria-hidden="true">â†’</span>
+          {readMoreLabel} <span aria-hidden="true">-†’</span>
         </a>
 
         <div class="spec-stage mt-5" data-spec-stage data-active="coding">
@@ -126,7 +126,7 @@ const keys = [
                 <strong>{s.ehr.docReady}</strong>
                 <span>{s.ehr.docMeta}</span>
               </div>
-              <div class="spec-ehr-arrow" aria-hidden="true">â†’</div>
+              <div class="spec-ehr-arrow" aria-hidden="true">-†’</div>
               <div class="spec-ehr-slots">
                 <div class="spec-ehr-slot" style="--d:0.35s">Mediway</div>
                 <div class="spec-ehr-slot" style="--d:0.55s">SOKLE</div>

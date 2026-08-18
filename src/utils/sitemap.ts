@@ -1,6 +1,6 @@
 /**
  * Hand-rolled sitemap helpers (MailMerge / Mailtrack pattern).
- * DocNote keeps trailingSlash: 'always' — all locs end with /.
+ * DocNote keeps trailingSlash: 'always' --- all locs end with /.
  */
 
 import { getCollection } from 'astro:content';
@@ -162,7 +162,7 @@ export const buildLandingsUrlset = (): string => {
   );
 };
 
-/** Blog posts — one <url> per existing locale translation, reciprocal hreflang. */
+/** Blog posts --- one <url> per existing locale translation, reciprocal hreflang. */
 export const buildBlogUrlset = async (): Promise<string> => {
   const posts = await getCollection('blog');
   const byCluster = new Map<

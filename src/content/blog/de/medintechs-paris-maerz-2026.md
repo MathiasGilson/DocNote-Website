@@ -21,4 +21,4 @@ Ein Höhepunkt der Veranstaltung war die Gelegenheit, DocNote den ehemaligen fra
 
 ![Das Village des Innovations Chirurgicales an der MedInTechs 2026](/images/medintechs_03.26_-_3.jpg)
 
-Als erstes KI-Tool, das darauf ausgelegt ist, sämtliche administrativen Aufgaben zu automatisieren, denen eine Ärztin oder ein Arzt im Krankenhaus begegnet — vom präklinischen Bereich und der Notaufnahme über Visitennotizen auf den Stationen bis hin zu Austrittsbriefen und Konsultationsberichten — stiess DocNote während der gesamten Messe auf grosses Interesse.
+Als erstes KI-Tool, das darauf ausgelegt ist, sämtliche administrativen Aufgaben zu automatisieren, denen eine Ärztin oder ein Arzt im Krankenhaus begegnet (vom präklinischen Bereich und der Notaufnahme über Visitennotizen auf den Stationen bis hin zu Austrittsbriefen und Konsultationsberichten), stiess DocNote während der gesamten Messe auf grosses Interesse.

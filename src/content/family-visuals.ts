@@ -12,7 +12,7 @@ export type FamilyRecipe =
 
 export type FamilyVisualMeta = {
   recipe: FamilyRecipe
-  /** Existing public asset — no generation */
+  /** Existing public asset --- no generation */
   image: string
   /** Flip media column to the right on large screens */
   mediaRight?: boolean

@@ -10,7 +10,7 @@ date: "2025-12-01"
 readTime: 4
 ---
 
-Beim Europäischen Kolorektalkongress in St. Gallen hielt Dr. Alice Gilson, Viszeralchirurgin und Geschäftsführerin von DocNote, einen Keynote-Vortrag darüber, wie künstliche Intelligenz die moderne chirurgische Praxis verändert – sowohl im als auch außerhalb des Operationssaals.
+Beim Europäischen Kolorektalkongress in St. Gallen hielt Dr. Alice Gilson, Viszeralchirurgin und Geschäftsführerin von DocNote, einen Keynote-Vortrag darüber, wie künstliche Intelligenz die moderne chirurgische Praxis verändert, sowohl im als auch außerhalb des Operationssaals.
 
 ![Dr. Alice Gilson am ECC St. Gallen](/images/st_gallen_12.25_-_2.jpg)
 

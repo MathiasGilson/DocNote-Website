@@ -2,7 +2,7 @@ import { locales, type Locale } from '../utils/i18n'
 import { landingsCopy, pillarNavCopy, withEnFallback } from '../utils/inline-content'
 import type { SpecialtyKey } from '../data/specialty-icons'
 
-/** Existing pillars — keep H1/intent; do not cannibalize. */
+/** Existing pillars --- keep H1/intent; do not cannibalize. */
 export const pillarSlugs = [
   'ai-medical-scribe',
   'hospital-documentation',
@@ -23,7 +23,7 @@ export const audienceSlugs = [
 
 export type AudienceSlug = (typeof audienceSlugs)[number]
 
-/** "What makes us different" landings — one per homepage specificity card. */
+/** "What makes us different" landings --- one per homepage specificity card. */
 export const differentiatorSlugs = [
   'medical-coding-and-billing',
   'ehr-integration',
@@ -36,7 +36,7 @@ export const differentiatorSlugs = [
 export type DifferentiatorSlug = (typeof differentiatorSlugs)[number]
 
 /**
- * Use-case landings kept for search intent only — out of the menu, canonical
+ * Use-case landings kept for search intent only --- out of the menu, canonical
  * on themselves. Retired duplicates live in landing-redirects.ts (301).
  */
 export const usecaseSlugs = [
@@ -48,7 +48,7 @@ export const usecaseSlugs = [
 
 export type UsecaseSlug = (typeof usecaseSlugs)[number]
 
-/** Batch B — specialty landings first wave */
+/** Batch B --- specialty landings first wave */
 export const specialtyLandingSlugs = [
   'ai-scribe-general-practice',
   'ai-scribe-psychiatry',
@@ -472,7 +472,7 @@ export const footerLandingSlugs: LandingSlug[] = [
   'ai-discharge-summary',
 ]
 
-/** Header Solutions mega-menu — audiences + differentiators (+ compliance). */
+/** Header Solutions mega-menu --- audiences + differentiators (+ compliance). */
 export const navSolutionsSlugs: LandingSlug[] = [
   'for-private-practice',
   'hospital-documentation',
@@ -553,7 +553,7 @@ export const landingFeatureKeys: Record<LandingSlug, LandingFeatureKey[]> = {
   'ai-scribe-neurology': ['recording', 'summaries', 'security'],
 }
 
-/** Mega-menu columns for Solutions — "who it's for" × "what makes us different". */
+/** Mega-menu columns for Solutions --- "who it's for" × "what makes us different". */
 export const navSolutionsColumns: { id: NavSolutionsColumnId; slugs: LandingSlug[] }[] = [
   {
     id: 'audiences',
@@ -582,13 +582,13 @@ const NAV_SOLUTIONS_COLUMN_LABELS: Record<
     it: 'Per chi',
     pt: 'Para quem',
     nl: 'Voor wie',
-    ru: 'Для кого',
-    ja: '対象者',
-    ko: '누구를 위한',
-    zh: '适用对象',
+    ru: '�-ля кого',
+    ja: '対象�-�',
+    ko: '누구를 위�-�',
+    zh: '�-��-�对象',
     ar: 'لمن هذا الحل',
-    hi: 'किसके लिए',
-    th: 'เหมาะสำหรับใคร',
+    hi: '�-िस�-े लिए',
+    th: '�-หมาะสำหรับใคร',
     sv: 'För vem',
     no: 'For hvem',
   },
@@ -605,8 +605,8 @@ const NAV_SOLUTIONS_COLUMN_LABELS: Record<
     ko: '차별점',
     zh: '我们的不同之处',
     ar: 'ما يميزنا',
-    hi: 'हम अलग क्यों हैं',
-    th: 'สิ่งที่ทำให้เราแตกต่าง',
+    hi: 'हम अलग �-्यों हैं',
+    th: 'สิ่งที่ทำให้�-ราแ�-ก�-่าง',
     sv: 'Det som skiljer oss',
     no: 'Det som skiller oss',
   },
@@ -628,7 +628,7 @@ const NAV_GROUP_LABELS: Record<'solutions' | 'specialties', Partial<Record<Local
     nl: 'Oplossingen',
     ru: 'Решения',
     ja: 'ソリューション',
-    ko: '솔루션',
+    ko: '�-루션',
     zh: '解决方案',
     ar: 'الحلول',
     hi: 'समाधान',
@@ -647,10 +647,10 @@ const NAV_GROUP_LABELS: Record<'solutions' | 'specialties', Partial<Record<Local
     ru: 'Специальности',
     ja: '診療科',
     ko: '전문과',
-    zh: '专科',
+    zh: '�-科',
     ar: 'التخصصات',
     hi: 'विशेषज्ञताएँ',
-    th: 'สาขาเฉพาะทาง',
+    th: 'สาขา�-ฉพาะทาง',
     sv: 'Specialiteter',
     no: 'Spesialiteter',
   },
@@ -727,10 +727,10 @@ export const getLandingNavDesc = (slug: LandingSlug, locale: Locale): string => 
   if (raw.length <= 52) return raw
   const cut = raw.slice(0, 52)
   const sp = cut.lastIndexOf(' ')
-  return `${(sp > 28 ? cut.slice(0, sp) : cut).trim()}…`
+  return `${(sp > 28 ? cut.slice(0, sp) : cut).trim()}--�`
 }
 
-/** @deprecated use landingSlugs / getLanding — kept for existing imports */
+/** @deprecated use landingSlugs / getLanding --- kept for existing imports */
 export type PillarCopy = LandingCopy
 export const pillars = landings as unknown as Record<PillarSlug, Record<Locale, LandingCopy>>
 export const getPillar = (slug: PillarSlug, locale: Locale) => getLanding(slug, locale)

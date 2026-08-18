@@ -31,7 +31,7 @@
     "patients": "Patients",
     "templates": "Templates",
     "settings": "Settings",
-    "consultationTitle": "Consultation — Patient #1247",
+    "consultationTitle": "Consultation · Patient #1247",
     "consultationDate": "Today, 14:30 · General Practice",
     "recording": "Recording",
     "soapNoteGenerated": "SOAP Note Generated",
@@ -113,7 +113,7 @@
     "integration": {
       "title": "EHR Integration",
       "description": "Seamlessly integrate with your existing Electronic Health Record system.",
-      "animTitle": "EHR — Patient Record",
+      "animTitle": "EHR · Patient Record",
       "animPatient": "Patient",
       "animDob": "DOB",
       "animNotes": "Notes",
@@ -230,7 +230,7 @@
   },
   "specialties": {
     "title": "61 specialties across 7 families",
-    "subtitle": "Grouped by how the work is done — surgical, medical-surgical, medical, primary care, acute care, diagnostics, and allied health — with 227 templates and a shared core of 10.",
+    "subtitle": "Grouped by how the work is done (surgical, medical-surgical, medical, primary care, acute care, diagnostics, and allied health), with 227 templates and a shared core of 10.",
     "countLabel": "61",
     "familiesCta": "Browse the seven specialty families",
     "items": [
@@ -294,7 +294,7 @@
   },
   "valueProp": {
     "title": "Streamlined Medical Documentation",
-    "subtitle": "Unify your documentation workflow, save hours every day, and focus on what matters most — your patients.",
+    "subtitle": "Unify your documentation workflow, save hours every day, and focus on what matters most: your patients.",
     "card1": {
       "title": "Get up and running fast",
       "description": "Start instantly. Any doctor on your team can record, transcribe, and share clinical notes in minutes."
@@ -305,7 +305,7 @@
     },
     "card3": {
       "title": "Seamless across devices",
-      "description": "Stay connected, wherever you work. DocNote runs effortlessly on any device — mobile, tablet, or desktop."
+      "description": "Stay connected, wherever you work. DocNote runs effortlessly on any device: mobile, tablet, or desktop."
     }
   },
   "compliance": {
@@ -347,7 +347,7 @@
     "a3Ch": "Yes. DocNote applies end-to-end encryption (AES-256 at rest, TLS 1.3 in transit), hosts all health data exclusively in Switzerland, and complies with the Swiss Federal Act on Data Protection (FADP / nLPD), HIPAA, and ISO 27001. DocNote acts as an auxiliary person to the physician under Article 321 of the Swiss Criminal Code (medical secrecy). Health data is automatically and irreversibly deleted within 7 days of processing. DocNote never retains permanent copies of audio, transcriptions, or medical reports.",
     "a3Row": "Yes. DocNote applies end-to-end encryption (AES-256 at rest, TLS 1.3 in transit), hosts all health data exclusively in France in HDS-certified data centers (Hébergeur de Données de Santé), and complies with the European GDPR, HIPAA, and ISO 27001. DocNote is bound by French medical secrecy under Article 226-13 of the French Penal Code and Article L1110-4 of the Public Health Code. Health data is automatically and irreversibly deleted within 7 days of processing. DocNote never retains permanent copies of audio, transcriptions, or medical reports.",
     "q4": "Which medical specialties does DocNote support?",
-    "a4": "DocNote covers 61 specialties across seven families — surgical, medical-surgical, medical, primary care, acute care, diagnostics, and allied health — with 227 templates and 10 cross-specialty documents. Coverage includes general practice, cardiology, surgery, gynecology, pediatrics, psychiatry, emergency medicine, intensive care, anesthesiology, radiology, dentistry, and many more. Templates use the vocabulary and structure expected for each specialty.",
+    "a4": "DocNote covers 61 specialties across seven families (surgical, medical-surgical, medical, primary care, acute care, diagnostics, and allied health), with 227 templates and 10 cross-specialty documents. Coverage includes general practice, cardiology, surgery, gynecology, pediatrics, psychiatry, emergency medicine, intensive care, anesthesiology, radiology, dentistry, and many more. Templates use the vocabulary and structure expected for each specialty.",
     "q5": "Which languages does DocNote support?",
     "a5": "DocNote understands and produces reports in French, German, Italian, English, and over 20 other languages. It correctly handles Swiss-specific medical terminology and code-switching during consultations (for example a patient speaking Swiss German while the doctor dictates in French).",
     "q6": "How much time does DocNote save per consultation?",
@@ -424,7 +424,7 @@
       "pro": "Professional",
       "enterprise": "Enterprise",
       "yes": "Included",
-      "no": "—",
+      "no": "-",
       "custom": "Custom",
       "rows": [
         {
@@ -520,7 +520,7 @@
       "q9": "How long does onboarding take?",
       "a9": "Most solo clinicians start the same day after the free trial. Hospital and clinic rollouts usually take a few weeks depending on EHR integration, training schedule, and internal IT review.",
       "q10": "Can multiple doctors in one practice share an account?",
-      "a10": "Small practices can start on Professional per clinician. For shared departments, admin roles, or hospital-wide access, the Enterprise plan is the right fit — contact sales and we will size it with you."
+      "a10": "Small practices can start on Professional per clinician. For shared departments, admin roles, or hospital-wide access, the Enterprise plan is the right fit: contact sales and we will size it with you."
     }
   },
   "blog": {
@@ -556,26 +556,26 @@
     "intro": "DocNote started in hospital corridors, not a pitch deck. Our founders still practice medicine, so every product decision is judged by whether it survives a busy ward round.",
     "story": "Today, clinicians, engineers, and go-to-market teammates share one mission: turn consultations into reliable clinical documents in seconds, with Swiss-hosted privacy at the core. We build with the people who will use the product tomorrow.",
     "highlightsTitle": "How we work",
-    "highlightsLead": "DocNote did not start as a pitch deck. It started in hospital corridors — between ward rounds, operative lists, and evenings spent rewriting notes that should have written themselves. That origin still shapes every hire, every release, and every conversation we have with a clinic.",
+    "highlightsLead": "DocNote did not start as a pitch deck. It started in hospital corridors, between ward rounds, operative lists, and evenings spent rewriting notes that should have written themselves. That origin still shapes every hire, every release, and every conversation we have with a clinic.",
     "highlights": [
       {
         "title": "Practicing physicians at the core",
-        "body": "Our founders still practice medicine. That is not a slogan for the About page — it is the filter for product decisions. If a feature does not survive a busy ward round, a noisy emergency bay, or a Friday afternoon clinic, it does not ship.\n\nClinical language, specialty structure, and the real rhythm of hospital documentation come first. We design for discharge letters, operative reports, collaborative day-hospital files, and the awkward moments when three caregivers touch the same patient in one afternoon.\n\nWhen clinicians tell us something feels wrong, we treat that as engineering input — not as a nice-to-have UX comment."
+        "body": "Our founders still practice medicine. That is not a slogan for the About page; it is the filter for product decisions. If a feature does not survive a busy ward round, a noisy emergency bay, or a Friday afternoon clinic, it does not ship.\n\nClinical language, specialty structure, and the real rhythm of hospital documentation come first. We design for discharge letters, operative reports, collaborative day-hospital files, and the awkward moments when three caregivers touch the same patient in one afternoon.\n\nWhen clinicians tell us something feels wrong, we treat that as engineering input, not as a nice-to-have UX comment."
       },
       {
         "title": "Swiss-hosted privacy by default",
-        "body": "Health data is not a training corpus. DocNote hosts clinical information in Switzerland, encrypts it in transit and at rest, and applies retention rules that match European expectations for medical secrecy.\n\nWe build for FADP / nLPD, GDPR, HIPAA, and ISO 27001 realities — hospital IT reviews, procurement questionnaires, and the quiet question every physician asks: where does my patient’s data actually live?\n\nNothing about ambient documentation is worth eroding trust. Privacy is part of the product architecture, not a legal appendix."
+        "body": "Health data is not a training corpus. DocNote hosts clinical information in Switzerland, encrypts it in transit and at rest, and applies retention rules that match European expectations for medical secrecy.\n\nWe build for FADP / nLPD, GDPR, HIPAA, and ISO 27001 realities: hospital IT reviews, procurement questionnaires, and the quiet question every physician asks: where does my patient’s data actually live?\n\nNothing about ambient documentation is worth eroding trust. Privacy is part of the product architecture, not a legal appendix."
       },
       {
         "title": "Clinicians and engineers in one loop",
-        "body": "Medical specialists, AI engineers, and product teammates sit in the same loop. Report models are not invented in isolation and then “adapted” for hospitals — they are co-designed with people who still write those reports by hand today.\n\nThat is why DocNote can move from free dictation to structured specialty notes, operative reports, follow-up notes, and discharge summaries without forcing doctors into a generic US outpatient template.\n\nEngineering quality shows up as speed, reliability, and calm interfaces. Clinical quality shows up as vocabulary, structure, and respect for how care teams actually work."
+        "body": "Medical specialists, AI engineers, and product teammates sit in the same loop. Report models are not invented in isolation and then “adapted” for hospitals; they are co-designed with people who still write those reports by hand today.\n\nThat is why DocNote can move from free dictation to structured specialty notes, operative reports, follow-up notes, and discharge summaries without forcing doctors into a generic US outpatient template.\n\nEngineering quality shows up as speed, reliability, and calm interfaces. Clinical quality shows up as vocabulary, structure, and respect for how care teams actually work."
       },
       {
         "title": "From first demo to hospital rollout",
-        "body": "A good ambient scribe demo is easy. A trustworthy hospital rollout is not. Our sales, onboarding, and support teams help clinics map workflows, choose the right report models, connect EHR paths where needed, and train teams without interrupting care.\n\nWe stay through pilots, procurement, and the messy middle — specialty exceptions, template preferences, multilingual wards, and the IT checklist nobody puts in the marketing site.\n\nThe goal is simple: more time with patients, fewer evenings lost to notes, and a documentation system clinicians are willing to defend to their colleagues."
+        "body": "A good ambient scribe demo is easy. A trustworthy hospital rollout is not. Our sales, onboarding, and support teams help clinics map workflows, choose the right report models, connect EHR paths where needed, and train teams without interrupting care.\n\nWe stay through pilots, procurement, and the messy middle: specialty exceptions, template preferences, multilingual wards, and the IT checklist nobody puts in the marketing site.\n\nThe goal is simple: more time with patients, fewer evenings lost to notes, and a documentation system clinicians are willing to defend to their colleagues."
       }
     ],
-    "highlightsClosing": "Today the team spans clinical leadership, deep engineering, go-to-market, and communication — united by one mission: turn consultations into reliable clinical documents in seconds, with Swiss-hosted privacy at the core. We build with the people who will use the product tomorrow.",
+    "highlightsClosing": "Today the team spans clinical leadership, deep engineering, go-to-market, and communication, united by one mission: turn consultations into reliable clinical documents in seconds, with Swiss-hosted privacy at the core. We build with the people who will use the product tomorrow.",
     "members": {
       "vincentTan": {
         "name": "Dr. Vincent Tan",
@@ -691,14 +691,14 @@
     "aliceName": "Dr. Alice Gilson",
     "vincentRole": "Doctor & Managing Director",
     "aliceRole": "Doctor & Managing Director",
-    "vincentFocus": "Hospitals and clinics in Switzerland — demos, pilots, and EHR rollout.",
-    "aliceFocus": "French healthcare organizations — hospitals, clinics, and procurement conversations.",
+    "vincentFocus": "Hospitals and clinics in Switzerland: demos, pilots, and EHR rollout.",
+    "aliceFocus": "French healthcare organizations: hospitals, clinics, and procurement conversations.",
     "vincentCity": "Geneva, Switzerland",
     "aliceCity": "France",
     "writeEmail": "Write an email",
     "callPhone": "Call",
     "hoursLabel": "Availability",
-    "hoursValue": "Mon–Fri · reply within one business day",
+    "hoursValue": "Mon-Fri · reply within one business day",
     "responseLabel": "Best for",
     "responseValue": "Hospital demos, pricing, and integration questions",
     "companyLabel": "Company",

@@ -21,4 +21,4 @@ Temps fort du salon : la présentation de DocNote à Valérie Pécresse et à Ol
 
 ![Le Village des Innovations Chirurgicales à MedInTechs 2026](/images/medintechs_03.26_-_3.jpg)
 
-Premier outil IA pensé pour automatiser l'ensemble des tâches administratives qu'un médecin rencontre à l'hôpital — du préhospitalier et des urgences aux notes de suite de visites dans les étages, en passant par les lettres de sortie et les comptes rendus de consultation — DocNote a suscité un vif intérêt tout au long de l'événement.
+Premier outil IA pensé pour automatiser l'ensemble des tâches administratives qu'un médecin rencontre à l'hôpital, du préhospitalier et des urgences aux notes de suite de visites dans les étages, en passant par les lettres de sortie et les comptes rendus de consultation, DocNote a suscité un vif intérêt tout au long de l'événement.

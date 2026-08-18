@@ -36,7 +36,7 @@ DocNote ist ein Assistent, der Ärzten helfen soll, den administrativen Aufwand 
 
 Diese Mission passt zu den Realitäten des Schweizer Gesundheitswesens. Mehrsprachige Versorgung, hohe Dokumentationsstandards und strenge Datenschutzerwartungen sind hier normal. Ein Scribe-Produkt, das diese Anforderungen ignoriert, würde eine Krankenhausprüfung nicht überstehen. DocNotes Entwicklungsweg hat daher klinische Variationen, strukturierte Outputs und compliance-orientierte Architektur betont.
 
-Getestet in allen klinischen Settings – in Krankenhäusern, der ambulanten Versorgung und am Patientenbett – deckt die Lösung nun einen großen Teil der alltäglichen klinischen Variationen der medizinischen Praxis ab. Diese Abdeckung basiert auf Feedback von Ärzten verschiedener Fachrichtungen, nicht auf einem einzigen Demo-Skript.
+Getestet in allen klinischen Settings (in Krankenhäusern, der ambulanten Versorgung und am Patientenbett), deckt die Lösung nun einen großen Teil der alltäglichen klinischen Variationen der medizinischen Praxis ab. Diese Abdeckung basiert auf Feedback von Ärzten verschiedener Fachrichtungen, nicht auf einem einzigen Demo-Skript.
 
 Für Neueinsteiger in diese Produktkategorie erklärt der Überblick [KI-medizinischer Schreiber](/ai-medical-scribe/) die nicht-marketing Version der zu erledigenden Aufgabe. Für stationäre und bereichsübergreifende Nutzung siehe [Krankenhausdokumentation](/hospital-documentation/).
 

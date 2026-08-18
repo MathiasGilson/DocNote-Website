@@ -31,7 +31,7 @@
     "patients": "Pazienti",
     "templates": "Modelli",
     "settings": "Impostazioni",
-    "consultationTitle": "Consultazione — Paziente #1247",
+    "consultationTitle": "Consultazione · Paziente #1247",
     "consultationDate": "Oggi, 14:30 · Medicina Generale",
     "recording": "Registrazione",
     "soapNoteGenerated": "Nota SOAP Generata",
@@ -113,7 +113,7 @@
     "integration": {
       "title": "Integrazione EHR",
       "description": "Integrazione senza soluzione di continuità con il tuo sistema di Cartella Clinica Elettronica esistente.",
-      "animTitle": "EHR — Cartella Paziente",
+      "animTitle": "EHR · Cartella Paziente",
       "animPatient": "Paziente",
       "animDob": "Data di nascita",
       "animNotes": "Note",
@@ -438,7 +438,7 @@
       "q9": "Quanto tempo richiede l'onboarding?",
       "a9": "La maggior parte dei clinici singoli inizia lo stesso giorno dopo il trial gratuito. I rollout per ospedali e cliniche richiedono di solito qualche settimana, a seconda dell'integrazione EHR, del programma di formazione e della revisione IT interna.",
       "q10": "Più medici in uno studio possono condividere un account?",
-      "a10": "Piccoli studi possono iniziare con Professional per clinico. Per reparti condivisi, ruoli amministrativi o accesso ospedaliero, il piano Enterprise è la scelta giusta — contatta il team vendite e lo dimensioneremo insieme."
+      "a10": "Piccoli studi possono iniziare con Professional per clinico. Per reparti condivisi, ruoli amministrativi o accesso ospedaliero, il piano Enterprise è la scelta giusta. Contatta il team vendite e lo dimensioneremo insieme."
     },
     "compare": {
       "title": "Confronta i piani",
@@ -447,7 +447,7 @@
       "pro": "Professionale",
       "enterprise": "Aziende",
       "yes": "Incluso",
-      "no": "—",
+      "no": "-",
       "custom": "Personalizzato",
       "rows": [
         {
@@ -603,26 +603,26 @@
       }
     },
     "highlightsTitle": "Come lavoriamo",
-    "highlightsLead": "DocNote non è nato come una presentazione. È nato nei corridoi degli ospedali — tra i turni in reparto, le liste operatorie e le serate passate a riscrivere note che avrebbero dovuto scriversi da sole. Quell'origine influenza ancora ogni assunzione, ogni rilascio e ogni conversazione con una clinica.",
+    "highlightsLead": "DocNote non è nato come una presentazione. È nato nei corridoi degli ospedali, tra i turni in reparto, le liste operatorie e le serate passate a riscrivere note che avrebbero dovuto scriversi da sole. Quell'origine influenza ancora ogni assunzione, ogni rilascio e ogni conversazione con una clinica.",
     "highlights": [
       {
         "title": "Medici praticanti al centro",
-        "body": "I nostri fondatori esercitano ancora la medicina. Non è uno slogan per la pagina Chi siamo — è il filtro per le decisioni di prodotto. Se una funzionalità non sopravvive a un turno impegnativo, a un pronto soccorso rumoroso o a un ambulatorio del venerdì pomeriggio, non viene rilasciata.\n\nIl linguaggio clinico, la struttura per specialità e il ritmo reale della documentazione ospedaliera vengono prima. Progettiamo per lettere di dimissione, referti operatori, file collaborativi di day-hospital e i momenti imbarazzanti in cui tre operatori toccano lo stesso paziente in un pomeriggio.\n\nQuando i clinici ci dicono che qualcosa non va, lo trattiamo come input ingegneristico — non come un commento UX opzionale."
+        "body": "I nostri fondatori esercitano ancora la medicina. Non è uno slogan per la pagina Chi siamo: è il filtro per le decisioni di prodotto. Se una funzionalità non sopravvive a un turno impegnativo, a un pronto soccorso rumoroso o a un ambulatorio del venerdì pomeriggio, non viene rilasciata.\n\nIl linguaggio clinico, la struttura per specialità e il ritmo reale della documentazione ospedaliera vengono prima. Progettiamo per lettere di dimissione, referti operatori, file collaborativi di day-hospital e i momenti imbarazzanti in cui tre operatori toccano lo stesso paziente in un pomeriggio.\n\nQuando i clinici ci dicono che qualcosa non va, lo trattiamo come input ingegneristico, non come un commento UX opzionale."
       },
       {
         "title": "Privacy svizzera di default",
-        "body": "I dati sanitari non sono un corpus di addestramento. DocNote ospita le informazioni cliniche in Svizzera, le crittografa in transito e a riposo, e applica regole di conservazione che rispettano le aspettative europee sul segreto medico.\n\nCostruiamo per le realtà FADP / nLPD, GDPR, HIPAA e ISO 27001 — revisioni IT ospedaliere, questionari di procurement e la domanda silenziosa che ogni medico si fa: dove vivono davvero i dati dei miei pazienti?\n\nNiente nella documentazione ambientale vale l'erosione della fiducia. La privacy è parte dell'architettura del prodotto, non un'appendice legale."
+        "body": "I dati sanitari non sono un corpus di addestramento. DocNote ospita le informazioni cliniche in Svizzera, le crittografa in transito e a riposo, e applica regole di conservazione che rispettano le aspettative europee sul segreto medico.\n\nCostruiamo per le realtà FADP / nLPD, GDPR, HIPAA e ISO 27001, tenendo conto delle revisioni IT ospedaliere, dei questionari di procurement e della domanda silenziosa che ogni medico si fa: dove vivono davvero i dati dei miei pazienti?\n\nNiente nella documentazione ambientale vale l'erosione della fiducia. La privacy è parte dell'architettura del prodotto, non un'appendice legale."
       },
       {
         "title": "Clinici e ingegneri nello stesso ciclo",
-        "body": "Specialisti medici, ingegneri AI e team di prodotto lavorano nello stesso ciclo. I modelli di report non sono inventati in isolamento e poi \"adattati\" per gli ospedali — sono co-progettati con chi oggi scrive ancora quei report a mano.\n\nEcco perché DocNote può passare dalla dettatura libera a note strutturate per specialità, referti operatori, note di follow-up e riassunti di dimissione senza costringere i medici in un modello generico ambulatoriale statunitense.\n\nLa qualità ingegneristica si vede in velocità, affidabilità e interfacce tranquille. La qualità clinica si vede nel vocabolario, nella struttura e nel rispetto per come lavorano davvero i team."
+        "body": "Specialisti medici, ingegneri AI e team di prodotto lavorano nello stesso ciclo. I modelli di report non sono inventati in isolamento e poi \"adattati\" per gli ospedali: sono co-progettati con chi oggi scrive ancora quei report a mano.\n\nEcco perché DocNote può passare dalla dettatura libera a note strutturate per specialità, referti operatori, note di follow-up e riassunti di dimissione senza costringere i medici in un modello generico ambulatoriale statunitense.\n\nLa qualità ingegneristica si vede in velocità, affidabilità e interfacce tranquille. La qualità clinica si vede nel vocabolario, nella struttura e nel rispetto per come lavorano davvero i team."
       },
       {
         "title": "Dal primo demo al rollout ospedaliero",
-        "body": "Un buon demo di scriba ambientale è facile. Un rollout ospedaliero affidabile non lo è. I nostri team di vendita, onboarding e supporto aiutano le cliniche a mappare i flussi, scegliere i modelli di report giusti, connettere i percorsi EHR dove necessario e formare i team senza interrompere l'assistenza.\n\nRestiamo durante i pilot, il procurement e il caos intermedio — eccezioni per specialità, preferenze sui modelli, reparti multilingue e la checklist IT che nessuno mette nel sito marketing.\n\nL'obiettivo è semplice: più tempo con i pazienti, meno serate perse nelle note e un sistema di documentazione che i clinici sono disposti a difendere con i colleghi."
+        "body": "Un buon demo di scriba ambientale è facile. Un rollout ospedaliero affidabile non lo è. I nostri team di vendita, onboarding e supporto aiutano le cliniche a mappare i flussi, scegliere i modelli di report giusti, connettere i percorsi EHR dove necessario e formare i team senza interrompere l'assistenza.\n\nRestiamo durante i pilot, il procurement e il caos intermedio: eccezioni per specialità, preferenze sui modelli, reparti multilingue e la checklist IT che nessuno mette nel sito marketing.\n\nL'obiettivo è semplice: più tempo con i pazienti, meno serate perse nelle note e un sistema di documentazione che i clinici sono disposti a difendere con i colleghi."
       }
     ],
-    "highlightsClosing": "Oggi il team comprende leadership clinica, ingegneria avanzata, go-to-market e comunicazione — uniti da una missione: trasformare le visite in documenti clinici affidabili in pochi secondi, con la privacy svizzera al centro. Costruiamo con chi userà il prodotto domani."
+    "highlightsClosing": "Oggi il team comprende leadership clinica, ingegneria avanzata, go-to-market e comunicazione, uniti da una missione: trasformare le visite in documenti clinici affidabili in pochi secondi, con la privacy svizzera al centro. Costruiamo con chi userà il prodotto domani."
   },
   "tutorial": {
     "title": "Iniziare con DocNote",
@@ -691,14 +691,14 @@
     "aliceName": "Dr. Alice Gilson",
     "vincentRole": "Medico & Managing Director",
     "aliceRole": "Medico & Managing Director",
-    "vincentFocus": "Ospedali e cliniche in Svizzera — demo, pilot e rollout EHR.",
-    "aliceFocus": "Organizzazioni sanitarie francesi — ospedali, cliniche e conversazioni di procurement.",
+    "vincentFocus": "Ospedali e cliniche in Svizzera: demo, pilot e rollout EHR.",
+    "aliceFocus": "Organizzazioni sanitarie francesi: ospedali, cliniche e conversazioni di procurement.",
     "vincentCity": "Ginevra, Svizzera",
     "aliceCity": "Francia",
     "writeEmail": "Scrivi un'email",
     "callPhone": "Chiama",
     "hoursLabel": "Disponibilità",
-    "hoursValue": "Lun–Ven · risposta entro un giorno lavorativo",
+    "hoursValue": "Lun-Ven · risposta entro un giorno lavorativo",
     "responseLabel": "Ideale per",
     "responseValue": "Demo ospedaliere, prezzi e domande su integrazioni",
     "companyLabel": "Azienda",

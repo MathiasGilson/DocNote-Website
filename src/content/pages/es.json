@@ -31,7 +31,7 @@
     "patients": "Pacientes",
     "templates": "Plantillas",
     "settings": "Configuración",
-    "consultationTitle": "Consulta — Paciente #1247",
+    "consultationTitle": "Consulta: Paciente #1247",
     "consultationDate": "Hoy, 14:30 · Medicina general",
     "recording": "Grabación",
     "soapNoteGenerated": "Nota SOAP generada",
@@ -113,7 +113,7 @@
     "integration": {
       "title": "Integración con HCE",
       "description": "Integración perfecta con tu sistema de Historia Clínica Electrónica existente.",
-      "animTitle": "HCE — Historia del paciente",
+      "animTitle": "HCE: Historia del paciente",
       "animPatient": "Paciente",
       "animDob": "Fecha de nacimiento",
       "animNotes": "Notas",
@@ -438,7 +438,7 @@
       "q9": "¿Cuánto tiempo toma el onboarding?",
       "a9": "La mayoría de los médicos individuales comienzan el mismo día después de la prueba gratuita. Las implementaciones en hospitales y clínicas suelen tomar algunas semanas según la integración con EHR, el calendario de capacitación y la revisión interna de TI.",
       "q10": "¿Varios médicos en una misma práctica pueden compartir una cuenta?",
-      "a10": "Las pequeñas prácticas pueden comenzar con Profesional por médico. Para departamentos compartidos, roles administrativos o acceso hospitalario, el plan Empresa es el adecuado — contacte a ventas y lo dimensionaremos con usted."
+      "a10": "Las pequeñas prácticas pueden comenzar con Profesional por médico. Para departamentos compartidos, roles administrativos o acceso hospitalario, el plan Empresa es el adecuado. Contacte a ventas y lo dimensionaremos con usted."
     },
     "compare": {
       "title": "Comparar planes",
@@ -447,7 +447,7 @@
       "pro": "Profesional",
       "enterprise": "Empresa",
       "yes": "Incluido",
-      "no": "—",
+      "no": "-",
       "custom": "Personalizado",
       "rows": [
         {
@@ -603,26 +603,26 @@
       }
     },
     "highlightsTitle": "Cómo trabajamos",
-    "highlightsLead": "DocNote no comenzó como un pitch deck. Comenzó en los pasillos del hospital — entre rondas de sala, listas quirúrgicas y tardes pasadas reescribiendo notas que deberían haberse escrito solas. Ese origen aún moldea cada contratación, cada lanzamiento y cada conversación que tenemos con una clínica.",
+    "highlightsLead": "DocNote no comenzó como un pitch deck. Comenzó en los pasillos del hospital, entre rondas de sala, listas quirúrgicas y tardes pasadas reescribiendo notas que deberían haberse escrito solas. Ese origen aún moldea cada contratación, cada lanzamiento y cada conversación que tenemos con una clínica.",
     "highlights": [
       {
         "title": "Médicos practicantes en el centro",
-        "body": "Nuestros fundadores aún practican medicina. Eso no es un eslogan para la página Acerca de — es el filtro para las decisiones de producto. Si una función no sobrevive a una ronda de sala ocupada, una bahía de emergencias ruidosa o una clínica de viernes por la tarde, no se lanza.\n\nEl lenguaje clínico, la estructura de especialidad y el ritmo real de la documentación hospitalaria van primero. Diseñamos para cartas de alta, informes quirúrgicos, archivos colaborativos de hospital de día y los momentos incómodos cuando tres cuidadores atienden al mismo paciente en una tarde.\n\nCuando los médicos nos dicen que algo se siente mal, lo tratamos como información de ingeniería — no como un comentario de UX opcional."
+        "body": "Nuestros fundadores aún practican medicina. Eso no es un eslogan para la página Acerca de: es el filtro para las decisiones de producto. Si una función no sobrevive a una ronda de sala ocupada, una bahía de emergencias ruidosa o una clínica de viernes por la tarde, no se lanza.\n\nEl lenguaje clínico, la estructura de especialidad y el ritmo real de la documentación hospitalaria van primero. Diseñamos para cartas de alta, informes quirúrgicos, archivos colaborativos de hospital de día y los momentos incómodos cuando tres cuidadores atienden al mismo paciente en una tarde.\n\nCuando los médicos nos dicen que algo se siente mal, lo tratamos como información de ingeniería, no como un comentario de UX opcional."
       },
       {
         "title": "Privacidad alojada en Suiza por defecto",
-        "body": "Los datos de salud no son un corpus de entrenamiento. DocNote aloja información clínica en Suiza, la cifra en tránsito y en reposo, y aplica reglas de retención que coinciden con las expectativas europeas para el secreto médico.\n\nConstruimos para las realidades de FADP / nLPD, GDPR, HIPAA e ISO 27001 — revisiones de TI hospitalarias, cuestionarios de compras y la pregunta silenciosa que todo médico hace: ¿dónde viven realmente los datos de mi paciente?\n\nNada sobre la documentación ambiental vale la pena erosionar la confianza. La privacidad es parte de la arquitectura del producto, no un apéndice legal."
+        "body": "Los datos de salud no son un corpus de entrenamiento. DocNote aloja información clínica en Suiza, la cifra en tránsito y en reposo, y aplica reglas de retención que coinciden con las expectativas europeas para el secreto médico.\n\nConstruimos para las realidades de FADP / nLPD, GDPR, HIPAA e ISO 27001, revisiones de TI hospitalarias, cuestionarios de compras y la pregunta silenciosa que todo médico hace: ¿dónde viven realmente los datos de mi paciente?\n\nNada sobre la documentación ambiental vale la pena erosionar la confianza. La privacidad es parte de la arquitectura del producto, no un apéndice legal."
       },
       {
         "title": "Médicos e ingenieros en un mismo ciclo",
-        "body": "Especialistas médicos, ingenieros de IA y compañeros de producto están en el mismo ciclo. Los modelos de informes no se inventan en aislamiento y luego se \"adaptan\" para hospitales — se codiseñan con personas que aún escriben esos informes a mano hoy.\n\nEs por eso que DocNote puede pasar de dictado libre a notas estructuradas de especialidad, informes quirúrgicos, notas de seguimiento y resúmenes de alta sin obligar a los médicos a usar una plantilla genérica de pacientes ambulatorios estadounidenses.\n\nLa calidad de ingeniería se muestra como velocidad, confiabilidad e interfaces tranquilas. La calidad clínica se muestra como vocabulario, estructura y respeto por cómo trabajan realmente los equipos de atención."
+        "body": "Especialistas médicos, ingenieros de IA y compañeros de producto están en el mismo ciclo. Los modelos de informes no se inventan en aislamiento y luego se \"adaptan\" para hospitales. Se codiseñan con personas que aún escriben esos informes a mano hoy.\n\nEs por eso que DocNote puede pasar de dictado libre a notas estructuradas de especialidad, informes quirúrgicos, notas de seguimiento y resúmenes de alta sin obligar a los médicos a usar una plantilla genérica de pacientes ambulatorios estadounidenses.\n\nLa calidad de ingeniería se muestra como velocidad, confiabilidad e interfaces tranquilas. La calidad clínica se muestra como vocabulario, estructura y respeto por cómo trabajan realmente los equipos de atención."
       },
       {
         "title": "Desde la primera demo hasta la implementación hospitalaria",
-        "body": "Una buena demo de asistente ambiental es fácil. Una implementación hospitalaria confiable no lo es. Nuestros equipos de ventas, onboarding y soporte ayudan a las clínicas a mapear flujos de trabajo, elegir los modelos de informe correctos, conectar rutas de EHR cuando sea necesario y capacitar equipos sin interrumpir la atención.\n\nNos quedamos durante pilotos, compras y el desorden intermedio — excepciones de especialidad, preferencias de plantillas, salas multilingües y la lista de verificación de TI que nadie pone en el sitio de marketing.\n\nEl objetivo es simple: más tiempo con los pacientes, menos tardes perdidas en notas y un sistema de documentación que los médicos están dispuestos a defender ante sus colegas."
+        "body": "Una buena demo de asistente ambiental es fácil. Una implementación hospitalaria confiable no lo es. Nuestros equipos de ventas, onboarding y soporte ayudan a las clínicas a mapear flujos de trabajo, elegir los modelos de informe correctos, conectar rutas de EHR cuando sea necesario y capacitar equipos sin interrumpir la atención.\n\nNos quedamos durante pilotos, compras y el desorden intermedio: excepciones de especialidad, preferencias de plantillas, salas multilingües y la lista de verificación de TI que nadie pone en el sitio de marketing.\n\nEl objetivo es simple: más tiempo con los pacientes, menos tardes perdidas en notas y un sistema de documentación que los médicos están dispuestos a defender ante sus colegas."
       }
     ],
-    "highlightsClosing": "Hoy el equipo abarca liderazgo clínico, ingeniería profunda, estrategia comercial y comunicación — unidos por una misión: convertir consultas en documentos clínicos confiables en segundos, con privacidad alojada en Suiza en el centro. Construimos con las personas que usarán el producto mañana."
+    "highlightsClosing": "Hoy el equipo abarca liderazgo clínico, ingeniería profunda, estrategia comercial y comunicación, unidos por una misión: convertir consultas en documentos clínicos confiables en segundos, con privacidad alojada en Suiza en el centro. Construimos con las personas que usarán el producto mañana."
   },
   "tutorial": {
     "title": "Cómo empezar con DocNote",
@@ -691,14 +691,14 @@
     "aliceName": "Dr. Alice Gilson",
     "vincentRole": "Médico & Director General",
     "aliceRole": "Médico & Director General",
-    "vincentFocus": "Hospitales y clínicas en Suiza — demos, pilotos e implementación de EHR.",
-    "aliceFocus": "Organizaciones de salud francesas — hospitales, clínicas y conversaciones de compras.",
+    "vincentFocus": "Hospitales y clínicas en Suiza: demos, pilotos e implementación de EHR.",
+    "aliceFocus": "Organizaciones de salud francesas: hospitales, clínicas y conversaciones de compras.",
     "vincentCity": "Ginebra, Suiza",
     "aliceCity": "Francia",
     "writeEmail": "Escribir un correo",
     "callPhone": "Llamar",
     "hoursLabel": "Disponibilidad",
-    "hoursValue": "Lun–Vie · respuesta en un día hábil",
+    "hoursValue": "Lun-Vie · respuesta en un día hábil",
     "responseLabel": "Ideal para",
     "responseValue": "Demos hospitalarias, precios y preguntas de integración",
     "companyLabel": "Empresa",

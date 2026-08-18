@@ -97,7 +97,7 @@ DocNote ist für Kliniker entwickelt, die Ambient-Dokumentation ohne Aufgabe der
 
 Für Organisationen, die Optionen vergleichen, sollte die [Preisgestaltung](/pricing/) anhand der zurückgewonnenen Zeit bewertet werden, nicht nur an Lizenzkosten. Wenn ein Tool pro Visite nur wenige Minuten einspart, kann die Burnout- und Durchsatzwirkung über einen ganzen Kliniktag erheblich sein.
 
-DocNote soll klinische Urteile nicht ersetzen. Es soll vermeidbare bürokratische Reibung beseitigen, damit Ärzte mit mehr Aufmerksamkeit und weniger Dokumentationsrückstand praktizieren können. In Gruppenpraxen können gemeinsame Notizstandards plus Ambient-Entwürfe auch Teamvariabilität reduzieren, die sonst Wochenend-Nacharbeitskultur erzeugt. Wenn Kliniker darauf vertrauen, dass ein Erstentwurf brauchbar ist, sind sie eher bereit, Akten vor dem Verlassen der Klinik abzuschließen – eine der zuverlässigsten Burnout-verknüpften Verhaltensänderungen.
+DocNote soll klinische Urteile nicht ersetzen. Es soll vermeidbare bürokratische Reibung beseitigen, damit Ärzte mit mehr Aufmerksamkeit und weniger Dokumentationsrückstand praktizieren können. In Gruppenpraxen können gemeinsame Notizstandards plus Ambient-Entwürfe auch Teamvariabilität reduzieren, die sonst Wochenend-Nacharbeitskultur erzeugt. Wenn Kliniker darauf vertrauen, dass ein Erstentwurf brauchbar ist, sind sie eher bereit, Akten vor dem Verlassen der Klinik abzuschließen: eine der zuverlässigsten Burnout-verknüpften Verhaltensänderungen.
 
 ## Was Führungskräfte neben AI-Scribes korrigieren sollten
 

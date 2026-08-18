@@ -12,7 +12,7 @@ readTime: 10
 
 Auf Einladung von Professor Léo Bühler und der Vereinigung für chirurgische Forschung sprach Dr. Alice Gilson, Mitbegründerin von DocNote, beim Jahreskongress des Schweizerischen Chirurgenkollegiums in Luzern. Sie beteiligte sich an der Sitzung „KI, CAR-T-Zellen und Omics im OP: Wird es Chirurgen noch geben?“, ein Titel, der gleichermaßen Angst und Neugier weckt. Die ehrliche Antwort von der Bühne war klarer als die Provokation vermuten lässt: Chirurgen verschwinden nicht. Der Beruf entwickelt sich weiter, und [KI-gestützte medizinische Dokumentation](/ai-medical-scribe/) ist einer der Bereiche, in denen diese Entwicklung bereits Zeit außerhalb des Operationssaals einspart.
 
-Der Vortrag beleuchtete, wie KI Chirurgie und Gesundheitswesen bereits im OP durch Robotik, bildgestützte Chirurgie und Entscheidungsunterstützungssysteme verändert – und außerhalb durch Forschung, Datenanalyse und klinische Dokumentation. KI ersetzt weder klinische Urteilskraft, technische Expertise noch die menschliche Verbindung zu Patienten, sondern übernimmt repetitive administrative Aufgaben und schafft Kapazitäten für operative Versorgung, Lehre und Nachsorge. In Luzern wurde deutlich, wie Schweizer chirurgische Gemeinschaften diese Botschaft in praktische Fragen zu Einführung, Fachspezifität und Vertrauen übersetzen.
+Der Vortrag beleuchtete, wie KI Chirurgie und Gesundheitswesen bereits im OP durch Robotik, bildgestützte Chirurgie und Entscheidungsunterstützungssysteme verändert, und außerhalb durch Forschung, Datenanalyse und klinische Dokumentation. KI ersetzt weder klinische Urteilskraft, technische Expertise noch die menschliche Verbindung zu Patienten, sondern übernimmt repetitive administrative Aufgaben und schafft Kapazitäten für operative Versorgung, Lehre und Nachsorge. In Luzern wurde deutlich, wie Schweizer chirurgische Gemeinschaften diese Botschaft in praktische Fragen zu Einführung, Fachspezifität und Vertrauen übersetzen.
 
 ## Die eigentliche Frage hinter „Wird es Chirurgen noch geben?“
 
@@ -34,7 +34,7 @@ Dr. Gilsons Session verortete Dokumentation in einer größeren Landschaft chiru
 - **Präoperative Planung**: automatisierte Segmentierung und 3D-Rekonstruktion zur Visualisierung der Anatomie vor dem Schnitt
 - **Intraoperative Navigation und Bildgebung**: Echtzeit-Overlays und Bildanalyse für mehr Präzision
 - **Prädiktives Monitoring**: Modelle, die Risikoverläufe während und nach Eingriffen erkennen
-- **Robotik und assistierte Plattformen**: Systeme, die Geschicklichkeit und Standardisierung erweitern – immer unter chirurgischer Kontrolle
+- **Robotik und assistierte Plattformen**: Systeme, die Geschicklichkeit und Standardisierung erweitern, immer unter chirurgischer Kontrolle
 
 Diese Tools verändern Technik und Ausbildung. Sie beseitigen nicht die Notwendigkeit klinischer Urteilskraft bei atypischer Anatomie, multiplen Komorbiditäten oder Planänderungen während des Eingriffs. In Luzern wurde diese Kontinuität als Merkmal verantwortungsvoller KI betrachtet, nicht als Marketing-Fußnote.
 
@@ -48,7 +48,7 @@ Fragen und Booth-Gespräche nach einem Zukunftsvortrag sind oft schärfer als h�
 
 ### Verantwortung und die chirurgische Unterschrift
 
-Wem gehört ein KI-entworfener OP-Bericht, wenn ein Detail falsch ist? Chirurgen wollten Workflows, die Überprüfung unvermeidbar und Bearbeitung einfach machen. Die Berufsnorm sollte vertraut bleiben: Der verantwortliche Chirurg validiert die Aufzeichnung – genau wie den Entwurf eines Assistenten.
+Wem gehört ein KI-entworfener OP-Bericht, wenn ein Detail falsch ist? Chirurgen wollten Workflows, die Überprüfung unvermeidbar und Bearbeitung einfach machen. Die Berufsnorm sollte vertraut bleiben: Der verantwortliche Chirurg validiert die Aufzeichnung, genau wie den Entwurf eines Assistenten.
 
 ### Fachspezifische Nuancen in der Dokumentation
 
@@ -64,7 +64,7 @@ Ein Entwurf in einer separaten App erzeugt Reibung. Chirurgen fragten nach EHR-�
 
 ### Ausbildung des Nachwuchses
 
-Wenn Assistenten sich auf KI-Entwürfe verlassen, lernen sie dann noch, klare OP-Berichte zu schreiben? Dozenten interessierten sich dafür, KI als Gerüst zu nutzen, das Kritik erfordert – nicht als Umgehung klinischer Denkprozesse. Gute Pilotprojekte integrieren LehrMomente: Was das Modell übersah, was nie automatisch übernommen werden darf, wie Unsicherheit formuliert wird.
+Wenn Assistenten sich auf KI-Entwürfe verlassen, lernen sie dann noch, klare OP-Berichte zu schreiben? Dozenten interessierten sich dafür, KI als Gerüst zu nutzen, das Kritik erfordert, nicht als Umgehung klinischer Denkprozesse. Gute Pilotprojekte integrieren LehrMomente: Was das Modell übersah, was nie automatisch übernommen werden darf, wie Unsicherheit formuliert wird.
 
 ## Einführungslektionen für chirurgische Abteilungen
 
@@ -96,9 +96,9 @@ Die Luzerner Session platzierte KI-Dokumentation neben CAR-T, Omics und OP-Innov
 - **Bildgebung und Robotik** verändern, wie Operationen durchgeführt werden
 - **Dokumentations- und Forschungs-KI** verändern, wie Wissen und Aufzeichnungen mit dieser Komplexität Schritt halten
 
-Keine dieser Schichten eliminiert den Chirurgen. Sie verändern die Fähigkeitsmischung. Kommunikation, Einwilligung, intraoperative Entscheidungen und postoperative Verantwortung bleiben menschlich. Administrative Entwürfe sind die Schicht, die heute am ehesten für sichere Automatisierung bereit ist – weil das Ergebnis bearbeitbarer Text unter professioneller Signatur ist, kein irreversibler Roboterzug.
+Keine dieser Schichten eliminiert den Chirurgen. Sie verändern die Fähigkeitsmischung. Kommunikation, Einwilligung, intraoperative Entscheidungen und postoperative Verantwortung bleiben menschlich. Administrative Entwürfe sind die Schicht, die heute am ehesten für sichere Automatisierung bereit ist, weil das Ergebnis bearbeitbarer Text unter professioneller Signatur ist, kein irreversibler Roboterzug.
 
-Das Schweizer Chirurgenkollegium beobachtet auch ausländische Fachgesellschaften. Das Muster ist konsistent: Starten Sie dort, wo Evidenz und Workflow-Passung am stärksten sind, publizieren Sie lokale Erfahrungen und widerstehen Sie Tools, die Datenhandling nicht erklären können. DocNotes Position in dieser Landschaft ist bewusst praktisch. Reduzieren Sie repetitive Dokumentation, damit chirurgische Teams Zeit für Patienten, OP und Lehre schützen – mit einem [KI-medizinischen Schreiber](/ai-medical-scribe/), der für klinische Überprüfung und Krankenhausrealität gebaut ist.
+Das Schweizer Chirurgenkollegium beobachtet auch ausländische Fachgesellschaften. Das Muster ist konsistent: Starten Sie dort, wo Evidenz und Workflow-Passung am stärksten sind, publizieren Sie lokale Erfahrungen und widerstehen Sie Tools, die Datenhandling nicht erklären können. DocNotes Position in dieser Landschaft ist bewusst praktisch. Reduzieren Sie repetitive Dokumentation, damit chirurgische Teams Zeit für Patienten, OP und Lehre schützen, mit einem [KI-medizinischen Schreiber](/ai-medical-scribe/), der für klinische Überprüfung und Krankenhausrealität gebaut ist.
 
 ## FAQ
 
@@ -124,7 +124,7 @@ Das Schweizer Chirurgenkollegium beobachtet auch ausländische Fachgesellschafte
 
 <details>
   <summary>Wie passt DocNote in chirurgische Krankenhausworkflows?</summary>
-  <p>DocNote hilft, strukturierte klinische Dokumente über den gesamten Behandlungsweg zu erstellen – inklusive Konsultationen, Stationsnotizen, OP-Berichte und Entlassungsbriefe – mit Integrationspfaden in bestehende Krankenhaussysteme.</p>
+  <p>DocNote hilft, strukturierte klinische Dokumente über den gesamten Behandlungsweg zu erstellen, inklusive Konsultationen, Stationsnotizen, OP-Berichte und Entlassungsbriefe, mit Integrationspfaden in bestehende Krankenhaussysteme.</p>
 </details>
 
 <details>

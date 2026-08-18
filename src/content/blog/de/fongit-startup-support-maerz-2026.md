@@ -14,6 +14,6 @@ DocNote ist stolz, bekanntzugeben, dass es für das Initial-Startup-Support-Prog
 
 DocNote ist ein Assistent, der Ärztinnen und Ärzte dabei unterstützt, ihre administrative Belastung zu reduzieren. Aus einer aufgezeichneten Konsultation, einem Diktat oder Verlaufsnotizen erstellt er automatisch strukturierte medizinische Dokumente: Konsultationsberichte, Operationsberichte oder Austrittsbriefe.
 
-In allen Kontexten erprobt — im Krankenhaus, im ambulanten Bereich und bis ans Krankenbett — deckt die Lösung dank des Feedbacks von Ärztinnen und Ärzten aller Fachrichtungen heute einen grossen Teil der klinischen Variationen des Berufs ab.
+In allen Kontexten erprobt (im Krankenhaus, im ambulanten Bereich und bis ans Krankenbett), deckt die Lösung dank des Feedbacks von Ärztinnen und Ärzten aller Fachrichtungen heute einen grossen Teil der klinischen Variationen des Berufs ab.
 
 Wir danken der FONGIT herzlich für diese Unterstützung und ihr Engagement für das Genfer Startup-Ökosystem. Das ist erst der Anfang.
