@@ -61,11 +61,11 @@ export type SolutionsHubCopy = {
   columnsTitle: string
   columnsSubtitle: string
   columnExtras: {
-    platform: SolutionsColumnExtra
-    documents: SolutionsColumnExtra
-    careTrust: SolutionsColumnExtra
+    audiences: SolutionsColumnExtra
+    differentiators: SolutionsColumnExtra
   }
-  featuredInPlatform: string
+  /** Out-of-menu product pages kept for search (pillar + use cases). */
+  more: { badge: string; title: string; subtitle: string }
   cta: { title: string; body: string; primary: string; secondary: string }
   viewAllLabel: string
   openMenuLabel: string
@@ -189,56 +189,56 @@ const solutionsHubByLocale: Partial<Record<Locale, SolutionsHubCopy>> & {
   fr: SolutionsHubCopy
 } = {
   en: {
-    title: 'DocNote solutions | Ambient clinical documentation',
+    title: 'DocNote solutions | Who it is for and what makes it different',
     description:
-      'Explore DocNote solutions — ambient clinical documentation, AI medical scribe, SOAP notes, operative reports, hospital documentation, and Swiss clinical compliance.',
+      'DocNote solutions for private practice, hospitals and departments, medical secretaries and clinic groups — plus what sets it apart: coding and billing suggestions, EHR integration, your Word templates, clinical context, day hospital, 61 specialties in 21 languages.',
     hero: {
       badge: 'Solutions',
-      title: 'Clinical documentation that fits your workflow',
-      subtitle: 'Platform, document types, and care & trust — the same structure as the product menu.',
-      lead: 'Start from how you capture encounters, the documents you ship, or the trust layer hospitals need. Every card links to a live product page.',
+      title: 'Built for someone like you — and different from the rest',
+      subtitle: 'Two questions, one menu: is this made for my setup, and what does it do that the others don’t?',
+      lead: 'Start from who you are — private practice, hospital department, secretary, group — or from the capabilities competitors cannot copy. Every card links to a live product page.',
     },
     media: {
       badge: 'Start here',
-      title: 'Ambient capture is the product spine',
-      body: 'Listen in the room, draft after the visit, validate before the record sticks — then branch into SOAP, CRO, discharge, or hospital files.',
-      caption: 'Ambient clinical documentation — the path most teams open first.',
+      title: 'The same record button, four very different desks',
+      body: 'A solo physician, a department head, a medical secretary and a group director do not buy the same product. DocNote drafts a report you validate — then adapts the format, the coding slot and the delivery to how your setup actually works.',
+      caption: 'Hospitals, practices, secretaries and groups — one product, four workflows.',
       imageAlt: 'Hospital and clinical campus exterior',
     },
     stats: [
-      { value: '11', label: 'Solution pages' },
-      { value: '3', label: 'Menu groups' },
+      { value: '4', label: 'Audiences' },
+      { value: '6', label: 'Differentiators' },
       { value: 'CH', label: 'Swiss-hosted' },
     ],
-    statsLine: '11 solution pages · 3 menu groups · Swiss-hosted',
+    statsLine: '4 audience pages · 6 differentiators · Swiss-hosted',
     featured: {
       badge: 'Featured',
-      title: 'Ambient clinical documentation',
-      body: 'Passive capture during the visit, a structured draft right after — no typing in between. Open the full ambient landing, or browse the platform group below.',
-      primary: 'Open ambient page',
-      secondary: 'Browse platform',
+      title: 'For hospitals and departments',
+      body: 'Discharge letters, operative reports and ward notes — in your department’s format, with coding suggestions at the end and delivery into your EHR. Open the hospital page, or pick your own audience below.',
+      primary: 'Open the hospital page',
+      secondary: 'Find your audience',
     },
     columnsBadge: 'Browse',
     columnsTitle: 'Everything in Solutions',
-    columnsSubtitle: 'Three distinct paths — not one flat grid. Same groups as the header mega-menu.',
+    columnsSubtitle: 'Who it is for on the left, what makes us different on the right — the same two columns as the header menu.',
     columnExtras: {
-      platform: {
-        badge: 'Platform',
-        subtitle: 'How DocNote captures and drafts — ambient, scribe, multilingual.',
+      audiences: {
+        badge: 'Who it’s for',
+        subtitle: 'Pick the page that matches how you work — the decision cycle, the documents and the systems are different for each.',
       },
-      documents: {
-        badge: 'Document types',
-        subtitle: 'The notes and reports clinicians actually ship after an encounter.',
-      },
-      careTrust: {
-        badge: 'Care & trust',
-        subtitle: 'Hospital workflow and the compliance layer procurement reviews.',
+      differentiators: {
+        badge: 'What makes us different',
+        subtitle: 'The capabilities no generalist scribe can claim: coding suggestions, EHR delivery, your Word templates, clinical context, day hospital, specialties and languages.',
       },
     },
-    featuredInPlatform: 'Highlight',
+    more: {
+      badge: 'Also on the site',
+      title: 'More product pages',
+      subtitle: 'The “what DocNote is” pillar and document-type pages, kept for people who search by document rather than by role.',
+    },
     cta: {
-      title: 'Ready to try the note flow?',
-      body: 'See ambient capture through to a structured draft you validate — or book a conversation with the team.',
+      title: 'Ready to see the note flow?',
+      body: 'Watch a consultation go from recording to a structured draft you validate — or book a conversation with the team.',
       primary: 'Watch the tutorial',
       secondary: 'View pricing',
     },
@@ -246,56 +246,56 @@ const solutionsHubByLocale: Partial<Record<Locale, SolutionsHubCopy>> & {
     openMenuLabel: 'Open solutions menu',
   },
   fr: {
-    title: 'Solutions DocNote | Documentation clinique ambiante',
+    title: 'Solutions DocNote | Pour qui, et ce qui nous distingue',
     description:
-      'Explorez les solutions DocNote — documentation clinique ambiante, scribe médical IA, notes SOAP, comptes rendus opératoires, documentation hospitalière et conformité clinique suisse.',
+      'Les solutions DocNote pour le cabinet privé, les hôpitaux et services, les secrétaires médicales et les groupes de cliniques — et ce qui nous distingue : suggestions de codage et facturation, intégration DPI, vos modèles Word, contexte clinique, hôpital de jour, 61 spécialités en 21 langues.',
     hero: {
       badge: 'Solutions',
-      title: 'Une documentation clinique adaptée à votre flux',
-      subtitle: 'Plateforme, types de documents, soins & confiance — la même structure que le menu produit.',
-      lead: 'Partez de la capture des consultations, des documents que vous produisez, ou de la couche de confiance dont les hôpitaux ont besoin. Chaque carte mène à une page produit réelle.',
+      title: 'Conçu pour quelqu’un comme vous — et différent des autres',
+      subtitle: 'Deux questions, un menu : est-ce fait pour mon organisation, et que fait-il que les autres ne font pas ?',
+      lead: 'Partez de qui vous êtes — cabinet privé, service hospitalier, secrétaire, groupe — ou des capacités que les concurrents ne peuvent pas copier. Chaque carte mène à une page produit réelle.',
     },
     media: {
       badge: 'Par ici',
-      title: 'La capture ambiante est la colonne vertébrale',
-      body: 'Écouter en salle, rédiger après la visite, valider avant l’enregistrement — puis brancher vers SOAP, CRO, sortie ou dossiers hospitaliers.',
-      caption: 'Documentation clinique ambiante — le chemin que la plupart des équipes ouvrent en premier.',
+      title: 'Le même bouton d’enregistrement, quatre bureaux très différents',
+      body: 'Un médecin installé, un chef de service, une secrétaire médicale et un directeur de groupe n’achètent pas le même produit. DocNote rédige un compte rendu que vous validez — puis adapte le format, l’emplacement du codage et l’envoi à votre organisation réelle.',
+      caption: 'Hôpitaux, cabinets, secrétaires et groupes — un produit, quatre flux de travail.',
       imageAlt: 'Campus hospitalier et clinique — vue extérieure',
     },
     stats: [
-      { value: '11', label: 'Pages solutions' },
-      { value: '3', label: 'Groupes menu' },
+      { value: '4', label: 'Publics' },
+      { value: '6', label: 'Différenciateurs' },
       { value: 'CH', label: 'Hébergé en CH' },
     ],
-    statsLine: '11 pages solutions · 3 groupes menu · hébergement suisse',
+    statsLine: '4 pages par public · 6 différenciateurs · hébergement suisse',
     featured: {
       badge: 'À la une',
-      title: 'Documentation clinique ambiante',
-      body: 'Capture passive pendant la visite, brouillon structuré juste après — sans taper entre-temps. Ouvrez la page ambiante, ou parcourez le groupe plateforme ci-dessous.',
-      primary: 'Ouvrir la page ambiante',
-      secondary: 'Voir la plateforme',
+      title: 'Pour les hôpitaux et les services',
+      body: 'Lettres de sortie, comptes rendus opératoires et notes de visite — au format de votre service, avec des suggestions de codage en fin de document et un envoi dans votre DPI. Ouvrez la page hôpital, ou choisissez votre public ci-dessous.',
+      primary: 'Ouvrir la page hôpital',
+      secondary: 'Trouver votre public',
     },
     columnsBadge: 'Parcourir',
     columnsTitle: 'Tout le menu Solutions',
-    columnsSubtitle: 'Trois chemins distincts — pas une grille plate. Les mêmes groupes que le méga-menu.',
+    columnsSubtitle: 'Pour qui à gauche, ce qui nous distingue à droite — les deux mêmes colonnes que le menu principal.',
     columnExtras: {
-      platform: {
-        badge: 'Plateforme',
-        subtitle: 'Comment DocNote capture et rédige — ambiant, scribe, multilingue.',
+      audiences: {
+        badge: 'Pour qui',
+        subtitle: 'Choisissez la page qui correspond à votre façon de travailler — le cycle de décision, les documents et les systèmes diffèrent pour chacun.',
       },
-      documents: {
-        badge: 'Types de documents',
-        subtitle: 'Les notes et rapports que les cliniciens produisent vraiment après une rencontre.',
-      },
-      careTrust: {
-        badge: 'Soins & confiance',
-        subtitle: 'Le flux hospitalier et la couche conformité que regarde l’achat.',
+      differentiators: {
+        badge: 'Ce qui nous distingue',
+        subtitle: 'Les capacités qu’aucun scribe généraliste ne peut revendiquer : suggestions de codage, envoi vers le DPI, vos modèles Word, contexte clinique, hôpital de jour, spécialités et langues.',
       },
     },
-    featuredInPlatform: 'À la une',
+    more: {
+      badge: 'Aussi sur le site',
+      title: 'Autres pages produit',
+      subtitle: 'La page pilier « ce qu’est DocNote » et les pages par type de document, conservées pour ceux qui cherchent par document plutôt que par rôle.',
+    },
     cta: {
-      title: 'Prêt à tester le flux de note ?',
-      body: 'Voyez la capture ambiante jusqu’au brouillon structuré que vous validez — ou échangez avec l’équipe.',
+      title: 'Prêt à voir le flux de note ?',
+      body: 'Regardez une consultation passer de l’enregistrement à un brouillon structuré que vous validez — ou échangez avec l’équipe.',
       primary: 'Voir le tutoriel',
       secondary: 'Voir les tarifs',
     },

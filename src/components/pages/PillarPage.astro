@@ -25,6 +25,7 @@ import {
 } from '../../content/specialty-families';
 import { SOLUTIONS_HUB_PATH, SPECIALTIES_HUB_PATH } from '../../content/hubs';
 import { buildBreadcrumbLd, absoluteLocalizedUrl } from '../../utils/seo';
+import { DEMO_BOOKING_URL, WEB_APP_URL } from '../../utils/links';
 
 interface Props {
   locale: Locale;
@@ -69,17 +70,32 @@ const depthTitle =
       : 'What to know before you roll out';
 
 const ctaHref = (key: typeof meta.primaryCta) => {
+  if (key === 'app') return WEB_APP_URL;
+  if (key === 'demo') return DEMO_BOOKING_URL;
   const map = {
     tutorial: '/tutorial',
     pricing: '/pricing',
     contact: '/contact',
     privacy: '/privacy',
+    compliance: '/clinical-compliance',
   } as const;
   return getLocalizedPath(map[key], lang);
 };
+const ctaExternal = (key: typeof meta.primaryCta) => key === 'demo';
 
 const primaryHref = ctaHref(meta.primaryCta);
 const secondaryHref = ctaHref(meta.secondaryCta);
+const primaryExternal = ctaExternal(meta.primaryCta);
+const secondaryExternal = ctaExternal(meta.secondaryCta);
+
+/* Differentiator pages reuse the homepage specificity card as their hook. */
+const specificity = meta.specificityKey
+  ? (pagesT.specificities?.[meta.specificityKey] as
+      | { title: string; impact: string; description: string }
+      | undefined)
+  : undefined;
+const specificityImpactLabel = pagesT.specificities?.impactLabel ?? 'Impact';
+const specificityBadge = pagesT.specificities?.badge ?? 'Specificities';
 
 const relatedSlugs = meta.related.filter((s) => s !== slug);
 const parentFamilySlug =
@@ -180,16 +196,42 @@ const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
     lead={p.hero.lead}
     compact
   >
-    <a href={primaryHref} class="btn-primary">
+    <a
+      href={primaryHref}
+      class="btn-primary"
+      target={primaryExternal ? '_blank' : undefined}
+      rel={primaryExternal ? 'noopener noreferrer' : undefined}
+    >
       {p.cta.primary}
     </a>
     <a
       href={secondaryHref}
       class="btn-secondary"
+      target={secondaryExternal ? '_blank' : undefined}
+      rel={secondaryExternal ? 'noopener noreferrer' : undefined}
     >
       {p.cta.secondary}
     </a>
   </PageHero>
+
+  {specificity && (
+    <section class="relative pt-10 sm:pt-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article class="lp-card lp-card--hook reveal">
+          <span class="lp-eyebrow">
+            <span class="lp-dot" aria-hidden="true"></span>
+            {specificityBadge}
+          </span>
+          <h2 class="lp-card-title mt-3">{specificity.title}</h2>
+          <p class="lp-card-text">{specificity.description}</p>
+          <div class="lp-hook-impact">
+            <span class="lp-hook-impact-label">{specificityImpactLabel}</span>
+            <p>{specificity.impact}</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  )}
 
   <!-- Story -->
   <section class="relative py-14 sm:py-20">
@@ -374,10 +416,19 @@ const jsonLd = faqLd ? [breadcrumbLd, faqLd] : breadcrumbLd;
           </h2>
           <p class="mt-3 text-base text-gray-600 leading-relaxed">{p.cta.body}</p>
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href={primaryHref} class="btn-primary">{p.cta.primary}</a>
+            <a
+              href={primaryHref}
+              class="btn-primary"
+              target={primaryExternal ? '_blank' : undefined}
+              rel={primaryExternal ? 'noopener noreferrer' : undefined}
+            >
+              {p.cta.primary}
+            </a>
             <a
               href={secondaryHref}
               class="btn-secondary"
+              target={secondaryExternal ? '_blank' : undefined}
+              rel={secondaryExternal ? 'noopener noreferrer' : undefined}
             >
               {p.cta.secondary}
             </a>
