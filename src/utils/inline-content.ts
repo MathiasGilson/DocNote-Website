@@ -35,6 +35,9 @@ const seoModules = import.meta.glob('../content/inline/seo/*.json', { eager: tru
   string,
   JsonModule
 >;
+const solutionsHubModules = import.meta.glob('../content/inline/solutions-hub/*.json', {
+  eager: true,
+}) as Record<string, JsonModule>;
 
 function localeFromPath(path: string): string {
   const base = path.split('/').pop() || '';
@@ -62,6 +65,7 @@ export const specialtyFamiliesCopy = Object.keys(specialtyFamiliesModules).lengt
   : ({ en: {} } as Partial<Record<Locale, Record<string, unknown>>> & { en: Record<string, unknown> });
 export const pillarNavCopy = mapModules<Record<string, string>>(pillarNavModules);
 export const seoCopy = mapModules<Record<string, { title: string; description: string }>>(seoModules);
+export const solutionsHubCopy = mapModules<Record<string, unknown>>(solutionsHubModules);
 
 export function getInline<T>(
   bundle: Partial<Record<Locale, T>> & { en: T },

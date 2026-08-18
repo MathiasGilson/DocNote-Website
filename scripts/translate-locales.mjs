@@ -5,7 +5,7 @@
  *
  * Targets:
  *   - src/content/pages/<locale>.json  (main UI store)
- *   - src/content/inline/<bundle>/<locale>.json  (patient, sondage, emploi, pillars, pillar-nav, seo, landings)
+ *   - src/content/inline/<bundle>/<locale>.json  (patient, sondage, emploi, pillars, pillar-nav, seo, landings, solutions-hub)
  *
  * Usage:
  *   OPEN_ROUTER_API_KEY=… node scripts/translate-locales.mjs --dry-run
@@ -69,6 +69,7 @@ const BUNDLES = {
   seo: path.join(ROOT, 'src/content/inline/seo'),
   'seo-content': path.join(ROOT, 'src/content/inline/seo-content'),
   landings: path.join(ROOT, 'src/content/inline/landings'),
+  'solutions-hub': path.join(ROOT, 'src/content/inline/solutions-hub'),
 };
 
 const rawArgs = process.argv.slice(2);
@@ -91,6 +92,7 @@ for (const arg of rawArgs) {
 const positionalLocales = rawArgs.filter((a) => !a.startsWith('--') && LOCALE_NAMES[a]);
 
 let apiCallCount = 0;
+const usageTotals = { prompt: 0, completion: 0, cost: 0 };
 
 function countLeaves(obj) {
   if (obj === null || obj === undefined) return 0;
@@ -248,7 +250,8 @@ TRANSLATION RULES:
 1. Translate every value. Preserve meaning and structure.
 2. Do NOT shorten, summarize, or drop details.
 3. Preserve placeholders exactly: {variable}, {{variable}}, %s, {pct}, {min}, etc.
-4. Do NOT translate brand/product names: DocNote, Mediway, SOKLE, SOAP, HIPAA, GDPR, FADP, nFADP, nLPD, ISO, EHR, DPI, KIS, Dragon, Reply.io, Looker Studio, FONGIT, HUG, AP-HP, Web3Forms.
+4. Do NOT translate brand/product names or tariff/system names: DocNote, Mediway, SOKLE, Axenita, EDL, Elsan, Ramsay, Ardentis, SwissDRG, TARDOC, Tarif 222, PMSI, CHOP, ICD-10, OAuth2, Word (Microsoft Word), SOAP, HIPAA, GDPR, FADP, nFADP, nLPD, ISO, EHR, DPI, KIS, Dragon, Reply.io, Looker Studio, FONGIT, HUG, AP-HP, Web3Forms. "EHR" may be rendered by the usual local term (e.g. DPI in French, KIS in German) when the target language has one.
+4b. Keep claims exactly as cautious as the source: coding is a "suggestion/proposal to validate" (never automatic coding), the EHR flow is one-way (never bidirectional/two-way), compliance is described, never guaranteed.
 5. Keep medical acronyms when commonly used in the target language (SOAP, OR, BP, HR).
 6. Keep JSON keys EXACTLY as-is — including top-level landing slugs like "ai-medical-scribe", "ai-scribe-general-practice". NEVER translate, rename, or localize keys.
 7. Keep structure, arrays, nesting identical to the input.
@@ -258,6 +261,7 @@ TRANSLATION RULES:
             { role: 'user', content: jsonStr },
           ],
           temperature: 0.2,
+          usage: { include: true },
         }),
       });
 
@@ -284,6 +288,11 @@ TRANSLATION RULES:
       if (end >= 0) content = content.slice(0, end + 1);
 
       apiCallCount++;
+      if (data.usage) {
+        usageTotals.prompt += data.usage.prompt_tokens || 0;
+        usageTotals.completion += data.usage.completion_tokens || 0;
+        usageTotals.cost += Number(data.usage.cost || 0);
+      }
       await sleep(DELAY_BETWEEN_CALLS_MS);
       return JSON.parse(content);
     } catch (err) {
@@ -441,6 +450,10 @@ async function main() {
 
   console.log('\n' + '='.repeat(50));
   console.log(`API calls used: ${apiCallCount}`);
+  console.log(
+    `Tokens: ${usageTotals.prompt} prompt + ${usageTotals.completion} completion` +
+      (usageTotals.cost ? ` · cost ≈ $${usageTotals.cost.toFixed(4)}` : '')
+  );
   let anyFailed = false;
   for (const r of results) {
     if (r.translated || r.failed) {

@@ -136,6 +136,143 @@
     "relatedLabel": "相关指南",
     "navDesc": "倾听问诊，生成病历草稿。"
   },
+  "hospital-documentation": {
+    "navLabel": "医院及科室",
+    "navDesc": "出院信、手术报告、编码、电子健康记录。",
+    "title": "面向医院及科室的AI医疗文书助手 | DocNote",
+    "description": "按科室格式自动生成出院信、手术报告和病房记录。提供编码建议并单向传输至7种电子健康记录系统。预约演示。",
+    "hero": {
+      "badge": "面向医院及科室",
+      "title": "DocNote医院及科室解决方案",
+      "subtitle": "出院信、手术报告和病房记录——采用您科室的格式，直接存入电子健康记录系统。",
+      "lead": "在医院环境中，门诊记录并非痛点。真正的问题在于积压三周未完成的出院信、口述后需重新录入的手术报告、事后由编码部门返工的病例编码，以及需要手工填写的电子健康记录。为私人诊所设计的工具无法解决这些问题。"
+    },
+    "story": {
+      "badge": "痛点分析",
+      "title": "医院工作远不止一份门诊记录",
+      "paragraphs": [
+        "科室需要生成结构、长度和接收方各异的文档：发送给全科医生和保险公司的出院信、用于结案的手术报告、次日早班医生查阅的病房记录。每份文件都必须一次成型，使用科室信头纸，并归入患者病历——而非存入附属应用。",
+        "DocNote将这些医院文档格式视为一等公民。您记录查房过程、手术复盘或门诊内容，选择文档类型后，DocNote会生成待审核的初稿——重要次要诊断会在信中突出显示，编码建议则置于文档末尾的专属区域。",
+        "审核通过后，报告将按章节分割直接存入电子健康记录系统，无需复制粘贴。医师始终是文档作者并负责签署；DocNote不会读取患者记录，也不会代您编码——它仅提出建议，由您最终确认。"
+      ]
+    },
+    "benefits": {
+      "badge": "核心功能",
+      "title": "专为科室晚间文书工作打造",
+      "subtitle": "原生医院格式、自定义模板、编码建议、电子健康记录传输。",
+      "items": [
+        {
+          "title": "原生医院格式",
+          "body": "出院信、病房记录、手术报告——从初稿起就具备正确的结构、长度和接收方。绝非强行拉伸的门诊SOAP记录。"
+        },
+        {
+          "title": "自定义Word模板",
+          "body": "上传科室文档模板一次。此后每份报告都将使用您的信头纸、章节结构和签名——审核只需关注临床内容，无需调整格式。"
+        },
+        {
+          "title": "内置编码功能",
+          "body": "重要次要诊断在信件中突出显示，文档末尾提供SwissDRG（瑞士）或PMSI（法国）编码建议——供医师和编码部门确认的提案。"
+        },
+        {
+          "title": "直达电子健康记录",
+          "body": "审核通过的报告按章节分割存入患者病历——无需复制粘贴。病房使用手机，办公室使用电脑：实时同步的同一份记录。"
+        }
+      ]
+    },
+    "steps": {
+      "badge": "工作流程",
+      "title": "从病房/手术室到归档的完整文档",
+      "subtitle": "遵循您科室既有的审核确认规范。",
+      "items": [
+        {
+          "title": "记录诊疗过程",
+          "body": "在常规工作流程中，通过手机或浏览器记录查房、手术复盘或门诊内容。"
+        },
+        {
+          "title": "选择医院文档类型",
+          "body": "出院信、手术报告、病房记录或您科室的其他模板——使用您的信头纸和章节结构。"
+        },
+        {
+          "title": "审核初稿及编码建议",
+          "body": "主治医师修正临床内容，检查突出显示的诊断和文档末尾的编码提案，并签署确认。"
+        },
+        {
+          "title": "发送至患者病历",
+          "body": "审核通过的报告按章节传输至电子健康记录系统——已对接SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay或Ardentis。"
+        }
+      ]
+    },
+    "proof": {
+      "badge": "实证非承诺",
+      "title": "已在机构实际运行，对接电子健康记录系统，经医师验证",
+      "intro": "医院在安全评估和真实病例试点后才会采用文书软件，而非仅凭演示。DocNote的设计能通过双重考验。",
+      "points": [
+        {
+          "title": "已在医疗机构运行",
+          "body": "DocNote现已在医院科室实际应用于出院信、手术报告和病房记录——非路线图规划。"
+        },
+        {
+          "title": "对接七种电子健康记录系统",
+          "body": "SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay和Ardentis可按章节接收审核通过的报告。其他厂商可使用已文档化的集成API。"
+        },
+        {
+          "title": "医师始终是文档作者",
+          "body": "未经临床医生审核确认，任何文档都不会进入病历系统。编码建议需经医师和编码部门确认后才生效。"
+        },
+        {
+          "title": "瑞士托管，短期音频保留",
+          "body": "健康数据托管于瑞士；音频仅在生成文档期间短暂保留后即删除。完整合规说明详见合规页面。"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "科室全面推广方案",
+        "body": "常规路径从一种文档类型和一个病房/服务开始。上传科室Word模板后，通过真实病例验证初稿质量，再逐步推广至其他服务。IT和医疗主管同步审核托管、留存和集成方案——与任何其他临床软件采购相同的评估结构。"
+      },
+      {
+        "heading": "编码建议的呈现位置",
+        "body": "编码建议显示在文档末尾的专属区域，绝不污染临床文本。您可以在Word模板中将该区域置于编码部门预期的任何位置。瑞士：SwissDRG（ICD-10/CHOP）、牙科TARDOC和Tarif 222。法国：PMSI。"
+      },
+      {
+        "heading": "多位医生，同一份病历",
+        "body": "在日间医院，多位医生通过DocNote向同一份患者病历添加内容。当日结束时您将获得一份结构化病历，而非需要协调的四份零散记录——适用于已对接电子健康记录系统的医疗集团。"
+      }
+    ],
+    "faq": [
+      {
+        "q": "DocNote可生成哪些医院文档？",
+        "a": "出院信、手术报告、病房记录和门诊报告，均采用您科室的模板。医师需审核确认每份初稿后方可归入病历。"
+      },
+      {
+        "q": "DocNote会代我们完成病例编码吗？",
+        "a": "不会。DocNote在信件中突出重要次要诊断，并在文档末尾添加编码建议——SwissDRG、TARDOC、Tarif 222或PMSI。这些均为待确认的提案；责任始终由医师和编码部门承担。"
+      },
+      {
+        "q": "支持哪些电子健康记录系统？",
+        "a": "SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay和Ardentis。临床医生只需关联账户一次，在DocNote内搜索患者后，审核通过的报告将按章节发送至该患者病历。数据流为单向，从DocNote到电子健康记录系统。"
+      },
+      {
+        "q": "能否保留机构信头纸？",
+        "a": "可以。上传科室Word文档一次；此后所有报告都将使用您的信头纸、章节结构和签名。"
+      },
+      {
+        "q": "AI会替代医师签名吗？",
+        "a": "不会。DocNote生成待审核的报告初稿。医师始终是作者并负责签署。"
+      },
+      {
+        "q": "医院服务上线需要多长时间？",
+        "a": "多数服务从一种文档类型和一个病房开始，通过真实病例验证模板后逐步扩展——进度取决于您的IT审核流程，而非工具本身。"
+      }
+    ],
+    "cta": {
+      "title": "为您的科室引入DocNote",
+      "body": "预约团队演示，使用您实际的文档类型——出院信、手术报告、病房记录——结合您的模板和电子健康记录系统进行体验。",
+      "primary": "预约演示",
+      "secondary": "查看合规说明"
+    },
+    "relatedLabel": "相关页面"
+  },
   "clinical-compliance": {
     "navLabel": "临床合规",
     "title": "临床AI合规(FADP/GDPR/HIPAA)",
@@ -276,6 +413,1099 @@
     },
     "relatedLabel": "相关指南",
     "navDesc": "瑞士托管、短期留存、医疗保密。"
+  },
+  "for-private-practice": {
+    "navLabel": "私人诊所",
+    "navDesc": "一次诊疗即见成效，无需安装",
+    "title": "私人诊所AI医疗文书助手 | DocNote",
+    "description": "通过手机或浏览器录音，无需安装。报告遵循您的模板，匹配专科术语，提供需验证的编码建议。直接打开网页应用。",
+    "hero": {
+      "badge": "私人诊所适用",
+      "title": "DocNote私人诊所版",
+      "subtitle": "您关门时就能完成病历记录",
+      "lead": "私人诊所医生在诊疗间隙或晚间完成文书工作。您没有IT部门、没有机构预算、也没有时间配置工具。您希望第一次诊疗就能看到效果，且无需安装任何软件。"
+    },
+    "story": {
+      "badge": "痛点分析",
+      "title": "医生独立决策——且要求一次诊疗就见效",
+      "paragraphs": [
+        "在诊所里，没人会为您部署软件。如果一个工具需要立项、培训日或集成预算，它就不会被使用。真正被使用的是那些能在两个患者间隙用手机打开、并能生成您愿意发送的信函的工具。",
+        "DocNote通过手机或浏览器记录诊疗过程，起草待您确认的报告，并遵循您的模板——选择一次格式即可重复使用。注册时，系统会根据您的专科匹配默认模板，因此第一份报告就已使用您的专业术语。",
+        "编码建议位于文档末尾，因此可收费项目不再遗漏——这些仅是供您确认的建议，绝不会自动应用。草稿可在手机和电脑间无缝同步，无需重复输入。"
+      ]
+    },
+    "benefits": {
+      "badge": "产品功能",
+      "title": "您所需的一切，无需安装任何软件",
+      "subtitle": "录音、获取模板报告、验证、导出",
+      "items": [
+        {
+          "title": "通过手机或浏览器录音",
+          "body": "无需安装。在诊室用手机或办公桌浏览器打开DocNote；轻点一下即可开始录音。"
+        },
+        {
+          "title": "报告遵循您的模板",
+          "body": "选择一次格式——您的章节结构、信头、签名档——之后每次诊疗都沿用。注册时即匹配61个专科的默认模板。"
+        },
+        {
+          "title": "文档末尾的编码建议",
+          "body": "可收费诊断和操作建议位于报告末尾独立区域，供您验证——既避免漏收费项，又无需二次编码。"
+        },
+        {
+          "title": "手机电脑无缝衔接",
+          "body": "手机录音，电脑完成和验证。实时同步同一草稿——切换设备时无需重写记录。"
+        }
+      ]
+    },
+    "steps": {
+      "badge": "工作原理",
+      "title": "一次完整诊疗流程",
+      "subtitle": "教程视频展示的全流程——录音、生成报告、修改、导出——无剪辑版本",
+      "items": [
+        {
+          "title": "录音",
+          "body": "诊疗开始时通过手机或浏览器点击录音。如有既往信函、化验单或照片可一并添加。"
+        },
+        {
+          "title": "获取模板报告",
+          "body": "片刻后即生成符合您选定格式的草稿，使用您专科的术语体系。"
+        },
+        {
+          "title": "修改验证",
+          "body": "您只需编辑内容而非排版，确认或忽略末尾的编码建议，最后签字。您始终是作者。"
+        },
+        {
+          "title": "导出或发送",
+          "body": "将信函导出为Word或PDF，或通过现有集成发送至您的诊所软件。"
+        }
+      ]
+    },
+    "proof": {
+      "badge": "实证展示",
+      "title": "观看完整诊疗流程——无剪辑",
+      "intro": "对诊所最有力的证明不是功能列表，而是从录音到导出报告的真实诊疗过程。该视频已存在于教程页面。",
+      "points": [
+        {
+          "title": "录音、报告、修改、导出",
+          "body": "教程展示真实诊疗的完整流程，一镜到底，您可自行评估草稿质量。"
+        },
+        {
+          "title": "61个专科，21种界面语言",
+          "body": "注册时即匹配专科默认模板；界面支持您的语言；与患者交流的语言不影响报告语言。"
+        },
+        {
+          "title": "瑞士托管，短期音频保留",
+          "body": "健康数据托管于瑞士；音频仅短期保留用于生成文档后即删除。"
+        },
+        {
+          "title": "每份报告都需您验证",
+          "body": "DocNote起草；您修改签字。未经您确认的内容不会离开应用。"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "首次诊疗前无需配置",
+        "body": "注册选择专科后，DocNote即提供默认模板。您可立即记录首次诊疗，之后调整模板——或上传一次Word文档，此后所有报告都带您的信头。"
+      },
+      {
+        "heading": "与医疗秘书协作",
+        "body": "如有医疗秘书负责信函排版，DocNote可为您附加秘书账户：秘书在您账户内工作，使用您的模板和文档进行审阅排版，最后由您验证签字。详见医疗秘书页面。"
+      }
+    ],
+    "faq": [
+      {
+        "q": "需要安装软件吗？",
+        "a": "不需要。DocNote通过浏览器和手机运行。打开网页应用或移动应用即可录音。"
+      },
+      {
+        "q": "报告会符合我的信函格式吗？",
+        "a": "是的。选择一次格式（或上传Word模板），之后所有报告都沿用该格式，包含您的章节和签名。"
+      },
+      {
+        "q": "DocNote会代我收费吗？",
+        "a": "不会。它在文档末尾独立区域提供编码建议供您验证。编码责任始终由您承担。"
+      },
+      {
+        "q": "支持哪些专科？",
+        "a": "61个专科，注册时即匹配默认报告模板。界面支持21种语言。"
+      },
+      {
+        "q": "可以手机开始电脑完成吗？",
+        "a": "可以。草稿实时同步至电脑，无需重复输入。"
+      },
+      {
+        "q": "费用如何？",
+        "a": "个人诊所方案见定价页面。您可先打开网页应用记录首次诊疗再决定。"
+      }
+    ],
+    "cta": {
+      "title": "首次诊疗即见成效",
+      "body": "打开网页应用，选择专科并记录一次诊疗。无需安装，无需配置。",
+      "primary": "打开网页应用",
+      "secondary": "查看定价"
+    },
+    "relatedLabel": "相关页面"
+  },
+  "for-medical-secretaries": {
+    "navLabel": "医疗秘书",
+    "navDesc": "在医生账户内工作，使用其模板",
+    "title": "医疗秘书AI文书解决方案 | DocNote",
+    "description": "秘书账户在医生账户内工作——相同模板、相同信头、无需重复输入。秘书排版导出；医生验证。预约演示。",
+    "hero": {
+      "badge": "医疗秘书适用",
+      "title": "DocNote医疗秘书版",
+      "subtitle": "秘书在医生账户内工作，使用其模板和文档",
+      "lead": "多数诊所和科室中，信函排版并非由医生完成——而是秘书。但AI文书工具却只卖给医生，每人一个账户。秘书被排除在外，重新输入AI生成的内容。"
+    },
+    "story": {
+      "badge": "痛点分析",
+      "title": "排版者不持有账户",
+      "paragraphs": [
+        "医生录音，AI起草，然后草稿以文本形式进入秘书收件箱等待重新录入诊所信函格式。一边节省的时间在另一边又浪费了。",
+        "DocNote通过关联账户闭环该流程。秘书账户附加至医生账户；整个会话以该医生身份运行——其模板、其报告、其信头。秘书审阅、补充、排版和导出；医生验证签字。",
+        "由于报告已符合诊所信函格式，无需重复输入。后期可追加内容——迟到的化验结果、影像、既往信函——无需重写报告。"
+      ]
+    },
+    "benefits": {
+      "badge": "产品功能",
+      "title": "围绕诊所实际信函流程设计",
+      "subtitle": "关联账户、明确分工、无需重复输入",
+      "items": [
+        {
+          "title": "关联账户",
+          "body": "秘书账户附加至医生账户。整个会话以该医生身份运行——其模板、其报告、其信头。"
+        },
+        {
+          "title": "秘书审阅、补充、排版和导出",
+          "body": "医生验证签字。各司其职；无人重复他人工作。"
+        },
+        {
+          "title": "无需重复输入",
+          "body": "报告已符合诊所信函格式——您的章节、页边距、签名栏。"
+        },
+        {
+          "title": "可后期添加上下文",
+          "body": "迟到的化验结果、影像、既往信函：附加后报告即时更新，无需重写。"
+        }
+      ]
+    },
+    "steps": {
+      "badge": "工作原理",
+      "title": "从医生录音到可发送信函",
+      "subtitle": "一次记录、双重角色、中间无复制粘贴",
+      "items": [
+        {
+          "title": "医生录音",
+          "body": "在诊室或病房，通过手机或浏览器。"
+        },
+        {
+          "title": "DocNote按诊所模板起草",
+          "body": "报告以诊所信函格式输出，使用医生专科术语。"
+        },
+        {
+          "title": "秘书审阅、补充和排版",
+          "body": "在医生账户内：添加迟到的化验结果，调整收件人，检查版式，导出。"
+        },
+        {
+          "title": "医生验证签字",
+          "body": "医生始终是作者。未经其验证的内容不会发出。"
+        }
+      ]
+    },
+    "proof": {
+      "badge": "核心价值",
+      "title": "其他文书工具忽视的决策者",
+      "intro": "在诊所中，秘书常是首个试用文书工具的人——也是首个发现其节省还是增加工作量的人。秘书时间可测量且预算化，医生时间则不然。",
+      "points": [
+        {
+          "title": "已实际运行",
+          "body": "秘书账户现已实装于诊所，附加至医生账户，使用其模板和文档。"
+        },
+        {
+          "title": "相同模板，相同信头",
+          "body": "因秘书在医生账户内工作，格式有唯一真实来源——无需维护同步副本。"
+        },
+        {
+          "title": "责任明确",
+          "body": "秘书排版导出；医生验证签字。DocNote起草医生验证的报告——不取代任何角色。"
+        },
+        {
+          "title": "瑞士托管，短期音频保留",
+          "body": "健康数据托管于瑞士；音频仅短期保留用于生成文档后即删除。"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "为诊所设置秘书账户",
+        "body": "秘书账户由DocNote团队附加至医生账户。为您的诊所预约演示，我们将带您了解信函格式、当前秘书与医生的工作交接方式，以及关联账户如何融入现有流程。"
+      }
+    ],
+    "faq": [
+      {
+        "q": "秘书需要自备模板吗？",
+        "a": "不需要。秘书账户在医生账户内工作，使用医生的模板、报告和信头。"
+      },
+      {
+        "q": "谁验证报告？",
+        "a": "医生。秘书审阅、补充、排版和导出；医生验证签字。"
+      },
+      {
+        "q": "报告生成后能添加化验结果吗？",
+        "a": "可以。后期附加结果、影像或既往信函；报告即时更新无需重写。"
+      },
+      {
+        "q": "一个秘书能为多位医生服务吗？",
+        "a": "请联系团队沟通您的设置——秘书账户的附加方式取决于诊所或科室的组织形式。"
+      },
+      {
+        "q": "如何开始使用？",
+        "a": "为您的诊所预约演示。我们将与您共同设置关联账户，并用真实案例检查信函格式。"
+      }
+    ],
+    "cta": {
+      "title": "用您的信函格式亲身体验",
+      "body": "为您的诊所预约演示——我们将共同设置关联账户，并用真实案例检查格式。",
+      "primary": "为诊所预约演示",
+      "secondary": "联系团队"
+    },
+    "relatedLabel": "相关页面"
+  },
+  "for-clinic-groups": {
+    "navLabel": "集团与诊所",
+    "navDesc": "多站点部署、强制执行政策、集中计费。",
+    "title": "面向医疗集团的AI病历文档系统 | DocNote",
+    "description": "跨站点统一部署并执行政策：数据留存、自动登出、共享模板及原生EHR支持。请联系团队了解部署方案。",
+    "hero": {
+      "badge": "面向集团与诊所",
+      "title": "DocNote集团版解决方案",
+      "subtitle": "跨机构统一部署，避免临床医生各自制定规则。",
+      "lead": "医疗集团关心的不仅是'记录质量'，更需要三个关键答案：能否对所有医护人员强制执行安全政策、是否适配现有系统、能否集中计费与追踪。"
+    },
+    "story": {
+      "badge": "核心问题",
+      "title": "在关注记录质量前，医疗集团必问的三个问题",
+      "paragraphs": [
+        "当工具需要部署到多个站点的数十名临床医生时，单次记录质量只是基础要求。决策关键在于：集团能否一次性设定规则（数据留存、自动登出、录音回放）并确保全机构执行，验证报告能否直达集团自有EHR系统，以及整个流程能否实现集中计费与追踪。",
+        "DocNote通过组织级策略回应：集团可强制实施全局设置（转录留存、禁用录音回放、自动登出），无需依赖每位医生的个人配置。模板同样标准化：集团文件将统一部署至所有临床医生，包含共享品牌标识与章节结构。",
+        "系统原生支持集团EHR，日间医院的多位医生可共同完善同一份病历。组织级策略并非远期规划：目前已在实际生产环境中为试点集团运行。"
+      ]
+    },
+    "benefits": {
+      "badge": "核心功能",
+      "title": "一次设定规则，全员自动执行",
+      "subtitle": "政策、模板、系统与计费均实现集团级管理。",
+      "items": [
+        {
+          "title": "组织级策略管理",
+          "body": "强制实施全集团账户统一设置（转录留存、禁用录音回放、自动登出），不受个别医生配置影响。"
+        },
+        {
+          "title": "标准化模板",
+          "body": "集团文件统一部署至所有临床医生，保持品牌标识与章节结构一致。全院统一风格，而非医生各自为政。"
+        },
+        {
+          "title": "无缝对接现有系统",
+          "body": "原生支持集团EHR：验证报告按章节拆分后直达病历系统。兼容SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay、Ardentis。"
+        },
+        {
+          "title": "协同文档记录",
+          "body": "日间医院场景下，多位临床医生共同完善同一份病历。当日即可生成结构化记录，无需后期整合零散笔记。"
+        }
+      ]
+    },
+    "steps": {
+      "badge": "实施流程",
+      "title": "从试点站点到全集团推广",
+      "subtitle": "部署过程遵循您的治理架构，而非相反。",
+      "items": [
+        {
+          "title": "制定政策",
+          "body": "在组织层面设定数据留存、自动登出、录音回放等规则及共享模板，自动应用于所有账户。"
+        },
+        {
+          "title": "系统对接",
+          "body": "账户与集团EHR系统关联，验证报告按章节拆分后直达病历系统。"
+        },
+        {
+          "title": "单点试点",
+          "body": "单个科室真实场景测试，使用您的模板——相同配置随后扩展至其他站点。"
+        },
+        {
+          "title": "集中计费追踪",
+          "body": "账户、使用情况及计费均在集团层面统一管理，无需逐位医生处理。"
+        }
+      ]
+    },
+    "proof": {
+      "badge": "已落地实施",
+      "title": "组织级策略已在生产环境中运行",
+      "intro": "最有力的实证在于：集团政策并非路线图承诺，而是已为试点集团实际部署——这也正是决策者应当首先要求演示的。",
+      "points": [
+        {
+          "title": "生产环境强制政策",
+          "body": "试点集团所有账户现已执行转录留存、禁用录音回放及自动登出策略。"
+        },
+        {
+          "title": "七大EHR系统对接",
+          "body": "已实现SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay和Ardentis对接；其他厂商可通过标准化API集成。"
+        },
+        {
+          "title": "瑞士本土托管，音频短期留存",
+          "body": "健康数据托管于瑞士境内；音频仅在生成文档时短暂保留，随后立即删除。"
+        },
+        {
+          "title": "始终由医生验证",
+          "body": "DocNote起草报告供医生验证。工具受政策约束，临床医生始终是文档作者。"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "集团部署需求评估要素",
+        "body": "临床医生数量与站点分布、使用的EHR系统、所在国家（瑞士与法国将影响编码建议——SwissDRG、TARDOC、Tarif 222或PMSI），以及是否包含日间医院服务。基于这四点信息，我们可提供试点配置方案。"
+      }
+    ],
+    "faq": [
+      {
+        "q": "能否强制所有临床医生使用相同设置？",
+        "a": "可以。组织级策略将全集团账户统一执行转录留存、录音回放和自动登出设置，不受个人偏好影响。"
+      },
+      {
+        "q": "各站点能否使用相同的文书模板？",
+        "a": "可以。集团的Word模板将统一部署至所有临床医生，保持品牌标识与章节结构一致。"
+      },
+      {
+        "q": "支持哪些EHR系统？",
+        "a": "SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay和Ardentis，验证报告单向传输至病历系统。其他厂商可通过标准化API集成。"
+      },
+      {
+        "q": "计费按医生还是集团结算？",
+        "a": "集团账户实行集中计费与追踪。具体配置请联系团队详询。"
+      },
+      {
+        "q": "是否支持日间医院模式？",
+        "a": "已对接EHR系统的集团可使用协同日间医院文档功能。"
+      }
+    ],
+    "cta": {
+      "title": "咨询集团部署方案",
+      "body": "告知临床医生数量、EHR系统及所在国家——我们将提供试点配置方案。",
+      "primary": "联系团队",
+      "secondary": "预约演示"
+    },
+    "relatedLabel": "相关页面"
+  },
+  "medical-coding-and-billing": {
+    "navLabel": "编码与计费",
+    "navDesc": "SwissDRG、PMSI、TARDOC、Tarif 222。",
+    "title": "SwissDRG、TARDOC与PMSI编码软件 | DocNote",
+    "description": "可计费诊断直接呈现在文书中——SwissDRG、TARDOC、Tarif 222和PMSI建议供验证，无需二次编码。预约演示。",
+    "hero": {
+      "badge": "编码与计费",
+      "title": "内置于报告的编码计费功能",
+      "subtitle": "可计费诊断直接来自文书本身，而非二次处理。",
+      "lead": "编码不再需要二次文档处理。文书本身即可呈现可计费诊断：减少漏诊合并症，避免夜间补录——所有建议均需经医生和编码部门验证。"
+    },
+    "story": {
+      "badge": "产品特性",
+      "title": "独立建议栏位，绝不混入临床文本",
+      "paragraphs": [
+        "重要次要诊断直接呈现在出院小结中，临床医生阅读时即可查看。编码建议位于文档末尾独立栏位——绝不干扰临床文本，且可放置在Word模板任意位置。",
+        "瑞士地区支持SwissDRG（ICD-10/CHOP）、TARDOC及牙科Tarif 222。法国地区支持PMSI。通过TARDOC支持，简短床旁录音可转化为完整可计费检查描述：一次记录同时满足诊疗与计费需求，无需重复工作。",
+        "需特别说明：这些是待验证的编码建议。编码责任始终属于医生和编码部门。DocNote不代行编码，不认证计费合规性——其作用是确保文书中不遗漏任何可计费项目。"
+      ]
+    },
+    "benefits": {
+      "badge": "核心优势",
+      "title": "一次记录，同时满足诊疗与计费",
+      "subtitle": "临床文本保持纯粹，独立编码栏位完成其余工作。",
+      "items": [
+        {
+          "title": "重要次要诊断内联呈现",
+          "body": "对住院治疗有影响的合并症直接显示在出院小结中，避免编码部门数周后重新发现。"
+        },
+        {
+          "title": "文档末尾编码建议",
+          "body": "位于独立栏位，与正文分离——可按Word模板要求放置在任意位置。"
+        },
+        {
+          "title": "瑞士：SwissDRG、TARDOC、Tarif 222",
+          "body": "住院患者适用SwissDRG（ICD-10/CHOP），门诊服务适用TARDOC，牙科适用Tarif 222。"
+        },
+        {
+          "title": "法国：PMSI",
+          "body": "文书末尾提供PMSI建议，供医生和DIM部门验证。"
+        }
+      ]
+    },
+    "steps": {
+      "badge": "工作原理",
+      "title": "从录音到含编码栏位的文书",
+      "subtitle": "无需二次处理，无需独立编码工具。",
+      "items": [
+        {
+          "title": "录音与起草",
+          "body": "捕捉诊疗过程或床旁录音；DocNote根据您的模板起草报告。"
+        },
+        {
+          "title": "文本内诊断提示",
+          "body": "起草过程中，重要次要诊断将在文书内高亮显示。"
+        },
+        {
+          "title": "编码栏位建议",
+          "body": "SwissDRG、TARDOC、Tarif 222或PMSI建议显示在文档末尾独立栏位。"
+        },
+        {
+          "title": "医编双重验证",
+          "body": "建议需经医生和编码部门确认、修改或驳回。责任归属始终明确。"
+        }
+      ]
+    },
+    "proof": {
+      "badge": "差异化优势",
+      "title": "通用转录工具无法支持TARDOC、SwissDRG或Tarif 222",
+      "intro": "这在瑞士市场是结构性优势而非普通功能：这些计费标准具有地域性，海外开发的文档工具无法原生支持。",
+      "points": [
+        {
+          "title": "原生支持本地计费标准",
+          "body": "瑞士地区SwissDRG、TARDOC和Tarif 222；法国地区PMSI——深度集成于文书，非后期附加功能。"
+        },
+        {
+          "title": "TARDOC就绪的检查描述",
+          "body": "简短床旁录音可扩展为符合保险公司和TARDOC要求的结构化检查描述，无需重写。"
+        },
+        {
+          "title": "待验证的建议",
+          "body": "绝不自动应用，绝不提供认证。医生和编码部门拥有最终决定权。"
+        },
+        {
+          "title": "模板决定栏位位置",
+          "body": "编码栏位在Word模板中独立设置，与正文分离。"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "DocNote会自动编码我的病历吗？",
+        "a": "不会。它在文书中提示重要次要诊断，并在文档末尾添加编码建议。这些是待验证的提案，编码责任始终属于医生和编码部门。"
+      },
+      {
+        "q": "支持哪些编码体系？",
+        "a": "瑞士：SwissDRG（ICD-10/CHOP）、TARDOC及牙科Tarif 222。法国：PMSI。"
+      },
+      {
+        "q": "建议会混入临床文本吗？",
+        "a": "不会。它们位于文档末尾独立栏位，该栏位可放置在Word模板任意位置。"
+      },
+      {
+        "q": "TARDOC支持具体如何实现？",
+        "a": "简短床旁录音转化为完整可计费检查描述——一次记录同时满足诊疗与计费需求，无需重复工作。"
+      },
+      {
+        "q": "这会取代我们的编码审核吗？",
+        "a": "不会。DocNote提供建议，医生和编码部门进行验证。本功能不替代现有编码审核流程。"
+      }
+    ],
+    "cta": {
+      "title": "在您科室文书中查看编码栏位",
+      "body": "使用您科室的出院小结预约演示——我们将展示诊断提示位置与建议栏位布局。",
+      "primary": "预约演示",
+      "secondary": "查看价格"
+    },
+    "relatedLabel": "相关页面"
+  },
+  "ehr-integration": {
+    "navLabel": "EHR integration",
+    "navDesc": "7 systems, sent section by section",
+    "title": "EHR Integration for Medical Scribes | DocNote",
+    "description": "DocNote sends validated reports into SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis, split by section. One-way transfer, no copy-paste. Book a demo.",
+    "hero": {
+      "badge": "EHR integration",
+      "title": "Integration with electronic records",
+      "subtitle": "Validated reports transfer to the record, organized by section",
+      "lead": "Documentation is complete when it's in the record, with no copy-paste and no versions outside the EHR."
+    },
+    "story": {
+      "badge": "In the product",
+      "title": "Seven systems, one workflow",
+      "paragraphs": [
+        "DocNote sends validated reports to seven electronic record systems: SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis. Clinicians link their DocNote and EHR accounts once via OAuth2, then search for patients in the EHR from DocNote.",
+        "After validation, the report transfers to the patient record with sections matched to the EHR structure, not as a single block.",
+        "The transfer is one-way: DocNote sends to the EHR but doesn't read records. Patient search finds records without importing them. An integration API exists for EHR vendors."
+      ]
+    },
+    "benefits": {
+      "badge": "Features",
+      "title": "Reports and records stay synchronized",
+      "subtitle": "One-time setup, section-by-section transfer",
+      "items": [
+        {
+          "title": "Seven supported systems",
+          "body": "Works with SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis hospital and group EHRs in Switzerland and France."
+        },
+        {
+          "title": "One-time OAuth2 connection",
+          "body": "Clinicians link accounts once without shared passwords or manual exports."
+        },
+        {
+          "title": "In-app patient search",
+          "body": "Find patients in the EHR without leaving DocNote."
+        },
+        {
+          "title": "Section-by-section transfer",
+          "body": "Reports integrate directly into the correct EHR sections without copy-paste."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Workflow",
+      "title": "From draft to patient record",
+      "subtitle": "One-way transfer after validation",
+      "items": [
+        {
+          "title": "Connect accounts",
+          "body": "Clinicians authorize DocNote with their EHR account via OAuth2."
+        },
+        {
+          "title": "Find the patient",
+          "body": "Search for patients in the EHR from DocNote."
+        },
+        {
+          "title": "Review and validate",
+          "body": "Physicians review and approve before any transfer."
+        },
+        {
+          "title": "Section transfer",
+          "body": "The report integrates into the patient record by sections."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Security",
+      "title": "One-way by design",
+      "intro": "Hospital IT teams review these specific integration details:",
+      "points": [
+        {
+          "title": "DocNote to EHR only",
+          "body": "Data flows to the patient record with no return path."
+        },
+        {
+          "title": "No record access",
+          "body": "Patient search locates records without importing their contents."
+        },
+        {
+          "title": "Validated reports only",
+          "body": "Only physician-approved reports transfer."
+        },
+        {
+          "title": "Documented API",
+          "body": "EHR vendors can integrate using our API."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Which EHRs are supported?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay and Ardentis."
+      },
+      {
+        "q": "Does DocNote read from the EHR?",
+        "a": "No. The transfer is one-way from DocNote to the EHR."
+      },
+      {
+        "q": "How does patient search work?",
+        "a": "Clinicians search for patients in the EHR from DocNote to select the correct record."
+      },
+      {
+        "q": "How are accounts connected?",
+        "a": "Via one-time OAuth2 authorization."
+      },
+      {
+        "q": "Our EHR isn't listed?",
+        "a": "EHR vendors can integrate using our API. Contact us."
+      }
+    ],
+    "cta": {
+      "title": "See the integration",
+      "body": "Book a demo with your EHR system or ask about our API.",
+      "primary": "Book a demo",
+      "secondary": "Contact us"
+    },
+    "relatedLabel": "Related"
+  },
+  "custom-word-templates": {
+    "navLabel": "Word templates",
+    "navDesc": "Your letterhead, sections and signature",
+    "description": "Upload your Word template once. Reports maintain your letterhead, sections and signature. Focus on clinical review, not formatting. See how it works.",
+    "hero": {
+      "badge": "Word templates",
+      "title": "Your documents, your format",
+      "subtitle": "Upload your template once. All reports follow your structure.",
+      "lead": "No reformatting AI output. Reports match your document format automatically. Focus on clinical content, not layout."
+    },
+    "story": {
+      "badge": "In the product",
+      "title": "Your document structure preserved",
+      "paragraphs": [
+        "Every department has refined document formats over years. Tools that ignore these create extra formatting work.",
+        "With DocNote, upload your Word template once. Reports maintain your structure: letterhead, margins, sections and signature. Coding gets its own template section, separate from clinical content.",
+        "Paragraph alignment preserves in exports. Review focuses on clinical content, not layout."
+      ]
+    },
+    "benefits": {
+      "badge": "Features",
+      "title": "Reports in your format",
+      "subtitle": "Structure and branding preserved",
+      "items": [
+        {
+          "title": "Your document format",
+          "body": "Reports match your letterhead, margins, sections and signature."
+        },
+        {
+          "title": "Separate coding section",
+          "body": "Coding suggestions stay separate from clinical text."
+        },
+        {
+          "title": "Alignment preserved",
+          "body": "Justified, centered and right alignment maintain in exports."
+        },
+        {
+          "title": "Clinical review focus",
+          "body": "Review clinical content without layout adjustments."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Workflow",
+      "title": "Template to report",
+      "subtitle": "Your Word file as the source",
+      "items": [
+        {
+          "title": "Upload template",
+          "body": "Add your department's Word document once."
+        },
+        {
+          "title": "Record and draft",
+          "body": "DocNote drafts within your structure."
+        },
+        {
+          "title": "Review content",
+          "body": "Physicians focus on clinical accuracy."
+        },
+        {
+          "title": "Export or send",
+          "body": "Word, PDF or direct EHR transfer with preserved formatting."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Why it matters",
+      "title": "Your document, automatically",
+      "intro": "DocNote uses your existing documents, which solves department formatting concerns.",
+      "points": [
+        {
+          "title": "Your existing file",
+          "body": "DocNote reproduces your trusted Word document."
+        },
+        {
+          "title": "Group consistency",
+          "body": "Groups standardize templates across clinicians."
+        },
+        {
+          "title": "Secretary workflow",
+          "body": "Secretaries use the same templates as physicians."
+        },
+        {
+          "title": "Coding placement",
+          "body": "You control where coding suggestions appear."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Do I rebuild my template?",
+        "a": "No. Upload your existing Word document once."
+      },
+      {
+        "q": "Is letterhead preserved?",
+        "a": "Yes, along with margins, sections and signature."
+      },
+      {
+        "q": "Where do coding suggestions go?",
+        "a": "In their own template section, separate from clinical text."
+      },
+      {
+        "q": "Is alignment preserved?",
+        "a": "Yes, including justified, centered and right alignment."
+      },
+      {
+        "q": "Multiple templates?",
+        "a": "Yes, for different document types or services."
+      }
+    ],
+    "cta": {
+      "title": "See your document format",
+      "body": "Send us your Word template and see reports in your format.",
+      "primary": "Book a demo",
+      "secondary": "Watch tutorial"
+    },
+    "relatedLabel": "Related",
+    "title": "医疗报告自定义Word模板 | DocNote"
+  },
+  "clinical-context": {
+    "navLabel": "Clinical context",
+    "navDesc": "Labs, imaging, prior letters",
+    "title": "Clinical Context for Medical Reports | DocNote",
+    "description": "Attach prior letters, labs, imaging and photos before or after recording. Late items update reports without restarting. See the tutorial.",
+    "hero": {
+      "badge": "Clinical context",
+      "title": "Complete clinical picture",
+      "subtitle": "Include prior letters, labs, imaging and photos",
+      "lead": "Reports reflect the full clinical context, not just the conversation, reducing omissions and corrections."
+    },
+    "story": {
+      "badge": "In the product",
+      "title": "Audio plus attachments",
+      "paragraphs": [
+        "Consultations include prior records, labs, imaging and photos. DocNote incorporates these when structuring reports.",
+        "Attachments added before or after recording integrate into reports. Late items update without regenerating the entire report.",
+        "Conversational editing allows changes after generation, reducing follow-up requests."
+      ]
+    },
+    "benefits": {
+      "badge": "Features",
+      "title": "More complete notes",
+      "subtitle": "Context included, omissions reduced",
+      "items": [
+        {
+          "title": "Attach documents",
+          "body": "Include prior letters, labs, imaging and photos."
+        },
+        {
+          "title": "Flexible timing",
+          "body": "Add documents before or after recording."
+        },
+        {
+          "title": "Late additions",
+          "body": "Update reports with new information."
+        },
+        {
+          "title": "Conversational editing",
+          "body": "Request changes after generation."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Workflow",
+      "title": "From consultation to report",
+      "subtitle": "Complete clinical picture",
+      "items": [
+        {
+          "title": "Record",
+          "body": "Capture the encounter as usual."
+        },
+        {
+          "title": "Attach",
+          "body": "Add relevant documents."
+        },
+        {
+          "title": "Review",
+          "body": "Check the complete draft."
+        },
+        {
+          "title": "Edit",
+          "body": "Request changes as needed."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Why it matters",
+      "title": "Fewer corrections",
+      "intro": "Complete context means fewer follow-up requests.",
+      "points": [
+        {
+          "title": "Complete reports",
+          "body": "Fewer missing findings with context included."
+        },
+        {
+          "title": "Preserved edits",
+          "body": "Late additions keep previous corrections."
+        },
+        {
+          "title": "Secretary workflow",
+          "body": "Staff can add late documents."
+        },
+        {
+          "title": "Physician validation",
+          "body": "Doctors still review all content."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "What can I attach?",
+        "a": "Prior letters, labs, imaging and photos."
+      },
+      {
+        "q": "Timing for attachments?",
+        "a": "Add before or after recording."
+      },
+      {
+        "q": "Late lab results?",
+        "a": "Add them without regenerating the full report."
+      },
+      {
+        "q": "Post-generation changes?",
+        "a": "Request changes conversationally."
+      },
+      {
+        "q": "EHR integration?",
+        "a": "You attach files; DocNote doesn't read records."
+      }
+    ],
+    "cta": {
+      "title": "See the difference",
+      "body": "Watch the tutorial or book a demo with your documents.",
+      "primary": "Watch tutorial",
+      "secondary": "Book demo"
+    },
+    "relatedLabel": "Related"
+  },
+  "day-hospital-documentation": {
+    "navLabel": "日间医院",
+    "navDesc": "多位临床医生，一份记录。",
+    "title": "日间医院文档软件 | DocNote",
+    "description": "多位临床医生，一份患者记录：DocNote将团队贡献合并为一份结构化记录。适用于已集成EHR的医疗团队。",
+    "hero": {
+      "badge": "日间医院",
+      "title": "日间医院：多位临床医生，一份记录",
+      "subtitle": "DocNote将团队贡献合并为一份可靠记录。",
+      "lead": "当日结束时您将获得一份结构化患者记录，而非需要整合的四份零散笔记。文档质量随团队整体提升而非碎片化。"
+    },
+    "story": {
+      "badge": "产品功能",
+      "title": "为多作者日间诊疗设计的记录系统",
+      "paragraphs": [
+        "在日间医院中，患者会依次接触多位临床医生——接诊护士、主治医师、专科医生、出院护士。每人记录各自部分后，还需将四份零散笔记整合成连贯记录。",
+        "DocNote允许多位临床医生通过各自账户共同完善同一份患者记录。所有贡献将被合并为一份结构化记录，当日结束时生成完整文档而非需要拼接的碎片。",
+        "该功能适用于已集成EHR的医疗团队：经验证合并的记录将按章节拆分后存入患者档案，与其他DocNote报告流程相同。"
+      ]
+    },
+    "benefits": {
+      "badge": "核心优势",
+      "title": "当日生成一份结构化记录",
+      "subtitle": "团队协作记录，文档保持完整。",
+      "items": [
+        {
+          "title": "多位医生共同记录",
+          "body": "护士、医师、专科医生——每位都可通过当日诊疗为同一患者记录贡献内容。"
+        },
+        {
+          "title": "整合而非堆叠",
+          "body": "DocNote将团队贡献合并为可靠记录，而非简单追加四份零散笔记。"
+        },
+        {
+          "title": "质量随团队提升",
+          "body": "文档质量随团队整体水平提升，而非因多作者参与导致质量参差。"
+        },
+        {
+          "title": "直通团队EHR",
+          "body": "适用于已集成EHR的医疗团队；经验证的记录将按章节拆分存入患者档案。"
+        }
+      ]
+    },
+    "steps": {
+      "badge": "工作流程",
+      "title": "从首次接触到出院记录",
+      "subtitle": "每位医生记录各自部分；DocNote确保文档完整性。",
+      "items": [
+        {
+          "title": "接诊环节",
+          "body": "首位临床医生开启患者日间医院记录并完成其负责部分的文档。"
+        },
+        {
+          "title": "诊疗过程",
+          "body": "后续每位医生通过各自账户为同一记录添加内容。"
+        },
+        {
+          "title": "合并处理",
+          "body": "DocNote将所有贡献合并为一份结构化记录。"
+        },
+        {
+          "title": "验证发送",
+          "body": "责任医师验证后，记录将按章节拆分发送至团队EHR系统。"
+        }
+      ]
+    },
+    "proof": {
+      "badge": "独特优势",
+      "title": "市场独家解决方案",
+      "intro": "这需要多作者数据模型支持，而市面上所有临床记录工具都是单用户设计。DocNote从设计之初就考虑了日间医院需求。",
+      "points": [
+        {
+          "title": "原生多作者支持",
+          "body": "多账户协作完善同一记录是数据模型的固有特性，而非临时解决方案。"
+        },
+        {
+          "title": "面向集成团队",
+          "body": "适用于已集成EHR的医疗团队——包括SOKLE、Mediway、Axenita、EDL、Elsan、Ramsay、Ardentis等系统。"
+        },
+        {
+          "title": "遵循团队政策",
+          "body": "组织层面设置的留存期限、注销规则和音频回放政策将统一适用于所有贡献者。"
+        },
+        {
+          "title": "医师终审机制",
+          "body": "合并后的记录由DocNote起草，经责任医师验证后方可发送。"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "哪些人员可以参与记录？",
+        "a": "日间医院服务的临床医生均可通过各自DocNote账户为同一患者记录贡献内容。"
+      },
+      {
+        "q": "生成的是合并文档还是笔记列表？",
+        "a": "一份经过合并的结构化记录——而非需要人工整合的四份零散笔记。"
+      },
+      {
+        "q": "谁负责验证合并后的记录？",
+        "a": "责任医师在记录发送至EHR前进行审核验证。"
+      },
+      {
+        "q": "我的团队能否使用该功能？",
+        "a": "该功能适用于已集成EHR的医疗团队。请联系我们咨询系统兼容性。"
+      }
+    ],
+    "cta": {
+      "title": "查看团队协作生成的日间医院记录",
+      "body": "预约演示，我们将根据您日间医院服务和EHR系统进行展示。",
+      "primary": "预约演示",
+      "secondary": "联系团队"
+    },
+    "relatedLabel": "相关页面"
+  },
+  "multilingual-medical-documentation": {
+    "navLabel": "多语言与专科支持",
+    "navDesc": "61个专科，21种界面语言。",
+    "title": "多语言医疗文档AI | DocNote",
+    "description": "61个专科，21种界面语言——与患者交流的语言不必决定报告语言或术语。立即体验实际效果。",
+    "hero": {
+      "badge": "多语言与专科支持",
+      "title": "61个专科，21种界面语言",
+      "subtitle": "葡萄牙语问诊，法语报告，使用您专科的专业术语。",
+      "lead": "与患者交流的语言不必决定报告语言——术语体系将遵循您的专科规范，而非源自美国的通用SOAP术语。"
+    },
+    "story": {
+      "badge": "产品功能",
+      "title": "专科术语与报告语言的完美结合",
+      "paragraphs": [
+        "DocNote覆盖61个医疗专科，每个专科都有默认报告模板。注册时系统将根据专科匹配模板，确保初稿即采用符合您专业预期的结构和术语——而非简单改造的通用问诊笔记。",
+        "界面支持21种语言。问诊过程天然支持多语言：使用葡萄牙语、阿拉伯语或德语进行的问诊可生成法语报告——与患者交流的语言不必决定文档语言。",
+        "术语体系遵循专科特点。心脏科信函、精神科记录和手术报告行文风格各异，DocNote不会强制使用统一模板。"
+      ]
+    },
+    "benefits": {
+      "badge": "核心优势",
+      "title": "专科优先，语言兼顾——两者皆备",
+      "subtitle": "61个专科，21种界面语言，多语言问诊支持。",
+      "items": [
+        {
+          "title": "61个医疗专科",
+          "body": "每个专科都有注册时匹配的默认报告模板。"
+        },
+        {
+          "title": "21种界面语言",
+          "body": "手机和桌面端均可使用您熟悉的语言操作。"
+        },
+        {
+          "title": "多语言问诊支持",
+          "body": "与患者交流的语言不必决定报告语言。"
+        },
+        {
+          "title": "专科专属术语",
+          "body": "术语和结构遵循您的专业规范，而非源自美国的通用SOAP术语。"
+        }
+      ]
+    },
+    "steps": {
+      "badge": "工作流程",
+      "title": "从一种语言的问诊到另一种语言的报告",
+      "subtitle": "无需在问诊中途调整设置。",
+      "items": [
+        {
+          "title": "选择专科与语言",
+          "body": "注册时一次性设置：获取专科默认模板和对应语言界面。"
+        },
+        {
+          "title": "使用现场语言记录",
+          "body": "使用与患者沟通的任何语言进行问诊。"
+        },
+        {
+          "title": "获取目标语言报告",
+          "body": "系统根据选定语言生成初稿，并使用您专科的专业术语。"
+        },
+        {
+          "title": "验证导出",
+          "body": "您可像处理其他DocNote报告一样进行审核、修改和签署。"
+        }
+      ]
+    },
+    "proof": {
+      "badge": "实践应用",
+      "title": "为多语言医疗环境打造",
+      "intro": "瑞士和法国医院及诊所每日都需要跨语言工作。DocNote将此视为常态需求而非边缘案例。",
+      "points": [
+        {
+          "title": "61个专科，227个模板",
+          "body": "各专科默认报告模板；您可上传自定义Word模板进行替换。"
+        },
+        {
+          "title": "21种界面语言",
+          "body": "手机和桌面端均支持您选择的语言界面。"
+        },
+        {
+          "title": "瑞士托管，音频短期留存",
+          "body": "健康数据托管于瑞士；音频仅在生成文档期间保留，完成后立即删除。"
+        },
+        {
+          "title": "医师终审机制",
+          "body": "无论使用何种语言，DocNote始终只起草需要您验证的报告。"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "能否使用一种语言问诊而获得另一种语言的报告？",
+        "a": "可以。与患者交流的语言不必决定报告语言。"
+      },
+      {
+        "q": "支持多少医疗专科？",
+        "a": "61个医疗专科，每个专科都有专属默认报告模板。"
+      },
+      {
+        "q": "界面支持多少种语言？",
+        "a": "21种。"
+      },
+      {
+        "q": "术语是否专科专属？",
+        "a": "是的。术语和结构遵循您的专科规范而非通用SOAP笔记。"
+      },
+      {
+        "q": "能否使用自定义模板替代默认模板？",
+        "a": "可以。上传一次您的Word模板，之后所有报告都将遵循该格式。"
+      }
+    ],
+    "cta": {
+      "title": "体验您专科与语言的专属版本",
+      "body": "观看教程后，打开网页应用并录制一段您专科的问诊过程。",
+      "primary": "观看教程",
+      "secondary": "查看价格"
+    },
+    "relatedLabel": "相关页面"
   },
   "ai-soap-notes": {
     "navLabel": "AI SOAP记录",

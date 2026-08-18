@@ -136,6 +136,143 @@
     "relatedLabel": "Guides connexes",
     "navDesc": "Écoute en consultation, rédige la note."
   },
+  "hospital-documentation": {
+    "navLabel": "Hôpital & service",
+    "navDesc": "Lettres de sortie, comptes-rendus opératoires, codage, DPI.",
+    "title": "Scribe médical IA pour hôpitaux & services | DocNote",
+    "description": "Lettres de sortie, comptes-rendus opératoires et notes de service dans le format de votre département. Suggestions de codage et envoi unidirectionnel vers 7 DPI. Réservez une démo.",
+    "hero": {
+      "badge": "Pour hôpitaux et services",
+      "title": "DocNote pour hôpitaux et services",
+      "subtitle": "Lettres de sortie, comptes-rendus opératoires et notes de service — dans le format de votre département, directement dans votre DPI.",
+      "lead": "À l'hôpital, la note de consultation n'est pas le problème. Les problèmes sont la lettre de sortie inachevée depuis trois semaines, le compte-rendu opératoire dicté puis retapé, le codage revu après coup par le service de codage, et un DPI qu'il faut remplir manuellement. Un outil conçu pour la pratique privée ne répond à rien de tout cela."
+    },
+    "story": {
+      "badge": "Le problème",
+      "title": "Le travail hospitalier ne se limite pas à une simple note de consultation",
+      "paragraphs": [
+        "Un service produit des documents avec des structures, longueurs et destinataires différents : la lettre de sortie qui va au médecin traitant et à l'assureur, le compte-rendu opératoire qui clôt le dossier, la note de service que le médecin de garde lira le lendemain matin. Chacun doit être correct dès la première fois, sur l'en-tête du service, et se retrouver dans le dossier patient — pas dans une application annexe.",
+        "DocNote traite ces formats hospitaliers comme des types de documents à part entière. Vous capturez la visite, le débriefing opératoire ou la consultation, choisissez le document, et DocNote rédige un compte-rendu que vous validez — avec les diagnostics secondaires significatifs mis en évidence dans la lettre et des suggestions de codage placées à la fin du document, dans leur propre emplacement.",
+        "Une fois validé, le compte-rendu est envoyé dans le dossier patient de votre DPI, découpé par section, sans copier-coller. Le médecin reste l'auteur et signe ; DocNote ne lit pas le dossier patient et ne code pas à votre place — il propose, vous validez."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que fait DocNote",
+      "title": "Conçu pour les documents qui remplissent les soirées d'un service",
+      "subtitle": "Formats hospitaliers natifs, vos modèles, suggestions de codage, envoi vers le DPI.",
+      "items": [
+        {
+          "title": "Formats hospitaliers natifs",
+          "body": "Lettre de sortie, note de service, compte-rendu opératoire — bonne structure, bonne longueur, bons destinataires dès le premier jet. Pas une note SOAP de consultation étirée pour faire."
+        },
+        {
+          "title": "Vos modèles Word",
+          "body": "Téléversez une fois le document du service. Chaque compte-rendu sort ensuite sur votre en-tête, avec vos sections et votre signature — la relecture reste clinique, pas cosmétique."
+        },
+        {
+          "title": "Codage intégré",
+          "body": "Les diagnostics secondaires significatifs sont mis en évidence dans la lettre, avec des suggestions SwissDRG (Suisse) ou PMSI (France) à la fin du document — des propositions à valider par le médecin et le service de codage."
+        },
+        {
+          "title": "Envoyé vers le DPI",
+          "body": "Le compte-rendu validé entre dans le dossier patient, découpé par section — pas de copier-coller. Téléphone dans le service, bureau à l'étage : même dossier, synchronisé en temps réel."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Fonctionnement",
+      "title": "Du service ou du bloc opératoire à un document validé dans le dossier",
+      "subtitle": "La même discipline de relecture et validation que votre service suit déjà.",
+      "items": [
+        {
+          "title": "Capturez la consultation",
+          "body": "Enregistrez la visite, le débriefing opératoire ou la consultation au téléphone ou dans le navigateur, comme partie intégrante de la routine."
+        },
+        {
+          "title": "Choisissez le document hospitalier",
+          "body": "Lettre de sortie, compte-rendu opératoire, note de service ou un autre modèle de votre service — sur votre en-tête, avec vos sections."
+        },
+        {
+          "title": "Relisez le brouillon et les suggestions de codage",
+          "body": "Le médecin corrige le fond clinique, vérifie les diagnostics mis en évidence et les propositions de codage à la fin du document, et signe."
+        },
+        {
+          "title": "Envoyez vers le dossier patient",
+          "body": "Le compte-rendu validé est envoyé dans le DPI, découpé par section — SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay ou Ardentis là où connecté."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Preuves, pas promesses",
+      "title": "Déjà en place dans des institutions, connecté à des DPI, validé par des médecins",
+      "intro": "Les hôpitaux adoptent un logiciel de documentation après un questionnaire de sécurité et un pilote sur des cas réels, pas après une démo. DocNote est conçu pour passer les deux.",
+      "points": [
+        {
+          "title": "Institutions déjà en production",
+          "body": "DocNote tourne aujourd'hui dans des services hospitaliers, sur des lettres de sortie, comptes-rendus opératoires et notes de service — pas sur une feuille de route."
+        },
+        {
+          "title": "Sept DPI connectés",
+          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay et Ardentis reçoivent les comptes-rendus validés section par section. Une API d'intégration documentée existe pour d'autres fournisseurs."
+        },
+        {
+          "title": "Le médecin reste l'auteur",
+          "body": "Aucun document n'atteint le dossier sans qu'un clinicien ne l'ait d'abord relu et validé. Le codage reste une suggestion jusqu'à ce que le médecin et le service de codage le confirment."
+        },
+        {
+          "title": "Hébergement suisse, rétention audio courte",
+          "body": "Les données de santé sont hébergées en Suisse ; l'audio n'est conservé que brièvement pour produire le document, puis supprimé. Voir notre page conformité pour le tableau complet."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Déploiement de DocNote dans un service",
+        "body": "Le parcours habituel commence par un type de document et un service ou étage. Le modèle Word du service est téléversé, les brouillons sont validés sur des cas réels, puis le déploiement s'étend à d'autres services. L'informatique et les directeurs médicaux examinent en parallèle l'hébergement, la rétention et les intégrations — la même structure que pour tout autre achat de logiciel clinique."
+      },
+      {
+        "heading": "Où vont les suggestions de codage",
+        "body": "Les suggestions de codage apparaissent à la fin du document, dans leur propre emplacement, pour ne jamais polluer le texte clinique. Dans votre modèle Word, cet emplacement peut être placé là où votre service de codage l'attend. Suisse : SwissDRG (ICD-10 / CHOP), TARDOC et Tarif 222 pour la dentisterie. France : PMSI."
+      },
+      {
+        "heading": "Plusieurs cliniciens, un seul dossier",
+        "body": "Dans un hôpital de jour, plusieurs cliniciens alimentent le même dossier patient au fil de la journée. En fin de journée, vous avez un dossier structuré unique, pas quatre notes partielles à réconcilier — disponible pour les groupes dont le DPI est intégré."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quels documents hospitaliers DocNote peut-il rédiger ?",
+        "a": "Lettres de sortie, comptes-rendus opératoires, notes de service et comptes-rendus de consultation, sur les modèles de votre service. Le médecin relit et valide chaque brouillon avant qu'il ne fasse partie du dossier."
+      },
+      {
+        "q": "DocNote code-t-il le séjour pour nous ?",
+        "a": "Non. DocNote met en évidence les diagnostics secondaires significatifs dans la lettre et ajoute des suggestions de codage à la fin du document — SwissDRG, TARDOC, Tarif 222 ou PMSI. Ce sont des propositions à valider ; la responsabilité reste au médecin et au service de codage."
+      },
+      {
+        "q": "Quels DPI sont pris en charge ?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay et Ardentis. Le clinicien lie les comptes une fois, recherche le patient depuis DocNote et le compte-rendu validé est envoyé dans le dossier de ce patient, découpé par section. Le flux est unidirectionnel, de DocNote vers le DPI."
+      },
+      {
+        "q": "Pouvons-nous conserver notre en-tête institutionnel ?",
+        "a": "Oui. Téléversez une fois le document Word du service ; chaque compte-rendu sort ensuite avec votre en-tête, vos sections et votre signature."
+      },
+      {
+        "q": "L'IA remplace-t-elle la signature du médecin ?",
+        "a": "Non. DocNote rédige un compte-rendu que vous validez. Le médecin reste l'auteur et signe."
+      },
+      {
+        "q": "Combien de temps prend le déploiement pour un service hospitalier ?",
+        "a": "La plupart des services commencent par un type de document et un étage, valident le modèle sur des cas réels, puis étendent — le rythme dépend de votre revue informatique, pas de l'outil."
+      }
+    ],
+    "cta": {
+      "title": "Apportez DocNote dans votre service",
+      "body": "Réservez une démo avec l'équipe sur vos propres types de documents — lettres de sortie, comptes-rendus opératoires, notes de service — avec votre modèle et votre DPI dans l'équation.",
+      "primary": "Réserver une démo",
+      "secondary": "Voir notre conformité"
+    },
+    "relatedLabel": "Pages liées"
+  },
   "clinical-compliance": {
     "navLabel": "Conformité clinique",
     "title": "Conformité de l'IA clinique (FADP, RGPD, HIPAA)",
@@ -276,6 +413,1099 @@
     },
     "relatedLabel": "Guides connexes",
     "navDesc": "Hébergement suisse, rétention courte, secret médical."
+  },
+  "for-private-practice": {
+    "navLabel": "Pratique privée",
+    "navDesc": "Valeur dès la première consultation, rien à installer.",
+    "title": "Scribe médical IA pour pratique privée | DocNote",
+    "description": "Enregistrez depuis téléphone ou navigateur, sans installation. Les comptes-rendus suivent vos modèles, adaptés à votre spécialité, avec suggestions de codage à valider. Ouvrez l'application web.",
+    "hero": {
+      "badge": "Pour pratique privée",
+      "title": "DocNote pour pratique privée",
+      "subtitle": "Vous fermez le dossier en même temps que la porte.",
+      "lead": "Un médecin en pratique privée documente entre deux patients ou le soir. Vous n'avez pas de service informatique, pas de budget institutionnel et pas le temps de configurer un outil. Vous voulez voir la valeur dès la première consultation, sans rien à installer."
+    },
+    "story": {
+      "badge": "Le problème",
+      "title": "Le médecin décide seul — et veut de la valeur dès la première consultation",
+      "paragraphs": [
+        "En cabinet, personne ne déploie de logiciel pour vous. Si un outil nécessite un projet, une journée de formation ou un budget d'intégration, il n'est pas utilisé. Ce qui est utilisé, c'est la chose que vous pouvez ouvrir sur votre téléphone entre deux patients et qui produit une lettre que vous enverriez vraiment.",
+        "DocNote enregistre la consultation depuis le téléphone ou le navigateur, rédige un compte-rendu que vous validez, et suit vos modèles — choisissez le format une fois, il est réutilisé. À l'inscription, des modèles par défaut sont adaptés à votre spécialité, pour que le premier compte-rendu parle déjà votre vocabulaire.",
+        "Les suggestions de codage se trouvent à la fin du document, pour que le travail facturable ne passe plus à travers — comme propositions que vous confirmez, jamais appliquées en votre nom. Et le brouillon vous suit du téléphone au bureau sans retaper."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que fait DocNote",
+      "title": "Tout ce dont vous avez besoin, rien à installer",
+      "subtitle": "Enregistrez, obtenez le compte-rendu sur votre modèle, validez, exportez.",
+      "items": [
+        {
+          "title": "Enregistrez depuis le téléphone ou le navigateur",
+          "body": "Rien à installer. Ouvrez DocNote sur votre téléphone dans la salle de consultation ou dans un onglet du navigateur au bureau ; l'enregistrement commence en un clic."
+        },
+        {
+          "title": "Le compte-rendu suit vos modèles",
+          "body": "Choisissez le format une fois — vos sections, votre en-tête, votre signature — et il est réutilisé pour chaque consultation suivante. Modèles par défaut adaptés à votre spécialité à l'inscription, couvrant 61 spécialités."
+        },
+        {
+          "title": "Suggestions de codage à la fin du document",
+          "body": "Les diagnostics et actes facturables sont proposés dans leur propre emplacement à la fin du compte-rendu, pour validation — pour que le travail facturable ne passe plus à travers sans transformer le codage en une deuxième passe."
+        },
+        {
+          "title": "Du téléphone au bureau, sans retaper",
+          "body": "Enregistrez au téléphone, terminez et validez au bureau. Même brouillon, synchronisé en temps réel — vous ne reconstruisez jamais la note en changeant d'appareil."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Fonctionnement",
+      "title": "Une consultation, de bout en bout",
+      "subtitle": "Le même flux que vous verrez dans la vidéo tutoriel — enregistrement, compte-rendu généré, correction, export — sans coupures.",
+      "items": [
+        {
+          "title": "Enregistrez",
+          "body": "Cliquez sur enregistrer au téléphone ou dans le navigateur au début de la consultation. Ajoutez des lettres antérieures, des labos ou des photos si vous les avez."
+        },
+        {
+          "title": "Obtenez le compte-rendu sur votre modèle",
+          "body": "En quelques instants, un brouillon est prêt dans le format que vous avez choisi une fois, dans le vocabulaire de votre spécialité."
+        },
+        {
+          "title": "Corrigez et validez",
+          "body": "Vous éditez le fond, pas la mise en page, confirmez ou ignorez les suggestions de codage à la fin, et signez. Vous restez l'auteur."
+        },
+        {
+          "title": "Exportez ou envoyez",
+          "body": "Exportez la lettre en Word ou PDF, ou envoyez-la dans votre logiciel de cabinet là où une intégration existe."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Preuves à montrer",
+      "title": "Regardez une consultation complète — sans coupures",
+      "intro": "L'argument le plus fort pour un cabinet n'est pas une liste de fonctionnalités ; c'est une vraie consultation de l'enregistrement au compte-rendu exporté. Cette vidéo existe déjà sur la page tutoriel.",
+      "points": [
+        {
+          "title": "Enregistrement, compte-rendu, correction, export",
+          "body": "Le tutoriel montre tout le flux sur une vraie consultation, en une prise, pour que vous puissiez juger vous-même de la qualité du brouillon."
+        },
+        {
+          "title": "61 spécialités, 21 langues d'interface",
+          "body": "Modèles par défaut adaptés à votre spécialité à l'inscription ; interface dans votre langue ; la langue que vous parlez avec le patient ne dicte pas la langue du compte-rendu."
+        },
+        {
+          "title": "Hébergement suisse, rétention audio courte",
+          "body": "Données de santé hébergées en Suisse ; audio conservé seulement brièvement pour produire le document, puis supprimé."
+        },
+        {
+          "title": "Vous validez chaque compte-rendu",
+          "body": "DocNote rédige ; vous corrigez et signez. Rien ne quitte l'application sans votre validation."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Rien à configurer avant la première consultation",
+        "body": "Inscrivez-vous, choisissez votre spécialité, et DocNote propose des modèles par défaut pour elle. Vous pouvez enregistrer votre première consultation immédiatement, puis ajuster le modèle plus tard — ou téléverser votre propre document Word une fois pour que chaque compte-rendu sorte sur votre en-tête."
+      },
+      {
+        "heading": "Travailler avec une secrétaire",
+        "body": "Si une secrétaire médicale met en forme vos lettres, DocNote peut attacher un compte secrétaire au vôtre : la secrétaire travaille dans votre compte, avec vos modèles et vos documents, relit et met en forme, et vous validez et signez. Voir la page des secrétaires médicales."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Dois-je installer quelque chose ?",
+        "a": "Non. DocNote fonctionne dans le navigateur et sur téléphone. Ouvrez l'application web ou mobile et enregistrez."
+      },
+      {
+        "q": "Le compte-rendu ressemblera-t-il à mes lettres ?",
+        "a": "Oui. Choisissez votre format une fois — ou téléversez votre propre modèle Word — et chaque compte-rendu suivant est réutilisé dans ce format, avec vos sections et votre signature."
+      },
+      {
+        "q": "DocNote facture-t-il pour moi ?",
+        "a": "Non. Il propose des suggestions de codage à la fin du document, dans leur propre emplacement, pour validation. La responsabilité du codage reste à vous."
+      },
+      {
+        "q": "Quelles spécialités sont couvertes ?",
+        "a": "61 spécialités, chacune avec des modèles de compte-rendu adaptés à l'inscription. L'interface est disponible en 21 langues."
+      },
+      {
+        "q": "Puis-je commencer au téléphone et finir au bureau ?",
+        "a": "Oui. Le brouillon vous suit du téléphone au bureau en temps réel, sans retaper."
+      },
+      {
+        "q": "Combien ça coûte ?",
+        "a": "Les tarifs pour les cabinets individuels sont sur la page tarifs. Vous pouvez ouvrir l'application web et enregistrer votre première consultation avant de décider."
+      }
+    ],
+    "cta": {
+      "title": "Voyez la valeur dès votre première consultation",
+      "body": "Ouvrez l'application web, choisissez votre spécialité et enregistrez une consultation. Rien à installer, rien à configurer.",
+      "primary": "Ouvrir l'application web",
+      "secondary": "Voir les tarifs"
+    },
+    "relatedLabel": "Pages liées"
+  },
+  "for-medical-secretaries": {
+    "navLabel": "Medical secretaries",
+    "navDesc": "Travaillez dans le compte du médecin, avec ses modèles.",
+    "title": "Documentation médicale assistée par IA pour secrétaires | DocNote",
+    "description": "Un compte secrétaire fonctionne dans celui du médecin — mêmes modèles, mêmes en-têtes, pas de ressaisie. La secrétaire met en forme et exporte ; le médecin valide. Réservez une démo.",
+    "hero": {
+      "badge": "Pour secrétaires médicaux",
+      "title": "DocNote pour secrétaires médicaux",
+      "subtitle": "La secrétaire travaille dans le compte du médecin, avec ses modèles et ses documents.",
+      "lead": "Dans la plupart des cabinets et services, ce n'est pas le médecin qui met en forme la lettre — c'est la secrétaire. Pourtant, les scribes IA sont vendus au médecin, un compte par médecin. La secrétaire reste en dehors de la boucle, ressaisissant ce que l'IA a produit."
+    },
+    "story": {
+      "badge": "Le problème",
+      "title": "La personne qui met en forme la lettre n'est pas celle qui détient le compte",
+      "paragraphs": [
+        "Le médecin enregistre, l'IA rédige, puis le brouillon atterrit dans la boîte mail de la secrétaire sous forme de texte à ressaisir dans le format de lettre du cabinet. Le temps gagné d'un côté est reperdu de l'autre.",
+        "DocNote ferme cette boucle avec des comptes liés. Un compte secrétaire est rattaché à un médecin ; toute la session agit comme ce médecin — ses modèles, ses comptes-rendus, son en-tête. La secrétaire révise, complète, met en forme et exporte ; le médecin valide et signe.",
+        "Comme le compte-rendu correspond déjà au format de lettre du cabinet, il n'y a pas de ressaisie. Et du contexte peut être ajouté plus tard — un résultat de labo qui arrive après, une imagerie, une lettre antérieure — sans recommencer le compte-rendu."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que fait DocNote",
+      "title": "Conçu autour de la façon dont un cabinet produit réellement ses lettres",
+      "subtitle": "Comptes liés, répartition claire des rôles, pas de ressaisie.",
+      "items": [
+        {
+          "title": "Comptes liés",
+          "body": "Un compte secrétaire est rattaché à un médecin. Toute la session agit comme ce médecin — ses modèles, ses comptes-rendus, son en-tête."
+        },
+        {
+          "title": "La secrétaire révise, complète, met en forme et exporte",
+          "body": "Le médecin valide et signe. Chacun garde son rôle ; personne ne refait le travail de l'autre."
+        },
+        {
+          "title": "Pas de ressaisie",
+          "body": "Le compte-rendu correspond déjà au format de lettre du cabinet — vos sections, vos marges, votre bloc de signature."
+        },
+        {
+          "title": "Le contexte peut être ajouté plus tard",
+          "body": "Un résultat de labo qui arrive après, une imagerie, une lettre antérieure : joignez-le et le compte-rendu est mis à jour sans recommencer."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Comment ça marche",
+      "title": "De l'enregistrement du médecin à une lettre prête à envoyer",
+      "subtitle": "Un enregistrement, deux rôles, pas de copier-coller entre les deux.",
+      "items": [
+        {
+          "title": "Le médecin enregistre",
+          "body": "Dans le cabinet ou à l'hôpital, depuis le téléphone ou le navigateur."
+        },
+        {
+          "title": "DocNote rédige sur le modèle du cabinet",
+          "body": "Le compte-rendu sort dans le format de lettre du cabinet, avec le vocabulaire de la spécialité du médecin."
+        },
+        {
+          "title": "La secrétaire révise, complète et met en forme",
+          "body": "Dans le compte du médecin : ajoutez le résultat de labo tardif, ajustez les destinataires, vérifiez la mise en page, exportez."
+        },
+        {
+          "title": "Le médecin valide et signe",
+          "body": "Le médecin reste l'auteur. Rien ne sort sans sa validation."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Pourquoi c'est important",
+      "title": "Le décideur que tous les autres scribes ignorent",
+      "intro": "Dans un cabinet, la secrétaire est souvent la première personne à essayer un outil de documentation — et la première à voir s'il fait gagner du temps ou en fait perdre. Le temps des secrétaires est mesurable et budgétisé, contrairement à celui des médecins.",
+      "points": [
+        {
+          "title": "Déjà en production",
+          "body": "Les comptes secrétaires sont actifs aujourd'hui dans des cabinets, rattachés aux comptes des médecins, avec leurs modèles et leurs documents."
+        },
+        {
+          "title": "Mêmes modèles, même en-tête",
+          "body": "Comme la secrétaire travaille dans le compte du médecin, il y a une seule source de vérité pour le format — pas une copie à synchroniser."
+        },
+        {
+          "title": "Responsabilité claire",
+          "body": "La secrétaire met en forme et exporte ; le médecin valide et signe. DocNote rédige un compte-rendu que le médecin valide — il ne remplace aucun des deux rôles."
+        },
+        {
+          "title": "Hébergement suisse, rétention audio courte",
+          "body": "Données de santé hébergées en Suisse ; audio conservé brièvement pour produire le document, puis supprimé."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Configurer un compte secrétaire pour votre cabinet",
+        "body": "Les comptes secrétaires sont rattachés au compte d'un médecin par l'équipe DocNote. Réservez une démo pour votre cabinet et nous verrons ensemble vos formats de lettre, comment la secrétaire et le médecin se transmettent le travail aujourd'hui, et comment le compte lié s'intègre."
+      }
+    ],
+    "faq": [
+      {
+        "q": "La secrétaire a-t-elle besoin de ses propres modèles ?",
+        "a": "Non. Le compte secrétaire fonctionne dans le compte du médecin et utilise ses modèles, comptes-rendus et en-têtes."
+      },
+      {
+        "q": "Qui valide le compte-rendu ?",
+        "a": "Le médecin. La secrétaire révise, complète, met en forme et exporte ; le médecin valide et signe."
+      },
+      {
+        "q": "Peut-on ajouter un résultat de labo après la génération du compte-rendu ?",
+        "a": "Oui. Joignez le résultat, l'imagerie ou une lettre antérieure après coup ; le compte-rendu est mis à jour sans recommencer."
+      },
+      {
+        "q": "Une secrétaire peut-elle travailler pour plusieurs médecins ?",
+        "a": "Parlez-en à l'équipe selon votre organisation — la façon dont les comptes secrétaires sont rattachés dépend de la structure de votre cabinet ou service."
+      },
+      {
+        "q": "Comment commencer ?",
+        "a": "Réservez une démo pour votre cabinet. Nous configurons le compte lié avec vous et vérifions les formats de lettre sur des cas réels."
+      }
+    ],
+    "cta": {
+      "title": "Voyez-le avec vos propres formats de lettre",
+      "body": "Réservez une démo pour votre cabinet — nous configurons le compte lié ensemble et vérifions le format sur des cas réels.",
+      "primary": "Réserver une démo pour votre cabinet",
+      "secondary": "Contacter l'équipe"
+    },
+    "relatedLabel": "Pages connexes"
+  },
+  "for-clinic-groups": {
+    "navLabel": "Groupes & cliniques",
+    "navDesc": "Déploiement multi-sites, politique imposée, facturation centralisée.",
+    "title": "Documentation médicale assistée par IA pour groupes de cliniques | DocNote",
+    "description": "Déployez sur plusieurs sites avec une politique imposée : rétention, déconnexion, modèles partagés et support natif des DPI. Parlez-en à l'équipe pour votre déploiement.",
+    "hero": {
+      "badge": "Pour groupes et cliniques",
+      "title": "DocNote pour groupes et cliniques",
+      "subtitle": "Déployez sur plusieurs sites sans laisser chaque clinicien inventer ses propres règles.",
+      "lead": "Un groupe ne demande pas \"est-ce que ça écrit bien\". Il pose trois autres questions : puis-je imposer une politique de sécurité à tous mes cliniciens, est-ce que ça s'intègre à mes systèmes, et puis-je le facturer et le suivre centralement."
+    },
+    "story": {
+      "badge": "Le problème",
+      "title": "Trois questions qu'un groupe pose avant de s'intéresser à la qualité des notes",
+      "paragraphs": [
+        "Quand un outil est déployé auprès de dizaines de cliniciens sur plusieurs sites, la qualité d'une seule note est la partie facile. Ce qui décide, c'est si le groupe peut fixer les règles une fois — rétention, déconnexion, lecture audio — et savoir qu'elles s'appliquent partout, si le compte-rendu validé atterrit dans le DPI du groupe, et si le tout peut être facturé et suivi depuis un seul endroit.",
+        "DocNote répond avec une politique au niveau de l'organisation : un groupe peut imposer des paramètres sur tous ses comptes — rétention des transcriptions, lecture audio désactivée, déconnexion automatique — sans dépendre des réglages individuels de chaque médecin. Les modèles sont aussi harmonisés : les documents du groupe sont déployés à chaque clinicien, avec une charte graphique et des sections communes.",
+        "Les DPI du groupe sont supportés nativement, et dans un hôpital de jour plusieurs cliniciens alimentent le même dossier patient. La politique organisationnelle n'est pas une promesse de roadmap : elle est déjà en production pour un groupe pilote."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que fait DocNote",
+      "title": "Fixez les règles une fois, appliquez-les à chaque clinicien",
+      "subtitle": "Politique, modèles, systèmes et facturation au niveau du groupe.",
+      "items": [
+        {
+          "title": "Politique organisationnelle",
+          "body": "Imposez des paramètres sur tous les comptes du groupe — rétention des transcriptions, lecture audio désactivée, déconnexion automatique — sans dépendre des réglages individuels de chaque médecin."
+        },
+        {
+          "title": "Modèles harmonisés",
+          "body": "Les documents du groupe sont déployés à chaque clinicien, avec une charte graphique et des sections communes. Une seule charte, pas une par médecin."
+        },
+        {
+          "title": "S'intègre à votre stack existante",
+          "body": "Les DPI de groupe sont supportés nativement : le compte-rendu validé est envoyé dans le dossier patient, découpé par section. SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
+        },
+        {
+          "title": "Documentation collaborative",
+          "body": "Dans un hôpital de jour, plusieurs cliniciens alimentent le même dossier patient. En fin de journée : un dossier structuré, pas quatre notes partielles à concilier."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Comment ça marche",
+      "title": "D'un site pilote à tout le groupe",
+      "subtitle": "Le déploiement suit votre gouvernance, pas l'inverse.",
+      "items": [
+        {
+          "title": "Définir la politique",
+          "body": "La rétention, la déconnexion, la lecture audio et les modèles partagés sont fixés au niveau de l'organisation et appliqués à chaque compte."
+        },
+        {
+          "title": "Connecter les systèmes",
+          "body": "Les comptes sont liés au DPI du groupe ; le compte-rendu validé va dans le dossier patient, découpé par section."
+        },
+        {
+          "title": "Piloter sur un site",
+          "body": "Un service, des cas réels, vos modèles — puis la même configuration est étendue aux autres sites."
+        },
+        {
+          "title": "Facturer et suivre centralement",
+          "body": "Les comptes, l'usage et la facturation sont gérés au niveau du groupe plutôt que clinicien par clinicien."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Déployé, pas promis",
+      "title": "La politique organisationnelle est déjà en production",
+      "intro": "L'argument le plus fort de cette page est que la politique de groupe n'est pas sur une roadmap : elle est déployée pour un groupe pilote aujourd'hui, et c'est ce qu'un directeur devrait demander à voir en premier.",
+      "points": [
+        {
+          "title": "Politique imposée en production",
+          "body": "La rétention des transcriptions, la lecture audio désactivée et la déconnexion automatique sont appliquées sur les comptes d'un groupe pilote aujourd'hui."
+        },
+        {
+          "title": "Sept DPI connectés",
+          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay et Ardentis ; une API d'intégration documentée pour les autres éditeurs."
+        },
+        {
+          "title": "Hébergement suisse, rétention audio courte",
+          "body": "Données de santé hébergées en Suisse ; audio conservé brièvement pour produire le document, puis supprimé."
+        },
+        {
+          "title": "Validation médicale, toujours",
+          "body": "DocNote rédige un compte-rendu que le médecin valide. La politique régit l'outil ; le clinicien reste l'auteur."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Ce dont nous avons besoin pour cadrer un déploiement de groupe",
+        "body": "Nombre de cliniciens et de sites, le(s) DPI utilisé(s), le pays (la Suisse ou la France changent les suggestions de codage — SwissDRG, TARDOC, Tarif 222 ou PMSI), et si un service d'hôpital de jour fait partie du périmètre. Avec ces quatre réponses, nous pouvons proposer une configuration pilote."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Pouvons-nous imposer les mêmes paramètres à chaque clinicien ?",
+        "a": "Oui. La politique organisationnelle applique la rétention des transcriptions, la lecture audio et la déconnexion automatique sur tous les comptes du groupe, indépendamment des réglages individuels."
+      },
+      {
+        "q": "Chaque site peut-il utiliser les mêmes modèles de lettre ?",
+        "a": "Oui. Les modèles Word du groupe sont déployés à chaque clinicien, avec une charte graphique et des sections communes."
+      },
+      {
+        "q": "Quels DPI sont supportés ?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay et Ardentis, avec une livraison unidirectionnelle du compte-rendu validé dans le dossier patient. Une API d'intégration documentée existe pour les autres éditeurs."
+      },
+      {
+        "q": "La facturation est-elle par clinicien ou par groupe ?",
+        "a": "Les comptes de groupe sont facturés et suivis centralement. Parlez-en à l'équipe pour les détails de votre configuration."
+      },
+      {
+        "q": "Le mode hôpital de jour est-il disponible pour nous ?",
+        "a": "La documentation collaborative en hôpital de jour est disponible pour les groupes dont le DPI est intégré."
+      }
+    ],
+    "cta": {
+      "title": "Parlez-en à l'équipe pour votre groupe",
+      "body": "Dites-nous combien de cliniciens, quel DPI et quel pays — nous revenons avec une configuration pilote.",
+      "primary": "Parler à l'équipe",
+      "secondary": "Réserver une démo"
+    },
+    "relatedLabel": "Pages connexes"
+  },
+  "medical-coding-and-billing": {
+    "navLabel": "Codage & facturation",
+    "navDesc": "SwissDRG, PMSI, TARDOC, Tarif 222.",
+    "title": "Logiciel de codage SwissDRG, TARDOC & PMSI | DocNote",
+    "description": "Les diagnostics facturables apparaissent dans la lettre elle-même — suggestions SwissDRG, TARDOC, Tarif 222 et PMSI à valider, pas un second passage de codage. Réservez une démo.",
+    "hero": {
+      "badge": "Codage & facturation",
+      "title": "Codage et facturation intégrés au compte-rendu",
+      "subtitle": "Les diagnostics facturables sortent de la lettre elle-même, pas d'un second passage.",
+      "lead": "Le codage cesse d'être un second passage de documentation. La lettre elle-même fait remonter les diagnostics facturables : moins de comorbidités oubliées, moins de rattrapage le soir — comme suggestions que le médecin et le service de codage valident."
+    },
+    "story": {
+      "badge": "Dans le produit",
+      "title": "Suggestions dans leur propre emplacement, jamais dans le texte clinique",
+      "paragraphs": [
+        "Les diagnostics secondaires significatifs sont mis en évidence dans la lettre de sortie, là où le clinicien lit déjà. Les suggestions de codage apparaissent à la fin du document, dans leur propre emplacement — elles ne polluent pas le texte clinique et peuvent être placées où vous voulez dans votre modèle Word.",
+        "En Suisse, les suggestions suivent SwissDRG (ICD-10 / CHOP), TARDOC et Tarif 222 pour la dentisterie. En France, elles suivent PMSI. Avec TARDOC, une courte dictation au lit devient une description d'examen complète et facturable : vous documentez une fois pour les soins et la facturation, pas deux.",
+        "La formulation compte : ce sont des suggestions et propositions de codage à valider. La responsabilité du codage reste au médecin et au service de codage. DocNote ne code pas en votre nom et ne certifie pas la conformité de la facturation — il s'assure que rien de facturable n'est oublié dans la lettre."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que vous obtenez",
+      "title": "Documentez une fois, pour les soins et la facturation",
+      "subtitle": "Le texte clinique reste clinique ; l'emplacement de codage fait le reste.",
+      "items": [
+        {
+          "title": "Diagnostics secondaires significatifs dans la lettre",
+          "body": "Les comorbidités importantes pour le séjour sont mises en évidence dans la lettre de sortie, pour ne pas être redécouvertes des semaines plus tard par le service de codage."
+        },
+        {
+          "title": "Suggestions de codage à la fin du document",
+          "body": "Dans leur propre emplacement, séparé du corps du texte — placé où votre modèle Word l'attend."
+        },
+        {
+          "title": "Suisse : SwissDRG, TARDOC, Tarif 222",
+          "body": "SwissDRG (ICD-10 / CHOP) pour les séjours hospitaliers, TARDOC pour les prestations ambulatoires, Tarif 222 pour la dentisterie."
+        },
+        {
+          "title": "France : PMSI",
+          "body": "Suggestions PMSI à la fin de la lettre, pour validation par le médecin et le DIM."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Comment ça marche",
+      "title": "De la dictation à une lettre avec son emplacement de codage",
+      "subtitle": "Pas de second passage, pas d'outil de codage séparé.",
+      "items": [
+        {
+          "title": "Enregistrer et rédiger",
+          "body": "La consultation ou la dictation au lit est capturée ; DocNote rédige le compte-rendu sur votre modèle."
+        },
+        {
+          "title": "Diagnostics mis en évidence dans le texte",
+          "body": "Les diagnostics secondaires significatifs sont soulignés dans la lettre au fur et à mesure de sa rédaction."
+        },
+        {
+          "title": "Suggestions dans l'emplacement de codage",
+          "body": "Les suggestions SwissDRG, TARDOC, Tarif 222 ou PMSI apparaissent à la fin du document, dans leur propre emplacement."
+        },
+        {
+          "title": "Le médecin et le service de codage valident",
+          "body": "Les suggestions sont confirmées, corrigées ou rejetées. La responsabilité reste là où elle doit être."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Pourquoi c'est un différentiateur",
+      "title": "Aucun scribe généraliste ne connaît TARDOC, SwissDRG ou Tarif 222",
+      "intro": "C'est un avantage structurel sur le marché suisse, pas une fonctionnalité de plus : les tarifs sont locaux, et un outil de documentation construit ailleurs ne les parle pas.",
+      "points": [
+        {
+          "title": "Tarifs locaux, nativement",
+          "body": "SwissDRG, TARDOC et Tarif 222 pour la Suisse ; PMSI pour la France — intégrés au compte-rendu, pas greffés dessus."
+        },
+        {
+          "title": "Texte d'examen prêt pour TARDOC",
+          "body": "Une courte dictation au lit est développée en une description d'examen structurée que les assureurs et TARDOC attendent, sans réécrire l'examen depuis zéro."
+        },
+        {
+          "title": "Suggestions, à valider",
+          "body": "Jamais appliquées en votre nom, jamais certifiées. Le médecin et le service de codage gardent le dernier mot."
+        },
+        {
+          "title": "Votre modèle décide où va l'emplacement",
+          "body": "Le codage obtient son propre emplacement dans le modèle Word, séparé du corps du texte."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "DocNote code-t-il mes séjours automatiquement ?",
+        "a": "Non. Il met en évidence les diagnostics secondaires significatifs dans la lettre et ajoute des suggestions de codage à la fin du document. Ce sont des propositions à valider ; la responsabilité du codage reste au médecin et au service de codage."
+      },
+      {
+        "q": "Quels systèmes de codage sont couverts ?",
+        "a": "Suisse : SwissDRG (ICD-10 / CHOP), TARDOC et Tarif 222 pour la dentisterie. France : PMSI."
+      },
+      {
+        "q": "Les suggestions apparaissent-elles dans le texte clinique ?",
+        "a": "Non. Elles se trouvent dans leur propre emplacement à la fin du document, et cet emplacement peut être placé où vous voulez dans votre modèle Word."
+      },
+      {
+        "q": "À quoi ressemble le support TARDOC en pratique ?",
+        "a": "Une courte dictation au lit devient une description d'examen complète et facturable — vous documentez une fois pour les soins et la facturation, pas deux."
+      },
+      {
+        "q": "Est-ce que cela remplace notre revue de codage ?",
+        "a": "Non. DocNote propose ; le médecin et le service de codage valident. Rien ici ne remplace votre revue de codage."
+      }
+    ],
+    "cta": {
+      "title": "Voyez l'emplacement de codage sur vos propres lettres",
+      "body": "Réservez une démo avec une lettre de sortie de votre service — nous montrons où les diagnostics apparaissent et où les suggestions atterrissent.",
+      "primary": "Réserver une démo",
+      "secondary": "Voir les tarifs"
+    },
+    "relatedLabel": "Pages connexes"
+  },
+  "ehr-integration": {
+    "navLabel": "Intégration DPI",
+    "navDesc": "7 systèmes, envoyé section par section.",
+    "title": "Intégration DPI pour scribes médicaux IA | DocNote",
+    "description": "DocNote envoie les rapports validés dans SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay et Ardentis, divisés par section — unidirectionnel, sans copier-coller. Réservez une démo.",
+    "hero": {
+      "badge": "Intégration DPI",
+      "title": "Intégration avec le dossier patient électronique",
+      "subtitle": "Le rapport validé est intégré au dossier, section par section.",
+      "lead": "La documentation n'est pas terminée lorsque la note semble bonne. Elle l'est lorsqu'elle est dans le dossier : pas de copier-coller, pas de version flottant en dehors du DPI."
+    },
+    "story": {
+      "badge": "Dans le produit",
+      "title": "Sept systèmes, un flux : de DocNote vers le dossier",
+      "paragraphs": [
+        "DocNote envoie les rapports validés dans sept systèmes de dossier patient électronique : SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay et Ardentis. Le clinicien lie son compte DocNote à son compte DPI une fois, via OAuth2, et recherche son patient dans le DPI depuis DocNote.",
+        "Une fois le rapport validé, il est envoyé dans le dossier du patient, divisé par section — les sections du rapport arrivent dans les sections du dossier, pas comme un bloc collé.",
+        "Le flux est unidirectionnel : DocNote envoie vers le DPI. DocNote ne lit pas le dossier patient ; la recherche de patient est une recherche, pas une importation de dossier. Une API d'intégration documentée existe pour les éditeurs de DPI souhaitant se connecter."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que vous obtenez",
+      "title": "Le rapport et le dossier restent le même objet",
+      "subtitle": "Lié une fois, recherché depuis DocNote, envoyé section par section.",
+      "items": [
+        {
+          "title": "Sept systèmes pris en charge",
+          "body": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis — DPI hospitaliers et de groupe en Suisse et en France."
+        },
+        {
+          "title": "Lié une fois, via OAuth2",
+          "body": "Le clinicien lie son compte DocNote à son compte DPI une fois. Pas de mots de passe partagés, pas d'export manuel."
+        },
+        {
+          "title": "Recherche de patient depuis DocNote",
+          "body": "Trouvez le patient dans le DPI sans quitter l'application, puis attachez le rapport au bon dossier."
+        },
+        {
+          "title": "Envoyé divisé par section",
+          "body": "Le rapport validé est intégré au dossier du patient section par section — pas de copier-coller, pas de version flottant en dehors du DPI."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Comment ça marche",
+      "title": "Du brouillon validé au dossier patient",
+      "subtitle": "Unidirectionnel, délibéré, et toujours après validation.",
+      "items": [
+        {
+          "title": "Liez les comptes une fois",
+          "body": "Le clinicien autorise DocNote contre son compte DPI via OAuth2."
+        },
+        {
+          "title": "Recherchez le patient",
+          "body": "Depuis DocNote, recherchez le patient dans le DPI et sélectionnez le dossier."
+        },
+        {
+          "title": "Validez le rapport",
+          "body": "Le médecin révise et approuve. Rien n'est envoyé avant validation."
+        },
+        {
+          "title": "Envoyez section par section",
+          "body": "Le rapport est livré dans le dossier du patient, divisé par section."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Précision à préserver",
+      "title": "Unidirectionnel, par conception",
+      "intro": "Il vaut la peine d'être précis sur ce que l'intégration fait et ne fait pas — cette précision est ce que les services informatiques hospitaliers examinent.",
+      "points": [
+        {
+          "title": "DocNote envoie vers le DPI",
+          "body": "La direction est DocNote → dossier patient. Il n'y a pas de flux retour du DPI vers DocNote."
+        },
+        {
+          "title": "DocNote ne lit pas le dossier patient",
+          "body": "La recherche de patient renvoie le dossier à attacher ; elle n'importe pas le contenu du dossier dans DocNote."
+        },
+        {
+          "title": "Seuls les rapports validés sont envoyés",
+          "body": "Les brouillons restent dans DocNote jusqu'à ce que le médecin les approuve."
+        },
+        {
+          "title": "API d'intégration documentée",
+          "body": "Les éditeurs de DPI non encore connectés peuvent s'intégrer via une API documentée."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Quels DPI sont pris en charge ?",
+        "a": "SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay et Ardentis."
+      },
+      {
+        "q": "DocNote lit-il aussi depuis le DPI ?",
+        "a": "Non. Le flux est unidirectionnel : DocNote envoie le rapport validé dans le DPI. DocNote ne lit pas le dossier patient."
+      },
+      {
+        "q": "Comment fonctionne la recherche de patient ?",
+        "a": "Le clinicien recherche le patient dans le DPI depuis DocNote et sélectionne le dossier à envoyer. C'est une recherche, pas une importation de dossier."
+      },
+      {
+        "q": "Comment le compte est-il lié ?",
+        "a": "Une fois, via OAuth2, entre le compte DocNote du clinicien et son compte DPI."
+      },
+      {
+        "q": "Notre DPI n'est pas dans la liste — que faire ?",
+        "a": "Une API d'intégration documentée existe pour les éditeurs de DPI souhaitant se connecter. Parlez à l'équipe."
+      }
+    ],
+    "cta": {
+      "title": "Voyez le rapport arriver dans votre DPI",
+      "body": "Réservez une démo avec votre système — SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay ou Ardentis — ou demandez des informations sur l'API d'intégration.",
+      "primary": "Réserver une démo",
+      "secondary": "Contacter l'équipe"
+    },
+    "relatedLabel": "Pages associées"
+  },
+  "custom-word-templates": {
+    "navLabel": "Vos modèles Word",
+    "navDesc": "Votre en-tête, sections et signature.",
+    "title": "Modèles Word personnalisés pour rapports médicaux | DocNote",
+    "description": "Téléchargez votre modèle Word une fois — chaque rapport conserve votre en-tête, sections et signature. La relecture reste clinique, pas cosmétique. Voyez comment ça marche.",
+    "hero": {
+      "badge": "Modèles Word personnalisés",
+      "title": "Vos documents Word, pas ceux de l'IA",
+      "subtitle": "Téléchargez votre modèle une fois. Chaque rapport qui suit utilise votre structure et branding exacts.",
+      "lead": "Plus besoin de reformater la sortie de l'IA pour qu'elle corresponde à l'en-tête de l'hôpital. Chaque rapport est déjà votre document. La relecture reste clinique, pas cosmétique."
+    },
+    "story": {
+      "badge": "Dans le produit",
+      "title": "L'objection numéro un dans les démos hospitalières, répondue avant d'être soulevée",
+      "paragraphs": [
+        "\"Votre sortie est bien mais elle ne ressemble pas à notre lettre.\" Chaque service a un document qu'il a affiné pendant des années — l'en-tête, les marges, l'ordre des sections, le bloc de signature. Un outil qui produit du bon texte dans le mauvais document crée un travail de mise en forme pour quelqu'un.",
+        "Avec DocNote, vous déposez votre modèle Word une fois. À partir de là, chaque rapport sort avec votre structure et branding exacts : votre en-tête, vos marges, vos sections, votre signature. Le codage a son propre emplacement dans le modèle, séparé du texte principal, pour que les suggestions ne se mélangent jamais au contenu clinique.",
+        "L'alignement des paragraphes est préservé à l'export — justifié, centré, à droite — donc ce que vous voyez dans DocNote est ce qui sort en Word ou PDF. La relecture redevient clinique : vous corrigez le fond, pas la forme."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que vous obtenez",
+      "title": "Chaque rapport est déjà votre document",
+      "subtitle": "Structure, branding et emplacements définis une fois, réutilisés à chaque fois.",
+      "items": [
+        {
+          "title": "Votre en-tête, marges, sections, signature",
+          "body": "Le document Word du service est le modèle. DocNote recrée les futurs rapports avec cette structure et ce branding exacts."
+        },
+        {
+          "title": "Un emplacement pour le codage, séparé du texte",
+          "body": "Les suggestions de codage ont leur propre place dans le modèle — où votre service de codage les attend — et ne polluent jamais le texte clinique."
+        },
+        {
+          "title": "Alignement préservé à l'export",
+          "body": "Justifié, centré, à droite — l'alignement des paragraphes de votre modèle survit à l'export en Word et PDF."
+        },
+        {
+          "title": "La relecture redevient clinique",
+          "body": "Vous corrigez le fond, pas la forme. Le reformatage cosmétique disparaît de l'étape de validation."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Comment ça marche",
+      "title": "Une fois pour le modèle, puis à chaque fois pour le rapport",
+      "subtitle": "Pas d'éditeur de modèle à apprendre — votre fichier Word est la source.",
+      "items": [
+        {
+          "title": "Téléchargez le modèle Word",
+          "body": "Déposez le document du service ou du cabinet une fois — en-tête, sections, bloc de signature, emplacement de codage."
+        },
+        {
+          "title": "Enregistrez et rédigez",
+          "body": "DocNote rédige le rapport directement dans cette structure."
+        },
+        {
+          "title": "Corrigez le fond",
+          "body": "Le médecin révise le contenu clinique ; la mise en page est déjà correcte."
+        },
+        {
+          "title": "Exportez ou envoyez",
+          "body": "Word ou PDF avec alignement préservé, ou directement dans le DPI si connecté."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Pourquoi c'est un différenciateur",
+      "title": "La sortie générique est l'objection ; votre document est la réponse",
+      "intro": "La plupart des scribes livrent une mise en page fixe et laissent l'en-tête à quelqu'un d'autre. DocNote prend votre document comme modèle, c'est pourquoi les services arrêtent de poser la question.",
+      "points": [
+        {
+          "title": "Votre fichier, pas un constructeur de modèles",
+          "body": "Le document Word que votre service utilise déjà est ce que DocNote reproduit."
+        },
+        {
+          "title": "Harmonisé au sein d'un groupe",
+          "body": "Les groupes déploient les mêmes modèles à chaque clinicien, avec un branding et des sections partagés."
+        },
+        {
+          "title": "Fonctionne aussi pour les secrétaires",
+          "body": "Une secrétaire travaillant dans le compte du médecin utilise les mêmes modèles — pas de deuxième copie à synchroniser."
+        },
+        {
+          "title": "Emplacement de codage choisi par vous",
+          "body": "Où les suggestions arrivent est décidé dans le modèle, pas par l'outil."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Dois-je reconstruire mon modèle dans DocNote ?",
+        "a": "Non. Téléchargez votre document Word existant une fois ; DocNote recrée les futurs rapports avec sa structure et son branding."
+      },
+      {
+        "q": "L'en-tête et le bloc de signature seront-ils préservés ?",
+        "a": "Oui — en-tête, marges, sections et signature proviennent de votre modèle."
+      },
+      {
+        "q": "Où vont les suggestions de codage ?",
+        "a": "Dans leur propre emplacement dans le modèle, séparé du texte principal, placé où vous voulez."
+      },
+      {
+        "q": "L'alignement est-il conservé à l'export ?",
+        "a": "Oui. Les alignements justifié, centré et à droite sont préservés à l'export."
+      },
+      {
+        "q": "Plusieurs modèles peuvent-ils coexister ?",
+        "a": "Oui — par exemple un par type de document (lettre de sortie, compte-rendu opératoire, note de service) ou par service."
+      }
+    ],
+    "cta": {
+      "title": "Apportez votre en-tête à la démo",
+      "body": "Envoyez-nous le modèle Word du service et nous montrons le rapport sortant dans votre document, pas le nôtre.",
+      "primary": "Réserver une démo",
+      "secondary": "Voir le tutoriel"
+    },
+    "relatedLabel": "Pages associées"
+  },
+  "clinical-context": {
+    "navLabel": "Contexte clinique",
+    "navDesc": "Labos, imagerie, photos, lettres antérieures.",
+    "title": "Contexte Clinique pour Rapports Médicaux IA | DocNote",
+    "description": "Joignez des lettres antérieures, résultats de labo, imagerie et photos avant ou après l'enregistrement. Les éléments tardifs mettent à jour le rapport sans recommencer. Voyez-le dans le tutoriel.",
+    "hero": {
+      "badge": "Contexte clinique",
+      "title": "Le rapport reflète le dossier, pas seulement ce qui a été dit à haute voix",
+      "subtitle": "Joignez des lettres antérieures, résultats de labo, imagerie et photos.",
+      "lead": "La note reflète l'image clinique complète, pas seulement ce qui a été dit à haute voix : moins d'omissions, moins de corrections \"veuillez ajouter le résultat du labo\" après coup."
+    },
+    "story": {
+      "badge": "Dans le produit",
+      "title": "Audio plus fichiers, avant ou après l'enregistrement",
+      "paragraphs": [
+        "Une consultation est rarement toute l'histoire. Il y a la lettre de sortie précédente, le panel de labo de ce matin, le compte-rendu d'imagerie, la photo de plaie. DocNote vous permet de les joindre, et le modèle les utilise pour structurer le rapport.",
+        "Les documents joints avant ou après l'enregistrement sont intégrés au rapport. Les éléments ajoutés tardivement — un résultat de labo qui arrive l'après-midi — sont repris sans tout regénérer, donc les corrections que vous avez déjà faites sont conservées.",
+        "Un mode conversationnel vous permet de demander un changement ou une addition après la génération : demandez à ajouter les labos, à raccourcir une section, à changer un destinataire. Moins d'omissions, moins de messages \"veuillez ajouter les labos\" ensuite."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que vous obtenez",
+      "title": "Une note plus solide à partir de la même consultation",
+      "subtitle": "Contexte dedans, omissions dehors.",
+      "items": [
+        {
+          "title": "Joignez des lettres antérieures, résultats de labo, imagerie et photos",
+          "body": "Déposez les fichiers à côté de l'enregistrement ; le modèle les utilise pour structurer le rapport."
+        },
+        {
+          "title": "Avant ou après l'enregistrement",
+          "body": "Les documents joints à tout moment sont intégrés au rapport — vous n'avez pas besoin d'avoir tout prêt avant d'appuyer sur enregistrer."
+        },
+        {
+          "title": "Éléments tardifs sans tout regénérer",
+          "body": "Un résultat qui arrive ensuite est repris pendant que vos corrections précédentes sont préservées."
+        },
+        {
+          "title": "Mode conversationnel après génération",
+          "body": "Demandez un changement ou une addition en langage clair une fois que le brouillon existe."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Comment ça marche",
+      "title": "De la consultation et des fichiers à un rapport complet",
+      "subtitle": "La même étape de validation ; plus d'image dans le brouillon.",
+      "items": [
+        {
+          "title": "Enregistrez la consultation",
+          "body": "Téléphone ou navigateur, comme d'habitude."
+        },
+        {
+          "title": "Joignez le contexte",
+          "body": "Lettre de sortie précédente, labos, imagerie, photos — avant ou après l'enregistrement."
+        },
+        {
+          "title": "Revoyez le brouillon",
+          "body": "Le rapport reflète le dossier et la conversation ; vous corrigez le fond."
+        },
+        {
+          "title": "Demandez le changement dont vous avez besoin",
+          "body": "En mode conversationnel, demandez une addition ou un changement ; validez et exportez."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Pourquoi c'est important",
+      "title": "Moins d'omissions, moins de corrections de suivi",
+      "intro": "La valeur n'est pas une note plus grosse ; c'est une note qui n'a pas besoin d'être rouverte parce que les labos manquaient.",
+      "points": [
+        {
+          "title": "Exhaustivité du rapport",
+          "body": "Avec le contexte inclus, moins de résultats manquent dans le brouillon — le rapport reflète l'image clinique complète."
+        },
+        {
+          "title": "Contexte tardif, corrections préservées",
+          "body": "Ajouter un résultat ensuite met à jour le rapport sans jeter ce que vous avez déjà édité."
+        },
+        {
+          "title": "Utile aussi pour les secrétaires",
+          "body": "Une secrétaire travaillant dans le compte du médecin peut ajouter le résultat de labo tardif ou la lettre précédente sans recommencer."
+        },
+        {
+          "title": "Validation médicale, toujours",
+          "body": "Le contexte améliore le brouillon ; le médecin révise et signe toujours."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Que puis-je joindre ?",
+        "a": "Lettres antérieures, résultats de labo, comptes-rendus d'imagerie et photos."
+      },
+      {
+        "q": "Dois-je tout joindre avant l'enregistrement ?",
+        "a": "Non. Les documents joints avant ou après l'enregistrement sont intégrés au rapport."
+      },
+      {
+        "q": "Si un résultat de labo arrive plus tard, dois-je regénérer tout le rapport ?",
+        "a": "Non. Les éléments tardifs sont repris sans tout regénérer ; vos corrections sont conservées."
+      },
+      {
+        "q": "Puis-je demander un changement après la génération du brouillon ?",
+        "a": "Oui. Un mode conversationnel vous permet de demander un changement ou une addition après génération."
+      },
+      {
+        "q": "DocNote extrait-il des documents de mon DPI ?",
+        "a": "Non. Vous joignez les fichiers vous-même ; DocNote ne lit pas le dossier patient."
+      }
+    ],
+    "cta": {
+      "title": "Voyez la différence que fait le contexte",
+      "body": "Regardez le tutoriel pour voir un rapport rédigé avec des pièces jointes — ou réservez une démo avec vos propres documents.",
+      "primary": "Voir le tutoriel",
+      "secondary": "Réserver une démo"
+    },
+    "relatedLabel": "Pages associées"
+  },
+  "day-hospital-documentation": {
+    "navLabel": "Hôpital de jour",
+    "navDesc": "Plusieurs cliniciens, un seul dossier.",
+    "title": "Logiciel de documentation pour hôpital de jour | DocNote",
+    "description": "Plusieurs cliniciens, un seul dossier patient : DocNote fusionne les contributions de l'équipe en une note structurée unique. Disponible pour les groupes avec un DPI intégré.",
+    "hero": {
+      "badge": "Hôpital de jour",
+      "title": "Hôpital de jour : plusieurs cliniciens, un seul dossier",
+      "subtitle": "DocNote fusionne les contributions de l'équipe en un dossier fiable.",
+      "lead": "À la fin de la journée, vous disposez d'un dossier patient structuré unique, et non de quatre notes partielles à concilier. La qualité de la documentation suit l'équipe au lieu de se fragmenter."
+    },
+    "story": {
+      "badge": "Dans le produit",
+      "title": "Un dossier multi-auteurs pour une journée multi-intervenants",
+      "paragraphs": [
+        "Dans un hôpital de jour, le patient voit plusieurs cliniciens à la suite — l'infirmière à l'admission, le médecin, le spécialiste, l'infirmière à nouveau à la sortie. Chacun documente sa partie ; quelqu'un doit ensuite concilier quatre notes partielles en un dossier qui se lit comme un tout.",
+        "DocNote permet à plusieurs cliniciens de contribuer au même dossier patient tout au long de la journée. Les contributions sont fusionnées en un dossier structuré unique, de sorte qu'à la fin de la journée, il y a un document unique, et non quatre fragments à assembler.",
+        "Ceci est disponible pour les groupes dont le DPI est intégré : le dossier fusionné et validé est envoyé dans le dossier du patient, divisé par section, comme tout autre rapport DocNote."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que vous obtenez",
+      "title": "Un dossier structuré unique à la fin de la journée",
+      "subtitle": "L'équipe documente ; le dossier reste intact.",
+      "items": [
+        {
+          "title": "Plusieurs cliniciens, même dossier",
+          "body": "Infirmière, médecin, spécialiste — chacun contribue au même dossier patient tout au long de la journée."
+        },
+        {
+          "title": "Contributions fusionnées, pas empilées",
+          "body": "DocNote fusionne les contributions de l'équipe en un dossier fiable plutôt que d'ajouter quatre notes partielles."
+        },
+        {
+          "title": "La qualité suit l'équipe",
+          "body": "La qualité de la documentation s'adapte à l'équipe au lieu de se fragmenter entre les auteurs."
+        },
+        {
+          "title": "Dans le DPI du groupe",
+          "body": "Disponible pour les groupes dont le DPI est intégré ; le dossier validé est envoyé dans le dossier du patient, divisé par section."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Fonctionnement",
+      "title": "Du premier contact au dossier de sortie",
+      "subtitle": "Chaque clinicien documente sa partie ; DocNote maintient un document unique.",
+      "items": [
+        {
+          "title": "Admission",
+          "body": "Le premier clinicien ouvre le dossier hôpital de jour du patient et documente sa partie."
+        },
+        {
+          "title": "Au fil de la journée",
+          "body": "Chaque clinicien suivant contribue au même dossier depuis son propre compte."
+        },
+        {
+          "title": "Fusion",
+          "body": "DocNote fusionne les contributions en un dossier structuré unique."
+        },
+        {
+          "title": "Validation et envoi",
+          "body": "Le médecin responsable valide ; le dossier est envoyé dans le DPI du groupe, divisé par section."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "Pourquoi c'est un différenciateur",
+      "title": "Personne d'autre ne traite ce cas d'usage",
+      "intro": "Cela nécessite un modèle de données multi-auteurs, et tous les scribes sur le marché sont mono-clinicien. DocNote a été conçu avec l'hôpital de jour à l'esprit.",
+      "points": [
+        {
+          "title": "Multi-auteurs par conception",
+          "body": "Plusieurs comptes alimentant un seul dossier est une propriété du modèle de données, pas une solution de contournement."
+        },
+        {
+          "title": "Pour les groupes intégrés",
+          "body": "Disponible pour les groupes dont le DPI est intégré — SOKLE, Mediway, Axenita, EDL, Elsan, Ramsay, Ardentis."
+        },
+        {
+          "title": "Gouverné par la politique du groupe",
+          "body": "Les règles de conservation, de déconnexion et de lecture audio définies au niveau de l'organisation s'appliquent à chaque contributeur."
+        },
+        {
+          "title": "Validation médicale, toujours",
+          "body": "Le dossier fusionné est rédigé par DocNote et validé par le médecin responsable avant d'être envoyé."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Qui peut contribuer au dossier ?",
+        "a": "Les cliniciens du service hôpital de jour, chacun depuis son propre compte DocNote, sur le même dossier patient."
+      },
+      {
+        "q": "Est-ce un document fusionné ou une liste de notes ?",
+        "a": "Un dossier structuré fusionné — pas quatre notes partielles à concilier."
+      },
+      {
+        "q": "Qui valide le dossier fusionné ?",
+        "a": "Le médecin responsable révise et valide avant qu'il ne soit envoyé dans le DPI."
+      },
+      {
+        "q": "Est-ce disponible pour mon groupe ?",
+        "a": "C'est disponible pour les groupes dont le DPI est intégré. Parlez-en à l'équipe concernant vos systèmes."
+      }
+    ],
+    "cta": {
+      "title": "Voir un dossier hôpital de jour construit par l'équipe",
+      "body": "Réservez une démo avec votre service hôpital de jour et votre DPI dans le tableau.",
+      "primary": "Réserver une démo",
+      "secondary": "Contacter l'équipe"
+    },
+    "relatedLabel": "Pages connexes"
+  },
+  "multilingual-medical-documentation": {
+    "navLabel": "Multilingue & spécialités",
+    "navDesc": "61 spécialités, 21 langues d'interface.",
+    "title": "IA de documentation médicale multilingue | DocNote",
+    "description": "61 spécialités, 21 langues d'interface — la langue que vous parlez avec le patient ne dicte pas la langue ou le vocabulaire du rapport. Voyez-le en action.",
+    "hero": {
+      "badge": "Multilingue & spécialités",
+      "title": "61 spécialités, 21 langues d'interface",
+      "subtitle": "Une consultation en portugais, un rapport en français, dans le vocabulaire de votre spécialité.",
+      "lead": "La langue que vous parlez avec le patient ne dicte pas la langue du rapport — et le vocabulaire suit votre spécialité, plutôt qu'un jargon SOAP générique importé des États-Unis."
+    },
+    "story": {
+      "badge": "Dans le produit",
+      "title": "Les mots de votre spécialité, dans la langue du rapport",
+      "paragraphs": [
+        "DocNote couvre 61 spécialités médicales, chacune avec ses propres modèles de rapport par défaut. À l'inscription, les modèles sont adaptés à votre spécialité, de sorte que le premier brouillon utilise déjà la structure et les termes attendus par votre discipline — pas une note de consultation générique repeinte pour chaque métier.",
+        "L'interface est disponible en 21 langues. Et les consultations sont multilingues par nature : une consultation tenue en portugais, arabe ou allemand peut produire un rapport en français — la langue que vous parlez avec le patient ne dicte pas la langue du document.",
+        "Le vocabulaire suit la spécialité. Une lettre de cardiologie, une note de psychiatrie et un rapport opératoire ne se lisent pas de la même manière, et DocNote ne les force pas dans un seul modèle."
+      ]
+    },
+    "benefits": {
+      "badge": "Ce que vous obtenez",
+      "title": "Spécialité d'abord, langue ensuite — les deux gérés",
+      "subtitle": "61 spécialités, 21 langues d'interface, consultations multilingues.",
+      "items": [
+        {
+          "title": "61 spécialités médicales",
+          "body": "Chacune avec ses propres modèles de rapport par défaut, adaptés à l'inscription."
+        },
+        {
+          "title": "Interface en 21 langues",
+          "body": "Travaillez dans votre langue sur le téléphone et sur le bureau."
+        },
+        {
+          "title": "Consultations multilingues",
+          "body": "La langue que vous parlez avec le patient ne dicte pas la langue du rapport."
+        },
+        {
+          "title": "Vocabulaire adapté à la spécialité",
+          "body": "Les termes et la structure suivent votre discipline, plutôt qu'un jargon SOAP générique importé des États-Unis."
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Fonctionnement",
+      "title": "D'une consultation dans une langue à un rapport dans une autre",
+      "subtitle": "Aucun paramètre à jongler pendant la consultation.",
+      "items": [
+        {
+          "title": "Choisissez votre spécialité et votre langue",
+          "body": "Une fois, à l'inscription : modèles par défaut pour votre spécialité, interface dans votre langue."
+        },
+        {
+          "title": "Enregistrez dans la langue de la salle",
+          "body": "Parlez avec le patient dans la langue que vous partagez."
+        },
+        {
+          "title": "Obtenez le rapport dans la langue du dossier",
+          "body": "Le brouillon est produit dans la langue du rapport que vous avez choisie, dans le vocabulaire de votre spécialité."
+        },
+        {
+          "title": "Validez et exportez",
+          "body": "Vous révisez, corrigez et signez, comme pour tout rapport DocNote."
+        }
+      ]
+    },
+    "proof": {
+      "badge": "En pratique",
+      "title": "Conçu pour les environnements de soins multilingues",
+      "intro": "Les hôpitaux et cabinets suisses et français travaillent quotidiennement dans plusieurs langues. DocNote traite cela comme un cas normal, pas comme un cas particulier.",
+      "points": [
+        {
+          "title": "61 spécialités, 227 modèles",
+          "body": "Modèles de rapport par défaut pour chaque spécialité ; téléchargez votre propre modèle Word pour les remplacer."
+        },
+        {
+          "title": "21 langues d'interface",
+          "body": "Interface téléphone et bureau dans votre langue."
+        },
+        {
+          "title": "Hébergement suisse, conservation audio courte",
+          "body": "Données de santé hébergées en Suisse ; audio conservé uniquement brièvement pour produire le document, puis supprimé."
+        },
+        {
+          "title": "Validation médicale, toujours",
+          "body": "Quelle que soit la langue, DocNote rédige un rapport que vous validez."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Puis-je parler une langue et obtenir le rapport dans une autre ?",
+        "a": "Oui. La langue que vous parlez avec le patient ne dicte pas la langue du rapport."
+      },
+      {
+        "q": "Combien de spécialités sont couvertes ?",
+        "a": "61 spécialités médicales, chacune avec ses propres modèles de rapport par défaut."
+      },
+      {
+        "q": "En combien de langues l'interface est-elle disponible ?",
+        "a": "21."
+      },
+      {
+        "q": "Le vocabulaire est-il spécifique à la spécialité ?",
+        "a": "Oui. Les termes et la structure suivent votre spécialité plutôt qu'une note SOAP générique."
+      },
+      {
+        "q": "Puis-je utiliser mes propres modèles au lieu des modèles par défaut ?",
+        "a": "Oui. Téléchargez votre modèle Word une fois et chaque rapport après cela le suit."
+      }
+    ],
+    "cta": {
+      "title": "Essayez-le dans votre spécialité et votre langue",
+      "body": "Regardez le tutoriel, puis ouvrez l'application web et enregistrez une consultation dans votre spécialité.",
+      "primary": "Voir le tutoriel",
+      "secondary": "Voir les tarifs"
+    },
+    "relatedLabel": "Pages connexes"
   },
   "ai-soap-notes": {
     "navLabel": "Notes SOAP par IA",
@@ -1614,7 +2844,7 @@
         "a": "Commencez par les types de notes pris en charge que votre service valide. Les cas complexes à haute acuité peuvent rester entièrement manuels jusqu'à ce que les modèles mûrissent."
       },
       {
-        "q": "Est-ce que cela s'intègre aux parcours EHR hospitaliers ?",
+        "q": "Est-ce que cela s'intègre aux parcours DPI hospitaliers ?",
         "body": "Là où les intégrations sont configurées, oui ; sinon exportez dans votre processus documentaire existant.",
         "a": "Là où les intégrations sont configurées, oui ; sinon exportez dans votre processus de documentation existant aux urgences."
       },
