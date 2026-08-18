@@ -75,7 +75,7 @@ DocNote의 접근 방식은 이 범위 전반을 자동화하면서도 의사의
 
 Buzz eSanté의 실제 병원 속도 집중은 유용한 해결책입니다. 평가 위원회가 데모를 좋아했다면 실제 오후 진료 또는 병동 순회 시뮬레이션 중 다음 세션을 예약하세요. 의사가 중단될 때 발생하는 상황을 관찰하세요. 그곳이 제품 테스트입니다.
 
-유럽 시장의 문서화 AI 맥락은 [DocNote in Les Echos](/blog/docnote-les-echos-european-ai-health/)를, 행사 수준 도입 주제는 [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/)를, 개인정보 보호 태세는 [DocNote GDPR 및 nFADP 준수](/blog/docnote-gdpr-nfadp-compliance/)를 참조하세요.
+유럽 시장의 문서화 AI 맥락은 [Les Echos에 소개된 DocNote](/blog/docnote-les-echos-european-ai-health/)를, 행사 수준 도입 주제는 [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/)를, 개인정보 보호 태세는 [DocNote GDPR 및 nFADP 준수](/blog/docnote-gdpr-nfadp-compliance/)를 참조하세요.
 
 ## DocNote가 Buzz eSanté 기사를 운영화하는 방법
 

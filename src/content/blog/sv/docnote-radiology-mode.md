@@ -106,7 +106,7 @@ Para siffror med korta kvalitativa check-ins. Ett verktyg som sparar tre minuter
 
 Håll också uppsikt över rättvisa över fallsvårighet. Om läget bara skiner på enkla normala fall och kollapsar på komplex onkologisk stadielanguage, begränsa dess användning till lämpliga undersökningsklasser tills mallarna förbättras.
 
-## Radiology mode FAQ
+## Vanliga frågor om Radiologiläget
 
 <details>
   <summary>Är DocNote Radiology mode endast för MRI?</summary>

@@ -39,7 +39,7 @@ Gli acquirenti europei aggiungono vincoli che i prodotti centrati sugli USA a vo
 - Panorami EHR che variano per paese e regione
 - Culture cliniche che richiedono strutture consapevoli della specialità, non dump generici SOAP
 
-La direzione del prodotto DocNote si allinea a questi vincoli: tipi di documento ospedalieri, output strutturati e una postura di compliance adatta ai contesti svizzeri e UE. Per i dettagli sulla compliance, vedi [DocNote GDPR e nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+La direzione del prodotto DocNote si allinea a questi vincoli: tipi di documento ospedalieri, output strutturati e una postura di compliance adatta ai contesti svizzeri e UE. Per i dettagli sulla compliance, vedi [conformità GDPR e nFADP di DocNote](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## La competizione è un segno di maturità del settore
 
@@ -56,7 +56,7 @@ Domande pratiche per confrontare qualsiasi vendor europeo di trascrizione, inclu
 
 Le affermazioni di marketing vacillano sotto questa lista. I prodotti solidi diventano più chiari. DocNote accoglie questo standard perché la documentazione ospedaliera è il nostro focus, non un modulo secondario attaccato a un chatbot consumer.
 
-Se stai costruendo una shortlist interna, parti dalle pagine [AI medical scribe](/ai-medical-scribe/) e [hospital documentation](/hospital-documentation/), poi testa i flussi di lavoro su casi reali anziché demo scriptate.
+Se stai costruendo una shortlist interna, parti dalle pagine [scriba medico AI](/ai-medical-scribe/) e [documentazione ospedaliera](/hospital-documentation/), poi testa i flussi di lavoro su casi reali anziché demo scriptate.
 
 ## Cosa cambia il riconoscimento per DocNote e per gli acquirenti
 
@@ -111,7 +111,7 @@ Quando vedi DocNote elencato sotto trascrizione medica e generazione di document
 
 Poi chiedi una dimostrazione live sulla nota di routine più difficile della tua specialità, non la più semplice. Porta una lettera di dimissione con comorbidità complesse. Porta una nota di reparto scritta sotto interruzioni. È qui che l'AI ospedaliera europea guadagna credibilità.
 
-I prossimi passi commerciali e le forme di piano sono su [pricing](/pricing/). La storia del prodotto per il sollievo documentale resta semplice: meno carico clericale, più attenzione ai pazienti.
+I prossimi passi commerciali e le forme di piano sono su [prezzi](/pricing/). La storia del prodotto per il sollievo documentale resta semplice: meno carico clericale, più attenzione ai pazienti.
 
 ## FAQ: Copertura Les Echos e trascrizione AI europea
 
@@ -149,4 +149,4 @@ I prossimi passi commerciali e le forme di piano sono su [pricing](/pricing/). L
 
 L'indagine di Les Echos sugli assistenti AI sanitari europei cattura un settore che sta prendendo forma. Il posto di DocNote nel segmento di trascrizione medica e generazione di documenti è un riconoscimento del lavoro focalizzato. La convinzione alla base di questo lavoro non è cambiata: l'AI dovrebbe restituire tempo agli operatori alleviando il carico documentale, con i medici saldamente al comando.
 
-Se il tuo ospedale sta confrontando le opzioni europee dopo la copertura, riporta la conversazione in reparto e in ambulatorio. Esplora [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) e [pricing](/pricing/), poi giudica DocNote sui referti che i tuoi team devono davvero finire stasera.
+Se il tuo ospedale sta confrontando le opzioni europee dopo la copertura, riporta la conversazione in reparto e in ambulatorio. Esplora [scriba medico AI](/ai-medical-scribe/), [documentazione ospedaliera](/hospital-documentation/) e [prezzi](/pricing/), poi giudica DocNote sui referti che i tuoi team devono davvero finire stasera.

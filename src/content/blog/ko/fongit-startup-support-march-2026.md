@@ -38,7 +38,7 @@ DocNote는 의사의 행정 부담을 줄이기 위해 설계된 어시스턴트
 
 병원, 외래 진료, 환자 측면에서 다양한 임상 환경에서 검증된 이 솔루션은 이제 일상적인 의료 실무의 상당 부분을 커버합니다. 이 범위는 단일 데모 스크립트가 아닌 다양한 전문 분야 의사들의 피드백에서 비롯됩니다.
 
-이 제품 범주가 처음이라면 [AI medical scribe](/ai-medical-scribe/) 개요에서 수행해야 할 작업의 비마케팅 버전을 설명합니다. 입원 및 교차 서비스 사용에 대해서는 [hospital documentation](/hospital-documentation/)을 참조하세요.
+이 제품 범주가 처음이라면 [AI 의료 스크라이브](/ai-medical-scribe/) 개요에서 수행해야 할 작업의 비마케팅 버전을 설명합니다. 입원 및 교차 서비스 사용에 대해서는 [병원 문서화](/hospital-documentation/)을 참조하세요.
 
 ## 스위스 헬스테크 지원의 차별점(과 유용성)
 
@@ -50,7 +50,7 @@ DocNote는 의사의 행정 부담을 줄이기 위해 설계된 어시스턴트
 4. 개인정보 보호와 품질이 기본 요건이라는 문화적 기대
 5. 프랑스, 이탈리아, 독일, EU 시장으로의 크로스보더 연결
 
-FONGIT는 제네바의 중심으로서 이 풍경 속에 자리잡고 있습니다. DocNote에게 제네바는 단순한 우편 주소가 아닙니다. 병원 대화가 구체적으로 이루어지는 임상 및 규제 환경입니다. Initial Startup Support 선정은 유럽의 문서화 AI 수요가 가속화되는 시점에서 이러한 유대를 더욱 깊게 합니다. 이는 [DocNote in Les Echos](/blog/docnote-les-echos-european-ai-health/)와 같은 보도에서도 확인할 수 있습니다.
+FONGIT는 제네바의 중심으로서 이 풍경 속에 자리잡고 있습니다. DocNote에게 제네바는 단순한 우편 주소가 아닙니다. 병원 대화가 구체적으로 이루어지는 임상 및 규제 환경입니다. Initial Startup Support 선정은 유럽의 문서화 AI 수요가 가속화되는 시점에서 이러한 유대를 더욱 깊게 합니다. 이는 [Les Echos에 소개된 DocNote](/blog/docnote-les-echos-european-ai-health/)와 같은 보도에서도 확인할 수 있습니다.
 
 스위스 프로그램을 평가하는 창업자들은 여전히 어려운 질문을 던져야 합니다:
 
@@ -76,7 +76,7 @@ DocNote의 실행 우선순위는 명확합니다:
 
 의사 피드백 루프가 엔진입니다. 심장병 전문의, 외과의, 일반의가 동일한 플랫폼을 사용할 때 예외 사례가 빠르게 드러납니다. 일상적인 진료의 상당 부분을 커버한다는 것은 의학이 균일하다고 가장하지 않고 이러한 예외 사례를 템플릿과 모델 행동에 흡수하는 것을 의미합니다.
 
-문서화 압력과 AI 증거에 관한 관련 자료로는 [less time documenting with AI](/blog/less-time-documenting-ai-more-care/)와 [reducing physician burnout](/blog/reducing-physician-burnout/)가 있습니다. 규정 준수 맥락은 [DocNote GDPR and nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/)에서 확인할 수 있습니다.
+문서화 압력과 AI 증거에 관한 관련 자료로는 [AI로 문서 작업 시간 줄이기](/blog/less-time-documenting-ai-more-care/)와 [의사 번아웃 줄이기](/blog/reducing-physician-burnout/)가 있습니다. 규정 준수 맥락은 [DocNote의 GDPR 및 nFADP 준수](/blog/docnote-gdpr-nfadp-compliance/)에서 확인할 수 있습니다.
 
 ## 병원 및 의사들이 이 소식에서 얻을 수 있는 것
 
@@ -96,7 +96,7 @@ DocNote의 실행 우선순위는 명확합니다:
 - 서비스 라인 파일럿을 위한 온보딩은 어떻게 이루어지는가?
 - 30일 및 90일 후 성공은 어떻게 측정되는가?
 
-DocNote의 답변 패턴은 일관됩니다: AI가 구조화된 문서 초안을 작성하고, 의사는 책임을 지며, 배포는 추상적인 AI 열정이 아닌 실제 백로그 문서에서 시작해야 합니다. 평가 준비가 된 팀을 위한 계획은 [pricing](/pricing/)에서 확인할 수 있습니다.
+DocNote의 답변 패턴은 일관됩니다: AI가 구조화된 문서 초안을 작성하고, 의사는 책임을 지며, 배포는 추상적인 AI 열정이 아닌 실제 백로그 문서에서 시작해야 합니다. 평가 준비가 된 팀을 위한 계획은 [요금제](/pricing/)에서 확인할 수 있습니다.
 
 ## 과대 광고 없이 공개적으로 구축하기
 
@@ -156,4 +156,4 @@ DocNote의 답변 패턴은 일관됩니다: AI가 구조화된 문서 초안을
 
 FONGIT의 Initial Startup Support 선정은 DocNote에게 자랑스러운 순간이자 제네바 혁신 커뮤니티 내에서의 실질적인 도약입니다. 사명은 동일합니다: 임상 책임에 대한 존중, 증거, 그리고 신중함으로 구조화된 의료 문서화를 자동화하여 의사들에게 시간을 돌려주는 것.
 
-병원 리더, 의사, 또는 스위스 생태계 파트너라면, AI에 대한 슬라이드보다 실제 제약 조건 하에서 완성된 퇴원 서신을 보여드리고 싶습니다. [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/), 그리고 [pricing](/pricing/)부터 시작해보세요. 이제 시작일 뿐입니다.
+병원 리더, 의사, 또는 스위스 생태계 파트너라면, AI에 대한 슬라이드보다 실제 제약 조건 하에서 완성된 퇴원 서신을 보여드리고 싶습니다. [AI 의료 스크라이브](/ai-medical-scribe/), [병원 문서화](/hospital-documentation/), 그리고 [요금제](/pricing/)부터 시작해보세요. 이제 시작일 뿐입니다.

@@ -83,7 +83,7 @@ Ambient inspelning fungerar bäst när besök är tempoanpassade för samtalskva
 
 ### 5. Stöd adoption med utbildning, inte memos
 
-Kliniker behöver praktisk coaching: hur man talar kliniskt relevanta detaljer, hur man redigerar AI-utkast snabbt och när man ska kassera ett svagt utkast och börja om. En kort [tutorial](/tutorial/) och peer-mästare presterar oftast bättre än långa policydokument.
+Kliniker behöver praktisk coaching: hur man talar kliniskt relevanta detaljer, hur man redigerar AI-utkast snabbt och när man ska kassera ett svagt utkast och börja om. En kort [guiden](/tutorial/) och peer-mästare presterar oftast bättre än långa policydokument.
 
 ## Var DocNote passar in i en strategi för att minska utbrändhet
 

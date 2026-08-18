@@ -34,8 +34,8 @@
     "consultationTitle": "การปรึกษา — ผู้ป่วย #1247",
     "consultationDate": "วันนี้, 14:30 · แพทย์ทั่วไป",
     "recording": "กำลังบันทึก",
-    "soapNoteGenerated": "สร้าง SOAP Note แล้ว",
-    "soapNote": "SOAP Note",
+    "soapNoteGenerated": "สร้างบันทึก SOAP แล้ว",
+    "soapNote": "บันทึก SOAP",
     "savedToEHR": "บันทึกใน EHR แล้ว",
     "justNow": "เมื่อกี้",
     "patientId": "ผู้ป่วย #1247",
@@ -85,8 +85,7 @@
         "ไม่เคย",
         "มี",
         "ไมเกรน",
-        "มาก่อน...",
-        "migraines"
+        "มาก่อน..."
       ]
     },
     "transcription": {
@@ -231,6 +230,8 @@
   "specialties": {
     "title": "รองรับ 61 สาขาวิชาการแพทย์",
     "subtitle": "ตั้งแต่การปฏิบัติทั่วไปไปจนถึงการดูแลเฉพาะทาง",
+    "countLabel": "61",
+    "familiesCta": "ดูกลุ่มสาขาเฉพาะทางทั้ง 7 กลุ่ม",
     "items": [
       "แพทย์ทั่วไป",
       "อายุรศาสตร์",
@@ -248,8 +249,7 @@
       "ศัลยกรรม",
       "ระบบปัสสาวะ",
       "แพทย์ฉุกเฉิน"
-    ],
-    "countLabel": "61"
+    ]
   },
   "testimonials": {
     "badge": "คำรับรอง",
@@ -443,8 +443,8 @@
       "title": "เปรียบเทียบแผน",
       "subtitle": "ดูว่ามีอะไรบ้างสำหรับแพทย์รายบุคคลเทียบกับโรงพยาบาลและคลินิก",
       "feature": "คุณสมบัติ",
-      "pro": "Professional",
-      "enterprise": "Enterprise",
+      "pro": "มืออาชีพ",
+      "enterprise": "องค์กร",
       "yes": "รวมอยู่",
       "no": "—",
       "custom": "กำหนดเอง",

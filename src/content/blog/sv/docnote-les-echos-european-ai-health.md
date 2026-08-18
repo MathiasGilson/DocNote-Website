@@ -1,9 +1,9 @@
 ---
-title: "DocNote i Les Echos: kartläggning av Europas AI-hälsovårdassistenter"
-excerpt: "Les Echos undersökte Europas marknad för AI-hälsovårdassistenter och placerade DocNote bland de ledande aktörerna inom medicinsk dokumentation och dokumentgenerering. Vad denna bevakning betyder för sjukhus."
+title: "DocNote i Les Echos: kartläggning av Europas AI-hälsoassistenter"
+excerpt: "Les Echos undersökte Europas marknad för AI-hälsoassistenter och placerade DocNote bland de ledande aktörerna inom medicinsk dokumentation och dokumentgenerering. Vad denna bevakning betyder för sjukhus."
 category: "news"
 author: "Dr. Vincent Tan"
-authorRole: "Läkare & verkställande direktör"
+authorRole: "Läkare & Verksamhetschef"
 authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/lesechos_06.26.png"
 fullImage: true
@@ -11,142 +11,142 @@ date: "2026-06-17"
 readTime: 10
 ---
 
-Le quotidien économique français Les Echos a consacré un article approfondi à DocNote, dans le cadre d'une analyse du marché européen en pleine croissance des assistants IA dans le secteur de la santé. Dans son article, la journaliste Marion Simon-Rainaud a cartographié les principaux acteurs européens qui redéfinissent ce secteur et a positionné DocNote parmi les noms clés dans la prise de notes médicales automatisées et la génération de documents.
+Den franska affärstidningen Les Echos har presenterat DocNote i en djupdykning i Europas snabbt växande marknad för AI-assistenter inom hälso- och sjukvården. I sin analys kartlade journalisten Marion Simon-Rainaud de främsta europeiska aktörerna som omformar sektorn och placerade DocNote bland de ledande namnen inom medicinsk dokumentation och dokumentgenerering.
 
-Pour une jeune entreprise de healthtech, être mentionnée dans un média de référence a du sens. Mais ce qui importe davantage pour les cliniciens et les dirigeants d'hôpitaux, c'est ce que cet article reflète sur le marché lui-même : l'IA appliquée à la documentation médicale n'est plus une expérience marginale. Elle devient une catégorie bien définie, avec ses concurrents, ses acheteurs et des attentes claires concernant le temps clinique restitué aux soignants.
+Täckning i en ansedd tidning är betydelsefullt för ett ungt healthtech-företag. Viktigare för kliniker och sjukhusledare är vad artikeln speglar om marknaden i sig: AI-dokumentation är inte längre en sidoförsök. Det blir en definierad kategori med konkurrenter, köpare och förväntningar om att klinisk tid återges till vårdgivare.
 
-## Ce que Les Echos a souligné sur le marché européen
+## Vad Les Echos lyfte fram om den europeiska marknaden
 
-L'IA dans la santé en Europe a dépassé le stade des simples "chatbots médicaux". Les acheteurs parlent désormais un langage plus spécifique : aide au triage, assistance en imagerie, codage, messagerie patient et documentation clinique. La prise de notes automatisée et la génération de documents appartiennent à cette dernière catégorie, dont l'objectif est de transformer les conversations cliniques, les notes et les documents sources en rapports structurés que les médecins peuvent valider.
+Europeisk hälso- och sjukvårds-AI har gått förbi generella "chattbot för medicin"-rubriker. Köpare pratar nu i mer specifika produkttermer: triage-stöd, bildassistans, kodning, patientmeddelanden och klinisk dokumentation. Medicinsk dokumentation och dokumentgenerering ingår i den sista gruppen, där uppgiften är att omvandla kliniskt tal, anteckningar och källdokument till strukturerade rapporter som läkare kan validera.
 
-La cartographie réalisée par Les Echos est importante car elle traite ce segment comme une véritable infrastructure, et non comme une nouveauté. Lorsqu'un média économique national dresse l'inventaire du secteur, les équipes d'achat disposent d'un vocabulaire commun. Les budgets pilotes deviennent plus faciles à justifier. Les fournisseurs sont comparés sur leur adéquation aux flux de travail et leur gouvernance, et pas seulement sur la qualité des démonstrations.
+Les Echos kartläggning är viktig eftersom den behandlar denna segment som riktig infrastruktur, inte en nyhet. När nationell affärsmedia inventerar området får upphandlingsteam ett gemensamt språk. Pilotbudgetar blir lättare att motivera. Leverantörer jämförs på arbetsflödesanpassning och styrning, inte bara på demo-polering.
 
-Pour DocNote, figurer parmi les leaders de la prise de notes automatisée et de la génération de documents reconnaît le travail accompli dans les hôpitaux, les soins ambulatoires et au chevet des patients. Cela relève également le niveau des attentes publiquement. Être cité dans ce paysage signifie que les hôpitaux poseront des questions plus précises sur l'intégration, les langues prises en charge, la couverture des spécialités et la protection des données.
+För DocNote innebär inkluderingen bland ledande aktörer i dokumentation och dokumentgenerering en erkänsla för arbetet över sjukhus, öppenvård och sängsidekontexter. Det höjer också ribban offentligt. Att nämnas i landskapet innebär att sjukhus kommer att ställa hårdare frågor om integration, språk, specialtäckning och dataskydd.
 
-Ce contrôle est sain. Les marchés crédibles de l'IA dans la santé se développent lorsque les journalistes et les acheteurs refusent ensemble les promesses magiques.
+Denna granskning är hälsosam. Trovärdiga AI-hälsomarknader växer när både journalister och köpare vägrar magiska påståenden.
 
-## Pourquoi la prise de notes automatisée est devenue une priorité en Europe
+## Varför medicinsk dokumentation blev en europeisk prioritet
 
-En Europe, la pression sur les effectifs et la charge documentaire vont de pair. Les cliniciens décrivent le même schéma dans différents systèmes de santé : une complexité croissante des consultations, des exigences plus strictes concernant les dossiers médicaux électroniques (DME) et des soirées passées à finaliser des notes. Les études et les analyses des mouvements dans les hôpitaux confirment régulièrement que les tâches administratives occupent une grande partie de la journée clinique. Nos propres articles sur ces preuves incluent [moins de temps à documenter avec l'IA](/blog/less-time-documenting-ai-more-care/) et une discussion plus large sur [l'avenir de la documentation médicale par IA](/blog/future-of-ai-medical-documentation/).
+Över hela Europa går arbetskraftstryck och dokumentationsbörda hand i hand. Kliniker beskriver samma mönster i olika vårdsystem: ökad besökskomplexitet, tätare krav på journaler och kvällar som spenderas på att avsluta anteckningar. Forskning och tidsstudier på sjukhus bekräftar ständigt att pappersarbete tar en stor del av den kliniska dagen. Vår egen rapportering om dessa bevis inkluderar [mindre tid på dokumentation med AI](/blog/less-time-documenting-ai-more-care/) och en bredare diskussion i [framtiden för AI-medicinsk dokumentation](/blog/future-of-ai-medical-documentation/).
 
-Les outils de prise de notes automatisée répondent à un levier spécifique. Ils n'embauchent pas de nouveaux médecins. Ils ne créent pas de capacités supplémentaires. Ils réduisent les minutes et les changements cognitifs nécessaires pour produire des rapports de consultation, des notes de service, des rapports opératoires et des lettres de sortie. Lorsque ce levier fonctionne, les équipes rapportent une meilleure clôture le jour même et moins de "temps en pyjama" à la maison.
+Dokumentationsverktyg adresserar en specifik hävstång. De anställer inte nya läkare. De skapar inte sängkapacitet. De minskar minuterna och de kognitiva växlarna som krävs för att producera konsultationsrapporter, vårdanteckningar, operationsrapporter och utskrivningsbrev. När denna hävstång fungerar rapporterar team bättre samma-dags-avslutning och mindre "pyjamastid" hemma.
 
-Les acheteurs européens ajoutent des contraintes parfois sous-estimées par les produits centrés sur les États-Unis :
+Europeiska köpare tillför begränsningar som USA-centrerade produkter ibland underskattar:
 
-- Environnements de soins multilingues et patients transfrontaliers
-- Attentes strictes en matière de RGPD et règles nationales sur les données de santé
-- Cycles d'achat des hôpitaux publics avec de longs processus de validation
-- Paysages de DME qui varient selon les pays et les régions
-- Cultures cliniques qui exigent une structure adaptée aux spécialités, pas des notes SOAP génériques
+- Fler-språkiga vårdmiljöer och gränsöverskridande patienter
+- Striktas GDPR-förväntningar och nationella hälsodataregler
+- Offentliga sjukhusupphandlingscykler med långa valideringsvägar
+- Journal-landskap som varierar mellan länder och regioner
+- Klinikerkulturer som kräver specialitetsmedveten struktur, inte generiska SOAP-dumpar
 
-L'orientation du produit DocNote s'aligne sur ces contraintes : types de documents utilisables dans tout l'hôpital, sorties structurées et posture de conformité adaptée aux contextes suisse et européen. Pour plus de détails sur la conformité, voir [Conformité de DocNote au RGPD et à la LPD](/blog/docnote-gdpr-nfadp-compliance/).
+DocNotes produktriktning anpassar sig till dessa begränsningar: sjukhusomfattande dokumenttyper, strukturerade utdata och en komplianshållning som passar schweiziska och EU-kontexter. För detaljer om efterlevnad, se [DocNote GDPR och nFADP-efterlevnad](/blog/docnote-gdpr-nfadp-compliance/).
 
-## La concurrence est une caractéristique d'une catégorie en maturation
+## Konkurrens är en funktion i en mognande kategori
 
-Les Echos décrit à juste titre un domaine concurrentiel. La concurrence n'est pas une menace pour les cliniciens. C'est un signal que l'IA appliquée à la documentation répond à une demande suffisante pour soutenir plusieurs fournisseurs sérieux. Les hôpitaux devraient tirer parti de cette concurrence.
+Les Echos ramar in ett konkurrensutsatt fält på rätt sätt. Konkurrens är inte ett hotscenario för kliniker. Det är en signal att dokumentations-AI har tillräckligt med efterfrågan för att upprätthålla flera seriösa leverantörer. Sjukhus bör utnyttja denna konkurrens.
 
-Questions pratiques à poser à tout fournisseur européen de prise de notes automatisée, y compris DocNote :
+Praktiska jämförelsefrågor att ställa till alla europeiska dokumentationsleverantörer, inklusive DocNote:
 
-1. Quels types de documents sont prêts à être utilisés aujourd'hui (consultation externe, hospitalisation, opération, sortie) ?
-2. Comment le brouillon intègre-t-il le DME déjà utilisé par vos équipes ?
-3. Quelles langues et modèles de spécialité sont pris en charge dans les sites en production ?
-4. Où les données sont-elles traitées et conservées, et sous quels contrats ?
-5. À quoi ressemble la relecture par le médecin avant signature ?
-6. Comment mesurez-vous le temps économisé sans fausser les métriques ?
+1. Vilka dokumenttyper är produktionsklara idag (öppenvård, slutenvård, operation, utskrivning)?
+2. Hur kommer utkastet in i det journalsystem era team redan använder?
+3. Vilka språk och specialtemplates stöds på aktiva platser?
+4. Var bearbetas och lagras data, och under vilka avtal?
+5. Hur ser läkar-granskning ut före signering?
+6. Hur mäter ni tidssparande utan att manipulera måtten?
 
-Les promesses marketing vagues ne résistent pas à cette liste. Les produits solides deviennent plus clairs. DocNote accueille favorablement cette norme parce que la documentation hospitalière est notre principal objectif, et non un module secondaire attaché à un chatbot grand public.
+Mjuka marknadsföringspåståenden faller sönder under denna lista. Starka produkter blir tydligare. DocNote välkomnar denna standard eftersom sjukhusdokumentation är där vi fokuserar, inte en sidomodul kopplad till en konsumentchattbot.
 
-Si vous constituez une liste restreinte interne, commencez par les pages [Prise de notes médicale par IA](/ai-medical-scribe/) et [Documentation hospitalière](/hospital-documentation/), puis testez les flux de travail sur des cas réels plutôt que sur des démonstrations scénarisées.
+Om du bygger en intern förteckning, börja med [AI-medicinsk dokumentation](/ai-medical-scribe/) och [sjukhusdokumentation](/hospital-documentation/), testa sedan arbetsflöden på verkliga fall snarare än manusförsedda demoer.
 
-## Ce que cette reconnaissance change pour DocNote et pour les acheteurs
+## Vad erkännandet ändrar för DocNote och för köpare
 
-Être cité aux côtés des principaux acteurs est une reconnaissance pour toute l'équipe DocNote. Cela ne remplace pas la validation clinique. La presse est un moment. Le déploiement est une pratique.
+Att nämnas tillsammans med ledande aktörer är en erkänsla för hela DocNote-teamet. Det ersätter inte klinisk validering. Press är ett ögonblick. Drift är en praxis.
 
-Pour DocNote, l'article de Les Echos renforce trois engagements :
+För DocNote förstärker Les Echos-reportaget tre åtaganden:
 
-- Continuer à améliorer la qualité des documents face aux variations cliniques réellement rencontrées par les médecins
-- Approfondir les intégrations avec les DME et les contextes régionaux pour que les brouillons ne restent pas dans le presse-papiers
-- Rester clair sur la responsabilité des médecins : les brouillons sont générés par l'IA, mais les cliniciens décident
+- Fortsätt förbättra dokumentkvalitet över kliniska variationer läkare faktiskt möter
+- Fördjupa journal- och regionala integrationer så utkast inte dör i urklipp
+- Var tydlig med läkares ansvar: AI-utkast, kliniker bestämmer
 
-Pour les acheteurs, une couverture comme celle-ci devrait déclencher une évaluation rigoureuse, et non des achats impulsifs. La conviction sous-jacente à cet article est une conviction que nous partageons : l'IA peut rendre du temps clinique en réduisant la charge administrative. Cela ne se produit que lorsque les outils sont encore utilisés après le deuxième mois, et pas seulement pendant la première semaine d'enthousiasme.
+För köpare bör täckning som denna utlösa disciplinerad utvärdering, inte FOMO-köp. Övertygelsen bakom artikeln är en vi delar: AI kan ge klinisk tid tillbaka genom att minska administrativ börda. Det händer bara när verktygen överlever den andra månaden av användning, inte bara den första veckans entusiasm.
 
-Une liste de contrôle raisonnable pour les équipes d'innovation hospitalières après cette couverture :
+En rimlig checklista för sjukhus innovations-team efter täckning:
 
-- Cartographiez les problèmes de documentation par service (urgences, services, cliniques, imagerie)
-- Choisissez un ou deux types de documents avec un retard mesurable
-- Lancez un pilote limité dans le temps avec des métriques explicites sur le temps d'édition
-- Impliquez le délégué à la protection des données (DPO) et les services informatiques tôt, pas après que les cliniciens sont tombés amoureux d'une démo
-- Prenez la décision de continuer ou non avec les médecins de première ligne dans la salle
+- Kartlägg dokumentationssmärta per verksamhetsgren (akut, vårdavdelningar, mottagningar, bilddiagnostik)
+- Välj en eller två dokumenttyper med mätbar eftersläpning
+- Kör en tidsbegränsad pilot med explicita redigeringstids-mått
+- Involvera DPO och IT tidigt, inte efter att kliniker har förälskat sig i en demo
+- Beslut om go eller no-go med frontlinjeläkare i rummet
 
-## Contexte européen de l'IA dans la santé au-delà du titre
+## Europeisk AI-hälsokontext bortom rubriken
 
-L'article de Les Echos s'inscrit dans une conversation européenne plus large. Les conférences, incubateurs et journées d'innovation hospitalière reviennent sans cesse sur les mêmes thèmes : interopérabilité, cybersécurité, acceptation par les cliniciens et preuve d'impact. La présence de DocNote dans cet écosystème inclut des événements et des articles tels que [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/) et [Buzz eSanté](/blog/buzz-esante-feature-april-2026/).
+Les Echos-artikeln ingår i en bredare europeisk konversation. Konferenser, inkubatorer och sjukhusinnovationsdagar återkommer till samma teman: interoperabilitet, cybersäkerhet, klinikeracceptans och effektbevis. DocNotes närvaro i detta ekosystem inkluderar evenemang och rapportering som [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/) och [Buzz eSanté](/blog/buzz-esante-feature-april-2026/).
 
-Ce qui distingue les projets durables du bruit médiatique :
+Vad som skiljer hållbara projekt från presscykel-brus:
 
-- Appropriation des flux de travail par des champions cliniques, pas seulement par les équipes numériques
-- Modèles qui correspondent à la culture médicale locale
-- Escalade claire lorsque le modèle est incertain ou que le cas est atypique
-- Formation qui enseigne des compétences de relecture, pas une confiance aveugle
-- Budget pour l'intégration, pas seulement pour les licences
+- Arbetsflödesägande av kliniska förespråkare, inte bara digitala team
+- Mallar som matchar lokal medicinsk kultur
+- Tydlig eskaleringsväg när modellen är osäker eller fallet är atypiskt
+- Utbildning som lär ut granskningsfärdigheter, inte blind tillit
+- Budget för integration, inte bara licenser
 
-L'avantage de l'Europe peut être son sérieux concernant la régulation et la qualité des soins. Le risque est une lenteur qui laisse les cliniciens coincés dans des rituels de documentation dépassés pendant que les outils ailleurs mûrissent. Une adoption équilibrée signifie avancer avec des preuves et une gouvernance, sans attendre une certitude parfaite qui n'arrivera jamais.
+Europas fördel kan vara allvar om reglering och vårdkvalitet. Risk är långsamhet som lämnar kliniker fast i föråldrade dokumentationsritualer medan verktyg annorstädes mognar. Balanserad adoption innebär att röra sig med bevis och styrning, utan att vänta på perfekt säkerhet som aldrig kommer.
 
-## Comment lire les cartographies de marché en tant que clinicien ou DSI
+## Hur man läser marknadskartor som kliniker eller CIO
 
-Les cartographies de marché sont utiles et incomplètes. Elles résument les entreprises en segments. Elles capturent rarement les nuances du chevet du patient. Utilisez-les comme un inventaire de départ, puis validez localement.
+Marknadskartor är användbara och ofullständiga. De komprimerar företag till segment. De fångar sällan sängsidenyanser. Använd dem som en startinventering, validera sedan lokalt.
 
-Après un article comme celui de Les Echos, les comités d'innovation assemblent souvent une grille de fournisseurs en quelques jours. Cette énergie est utile si la grille reste réaliste. Les colonnes devraient privilégier les types de documents, l'intégration au DME, les langues, l'architecture de confidentialité et les sites de référence plutôt que le nombre de logos ou les gros titres sur les financements.
+Efter en artikel som Les Echos sammanställer innovationskommittéer ofta en leverantörsmatris inom dagar. Den energin är användbar om matrisen hålls grundad. Kolumner bör favorisera dokumenttyper, journalintegration, språk, sekretessarkitektur och referensplatser framför logoräkning eller finansieringsrubriker.
 
-Invitez deux ou trois médecins de première ligne à la première réunion de sélection. Leur veto sur la qualité des brouillons est plus prédictif qu'une vidéo polie d'un fournisseur. Demandez à chaque fournisseur un exemple de sortie sur un cas difficile anonymisé de votre hôpital, produit sous des contraintes de temps similaires à une journée de clinique réelle.
+Bjud in två eller tre frontlinjeläkare till det första urvalsmötet. Deras veto på utkastkvalitet är mer prediktivt än en polerad leverantörsfilm. Be varje leverantör om ett exempel på utdata från ett anonymiserat svårt fall från ditt sjukhus, producerat under tidspress liknande en verklig klinikdag.
 
-DocNote s'attend à ce type de comparaison. La prise de notes médicale automatisée et la génération de documents ne méritent une place sur les cartes de marché européennes que si elles survivent à un examen local.
+DocNote förväntar sig den typen av jämförelse. Medicinsk dokumentation och dokumentgenerering förtjänar bara en plats på europeiska marknadskartor om de överlever lokal granskning.
 
-Lorsque vous voyez DocNote listé dans la prise de notes automatisée et la génération de documents, traduisez cela en termes opérationnels :
+När du ser DocNote listad under medicinsk dokumentation och dokumentgenerering, översätt det till operativa termer:
 
-- Capture à partir de consultations enregistrées, de dictées ou de notes de suivi
-- Génère des documents cliniques structurés que les médecins peuvent modifier
-- Couvre une large part des variations cliniques quotidiennes grâce aux retours des spécialités
-- Vise la réalité hospitalière et ambulatoire, pas seulement les consultations externes idéales
+- Fånga från inspelade konsultationer, diktering eller uppföljningsanteckningar
+- Generera strukturerade kliniska dokument som läkare kan redigera
+- Täck en stor del av vardagliga kliniska variationer genom specialitetsfeedback
+- Sikta på sjukhus- och öppenvårdsverklighet, inte bara idealiska öppenvårdsbesök
 
-Puis demandez une démonstration en direct sur la note la plus difficile de votre spécialité, pas la plus facile. Apportez une lettre de sortie avec des comorbidités complexes. Apportez une note de service écrite sous interruption. C'est là que l'IA hospitalière européenne gagne en crédibilité.
+Be sedan om en live-genomgång på din specialitets svåraste rutinanteckning, inte den enklaste. Ta med ett utskrivningsbrev med rörliga komorbiditeter. Ta med en vårdanteckning skriven under avbrott. Det är där europeisk sjukhus-AI förtjänar trovärdighet.
 
-Les prochaines étapes commerciales et les plans tarifaires sont sur [Tarification](/pricing/). L'histoire produit pour soulager la charge documentaire reste simple : moins de tâches administratives, plus d'attention pour les patients.
+Kommersiella nästa steg och planformer finns på [prissättning](/pricing/). Produktberättelsen för dokumentationslättnad förblir enkel: mindre administrativ börda, mer uppmärksamhet för patienter.
 
-## FAQ : Couverture par Les Echos et prise de notes automatisée par IA en Europe
+## FAQ: Les Echos-täckning och europeisk AI-dokumentation
 
 <details>
-  <summary>Où DocNote a-t-il été mentionné ?</summary>
-  <p>DocNote a été mentionné dans Les Echos, dans une analyse par Marion Simon-Rainaud des assistants IA dans le secteur de la santé en Europe. L'article a positionné DocNote parmi les principaux acteurs de la prise de notes médicale automatisée et de la génération de documents.</p>
+  <summary>Var presenterades DocNote?</summary>
+  <p>DocNote presenterades i Les Echos, i en analys av Marion Simon-Rainaud om Europas AI-assistenter inom hälso- och sjukvården. Artikeln placerade DocNote bland nyckelspelare inom medicinsk dokumentation och dokumentgenerering.</p>
 </details>
 
 <details>
-  <summary>Cette couverture médiatique signifie-t-elle que DocNote est la seule option européenne ?</summary>
-  <p>Non. Les Echos a cartographié un domaine concurrentiel. La concurrence est saine. Les hôpitaux devraient comparer l'adéquation aux flux de travail, l'intégration, les langues et la gouvernance entre les fournisseurs.</p>
+  <summary>Betyder presstäckning att DocNote är det enda europeiska alternativet?</summary>
+  <p>Nej. Les Echos kartlade ett konkurrensutsatt fält. Konkurrens är hälsosam. Sjukhus bör jämföra arbetsflödesanpassning, integration, språk och styrning mellan leverantörer.</p>
 </details>
 
 <details>
-  <summary>Sur quel problème DocNote se concentre-t-il dans cette cartographie de marché ?</summary>
-  <p>DocNote se concentre sur la réduction de la charge administrative en générant des documents médicaux structurés à partir de conversations et de notes cliniques, afin que les soignants puissent retrouver du temps clinique.</p>
+  <summary>Vilket problem fokuserar DocNote på i denna marknadskarta?</summary>
+  <p>DocNote fokuserar på att minska den administrativa bördan genom att generera strukturerade medicinska dokument från kliniska samtal och anteckningar, så vårdgivare kan återfå klinisk tid.</p>
 </details>
 
 <details>
-  <summary>Comment les hôpitaux devraient-ils réagir à de telles cartographies de marché ?</summary>
-  <p>Utilisez-les pour établir une liste restreinte, puis lancez un pilote contrôlé avec de vrais types de documents, intégration au DME, examen de la confidentialité et qualité d'édition évaluée par les médecins. N'achetez pas sur la base des titres seuls.</p>
+  <summary>Hur bör sjukhus reagera på marknadskartor som denna?</summary>
+  <p>Använd dem för att skapa en förteckning, kör sedan en kontrollerad pilot med verkliga dokumenttyper, journalintegration, sekretessgranskning och läkar-betygsatt redigeringskvalitet. Köp inte baserat enbart på rubriker.</p>
 </details>
 
 <details>
-  <summary>DocNote est-il uniquement pour la France ?</summary>
-  <p>Non. DocNote est utilisé dans divers contextes cliniques et est conçu en tenant compte des attentes réglementaires européennes et suisses. Le contexte linguistique local et le DME doivent encore être validés site par site.</p>
+  <summary>Är DocNote endast för Frankrike?</summary>
+  <p>Nej. DocNote används över kliniska miljöer och är byggd med europeiska och schweiziska regelverksförväntningar i åtanke. Lokalt språk och journalkontext måste fortfarande valideras plats för plats.</p>
 </details>
 
 <details>
-  <summary>Où les équipes peuvent-elles évaluer DocNote après avoir lu Les Echos ?</summary>
-  <p>Commencez par les pages Prise de notes médicale par IA et Documentation hospitalière, consultez les tarifs pour planifier un pilote, et testez sur les types de documents qui créent le plus de retard dans votre organisation.</p>
+  <summary>Var kan team utvärdera DocNote efter att ha läst Les Echos?</summary>
+  <p>Börja med AI-medicinsk dokumentation och sjukhusdokumentation, granska prissättning för pilotplanering, och testa på de dokumenttyper som skapar mest eftersläpning i din organisation.</p>
 </details>
 
-## Conclusion : un marché cartographié, une mission pratique
+## Slutsats: en kartlagd marknad, ett praktiskt uppdrag
 
-L'enquête de Les Echos sur les assistants de santé par IA en Europe capture un secteur qui prend forme. La place de DocNote dans le segment de la prise de notes automatisée et de la génération de documents est une reconnaissance d'un travail ciblé. La conviction derrière ce travail n'a pas changé : l'IA devrait rendre du temps aux soignants en réduisant la charge documentaire, tout en laissant les médecins fermement aux commandes.
+Les Echos översikt av europeiska AI-hälsovård-assistenter fångar en sektor som hittar sin form. DocNotes plats i segmentet för medicinsk dokumentation och dokumentgenerering är en erkänsla för fokuserat arbete. Övertygelsen bakom detta arbete har inte förändrats: AI bör ge tid tillbaka till vårdgivare genom att lyfta dokumentationsbördan, med läkare fortfarande fast i förarsätet.
 
-Si votre hôpital compare les options européennes après avoir lu cet article, ramenez la conversation vers les services et les cliniques. Explorez [Prise de notes médicale par IA](/ai-medical-scribe/), [Documentation hospitalière](/hospital-documentation/) et [Tarification](/pricing/), puis jugez DocNote sur les rapports que vos équipes doivent réellement finaliser ce soir.
+Om ditt sjukhus jämför europeiska alternativ efter att ha läst täckningen, för konversationen tillbaka till vårdavdelningen och mottagningen. Utforska [AI-medicinsk dokumentation](/ai-medical-scribe/), [sjukhusdokumentation](/hospital-documentation/) och [prissättning](/pricing/), bedöm sedan DocNote baserat på rapporterna dina team faktiskt måste avsluta ikväll.

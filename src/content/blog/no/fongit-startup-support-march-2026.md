@@ -38,7 +38,7 @@ Denne misjonen passer til sveitsiske helsevesenrealiteter. Flerspråklig behandl
 
 Testet over hele spekteret av kliniske settinger, i sykehus, poliklinisk behandling og ved pasientens side, dekker løsningen nå en stor del av den daglige kliniske variasjonen i medisinsk praksis. Denne dekningen kommer fra legefeedback på tvers av spesialiteter, ikke fra et enkelt demoskript.
 
-Hvis du er ny til denne produktkategorien, forklarer [AI medical scribe](/ai-medical-scribe/) oversikten den ikke-markedsførte versjonen av jobben som skal gjøres. For inneliggende og tverrtjenestebruk, se [hospital documentation](/hospital-documentation/).
+Hvis du er ny til denne produktkategorien, forklarer [AI-medisinsk skriver](/ai-medical-scribe/) oversikten den ikke-markedsførte versjonen av jobben som skal gjøres. For inneliggende og tverrtjenestebruk, se [sykehusdokumentasjon](/hospital-documentation/).
 
 ## Hvorfor sveitsisk helseteknologistøtte er annerledes (og nyttig)
 
@@ -76,7 +76,7 @@ DocNotes gjennomføringsprioriteringer forblir klare:
 
 Legefeedback er motoren. Når en kardiolog, kirurg og allmennlege hver tester samme plattform, dukker edge cases raskt opp. Å dekke en stor del av daglig praksis betyr å absorbere disse edge cases i maler og modellatferd uten å late som om medisin er ensartet.
 
-Relatert lesing om dokumentasjonstrykk og AI-bevis inkluderer [mindre tid på dokumentasjon med AI](/blog/less-time-documenting-ai-more-care/) og [redusere legeutbrenthet](/blog/reducing-physician-burnout/). Kompliansesammenheng finnes i [DocNote GDPR og nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+Relatert lesing om dokumentasjonstrykk og AI-bevis inkluderer [mindre tid på dokumentasjon med AI](/blog/less-time-documenting-ai-more-care/) og [redusere legeutbrenthet](/blog/reducing-physician-burnout/). Kompliansesammenheng finnes i [DocNote GDPR- og nFADP-samsvar](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## Hva sykehus og klinikere kan ta med seg fra denne nyheten
 
@@ -96,7 +96,7 @@ Likevel, spør:
 - Hvordan ser onboarding ut for en pilot i en tjenestelinje?  
 - Hvordan måles suksess etter 30 og 90 dager?  
 
-DocNotes svarpattern forblir konsekvent: AI lager strukturerte dokumentutkast, leger forblir ansvarlige, og implementering bør starte fra reelle etterslepsdokumenter heller enn abstrakt AI-begeistring. Planer for team klare til evaluering finnes på [pricing](/pricing/).
+DocNotes svarpattern forblir konsekvent: AI lager strukturerte dokumentutkast, leger forblir ansvarlige, og implementering bør starte fra reelle etterslepsdokumenter heller enn abstrakt AI-begeistring. Planer for team klare til evaluering finnes på [priser](/pricing/).
 
 ## Å bygge offentlig uten å overdrive
 

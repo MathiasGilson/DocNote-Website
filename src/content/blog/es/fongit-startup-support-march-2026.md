@@ -38,7 +38,7 @@ Esa misión se ajusta a las realidades del sistema de salud suizo. La atención 
 
 Probado en todo el espectro de entornos clínicos, en hospitales, atención ambulatoria y junto al paciente, la solución ahora cubre una gran parte de las variaciones clínicas cotidianas de la práctica médica. Esa cobertura proviene de comentarios de médicos de diversas especialidades, no de un único guión de demostración.
 
-Si eres nuevo en esta categoría de producto, el resumen de [AI medical scribe](/ai-medical-scribe/) explica la versión no comercial del trabajo por hacer. Para uso hospitalario y entre servicios, consulta [hospital documentation](/hospital-documentation/).
+Si eres nuevo en esta categoría de producto, el resumen de [escriba médico con IA](/ai-medical-scribe/) explica la versión no comercial del trabajo por hacer. Para uso hospitalario y entre servicios, consulta [documentación hospitalaria](/hospital-documentation/).
 
 ## Por qué el apoyo a la healthtech suiza es diferente (y útil)
 
@@ -96,7 +96,7 @@ Aún así, pregunta:
 - ¿Cómo es la incorporación para un piloto de línea de servicio?
 - ¿Cómo se mide el éxito después de 30 y 90 días?
 
-El patrón de respuesta de DocNote sigue siendo consistente: la IA genera documentos estructurados, los médicos siguen siendo responsables, y el despliegue debe comenzar con documentos de backlog reales, no con entusiasmo abstracto por la IA. Los planes para equipos listos para evaluar están en [pricing](/pricing/).
+El patrón de respuesta de DocNote sigue siendo consistente: la IA genera documentos estructurados, los médicos siguen siendo responsables, y el despliegue debe comenzar con documentos de backlog reales, no con entusiasmo abstracto por la IA. Los planes para equipos listos para evaluar están en [precios](/pricing/).
 
 ## Construir en público sin exagerar
 
@@ -156,4 +156,4 @@ Para compañeros en el ecosistema de Ginebra, estamos dispuestos a intercambiar 
 
 La selección para Initial Startup Support de FONGIT es un momento de orgullo para DocNote y un impulso práctico dentro de la comunidad de innovación de Ginebra. La misión sigue siendo la misma: devolver tiempo a los médicos automatizando la documentación médica estructurada con cuidado, evidencia y respeto por la responsabilidad clínica.
 
-Si eres un líder hospitalario, clínico o socio del ecosistema suizo, preferimos mostrarte una carta de alta terminada bajo restricciones reales que una diapositiva sobre IA. Comienza con [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) y [pricing](/pricing/), y construye desde allí. Esto es solo el comienzo.
+Si eres un líder hospitalario, clínico o socio del ecosistema suizo, preferimos mostrarte una carta de alta terminada bajo restricciones reales que una diapositiva sobre IA. Comienza con [escriba médico con IA](/ai-medical-scribe/), [documentación hospitalaria](/hospital-documentation/) y [precios](/pricing/), y construye desde allí. Esto es solo el comienzo.

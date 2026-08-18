@@ -12,7 +12,7 @@ readTime: 10
 
 DocNote GDPR och nFADP-efterlevnad är inte bara en slogan i sidfoten. För en AI-dokumentationsprodukt som används i kliniska miljöer är dataskydd en förutsättning för förtroende. Efter en grundlig granskning av Dataskydds- och informationskontoret i kantonen Vaud har DocNotes datahantering bekräftats som överensstämmande med kraven i GDPR, den schweiziska federala lagen om dataskydd (nFADP) och Vauds kantonala lag om dataskydd (LPrD).
 
-Den här artikeln förklarar vad granskningen omfattade, varför efterlevnad av flera ramverk är viktigt för ambient AI och vad hälso- och sjukvårdsorganisationer bör kräva av alla [AI-medical scribe](/ai-medical-scribe/)-leverantörer som verkar i Europa eller Schweiz.
+Den här artikeln förklarar vad granskningen omfattade, varför efterlevnad av flera ramverk är viktigt för ambient AI och vad hälso- och sjukvårdsorganisationer bör kräva av alla [AI-medicinsk skrivare](/ai-medical-scribe/)-leverantörer som verkar i Europa eller Schweiz.
 
 ## Varför AI-medicinsk dokumentation höjer integritetsförväntningar
 
@@ -115,7 +115,7 @@ Skriv ner vad som fångas, vart det går, vem som kan komma åt det och när det
 
 ### Testa med revision i åtanke och håll utbildningen specifik
 
-Under tester, provanteckningskvalitet och granska åtkomstloggar. Integritet och klinisk kvalitet bör mätas tillsammans. Lär ut när inspelning ska startas och pausas, hur utkast redigeras och vad som inte ska klistras in i ogodkända verktyg. En koncis [tutorial](/tutorial/) hjälper mer än en tjock policybunt.
+Under tester, provanteckningskvalitet och granska åtkomstloggar. Integritet och klinisk kvalitet bör mätas tillsammans. Lär ut när inspelning ska startas och pausas, hur utkast redigeras och vad som inte ska klistras in i ogodkända verktyg. En koncis [guiden](/tutorial/) hjälper mer än en tjock policybunt.
 
 ### Titta över gränser utan att sudda regimer
 
@@ -159,4 +159,4 @@ Vissa organisationer betjänar patienter under schweizisk lag samtidigt som de s
 
 DocNotes bekräftade överensstämmelse med GDPR, schweizisk nFADP och Vauds LPrD-förväntningar reflekterar en enkel position: AI kan stödja klinisk dokumentation endast när dataskydd är designat in. Hälso- och sjukvårdsorganisationer förtjänar leverantörer som välkomnar granskning av policyer, säkerhet, kvarhållning och radering.
 
-Om du utvärderar ambient dokumentation för en europeisk eller schweizisk miljö, utforska DocNotes [AI-medical scribe](/ai-medical-scribe/), granska [prissättning](/pricing/) och fortsätt med implementeringsresurser i [tutorial](/tutorial/) och på [DocNote-bloggen](/blog/). Efterlevnadsklarhet är hur modern klinisk AI förtjänar en plats i verkliga vårdarbetsflöden.
+Om du utvärderar ambient dokumentation för en europeisk eller schweizisk miljö, utforska DocNotes [AI-medicinsk skrivare](/ai-medical-scribe/), granska [prissättning](/pricing/) och fortsätt med implementeringsresurser i [guiden](/tutorial/) och på [DocNote-bloggen](/blog/). Efterlevnadsklarhet är hur modern klinisk AI förtjänar en plats i verkliga vårdarbetsflöden.

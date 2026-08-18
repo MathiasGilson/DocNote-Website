@@ -1,140 +1,140 @@
 ---
-title: "الذكاء الاصطناعي في جراحة القولون والمستقيم في مركز ECC سانت غالن: أدوات غرفة العمليات وواقع التوثيق"
-excerpt: "في المؤتمر الأوروبي لجراحة القولون والمستقيم في سانت غالن، قامت الدكتورة Alice Gilson برسم خريطة للذكاء الاصطناعي داخل وخارج غرفة العمليات. إليكم ما يجب أن يختبره فرق جراحة القولون والمستقيم أولاً."
+title: "الذكاء الاصطناعي في جراحة القولون والمستقيم في ECC سانت غالن: أدوات غرفة العمليات وواقع التوثيق"
+excerpt: "في المؤتمر الأوروبي لجراحة القولون والمستقيم في سانت غالن، قامت الدكتورة أليس جيلسون برسم خريطة للذكاء الاصطناعي داخل وخارج غرفة العمليات. إليكم ما يجب أن تجربه فرق جراحة القولون والمستقيم أولاً."
 category: "news"
 author: "Dr. Vincent Tan"
-authorRole: "طبيب والمدير التنفيذي"
+authorRole: "طبيبة ومديرة تنفيذية"
 authorImage: "/images/dr_vincent_tan.jpg"
 image: "/images/st_gallen_12.25.jpg"
 date: "2025-12-01"
 readTime: 11
 ---
 
-At the European Colorectal Congress in St. Gallen, Dr. Alice Gilson, visceral surgeon and CEO of DocNote, delivered a keynote on how artificial intelligence is reshaping modern surgical practice inside and outside the operating room. Colorectal surgery is a revealing specialty for this discussion. Cases are anatomically demanding, multidisciplinary by default, and documentation-heavy across clinic, theatre, ward, and oncology pathways. Interest in an [AI medical scribe](/ai-medical-scribe/) sits naturally beside interest in imaging AI and robotics because both aim at precision and time for patients, not at replacing the surgeon.
+في المؤتمر الأوروبي لجراحات القولون والمستقيم في سانت غالن، ألقت الدكتورة أليس جيلسون، جراحة الأحشاء والرئيسة التنفيذية لشركة DocNote، محاضرة رئيسية حول كيفية إعادة الذكاء الاصطناعي تشكيل الممارسة الجراحية الحديثة داخل غرفة العمليات وخارجها. تعد جراحة القولون والمستقيم تخصصًا كاشفًا لهذه المناقشة. الحالات تتطلب تشريحًا دقيقًا، وتتطلب تعاونًا متعدد التخصصات بشكل افتراضي، وتتطلب توثيقًا مكثفًا عبر مسارات العيادة وغرفة العمليات والجناح وعلاج الأورام. الاهتمام بـ[كاتب طبي يعمل بالذكاء الاصطناعي](/ai-medical-scribe/) يأتي بشكل طبيعي بجانب الاهتمام بذكاء الاصطناعي في التصوير والروبوتات، لأن كليهما يهدف إلى الدقة وتوفير الوقت للمرضى، وليس إلى استبدال الجراح.
 
-![Dr. Alice Gilson presenting at ECC St. Gallen](/images/st_gallen_12.25_-_2.jpg)
+![الدكتورة أليس جيلسون تقدم محاضرتها في ECC سانت غالن](/images/st_gallen_12.25_-_2.jpg)
 
-Inside the OR, the talk outlined four domains where AI already has tangible clinical impact: preoperative planning, intraoperative navigation, predictive monitoring, and AI-integrated robotics. Beyond the OR, it addressed research support and medical documentation, where surgeons still lose large portions of the week to notes, letters, and administrative coordination. The closing emphasis was pragmatic. AI in surgery is a present-day reality that must be integrated thoughtfully to improve precision, safety, and time for patient care. The sections below expand that St. Gallen map into adoption lessons colorectal and visceral teams can apply.
+داخل غرفة العمليات، حددت المحاضرة أربعة مجالات حيث يكون لذكاء الاصطناعي تأثير سريري ملموس بالفعل: التخطيط قبل الجراحة، والتنقل أثناء الجراحة، والمراقبة التنبؤية، والروبوتات المدمجة مع الذكاء الاصطناعي. خارج غرفة العمليات، تناولت المحاضرة دعم البحث والتوثيق الطبي، حيث لا يزال الجراحون يقضون أجزاء كبيرة من الأسبوع في كتابة الملاحظات والرسائل والتنسيق الإداري. كان التركيز الختامي عمليًا. الذكاء الاصطناعي في الجراحة هو واقع حاضر يجب دمجه بعناية لتحسين الدقة والسلامة والوقت المخصص لرعاية المرضى. توسع الأقسام أدناه خريطة سانت غالن هذه إلى دروس تبني يمكن لفريق القولون والمستقيم والأحشاء تطبيقها.
 
-## Four OR domains where AI is already tangible
+## أربعة مجالات في غرفة العمليات حيث يكون الذكاء الاصطناعي ملموسًا بالفعل
 
-### Preoperative planning
+### التخطيط قبل الجراحة
 
-Advanced imaging algorithms now perform automated 3D reconstructions and anatomical segmentation. Surgeons can simulate approaches, anticipate vascular variants, and personalise operative strategies before the patient is on the table. For colorectal oncology and complex reoperative cases, planning quality is a safety tool, not a novelty slide.
+تقوم خوارزميات التصوير المتقدمة الآن بإجراء عمليات إعادة بناء ثلاثية الأبعاد وتقسيم تشريحي آلي. يمكن للجراحين محاكاة الأساليب، وتوقع المتغيرات الوعائية، وتخصيص استراتيجيات الجراحة قبل وضع المريض على الطاولة. بالنسبة لجراحة أورام القولون والمستقيم والحالات المعقدة التي تتطلب إعادة جراحة، جودة التخطيط هي أداة سلامة، وليست شريحة عرض جديدة.
 
-### Intraoperative navigation and image analysis
+### التنقل أثناء الجراحة وتحليل الصور
 
-Augmented navigation systems and real-time image analysis aim to enhance precision and contribute to safer, more standardised surgery. The clinical bar remains high: tools must reduce uncertainty without flooding the field with alerts that distract from tissue planes and team communication.
+تهدف أنظمة التنقل المعززة وتحليل الصور في الوقت الحقيقي إلى تعزيز الدقة والمساهمة في جراحة أكثر أمانًا وتوحيدًا. يظل المستوى السريري مرتفعًا: يجب أن تقلل الأدوات من عدم اليقين دون إغراق المجال بالتنبيهات التي تشتت الانتباه عن مستويات الأنسجة واتصال الفريق.
 
-### Predictive monitoring
+### المراقبة التنبؤية
 
-Models that estimate risk trajectories during and after procedures can support earlier intervention when physiology drifts. Colorectal pathways, with anastomotic and infectious risk always in view, are a natural proving ground, provided outputs are calibrated and clinically supervised.
+يمكن للنماذج التي تقدر مسارات المخاطر أثناء الإجراءات وبعدها أن تدعم التدخل المبكر عندما ينحرف الوضع الفسيولوجي. تعد مسارات القولون والمستقيم، مع وجود مخاطر التوصيل والعدوى دائمًا في الصورة، أرضية اختبار طبيعية، بشرط معايرة المخرجات والإشراف السريري عليها.
 
-### AI-integrated robotics
+### الروبوتات المدمجة مع الذكاء الاصطناعي
 
-Robotics continues to evolve with tighter sensing and assistance layers. The St. Gallen framing kept the hierarchy clear. Platforms extend capability. Surgeons retain responsibility for indication, strategy, and intraoperative judgment.
+تستمر الروبوتات في التطور مع طبقات استشعار ومساعدة أكثر إحكامًا. حافظ إطار سانت غالن على التسلسل الهرمي واضحًا. تمد المنصات القدرة. يحتفظ الجراحون بالمسؤولية عن المؤشرات والاستراتيجية والحكم أثناء الجراحة.
 
-These four domains matter for documentation strategy because they change what must be recorded. Richer preoperative plans and multimodal decisions need charts that capture nuance without forcing surgeons into night-time typing marathons.
+هذه المجالات الأربعة مهمة لاستراتيجية التوثيق لأنها تغير ما يجب تسجيله. تحتاج الخطط الأكثر ثراءً قبل الجراحة والقرارات متعددة الوسائط إلى مخططات تلتقط الفروق الدقيقة دون إجبار الجراحين على ماراثونات الكتابة ليلًا.
 
-## Outside the OR: research, MDTs, and the documentation tax
+## خارج غرفة العمليات: البحث، فرق متعددة التخصصات، وضريبة التوثيق
 
-Colorectal practice lives in multidisciplinary meetings, pathology correlation, neoadjuvant timelines, and long follow-up. AI can accelerate literature surveillance and data analysis for research groups. The more universal pain, though, is documentation. Surgeons dedicate a significant portion of time to administrative tasks that are essential for continuity and liability yet poorly aligned with how clinical thinking actually unfolds during a consultation or ward round.
+تعيش ممارسة القولون والمستقيم في اجتماعات متعددة التخصصات، وارتباط علم الأمراض، وجداول العلاج المساعد، والمتابعة الطويلة. يمكن للذكاء الاصطناعي تسريع مراقبة الأدبيات وتحليل البيانات لمجموعات البحث. لكن الألم الأكثر شيوعًا هو التوثيق. يكرس الجراحون جزءًا كبيرًا من وقتهم للمهام الإدارية الضرورية للاستمرارية والمسؤولية، ولكنها غير متوافقة مع كيفية تطور التفكير السريري فعليًا أثناء الاستشارة أو الجولة في الجناح.
 
-AI-powered documentation tools offer measurable reductions in note-writing time while raising important questions around data security and medical responsibility. That dual message is deliberate. Time savings without governance is not a colorectal quality program. Governance without usable tools leaves the workforce exhausted. For evidence-oriented context on ambient documentation impact, see [less time documenting with AI](/blog/less-time-documenting-ai-more-care). For profession-level framing beyond colorectal, see the SCS Lucerne discussion on [whether surgeons still have a central role in the AI era](/blog/scs-lucerne-june-2026).
+تقدم أدوات التوثيق المدعومة بالذكاء الاصطناعي انخفاضًا ملموسًا في وقت كتابة الملاحظات مع طرح أسئلة مهمة حول أمان البيانات والمسؤولية الطبية. هذه الرسالة المزدوجة مقصودة. توفير الوقت دون حوكمة ليس برنامج جودة للقولون والمستقيم. الحوكمة دون أدوات قابلة للاستخدام تترك القوى العاملة منهكة. للحصول على سياق موجه بالأدلة حول تأثير التوثيق المحيط، انظر [وقت أقل في التوثيق مع الذكاء الاصطناعي](/blog/less-time-documenting-ai-more-care). للإطار على مستوى المهنة خارج نطاق القولون والمستقيم، انظر مناقشة SCS لوسيرن حول [ما إذا كان الجراحون لا يزالون لدور مركزي في عصر الذكاء الاصطناعي](/blog/scs-lucerne-june-2026).
 
-![Conference audience at St. Gallen](/images/st_gallen_12.25_-_3.jpg)
+![جمهور المؤتمر في سانت غالن](/images/st_gallen_12.25_-_3.jpg)
 
-## What ECC attendees asked about responsible AI
+## ما سأله حضور ECC عن الذكاء الاصطناعي المسؤول
 
-Congress corridors are where keynote claims meet service-line reality. Questions in St. Gallen clustered around themes every colorectal department should pressure-test.
+ممرات المؤتمرات هي المكان الذي تلتقي فيه الادعاءات الرئيسية بواقع خط الخدمة. تركزت الأسئلة في سانت غالن حول موضوعات يجب على كل قسم للقولون والمستقيم اختبارها.
 
-### Will planning AI create medicolegal exposure if we deviate from the simulation?
+### هل سيخلق ذكاء الاصطناعي للتخطيط تعرضًا قانونيًا طبيًا إذا انحرفنا عن المحاكاة؟
 
-Surgeons wanted clarity that plans are decision support, not binding scripts. Documentation should capture the rationale when intraoperative findings change the approach. AI drafts must make that narrative easy to complete, not freeze an outdated plan into the record.
+أراد الجراحون توضيحًا أن الخطط هي دعم قرار، وليست نصوصًا ملزمة. يجب أن يلتقط التوثيق الأسباب عندما تغير النتائج أثناء الجراحة النهج. يجب أن تجعل مسودات الذكاء الاصطناعي إكمال هذه الرواية سهلاً، وليس تجميد خطة قديمة في السجل.
 
-### How do we keep MDT decisions faithful in the chart?
+### كيف نحافظ على قرارات الفرق متعددة التخصصات أمينة في المخطط؟
 
-Multidisciplinary decisions are high stakes. Teams asked whether documentation AI can help structure clinic and MDT outcomes without inventing consensus that was never reached. Human review is non-negotiable here.
+قرارات الفرق متعددة التخصصات عالية المخاطر. سألت الفرق عما إذا كان توثيق الذكاء الاصطناعي يمكن أن يساعد في هيكلة نتائج العيادة وفرق متعددة التخصصات دون اختراع إجماع لم يتم التوصل إليه أبدًا. المراجعة البشرية غير قابلة للتفاوض هنا.
 
-### Can ambient tools handle sensitive oncology conversations?
+### هل يمكن للأدوات المحيطة التعامل مع محادثات الأورام الحساسة؟
 
-Patients discuss prognosis, stoma counseling, and fertility or function trade-offs. Recording policies, consent, retention, and deletion need to be explainable in plain language. European hospitals increasingly expect local storage and short audio life cycles. See [GDPR and nFADP considerations](/blog/docnote-gdpr-nfadp-compliance).
+يناقش المرضى التكهن، واستشارة فتحة القولون، ومقايضات الخصوبة أو الوظيفة. تحتاج سياسات التسجيل والموافقة والاحتفاظ والحذف إلى أن تكون قابلة للشرح بلغة بسيطة. تتوقع المستشفيات الأوروبية بشكل متزايد التخزين المحلي ودورات حياة صوتية قصيرة. انظر [اعتبارات GDPR و nFADP](/blog/docnote-gdpr-nfadp-compliance).
 
-### Where should a colorectal service invest first?
+### أين يجب أن يستثمر خدمة القولون والمستقيم أولاً؟
 
-Capital robotics and imaging projects compete with workforce tools. Many attendees separated budgets: keep OR AI on its clinical evidence track, and run a documentation pilot where clinic letter delay and after-hours charting are already measured problems.
+تتنافس مشاريع روبوتات رأس المال والتصوير مع أدوات القوى العاملة. فصل العديد من الحضور الميزانيات: احتفظ بذكاء الاصطناعي في غرفة العمليات على مساره السريري، وقم بتشغيل تجربة توثيق حيث يكون تأخير رسالة العيادة والتوثيق بعد ساعات العمل مشاكل مقاسة بالفعل.
 
-### How do trainees learn if drafts are generated for them?
+### كيف يتعلم المتدربون إذا تم إنشاء مسودات لهم؟
 
-Program directors asked for educational guardrails. AI can show a structured operative or clinic note, then require the trainee to critique and revise. That preserves narrative skill while removing blank-page friction.
+طلب مدراء البرامج حواجز تعليمية. يمكن للذكاء الاصطناعي عرض ملاحظة جراحية أو عيادية منظمة، ثم يتطلب من المتدرب نقدها وتعديلها. هذا يحافظ على مهارة السرد مع إزالة احتكاك الصفحة الفارغة.
 
-## Adoption lessons for colorectal and visceral services
+## دروس التبني لخدمات القولون والمستقيم والأحشاء
 
-**Map the document types that block flow.** New patient oncology consults, postoperative clinic letters, ward updates, and discharge summaries often dominate delay. Pick two for a first pilot.
+**ارسم أنواع المستندات التي تعيق التدفق.** غالبًا ما تهيمن استشارات الأورام للمرضى الجدد، ورسائل العيادة بعد الجراحة، وتحديثات الجناح، وملخصات الخروج على التأخير. اختر اثنين للتجربة الأولى.
 
-**Align with enhanced recovery and oncology pathway owners.** Documentation improvements stick when they serve pathway metrics (timely letters to referrers, clearer discharge medication lists), not only physician convenience.
+**انسجم مع مالكي مسار التعافي المعزز وعلاج الأورام.** تثبت تحسينات التوثيق عندما تخدم مقاييس المسار (الرسائل في الوقت المناسب للمحيلين، قوائم أدوية الخروج الأكثر وضوحًا)، وليس فقط راحة الطبيب.
 
-**Require a safety review ritual.** Weekly sampling of AI drafts for wrong laterality language, missed allergies, incomplete staging statements, or invented exam findings keeps trust high.
+**تطلب طقوس مراجعة السلامة.** العينة الأسبوعية من مسودات الذكاء الاصطناعي للغة جانب خاطئ، أو الحساسيات المفقودة، أو بيانات المرحلة غير المكتملة، أو نتائج الفحص المخترعة تحافظ على الثقة عالية.
 
-**Integrate or do not bother at scale.** A colorectal department living inside a hospital EHR will abandon side portals. Prioritise [hospital documentation](/hospital-documentation/) workflows that can connect to existing systems.
+**دمج أو لا تهتم على نطاق واسع.** قسم القولون والمستقيم الذي يعيش داخل سجل طبي إلكتروني للمستشفى سيتخلى عن البوابات الجانبية. ركز على سير عمل [توثيق المستشفى](/hospital-documentation/) التي يمكنها الاتصال بالأنظمة الحالية.
 
-**Measure presence, not only minutes.** If note time falls but surgeons still face the screen all visit, the tool failed the patient-relationship test that ECC audiences care about.
+**قياس الحضور، وليس الدقائق فقط.** إذا انخفض وقت الملاحظة ولكن لا يزال الجراحون يواجهون الشاشة طوال الزيارة، فشلت الأداة في اختبار العلاقة مع المريض الذي يهتم به جمهور ECC.
 
-A 8-week pilot skeleton tailored to colorectal services:
+هيكل تجريبي لمدة 8 أسابيع مخصص لخدمات القولون والمستقيم:
 
-1. Enroll a mixed group of consultants and fellows in clinic
-2. Enable templates for new consults and postoperative visits
-3. Baseline: time to letter, edit burden, after-hours charting
-4. Midpoint review with quality lead on defect themes
-5. Decision gate: add ward/discharge documents or refine clinic templates first
+1. تسجيل مجموعة مختلطة من الاستشاريين والزملاء في العيادة
+2. تمكين القوالب للاستشارات الجديدة وزيارات ما بعد الجراحة
+3. الأساس: الوقت اللازم للرسالة، عبء التحرير، التوثيق بعد ساعات العمل
+4. مراجعة منتصف المدة مع رئيس الجودة حول موضوعات العيوب
+5. بوابة قرار: إضافة مستندات الجناح / الخروج أو تحسين قوالب العيادة أولاً
 
-## Specialty trends: colorectal AI is becoming a stack, not a single product
+## اتجاهات التخصص: ذكاء الاصطناعي للقولون والمستقيم يصبح كومة، وليس منتجًا واحدًا
 
-ECC St. Gallen illustrated a specialty that evaluates AI as a stack:
+وضح ECC سانت غالن تخصصًا يقيم الذكاء الاصطناعي ككومة:
 
-- **Imaging and planning AI** for complex pelvic and oncologic anatomy
-- **Intraoperative assistance** for precision and standardisation
-- **Predictive tools** for perioperative risk
-- **Documentation and research AI** for the cognitive and administrative load around care
+- **ذكاء الاصطناعي للتصوير والتخطيط** للتشريح الحوضي وعلاج الأورام المعقد
+- **المساعدة أثناء الجراحة** للدقة والتوحيد
+- **أدوات تنبؤية** للمخاطر المحيطة بالجراحة
+- **توثيق وبحث الذكاء الاصطناعي** للحمل المعرفي والإداري حول الرعاية
 
-The stack only works if humans remain the integrators. Surgeons decide when a plan is wrong, when a prediction is irrelevant, and when a drafted note misrepresents counseling. That is why DocNote's documentation focus complements OR innovation instead of competing with it. Freeing time outside theatre protects attention for the moments inside theatre and clinic that still require undivided expertise.
+تعمل الكومة فقط إذا ظل البشر هم المدمجون. يقرر الجراحون متى تكون الخطة خاطئة، ومتى يكون التنبؤ غير ذي صلة، ومتى تمثل الملاحظة المسودة تقديم المشورة بشكل خاطئ. لهذا يركز DocNote على طبقة التوثيق خارج غرفة العمليات بدلاً من التنافس معها. تحرير الوقت خارج المسرح يحمي الاهتمام للحظات داخل المسرح والعيادة التي لا تزال تتطلب خبرة غير منقسمة.
 
-Peer conversations also linked St. Gallen themes to broader Swiss surgical congress threads, including admin-burden data discussed in [SCS Lausanne](/blog/scs-lausanne-may-2025). The specialty is converging on a shared standard: AI must be clinically useful, privacy-aware, and subordinate to professional responsibility.
+ربطت المحادثات بين الأقران أيضًا موضوعات سانت غالين بمواضيع أوسع لمؤتمر الجراحة السويسري، بما في ذلك بيانات عبء الإدارة التي تمت مناقشتها في [SCS لوزان](/blog/scs-lausanne-may-2025). يتقارب التخصص على معيار مشترك: يجب أن يكون الذكاء الاصطناعي مفيدًا سريريًا، واعيًا بالخصوصية، ومرؤوسًا للمسؤولية المهنية.
 
-## FAQ
+## الأسئلة الشائعة
 
 <details>
-  <summary>What was the focus of the ECC St. Gallen keynote?</summary>
-  <p>Dr. Alice Gilson addressed how AI is reshaping surgical practice inside the operating room (planning, navigation, predictive monitoring, robotics) and outside it (research and medical documentation), with an emphasis on thoughtful integration for precision, safety, and patient time.</p>
+  <summary>ما كان محور المحاضرة الرئيسية في ECC سانت غالن؟</summary>
+  <p>تناولت الدكتورة أليس جيلسون كيف يعيد الذكاء الاصطناعي تشكيل الممارسة الجراحية داخل غرفة العمليات (التخطيط، التنقل، المراقبة التنبؤية، الروبوتات) وخارجها (البحث والتوثيق الطبي)، مع التركيز على التكامل المدروس للدقة والسلامة ووقت المريض.</p>
 </details>
 
 <details>
-  <summary>Which OR AI domains are already clinically tangible?</summary>
-  <p>Preoperative planning with automated 3D reconstruction and segmentation, intraoperative navigation and image analysis, predictive monitoring, and AI-integrated robotics were presented as domains with real clinical impact today.</p>
+  <summary>ما هي مجالات ذكاء الاصطناعي في غرفة العمليات الملموسة سريريًا بالفعل؟</summary>
+  <p>عُرض التخطيط قبل الجراحة مع إعادة البناء ثلاثي الأبعاد الآلي والتقسيم، والتنقل أثناء الجراحة وتحليل الصور، والمراقبة التنبؤية، والروبوتات المدمجة مع الذكاء الاصطناعي كمجالات ذات تأثير سريري حقيقي اليوم.</p>
 </details>
 
 <details>
-  <summary>Why discuss documentation at a colorectal surgery congress?</summary>
-  <p>Colorectal pathways generate heavy clinic, MDT, ward, and discharge documentation. AI tools that reduce note-writing time can return capacity to patient care while still requiring clinician review and strong data security practices.</p>
+  <summary>لماذا مناقشة التوثيق في مؤتمر جراحة القولون والمستقيم؟</summary>
+  <p>تولد مسارات القولون والمستقيم توثيقًا ثقيلًا في العيادة وفرق متعددة التخصصات والجناح والخروج. يمكن للأدوات التي تعمل بالذكاء الاصطناعي والتي تقلل وقت كتابة الملاحظات إعادة القدرة إلى رعاية المرضى مع استمرار الحاجة إلى مراجعة الطبيب وممارسات أمان بيانات قوية.</p>
 </details>
 
 <details>
-  <summary>What risks come with AI-powered documentation in surgery?</summary>
-  <p>Key risks include inaccurate or incomplete drafts, over-reliance without review, unclear accountability if notes are signed carelessly, and data protection failures if audio or transcripts are mishandled.</p>
+  <summary>ما هي المخاطر التي تأتي مع التوثيق المدعوم بالذكاء الاصطناعي في الجراحة؟</summary>
+  <p>تشمل المخاطر الرئيسية المسودات غير الدقيقة أو غير المكتملة، والاعتماد المفرط دون مراجعة، والمساءلة غير الواضحة إذا تم التوقيع على الملاحظات بإهمال، وفشل حماية البيانات إذا تم التعامل مع الصوت أو النصوص بشكل خاطئ.</p>
 </details>
 
 <details>
-  <summary>How should a colorectal department start with documentation AI?</summary>
-  <p>Start with a small clinic pilot, two high-volume document types, mandatory physician review, privacy review before go-live, and metrics that include quality defects as well as time saved.</p>
+  <summary>كيف يجب أن يبدأ قسم القولون والمستقيم بتوثيق الذكاء الاصطناعي؟</summary>
+  <p>ابدأ بتجربة عيادة صغيرة، ونوعين من المستندات عالية الحجم، ومراجعة الطبيب الإلزامية، ومراجعة الخصوصية قبل التشغيل، ومقاييس تتضمن عيوب الجودة وكذلك الوقت المحفوظ.</p>
 </details>
 
 <details>
-  <summary>How does DocNote relate to the ECC message?</summary>
-  <p>DocNote focuses on the outside-OR documentation layer, helping clinicians draft structured hospital and clinic documents so more time remains for precise, safe, patient-facing surgical care.</p>
+  <summary>كيف يرتبط DocNote برسالة ECC؟</summary>
+  <p>يركز DocNote على طبقة التوثيق خارج غرفة العمليات، مما يساعد الأطباء على صياغة مستندات المستشفى والعيادة المنظمة بحيث يبقى المزيد من الوقت للرعاية الجراحية الدقيقة والآمنة الموجهة للمريض.</p>
 </details>
 
-## Conclusion: integrate AI where it raises precision and returns time
+## الخلاصة: دمج الذكاء الاصطناعي حيث يرفع الدقة ويعيد الوقت
 
-ECC St. Gallen made a dual case. Inside the OR, AI is already changing planning, navigation, monitoring, and robotics. Outside the OR, documentation AI can reduce administrative load if security and medical responsibility stay central. Colorectal teams do not need to choose between those worlds. They need a sequenced strategy that keeps the surgeon accountable in both.
+قدم ECC سانت غالن حالة مزدوجة. داخل غرفة العمليات، يغير الذكاء الاصطناعي بالفعل التخطيط والتنقل والمراقبة والروبوتات. خارج غرفة العمليات، يمكن لتوثيق الذكاء الاصطناعي تقليل الحمل الإداري إذا ظلت الأمان والمسؤولية الطبية مركزية. لا يحتاج فرق القولون والمستقيم إلى الاختيار بين هذين العالمين. يحتاجون إلى استراتيجية متسلسلة تحافظ على مسؤولية الجراح في كليهما.
 
-If your service is translating the congress into a local plan, explore DocNote's [AI medical scribe](/ai-medical-scribe/), review [hospital documentation](/hospital-documentation/) for pathway coverage, and compare deployment options on [pricing](/pricing/) with your surgical and digital leadership.
+إذا كان خدمتك تترجم المؤتمر إلى خطة محلية، فاستكشف [الكاتب الطبي بالذكاء الاصطناعي](/ai-medical-scribe/) من DocNote، وراجع [توثيق المستشفى](/hospital-documentation/) لتغطية المسار، وقارن خيارات النشر على [التسعير](/pricing/) مع قيادتك الجراحية والرقمية.

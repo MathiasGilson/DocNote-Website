@@ -11,7 +11,7 @@ date: "2026-03-10"
 readTime: 10
 ---
 
-DocNote nahm an MedInTechs 2026, einer bedeutenden Veranstaltung für Gesundheitsinnovationen im Parc Floral de Paris, als Partner des Surgical Innovation Village teil. Über zwei Tage präsentierte das Team einen [AI Medical Scribe](/ai-medical-scribe/), der für den Krankenhausalltag entwickelt wurde, und tauschte sich mit Klinikern, Unternehmern und öffentlichen Akteuren aus, die an der Transformation der Versorgung arbeiten. Die Gespräche am Stand drehten sich weniger um futuristische OP-Säle allein, sondern mehr um ein praktisches Problem, das französische Krankenhäuser mit Kollegen in ganz Europa teilen: Ärzte ertrinken in administrativen Aufgaben, von der präklinischen und Notfallversorgung über Stationsberichte und Entlassungsbriefe bis hin zu Konsultationsberichten.
+DocNote nahm an MedInTechs 2026, einer bedeutenden Veranstaltung für Gesundheitsinnovationen im Parc Floral de Paris, als Partner des Surgical Innovation Village teil. Über zwei Tage präsentierte das Team einen [KI-medizinischer Schreiber](/ai-medical-scribe/), der für den Krankenhausalltag entwickelt wurde, und tauschte sich mit Klinikern, Unternehmern und öffentlichen Akteuren aus, die an der Transformation der Versorgung arbeiten. Die Gespräche am Stand drehten sich weniger um futuristische OP-Säle allein, sondern mehr um ein praktisches Problem, das französische Krankenhäuser mit Kollegen in ganz Europa teilen: Ärzte ertrinken in administrativen Aufgaben, von der präklinischen und Notfallversorgung über Stationsberichte und Entlassungsbriefe bis hin zu Konsultationsberichten.
 
 ![DocNote-Stand auf der MedInTechs 2026 in Paris](/images/medintechs_03.26_-_2.jpg)
 

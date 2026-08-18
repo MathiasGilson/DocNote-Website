@@ -50,7 +50,7 @@ Innovationschefer frågade om integrationsmetoder tidigt, ibland innan de fråga
 
 ### Dataskydd utan handviftning
 
-Compliance-frågor täckte hosting, underleverantörer, kvarhållning av inspelningar, åtkomstkontroller och om klinisk ljud kunde träna externa modeller. Universitetssjukhus förväntar sig leverantörssvar som överlever juridisk och CNIL-medveten granskning. Europeisk inriktad vägledning finns i [DocNote GDPR och nFADP compliance](/blog/docnote-gdpr-nfadp-compliance).
+Compliance-frågor täckte hosting, underleverantörer, kvarhållning av inspelningar, åtkomstkontroller och om klinisk ljud kunde träna externa modeller. Universitetssjukhus förväntar sig leverantörssvar som överlever juridisk och CNIL-medveten granskning. Europeisk inriktad vägledning finns i [DocNote GDPR- och nFADP-efterlevnad](/blog/docnote-gdpr-nfadp-compliance).
 
 ### Uppladdade dokument plus konversation
 

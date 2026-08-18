@@ -75,7 +75,7 @@ DocNote का दृष्टिकोण इस रेंज में ऑट�
 
 Buzz eSanté का वास्तविक अस्पताल गति पर फोकस एक उपयोगी प्रतिकार है। यदि आपकी इवैल्यूएशन कमिटी को डेमो पसंद आया, तो अगला सेशन एक वास्तविक दोपहर की लिस्ट या वार्ड राउंड सिमुलेशन के दौरान शेड्यूल करें। देखें कि जब फिजिशियन को व्यवधान होता है तो क्या होता है। वही उत्पाद परीक्षण है।
 
-डॉक्यूमेंटेशन AI के लिए यूरोपीय बाज़ार संदर्भ के लिए, देखें [DocNote in Les Echos](/blog/docnote-les-echos-european-ai-health/)। इवेंट-लेवल अपनाने की थीम्स के लिए, देखें [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/)। प्राइवेसी पोस्चर के लिए, देखें [DocNote GDPR और nFADP कंप्लायंस](/blog/docnote-gdpr-nfadp-compliance/)।
+डॉक्यूमेंटेशन AI के लिए यूरोपीय बाज़ार संदर्भ के लिए, देखें [Les Echos में DocNote](/blog/docnote-les-echos-european-ai-health/)। इवेंट-लेवल अपनाने की थीम्स के लिए, देखें [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/)। प्राइवेसी पोस्चर के लिए, देखें [DocNote GDPR और nFADP कंप्लायंस](/blog/docnote-gdpr-nfadp-compliance/)।
 
 ## DocNote, Buzz eSanté की कथा को कैसे ऑपरेशनलाइज़ करता है
 

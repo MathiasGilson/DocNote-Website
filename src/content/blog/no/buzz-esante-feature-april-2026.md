@@ -75,7 +75,7 @@ Typiske feilmoduser vi ser i bransjen:
 
 Buzz eSantés fokus på ekte sykehustempo er et nyttig motgift. Hvis evalueringskomiteen likte en demo, planlegg neste sesjon under en ekte ettermiddagsliste eller avdelingsrundesimulering. Se hva som skjer når legen avbrytes. Det er produkttesten.
 
-For europeisk markedskontekst rundt dokumentasjons-AI, se [DocNote i Les Echos](/blog/docnote-les-echos-european-ai-health/). For adopsjonstemaer på arrangementnivå, se [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/). For personvernposisjon, se [DocNote GDPR og nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+For europeisk markedskontekst rundt dokumentasjons-AI, se [DocNote i Les Echos](/blog/docnote-les-echos-european-ai-health/). For adopsjonstemaer på arrangementnivå, se [Adopt AI Paris](/blog/adopt-ai-paris-november-2025/). For personvernposisjon, se [DocNote GDPR- og nFADP-samsvar](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## Hvordan DocNote operasjonaliserer Buzz eSanté-narrativet
 

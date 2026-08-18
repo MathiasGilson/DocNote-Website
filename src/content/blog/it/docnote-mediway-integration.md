@@ -90,7 +90,7 @@ Piano di implementazione suggerito:
 
 Durante il pilot, mantieni chiari i percorsi di supporto. I medici dovrebbero sapere a chi rivolgersi per domande su Mediway e per domande su DocNote. La proprietà ambigua è un motivo comune per cui le integrazioni si bloccano dopo l'annuncio.
 
-Se la tua organizzazione sta anche valutando privacy e requisiti svizzeri o UE, abbina il pilot del flusso di lavoro alla lettura sulla conformità in [DocNote GDPR e nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/). Per il contesto sul burnout e il carico di documentazione, vedi [ridurre il burnout dei medici](/blog/reducing-physician-burnout/) e [meno tempo a documentare con l'IA](/blog/less-time-documenting-ai-more-care/).
+Se la tua organizzazione sta anche valutando privacy e requisiti svizzeri o UE, abbina il pilot del flusso di lavoro alla lettura sulla conformità in [conformità GDPR e nFADP di DocNote](/blog/docnote-gdpr-nfadp-compliance/). Per il contesto sul burnout e il carico di documentazione, vedi [ridurre il burnout dei medici](/blog/reducing-physician-burnout/) e [meno tempo a documentare con l'IA](/blog/less-time-documenting-ai-more-care/).
 
 ### Gestione del cambiamento senza teatro
 

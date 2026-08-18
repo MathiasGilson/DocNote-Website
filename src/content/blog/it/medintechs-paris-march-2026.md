@@ -11,7 +11,7 @@ date: "2026-03-10"
 readTime: 10
 ---
 
-DocNote ha partecipato a MedInTechs 2026, un importante evento sull'innovazione sanitaria al Parc Floral de Paris, in qualità di partner del Surgical Innovation Village. Per due giorni, il team ha presentato un [AI medical scribe](/ai-medical-scribe/) progettato per la realtà ospedaliera e ha dialogato con clinici, imprenditori e stakeholder pubblici impegnati a trasformare l'erogazione delle cure. Le conversazioni allo stand non riguardavano solo sale operatorie futuristiche, ma una problematica concreta che gli ospedali francesi condividono con i colleghi europei: i medici sono sommersi da compiti amministrativi, dalla fase pre-ospedaliera e di emergenza fino ai referti di reparto, lettere di dimissione e rapporti di consulto.
+DocNote ha partecipato a MedInTechs 2026, un importante evento sull'innovazione sanitaria al Parc Floral de Paris, in qualità di partner del Surgical Innovation Village. Per due giorni, il team ha presentato un [scriba medico AI](/ai-medical-scribe/) progettato per la realtà ospedaliera e ha dialogato con clinici, imprenditori e stakeholder pubblici impegnati a trasformare l'erogazione delle cure. Le conversazioni allo stand non riguardavano solo sale operatorie futuristiche, ma una problematica concreta che gli ospedali francesi condividono con i colleghi europei: i medici sono sommersi da compiti amministrativi, dalla fase pre-ospedaliera e di emergenza fino ai referti di reparto, lettere di dimissione e rapporti di consulto.
 
 ![Stand di DocNote a MedInTechs 2026 a Parigi](/images/medintechs_03.26_-_2.jpg)
 
@@ -132,4 +132,4 @@ Gli ospedali che confrontano strumenti ambientali dovrebbero anche monitorare ev
 
 MedInTechs 2026 ha portato DocNote di fronte a un pubblico francese ed europeo che tiene insieme progresso chirurgico e tempo medico. Le presentazioni pubbliche aprono conversazioni. Le obiezioni cliniche su responsabilità, dati e integrazione EHR decidono se quelle conversazioni diventano piloti.
 
-Se il tuo ospedale ha lasciato Parigi con rinnovata urgenza sul carico documentale, incanalala in un esperimento governato piuttosto che in una lista di desideri AI vaga. Esplora l'[AI medical scribe](/ai-medical-scribe/), mappa la copertura con [documentazione ospedaliera](/hospital-documentation/) e usa i [prezzi](/pricing/) per allineare champion clinici e leadership digitale sui prossimi passi.
+Se il tuo ospedale ha lasciato Parigi con rinnovata urgenza sul carico documentale, incanalala in un esperimento governato piuttosto che in una lista di desideri AI vaga. Esplora l'[scriba medico AI](/ai-medical-scribe/), mappa la copertura con [documentazione ospedaliera](/hospital-documentation/) e usa i [prezzi](/pricing/) per allineare champion clinici e leadership digitale sui prossimi passi.

@@ -38,7 +38,7 @@ Die missie past bij de realiteit van de Zwitserse gezondheidszorg. Meertalige zo
 
 Getest in alle klinische settings, in ziekenhuizen, poliklinieken en aan het bed van de patiënt, dekt de oplossing nu een groot deel van de dagelijkse klinische variaties in de medische praktijk. Die dekking komt van feedback van artsen uit verschillende specialismen, niet van een enkel demoscript.
 
-Als je nieuw bent in deze productcategorie, legt het [AI medical scribe](/ai-medical-scribe/) overzicht de niet-marketingversie uit van wat er moet gebeuren. Voor intramuraal en cross-service gebruik, zie [hospital documentation](/hospital-documentation/).
+Als je nieuw bent in deze productcategorie, legt het [AI-medische scribe](/ai-medical-scribe/) overzicht de niet-marketingversie uit van wat er moet gebeuren. Voor intramuraal en cross-service gebruik, zie [ziekenhuisdocumentatie](/hospital-documentation/).
 
 ## Waarom Zwitserse healthtech-ondersteuning anders (en nuttig) is
 
@@ -96,7 +96,7 @@ Vraag nog steeds:
 - Hoe ziet onboarding eruit voor een servicelijnpilot?
 - Hoe wordt succes gemeten na 30 en 90 dagen?
 
-DocNote’s antwoordpatroon blijft consistent: AI maakt gestructureerde documenten, artsen blijven verantwoordelijk en implementatie moet beginnen van echte achterstallige documenten, niet van abstracte AI-enthousiasme. Plannen voor teams die klaar zijn om te evalueren staan op [pricing](/pricing/).
+DocNote’s antwoordpatroon blijft consistent: AI maakt gestructureerde documenten, artsen blijven verantwoordelijk en implementatie moet beginnen van echte achterstallige documenten, niet van abstracte AI-enthousiasme. Plannen voor teams die klaar zijn om te evalueren staan op [prijzen](/pricing/).
 
 ## Openbaar bouwen zonder te oversellen
 
@@ -156,4 +156,4 @@ Voor peers in het Genève-ecosysteem wisselen we graag notities uit over ziekenh
 
 Selectie voor FONGIT’s Initial Startup Support is een trots moment voor DocNote en een praktische boost binnen Genève’s innovatiegemeenschap. De missie blijft hetzelfde: geef artsen tijd terug door gestructureerde medische documentatie te automatiseren met zorg, bewijs en respect voor klinische verantwoordelijkheid.
 
-Als je een ziekenhuisleider, clinicus of Zwitsers ecosysteempartner bent, laten we je liever een voltooide ontslagbrief zien onder echte beperkingen dan een slide over AI. Begin met [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) en [pricing](/pricing/), en bouw van daaruit verder. Dit is slechts het begin.
+Als je een ziekenhuisleider, clinicus of Zwitsers ecosysteempartner bent, laten we je liever een voltooide ontslagbrief zien onder echte beperkingen dan een slide over AI. Begin met [AI-medische scribe](/ai-medical-scribe/), [ziekenhuisdocumentatie](/hospital-documentation/) en [prijzen](/pricing/), en bouw van daaruit verder. Dit is slechts het begin.

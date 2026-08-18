@@ -12,7 +12,7 @@ readTime: 10
 
 Ärzteburnout ist kein Nebenthema mehr in der Personalplanung des Gesundheitswesens. Es ist ein klinischer Risikofaktor, eine Krise der Mitarbeiterbindung und tägliche Realität für viele Ärzte, die die Klinik mit unfertigen Akten verlassen. Die Dokumentationslast steht im Zentrum dieses Problems. Wenn Ärzte nach einem langen Patiententag abends noch im EHR-System verbringen, verstärkt sich die Erschöpfung und der Sinn der klinischen Arbeit schwindet.
 
-Die Reduzierung von Ärzteburnout erfordert mehr als Wellness-Botschaften. Es braucht eine Neugestaltung der Arbeit selbst, insbesondere der bürokratischen Last rund um Notizen, Posteingangsaufgaben und nächtliches Dokumentieren. Ambient-AI-Dokumentationstools, einschließlich eines [AI Medical Scribe](/ai-medical-scribe/) wie DocNote, sind heute einer der praktischsten Hebel, weil sie eine Ursache angehen: die Zeit, die durch Tippen von der Patientenversorgung abgeht.
+Die Reduzierung von Ärzteburnout erfordert mehr als Wellness-Botschaften. Es braucht eine Neugestaltung der Arbeit selbst, insbesondere der bürokratischen Last rund um Notizen, Posteingangsaufgaben und nächtliches Dokumentieren. Ambient-AI-Dokumentationstools, einschließlich eines [KI-medizinischer Schreiber](/ai-medical-scribe/) wie DocNote, sind heute einer der praktischsten Hebel, weil sie eine Ursache angehen: die Zeit, die durch Tippen von der Patientenversorgung abgeht.
 
 ## Wie Dokumentationslast Burnout befeuert
 
@@ -166,4 +166,4 @@ Setzen Sie klare Erwartungen: Der Gewinn ist die schrittweise Rückgewinnung von
 
 Ärzteburnout zu reduzieren beginnt mit der Wertschätzung klinischer Zeit. Dokumentation wird immer Teil sicherer Versorgung sein, aber sie sollte keine Abende verbrauchen oder die Präsenz am Bett oder im Behandlungszimmer verdrängen. Ambient-AI-Scribes geben Gesundheitssystemen ein konkretes Mittel, bürokratische Last zu verringern, während Ärzte für die klinische Akte verantwortlich bleiben.
 
-Wenn Dokumentationslast Ihr Team belastet, erkunden Sie, wie DocNotes [AI Medical Scribe](/ai-medical-scribe/) einen gesünderen Dokumentationsrhythmus unterstützen kann. Sehen Sie sich die [Preise](/pricing/) an, durchlaufen Sie das [Tutorial](/tutorial/) und stöbern Sie in verwandten Perspektiven im [DocNote Blog](/blog/). Bessere Notizen sollten mehr Versorgung bedeuten, nicht mehr Erschöpfung.
+Wenn Dokumentationslast Ihr Team belastet, erkunden Sie, wie DocNotes [KI-medizinischer Schreiber](/ai-medical-scribe/) einen gesünderen Dokumentationsrhythmus unterstützen kann. Sehen Sie sich die [Preise](/pricing/) an, durchlaufen Sie das [Tutorial](/tutorial/) und stöbern Sie in verwandten Perspektiven im [DocNote-Blog](/blog/). Bessere Notizen sollten mehr Versorgung bedeuten, nicht mehr Erschöpfung.

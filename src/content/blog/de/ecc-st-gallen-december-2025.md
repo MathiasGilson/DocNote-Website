@@ -10,7 +10,7 @@ date: "2025-12-01"
 readTime: 11
 ---
 
-Beim Europäischen Kolorektalkongress in St. Gallen hielt Dr. Alice Gilson, Viszeralchirurgin und CEO von DocNote, einen Vortrag darüber, wie künstliche Intelligenz die moderne chirurgische Praxis im und außerhalb des Operationssaals verändert. Die Kolorektalchirurgie eignet sich besonders für diese Diskussion. Die Fälle sind anatomisch anspruchsvoll, standardmäßig multidisziplinär und erfordern umfangreiche Dokumentation in Klinik, OP, Station und onkologischen Pfaden. Das Interesse an einem [AI Medical Scribe](/ai-medical-scribe/) ergänzt natürlich das Interesse an Bildgebungs-KI und Robotik, da beide auf Präzision und mehr Zeit für Patienten abzielen, nicht auf den Ersatz des Chirurgen.
+Beim Europäischen Kolorektalkongress in St. Gallen hielt Dr. Alice Gilson, Viszeralchirurgin und CEO von DocNote, einen Vortrag darüber, wie künstliche Intelligenz die moderne chirurgische Praxis im und außerhalb des Operationssaals verändert. Die Kolorektalchirurgie eignet sich besonders für diese Diskussion. Die Fälle sind anatomisch anspruchsvoll, standardmäßig multidisziplinär und erfordern umfangreiche Dokumentation in Klinik, OP, Station und onkologischen Pfaden. Das Interesse an einem [KI-medizinischer Schreiber](/ai-medical-scribe/) ergänzt natürlich das Interesse an Bildgebungs-KI und Robotik, da beide auf Präzision und mehr Zeit für Patienten abzielen, nicht auf den Ersatz des Chirurgen.
 
 ![Dr. Alice Gilson präsentiert am ECC St. Gallen](/images/st_gallen_12.25_-_2.jpg)
 
@@ -137,4 +137,4 @@ Fachgespräche verknüpften St. Gallen-Themen auch mit breiteren Schweizer Chiru
 
 ECC St. Gallen machte eine doppelte Argumentation. Im OP verändert KI bereits Planung, Navigation, Monitoring und Robotik. Außerhalb des OP kann Dokumentations-KI administrative Last reduzieren, wenn Sicherheit und medizinische Verantwortung zentral bleiben. Kolorektale Teams müssen nicht zwischen diesen Welten wählen. Sie brauchen eine abgestufte Strategie, die den Chirurgen in beiden verantwortlich hält.
 
-Wenn Ihr Dienst den Kongress in einen lokalen Plan übersetzt, erkunden Sie DocNotes [AI Medical Scribe](/ai-medical-scribe/), prüfen Sie [Krankenhausdokumentation](/hospital-documentation/) für Pfadabdeckung und vergleichen Sie Implementierungsoptionen auf [Preise](/pricing/) mit Ihren chirurgischen und digitalen Führungskräften.
+Wenn Ihr Dienst den Kongress in einen lokalen Plan übersetzt, erkunden Sie DocNotes [KI-medizinischer Schreiber](/ai-medical-scribe/), prüfen Sie [Krankenhausdokumentation](/hospital-documentation/) für Pfadabdeckung und vergleichen Sie Implementierungsoptionen auf [Preise](/pricing/) mit Ihren chirurgischen und digitalen Führungskräften.

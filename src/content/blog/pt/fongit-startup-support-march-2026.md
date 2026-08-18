@@ -38,7 +38,7 @@ Essa missão se encaixa nas realidades da saúde suíça. Cuidados multilíngues
 
 Testada em todos os cenários clínicos, em hospitais, cuidados ambulatoriais e à beira do leito, a solução agora cobre uma grande parte das variações clínicas diárias da prática médica. Essa cobertura vem do feedback de médicos de diversas especialidades, não de um único script de demonstração.
 
-Se você é novo na categoria de produto, o resumo do [AI medical scribe](/ai-medical-scribe/) explica a versão não comercial do trabalho a ser feito. Para uso hospitalar e entre serviços, veja [hospital documentation](/hospital-documentation/).
+Se você é novo na categoria de produto, o resumo do [escriba médico com IA](/ai-medical-scribe/) explica a versão não comercial do trabalho a ser feito. Para uso hospitalar e entre serviços, veja [documentação hospitalar](/hospital-documentation/).
 
 ## Por que o apoio à healthtech suíça é diferente (e útil)
 
@@ -76,7 +76,7 @@ As prioridades de execução da DocNote permanecem claras:
 
 Os loops de feedback dos médicos são o motor. Quando um cardiologista, um cirurgião e um clínico geral usam a mesma plataforma, os casos extremos surgem rapidamente. Cobrir uma grande parte da prática diária significa absorver esses casos extremos em modelos e comportamentos sem fingir que a medicina é uniforme.
 
-Leituras relacionadas sobre pressão de documentação e evidência de IA incluem [menos tempo documentando com IA](/blog/less-time-documenting-ai-more-care/) e [reduzindo o burnout médico](/blog/reducing-physician-burnout/). O contexto de conformidade está em [DocNote GDPR e nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
+Leituras relacionadas sobre pressão de documentação e evidência de IA incluem [menos tempo documentando com IA](/blog/less-time-documenting-ai-more-care/) e [reduzindo o burnout médico](/blog/reducing-physician-burnout/). O contexto de conformidade está em [conformidade da DocNote com GDPR e nFADP](/blog/docnote-gdpr-nfadp-compliance/).
 
 ## O que hospitais e clínicos podem tirar dessa notícia
 
@@ -96,7 +96,7 @@ Ainda pergunte:
 - Como é a integração para um piloto de linha de serviço?  
 - Como o sucesso é medido após 30 e 90 dias?  
 
-O padrão de resposta da DocNote permanece consistente: IA rascunha documentos estruturados, médicos permanecem responsáveis, e a implantação deve começar com documentos reais de backlog, não com entusiasmo abstrato por IA. Planos para equipes prontas para avaliar estão em [pricing](/pricing/).
+O padrão de resposta da DocNote permanece consistente: IA rascunha documentos estruturados, médicos permanecem responsáveis, e a implantação deve começar com documentos reais de backlog, não com entusiasmo abstrato por IA. Planos para equipes prontas para avaliar estão em [preços](/pricing/).
 
 ## Construindo em público sem exagerar
 
@@ -156,4 +156,4 @@ Para colegas no ecossistema de Genebra, estamos felizes em trocar notas sobre pi
 
 A seleção para o Initial Startup Support da FONGIT é um momento de orgulho para a DocNote e um impulso prático dentro da comunidade de inovação de Genebra. A missão permanece a mesma: devolver tempo aos médicos automatizando a documentação médica estruturada com cuidado, evidência e respeito pela responsabilidade clínica.
 
-Se você é um líder hospitalar, clínico ou parceiro do ecossistema suíço, preferimos mostrar uma carta de alta finalizada sob restrições reais do que um slide sobre IA. Comece com [AI medical scribe](/ai-medical-scribe/), [hospital documentation](/hospital-documentation/) e [pricing](/pricing/), e construa a partir daí. Este é apenas o começo.
+Se você é um líder hospitalar, clínico ou parceiro do ecossistema suíço, preferimos mostrar uma carta de alta finalizada sob restrições reais do que um slide sobre IA. Comece com [escriba médico com IA](/ai-medical-scribe/), [documentação hospitalar](/hospital-documentation/) e [preços](/pricing/), e construa a partir daí. Este é apenas o começo.

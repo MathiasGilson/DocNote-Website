@@ -106,7 +106,7 @@ Kombinieren Sie Zahlen mit kurzen qualitativen Check-ins. Ein Tool, das drei Min
 
 Achten Sie auch auf Gleichheit über den Schwierigkeitsgrad der Fälle hinweg. Wenn der Modus nur bei einfachen Normalbefunden glänzt und bei komplexer Onkologie-Staging-Sprache versagt, beschränken Sie seine Nutzung auf geeignete Untersuchungsklassen, bis sich die Vorlagen verbessern.
 
-## Radiology mode FAQ
+## FAQ zum Radiologie-Modus
 
 <details>
   <summary>Ist DocNote Radiology mode nur für MRT?</summary>

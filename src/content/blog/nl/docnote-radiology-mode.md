@@ -89,7 +89,7 @@ Multidisciplinaire ziekenhuizen profiteren wanneer documentatietools governance,
 
 Als u ambient en dictatie-ondersteunde tools breder vergelijkt, gerelateerde lectuur omvat ons artikel over [minder tijd documenteren met AI en meer tijd voor zorg](/blog/less-time-documenting-ai-more-care/) en het bredere perspectief in [de toekomst van AI-medische documentatie](/blog/future-of-ai-medical-documentation/). Voor Zwitserse en Europese compliance-context die vaak bij ziekenhuis-AI-projecten hoort, zie [DocNote GDPR en nFADP compliance](/blog/docnote-gdpr-nfadp-compliance/).
 
-Prijzen en planopties voor teams die pilots evalueren staan op de [pricing](/pricing/) pagina. Ziekenhuizen die een implementatiegesprek willen, kunnen beginnen bij de productlandingspagina's en een begeleide proef aanvragen.
+Prijzen en planopties voor teams die pilots evalueren staan op de [prijzen](/pricing/) pagina. Ziekenhuizen die een implementatiegesprek willen, kunnen beginnen bij de productlandingspagina's en een begeleide proef aanvragen.
 
 ## Metingen die clinici respecteren, niet alleen dashboards
 
@@ -144,4 +144,4 @@ Let ook op gelijkheid over case-moeilijkheid. Als de modus alleen schittert bij 
 
 DocNote Radiologie-modus bestaat omdat beeldvormingsdocumentatie een specialismeprobleem is, geen generiek notitieprobleem. Wanneer structuur automatisch arriveert en doorlooptijd krimpt, krijgen radiologen iets waardevollers dan rauwe snelheid: ruimte om na te denken over de studie voor hen.
 
-Als uw afdeling vecht tegen rapportageachterstand, after-hours inhaalwerk of inconsistente sjablonen, is Radiologie-modus een concrete plek om te beginnen. Verken het [AI-medische scribe](/ai-medical-scribe/) overzicht, bekijk [ziekenhuisdocumentatie](/hospital-documentation/) use cases en check [pricing](/pricing/) om een gerichte pilot te plannen met uw eigen modaliteiten en standaarden.
+Als uw afdeling vecht tegen rapportageachterstand, after-hours inhaalwerk of inconsistente sjablonen, is Radiologie-modus een concrete plek om te beginnen. Verken het [AI-medische scribe](/ai-medical-scribe/) overzicht, bekijk [ziekenhuisdocumentatie](/hospital-documentation/) use cases en check [prijzen](/pricing/) om een gerichte pilot te plannen met uw eigen modaliteiten en standaarden.
