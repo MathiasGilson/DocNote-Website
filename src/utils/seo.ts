@@ -76,6 +76,23 @@ export const pageMeta: Record<
         'DocNote macht aus Konsultationen Austrittsberichte, Visitennotizen und OP-Berichte. Schweizer KI-Schreibassistent für Ärztinnen, Ärzte und Spitäler. DSG-, DSGVO-, HIPAA- und ISO-27001-konform.',
     },
   },
+  order: {
+    en: {
+      title: 'Purchase order',
+      description:
+        'Order DocNote licences for your practice: choose how many, sign the purchase order electronically, then pay. Swiss and EU billing, VAT in addition.',
+    },
+    fr: {
+      title: 'Bon de commande',
+      description:
+        'Commandez vos licences DocNote pour votre cabinet : choisissez le nombre, signez le bon de commande électroniquement, puis payez. Facturation Suisse et Europe, TVA en sus.',
+    },
+    de: {
+      title: 'Bestellung',
+      description:
+        'Bestellen Sie DocNote-Lizenzen für Ihre Praxis: Anzahl wählen, Bestellung elektronisch unterzeichnen, dann bezahlen. Abrechnung Schweiz und Europa, MwSt. zusätzlich.',
+    },
+  },
   pricing: {
     en: {
       title: 'Pricing',

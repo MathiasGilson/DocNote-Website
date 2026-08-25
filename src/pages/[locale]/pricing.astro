@@ -69,7 +69,7 @@ const breadcrumbLd = buildBreadcrumbLd([
                 </li>
               ))}
             </ul>
-          <a href="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" id="subscription-btn" data-yearly-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-chf-url="https://buy.stripe.com/bJe8wQchhdZe1sA8JK8g00m" data-monthly-chf-url="https://buy.stripe.com/7sYdRa3KL4oE6MU6BC8g00n" data-yearly-eur-url="https://buy.stripe.com/4gMdRagxx7AQb3af888g00f" data-monthly-eur-url="https://buy.stripe.com/9B65kE1CD3kAfjqaRS8g00e" data-yearly-fr-url="https://buy.stripe.com/7sY8wQbdd8EUc7e6BC8g00o" data-monthly-fr-url="https://buy.stripe.com/fZu28sa99dZe0ow9NO8g00g" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
+          <a href={`/${locale}/order/?period=yearly`} id="subscription-btn" class="block w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20">
             {t.pricing.getStarted}
           </a>
         </div>
@@ -136,8 +136,9 @@ const breadcrumbLd = buildBreadcrumbLd([
   let monthlyPriceValue = parseInt(proPrice?.dataset.monthlyUsd || '89');
   let yearlyPrice = '';
   let monthlyPrice = '';
-  let yearlyUrl = subscriptionBtn?.dataset.yearlyUrl || '';
-  let monthlyUrl = subscriptionBtn?.dataset.monthlyUrl || '';
+  // Where "Get Started" goes: the purchase order, carrying the period the visitor picked here.
+  const pageLocale = window.location.pathname.split('/')[1] || 'en';
+  const orderUrl = (chosen: 'yearly' | 'monthly') => `/${pageLocale}/order/?period=${chosen}`;
 
   async function initializePricing() {
     currentCurrency = await detectUserCurrency();
@@ -148,18 +149,12 @@ const breadcrumbLd = buildBreadcrumbLd([
     if (country === 'FR') {
       yearlyPriceValue = parseInt(proPrice?.dataset.yearlyFr || '69');
       monthlyPriceValue = parseInt(proPrice?.dataset.monthlyFr || '79');
-      yearlyUrl = subscriptionBtn?.dataset.yearlyFrUrl || yearlyUrl;
-      monthlyUrl = subscriptionBtn?.dataset.monthlyFrUrl || monthlyUrl;
     } else if (currentCurrency === 'CHF') {
       yearlyPriceValue = parseInt(proPrice?.dataset.yearlyChf || '99');
       monthlyPriceValue = parseInt(proPrice?.dataset.monthlyChf || '109');
-      yearlyUrl = subscriptionBtn?.dataset.yearlyChfUrl || yearlyUrl;
-      monthlyUrl = subscriptionBtn?.dataset.monthlyChfUrl || monthlyUrl;
     } else if (currentCurrency === 'EUR') {
       yearlyPriceValue = parseInt(proPrice?.dataset.yearlyEur || '79');
       monthlyPriceValue = parseInt(proPrice?.dataset.monthlyEur || '89');
-      yearlyUrl = subscriptionBtn?.dataset.yearlyEurUrl || yearlyUrl;
-      monthlyUrl = subscriptionBtn?.dataset.monthlyEurUrl || monthlyUrl;
     }
 
     yearlyPrice = formatPrice(yearlyPriceValue, currentCurrency);
@@ -169,7 +164,7 @@ const breadcrumbLd = buildBreadcrumbLd([
       proPrice.textContent = yearlyPrice;
     }
     if (subscriptionBtn) {
-      subscriptionBtn.href = yearlyUrl;
+      subscriptionBtn.href = orderUrl('yearly');
     }
   }
 
@@ -183,7 +178,7 @@ const breadcrumbLd = buildBreadcrumbLd([
     yearlyBtn.classList.replace('text-gray-400', 'text-gray-900');
     monthlyBtn.classList.replace('text-gray-900', 'text-gray-400');
     if (proPrice) proPrice.textContent = yearlyPrice;
-    if (subscriptionBtn) subscriptionBtn.href = yearlyUrl;
+    if (subscriptionBtn) subscriptionBtn.href = orderUrl('yearly');
   };
 
   const selectMonthly = () => {
@@ -191,7 +186,7 @@ const breadcrumbLd = buildBreadcrumbLd([
     monthlyBtn.classList.replace('text-gray-400', 'text-gray-900');
     yearlyBtn.classList.replace('text-gray-900', 'text-gray-400');
     if (proPrice) proPrice.textContent = monthlyPrice;
-    if (subscriptionBtn) subscriptionBtn.href = monthlyUrl;
+    if (subscriptionBtn) subscriptionBtn.href = orderUrl('monthly');
   };
 
   moveBgTo(yearlyBtn);
