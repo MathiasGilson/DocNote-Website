@@ -533,10 +533,10 @@
     "step2": "Your email",
     "emailNote": "The purchase order will be sent to this address. Type it twice so a typo cannot slip through.",
     "emailLabel": "Email address",
-    "step3": "The practice, hospital or clinic",
-    "practiceNote": "These details appear on the purchase order. They are those of the entity making the commitment: practice, hospital, clinic or institution.",
-    "signatoryName": "Signatory's name",
-    "company": "Legal name of the organisation",
+    "step3": "Billing",
+    "practiceNote": "These details appear on the purchase order and on the invoice. They are those of the entity or person making the commitment.",
+    "signatoryName": "Full name",
+    "company": "Legal name",
     "address": "Address",
     "zip": "Postcode",
     "city": "Town",
@@ -572,6 +572,8 @@
     "missingFields": "Some details are missing — they are outlined in red above.",
     "billedYearly": "billed yearly",
     "billedMonthly": "billed monthly",
-    "totalLine": "{n} licence(s) × {unit}"
+    "totalLine": "{n} licence(s) × {unit}",
+    "billToCompany": "A company",
+    "billToIndividual": "An individual"
   }
 }

@@ -563,10 +563,10 @@
     "step2": "Votre e-mail",
     "emailNote": "Le bon de commande sera envoyé à cette adresse. Saisissez-la deux fois pour écarter toute faute de frappe.",
     "emailLabel": "Adresse e-mail",
-    "step3": "Le cabinet, l'hôpital ou la clinique",
-    "practiceNote": "Ces informations figurent sur le bon de commande. Elles sont celles de l'entité qui s'engage : cabinet, hôpital, clinique ou institution.",
-    "signatoryName": "Nom du signataire",
-    "company": "Raison sociale de l'établissement",
+    "step3": "Facturation",
+    "practiceNote": "Ces informations figurent sur le bon de commande et sur la facture. Elles sont celles de l'entité ou de la personne qui s'engage.",
+    "signatoryName": "Nom et prénom",
+    "company": "Raison sociale",
     "address": "Adresse",
     "zip": "NPA",
     "city": "Localité",
@@ -602,6 +602,8 @@
     "missingFields": "Il manque des informations : elles sont entourées en rouge ci-dessus.",
     "billedYearly": "facturé annuellement",
     "billedMonthly": "facturé mensuellement",
-    "totalLine": "{n} licence(s) × {unit}"
+    "totalLine": "{n} licence(s) × {unit}",
+    "billToCompany": "Une entreprise",
+    "billToIndividual": "Un particulier"
   }
 }

@@ -551,10 +551,10 @@
     "step2": "Ihre E-Mail",
     "emailNote": "Die Bestellung wird an diese Adresse gesendet. Geben Sie sie zweimal ein, damit sich kein Tippfehler einschleicht.",
     "emailLabel": "E-Mail-Adresse",
-    "step3": "Praxis, Spital oder Klinik",
-    "practiceNote": "Diese Angaben stehen auf der Bestellung. Es sind die der verpflichteten Einheit: Praxis, Spital, Klinik oder Institution.",
-    "signatoryName": "Name der unterzeichnenden Person",
-    "company": "Firmenname der Einrichtung",
+    "step3": "Rechnungsstellung",
+    "practiceNote": "Diese Angaben stehen auf der Bestellung und auf der Rechnung. Es sind die der verpflichteten Einheit oder Person.",
+    "signatoryName": "Vor- und Nachname",
+    "company": "Firmenname",
     "address": "Adresse",
     "zip": "PLZ",
     "city": "Ort",
@@ -590,6 +590,8 @@
     "missingFields": "Es fehlen Angaben — sie sind oben rot umrandet.",
     "billedYearly": "jährliche Abrechnung",
     "billedMonthly": "monatliche Abrechnung",
-    "totalLine": "{n} Lizenz(en) × {unit}"
+    "totalLine": "{n} Lizenz(en) × {unit}",
+    "billToCompany": "Ein Unternehmen",
+    "billToIndividual": "Eine Privatperson"
   }
 }

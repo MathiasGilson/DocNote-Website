@@ -106,12 +106,18 @@ const secondaryBtn =
         <div id="practice-card" class={card}>
           <h2 class={stepTitle}>3. {o.step3}</h2>
           <p class="mt-2 text-sm text-gray-500">{o.practiceNote}</p>
+
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <button type="button" id="bill-company" class="rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700">{o.billToCompany}</button>
+            <button type="button" id="bill-individual" class="rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700">{o.billToIndividual}</button>
+          </div>
+
           <div class="mt-5 space-y-4">
             <div>
               <label class={label} for="f-name">{o.signatoryName}</label>
               <input id="f-name" type="text" class={input} />
             </div>
-            <div>
+            <div id="company-field">
               <label class={label} for="f-company">{o.company}</label>
               <input id="f-company" type="text" class={input} />
             </div>
@@ -134,7 +140,7 @@ const secondaryBtn =
               <input id="f-country" type="text" class={input} />
             </div>
             <div class="grid grid-cols-2 gap-4">
-              <div>
+              <div id="vat-field">
                 <label class={label} for="f-vat">{o.vatId} <span class="font-normal text-gray-400">· {o.optional}</span></label>
                 <input id="f-vat" type="text" class={input} />
               </div>
@@ -365,10 +371,30 @@ const secondaryBtn =
     return isEmail(first) && first === second;
   };
 
+  /**
+   * Billing a company or a person.
+   *
+   * A doctor billing in their own name has no legal entity, and a purchase order carrying a blank
+   * line where the organisation should be reads like an unfinished form — so the field is not merely
+   * optional, it is absent.
+   */
+  let billTo: 'company' | 'individual' = 'company';
+
+  const setBillTo = (next: 'company' | 'individual') => {
+    billTo = next;
+    const on = 'rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700';
+    const off = 'rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700';
+    $('bill-company').className = next === 'company' ? on : off;
+    $('bill-individual').className = next === 'individual' ? on : off;
+    $('company-field').classList.toggle('hidden', next === 'individual');
+    $('vat-field').classList.toggle('hidden', next === 'individual');
+    clearMarks();
+  };
+
   const identity = () => ({
     email: value('email').toLowerCase(),
     name: value('f-name'),
-    companyName: value('f-company'),
+    ...(billTo === 'company' && value('f-company') ? { companyName: value('f-company') } : {}),
     address: value('f-address'),
     zip: value('f-zip'),
     city: value('f-city'),
@@ -379,7 +405,7 @@ const secondaryBtn =
 
   const identityComplete = () => {
     const i = identity();
-    return Boolean(emailsAgree() && i.name && i.companyName && i.address && i.zip && i.city && i.country);
+    return Boolean(emailsAgree() && i.name && i.address && i.zip && i.city && i.country && (billTo === 'individual' || i.companyName));
   };
 
   // ── 5. Review and sign ──────────────────────────────────────────────
@@ -411,7 +437,9 @@ const secondaryBtn =
     if (second !== first) missing.push('email-confirm');
     $('email-mismatch').classList.toggle('hidden', !(second && second !== first));
 
-    for (const id of ['f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
+    const required = ['f-name', 'f-address', 'f-zip', 'f-city', 'f-country'];
+    if (billTo === 'company') required.splice(1, 0, 'f-company');
+    for (const id of required) {
       if (!value(id)) missing.push(id);
     }
 
@@ -503,6 +531,9 @@ const secondaryBtn =
     $(id).addEventListener('input', clearMarks);
   }
   $('chk-terms').addEventListener('change', clearMarks);
+
+  $('bill-company').addEventListener('click', () => setBillTo('company'));
+  $('bill-individual').addEventListener('click', () => setBillTo('individual'));
 
   $('qty-minus').addEventListener('click', () => setQuantity(quantity - 1));
   $('qty-plus').addEventListener('click', () => setQuantity(quantity + 1));

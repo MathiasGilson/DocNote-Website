@@ -316,6 +316,8 @@ const pagesCollection = defineCollection({
       billedYearly: z.string(),
       billedMonthly: z.string(),
       totalLine: z.string(),
+      billToCompany: z.string(),
+      billToIndividual: z.string(),
     }),
     pricing: z.object({
       billedIn: z.string(),
