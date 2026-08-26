@@ -302,6 +302,15 @@ const secondaryBtn =
   /** Set once the buyer picks for themselves, so a slow detection cannot overrule them. */
   let countryChosenByHand = false;
 
+  /**
+   * No figure is shown before the country is settled.
+   *
+   * Quantity and period are applied as the page opens, and each of them prices; without this guard
+   * they would price in the default currency and a Swiss visitor would read the euro figure before
+   * it corrected itself to francs. A price seen once has been quoted, whatever replaces it.
+   */
+  let countrySettled = false;
+
   const applyCountry = () => {
     currency = currencyForCountry(chosenCountry());
     refreshPrice();
@@ -314,6 +323,7 @@ const secondaryBtn =
   // when it differs from the billed one the page says which card charge to expect.
   let priceTimer: ReturnType<typeof setTimeout>;
   const refreshPrice = () => {
+    if (!countrySettled) return;
     clearTimeout(priceTimer);
     priceTimer = setTimeout(async () => {
       const base = baseForCurrency(currency);
@@ -619,6 +629,7 @@ const secondaryBtn =
     // buyer picks afterwards wins, and re-prices on the spot.
     detectUserCountry().then((country) => {
       if (!countryChosenByHand && country && COUNTRY_CODES.includes(country)) fillCountries(country);
+      countrySettled = true;
       applyCountry();
     });
   }

@@ -105,6 +105,18 @@ export function getCountryByTimezone(): string | null {
 // Fallback: ipapi.co/json/, used when /cdn-cgi/trace isn't reachable (local
 // dev server, ad blocker stripping cdn-cgi requests, etc.).
 let _ipLookup: Promise<{ country_code: string | null } | null> | null = null;
+/**
+ * How long the page waits on a location lookup before pricing from the browser's own timezone.
+ *
+ * Nothing is displayed while this runs — showing a price and correcting it is what we are avoiding —
+ * so the wait has to be short enough that the page does not sit blank on a bad network.
+ */
+const LOOKUP_TIMEOUT_MS = 2500;
+
+function withTimeout<T>(work: Promise<T>, fallback: T): Promise<T> {
+  return Promise.race([work, new Promise<T>((resolve) => setTimeout(() => resolve(fallback), LOOKUP_TIMEOUT_MS))]);
+}
+
 function fetchIpLocation(): Promise<{ country_code: string | null } | null> {
   if (_ipLookup) return _ipLookup;
   _ipLookup = (async () => {
@@ -164,7 +176,7 @@ export async function detectUserCountry(): Promise<string | null> {
   const remembered = rememberedCountry();
   if (remembered) return remembered;
 
-  const ip = await fetchIpLocation();
+  const ip = await withTimeout(fetchIpLocation(), null);
   const country = ip?.country_code ?? getCountryByTimezone();
   if (country) rememberCountry(country);
   return country;
