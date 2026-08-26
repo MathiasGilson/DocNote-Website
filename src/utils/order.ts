@@ -6,7 +6,15 @@
  * this is what stops a doctor discovering their mistake only after pressing sign.
  */
 
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/**
+ * Deliberately permissive: an address only has to look addressable.
+ *
+ * A stricter pattern rejects addresses that genuinely work — long or unusual top-level domains,
+ * plus-tags, hospital intranets — and the cost of being wrong is asymmetric. Refusing a real doctor
+ * loses an order; accepting a typo sends a purchase order into the void, which the buyer sees at once
+ * because they are the one waiting for it.
+ */
+const EMAIL = /^[^\s@]+@[^\s@]+$/;
 
 export function isEmail(value: string): boolean {
   return EMAIL.test(value.trim().toLowerCase());
@@ -39,28 +47,4 @@ export function seatIssues(emails: string[], quantity: number): SeatIssues {
     duplicates,
     missing: Math.max(0, quantity - emails.length),
   };
-}
-
-/**
- * Whether the signature button may be pressed.
- *
- * The seat list must match the licences exactly by this point: the document about to be signed names
- * the addresses it covers.
- */
-export function canSign(params: {
-  termsAccepted: boolean;
-  signerName: string;
-  emails: string[];
-  quantity: number;
-}): boolean {
-  if (!params.termsAccepted || !params.signerName.trim()) return false;
-
-  const issues = seatIssues(params.emails, params.quantity);
-  return issues.invalid.length === 0 && issues.duplicates.length === 0 && issues.missing === 0;
-}
-
-/** The same shape the purchase order prints, so the page and the PDF never quote differently. */
-export function formatMoney(cents: number, currency: string): string {
-  const [whole, frac] = (cents / 100).toFixed(2).split('.');
-  return `${currency} ${whole.replace(/\B(?=(\d{3})+(?!\d))/g, "'")}.${frac}`;
 }

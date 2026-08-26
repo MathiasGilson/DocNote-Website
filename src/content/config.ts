@@ -317,6 +317,8 @@ const pagesCollection = defineCollection({
       termsLink: z.string(),
       billedIn: z.string(),
       download: z.string(),
+      missingFields: z.string(),
+      openFirst: z.string(),
     }),
     pricing: z.object({
       billedIn: z.string(),

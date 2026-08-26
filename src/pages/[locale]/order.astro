@@ -157,11 +157,11 @@ const secondaryBtn =
             <button type="button" id="open-document" class={secondaryBtn}>{o.openDocument}</button>
             <p id="fill-first" class="text-sm text-gray-500">{o.fillFirst}</p>
 
-            <label class="flex items-start gap-3 cursor-pointer">
+            <label id="row-read" class="flex items-start gap-3 cursor-pointer rounded-lg p-1 -m-1">
               <input id="chk-read" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600" />
               <span class="text-gray-700">{o.declareRead}</span>
             </label>
-            <label class="flex items-start gap-3 cursor-pointer">
+            <label id="row-terms" class="flex items-start gap-3 cursor-pointer rounded-lg p-1 -m-1">
               <input id="chk-terms" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600" />
               <span class="text-gray-700">
                 {o.acceptTerms.split('{terms}')[0]}<a
@@ -189,9 +189,8 @@ const secondaryBtn =
           <h2 class="text-2xl font-bold text-gray-900 mb-3">{o.signedTitle}</h2>
           <p class="text-gray-600 mb-6">{o.signedBody}</p>
           <div class="space-y-3">
-            <button type="button" id="pay" class={primaryBtn}>{o.pay}</button>
-            <button type="button" id="open-signed" class={secondaryBtn}>{o.openSigned}</button>
             <button type="button" id="download-signed" class={secondaryBtn}>{o.download}</button>
+            <button type="button" id="pay" class={primaryBtn}>{o.pay}</button>
             <p class="text-xs text-gray-500 text-center">{o.payLater}</p>
           </div>
         </div>
@@ -210,7 +209,7 @@ const secondaryBtn =
     isConverted,
     toLocalAmount,
   } from '../../utils/pricing';
-  import { seatIssues, canSign, isEmail } from '../../utils/order';
+  import { seatIssues, isEmail } from '../../utils/order';
 
   const API = import.meta.env.PUBLIC_API_URL || 'https://api.docnote.care';
   const locale = window.location.pathname.split('/')[1] || 'en';
@@ -316,7 +315,7 @@ const secondaryBtn =
       field.addEventListener('input', () => {
         seatValues[index] = field.value.trim().toLowerCase();
         refreshSeatIssues();
-        refreshSignButton();
+        clearMarks();
       });
       container.appendChild(row);
     });
@@ -342,7 +341,6 @@ const secondaryBtn =
     renderSeats();
     refreshSeatIssues();
     refreshPrice();
-    refreshSignButton();
   };
 
   const setPeriod = (next: 'annual' | 'monthly') => {
@@ -384,25 +382,68 @@ const secondaryBtn =
   };
 
   // ── 5. Review and sign ──────────────────────────────────────────────
-  const refreshSignButton = () => {
-    const ready =
-      documentSeen &&
-      ($('chk-read') as HTMLInputElement).checked &&
-      canSign({
-        termsAccepted: ($('chk-terms') as HTMLInputElement).checked,
-        signerName: value('signer'),
-        emails: filledSeats(),
-        quantity,
-      });
-    ($('sign') as HTMLButtonElement).disabled = !ready;
-    $('fill-first').classList.toggle('hidden', identityComplete());
-    ($('open-document') as HTMLButtonElement).disabled = !identityComplete();
+  //
+  // Nothing is disabled. A greyed-out button that will not say why is the worst kind of dead end —
+  // the buyer has filled the form, believes they are done, and has nowhere to look. So both buttons
+  // stay pressable, and pressing one that cannot proceed outlines exactly what is missing.
+  const BAD = ['ring-2', 'ring-red-500', 'border-red-500'];
+
+  const mark = (id: string, missing: boolean) => {
+    const el = $(id);
+    if (!el) return;
+    el.classList.toggle('ring-2', missing);
+    el.classList.toggle('ring-red-500', missing);
+    el.classList.toggle('border-red-500', missing);
+  };
+
+  const clearMarks = () => {
+    document.querySelectorAll('.' + BAD[1]).forEach((el) => el.classList.remove(...BAD));
+  };
+
+  /** The identity the purchase order needs, and the licence holders. Returns what is still missing. */
+  const missingForDocument = (): string[] => {
+    const missing: string[] = [];
+
+    const first = value('email').toLowerCase();
+    const second = value('email-confirm').toLowerCase();
+    if (!isEmail(first)) missing.push('email');
+    if (second !== first) missing.push('email-confirm');
+    $('email-mismatch').classList.toggle('hidden', !(second && second !== first));
+
+    for (const id of ['f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
+      if (!value(id)) missing.push(id);
+    }
+
+    const issues = seatIssues(filledSeats(), quantity);
+    seatValues.forEach((seat, index) => {
+      const bad = !seat || !isEmail(seat) || (issues.duplicates.includes(seat) && seatValues.indexOf(seat) !== index);
+      if (bad) missing.push(`seat-${index}`);
+    });
+
+    return missing;
+  };
+
+  const missingForSignature = (): string[] => [
+    ...missingForDocument(),
+    ...(($('chk-read') as HTMLInputElement).checked ? [] : ['row-read']),
+    ...(($('chk-terms') as HTMLInputElement).checked ? [] : ['row-terms']),
+    ...(value('signer') ? [] : ['signer']),
+  ];
+
+  const showMissing = (missing: string[], message: string) => {
+    clearMarks();
+    missing.forEach((id) => mark(id, true));
+    notice(message);
+    $(missing[0])?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   /** Creates or refreshes the draft, then shows the PDF. This is the first write of anything. */
   $('open-document').addEventListener('click', async () => {
     clearNotice();
-    if (!identityComplete()) return;
+    const missing = missingForDocument();
+    if (missing.length) return showMissing(missing, copy.missingFields);
+
+    clearMarks();
     try {
       if (!orderId) {
         const created = await call('POST', '/orders', { ...identity(), quantity, period });
@@ -414,7 +455,6 @@ const secondaryBtn =
       await openDocument(orderId!, false);
       documentSeen = true;
       $('open-document').textContent = copy.reopenDocument;
-      refreshSignButton();
     } catch (error) {
       notice((error as Error).message);
     }
@@ -440,7 +480,7 @@ const secondaryBtn =
   };
 
   $('chk-read').addEventListener('change', async () => {
-    refreshSignButton();
+    clearMarks();
     // Recorded as declared by the signatory — no browser can prove anyone read anything.
     if (($('chk-read') as HTMLInputElement).checked && orderId) {
       await call('POST', `/orders/${orderId}/read`).catch(() => undefined);
@@ -449,7 +489,11 @@ const secondaryBtn =
 
   $('sign').addEventListener('click', async () => {
     clearNotice();
-    if (!orderId) return;
+    const missing = missingForSignature();
+    if (missing.length) return showMissing(missing, copy.missingFields);
+    if (!documentSeen || !orderId) return showMissing(['open-document'], copy.openFirst);
+
+    clearMarks();
     try {
       await call('POST', `/orders/${orderId}/sign`, { signerName: value('signer'), termsAccepted: true });
       signed = true;
@@ -472,21 +516,15 @@ const secondaryBtn =
     }
   });
 
-  $('open-signed').addEventListener('click', () => {
-    if (orderId && signed) openDocument(orderId, false).catch(() => notice(copy.genericError));
-  });
-
   $('download-signed').addEventListener('click', () => {
     if (orderId && signed) openDocument(orderId, true).catch(() => notice(copy.genericError));
   });
 
-  for (const id of ['email', 'email-confirm', 'chk-terms', 'signer']) {
-    $(id).addEventListener('input', refreshSignButton);
-    $(id).addEventListener('change', refreshSignButton);
+  // Typing anywhere clears the red: the buyer should see the outline go as they fix it.
+  for (const id of ['email', 'email-confirm', 'signer', 'f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
+    $(id).addEventListener('input', clearMarks);
   }
-  for (const id of ['f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
-    $(id).addEventListener('input', refreshSignButton);
-  }
+  $('chk-terms').addEventListener('change', clearMarks);
 
   $('qty-minus').addEventListener('click', () => setQuantity(quantity - 1));
   $('qty-plus').addEventListener('click', () => setQuantity(quantity + 1));
