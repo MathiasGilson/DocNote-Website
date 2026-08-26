@@ -40,7 +40,6 @@ const secondaryBtn =
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{o.title}</h1>
-        <p class="text-lg text-gray-600">{o.subtitle}</p>
       </div>
 
       <script type="application/json" id="order-copy" set:html={JSON.stringify(o)}></script>
@@ -114,11 +113,11 @@ const secondaryBtn =
 
           <div class="mt-5 space-y-4">
             <div>
-              <label class={label} for="f-name">{o.signatoryName}</label>
+              <label class={label} for="f-name"><span id="name-label">{o.nameOfCompany}</span></label>
               <input id="f-name" type="text" class={input} />
             </div>
             <div id="company-field">
-              <label class={label} for="f-company">{o.company}</label>
+              <label class={label} for="f-company">{o.company} <span class="font-normal text-gray-400">· {o.optional}</span></label>
               <input id="f-company" type="text" class={input} />
             </div>
             <div>
@@ -388,6 +387,8 @@ const secondaryBtn =
     $('bill-individual').className = next === 'individual' ? on : off;
     $('company-field').classList.toggle('hidden', next === 'individual');
     $('vat-field').classList.toggle('hidden', next === 'individual');
+    // The client's name is a company's or a person's, and the label should not claim otherwise.
+    $('name-label').textContent = next === 'company' ? copy.nameOfCompany : copy.signatoryName;
     clearMarks();
   };
 
@@ -405,7 +406,7 @@ const secondaryBtn =
 
   const identityComplete = () => {
     const i = identity();
-    return Boolean(emailsAgree() && i.name && i.address && i.zip && i.city && i.country && (billTo === 'individual' || i.companyName));
+    return Boolean(emailsAgree() && i.name && i.address && i.zip && i.city && i.country);
   };
 
   // ── 5. Review and sign ──────────────────────────────────────────────
@@ -437,9 +438,7 @@ const secondaryBtn =
     if (second !== first) missing.push('email-confirm');
     $('email-mismatch').classList.toggle('hidden', !(second && second !== first));
 
-    const required = ['f-name', 'f-address', 'f-zip', 'f-city', 'f-country'];
-    if (billTo === 'company') required.splice(1, 0, 'f-company');
-    for (const id of required) {
+    for (const id of ['f-name', 'f-address', 'f-zip', 'f-city', 'f-country']) {
       if (!value(id)) missing.push(id);
     }
 

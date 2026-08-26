@@ -266,7 +266,6 @@ const pagesCollection = defineCollection({
     }),
     order: z.object({
       title: z.string(),
-      subtitle: z.string(),
       step1: z.string(),
       howMany: z.string(),
       monthly: z.string(),
@@ -318,6 +317,7 @@ const pagesCollection = defineCollection({
       totalLine: z.string(),
       billToCompany: z.string(),
       billToIndividual: z.string(),
+      nameOfCompany: z.string(),
     }),
     pricing: z.object({
       billedIn: z.string(),

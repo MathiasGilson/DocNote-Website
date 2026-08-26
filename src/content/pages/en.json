@@ -523,7 +523,6 @@
     },
   "order": {
     "title": "Your purchase order",
-    "subtitle": "Choose your licences, sign the purchase order, then pay. Nothing is charged before you sign.",
     "step1": "Licences",
     "howMany": "How many licences?",
     "monthly": "Monthly",
@@ -534,7 +533,7 @@
     "emailNote": "The purchase order will be sent to this address. Type it twice so a typo cannot slip through.",
     "emailLabel": "Email address",
     "step3": "Billing",
-    "practiceNote": "These details appear on the purchase order and on the invoice. They are those of the entity or person making the commitment.",
+    "practiceNote": "These details appear on the purchase order and on the invoice.",
     "signatoryName": "Full name",
     "company": "Legal name",
     "address": "Address",
@@ -574,6 +573,7 @@
     "billedMonthly": "billed monthly",
     "totalLine": "{n} licence(s) × {unit}",
     "billToCompany": "A company",
-    "billToIndividual": "An individual"
+    "billToIndividual": "An individual",
+    "nameOfCompany": "Name"
   }
 }

@@ -553,7 +553,6 @@
   },
   "order": {
     "title": "Votre bon de commande",
-    "subtitle": "Choisissez vos licences, signez le bon de commande, puis payez. Rien n'est débité avant votre signature.",
     "step1": "Licences",
     "howMany": "Combien de licences ?",
     "monthly": "Mensuel",
@@ -564,7 +563,7 @@
     "emailNote": "Le bon de commande sera envoyé à cette adresse. Saisissez-la deux fois pour écarter toute faute de frappe.",
     "emailLabel": "Adresse e-mail",
     "step3": "Facturation",
-    "practiceNote": "Ces informations figurent sur le bon de commande et sur la facture. Elles sont celles de l'entité ou de la personne qui s'engage.",
+    "practiceNote": "Ces informations figurent sur le bon de commande et sur la facture.",
     "signatoryName": "Nom et prénom",
     "company": "Raison sociale",
     "address": "Adresse",
@@ -604,6 +603,7 @@
     "billedMonthly": "facturé mensuellement",
     "totalLine": "{n} licence(s) × {unit}",
     "billToCompany": "Une entreprise",
-    "billToIndividual": "Un particulier"
+    "billToIndividual": "Un particulier",
+    "nameOfCompany": "Nom"
   }
 }
