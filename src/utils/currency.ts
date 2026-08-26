@@ -135,10 +135,39 @@ function fetchIpLocation(): Promise<{ country_code: string | null } | null> {
 // follow), browser timezone as fallback when the IP lookup fails. This matches
 // user expectation that a Swiss user with a Paris-timezone laptop still sees
 // Swiss pricing.
+//
+// The answer is remembered for the visit, and that is the point rather than a saving: the pricing
+// page and the purchase order are two page loads, each of which would otherwise ask again. The two
+// lookups can disagree — ipapi.co rate-limits, and a refused answer falls through to the browser
+// timezone, which is a different signal entirely — and a visitor quoted in euros on one page and in
+// francs on the next has been told two different prices for the same thing.
+const REMEMBERED_COUNTRY = 'docnote:country';
+
+function rememberedCountry(): string | null {
+  try {
+    return sessionStorage.getItem(REMEMBERED_COUNTRY);
+  } catch {
+    // Private windows and blocked site data: detection still works, it is just asked again.
+    return null;
+  }
+}
+
+function rememberCountry(country: string): void {
+  try {
+    sessionStorage.setItem(REMEMBERED_COUNTRY, country);
+  } catch {
+    /* nothing to do: the visit simply does not carry the answer forward */
+  }
+}
+
 export async function detectUserCountry(): Promise<string | null> {
+  const remembered = rememberedCountry();
+  if (remembered) return remembered;
+
   const ip = await fetchIpLocation();
-  if (ip?.country_code) return ip.country_code;
-  return getCountryByTimezone();
+  const country = ip?.country_code ?? getCountryByTimezone();
+  if (country) rememberCountry(country);
+  return country;
 }
 
 export async function detectUserCurrency(): Promise<Currency> {

@@ -282,16 +282,18 @@ const secondaryBtn =
     }
   })();
 
-  const fillCountries = (selected: string) => {
+  const fillCountries = (selected: string | null) => {
     const select = $<HTMLSelectElement>('f-country');
     const options = COUNTRY_CODES
       .map((code) => ({ code, name: countryNames(code) }))
       .sort((a, b) => a.name.localeCompare(b.name, locale));
 
-    select.innerHTML = options
-      .map(({ code, name }) => `<option value="${code}">${name}</option>`)
-      .join('');
-    select.value = selected;
+    // A blank first entry rather than the alphabetical winner: until detection answers, the page has
+    // no country, and offering Afghanistan as though it had one is worse than offering nothing.
+    select.innerHTML =
+      '<option value=""></option>' +
+      options.map(({ code, name }) => `<option value="${code}">${name}</option>`).join('');
+    select.value = selected ?? '';
   };
 
   /** The country the buyer has settled on — the list is never empty once the page has loaded. */
@@ -607,14 +609,16 @@ const secondaryBtn =
     if (params.get('period') === 'monthly') setPeriod('monthly');
     setQuantity(Number(params.get('licences')) || 1);
 
-    // The list is filled straight away so the form is usable even if detection never answers, and
-    // the detected country is only a first suggestion — the buyer's own choice always wins.
-    fillCountries('CH');
-    applyCountry();
+    // The list is populated at once so the form is usable, but nothing is priced yet: the price
+    // still appears exactly once, when detection answers, rather than showing euros and then
+    // correcting itself to francs in front of the visitor.
+    fillCountries(null);
 
+    // Detection only suggests, and it is the same call the pricing page made — now answering from
+    // the same remembered value, so the figure carried over from that page holds. Whatever the
+    // buyer picks afterwards wins, and re-prices on the spot.
     detectUserCountry().then((country) => {
-      if (countryChosenByHand || !country || !COUNTRY_CODES.includes(country)) return;
-      fillCountries(country);
+      if (!countryChosenByHand && country && COUNTRY_CODES.includes(country)) fillCountries(country);
       applyCountry();
     });
   }
