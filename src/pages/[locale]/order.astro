@@ -79,7 +79,7 @@ const secondaryBtn =
             <div class="flex justify-between text-lg font-bold text-gray-900">
               <span>{o.total}</span><span id="total-price">—</span>
             </div>
-            <p class="text-xs text-gray-500 pt-1">{o.vatNote}</p>
+            <p id="billed-note" class="hidden text-xs text-gray-500 pt-1" data-template={o.billedIn}></p>
           </div>
         </div>
 
@@ -87,27 +87,20 @@ const secondaryBtn =
           <h2 class={stepTitle}>2. {o.step2}</h2>
           <p class="mt-2 text-sm text-gray-500">{o.emailNote}</p>
 
-          <div id="email-step" class="mt-5 space-y-3">
+          <div class="mt-5 space-y-4">
             <div>
               <label class={label} for="email">{o.emailLabel}</label>
               <input id="email" type="email" autocomplete="email" class={input} />
             </div>
-            <button type="button" id="send-code" class={secondaryBtn}>{o.sendCode}</button>
-          </div>
-
-          <div id="code-step" class="hidden mt-5 space-y-3">
-            <p class="text-sm text-green-700">{o.codeSent}</p>
             <div>
-              <label class={label} for="code">{o.codeLabel}</label>
-              <input id="code" type="text" inputmode="numeric" maxlength="4" class={input} />
+              <label class={label} for="email-confirm">{o.emailConfirmLabel}</label>
+              <input id="email-confirm" type="email" autocomplete="off" class={input} />
             </div>
-            <button type="button" id="validate-code" class={secondaryBtn}>{o.confirm}</button>
+            <p id="email-mismatch" class="hidden text-sm text-red-600">{o.emailMismatch}</p>
           </div>
-
-          <p id="identified" class="hidden mt-5 text-sm text-green-700"></p>
         </div>
 
-        <div id="practice-card" class={`${card} opacity-40 pointer-events-none`}>
+        <div id="practice-card" class={card}>
           <h2 class={stepTitle}>3. {o.step3}</h2>
           <p class="mt-2 text-sm text-gray-500">{o.practiceNote}</p>
           <div class="mt-5 space-y-4">
@@ -151,14 +144,14 @@ const secondaryBtn =
         </div>
 
         {/* Only shown from two licences: with one, the seat is the buyer's own address. */}
-        <div id="holders-card" class={`${card} hidden`}>
+        <div id="holders-card" class={card}>
           <h2 class={stepTitle}>4. {o.step4}</h2>
-          <p class="mt-2 text-sm text-gray-500">{o.holdersSelf} {o.holdersNote}</p>
-          <textarea id="seats" rows="4" class={`${input} mt-4 font-mono text-sm`} placeholder="anne@cabinet.ch"></textarea>
+          <p class="mt-2 text-sm text-gray-500">{o.holdersNote}</p>
+          <div id="seats" class="mt-4 space-y-3" data-label={o.holderLabel}></div>
           <p id="seat-issues" class="mt-2 text-sm"></p>
         </div>
 
-        <div id="sign-card" class={`${card} opacity-40 pointer-events-none`}>
+        <div id="sign-card" class={card}>
           <h2 class={stepTitle}>5. {o.step5}</h2>
           <div class="mt-5 space-y-4">
             <button type="button" id="open-document" class={secondaryBtn}>{o.openDocument}</button>
@@ -170,7 +163,13 @@ const secondaryBtn =
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input id="chk-terms" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600" />
-              <span class="text-gray-700">{o.acceptTerms}</span>
+              <span class="text-gray-700">
+                {o.acceptTerms.split('{terms}')[0]}<a
+                  href={`/${locale}/gtc/`}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-indigo-600 underline hover:text-indigo-700">{o.termsLink}</a>{o.acceptTerms.split('{terms}')[1]}
+              </span>
             </label>
 
             <div>
@@ -192,6 +191,7 @@ const secondaryBtn =
           <div class="space-y-3">
             <button type="button" id="pay" class={primaryBtn}>{o.pay}</button>
             <button type="button" id="open-signed" class={secondaryBtn}>{o.openSigned}</button>
+            <button type="button" id="download-signed" class={secondaryBtn}>{o.download}</button>
             <p class="text-xs text-gray-500 text-center">{o.payLater}</p>
           </div>
         </div>
@@ -202,22 +202,31 @@ const secondaryBtn =
 
 <script>
   import { detectUserCountry } from '../../utils/currency';
-  import { parseSeatEmails, seatIssues, canSign, formatMoney } from '../../utils/order';
+  import {
+    BILLED_CURRENCY,
+    baseForCurrency,
+    currencyForCountry,
+    formatLocalPrice,
+    isConverted,
+    toLocalAmount,
+  } from '../../utils/pricing';
+  import { seatIssues, canSign, isEmail } from '../../utils/order';
 
   const API = import.meta.env.PUBLIC_API_URL || 'https://api.docnote.care';
   const locale = window.location.pathname.split('/')[1] || 'en';
   const copy = JSON.parse(document.getElementById('order-copy')?.textContent || '{}');
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const value = (id: string) => ($(id) as HTMLInputElement).value.trim();
 
   let quantity = 1;
   let period: 'annual' | 'monthly' = 'annual';
-  let region: 'ch' | 'eu' = 'ch';
-  let token: string | null = null;
-  let email = '';
+  let currency = 'EUR';
   let orderId: string | null = null;
+  /** What stands in for a session: handed over once, when the draft is created. */
+  let accessToken: string | null = null;
   let documentSeen = false;
-  let signedOrderId: string | null = null;
+  let signed = false;
 
   const notice = (message: string, tone: 'error' | 'info' = 'error') => {
     const el = $('notice');
@@ -234,7 +243,7 @@ const secondaryBtn =
     const response = await fetch(`${API}${path}`, {
       method,
       headers: {
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...(accessToken ? { 'X-Order-Token': accessToken } : {}),
         ...(body ? { 'Content-Type': 'application/json' } : {}),
       },
       ...(body ? { body: JSON.stringify(body) } : {}),
@@ -249,27 +258,88 @@ const secondaryBtn =
 
   // ── 1. Licences and price ───────────────────────────────────────────
   //
-  // The price is asked of the server even before there is an account: it is the same figure the
-  // purchase order will carry, read from Stripe, so the page can never quote something the document
-  // then contradicts.
+  // The amount comes from the backend, which reads it from Stripe, so the page can never quote a
+  // figure the purchase order then contradicts. Only the display currency is worked out here, and
+  // when it differs from the billed one the page says which card charge to expect.
   let priceTimer: ReturnType<typeof setTimeout>;
   const refreshPrice = () => {
     clearTimeout(priceTimer);
     priceTimer = setTimeout(async () => {
+      const base = baseForCurrency(currency);
       try {
-        const quote = await call('POST', '/orders/quote', { quantity, period, region });
-        $('unit-price').textContent = formatMoney(quote.unitAmount, quote.currency);
-        $('total-price').textContent = formatMoney(quote.totalAmount, quote.currency);
+        const quote = await call('POST', '/orders/quote', { quantity, period, region: base });
+        // The total is the displayed unit price times the licences, not a second conversion of the
+        // server's total: rounding each separately can leave a total that does not match the
+        // multiplication a buyer does in their head.
+        const unit = toLocalAmount(quote.unitAmount / 100, currency);
+        const total = unit * quote.quantity;
+
+        $('unit-price').textContent = formatLocalPrice(unit, currency);
+        $('total-price').textContent = formatLocalPrice(total, currency);
+
+        const billed = $('billed-note');
+        if (isConverted(currency)) {
+          billed.textContent = (billed.dataset.template ?? '').replace('{c}', BILLED_CURRENCY[base]);
+          billed.classList.remove('hidden');
+        } else {
+          billed.classList.add('hidden');
+        }
       } catch (error) {
         notice((error as Error).message);
       }
     }, 200);
   };
 
+  // ── 4. One box per licence ──────────────────────────────────────────
+  //
+  // A box each rather than one free-text field: a purchase order for four licences should look like
+  // four licences. The first is as editable as the others — an IT department ordering for its doctors
+  // is not itself a holder.
+  const seatValues: string[] = [];
+
+  const renderSeats = () => {
+    const container = $('seats');
+    const label = container.dataset.label ?? 'Holder';
+
+    while (seatValues.length < quantity) seatValues.push('');
+    seatValues.length = quantity;
+
+    container.innerHTML = '';
+    seatValues.forEach((seat, index) => {
+      const row = document.createElement('div');
+      row.innerHTML = `
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="seat-${index}">${label} ${index + 1}</label>
+        <input id="seat-${index}" type="email" autocomplete="off"
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />`;
+      const field = row.querySelector('input') as HTMLInputElement;
+      field.value = seat;
+      field.addEventListener('input', () => {
+        seatValues[index] = field.value.trim().toLowerCase();
+        refreshSeatIssues();
+        refreshSignButton();
+      });
+      container.appendChild(row);
+    });
+  };
+
+  const filledSeats = () => seatValues.map((seat) => seat.trim().toLowerCase()).filter(Boolean);
+
+  const refreshSeatIssues = () => {
+    const issues = seatIssues(filledSeats(), quantity);
+    const lines: string[] = [];
+    if (issues.invalid.length) lines.push(`${copy.invalidAddresses} ${issues.invalid.join(', ')}`);
+    if (issues.duplicates.length) lines.push(`${copy.duplicateAddresses} ${issues.duplicates.join(', ')}`);
+    if (issues.missing) lines.push(`${issues.missing} ${copy.missingAddresses}`);
+
+    const el = $('seat-issues');
+    el.textContent = lines.join(' · ');
+    el.className = `mt-2 text-sm ${issues.invalid.length || issues.duplicates.length ? 'text-red-600' : 'text-amber-600'}`;
+  };
+
   const setQuantity = (next: number) => {
     quantity = Math.max(1, next);
     $('qty').textContent = String(quantity);
-    $('holders-card').classList.toggle('hidden', quantity < 2);
+    renderSeats();
     refreshSeatIssues();
     refreshPrice();
     refreshSignButton();
@@ -284,114 +354,64 @@ const secondaryBtn =
     refreshPrice();
   };
 
-  // ── 2. Who is buying ────────────────────────────────────────────────
+  // ── 2 & 3. Who is buying ────────────────────────────────────────────
   //
-  // The purchase order names who commits, and the backend takes that from the session — so the buyer
-  // identifies themselves with the same 4-digit code the app uses. A new address simply becomes a new
-  // account, exactly as it would on first login.
-  const enable = (id: string) => $(id).classList.remove('opacity-40', 'pointer-events-none');
+  // The address is typed twice and never verified: it is where the purchase order is sent, and the
+  // certificate says in as many words that it was declared rather than checked.
+  const emailsAgree = () => {
+    const first = value('email').toLowerCase();
+    const second = value('email-confirm').toLowerCase();
+    const mismatch = Boolean(second) && first !== second;
+    $('email-mismatch').classList.toggle('hidden', !mismatch);
+    return isEmail(first) && first === second;
+  };
 
-  $('send-code').addEventListener('click', async () => {
-    clearNotice();
-    const value = ($('email') as HTMLInputElement).value.trim().toLowerCase();
-    if (!value) return;
-    try {
-      await call('POST', '/sendAuthCode', { email: value });
-      email = value;
-      $('code-step').classList.remove('hidden');
-      ($('code') as HTMLInputElement).focus();
-    } catch (error) {
-      notice((error as Error).message);
-    }
-  });
-
-  $('validate-code').addEventListener('click', async () => {
-    clearNotice();
-    try {
-      const result = await call('POST', '/validateAuthCode', { email, code: ($('code') as HTMLInputElement).value.trim() });
-      token = result.token;
-      $('email-step').classList.add('hidden');
-      $('code-step').classList.add('hidden');
-      const badge = $('identified');
-      badge.textContent = `${copy.identified} ${email}`;
-      badge.classList.remove('hidden');
-      enable('practice-card');
-      enable('sign-card');
-      refreshSeatIssues();
-      refreshSignButton();
-    } catch (error) {
-      notice((error as Error).message);
-    }
-  });
-
-  // ── 3 & 4. The practice, and who the licences are for ───────────────
   const identity = () => ({
-    name: ($('f-name') as HTMLInputElement).value.trim(),
-    companyName: ($('f-company') as HTMLInputElement).value.trim(),
-    address: ($('f-address') as HTMLInputElement).value.trim(),
-    zip: ($('f-zip') as HTMLInputElement).value.trim(),
-    city: ($('f-city') as HTMLInputElement).value.trim(),
-    country: ($('f-country') as HTMLInputElement).value.trim(),
-    vatId: ($('f-vat') as HTMLInputElement).value.trim(),
-    phone: ($('f-phone') as HTMLInputElement).value.trim(),
+    email: value('email').toLowerCase(),
+    name: value('f-name'),
+    companyName: value('f-company'),
+    address: value('f-address'),
+    zip: value('f-zip'),
+    city: value('f-city'),
+    country: value('f-country'),
+    vatId: value('f-vat'),
+    phone: value('f-phone'),
   });
 
   const identityComplete = () => {
     const i = identity();
-    return Boolean(i.name && i.companyName && i.address && i.zip && i.city && i.country);
-  };
-
-  /** The buyer holds the first licence; the textarea is for the others. */
-  const allSeats = () => {
-    const others = parseSeatEmails(($('seats') as HTMLTextAreaElement).value);
-    return [email, ...others.filter((e) => e !== email)];
-  };
-
-  const refreshSeatIssues = () => {
-    if (quantity < 2 || !email) {
-      $('seat-issues').textContent = '';
-      return;
-    }
-    const issues = seatIssues(allSeats(), quantity);
-    const lines: string[] = [];
-    if (issues.invalid.length) lines.push(`${copy.invalidAddresses} ${issues.invalid.join(', ')}`);
-    if (issues.duplicates.length) lines.push(`${copy.duplicateAddresses} ${issues.duplicates.join(', ')}`);
-    if (issues.missing) lines.push(`${issues.missing} ${copy.missingAddresses}`);
-    if (issues.extra) lines.push(`${issues.extra} ${copy.extraAddresses}`);
-
-    const el = $('seat-issues');
-    el.textContent = lines.join(' · ');
-    el.className = `mt-2 text-sm ${issues.invalid.length || issues.duplicates.length ? 'text-red-600' : 'text-amber-600'}`;
+    return Boolean(emailsAgree() && i.name && i.companyName && i.address && i.zip && i.city && i.country);
   };
 
   // ── 5. Review and sign ──────────────────────────────────────────────
   const refreshSignButton = () => {
     const ready =
-      Boolean(token) &&
       documentSeen &&
       ($('chk-read') as HTMLInputElement).checked &&
       canSign({
         termsAccepted: ($('chk-terms') as HTMLInputElement).checked,
-        signerName: ($('signer') as HTMLInputElement).value,
-        emails: allSeats(),
+        signerName: value('signer'),
+        emails: filledSeats(),
         quantity,
       });
     ($('sign') as HTMLButtonElement).disabled = !ready;
     $('fill-first').classList.toggle('hidden', identityComplete());
+    ($('open-document') as HTMLButtonElement).disabled = !identityComplete();
   };
 
-  /** Opens the PDF, creating or refreshing the draft first. This is the first write of anything. */
+  /** Creates or refreshes the draft, then shows the PDF. This is the first write of anything. */
   $('open-document').addEventListener('click', async () => {
     clearNotice();
-    if (!token || !identityComplete()) return;
+    if (!identityComplete()) return;
     try {
-      const draft = orderId
-        ? await call('PATCH', `/orders/${orderId}`, { ...identity(), quantity, period, seatEmails: allSeats() })
-        : await call('POST', '/orders', { ...identity(), quantity, period });
-      orderId = draft.id;
-      if (!draft.seats?.length) await call('PATCH', `/orders/${orderId}`, { seatEmails: allSeats() });
+      if (!orderId) {
+        const created = await call('POST', '/orders', { ...identity(), quantity, period });
+        orderId = created.id;
+        accessToken = created.accessToken;
+      }
+      await call('PATCH', `/orders/${orderId}`, { ...identity(), quantity, period, seatEmails: filledSeats() });
 
-      await openDocument(orderId!);
+      await openDocument(orderId!, false);
       documentSeen = true;
       $('open-document').textContent = copy.reopenDocument;
       refreshSignButton();
@@ -400,12 +420,22 @@ const secondaryBtn =
     }
   });
 
-  /** The document is never a public URL: it is fetched with the session token and shown from memory. */
-  const openDocument = async (id: string) => {
-    const response = await fetch(`${API}/orders/${id}/document`, { headers: { Authorization: `Bearer ${token}` } });
+  /** The document is never a public URL: it is fetched with the order's token and shown from memory. */
+  const openDocument = async (id: string, download: boolean) => {
+    const response = await fetch(`${API}/orders/${id}/document`, { headers: { 'X-Order-Token': accessToken ?? '' } });
     if (!response.ok) throw new Error(copy.genericError);
     const url = URL.createObjectURL(await response.blob());
-    window.open(url, '_blank');
+
+    if (download) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `bon-de-commande-${id}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } else {
+      window.open(url, '_blank');
+    }
     setTimeout(() => URL.revokeObjectURL(url), 60_000);
   };
 
@@ -421,11 +451,8 @@ const secondaryBtn =
     clearNotice();
     if (!orderId) return;
     try {
-      const signed = await call('POST', `/orders/${orderId}/sign`, {
-        signerName: ($('signer') as HTMLInputElement).value,
-        termsAccepted: true,
-      });
-      signedOrderId = signed.id;
+      await call('POST', `/orders/${orderId}/sign`, { signerName: value('signer'), termsAccepted: true });
+      signed = true;
       $('order-form').classList.add('hidden');
       $('signed-panel').classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -436,24 +463,25 @@ const secondaryBtn =
 
   $('pay').addEventListener('click', async () => {
     clearNotice();
-    if (!signedOrderId) return;
+    if (!orderId) return;
     try {
-      const { url } = await call('POST', `/orders/${signedOrderId}/checkout`, { locale });
+      const { url } = await call('POST', `/orders/${orderId}/checkout`, { locale });
       window.location.href = url;
     } catch (error) {
       notice((error as Error).message);
     }
   });
 
-  $('open-signed').addEventListener('click', async () => {
-    if (signedOrderId) await openDocument(signedOrderId).catch(() => notice(copy.genericError));
+  $('open-signed').addEventListener('click', () => {
+    if (orderId && signed) openDocument(orderId, false).catch(() => notice(copy.genericError));
   });
 
-  for (const id of ['chk-terms', 'signer', 'seats']) {
-    $(id).addEventListener('input', () => {
-      refreshSeatIssues();
-      refreshSignButton();
-    });
+  $('download-signed').addEventListener('click', () => {
+    if (orderId && signed) openDocument(orderId, true).catch(() => notice(copy.genericError));
+  });
+
+  for (const id of ['email', 'email-confirm', 'chk-terms', 'signer']) {
+    $(id).addEventListener('input', refreshSignButton);
     $(id).addEventListener('change', refreshSignButton);
   }
   for (const id of ['f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
@@ -477,7 +505,7 @@ const secondaryBtn =
     setQuantity(Number(params.get('licences')) || 1);
 
     detectUserCountry().then((country) => {
-      region = country === 'CH' || country === 'LI' ? 'ch' : 'eu';
+      currency = currencyForCountry(country);
       refreshPrice();
     });
   }

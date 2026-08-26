@@ -56,8 +56,9 @@ const breadcrumbLd = buildBreadcrumbLd([
           <h3 class="text-xl font-bold text-gray-900 mb-2">{t.pricing.professional.name}</h3>
             <p class="text-gray-600 mb-6">{t.pricing.professional.description}</p>
             <div class="mb-6">
-              <span class="text-4xl font-bold text-gray-900" id="pro-price" data-monthly-usd={t.pricing.professional.monthlyPrice} data-yearly-usd={t.pricing.professional.price} data-monthly-chf="109" data-yearly-chf="99" data-monthly-eur="89" data-yearly-eur="79" data-monthly-fr="79" data-yearly-fr="69">{t.pricing.professional.price}</span>
+              <span class="text-4xl font-bold text-gray-900" id="pro-price">{t.pricing.professional.price}</span>
               <span class="text-gray-500">{t.pricing.perMonth}</span>
+              <p id="billed-note" class="hidden text-xs text-gray-500 mt-2" data-template={t.pricing.billedIn}></p>
             </div>
             <ul class="space-y-3 mb-8 flex-grow">
               {t.pricing.professional.features.map((feature: string) => (
@@ -122,18 +123,25 @@ const breadcrumbLd = buildBreadcrumbLd([
 </Layout>
 
 <script>
-  import { detectUserCurrency, detectUserCountry, formatPrice, type Currency } from '../../utils/currency';
+  import { detectUserCountry } from '../../utils/currency';
+  import {
+    BASE_PRICES,
+    BILLED_CURRENCY,
+    baseForCurrency,
+    currencyForCountry,
+    formatLocalPrice,
+    isConverted,
+    toLocalAmount,
+  } from '../../utils/pricing';
 
   const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
   const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
   const toggleBg = document.getElementById('toggle-bg') as HTMLElement;
   const wrapper = document.getElementById('toggle-wrapper') as HTMLElement;
   const proPrice = document.getElementById('pro-price');
+  const billedNote = document.getElementById('billed-note');
   const subscriptionBtn = document.getElementById('subscription-btn') as HTMLAnchorElement;
 
-  let currentCurrency: Currency = 'USD';
-  let yearlyPriceValue = parseInt(proPrice?.dataset.yearlyUsd || '79');
-  let monthlyPriceValue = parseInt(proPrice?.dataset.monthlyUsd || '89');
   let yearlyPrice = '';
   let monthlyPrice = '';
   // Where "Get Started" goes: the purchase order, carrying the period the visitor picked here.
@@ -141,30 +149,20 @@ const breadcrumbLd = buildBreadcrumbLd([
   const orderUrl = (chosen: 'yearly' | 'monthly') => `/${pageLocale}/order/?period=${chosen}`;
 
   async function initializePricing() {
-    currentCurrency = await detectUserCurrency();
     const country = await detectUserCountry();
+    const currency = currencyForCountry(country);
+    const base = baseForCurrency(currency);
 
-    // France gets its own prices (79/69 EUR) and its own Stripe links — this
-    // override wins over the generic EUR/CHF branches below.
-    if (country === 'FR') {
-      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyFr || '69');
-      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyFr || '79');
-    } else if (currentCurrency === 'CHF') {
-      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyChf || '99');
-      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyChf || '109');
-    } else if (currentCurrency === 'EUR') {
-      yearlyPriceValue = parseInt(proPrice?.dataset.yearlyEur || '79');
-      monthlyPriceValue = parseInt(proPrice?.dataset.monthlyEur || '89');
-    }
+    yearlyPrice = formatLocalPrice(toLocalAmount(BASE_PRICES[base].yearly, currency), currency);
+    monthlyPrice = formatLocalPrice(toLocalAmount(BASE_PRICES[base].monthly, currency), currency);
 
-    yearlyPrice = formatPrice(yearlyPriceValue, currentCurrency);
-    monthlyPrice = formatPrice(monthlyPriceValue, currentCurrency);
+    if (proPrice) proPrice.textContent = yearlyPrice;
+    if (subscriptionBtn) subscriptionBtn.href = orderUrl('yearly');
 
-    if (proPrice) {
-      proPrice.textContent = yearlyPrice;
-    }
-    if (subscriptionBtn) {
-      subscriptionBtn.href = orderUrl('yearly');
+    // Shown in one currency, charged in another: say so rather than let checkout surprise anyone.
+    if (billedNote && isConverted(currency)) {
+      billedNote.textContent = (billedNote.dataset.template ?? '').replace('{c}', BILLED_CURRENCY[base]);
+      billedNote.classList.remove('hidden');
     }
   }
 

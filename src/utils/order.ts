@@ -8,29 +8,23 @@
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/**
- * Reads a list of addresses however it was pasted — one per line out of a mail client, or a comma
- * separated run out of a spreadsheet.
- *
- * Repeats are KEPT. Removing one silently would buy the practice fewer licences than it paid for;
- * `seatIssues` surfaces it instead, so the buyer decides.
- */
-export function parseSeatEmails(raw: string): string[] {
-  return raw
-    .split(/[\s,;]+/)
-    .map((entry) => entry.trim().toLowerCase())
-    .filter((entry) => entry.length > 0);
+export function isEmail(value: string): boolean {
+  return EMAIL.test(value.trim().toLowerCase());
 }
 
 export interface SeatIssues {
   invalid: string[];
   duplicates: string[];
-  /** How many addresses are still owed for the licences bought. */
+  /** How many boxes are still empty. */
   missing: number;
-  /** How many were given beyond them. */
-  extra: number;
 }
 
+/**
+ * What is wrong with the addresses typed so far.
+ *
+ * A repeat is reported rather than removed: one licence per doctor, and silently dropping a duplicate
+ * would leave the practice paying for a seat nobody holds.
+ */
 export function seatIssues(emails: string[], quantity: number): SeatIssues {
   const seen = new Set<string>();
   const duplicates: string[] = [];
@@ -44,7 +38,6 @@ export function seatIssues(emails: string[], quantity: number): SeatIssues {
     invalid: emails.filter((email) => !EMAIL.test(email)),
     duplicates,
     missing: Math.max(0, quantity - emails.length),
-    extra: Math.max(0, emails.length - quantity),
   };
 }
 
@@ -63,7 +56,7 @@ export function canSign(params: {
   if (!params.termsAccepted || !params.signerName.trim()) return false;
 
   const issues = seatIssues(params.emails, params.quantity);
-  return issues.invalid.length === 0 && issues.duplicates.length === 0 && issues.missing === 0 && issues.extra === 0;
+  return issues.invalid.length === 0 && issues.duplicates.length === 0 && issues.missing === 0;
 }
 
 /** The same shape the purchase order prints, so the page and the PDF never quote differently. */
