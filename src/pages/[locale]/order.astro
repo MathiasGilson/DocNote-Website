@@ -499,7 +499,8 @@ const secondaryBtn =
         orderId = created.id;
         accessToken = created.accessToken;
       }
-      await call('PATCH', `/orders/${orderId}`, { ...identity(), quantity, period, seatEmails: filledSeats() });
+      const { email: _addressIsFixed, ...editable } = identity();
+      await call('PATCH', `/orders/${orderId}`, { ...editable, quantity, period, seatEmails: filledSeats() });
       await call('POST', `/orders/${orderId}/sign`, { signerName: value('signer'), termsAccepted: true });
 
       signed = true;
