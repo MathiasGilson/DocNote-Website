@@ -313,7 +313,6 @@ const pagesCollection = defineCollection({
       billedIn: z.string(),
       download: z.string(),
       missingFields: z.string(),
-      perMonth: z.string(),
       billedYearly: z.string(),
       billedMonthly: z.string(),
       totalLine: z.string(),

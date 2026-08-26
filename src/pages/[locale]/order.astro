@@ -74,8 +74,7 @@ const secondaryBtn =
 
           <div class="mt-6 pt-5 border-t border-gray-100 space-y-1">
             <div class="flex justify-between text-gray-600">
-              <span>{o.unitPrice}</span>
-              <span><span id="unit-price">—</span> <span class="text-gray-500">{o.perMonth}</span></span>
+              <span>{o.unitPrice}</span><span id="unit-price">—</span>
             </div>
             <div class="flex justify-between text-sm text-gray-500">
               <span id="total-line"></span><span id="billed-period"></span>
@@ -264,16 +263,13 @@ const secondaryBtn =
       try {
         const quote = await call('POST', '/orders/quote', { quantity, period, region: base });
 
-        // Presented exactly as the pricing page presents it: a price per licence per month. An annual
-        // subscription is one payment of twelve, so the monthly figure is what the two pages have in
-        // common — quoting one page per year and the other per month made them look like different
-        // offers. Everything below is derived from this one figure, so the arithmetic on screen adds
-        // up whatever the currency rounds to.
-        const months = period === 'annual' ? 12 : 1;
-        const perMonth = toLocalAmount(quote.unitAmount / 100 / months, currency);
-        const perLicence = perMonth * months;
+        // The price for the period ordered: a yearly subscription is quoted for the year, which is
+        // what the purchase order itself says and what the card is charged. The line below spells out
+        // the multiplication, and the total is derived from this same figure so the arithmetic on
+        // screen adds up whatever the currency rounds to.
+        const perLicence = toLocalAmount(quote.unitAmount / 100, currency);
 
-        $('unit-price').textContent = formatLocalPrice(perMonth, currency);
+        $('unit-price').textContent = formatLocalPrice(perLicence, currency);
         $('total-price').textContent = formatLocalPrice(perLicence * quantity, currency);
         $('total-line').textContent = (copy.totalLine ?? '')
           .replace('{n}', String(quantity))
