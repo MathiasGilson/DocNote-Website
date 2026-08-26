@@ -136,7 +136,7 @@ const secondaryBtn =
             </div>
             <div>
               <label class={label} for="f-country">{o.country}</label>
-              <input id="f-country" type="text" class={input} />
+              <select id="f-country" class={input}></select>
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div id="vat-field">
@@ -253,6 +253,56 @@ const secondaryBtn =
       throw new Error(Array.isArray(message) ? message[0] : message);
     }
     return data;
+  };
+
+  // ── The billing country ─────────────────────────────────────────────
+  //
+  // One country decides two things that must never disagree: the currency this page shows, and the
+  // tariff the backend puts on the purchase order. Before this was a list it was free text, and the
+  // document was priced from the buyer's DocNote account instead — which most buyers do not have, so
+  // every one of them was billed in francs whatever the page had quoted.
+  //
+  // The names are asked of the browser rather than translated here: 249 countries in every locale we
+  // publish is a translation file nobody would keep correct.
+  const COUNTRY_CODES = ('AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ ' +
+    'CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR ' +
+    'GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP ' +
+    'KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ ' +
+    'NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW ' +
+    'SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ ' +
+    'UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW').split(' ');
+
+  const countryNames = (() => {
+    try {
+      const names = new Intl.DisplayNames([locale], { type: 'region' });
+      return (code: string) => names.of(code) ?? code;
+    } catch {
+      // A browser without Intl.DisplayNames still gets a usable list, just in codes.
+      return (code: string) => code;
+    }
+  })();
+
+  const fillCountries = (selected: string) => {
+    const select = $<HTMLSelectElement>('f-country');
+    const options = COUNTRY_CODES
+      .map((code) => ({ code, name: countryNames(code) }))
+      .sort((a, b) => a.name.localeCompare(b.name, locale));
+
+    select.innerHTML = options
+      .map(({ code, name }) => `<option value="${code}">${name}</option>`)
+      .join('');
+    select.value = selected;
+  };
+
+  /** The country the buyer has settled on — the list is never empty once the page has loaded. */
+  const chosenCountry = () => $<HTMLSelectElement>('f-country').value;
+
+  /** Set once the buyer picks for themselves, so a slow detection cannot overrule them. */
+  let countryChosenByHand = false;
+
+  const applyCountry = () => {
+    currency = currencyForCountry(chosenCountry());
+    refreshPrice();
   };
 
   // ── 1. Licences and price ───────────────────────────────────────────
@@ -532,6 +582,12 @@ const secondaryBtn =
   }
   $('chk-terms').addEventListener('change', clearMarks);
 
+  $('f-country').addEventListener('change', () => {
+    countryChosenByHand = true;
+    clearMarks();
+    applyCountry();
+  });
+
   $('bill-company').addEventListener('click', () => setBillTo('company'));
   $('bill-individual').addEventListener('click', () => setBillTo('individual'));
 
@@ -551,9 +607,15 @@ const secondaryBtn =
     if (params.get('period') === 'monthly') setPeriod('monthly');
     setQuantity(Number(params.get('licences')) || 1);
 
+    // The list is filled straight away so the form is usable even if detection never answers, and
+    // the detected country is only a first suggestion — the buyer's own choice always wins.
+    fillCountries('CH');
+    applyCountry();
+
     detectUserCountry().then((country) => {
-      currency = currencyForCountry(country);
-      refreshPrice();
+      if (countryChosenByHand || !country || !COUNTRY_CODES.includes(country)) return;
+      fillCountries(country);
+      applyCountry();
     });
   }
 </script>
