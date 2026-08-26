@@ -74,9 +74,13 @@ const secondaryBtn =
 
           <div class="mt-6 pt-5 border-t border-gray-100 space-y-1">
             <div class="flex justify-between text-gray-600">
-              <span>{o.unitPrice}</span><span id="unit-price">—</span>
+              <span>{o.unitPrice}</span>
+              <span><span id="unit-price">—</span> <span class="text-gray-500">{o.perMonth}</span></span>
             </div>
-            <div class="flex justify-between text-lg font-bold text-gray-900">
+            <div class="flex justify-between text-sm text-gray-500">
+              <span id="total-line"></span><span id="billed-period"></span>
+            </div>
+            <div class="flex justify-between text-lg font-bold text-gray-900 pt-1">
               <span>{o.total}</span><span id="total-price">—</span>
             </div>
             <p id="billed-note" class="hidden text-xs text-gray-500 pt-1" data-template={o.billedIn}></p>
@@ -154,13 +158,6 @@ const secondaryBtn =
         <div id="sign-card" class={card}>
           <h2 class={stepTitle}>5. {o.step5}</h2>
           <div class="mt-5 space-y-4">
-            <button type="button" id="open-document" class={secondaryBtn}>{o.openDocument}</button>
-            <p id="fill-first" class="text-sm text-gray-500">{o.fillFirst}</p>
-
-            <label id="row-read" class="flex items-start gap-3 cursor-pointer rounded-lg p-1 -m-1">
-              <input id="chk-read" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600" />
-              <span class="text-gray-700">{o.declareRead}</span>
-            </label>
             <label id="row-terms" class="flex items-start gap-3 cursor-pointer rounded-lg p-1 -m-1">
               <input id="chk-terms" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600" />
               <span class="text-gray-700">
@@ -178,7 +175,7 @@ const secondaryBtn =
             </div>
             <p class="text-xs text-gray-500">{o.signatureNote}</p>
 
-            <button type="button" id="sign" class={primaryBtn} disabled>{o.sign}</button>
+            <button type="button" id="sign" class={primaryBtn}>{o.sign}</button>
             <p class="text-xs text-gray-500 text-center">{o.grantsNothing}</p>
           </div>
         </div>
@@ -224,7 +221,6 @@ const secondaryBtn =
   let orderId: string | null = null;
   /** What stands in for a session: handed over once, when the draft is created. */
   let accessToken: string | null = null;
-  let documentSeen = false;
   let signed = false;
 
   const notice = (message: string, tone: 'error' | 'info' = 'error') => {
@@ -267,15 +263,24 @@ const secondaryBtn =
       const base = baseForCurrency(currency);
       try {
         const quote = await call('POST', '/orders/quote', { quantity, period, region: base });
-        // The total is the displayed unit price times the licences, not a second conversion of the
-        // server's total: rounding each separately can leave a total that does not match the
-        // multiplication a buyer does in their head.
-        const unit = toLocalAmount(quote.unitAmount / 100, currency);
-        const total = unit * quote.quantity;
 
-        $('unit-price').textContent = formatLocalPrice(unit, currency);
-        $('total-price').textContent = formatLocalPrice(total, currency);
+        // Presented exactly as the pricing page presents it: a price per licence per month. An annual
+        // subscription is one payment of twelve, so the monthly figure is what the two pages have in
+        // common — quoting one page per year and the other per month made them look like different
+        // offers. Everything below is derived from this one figure, so the arithmetic on screen adds
+        // up whatever the currency rounds to.
+        const months = period === 'annual' ? 12 : 1;
+        const perMonth = toLocalAmount(quote.unitAmount / 100 / months, currency);
+        const perLicence = perMonth * months;
 
+        $('unit-price').textContent = formatLocalPrice(perMonth, currency);
+        $('total-price').textContent = formatLocalPrice(perLicence * quantity, currency);
+        $('total-line').textContent = (copy.totalLine ?? '')
+          .replace('{n}', String(quantity))
+          .replace('{unit}', formatLocalPrice(perLicence, currency));
+        $('billed-period').textContent = period === 'annual' ? copy.billedYearly : copy.billedMonthly;
+
+        // Shown in one currency, charged in another: say so rather than let checkout surprise anyone.
         const billed = $('billed-note');
         if (isConverted(currency)) {
           billed.textContent = (billed.dataset.template ?? '').replace('{c}', BILLED_CURRENCY[base]);
@@ -400,7 +405,7 @@ const secondaryBtn =
     document.querySelectorAll('.' + BAD[1]).forEach((el) => el.classList.remove(...BAD));
   };
 
-  /** The identity the purchase order needs, and the licence holders. Returns what is still missing. */
+  /** Everything the purchase order needs. Returns what is still missing. */
   const missingForDocument = (): string[] => {
     const missing: string[] = [];
 
@@ -425,7 +430,6 @@ const secondaryBtn =
 
   const missingForSignature = (): string[] => [
     ...missingForDocument(),
-    ...(($('chk-read') as HTMLInputElement).checked ? [] : ['row-read']),
     ...(($('chk-terms') as HTMLInputElement).checked ? [] : ['row-terms']),
     ...(value('signer') ? [] : ['signer']),
   ];
@@ -437,10 +441,31 @@ const secondaryBtn =
     $(missing[0])?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
-  /** Creates or refreshes the draft, then shows the PDF. This is the first write of anything. */
-  $('open-document').addEventListener('click', async () => {
+  /** The document is never a public URL: it is fetched with the order's token and shown from memory. */
+  const downloadDocument = async (id: string) => {
+    const response = await fetch(`${API}/orders/${id}/document`, { headers: { 'X-Order-Token': accessToken ?? '' } });
+    if (!response.ok) throw new Error(copy.genericError);
+
+    const url = URL.createObjectURL(await response.blob());
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `bon-de-commande-${id}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60_000);
+  };
+
+  /**
+   * One press: the draft is created, the addresses are attached, and it is signed.
+   *
+   * The buyer receives the signed document by email and can download it on the next screen, so there
+   * is nothing to look at beforehand — and nothing that could be looked at, since the document does
+   * not exist until this moment.
+   */
+  $('sign').addEventListener('click', async () => {
     clearNotice();
-    const missing = missingForDocument();
+    const missing = missingForSignature();
     if (missing.length) return showMissing(missing, copy.missingFields);
 
     clearMarks();
@@ -451,51 +476,8 @@ const secondaryBtn =
         accessToken = created.accessToken;
       }
       await call('PATCH', `/orders/${orderId}`, { ...identity(), quantity, period, seatEmails: filledSeats() });
-
-      await openDocument(orderId!, false);
-      documentSeen = true;
-      $('open-document').textContent = copy.reopenDocument;
-    } catch (error) {
-      notice((error as Error).message);
-    }
-  });
-
-  /** The document is never a public URL: it is fetched with the order's token and shown from memory. */
-  const openDocument = async (id: string, download: boolean) => {
-    const response = await fetch(`${API}/orders/${id}/document`, { headers: { 'X-Order-Token': accessToken ?? '' } });
-    if (!response.ok) throw new Error(copy.genericError);
-    const url = URL.createObjectURL(await response.blob());
-
-    if (download) {
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `bon-de-commande-${id}.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-    } else {
-      window.open(url, '_blank');
-    }
-    setTimeout(() => URL.revokeObjectURL(url), 60_000);
-  };
-
-  $('chk-read').addEventListener('change', async () => {
-    clearMarks();
-    // Recorded as declared by the signatory — no browser can prove anyone read anything.
-    if (($('chk-read') as HTMLInputElement).checked && orderId) {
-      await call('POST', `/orders/${orderId}/read`).catch(() => undefined);
-    }
-  });
-
-  $('sign').addEventListener('click', async () => {
-    clearNotice();
-    const missing = missingForSignature();
-    if (missing.length) return showMissing(missing, copy.missingFields);
-    if (!documentSeen || !orderId) return showMissing(['open-document'], copy.openFirst);
-
-    clearMarks();
-    try {
       await call('POST', `/orders/${orderId}/sign`, { signerName: value('signer'), termsAccepted: true });
+
       signed = true;
       $('order-form').classList.add('hidden');
       $('signed-panel').classList.remove('hidden');
@@ -517,7 +499,7 @@ const secondaryBtn =
   });
 
   $('download-signed').addEventListener('click', () => {
-    if (orderId && signed) openDocument(orderId, true).catch(() => notice(copy.genericError));
+    if (orderId && signed) downloadDocument(orderId).catch(() => notice(copy.genericError));
   });
 
   // Typing anywhere clears the red: the buyer should see the outline go as they fix it.

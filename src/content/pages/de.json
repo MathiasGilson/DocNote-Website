@@ -568,10 +568,6 @@
     "duplicateAddresses": "Doppelte Adresse:",
     "missingAddresses": "Adresse(n) fehlen noch.",
     "step5": "Prüfen und unterzeichnen",
-    "openDocument": "Bestellung ansehen",
-    "reopenDocument": "Bestellung erneut ansehen",
-    "fillFirst": "Bitte zuerst die Angaben oben ausfüllen.",
-    "declareRead": "Ich habe die Bestellung vollständig gelesen.",
     "acceptTerms": "Ich akzeptiere die {terms} (v1.3) und den DPA.",
     "signAs": "Unterzeichnen als",
     "signatureNote": "Die Unterschrift wird mit Serverzeitstempel, Ihrem Gerät und Ihrer IP-Adresse erfasst und durch den Prüfwert des Dokuments beglaubigt.",
@@ -581,7 +577,6 @@
     "signedBody": "Ihre Bestellung ist unterzeichnet. Eine Kopie wurde Ihnen soeben per Mail zugestellt, mit dem Signaturzertifikat.",
     "pay": "Jetzt bezahlen",
     "payLater": "Oder später zahlen: Die Bestellung bleibt 30 Tage zahlbar, den Link finden Sie in Ihrer Mail.",
-    "openSigned": "Unterzeichnete Bestellung öffnen",
     "paidTitle": "Danke",
     "paidBody": "Ihre Zahlung ist eingegangen. Die Lizenzen werden freigeschaltet; jede inhabende Person erhält eine E-Mail.",
     "cancelledNotice": "Die Zahlung wurde abgebrochen. Ihre Bestellung bleibt unterzeichnet und zahlbar.",
@@ -593,6 +588,9 @@
     "billedIn": "Abrechnung in {c}.",
     "download": "Unterzeichnete Bestellung herunterladen (PDF)",
     "missingFields": "Es fehlen Angaben — sie sind oben rot umrandet.",
-    "openFirst": "Öffnen Sie die Bestellung und bestätigen Sie die Lektüre, bevor Sie unterzeichnen."
+    "perMonth": "/ Monat",
+    "billedYearly": "jährliche Abrechnung",
+    "billedMonthly": "monatliche Abrechnung",
+    "totalLine": "{n} Lizenz(en) × {unit}"
   }
 }

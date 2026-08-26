@@ -550,10 +550,6 @@
     "duplicateAddresses": "Repeated address:",
     "missingAddresses": "address(es) still missing.",
     "step5": "Review and sign",
-    "openDocument": "View the purchase order",
-    "reopenDocument": "View the purchase order again",
-    "fillFirst": "Fill in the details above first.",
-    "declareRead": "I have read the purchase order in full.",
     "acceptTerms": "I accept the {terms} (v1.3) and the DPA.",
     "signAs": "Sign as",
     "signatureNote": "The signature is recorded with the server timestamp, your device and your IP address, and certified by the fingerprint of the document.",
@@ -563,7 +559,6 @@
     "signedBody": "Your purchase order is signed. A copy has just been emailed to you, with its signature certificate.",
     "pay": "Pay now",
     "payLater": "Or pay later — the purchase order stays payable for 30 days, and you will find the link in your email.",
-    "openSigned": "Open the signed purchase order",
     "paidTitle": "Thank you",
     "paidBody": "Your payment has gone through. The licences are being opened; each holder receives an email.",
     "cancelledNotice": "Payment was interrupted. Your purchase order is still signed and payable.",
@@ -575,6 +570,9 @@
     "billedIn": "Billed in {c}.",
     "download": "Download the signed purchase order (PDF)",
     "missingFields": "Some details are missing — they are outlined in red above.",
-    "openFirst": "Open the purchase order and confirm you have read it before signing."
+    "perMonth": "/ month",
+    "billedYearly": "billed yearly",
+    "billedMonthly": "billed monthly",
+    "totalLine": "{n} licence(s) × {unit}"
   }
 }

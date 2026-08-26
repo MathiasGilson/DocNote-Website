@@ -580,10 +580,6 @@
     "duplicateAddresses": "Adresse en double :",
     "missingAddresses": "adresse(s) encore manquante(s).",
     "step5": "Relecture et signature",
-    "openDocument": "Voir le bon de commande",
-    "reopenDocument": "Revoir le bon de commande",
-    "fillFirst": "Complétez d'abord les informations ci-dessus.",
-    "declareRead": "J'ai lu le bon de commande dans son intégralité.",
     "acceptTerms": "J'accepte les {terms} (v1.3) et le DPA.",
     "signAs": "Signer en tant que",
     "signatureNote": "La signature est enregistrée avec l'horodatage du serveur, votre appareil et votre adresse IP, et certifiée par l'empreinte du document.",
@@ -593,7 +589,6 @@
     "signedBody": "Votre bon de commande est signé. Une copie vient de vous être envoyée par mail, avec son certificat de signature.",
     "pay": "Payer maintenant",
     "payLater": "Ou payez plus tard : le bon de commande reste payable 30 jours, et vous retrouverez le lien dans votre mail.",
-    "openSigned": "Ouvrir le bon de commande signé",
     "paidTitle": "Merci",
     "paidBody": "Votre paiement est passé. Les licences s'ouvrent ; chaque titulaire reçoit un e-mail.",
     "cancelledNotice": "Le paiement a été interrompu. Votre bon de commande reste signé et payable.",
@@ -605,6 +600,9 @@
     "billedIn": "Facturé en {c}.",
     "download": "Télécharger le bon de commande signé (PDF)",
     "missingFields": "Il manque des informations : elles sont entourées en rouge ci-dessus.",
-    "openFirst": "Ouvrez le bon de commande et cochez l'avoir lu avant de signer."
+    "perMonth": "/ mois",
+    "billedYearly": "facturé annuellement",
+    "billedMonthly": "facturé mensuellement",
+    "totalLine": "{n} licence(s) × {unit}"
   }
 }
