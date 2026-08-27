@@ -10,6 +10,7 @@ interface Props {
 const { locale, translations: t } = Astro.props
 const currentYear = new Date().getFullYear()
 const resourcesLabel = locale === "fr" ? "Ressources" : locale === "de" ? "Ressourcen" : "Resources"
+const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://support.docnote.care/${locale}/`
 ---
 
 <footer
@@ -99,6 +100,11 @@ const resourcesLabel = locale === "fr" ? "Ressources" : locale === "de" ? "Resso
                     <li>
                         <a href={getLocalizedPath("/blog", locale)} class="text-sm text-white hover:text-white/70 transition-colors"
                             >{t.nav.blog}</a
+                        >
+                    </li>
+                    <li>
+                        <a href={docsUrl} target="_blank" rel="noopener noreferrer" class="text-sm text-white hover:text-white/70 transition-colors"
+                            >{t.nav.docs}</a
                         >
                     </li>
                 </ul>
