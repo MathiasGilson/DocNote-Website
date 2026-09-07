@@ -41,14 +41,20 @@ const content = {
         },
         data: {
             title: "Vos données",
+            residency: {
+                ch: "Vos données restent en Suisse, sur des serveurs suisses, et ne quittent jamais le territoire. Elles sont confidentielles et protégées par le secret médical, au même titre que le reste de votre dossier. Seule votre équipe de soin peut y accéder.",
+                row: "Vos données restent en France, sur des serveurs français certifiés HDS (hébergeur de données de santé), et ne quittent jamais le territoire. Elles sont confidentielles et protégées par le secret médical, au même titre que le reste de votre dossier. Seule votre équipe de soin peut y accéder.",
+            },
             paragraphs: [
-                "Vos données restent en Suisse, sur des serveurs suisses, et ne quittent jamais le territoire. Elles sont confidentielles et protégées par le secret médical, au même titre que le reste de votre dossier. Seule votre équipe de soin peut y accéder.",
                 "Elles ne sont jamais vendues, ni utilisées à des fins publicitaires. Et elles ne servent jamais à entraîner une intelligence artificielle : vos consultations ne servent qu'à produire votre compte-rendu.",
             ],
         },
         control: {
             title: "Vous gardez le contrôle",
-            body: "Vous pouvez refuser à tout moment, simplement en le disant à votre soignant, et cela ne change rien à votre prise en charge. Vous pouvez aussi lui poser toutes vos questions. Enfin, vous disposez de droits sur vos données, notamment celui de savoir lesquelles vous concernent, conformément à la loi suisse sur la protection des données.",
+            body: {
+                ch: "Vous pouvez refuser à tout moment, simplement en le disant à votre soignant, et cela ne change rien à votre prise en charge. Vous pouvez aussi lui poser toutes vos questions. Enfin, vous disposez de droits sur vos données, notamment celui de savoir lesquelles vous concernent, conformément à la loi suisse sur la protection des données.",
+                row: "Vous pouvez refuser à tout moment, simplement en le disant à votre soignant, et cela ne change rien à votre prise en charge. Vous pouvez aussi lui poser toutes vos questions. Enfin, vous disposez de droits sur vos données, notamment celui de savoir lesquelles vous concernent, conformément au règlement européen sur la protection des données (RGPD).",
+            },
         },
         faq: {
             title: "Questions fréquentes",
@@ -89,14 +95,20 @@ const content = {
         },
         data: {
             title: "Your data",
+            residency: {
+                ch: "Your data stays in Switzerland, on Swiss servers, and never leaves the country. It is confidential and protected by medical secrecy, just like the rest of your file. Only your care team can access it.",
+                row: "Your data stays in France, on French HDS-certified servers (Hébergeur de Données de Santé), and never leaves the country. It is confidential and protected by medical secrecy, just like the rest of your file. Only your care team can access it.",
+            },
             paragraphs: [
-                "Your data stays in Switzerland, on Swiss servers, and never leaves the country. It is confidential and protected by medical secrecy, just like the rest of your file. Only your care team can access it.",
                 "It is never sold or used for advertising purposes. And it is never used to train an artificial intelligence: your consultations are only used to produce your report.",
             ],
         },
         control: {
             title: "You stay in control",
-            body: "You can refuse at any time, simply by telling your care provider, and this does not affect your care in any way. You can also ask them any questions you have. Finally, you have rights over your data, including the right to know what data concerns you, in accordance with Swiss data protection law.",
+            body: {
+                ch: "You can refuse at any time, simply by telling your care provider, and this does not affect your care in any way. You can also ask them any questions you have. Finally, you have rights over your data, including the right to know what data concerns you, in accordance with Swiss data protection law.",
+                row: "You can refuse at any time, simply by telling your care provider, and this does not affect your care in any way. You can also ask them any questions you have. Finally, you have rights over your data, including the right to know what data concerns you, in accordance with the European General Data Protection Regulation (GDPR).",
+            },
         },
         faq: {
             title: "Frequently asked questions",
@@ -137,14 +149,20 @@ const content = {
         },
         data: {
             title: "Ihre Daten",
+            residency: {
+                ch: "Ihre Daten bleiben in der Schweiz, auf Schweizer Servern, und verlassen das Land nie. Sie sind vertraulich und durch das Arztgeheimnis geschützt, genau wie der Rest Ihrer Akte. Nur Ihr Behandlungsteam kann darauf zugreifen.",
+                row: "Ihre Daten bleiben in Frankreich, auf französischen HDS-zertifizierten Servern (Hébergeur de Données de Santé), und verlassen das Land nie. Sie sind vertraulich und durch das Arztgeheimnis geschützt, genau wie der Rest Ihrer Akte. Nur Ihr Behandlungsteam kann darauf zugreifen.",
+            },
             paragraphs: [
-                "Ihre Daten bleiben in der Schweiz, auf Schweizer Servern, und verlassen das Land nie. Sie sind vertraulich und durch das Arztgeheimnis geschützt, genau wie der Rest Ihrer Akte. Nur Ihr Behandlungsteam kann darauf zugreifen.",
                 "Sie werden nie verkauft oder zu Werbezwecken verwendet. Und sie dienen nie dazu, eine künstliche Intelligenz zu trainieren: Ihre Konsultationen dienen nur dazu, Ihren Bericht zu erstellen.",
             ],
         },
         control: {
             title: "Sie behalten die Kontrolle",
-            body: "Sie können jederzeit ablehnen, indem Sie es Ihrem Arzt einfach sagen, und das ändert nichts an Ihrer Behandlung. Sie können ihm auch alle Ihre Fragen stellen. Schließlich haben Sie Rechte an Ihren Daten, einschließlich des Rechts zu erfahren, welche Daten Sie betreffen, gemäß dem Schweizer Datenschutzgesetz.",
+            body: {
+                ch: "Sie können jederzeit ablehnen, indem Sie es Ihrem Arzt einfach sagen, und das ändert nichts an Ihrer Behandlung. Sie können ihm auch alle Ihre Fragen stellen. Schließlich haben Sie Rechte an Ihren Daten, einschließlich des Rechts zu erfahren, welche Daten Sie betreffen, gemäß dem Schweizer Datenschutzgesetz.",
+                row: "Sie können jederzeit ablehnen, indem Sie es Ihrem Arzt einfach sagen, und das ändert nichts an Ihrer Behandlung. Sie können ihm auch alle Ihre Fragen stellen. Schließlich haben Sie Rechte an Ihren Daten, einschließlich des Rechts zu erfahren, welche Daten Sie betreffen, gemäß der europäischen Datenschutz-Grundverordnung (DSGVO).",
+            },
         },
         faq: {
             title: "Häufig gestellte Fragen",
@@ -214,6 +232,12 @@ const c = content[locale as keyof typeof content] ?? content.fr
             <div class="mb-12">
                 <h2 class="text-xl font-semibold text-gray-900 mb-4">{c.data.title}</h2>
                 <div class="flex flex-col gap-4">
+                    <p
+                        class="text-gray-700 leading-relaxed"
+                        data-region-aware
+                        data-ch={c.data.residency.ch}
+                        data-row={c.data.residency.row}
+                    >{c.data.residency.ch}</p>
                     {c.data.paragraphs.map((p) => (
                         <p class="text-gray-700 leading-relaxed">{p}</p>
                     ))}
@@ -225,8 +249,63 @@ const c = content[locale as keyof typeof content] ?? content.fr
             <!-- Control -->
             <div class="mb-12">
                 <h2 class="text-xl font-semibold text-gray-900 mb-4">{c.control.title}</h2>
-                <p class="text-gray-700 leading-relaxed">{c.control.body}</p>
+                <p
+                    class="text-gray-700 leading-relaxed"
+                    data-region-aware
+                    data-ch={c.control.body.ch}
+                    data-row={c.control.body.row}
+                >{c.control.body.ch}</p>
             </div>
+
+            <!--
+                Data residency is a fact about the visitor, not about the page: Swiss patients are
+                hosted in Switzerland, everyone else on the French HDS servers. The page ships the
+                Swiss wording (see the Swiss meta description above) and corrects it here.
+
+                Two stages, because this paragraph is the one thing a patient came to read: an
+                inline synchronous pass picks the variant from signals available before first paint,
+                so nobody watches the wrong country flip; the module below then confirms against the
+                IP lookup, which is the only signal a mis-set laptop clock cannot fool.
+            -->
+            <script is:inline>
+                ;(function () {
+                    function apply(region) {
+                        var attribute = region === "ch" ? "data-ch" : "data-row"
+                        var elements = document.querySelectorAll("[data-region-aware]")
+                        for (var i = 0; i < elements.length; i++) {
+                            var text = elements[i].getAttribute(attribute)
+                            if (text && elements[i].textContent !== text) elements[i].textContent = text
+                        }
+                    }
+                    window.__docnoteApplyRegion = apply
+
+                    // A lookup another page already resolved, then the browser timezone. Both are
+                    // synchronous. Neither answering leaves the Swiss wording standing until the IP
+                    // lookup returns — the honest default, since we are a Swiss company.
+                    var country = null
+                    try {
+                        country = sessionStorage.getItem("docnote:country")
+                    } catch (e) {}
+                    if (!country) {
+                        try {
+                            var tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+                            if (tz) country = tz === "Europe/Zurich" || tz === "Europe/Busingen" ? "CH" : "ROW"
+                        } catch (e) {}
+                    }
+                    if (country) apply(country === "CH" ? "ch" : "row")
+                })()
+            </script>
+
+            <script>
+                import { detectUserCountry } from "../../utils/currency"
+
+                ;(async () => {
+                    const country = await detectUserCountry()
+                    if (!country) return
+                    const apply = (window as any).__docnoteApplyRegion
+                    if (apply) apply(country === "CH" ? "ch" : "row")
+                })()
+            </script>
 
             <hr class="border-gray-100 mb-12" />
 
