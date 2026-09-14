@@ -25,7 +25,7 @@ export const specialties: Record<SpecialtySlug, Record<Locale, SpecialtyCopy>> =
   radiology: {
     en: {
       title: 'AI radiology report dictation',
-      description: 'Dictate radiology reports live with DocNote: realtime transcription, SpeechMike support, structured findings and impression, RIS integration. Swiss-hosted, FADP and GDPR compliant.',
+      description: 'Dictate radiology reports live with DocNote: realtime transcription, SpeechMike support, structured findings and RIS integration. Swiss-hosted, GDPR compliant.',
       h1: 'Radiology reports dictated live, structured in seconds',
       intro: 'DocNote radiology mode transcribes as you read the images, turns the dictation into a structured report with technique, findings and impression, and hands the text back to your RIS. It runs in the browser, works with a Philips SpeechMike, and never stores audio longer than needed to generate the report.',
       documents: [
@@ -49,7 +49,7 @@ export const specialties: Record<SpecialtySlug, Record<Locale, SpecialtyCopy>> =
     },
     fr: {
       title: 'Dictée de comptes rendus de radiologie par IA',
-      description: 'Dictez vos comptes rendus de radiologie en direct avec DocNote : transcription en temps réel, SpeechMike, résultats et conclusion structurés, intégration RIS. Hébergé en Suisse, conforme nLPD et RGPD.',
+      description: 'Dictez vos comptes rendus de radiologie en direct avec DocNote : transcription en temps réel, SpeechMike, intégration RIS. Hébergé en Suisse.',
       h1: 'Des comptes rendus de radiologie dictés en direct, structurés en quelques secondes',
       intro: 'Le mode radiologie de DocNote transcrit pendant que vous lisez les images, transforme la dictée en compte rendu structuré avec technique, résultats et conclusion, puis renvoie le texte à votre RIS. Il fonctionne dans le navigateur, avec un SpeechMike Philips, et ne conserve l’audio que le temps de générer le compte rendu.',
       documents: [
@@ -73,7 +73,7 @@ export const specialties: Record<SpecialtySlug, Record<Locale, SpecialtyCopy>> =
     },
     de: {
       title: 'KI-Diktat für radiologische Befunde',
-      description: 'Radiologische Befunde live diktieren mit DocNote: Echtzeit-Transkription, SpeechMike, strukturierte Befunde und Beurteilung, RIS-Integration. In der Schweiz gehostet, DSG- und DSGVO-konform.',
+      description: 'Radiologische Befunde live diktieren mit DocNote: Echtzeit-Transkription, SpeechMike, strukturierte Befunde, RIS-Integration. In der Schweiz gehostet.',
       h1: 'Radiologische Befunde live diktiert, in Sekunden strukturiert',
       intro: 'Der Radiologie-Modus von DocNote transkribiert, während Sie die Bilder befunden, wandelt das Diktat in einen strukturierten Befund mit Technik, Befund und Beurteilung um und gibt den Text an Ihr RIS zurück. Er läuft im Browser, funktioniert mit einem Philips SpeechMike und speichert Audio nur so lange, wie die Befunderstellung dauert.',
       documents: [
