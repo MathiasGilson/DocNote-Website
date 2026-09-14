@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { buildTranslationMap, getPostSlug } from './blog';
+import { buildTranslationMap, getPostSlug, PAGE_SIZE, paginatePosts } from './blog';
 import { getLocalizedPath, locales, type Locale } from './i18n';
 import { absoluteUrl } from './seo';
 
@@ -32,5 +32,20 @@ export async function getBlogAlternateUrls(translationKey: string): Promise<Part
     const slug = group[locale];
     if (slug) out[locale] = absoluteUrl(getLocalizedPath(`/blog/${slug}`, locale));
   }
+  return out;
+}
+
+export async function getPaginationPresence() {
+  const pageCounts = Object.fromEntries(
+    await Promise.all(
+      locales.map(async (l) => [l, paginatePosts(await getPostsForLocale(l), PAGE_SIZE).length] as const)
+    )
+  ) as Record<Locale, number>;
+  return { pageCounts, maxPages: Math.max(...Object.values(pageCounts)) };
+}
+
+export function paginationAlternates(page: number, pageCounts: Record<Locale, number>): Partial<Record<Locale, string>> {
+  const out: Partial<Record<Locale, string>> = {};
+  for (const l of locales) if (pageCounts[l] >= page) out[l] = absoluteUrl(getLocalizedPath(`/blog/page/${page}`, l));
   return out;
 }

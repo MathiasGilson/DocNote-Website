@@ -1,4 +1,7 @@
 ---
 import BlogIndexPage from '../../components/pages/BlogIndexPage.astro';
+import { PAGE_SIZE, paginatePosts } from '../../utils/blog';
+import { getPostsForLocale } from '../../utils/blog-collection';
+const pages = paginatePosts(await getPostsForLocale('en'), PAGE_SIZE);
 ---
-<BlogIndexPage locale="en" />
+<BlogIndexPage locale="en" posts={pages[0]} page={1} totalPages={pages.length} basePath="/blog" />

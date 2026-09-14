@@ -1,0 +1,12 @@
+---
+import BlogIndexPage from '../../../components/pages/BlogIndexPage.astro';
+import { CATEGORIES, CATEGORY_SLUGS, type BlogCategory } from '../../../content/categories';
+import { getPostsForLocale } from '../../../utils/blog-collection';
+
+export function getStaticPaths() {
+  return CATEGORY_SLUGS.map((category) => ({ params: { category } }));
+}
+const category = CATEGORIES[Astro.params.category as BlogCategory];
+const posts = (await getPostsForLocale('en')).filter((p) => p.data.category === category.slug);
+---
+<BlogIndexPage locale="en" posts={posts} page={1} totalPages={1} category={category} basePath={`/blog/category/${category.slug}`} />

@@ -1,0 +1,22 @@
+---
+import BlogIndexPage from '../../../../components/pages/BlogIndexPage.astro';
+import { nonDefaultLocales, type Locale } from '../../../../utils/i18n';
+import { PAGE_SIZE, paginatePosts } from '../../../../utils/blog';
+import { getPaginationPresence, getPostsForLocale, paginationAlternates } from '../../../../utils/blog-collection';
+
+export async function getStaticPaths() {
+  const { pageCounts } = await getPaginationPresence();
+  const paths = [];
+  for (const locale of nonDefaultLocales) {
+    const pages = paginatePosts(await getPostsForLocale(locale), PAGE_SIZE);
+    for (let n = 2; n <= pages.length; n++) {
+      paths.push({ params: { locale, page: String(n) }, props: { posts: pages[n - 1], totalPages: pages.length, alternates: paginationAlternates(n, pageCounts) } });
+    }
+  }
+  return paths;
+}
+const locale = Astro.params.locale as Locale;
+const page = Number(Astro.params.page);
+const { posts, totalPages, alternates } = Astro.props;
+---
+<BlogIndexPage locale={locale} posts={posts} page={page} totalPages={totalPages} basePath="/blog" alternates={alternates} />

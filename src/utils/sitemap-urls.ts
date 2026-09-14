@@ -1,12 +1,12 @@
 import { getCollection } from 'astro:content';
 import { getLocalizedPath, locales } from './i18n';
-import { getBlogAlternateUrls, getPostLocale } from './blog-collection';
+import { getBlogAlternateUrls, getPaginationPresence, getPostLocale } from './blog-collection';
 import { getPostSlug } from './blog';
+import { CATEGORY_SLUGS } from '../content/categories';
 
 export type SitemapEntry = { url: string; lastmod?: string; links?: { lang: string; url: string }[] };
 
 const STATIC_PAGES = [
-  '/blog',
   '/contact',
   '/pricing',
   '/team',
@@ -56,5 +56,27 @@ export const getBlogUrls = async (site: string): Promise<SitemapEntry[]> => {
       links,
     });
   }
+  return entries.sort((a, b) => a.url.localeCompare(b.url, 'en', { numeric: true }));
+};
+
+export const getCategoryUrls = async (site: string): Promise<SitemapEntry[]> => {
+  const entries: SitemapEntry[] = [];
+
+  for (const path of ['/blog/', ...CATEGORY_SLUGS.map((c) => `/blog/category/${c}/`)]) {
+    const links = localeLinks(site, path);
+    for (const locale of locales) entries.push({ url: toAbs(site, getLocalizedPath(path, locale)), links });
+  }
+
+  // Pagination pages exist only where a locale has enough posts.
+  const { pageCounts, maxPages } = await getPaginationPresence();
+  for (let n = 2; n <= maxPages; n++) {
+    const present = locales.filter((l) => pageCounts[l] >= n);
+    const links = [
+      ...present.map((l) => ({ lang: l, url: toAbs(site, getLocalizedPath(`/blog/page/${n}`, l)) })),
+      ...(present.includes('en') ? [{ lang: 'x-default', url: toAbs(site, getLocalizedPath(`/blog/page/${n}`, 'en')) }] : []),
+    ];
+    for (const l of present) entries.push({ url: toAbs(site, getLocalizedPath(`/blog/page/${n}`, l)), links });
+  }
+
   return entries.sort((a, b) => a.url.localeCompare(b.url, 'en', { numeric: true }));
 };

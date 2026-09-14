@@ -5,7 +5,7 @@ export const GET = async () => {
   const site = import.meta.env.SITE;
   const hostname = new URL('/', site).href;
   const indexStream = new SitemapIndexStream();
-  const childSitemaps = ['sitemap-landings.xml', 'sitemap-blog.xml'].map((path) => ({
+  const childSitemaps = ['sitemap-landings.xml', 'sitemap-blog.xml', 'sitemap-categories.xml'].map((path) => ({
     url: new URL(path, hostname).href,
   }));
   const xml = await streamToPromise(Readable.from(childSitemaps).pipe(indexStream));

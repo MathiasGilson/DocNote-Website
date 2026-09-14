@@ -1,7 +1,7 @@
 export const prerender = true;
 
 const buildRobotsTxt = (site: string) => {
-  const sitemaps = ['sitemap.xml', 'sitemap-landings.xml', 'sitemap-blog.xml']
+  const sitemaps = ['sitemap.xml', 'sitemap-landings.xml', 'sitemap-blog.xml', 'sitemap-categories.xml']
     .map((path) => `Sitemap: ${new URL(path, site).href}`)
     .join('\n');
 

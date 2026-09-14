@@ -1,9 +1,13 @@
 ---
 import BlogIndexPage from '../../../components/pages/BlogIndexPage.astro';
 import { nonDefaultLocales, type Locale } from '../../../utils/i18n';
+import { PAGE_SIZE, paginatePosts } from '../../../utils/blog';
+import { getPostsForLocale } from '../../../utils/blog-collection';
 
 export function getStaticPaths() {
   return nonDefaultLocales.map((locale) => ({ params: { locale } }));
 }
+const locale = Astro.params.locale as Locale;
+const pages = paginatePosts(await getPostsForLocale(locale), PAGE_SIZE);
 ---
-<BlogIndexPage locale={Astro.params.locale as Locale} />
+<BlogIndexPage locale={locale} posts={pages[0]} page={1} totalPages={pages.length} basePath="/blog" />
