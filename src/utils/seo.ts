@@ -137,7 +137,7 @@ export const pageMeta: Record<
         "Découvrez l'équipe DocNote : médecins et ingénieurs qui construisent la documentation clinique IA pour les hôpitaux en Suisse et en Europe.",
     },
     de: {
-      title: 'Team',
+      title: 'Unser Team',
       description:
         'Das DocNote-Team: Ärztinnen, Ärzte und Engineers, die KI-Dokumentation für Spitäler in der Schweiz und Europa entwickeln.',
     },
@@ -166,7 +166,7 @@ export const pageMeta: Record<
         'Contact DocNote for hospital demos, Enterprise pricing or support. Reach Dr. Vincent Tan and Dr. Alice Gilson in Switzerland and France.',
     },
     fr: {
-      title: 'Contact',
+      title: 'Nous contacter',
       description:
         'Contactez DocNote pour une démo hospitalière, un devis Enterprise ou du support. Dr Vincent Tan et Dre Alice Gilson, Suisse et France.',
     },

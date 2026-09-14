@@ -6,7 +6,7 @@
   "packageManager": "npm@10.9.2",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/generate-og-images.mjs",
+    "build": "astro build && node scripts/generate-og-images.mjs && node scripts/check-seo.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run"
