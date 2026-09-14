@@ -1,0 +1,629 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getEntry } from 'astro:content';
+import { absoluteUrl, buildBreadcrumbLd, getPageMeta } from '../../utils/seo';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+
+const entry = await getEntry('pages', locale as Locale);
+const t = entry.data;
+const o = t.order;
+const meta = getPageMeta('order', locale as Locale);
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'DocNote', url: absoluteUrl(getLocalizedPath('/', locale)) },
+  { name: t.nav.pricing, url: absoluteUrl(getLocalizedPath('/pricing', locale)) },
+  { name: meta.title, url: absoluteUrl(getLocalizedPath('/order', locale)) },
+]);
+
+const card = 'bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm';
+const stepTitle = 'text-lg font-bold text-gray-900';
+const label = 'block text-sm font-medium text-gray-700 mb-1';
+const input =
+  'w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent';
+const primaryBtn =
+  'w-full py-3 text-center font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none';
+const secondaryBtn =
+  'w-full py-3 text-center font-medium text-gray-800 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-40 disabled:cursor-not-allowed';
+---
+
+<Layout title={meta.title} description={meta.description} jsonLd={breadcrumbLd}>
+  <section class="pt-32 pb-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{o.title}</h1>
+      </div>
+
+      <script type="application/json" id="order-copy" set:html={JSON.stringify(o)}></script>
+
+      <div id="notice" class="hidden mb-6 rounded-xl border px-4 py-3 text-sm"></div>
+
+      {/* Payment came back successfully: nothing else on the page matters. */}
+      <div id="paid-panel" class="hidden">
+        <div class={card}>
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">{o.paidTitle}</h2>
+          <p class="text-gray-600">{o.paidBody}</p>
+        </div>
+      </div>
+
+      <div id="order-form" class="space-y-6">
+        <div class={card}>
+          <h2 class={stepTitle}>1. {o.step1}</h2>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="text-gray-700">{o.howMany}</span>
+            <div class="flex items-center gap-4">
+              <button type="button" id="qty-minus" aria-label="-" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">−</button>
+              <span id="qty" class="text-2xl font-bold text-gray-900 w-10 text-center">1</span>
+              <button type="button" id="qty-plus" aria-label="+" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">+</button>
+            </div>
+          </div>
+
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <button type="button" id="period-yearly" class="rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700">{o.yearly}</button>
+            <button type="button" id="period-monthly" class="rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700">{o.monthly}</button>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-gray-100 space-y-1">
+            <div class="flex justify-between text-gray-600">
+              <span>{o.unitPrice}</span><span id="unit-price">—</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-500">
+              <span id="total-line"></span><span id="billed-period"></span>
+            </div>
+            <div class="flex justify-between text-lg font-bold text-gray-900 pt-1">
+              <span>{o.total}</span><span id="total-price">—</span>
+            </div>
+            <p id="billed-note" class="hidden text-xs text-gray-500 pt-1" data-template={o.billedIn}></p>
+          </div>
+        </div>
+
+        <div class={card}>
+          <h2 class={stepTitle}>2. {o.step2}</h2>
+          <p class="mt-2 text-sm text-gray-500">{o.emailNote}</p>
+
+          <div class="mt-5 space-y-4">
+            <div>
+              <label class={label} for="email">{o.emailLabel}</label>
+              <input id="email" type="email" autocomplete="email" class={input} />
+            </div>
+            <div>
+              <label class={label} for="email-confirm">{o.emailConfirmLabel}</label>
+              <input id="email-confirm" type="email" autocomplete="off" class={input} />
+            </div>
+            <p id="email-mismatch" class="hidden text-sm text-red-600">{o.emailMismatch}</p>
+          </div>
+        </div>
+
+        <div id="practice-card" class={card}>
+          <h2 class={stepTitle}>3. {o.step3}</h2>
+          <p class="mt-2 text-sm text-gray-500">{o.practiceNote}</p>
+
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <button type="button" id="bill-company" class="rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700">{o.billToCompany}</button>
+            <button type="button" id="bill-individual" class="rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700">{o.billToIndividual}</button>
+          </div>
+
+          <div class="mt-5 space-y-4">
+            <div>
+              <label class={label} for="f-name"><span id="name-label">{o.nameOfCompany}</span></label>
+              <input id="f-name" type="text" class={input} />
+            </div>
+            <div id="company-field">
+              <label class={label} for="f-company">{o.company} <span class="font-normal text-gray-400">· {o.optional}</span></label>
+              <input id="f-company" type="text" class={input} />
+            </div>
+            <div>
+              <label class={label} for="f-address">{o.address}</label>
+              <input id="f-address" type="text" class={input} />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class={label} for="f-zip">{o.zip}</label>
+                <input id="f-zip" type="text" class={input} />
+              </div>
+              <div>
+                <label class={label} for="f-city">{o.city}</label>
+                <input id="f-city" type="text" class={input} />
+              </div>
+            </div>
+            <div>
+              <label class={label} for="f-country">{o.country}</label>
+              <select id="f-country" class={input}></select>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div id="vat-field">
+                <label class={label} for="f-vat">{o.vatId} <span class="font-normal text-gray-400">· {o.optional}</span></label>
+                <input id="f-vat" type="text" class={input} />
+              </div>
+              <div>
+                <label class={label} for="f-phone">{o.phone} <span class="font-normal text-gray-400">· {o.optional}</span></label>
+                <input id="f-phone" type="tel" class={input} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Only shown from two licences: with one, the seat is the buyer's own address. */}
+        <div id="holders-card" class={card}>
+          <h2 class={stepTitle}>4. {o.step4}</h2>
+          <p class="mt-2 text-sm text-gray-500">{o.holdersNote}</p>
+          <div id="seats" class="mt-4 space-y-3" data-label={o.holderLabel}></div>
+          <p id="seat-issues" class="mt-2 text-sm"></p>
+        </div>
+
+        <div id="sign-card" class={card}>
+          <h2 class={stepTitle}>5. {o.step5}</h2>
+          <div class="mt-5 space-y-4">
+            <label id="row-terms" class="flex items-start gap-3 cursor-pointer rounded-lg p-1 -m-1">
+              <input id="chk-terms" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600" />
+              <span class="text-gray-700">
+                {o.acceptTerms.split('{terms}')[0]}<a
+                  href={getLocalizedPath('/gtc', locale)}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-indigo-600 underline hover:text-indigo-700">{o.termsLink}</a>{o.acceptTerms.split('{terms}')[1]}
+              </span>
+            </label>
+
+            <div>
+              <label class={label} for="signer">{o.signAs}</label>
+              <input id="signer" type="text" class={input} />
+            </div>
+            <p class="text-xs text-gray-500">{o.signatureNote}</p>
+
+            <button type="button" id="sign" class={primaryBtn}>{o.sign}</button>
+            <p class="text-xs text-gray-500 text-center">{o.grantsNothing}</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="signed-panel" class="hidden">
+        <div class={card}>
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">{o.signedTitle}</h2>
+          <p class="text-gray-600 mb-6">{o.signedBody}</p>
+          <div class="space-y-3">
+            <button type="button" id="download-signed" class={secondaryBtn}>{o.download}</button>
+            <button type="button" id="pay" class={primaryBtn}>{o.pay}</button>
+            <p class="text-xs text-gray-500 text-center">{o.payLater}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { detectUserCountry } from '../../utils/currency';
+  import {
+    BILLED_CURRENCY,
+    baseForCurrency,
+    currencyForCountry,
+    formatLocalPrice,
+    isConverted,
+    toLocalAmount,
+  } from '../../utils/pricing';
+  import { seatIssues, isEmail } from '../../utils/order';
+
+  const API = import.meta.env.PUBLIC_API_URL || 'https://api.docnote.care';
+  const locale = window.location.pathname.split('/')[1] || 'en';
+  const copy = JSON.parse(document.getElementById('order-copy')?.textContent || '{}');
+
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const value = (id: string) => ($(id) as HTMLInputElement).value.trim();
+
+  let quantity = 1;
+  let period: 'annual' | 'monthly' = 'annual';
+  let currency = 'EUR';
+  let orderId: string | null = null;
+  /** What stands in for a session: handed over once, when the draft is created. */
+  let accessToken: string | null = null;
+  let signed = false;
+
+  const notice = (message: string, tone: 'error' | 'info' = 'error') => {
+    const el = $('notice');
+    el.textContent = message;
+    el.className = `mb-6 rounded-xl border px-4 py-3 text-sm ${
+      tone === 'error' ? 'border-red-200 bg-red-50 text-red-700' : 'border-gray-200 bg-gray-50 text-gray-700'
+    }`;
+    el.classList.remove('hidden');
+  };
+
+  const clearNotice = () => $('notice').classList.add('hidden');
+
+  const call = async (method: string, path: string, body?: unknown) => {
+    const response = await fetch(`${API}${path}`, {
+      method,
+      headers: {
+        ...(accessToken ? { 'X-Order-Token': accessToken } : {}),
+        ...(body ? { 'Content-Type': 'application/json' } : {}),
+      },
+      ...(body ? { body: JSON.stringify(body) } : {}),
+    });
+    const data = await response.json().catch(() => null);
+    if (!response.ok) {
+      const message = data?.message ?? data?.error ?? copy.genericError;
+      throw new Error(Array.isArray(message) ? message[0] : message);
+    }
+    return data;
+  };
+
+  // ── The billing country ─────────────────────────────────────────────
+  //
+  // One country decides two things that must never disagree: the currency this page shows, and the
+  // tariff the backend puts on the purchase order. Before this was a list it was free text, and the
+  // document was priced from the buyer's DocNote account instead — which most buyers do not have, so
+  // every one of them was billed in francs whatever the page had quoted.
+  //
+  // The names are asked of the browser rather than translated here: 249 countries in every locale we
+  // publish is a translation file nobody would keep correct.
+  const COUNTRY_CODES = ('AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ ' +
+    'CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR ' +
+    'GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP ' +
+    'KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ ' +
+    'NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW ' +
+    'SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ ' +
+    'UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW').split(' ');
+
+  const countryNames = (() => {
+    try {
+      const names = new Intl.DisplayNames([locale], { type: 'region' });
+      return (code: string) => names.of(code) ?? code;
+    } catch {
+      // A browser without Intl.DisplayNames still gets a usable list, just in codes.
+      return (code: string) => code;
+    }
+  })();
+
+  const fillCountries = (selected: string | null) => {
+    const select = $<HTMLSelectElement>('f-country');
+    const options = COUNTRY_CODES
+      .map((code) => ({ code, name: countryNames(code) }))
+      .sort((a, b) => a.name.localeCompare(b.name, locale));
+
+    // A blank first entry rather than the alphabetical winner: until detection answers, the page has
+    // no country, and offering Afghanistan as though it had one is worse than offering nothing.
+    select.innerHTML =
+      '<option value=""></option>' +
+      options.map(({ code, name }) => `<option value="${code}">${name}</option>`).join('');
+    select.value = selected ?? '';
+  };
+
+  /** The country the buyer has settled on — the list is never empty once the page has loaded. */
+  const chosenCountry = () => $<HTMLSelectElement>('f-country').value;
+
+  /** Set once the buyer picks for themselves, so a slow detection cannot overrule them. */
+  let countryChosenByHand = false;
+
+  /**
+   * No figure is shown before the country is settled.
+   *
+   * Quantity and period are applied as the page opens, and each of them prices; without this guard
+   * they would price in the default currency and a Swiss visitor would read the euro figure before
+   * it corrected itself to francs. A price seen once has been quoted, whatever replaces it.
+   */
+  let countrySettled = false;
+
+  const applyCountry = () => {
+    currency = currencyForCountry(chosenCountry());
+    refreshPrice();
+  };
+
+  // ── 1. Licences and price ───────────────────────────────────────────
+  //
+  // The amount comes from the backend, which reads it from Stripe, so the page can never quote a
+  // figure the purchase order then contradicts. Only the display currency is worked out here, and
+  // when it differs from the billed one the page says which card charge to expect.
+  let priceTimer: ReturnType<typeof setTimeout>;
+  const refreshPrice = () => {
+    if (!countrySettled) return;
+    clearTimeout(priceTimer);
+    priceTimer = setTimeout(async () => {
+      const base = baseForCurrency(currency);
+      try {
+        const quote = await call('POST', '/orders/quote', { quantity, period, region: base });
+
+        // The price for the period ordered: a yearly subscription is quoted for the year, which is
+        // what the purchase order itself says and what the card is charged. The line below spells out
+        // the multiplication, and the total is derived from this same figure so the arithmetic on
+        // screen adds up whatever the currency rounds to.
+        const perLicence = toLocalAmount(quote.unitAmount / 100, currency);
+
+        $('unit-price').textContent = formatLocalPrice(perLicence, currency);
+        $('total-price').textContent = formatLocalPrice(perLicence * quantity, currency);
+        $('total-line').textContent = (copy.totalLine ?? '')
+          .replace('{n}', String(quantity))
+          .replace('{unit}', formatLocalPrice(perLicence, currency));
+        $('billed-period').textContent = period === 'annual' ? copy.billedYearly : copy.billedMonthly;
+
+        // Shown in one currency, charged in another: say so rather than let checkout surprise anyone.
+        const billed = $('billed-note');
+        if (isConverted(currency)) {
+          billed.textContent = (billed.dataset.template ?? '').replace('{c}', BILLED_CURRENCY[base]);
+          billed.classList.remove('hidden');
+        } else {
+          billed.classList.add('hidden');
+        }
+      } catch (error) {
+        notice((error as Error).message);
+      }
+    }, 200);
+  };
+
+  // ── 4. One box per licence ──────────────────────────────────────────
+  //
+  // A box each rather than one free-text field: a purchase order for four licences should look like
+  // four licences. The first is as editable as the others — an IT department ordering for its doctors
+  // is not itself a holder.
+  const seatValues: string[] = [];
+
+  const renderSeats = () => {
+    const container = $('seats');
+    const label = container.dataset.label ?? 'Holder';
+
+    while (seatValues.length < quantity) seatValues.push('');
+    seatValues.length = quantity;
+
+    container.innerHTML = '';
+    seatValues.forEach((seat, index) => {
+      const row = document.createElement('div');
+      row.innerHTML = `
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="seat-${index}">${label} ${index + 1}</label>
+        <input id="seat-${index}" type="email" autocomplete="off"
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />`;
+      const field = row.querySelector('input') as HTMLInputElement;
+      field.value = seat;
+      field.addEventListener('input', () => {
+        seatValues[index] = field.value.trim().toLowerCase();
+        refreshSeatIssues();
+        clearMarks();
+      });
+      container.appendChild(row);
+    });
+  };
+
+  const filledSeats = () => seatValues.map((seat) => seat.trim().toLowerCase()).filter(Boolean);
+
+  const refreshSeatIssues = () => {
+    const issues = seatIssues(filledSeats(), quantity);
+    const lines: string[] = [];
+    if (issues.invalid.length) lines.push(`${copy.invalidAddresses} ${issues.invalid.join(', ')}`);
+    if (issues.duplicates.length) lines.push(`${copy.duplicateAddresses} ${issues.duplicates.join(', ')}`);
+    if (issues.missing) lines.push(`${issues.missing} ${copy.missingAddresses}`);
+
+    const el = $('seat-issues');
+    el.textContent = lines.join(' · ');
+    el.className = `mt-2 text-sm ${issues.invalid.length || issues.duplicates.length ? 'text-red-600' : 'text-amber-600'}`;
+  };
+
+  const setQuantity = (next: number) => {
+    quantity = Math.max(1, next);
+    $('qty').textContent = String(quantity);
+    renderSeats();
+    refreshSeatIssues();
+    refreshPrice();
+  };
+
+  const setPeriod = (next: 'annual' | 'monthly') => {
+    period = next;
+    const on = 'rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700';
+    const off = 'rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700';
+    $('period-yearly').className = next === 'annual' ? on : off;
+    $('period-monthly').className = next === 'monthly' ? on : off;
+    refreshPrice();
+  };
+
+  // ── 2 & 3. Who is buying ────────────────────────────────────────────
+  //
+  // The address is typed twice and never verified: it is where the purchase order is sent, and the
+  // certificate says in as many words that it was declared rather than checked.
+  const emailsAgree = () => {
+    const first = value('email').toLowerCase();
+    const second = value('email-confirm').toLowerCase();
+    const mismatch = Boolean(second) && first !== second;
+    $('email-mismatch').classList.toggle('hidden', !mismatch);
+    return isEmail(first) && first === second;
+  };
+
+  /**
+   * Billing a company or a person.
+   *
+   * A doctor billing in their own name has no legal entity, and a purchase order carrying a blank
+   * line where the organisation should be reads like an unfinished form — so the field is not merely
+   * optional, it is absent.
+   */
+  let billTo: 'company' | 'individual' = 'company';
+
+  const setBillTo = (next: 'company' | 'individual') => {
+    billTo = next;
+    const on = 'rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700';
+    const off = 'rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700';
+    $('bill-company').className = next === 'company' ? on : off;
+    $('bill-individual').className = next === 'individual' ? on : off;
+    $('company-field').classList.toggle('hidden', next === 'individual');
+    $('vat-field').classList.toggle('hidden', next === 'individual');
+    // The client's name is a company's or a person's, and the label should not claim otherwise.
+    $('name-label').textContent = next === 'company' ? copy.nameOfCompany : copy.signatoryName;
+    clearMarks();
+  };
+
+  const identity = () => ({
+    email: value('email').toLowerCase(),
+    name: value('f-name'),
+    ...(billTo === 'company' && value('f-company') ? { companyName: value('f-company') } : {}),
+    address: value('f-address'),
+    zip: value('f-zip'),
+    city: value('f-city'),
+    country: value('f-country'),
+    vatId: value('f-vat'),
+    phone: value('f-phone'),
+  });
+
+  const identityComplete = () => {
+    const i = identity();
+    return Boolean(emailsAgree() && i.name && i.address && i.zip && i.city && i.country);
+  };
+
+  // ── 5. Review and sign ──────────────────────────────────────────────
+  //
+  // Nothing is disabled. A greyed-out button that will not say why is the worst kind of dead end —
+  // the buyer has filled the form, believes they are done, and has nowhere to look. So both buttons
+  // stay pressable, and pressing one that cannot proceed outlines exactly what is missing.
+  const BAD = ['ring-2', 'ring-red-500', 'border-red-500'];
+
+  const mark = (id: string, missing: boolean) => {
+    const el = $(id);
+    if (!el) return;
+    el.classList.toggle('ring-2', missing);
+    el.classList.toggle('ring-red-500', missing);
+    el.classList.toggle('border-red-500', missing);
+  };
+
+  const clearMarks = () => {
+    document.querySelectorAll('.' + BAD[1]).forEach((el) => el.classList.remove(...BAD));
+  };
+
+  /** Everything the purchase order needs. Returns what is still missing. */
+  const missingForDocument = (): string[] => {
+    const missing: string[] = [];
+
+    const first = value('email').toLowerCase();
+    const second = value('email-confirm').toLowerCase();
+    if (!isEmail(first)) missing.push('email');
+    if (second !== first) missing.push('email-confirm');
+    $('email-mismatch').classList.toggle('hidden', !(second && second !== first));
+
+    for (const id of ['f-name', 'f-address', 'f-zip', 'f-city', 'f-country']) {
+      if (!value(id)) missing.push(id);
+    }
+
+    const issues = seatIssues(filledSeats(), quantity);
+    seatValues.forEach((seat, index) => {
+      const bad = !seat || !isEmail(seat) || (issues.duplicates.includes(seat) && seatValues.indexOf(seat) !== index);
+      if (bad) missing.push(`seat-${index}`);
+    });
+
+    return missing;
+  };
+
+  const missingForSignature = (): string[] => [
+    ...missingForDocument(),
+    ...(($('chk-terms') as HTMLInputElement).checked ? [] : ['row-terms']),
+    ...(value('signer') ? [] : ['signer']),
+  ];
+
+  const showMissing = (missing: string[], message: string) => {
+    clearMarks();
+    missing.forEach((id) => mark(id, true));
+    notice(message);
+    $(missing[0])?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  /** The document is never a public URL: it is fetched with the order's token and shown from memory. */
+  const downloadDocument = async (id: string) => {
+    const response = await fetch(`${API}/orders/${id}/document`, { headers: { 'X-Order-Token': accessToken ?? '' } });
+    if (!response.ok) throw new Error(copy.genericError);
+
+    const url = URL.createObjectURL(await response.blob());
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `bon-de-commande-${id}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60_000);
+  };
+
+  /**
+   * One press: the draft is created, the addresses are attached, and it is signed.
+   *
+   * The buyer receives the signed document by email and can download it on the next screen, so there
+   * is nothing to look at beforehand — and nothing that could be looked at, since the document does
+   * not exist until this moment.
+   */
+  $('sign').addEventListener('click', async () => {
+    clearNotice();
+    const missing = missingForSignature();
+    if (missing.length) return showMissing(missing, copy.missingFields);
+
+    clearMarks();
+    try {
+      if (!orderId) {
+        const created = await call('POST', '/orders', { ...identity(), quantity, period });
+        orderId = created.id;
+        accessToken = created.accessToken;
+      }
+      const { email: _addressIsFixed, ...editable } = identity();
+      await call('PATCH', `/orders/${orderId}`, { ...editable, quantity, period, seatEmails: filledSeats() });
+      await call('POST', `/orders/${orderId}/sign`, { signerName: value('signer'), termsAccepted: true });
+
+      signed = true;
+      $('order-form').classList.add('hidden');
+      $('signed-panel').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) {
+      notice((error as Error).message);
+    }
+  });
+
+  $('pay').addEventListener('click', async () => {
+    clearNotice();
+    if (!orderId) return;
+    try {
+      const { url } = await call('POST', `/orders/${orderId}/checkout`, { locale });
+      window.location.href = url;
+    } catch (error) {
+      notice((error as Error).message);
+    }
+  });
+
+  $('download-signed').addEventListener('click', () => {
+    if (orderId && signed) downloadDocument(orderId).catch(() => notice(copy.genericError));
+  });
+
+  // Typing anywhere clears the red: the buyer should see the outline go as they fix it.
+  for (const id of ['email', 'email-confirm', 'signer', 'f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
+    $(id).addEventListener('input', clearMarks);
+  }
+  $('chk-terms').addEventListener('change', clearMarks);
+
+  $('f-country').addEventListener('change', () => {
+    countryChosenByHand = true;
+    clearMarks();
+    applyCountry();
+  });
+
+  $('bill-company').addEventListener('click', () => setBillTo('company'));
+  $('bill-individual').addEventListener('click', () => setBillTo('individual'));
+
+  $('qty-minus').addEventListener('click', () => setQuantity(quantity - 1));
+  $('qty-plus').addEventListener('click', () => setQuantity(quantity + 1));
+  $('period-yearly').addEventListener('click', () => setPeriod('annual'));
+  $('period-monthly').addEventListener('click', () => setPeriod('monthly'));
+
+  // ── Arriving on the page ────────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get('paid')) {
+    $('order-form').classList.add('hidden');
+    $('paid-panel').classList.remove('hidden');
+  } else {
+    if (params.get('cancelled')) notice(copy.cancelledNotice, 'info');
+    if (params.get('period') === 'monthly') setPeriod('monthly');
+    setQuantity(Number(params.get('licences')) || 1);
+
+    // The list is populated at once so the form is usable, but nothing is priced yet: the price
+    // still appears exactly once, when detection answers, rather than showing euros and then
+    // correcting itself to francs in front of the visitor.
+    fillCountries(null);
+
+    // Detection only suggests, and it is the same call the pricing page made — now answering from
+    // the same remembered value, so the figure carried over from that page holds. Whatever the
+    // buyer picks afterwards wins, and re-prices on the spot.
+    detectUserCountry().then((country) => {
+      if (!countryChosenByHand && country && COUNTRY_CODES.includes(country)) fillCountries(country);
+      countrySettled = true;
+      applyCountry();
+    });
+  }
+</script>

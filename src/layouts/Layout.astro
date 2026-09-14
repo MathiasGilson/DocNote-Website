@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-import { getLocaleFromUrl, locales, type Locale } from '../utils/i18n';
+import { getLocaleFromUrl, getLocalizedPath, locales, type Locale } from '../utils/i18n';
 import { getEntry } from 'astro:content';
 import {
   absoluteUrl,
@@ -153,7 +153,7 @@ const softwareApplicationLd = {
         unitText: 'MONTH',
       },
       availability: 'https://schema.org/InStock',
-      url: absoluteUrl(`/${locale}/pricing`),
+      url: absoluteUrl(getLocalizedPath('/pricing', locale)),
     },
     {
       '@type': 'Offer',
@@ -167,7 +167,7 @@ const softwareApplicationLd = {
         unitText: 'MONTH',
       },
       availability: 'https://schema.org/InStock',
-      url: absoluteUrl(`/${locale}/pricing`),
+      url: absoluteUrl(getLocalizedPath('/pricing', locale)),
     },
   ],
   provider: { '@type': 'Organization', name: 'DocNote', legalName: 'Gilson GmbH' },
