@@ -6,7 +6,7 @@
   "packageManager": "npm@10.9.2",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/generate-og-images.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run"
@@ -19,6 +19,9 @@
     "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "node-html-parser": "^7.1.0",
+    "satori": "^0.25.0",
     "vitest": "^3.2.7"
   }
 }
