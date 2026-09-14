@@ -1,13 +1,13 @@
 ---
 title: "Only 10% of emergency physicians' time spent with patients"
-excerpt: "In the controlled chaos of a hospital emergency department, one might assume that physicians spend most of their time at the bedside. But a study at Bordeaux University Hospital paints a very different picture."
-category: "ai"
+translationKey: "hipaa-compliance-ai-tools"
+excerpt: "One might assume that emergency physicians spend most of their time at the bedside. But a time-and-motion study at Bordeaux University Hospital paints a very different picture."
+category: "ai-scribe"
 author: "Thomas Weber"
 authorRole: "Compliance Officer"
 authorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/CHU Bordeaux.jpg"
+image: "../../../assets/blog/CHU Bordeaux.jpg"
 date: "2025-05-15"
-readTime: 9
 ---
 
 In the controlled chaos of a hospital emergency department, one might assume that physicians spend most of their time at the bedside, examining patients, making decisions, delivering urgent care. But a new observational study conducted at Bordeaux University Hospital paints a very different picture.

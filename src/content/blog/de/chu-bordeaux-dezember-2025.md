@@ -1,13 +1,13 @@
 ---
 title: "DocNote stellt am CHU HealthTech Connexion Day in Bordeaux aus"
+translationKey: "chu-bordeaux-december-2025"
 excerpt: "DocNote präsentierte seine KI-Dokumentationsplattform am CHU HealthTech Connexion Day in Bordeaux und vernetzte sich mit französischen Gesundheitsinnovatoren und Krankenhausadministratoren."
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"
-image: "/images/bordeaux_12.25.jpg"
+image: "../../../assets/blog/bordeaux_12.25.jpg"
 date: "2025-12-08"
-readTime: 4
 ---
 
 Beim CHU HealthTech Connexion Day, einer Schlüsselveranstaltung für Krankenhausinnovation, präsentierte das Startup DocNote seinen KI-Assistenten zur Automatisierung der administrativen Arbeitsabläufe von Ärzten.

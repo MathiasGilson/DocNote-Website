@@ -1,13 +1,13 @@
 ---
 title: "DocNote präsentiert an der SGAIM-Jahreskonferenz"
+translationKey: "sgaim-presentation-april-2025"
 excerpt: "DocNote wurde der Schweizerischen Gesellschaft für Allgemeine Innere Medizin (SGAIM) vorgestellt und zeigte, wie KI die medizinische Dokumentation in der Primärversorgung transformieren kann."
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"
-image: "/images/remise-prix-lumiere-2023.png"
+image: "../../../assets/blog/remise-prix-lumiere-2023.png"
 date: "2025-05-20"
-readTime: 3
 ---
 
 Am Jahreskongress der SSMIG (Schweizerische Gesellschaft für Allgemeine Innere Medizin), einem der wichtigsten medizinischen Treffen der Schweiz, wurde DocNote als innovative Lösung zur Reduktion der administrativen Belastung in der klinischen Praxis vorgestellt.

@@ -1,13 +1,13 @@
 ---
 title: "KI-gestützte Pflegedokumentation reduziert Zeit und steigert Effizienz"
+translationKey: "reducing-physician-burnout"
 excerpt: "In Stud Health Technol Inform. untersuchten Forscher des Chi Mei Medical Center die Auswirkungen eines KI-basierten Dokumentationstools auf den Pflegeworkflow und die Qualität der Dokumentation."
-category: "ai"
+category: "ai-scribe"
 author: "Dr. Marc Schneider"
 authorRole: "Healthcare Consultant"
 authorImage: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/Chinese nurses.jpg"
+image: "../../../assets/blog/Chinese nurses.jpg"
 date: "2025-10-10"
-readTime: 5
 ---
 
 In Stud Health Technol Inform. untersuchten Forscher des Chi Mei Medical Center die Auswirkungen eines KI-basierten Dokumentationstools auf den Pflegeworkflow und die Qualität der Dokumentation. Ihre Studie „Enhancing Healthcare Efficiency: Integrating ChatGPT in Nursing Documentation" erforschte, wie eine auf einem großen Sprachmodell (LLM) basierende Lösung routinemäßige Dokumentationsaufgaben rationalisieren könnte.

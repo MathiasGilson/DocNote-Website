@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { CATEGORY_SLUGS } from './categories';
 
 const pagesCollection = defineCollection({
   type: 'data',
@@ -365,13 +366,15 @@ const pagesCollection = defineCollection({
       recentPosts: z.string(),
       minRead: z.string(),
       shareArticle: z.string(),
-      categories: z.object({
-        all: z.string(),
-        news: z.string(),
-        ai: z.string(),
-        documentation: z.string(),
-        practice: z.string(),
-      }),
+      allPosts: z.string(),
+      pageLabel: z.string(),
+      previousPage: z.string(),
+      nextPage: z.string(),
+      relatedTitle: z.string(),
+      faqTitle: z.string(),
+      updatedLabel: z.string(),
+      onThisPage: z.string(),
+      pillarCta: z.string(),
     }),
     team: z.object({
       aboutUs: z.string(),
@@ -504,19 +507,26 @@ const pagesCollection = defineCollection({
 
 const blogCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    excerpt: z.string(),
-    category: z.enum(['ai', 'documentation', 'practice', 'news']),
-    author: z.string(),
-    authorRole: z.string(),
-    authorImage: z.string(),
-    image: z.string(),
-    imagePosition: z.string().optional(),
-    fullImage: z.boolean().optional(),
-    date: z.string(),
-    readTime: z.number(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      excerpt: z.string().min(50).max(200),
+      translationKey: z.string().regex(/^[a-z0-9-]+$/),
+      category: z.enum(CATEGORY_SLUGS),
+      tags: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
+      author: z.string(),
+      authorRole: z.string(),
+      authorImage: z.string(),
+      image: image(),
+      imagePosition: z.string().optional(),
+      fullImage: z.boolean().optional(),
+      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      updatedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+      faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+      canonical: z.string().url().optional(),
+      seoKeywords: z.array(z.string()).optional(),
+      noindex: z.boolean().default(false),
+    }),
 });
 
 export const collections = {

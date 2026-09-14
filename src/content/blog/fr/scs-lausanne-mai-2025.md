@@ -1,13 +1,13 @@
 ---
 title: "Dre Alice Gilson parle de l'IA en documentation au Congrès du Swiss College of Surgeons à Lausanne"
+translationKey: "scs-lausanne-may-2025"
 excerpt: "DocNote a participé au prestigieux congrès annuel du SCS à l'EPFL de Lausanne, rencontrant les principaux spécialistes en chirurgie de Suisse."
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
-image: "/images/scs_lausanne_05.25.jpg"
+image: "../../../assets/blog/scs_lausanne_05.25.jpg"
 date: "2025-05-21"
-readTime: 4
 ---
 
 Au congrès du SCS à Lausanne, Dre Alice Gilson, du département de chirurgie viscérale des HUG à Genève, a abordé la charge administrative croissante en médecine et le rôle que l'intelligence artificielle pourrait jouer dans la transformation de la documentation médicale.

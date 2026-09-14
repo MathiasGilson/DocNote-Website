@@ -1,13 +1,13 @@
 ---
 title: "DocNote launches its Radiology mode"
+translationKey: "docnote-radiology-mode"
 excerpt: "DocNote introduces a new Radiology mode designed for imaging workflows, helping radiologists produce structured reports faster while keeping more time for analysis and clinical decision-making."
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/images/logo.png"
-image: "/images/radiology_mode_02.26.jpg"
+image: "../../../assets/blog/radiology_mode_02.26.jpg"
 date: "2026-02-15"
-readTime: 2
 ---
 
 DocNote is launching its Radiology mode, a new model designed specifically for imaging workflows.

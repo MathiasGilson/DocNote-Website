@@ -1,13 +1,13 @@
 ---
 title: "Dr. Alice Gilson spricht über KI in der Chirurgie am ECC St. Gallen"
+translationKey: "ecc-st-gallen-december-2025"
 excerpt: "DocNote-Mitgründerin Dr. Alice Gilson hielt einen überzeugenden Vortrag über KI-Anwendungen im und außerhalb des Operationssaals beim Europäischen Kongress für Kardiologie in St. Gallen."
 category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Ärztin & Geschäftsführerin"
 authorImage: "/images/dre_alice_gilson.jpg"
-image: "/images/st_gallen_12.25.jpg"
+image: "../../../assets/blog/st_gallen_12.25.jpg"
 date: "2025-12-01"
-readTime: 4
 ---
 
 Beim Europäischen Kolorektalkongress in St. Gallen hielt Dr. Alice Gilson, Viszeralchirurgin und Geschäftsführerin von DocNote, einen Keynote-Vortrag darüber, wie künstliche Intelligenz die moderne chirurgische Praxis verändert – sowohl im als auch außerhalb des Operationssaals.

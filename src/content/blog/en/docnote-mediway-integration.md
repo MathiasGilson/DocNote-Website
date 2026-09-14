@@ -1,14 +1,14 @@
 ---
 title: "DocNote reports now integrate directly into Mediway"
+translationKey: "docnote-mediway-integration"
 excerpt: "A new feature lets physicians import DocNote-generated reports directly into the Mediway EHR in a single click, with no extra manipulation."
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/images/logo.png"
-image: "/images/mediway_integration_02.26.jpg"
+image: "../../../assets/blog/mediway_integration_02.26.jpg"
 fullImage: true
 date: "2026-02-25"
-readTime: 2
 ---
 
 DocNote reports can now be integrated directly into the Mediway electronic health record, thanks to a new feature developed with Mediway.

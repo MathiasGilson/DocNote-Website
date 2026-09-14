@@ -3,7 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import { getLocalizedPath, formatDate, type Locale } from '../../utils/i18n';
 import type { CollectionEntry } from 'astro:content';
 import { getEntry, render } from 'astro:content';
-import { getBlogAlternateUrls } from '../../utils/blog-translations';
+import { getBlogAlternateUrls } from '../../utils/blog-collection';
+import { CATEGORIES } from '../../content/categories';
 import { absoluteUrl, buildBreadcrumbLd, SITE_URL } from '../../utils/seo';
 import { pillarNavLabel } from '../../content/pillars';
 
@@ -16,17 +17,11 @@ const t = entry.data;
 
 const { Content } = await render(post);
 
-const categoryColors: Record<string, string> = {
-  ai: 'bg-blue-100 text-blue-700',
-  documentation: 'bg-green-100 text-green-700',
-  practice: 'bg-orange-100 text-orange-700',
-};
+const category = CATEGORIES[post.data.category];
 
-const alternates = getBlogAlternateUrls(locale as Locale, slug as string);
+const alternates = await getBlogAlternateUrls(post.data.translationKey);
 const postUrl = absoluteUrl(getLocalizedPath(`/blog/${slug}`, locale));
-const postImage = post.data.image.startsWith('http')
-  ? post.data.image
-  : `${SITE_URL}${post.data.image}`;
+const postImage = `${SITE_URL}${post.data.image.src}`;
 
 const blogPostingLd = {
   '@context': 'https://schema.org',
@@ -35,7 +30,7 @@ const blogPostingLd = {
   description: post.data.excerpt,
   image: postImage,
   datePublished: post.data.date,
-  dateModified: post.data.date,
+  dateModified: post.data.updatedDate ?? post.data.date,
   inLanguage: locale,
   author: {
     '@type': 'Person',
@@ -112,9 +107,9 @@ const related = {
       </a>
 
       <header class="mb-12">
-        {post.data.category !== 'news' && categoryColors[post.data.category] && (
-          <span class={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 ${categoryColors[post.data.category]}`}>
-            {t.blog.categories[post.data.category as keyof typeof t.blog.categories]}
+        {post.data.category !== 'news' && (
+          <span class={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 ${category.badge}`}>
+            {category.label[locale as Locale]}
           </span>
         )}
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
@@ -127,13 +122,22 @@ const related = {
 
       {post.data.fullImage ? (
         <figure class="hero-image mb-12">
-          <img src={post.data.image} alt={post.data.title} loading="eager" decoding="async" />
+          <img
+            src={post.data.image.src}
+            width={post.data.image.width}
+            height={post.data.image.height}
+            alt={post.data.title}
+            loading="eager"
+            decoding="async"
+          />
         </figure>
       ) : (
         <div id="photo-gallery" class="flex gap-4 mb-10">
           <div class="gallery-item relative rounded-xl overflow-hidden shadow-lg">
             <img
-              src={post.data.image}
+              src={post.data.image.src}
+              width={post.data.image.width}
+              height={post.data.image.height}
               alt={post.data.title}
               class="gallery-img"
               loading="lazy"

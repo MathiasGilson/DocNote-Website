@@ -1,13 +1,13 @@
 ---
 title: "La documentation infirmière assistée par l'IA réduit le temps et améliore l'efficacité"
+translationKey: "reducing-physician-burnout"
 excerpt: "Dans Stud Health Technol Inform., des chercheurs du Chi Mei Medical Center ont examiné l'impact d'un outil de documentation basé sur l'IA sur le flux de travail infirmier et la qualité des dossiers."
-category: "ai"
+category: "ai-scribe"
 author: "Dr. Marc Schneider"
 authorRole: "Healthcare Consultant"
 authorImage: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/Chinese nurses.jpg"
+image: "../../../assets/blog/Chinese nurses.jpg"
 date: "2025-10-10"
-readTime: 5
 ---
 
 Dans Stud Health Technol Inform., des chercheurs du Chi Mei Medical Center ont examiné l'impact d'un outil de documentation basé sur l'IA sur le flux de travail infirmier et la qualité des dossiers. Leur étude « Enhancing Healthcare Efficiency: Integrating ChatGPT in Nursing Documentation » a exploré comment une solution pilotée par un grand modèle de langage (LLM) pouvait rationaliser les tâches de documentation courantes.

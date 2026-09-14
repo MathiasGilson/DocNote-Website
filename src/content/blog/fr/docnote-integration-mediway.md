@@ -1,14 +1,14 @@
 ---
 title: "Les comptes rendus DocNote s'intègrent désormais directement dans Mediway"
+translationKey: "docnote-mediway-integration"
 excerpt: "Une nouvelle fonctionnalité permet aux médecins d'importer les comptes rendus générés par DocNote directement dans le DPI Mediway, en un seul clic et sans manipulation supplémentaire."
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
-image: "/images/mediway_integration_02.26.jpg"
+image: "../../../assets/blog/mediway_integration_02.26.jpg"
 fullImage: true
 date: "2026-02-25"
-readTime: 2
 ---
 
 Les comptes rendus générés par DocNote peuvent désormais être intégrés directement dans le dossier patient informatisé Mediway, grâce à une nouvelle fonctionnalité développée avec Mediway.

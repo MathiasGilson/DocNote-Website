@@ -1,13 +1,13 @@
 ---
 title: "DocNote at Adopt AI Paris: Europe's leading AI summit"
+translationKey: "adopt-ai-paris-november-2025"
 excerpt: "DocNote showcased its AI-powered medical documentation platform at Adopt AI, Europe's largest healthcare AI conference in Paris."
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/images/logo.png"
-image: "/images/adopt_ai_11.25.jpg"
+image: "../../../assets/blog/adopt_ai_11.25.jpg"
 date: "2025-11-26"
-readTime: 4
 ---
 
 At the ADOPT AI Congress, an event focused on the real-world implementation of artificial intelligence across industries, DocNote joined hospital leaders, researchers and digital health innovators to discuss how AI can move from pilot projects to large-scale adoption.

@@ -1,14 +1,14 @@
 ---
 title: "DocNote-Berichte lassen sich nun direkt in Mediway integrieren"
+translationKey: "docnote-mediway-integration"
 excerpt: "Eine neue Funktion ermöglicht es Ärztinnen und Ärzten, von DocNote erstellte Berichte mit einem einzigen Klick direkt in die Mediway-KIS zu importieren, ohne zusätzlichen Aufwand."
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"
-image: "/images/mediway_integration_02.26.jpg"
+image: "../../../assets/blog/mediway_integration_02.26.jpg"
 fullImage: true
 date: "2026-02-25"
-readTime: 2
 ---
 
 Von DocNote erstellte Berichte können dank einer neuen, gemeinsam mit Mediway entwickelten Funktion nun direkt in die elektronische Patientenakte Mediway integriert werden.

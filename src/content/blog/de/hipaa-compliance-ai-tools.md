@@ -1,13 +1,13 @@
 ---
 title: "Nur 10 % der Arbeitszeit von Notärzten wird mit Patienten verbracht, zeigt eine Studie aus Bordeaux"
-excerpt: "Im kontrollierten Chaos einer Notaufnahme könnte man annehmen, dass Ärzte die meiste Zeit am Krankenbett verbringen. Doch eine Beobachtungsstudie am Universitätsklinikum Bordeaux zeichnet ein ganz anderes Bild."
-category: "ai"
+translationKey: "hipaa-compliance-ai-tools"
+excerpt: "Man könnte annehmen, dass Ärzte in der Notaufnahme die meiste Zeit am Krankenbett verbringen. Eine Beobachtungsstudie am Universitätsklinikum Bordeaux zeichnet ein ganz anderes Bild."
+category: "ai-scribe"
 author: "Thomas Weber"
 authorRole: "Compliance Officer"
 authorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/CHU Bordeaux.jpg"
+image: "../../../assets/blog/CHU Bordeaux.jpg"
 date: "2025-05-15"
-readTime: 9
 ---
 
 Im kontrollierten Chaos einer Notaufnahme könnte man annehmen, dass Ärzte die meiste Zeit am Krankenbett verbringen — Patienten untersuchen, Entscheidungen treffen, dringende Versorgung leisten. Doch eine neue Beobachtungsstudie am Universitätsklinikum Bordeaux zeichnet ein ganz anderes Bild.

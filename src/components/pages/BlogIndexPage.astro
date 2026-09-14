@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getLocalizedPath, formatDate, type Locale } from '../../utils/i18n';
 import { getEntry, getCollection } from 'astro:content';
 import { absoluteUrl, buildBreadcrumbLd, getPageMeta } from '../../utils/seo';
+import { CATEGORIES } from '../../content/categories';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -18,15 +19,8 @@ const breadcrumbLd = buildBreadcrumbLd([
 const allPosts = await getCollection('blog', ({ id }) => id.startsWith(`${locale}/`));
 const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-const newsPosts = posts.filter(post => post.data.category === 'news');
-const researchPosts = posts.filter(post => ['ai', 'documentation', 'practice'].includes(post.data.category));
-
-const categoryColors: Record<string, string> = {
-  news: 'bg-purple-100 text-purple-700',
-  ai: 'bg-blue-100 text-blue-700',
-  documentation: 'bg-green-100 text-green-700',
-  practice: 'bg-orange-100 text-orange-700',
-};
+const newsPosts = posts.filter((p) => p.data.category === 'news');
+const researchPosts = posts.filter((p) => p.data.category !== 'news');
 ---
 
 <Layout title={meta.title} description={meta.description} jsonLd={breadcrumbLd}>
@@ -40,7 +34,7 @@ const categoryColors: Record<string, string> = {
   {newsPosts.length > 0 && (
     <section class="pb-16 bg-gradient-to-br from-violet-50 to-indigo-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 id="news-heading" class="text-3xl font-bold text-gray-900 mb-10">{t.blog.categories.news}</h2>
+        <h2 id="news-heading" class="text-3xl font-bold text-gray-900 mb-10">{CATEGORIES.news.label[locale as Locale]}</h2>
       </div>
 
       <div class="relative">
@@ -57,10 +51,10 @@ const categoryColors: Record<string, string> = {
                       <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow h-full flex flex-col">
                         <div class="relative h-40 overflow-hidden flex-shrink-0">
                           <img
-                            src={post.data.image}
+                            src={post.data.image.src}
                             alt={post.data.title}
-                            width="600"
-                            height="320"
+                            width={post.data.image.width}
+                            height={post.data.image.height}
                             loading="lazy"
                             decoding="async"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -121,7 +115,7 @@ const categoryColors: Record<string, string> = {
   {researchPosts.length > 0 && (
     <section class={`${newsPosts.length > 0 ? '' : 'pt-8'} py-16 bg-gradient-to-b from-gray-50 to-white`}>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8">{t.blog.categories.ai}</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">{t.blog.allPosts}</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {researchPosts.map((post) => {
             const slug = post.slug.replace(`${locale}/`, '');
@@ -130,10 +124,10 @@ const categoryColors: Record<string, string> = {
                 <a href={getLocalizedPath(`/blog/${slug}`, locale as Locale)}>
                   <div class="relative h-48 overflow-hidden">
                     <img
-                      src={post.data.image}
+                      src={post.data.image.src}
                       alt={post.data.title}
-                      width="600"
-                      height="320"
+                      width={post.data.image.width}
+                      height={post.data.image.height}
                       loading="lazy"
                       decoding="async"
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

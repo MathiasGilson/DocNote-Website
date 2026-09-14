@@ -1,13 +1,13 @@
 ---
 title: "DocNote selected for FONGIT's Initial Startup Support"
+translationKey: "fongit-startup-support-march-2026"
 excerpt: "DocNote has been selected for the Initial Startup Support program of FONGIT, Geneva's leading technology incubator, supporting its growth within the Swiss startup ecosystem."
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/images/logo.png"
-image: "/images/fongit_03.26.jpg"
+image: "../../../assets/blog/fongit_03.26.jpg"
 date: "2026-03-15"
-readTime: 2
 ---
 
 DocNote is proud to announce that it has been selected for the Initial Startup Support program of FONGIT, one of Switzerland's leading technology incubators, based in Geneva.

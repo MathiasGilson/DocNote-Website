@@ -1,13 +1,13 @@
 ---
 title: "DocNote auf Adopt AI Paris: Europas führender KI-Gesundheitsgipfel"
+translationKey: "adopt-ai-paris-november-2025"
 excerpt: "DocNote präsentierte seine KI-gestützte medizinische Dokumentationsplattform auf Adopt AI, Europas größter Healthcare-KI-Konferenz in Paris."
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"
-image: "/images/adopt_ai_11.25.jpg"
+image: "../../../assets/blog/adopt_ai_11.25.jpg"
 date: "2025-11-26"
-readTime: 4
 ---
 
 Beim ADOPT AI Kongress, einer Veranstaltung zur praxisnahen Implementierung von künstlicher Intelligenz in verschiedenen Branchen, traf DocNote mit Krankenhausleitungen, Forschern und Innovatoren im Bereich digitale Gesundheit zusammen, um zu diskutieren, wie KI den Übergang von Pilotprojekten zur großflächigen Einführung schaffen kann.

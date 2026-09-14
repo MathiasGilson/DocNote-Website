@@ -4,7 +4,6 @@ import type { SitemapEntry } from './sitemap-urls';
 
 export const buildSitemapXml = async (site: string, entries: SitemapEntry[]) => {
   const hostname = new URL('/', site).href;
-  const lastmod = new Date().toISOString();
   const sitemapStream = new SitemapStream({
     hostname,
     xmlns: { news: true, xhtml: true, image: true, video: true },
@@ -13,8 +12,7 @@ export const buildSitemapXml = async (site: string, entries: SitemapEntry[]) => 
     Readable.from(
       entries.map((entry) => ({
         url: entry.url,
-        lastmod,
-        changefreq: 'weekly' as const,
+        ...(entry.lastmod ? { lastmod: entry.lastmod } : {}),
         ...(entry.links?.length ? { links: entry.links } : {}),
       }))
     ).pipe(sitemapStream)

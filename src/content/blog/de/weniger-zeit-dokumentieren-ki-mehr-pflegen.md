@@ -1,13 +1,13 @@
 ---
 title: "Weniger Zeit für Dokumentation dank KI, mehr Zeit für die Patientenversorgung: Was sagen die wissenschaftlichen Belege?"
-excerpt: "Im Februar 2025 veröffentlichte JAMA Network Open eine Studie, die überzeugende Belege für die wachsende Rolle der künstlichen Intelligenz bei der Bekämpfung von Burnout und Dokumentationsüberlastung bei Klinikern liefert."
-category: "ai"
+translationKey: "less-time-documenting-ai-more-care"
+excerpt: "Im Februar 2025 veröffentlichte JAMA Network Open eine Studie mit überzeugenden Belegen für die wachsende Rolle der KI gegen Burnout und Dokumentationsüberlastung bei Klinikern."
+category: "ai-scribe"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
 authorImage: "/images/dr_vincent_tan.jpg"
-image: "/images/University of Pennsylvania.avif"
+image: "../../../assets/blog/University of Pennsylvania.avif"
 date: "2026-02-01"
-readTime: 5
 ---
 
 Im Februar 2025 veröffentlichte **JAMA Network Open** eine Studie, die überzeugende Belege für die wachsende Rolle der künstlichen Intelligenz bei der Bekämpfung von Burnout und Dokumentationsüberlastung bei Klinikern liefert.

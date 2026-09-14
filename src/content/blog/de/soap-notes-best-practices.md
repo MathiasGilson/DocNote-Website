@@ -1,13 +1,13 @@
 ---
 title: "Perspektiven von Ärzten zu ambienten KI-Schreibassistenten"
+translationKey: "soap-notes-best-practices"
 excerpt: "Eine neue qualitative Studie, veröffentlicht im JAMA Network Open, untersuchte, wie Ärzte an der Front die Nutzung von ambienten KI-Schreibassistenten wahrnehmen."
-category: "ai"
+category: "ai-scribe"
 author: "Dr. Julia Berger"
 authorRole: "Internal Medicine Specialist"
 authorImage: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/visite-medicale.jpg"
+image: "../../../assets/blog/visite-medicale.jpg"
 date: "2025-08-20"
-readTime: 6
 ---
 
 Eine neue qualitative Studie, veröffentlicht im JAMA Network Open, untersuchte, wie Ärzte an der Front die Nutzung von ambienten KI-Schreibassistenten wahrnehmen.

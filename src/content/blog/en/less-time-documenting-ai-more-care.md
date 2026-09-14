@@ -1,13 +1,13 @@
 ---
 title: "Less time spent on documentation thanks to AI, more time for patient care: what does the scientific evidence say?"
+translationKey: "less-time-documenting-ai-more-care"
 excerpt: "In February 2025, a study published in JAMA Network Open added compelling evidence to the growing role of artificial intelligence in addressing clinician burnout and documentation overload."
-category: "ai"
+category: "ai-scribe"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
 authorImage: "/images/dr_vincent_tan.jpg"
-image: "/images/University of Pennsylvania.avif"
+image: "../../../assets/blog/University of Pennsylvania.avif"
 date: "2026-02-01"
-readTime: 5
 ---
 
 In February 2025, a study published in **JAMA Network Open** added compelling evidence to the growing role of artificial intelligence in addressing clinician burnout and documentation overload.

@@ -1,13 +1,13 @@
 ---
 title: "DocNote lanciert seinen Radiologie-Modus"
-excerpt: "DocNote stellt einen neuen Radiologie-Modus vor, der für Bildgebungs-Workflows konzipiert ist und Radiologen hilft, strukturierte Berichte schneller zu erstellen und mehr Zeit für Analyse und klinische Entscheidung zu behalten."
+translationKey: "docnote-radiology-mode"
+excerpt: "DocNote stellt einen neuen Radiologie-Modus vor, der Radiologen hilft, strukturierte Berichte schneller zu erstellen und mehr Zeit für Analyse und klinische Entscheidung zu behalten."
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"
-image: "/images/radiology_mode_02.26.jpg"
+image: "../../../assets/blog/radiology_mode_02.26.jpg"
 date: "2026-02-15"
-readTime: 2
 ---
 
 DocNote lanciert seinen Radiologie-Modus, ein neues Modell, das speziell für Bildgebungs-Workflows konzipiert ist.

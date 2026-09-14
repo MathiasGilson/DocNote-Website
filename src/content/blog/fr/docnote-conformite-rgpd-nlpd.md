@@ -1,13 +1,13 @@
 ---
 title: "La conformité RGPD et nLPD de DocNote confirmée"
-excerpt: "À l'issue d'une relecture approfondie par le Bureau de la protection des données du canton de Vaud, la gestion des données de DocNote a été confirmée conforme au RGPD, à la nLPD suisse et à la LPrD vaudoise."
+translationKey: "docnote-gdpr-nfadp-compliance"
+excerpt: "Après une relecture approfondie du Bureau de la protection des données du canton de Vaud, la gestion des données de DocNote a été confirmée conforme au RGPD, à la nLPD et à la LPrD vaudoise."
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
-image: "/images/rgpd_nlpd_02.26.jpg"
+image: "../../../assets/blog/rgpd_nlpd_02.26.jpg"
 date: "2026-02-20"
-readTime: 2
 ---
 
 La gestion des données au sein de DocNote a été confirmée conforme aux exigences du RGPD (Union européenne), de la nLPD (Suisse) et de la LPrD (canton de Vaud).

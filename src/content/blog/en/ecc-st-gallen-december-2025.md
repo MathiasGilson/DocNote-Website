@@ -1,13 +1,13 @@
 ---
 title: "Dr. Alice Gilson speaks on AI in surgery at ECC St. Gallen"
+translationKey: "ecc-st-gallen-december-2025"
 excerpt: "DocNote co-founder Dr. Alice Gilson delivered a compelling talk on AI applications inside and outside the operating room at a medical conference in St. Gallen."
 category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
 authorImage: "/images/dre_alice_gilson.jpg"
-image: "/images/st_gallen_12.25.jpg"
+image: "../../../assets/blog/st_gallen_12.25.jpg"
 date: "2025-12-01"
-readTime: 4
 ---
 
 At the European Colorectal Congress in St. Gallen, Dr. Alice Gilson, visceral surgeon and CEO of DocNote, delivered a keynote address on how artificial intelligence is reshaping modern surgical practice, both inside and outside the operating room.

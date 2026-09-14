@@ -1,13 +1,13 @@
 ---
 title: "AI-Assisted Nursing Documentation Cuts Time and Boosts Efficiency"
+translationKey: "reducing-physician-burnout"
 excerpt: "In Stud Health Technol Inform., researchers from Chi Mei Medical Center examined the impact of an AI-based documentation tool on nursing workflow and record quality."
-category: "ai"
+category: "ai-scribe"
 author: "Dr. Marc Schneider"
 authorRole: "Healthcare Consultant"
 authorImage: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/Chinese nurses.jpg"
+image: "../../../assets/blog/Chinese nurses.jpg"
 date: "2025-10-10"
-readTime: 5
 ---
 
 In Stud Health Technol Inform., researchers from Chi Mei Medical Center examined the impact of an AI-based documentation tool on nursing workflow and record quality. Their study "Enhancing Healthcare Efficiency: Integrating ChatGPT in Nursing Documentation" explored how a large language model (LLM)-driven solution could streamline routine documentation tasks.

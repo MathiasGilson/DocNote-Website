@@ -1,13 +1,13 @@
 ---
 title: "DocNote à Adopt AI Paris : Le sommet européen de l'IA en santé"
+translationKey: "adopt-ai-paris-november-2025"
 excerpt: "DocNote a présenté sa plateforme de documentation médicale alimentée par l'IA à Adopt AI, la plus grande conférence européenne sur l'IA en santé à Paris."
 category: "news"
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
-image: "/images/adopt_ai_11.25.jpg"
+image: "../../../assets/blog/adopt_ai_11.25.jpg"
 date: "2025-11-26"
-readTime: 4
 ---
 
 Lors du congrès ADOPT AI, un événement consacré à l'implémentation concrète de l'intelligence artificielle dans tous les secteurs, DocNote a rejoint des dirigeants hospitaliers, des chercheurs et des innovateurs en santé numérique pour discuter de la transition de l'IA des projets pilotes vers une adoption à grande échelle.

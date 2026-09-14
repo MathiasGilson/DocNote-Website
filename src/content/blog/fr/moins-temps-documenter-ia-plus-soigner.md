@@ -1,13 +1,13 @@
 ---
 title: "Moins de temps consacré à la documentation grâce à l'IA, plus de temps pour les soins : que disent les preuves scientifiques ?"
-excerpt: "En février 2025, une étude publiée dans JAMA Network Open a apporté des preuves convaincantes du rôle croissant de l'intelligence artificielle dans la lutte contre l'épuisement professionnel des cliniciens et la surcharge documentaire."
-category: "ai"
+translationKey: "less-time-documenting-ai-more-care"
+excerpt: "En février 2025, une étude publiée dans JAMA Network Open a documenté le rôle croissant de l'intelligence artificielle contre l'épuisement des cliniciens et la surcharge documentaire."
+category: "ai-scribe"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
 authorImage: "/images/dr_vincent_tan.jpg"
-image: "/images/University of Pennsylvania.avif"
+image: "../../../assets/blog/University of Pennsylvania.avif"
 date: "2026-02-01"
-readTime: 5
 ---
 
 En février 2025, une étude publiée dans **JAMA Network Open** a apporté des preuves convaincantes du rôle croissant de l'intelligence artificielle dans la lutte contre l'épuisement professionnel des cliniciens et la surcharge documentaire.

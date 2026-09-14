@@ -1,11 +1,9 @@
 import { getCollection } from 'astro:content';
-import { getLocalizedPath, locales, type Locale } from './i18n';
-import { getBlogAlternateUrls } from './blog-translations';
+import { getLocalizedPath, locales } from './i18n';
+import { getBlogAlternateUrls, getPostLocale } from './blog-collection';
+import { getPostSlug } from './blog';
 
-export type SitemapEntry = {
-  url: string;
-  links?: { lang: string; url: string }[];
-};
+export type SitemapEntry = { url: string; lastmod?: string; links?: { lang: string; url: string }[] };
 
 const STATIC_PAGES = [
   '/blog',
@@ -42,24 +40,21 @@ export const getLandingUrls = (site: string): SitemapEntry[] => {
 };
 
 export const getBlogUrls = async (site: string): Promise<SitemapEntry[]> => {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => !data.noindex);
   const entries: SitemapEntry[] = [];
-
   for (const post of posts) {
-    const [locale, ...slugParts] = post.slug.split('/');
-    const slug = slugParts.join('/');
-    const alternates = getBlogAlternateUrls(locale as Locale, slug);
+    const locale = getPostLocale(post);
+    const slug = getPostSlug(post.id);
+    const alternates = await getBlogAlternateUrls(post.data.translationKey);
     const links = [
-      ...locales
-        .filter((code) => alternates[code])
-        .map((code) => ({ lang: code, url: alternates[code]! })),
+      ...locales.filter((code) => alternates[code]).map((code) => ({ lang: code, url: alternates[code]! })),
       ...(alternates.en ? [{ lang: 'x-default', url: alternates.en }] : []),
     ];
     entries.push({
-      url: toAbs(site, getLocalizedPath(`/blog/${slug}`, locale as Locale)),
+      url: toAbs(site, getLocalizedPath(`/blog/${slug}`, locale)),
+      lastmod: post.data.updatedDate ?? post.data.date,
       links,
     });
   }
-
   return entries.sort((a, b) => a.url.localeCompare(b.url, 'en', { numeric: true }));
 };

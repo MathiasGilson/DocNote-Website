@@ -1,13 +1,13 @@
 ---
 title: "Drei Stunden Papierkram für jede Stunde mit Patienten"
+translationKey: "future-of-ai-medical-documentation"
 excerpt: "Wie viel Zeit verbringen Assistenzärzte tatsächlich mit ihren Patienten? Eine Zeit-und-Bewegungs-Studie in Annals of Internal Medicine versuchte, diese Frage mit objektiver Beobachtung zu beantworten."
-category: "ai"
+category: "ai-scribe"
 author: "Dr. Elena Fischer"
 authorRole: "Chief Medical Officer"
 authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/CHUV.webp"
+image: "../../../assets/blog/CHUV.webp"
 date: "2025-12-05"
-readTime: 4
 ---
 
 Wie viel Zeit verbringen Assistenzärzte tatsächlich mit ihren Patienten?

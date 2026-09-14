@@ -1,14 +1,14 @@
 ---
 title: "DocNote featured in Les Echos among Europe's leading health AI players"
+translationKey: "docnote-les-echos-european-ai-health"
 excerpt: "French business daily Les Echos mapped the European market of AI health assistants and listed DocNote among the key players in medical scribing and document generation."
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/images/logo.png"
-image: "/images/lesechos_06.26.png"
+image: "../../../assets/blog/lesechos_06.26.png"
 fullImage: true
 date: "2026-06-17"
-readTime: 3
 ---
 
 DocNote has been featured in Les Echos, one of France's leading business newspapers, in an in-depth analysis of the fast-growing market of AI assistants in healthcare.

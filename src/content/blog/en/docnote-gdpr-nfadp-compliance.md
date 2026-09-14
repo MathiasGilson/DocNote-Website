@@ -1,13 +1,13 @@
 ---
 title: "DocNote's GDPR and nFADP compliance confirmed"
+translationKey: "docnote-gdpr-nfadp-compliance"
 excerpt: "Following an in-depth review by the Data Protection Office of the Canton of Vaud, DocNote's data management has been confirmed compliant with GDPR, the Swiss nFADP and the Vaud LPrD."
 category: "news"
 author: "DocNote Team"
 authorRole: "Company News"
 authorImage: "/images/logo.png"
-image: "/images/rgpd_nlpd_02.26.jpg"
+image: "../../../assets/blog/rgpd_nlpd_02.26.jpg"
 date: "2026-02-20"
-readTime: 2
 ---
 
 DocNote's data management has been confirmed compliant with the requirements of the GDPR (European Union), the Swiss Federal Act on Data Protection (nFADP) and the Vaud cantonal law on data protection (LPrD).

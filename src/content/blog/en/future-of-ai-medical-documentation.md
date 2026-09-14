@@ -1,13 +1,13 @@
 ---
 title: "Three hours on paperwork for every hour with patients"
-excerpt: "How much time do hospital residents actually spend with patients? A time-and-motion study published in Annals of Internal Medicine sought to answer that question with objective observation rather than perception."
-category: "ai"
+translationKey: "future-of-ai-medical-documentation"
+excerpt: "How much time do hospital residents actually spend with patients? A time-and-motion study in Annals of Internal Medicine answered that question with objective observation."
+category: "ai-scribe"
 author: "Dr. Elena Fischer"
 authorRole: "Chief Medical Officer"
 authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/CHUV.webp"
+image: "../../../assets/blog/CHUV.webp"
 date: "2025-12-05"
-readTime: 4
 ---
 
 How much time do hospital residents actually spend with patients?

@@ -1,14 +1,14 @@
 ---
 title: "DocNote an der MedInTechs 2026 in Paris, Partner des Village des Innovations Chirurgicales"
-excerpt: "DocNote nahm an der MedInTechs 2026 im Parc Floral de Paris teil, präsentierte seinen Krankenhaus-KI-Assistenten im Village des Innovations Chirurgicales und tauschte sich mit Klinikern, Unternehmern und Persönlichkeiten des öffentlichen Lebens aus."
+translationKey: "medintechs-paris-march-2026"
+excerpt: "DocNote nahm an der MedInTechs 2026 in Paris teil, präsentierte seinen Krankenhaus-KI-Assistenten im Village des Innovations Chirurgicales und tauschte sich mit Klinikern und Unternehmern aus."
 category: "news"
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"
-image: "/images/medintechs_03.26.jpg"
+image: "../../../assets/blog/medintechs_03.26.jpg"
 imagePosition: "top"
 date: "2026-03-10"
-readTime: 4
 ---
 
 DocNote nahm an der MedInTechs 2026 teil, einer bedeutenden Veranstaltung zur Innovation im Gesundheitswesen im Parc Floral de Paris, als Partner des Village des Innovations Chirurgicales.

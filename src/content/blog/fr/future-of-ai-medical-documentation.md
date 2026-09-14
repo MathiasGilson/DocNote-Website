@@ -1,13 +1,13 @@
 ---
 title: "Trois heures de paperasse pour chaque heure avec les patients"
-excerpt: "Combien de temps les résidents hospitaliers passent-ils réellement avec leurs patients ? Une étude de temps et mouvements publiée dans Annals of Internal Medicine a cherché à répondre à cette question par l'observation objective."
-category: "ai"
+translationKey: "future-of-ai-medical-documentation"
+excerpt: "Combien de temps les résidents hospitaliers passent-ils réellement avec leurs patients ? Une étude publiée dans Annals of Internal Medicine y répond par l'observation objective."
+category: "ai-scribe"
 author: "Dr. Elena Fischer"
 authorRole: "Chief Medical Officer"
 authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/CHUV.webp"
+image: "../../../assets/blog/CHUV.webp"
 date: "2025-12-05"
-readTime: 4
 ---
 
 Combien de temps les résidents hospitaliers passent-ils réellement avec leurs patients ?

@@ -1,13 +1,13 @@
 ---
 title: "Seulement 10 % du temps des urgentistes est consacré aux patients, révèle une étude bordelaise"
-excerpt: "Dans le chaos contrôlé d'un service d'urgences hospitalières, on pourrait supposer que les médecins passent la majeure partie de leur temps au chevet des patients. Mais une étude au CHU de Bordeaux dresse un tout autre tableau."
-category: "ai"
+translationKey: "hipaa-compliance-ai-tools"
+excerpt: "On pourrait supposer que les urgentistes passent la majeure partie de leur temps au chevet des patients. Mais une étude menée au CHU de Bordeaux dresse un tout autre tableau."
+category: "ai-scribe"
 author: "Thomas Weber"
 authorRole: "Compliance Officer"
 authorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "/images/CHU Bordeaux.jpg"
+image: "../../../assets/blog/CHU Bordeaux.jpg"
 date: "2025-05-15"
-readTime: 9
 ---
 
 Dans le chaos contrôlé d'un service d'urgences hospitalières, on pourrait supposer que les médecins passent la majeure partie de leur temps au chevet des patients, à les examiner, à prendre des décisions, à prodiguer des soins urgents. Mais une étude observationnelle menée au Centre Hospitalier Universitaire de Bordeaux dresse un tout autre tableau.
