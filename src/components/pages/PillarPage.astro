@@ -8,11 +8,18 @@ import {
   type PillarSlug,
 } from '../../content/pillars';
 import { absoluteUrl, buildBreadcrumbLd } from '../../utils/seo';
+import BlogCard from '../BlogCard.astro';
+import { pillarCategories } from '../../content/categories';
+import { getPostsForLocale } from '../../utils/blog-collection';
 
 interface Props { locale: Locale; pillar: PillarSlug }
 const { locale: lang, pillar: slug } = Astro.props;
 const p = pillars[slug][lang];
 const homeLabel = lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Start' : 'Home';
+
+const cats = pillarCategories(slug);
+const catSlugs = new Set(cats.map((c) => c.slug));
+const latest = (await getPostsForLocale(lang)).filter((p) => catSlugs.has(p.data.category)).slice(0, 6);
 
 const breadcrumbLd = buildBreadcrumbLd([
   { name: 'DocNote', url: absoluteUrl(getLocalizedPath('/', lang)) },
@@ -110,5 +117,21 @@ const secondaryHref =
         </ul>
       </aside>
     </div>
+
+    {latest.length > 0 && (
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20" aria-labelledby="pillar-articles">
+        <div class="flex flex-wrap items-baseline justify-between gap-4 mb-8">
+          <h2 id="pillar-articles" class="text-2xl font-bold text-gray-900">{p.relatedLabel}</h2>
+          <div class="flex gap-2">
+            {cats.map((c) => (
+              <a href={getLocalizedPath(`/blog/category/${c.slug}`, lang)} class={`px-3 py-1 rounded-full text-sm font-medium ${c.badge}`}>{c.label[lang]}</a>
+            ))}
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {latest.map((post) => <BlogCard post={post} locale={lang} />)}
+        </div>
+      </section>
+    )}
   </article>
 </Layout>
