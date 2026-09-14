@@ -1,0 +1,72 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../BlogCard.astro';
+import { specialties, type SpecialtySlug } from '../../content/specialties';
+import { getLocalizedPath, type Locale } from '../../utils/i18n';
+import { getPostsForLocale } from '../../utils/blog-collection';
+import { absoluteUrl, buildBreadcrumbLd } from '../../utils/seo';
+import { DEMO_BOOKING_URL } from '../../utils/links';
+
+interface Props { locale: Locale; specialty: SpecialtySlug }
+const { locale, specialty } = Astro.props;
+const s = specialties[specialty][locale];
+const t = (await getEntry('pages', locale)).data;
+const cats = new Set(s.categories);
+const latest = (await getPostsForLocale(locale)).filter((p) => cats.has(p.data.category)).slice(0, 3);
+const url = absoluteUrl(getLocalizedPath(`/for/${specialty}`, locale));
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', name: s.title, description: s.description, url, inLanguage: locale },
+  buildBreadcrumbLd([{ name: 'DocNote', url: absoluteUrl(getLocalizedPath('/', locale)) }, { name: s.title, url }]),
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: s.faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+---
+
+<Layout title={s.title} description={s.description} jsonLd={jsonLd}>
+  <article class="pt-32 pb-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight">{s.h1}</h1>
+      <p class="mt-6 text-xl text-gray-600">{s.intro}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href={DEMO_BOOKING_URL} class="px-5 py-3 rounded-xl bg-violet-600 text-white font-medium hover:bg-violet-700">{t.contact.bookDemo}</a>
+        <a href={getLocalizedPath('/pricing', locale)} class="px-5 py-3 rounded-xl border border-gray-300 text-gray-800 font-medium hover:bg-gray-50">{t.nav.pricing}</a>
+      </div>
+
+      <section class="mt-16">
+        <div class="grid sm:grid-cols-3 gap-6">
+          {s.documents.map((d) => (
+            <div class="rounded-2xl border border-gray-100 p-6">
+              <h2 class="text-lg font-semibold text-gray-900">{d.name}</h2>
+              <p class="mt-2 text-gray-600">{d.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mt-16 space-y-10">
+        {s.benefits.map((b) => (
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900">{b.heading}</h2>
+            <p class="mt-3 text-gray-600 text-lg">{b.body}</p>
+          </div>
+        ))}
+      </section>
+
+      <section class="mt-16" aria-labelledby="faq">
+        <h2 id="faq" class="text-2xl font-bold text-gray-900 mb-6">{t.blog.faqTitle}</h2>
+        <dl class="space-y-6">
+          {s.faq.map(({ q, a }) => (
+            <div><dt class="font-semibold text-gray-900">{q}</dt><dd class="mt-1 text-gray-600">{a}</dd></div>
+          ))}
+        </dl>
+      </section>
+    </div>
+
+    {latest.length > 0 && (
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">{t.blog.relatedTitle}</h2>
+        <div class="grid md:grid-cols-3 gap-8">{latest.map((p) => <BlogCard post={p} locale={locale} />)}</div>
+      </section>
+    )}
+  </article>
+</Layout>

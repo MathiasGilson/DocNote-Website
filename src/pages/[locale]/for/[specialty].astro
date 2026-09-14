@@ -1,0 +1,11 @@
+---
+import SpecialtyPage from '../../../components/pages/SpecialtyPage.astro';
+import { SPECIALTY_SLUGS, type SpecialtySlug } from '../../../content/specialties';
+import { nonDefaultLocales, type Locale } from '../../../utils/i18n';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.flatMap((locale) => SPECIALTY_SLUGS.map((specialty) => ({ params: { locale, specialty } })));
+}
+const { locale, specialty } = Astro.params as { locale: Locale; specialty: SpecialtySlug };
+---
+<SpecialtyPage locale={locale} specialty={specialty} />

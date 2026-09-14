@@ -1,0 +1,9 @@
+---
+import SpecialtyPage from '../../components/pages/SpecialtyPage.astro';
+import { SPECIALTY_SLUGS, type SpecialtySlug } from '../../content/specialties';
+
+export function getStaticPaths() {
+  return SPECIALTY_SLUGS.map((specialty) => ({ params: { specialty } }));
+}
+---
+<SpecialtyPage locale="en" specialty={Astro.params.specialty as SpecialtySlug} />

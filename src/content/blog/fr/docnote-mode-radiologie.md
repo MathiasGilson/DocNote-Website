@@ -2,7 +2,8 @@
 title: "DocNote lance son mode Radiologie"
 translationKey: "docnote-radiology-mode"
 excerpt: "DocNote présente un mode Radiologie conçu pour les flux d'imagerie, qui aide les radiologues à produire des comptes rendus structurés plus vite et à garder du temps pour l'analyse clinique."
-category: "news"
+category: "specialties"
+tags: ["radiology", "dictation", "ris"]
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"

@@ -2,6 +2,7 @@
 import { getLocalizedPath, type Locale } from "../utils/i18n"
 import { pillarSlugs, pillarNavLabel } from "../content/pillars"
 import { CATEGORY_LIST } from "../content/categories"
+import { SPECIALTY_SLUGS, specialtyNavLabel } from "../content/specialties"
 
 interface Props {
     locale: Locale
@@ -108,6 +109,9 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
                                 {pillarNavLabel[locale][slug]}
                             </a>
                         </li>
+                    ))}
+                    {SPECIALTY_SLUGS.map((s) => (
+                        <li><a href={getLocalizedPath(`/for/${s}`, locale)} class="text-sm text-white hover:text-white/70 transition-colors">{specialtyNavLabel[locale][s]}</a></li>
                     ))}
                     <li>
                         <a href={getLocalizedPath("/blog", locale)} class="text-sm text-white hover:text-white/70 transition-colors"

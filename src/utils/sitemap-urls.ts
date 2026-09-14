@@ -3,6 +3,7 @@ import { getLocalizedPath, locales } from './i18n';
 import { getBlogAlternateUrls, getPaginationPresence, getPostLocale } from './blog-collection';
 import { getPostSlug } from './blog';
 import { CATEGORY_SLUGS } from '../content/categories';
+import { SPECIALTY_SLUGS } from '../content/specialties';
 
 export type SitemapEntry = { url: string; lastmod?: string; links?: { lang: string; url: string }[] };
 
@@ -31,7 +32,7 @@ const localeLinks = (site: string, pathSuffix: string) => [
 export const getLandingUrls = (site: string): SitemapEntry[] => {
   const entries: SitemapEntry[] = [];
 
-  for (const path of ['/', ...STATIC_PAGES.map((p) => `${p}/`)]) {
+  for (const path of ['/', ...STATIC_PAGES.map((p) => `${p}/`), ...SPECIALTY_SLUGS.map((s) => `/for/${s}/`)]) {
     const links = localeLinks(site, path);
     for (const locale of locales) entries.push({ url: toAbs(site, getLocalizedPath(path, locale)), links });
   }
