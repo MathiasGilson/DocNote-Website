@@ -89,9 +89,14 @@ const pillarLabel = category.pillar ? pillarNavLabel[locale][category.pillar] : 
         </div>
       </header>
 
-      <Image src={post.data.image} alt={post.data.title} width={1280} height={720} format="webp" loading="eager" fetchpriority="high"
-        class={`w-full rounded-2xl mb-10 ${post.data.fullImage ? '' : 'aspect-video object-cover'}`}
-        style={`object-position: ${post.data.imagePosition ?? 'center'};`} />
+      {post.data.fullImage ? (
+        <Image src={post.data.image} alt={post.data.title} width={post.data.image.width} height={post.data.image.height}
+          format="webp" loading="eager" fetchpriority="high" class="max-h-[520px] w-auto mx-auto rounded-2xl mb-10" />
+      ) : (
+        <Image src={post.data.image} alt={post.data.title} width={1280} format="webp" loading="eager" fetchpriority="high"
+          class="w-full aspect-video object-cover rounded-2xl mb-10"
+          style={`object-position: ${post.data.imagePosition ?? 'center'};`} />
+      )}
 
       <div id="photo-gallery" class="flex gap-4 mb-10 empty:hidden empty:mb-0"></div>
 
