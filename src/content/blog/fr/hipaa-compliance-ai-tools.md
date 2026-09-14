@@ -2,8 +2,8 @@
 title: "Seulement 10 % du temps des urgentistes est consacré aux patients, révèle une étude bordelaise"
 translationKey: "hipaa-compliance-ai-tools"
 excerpt: "On pourrait supposer que les urgentistes passent la majeure partie de leur temps au chevet des patients. Mais une étude menée au CHU de Bordeaux dresse un tout autre tableau."
-category: "compliance"
-tags: ["hipaa", "compliance", "ai-scribe"]
+category: "hospital-workflows"
+tags: ["emergency-medicine", "documentation-time", "hospital"]
 author: "Thomas Weber"
 authorRole: "Compliance Officer"
 authorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
