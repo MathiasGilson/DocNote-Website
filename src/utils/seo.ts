@@ -1,4 +1,4 @@
-import { locales, type Locale } from './i18n';
+import { getLocalizedPath, locales, type Locale } from './i18n';
 
 export const SITE_URL = 'https://docnote.care';
 export const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
@@ -45,12 +45,10 @@ export const getDefaultAlternates = (pathname: string): Record<Locale, string> =
     segments.length > 0 && locales.includes(segments[0] as Locale)
       ? segments.slice(1).join('/')
       : segments.join('/');
-  const suffix = rest ? `/${rest}` : '';
-  return {
-    en: absoluteUrl(`/en${suffix}`),
-    fr: absoluteUrl(`/fr${suffix}`),
-    de: absoluteUrl(`/de${suffix}`),
-  };
+  const suffix = rest ? `/${rest}` : '/';
+  return Object.fromEntries(
+    locales.map((locale) => [locale, absoluteUrl(getLocalizedPath(suffix, locale))])
+  ) as Record<Locale, string>;
 };
 
 type PageMeta = { title: string; description: string };

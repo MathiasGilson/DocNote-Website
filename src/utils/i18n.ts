@@ -18,19 +18,19 @@ export function getLocaleFromUrl(url: URL): Locale {
   return defaultLocale;
 }
 
+export const nonDefaultLocales = locales.filter((l) => l !== defaultLocale) as readonly Locale[];
+
 export function getLocalizedPath(path: string, locale: Locale): string {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  if (cleanPath === '/') return `/${locale}/`;
   const withSlash = cleanPath.endsWith('/') ? cleanPath : `${cleanPath}/`;
-  return `/${locale}${withSlash}`;
+  if (locale === defaultLocale) return withSlash;
+  return withSlash === '/' ? `/${locale}/` : `/${locale}${withSlash}`;
 }
 
 export function getPathWithoutLocale(pathname: string): string {
   const segments = pathname.split('/').filter(Boolean);
-  if (segments.length > 0 && isValidLocale(segments[0])) {
-    return '/' + segments.slice(1).join('/') || '/';
-  }
-  return pathname;
+  if (segments.length > 0 && isValidLocale(segments[0])) segments.shift();
+  return segments.length ? `/${segments.join('/')}/` : '/';
 }
 
 export function formatDate(dateString: string, locale: Locale): string {

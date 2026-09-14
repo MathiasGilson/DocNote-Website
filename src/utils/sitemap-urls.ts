@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { locales, type Locale } from './i18n';
+import { getLocalizedPath, locales, type Locale } from './i18n';
 import { getBlogAlternateUrls } from './blog-translations';
 
 export type SitemapEntry = {
@@ -25,33 +25,17 @@ const STATIC_PAGES = [
 
 const toAbs = (site: string, path: string) => new URL(path, new URL('/', site)).href;
 
-const localeLinks = (site: string, pathSuffix: string) => {
-  const links = locales.map((locale) => ({
-    lang: locale,
-    url: toAbs(site, `/${locale}${pathSuffix}`),
-  }));
-  links.push({ lang: 'x-default', url: toAbs(site, `/en${pathSuffix}`) });
-  return links;
-};
+const localeLinks = (site: string, pathSuffix: string) => [
+  ...locales.map((locale) => ({ lang: locale, url: toAbs(site, getLocalizedPath(pathSuffix, locale)) })),
+  { lang: 'x-default', url: toAbs(site, getLocalizedPath(pathSuffix, 'en')) },
+];
 
 export const getLandingUrls = (site: string): SitemapEntry[] => {
   const entries: SitemapEntry[] = [];
 
-  const homeLinks = [
-    ...locales.map((locale) => ({ lang: locale, url: toAbs(site, `/${locale}/`) })),
-    { lang: 'x-default', url: toAbs(site, '/en/') },
-  ];
-  entries.push({ url: toAbs(site, '/'), links: homeLinks });
-  for (const locale of locales) {
-    entries.push({ url: toAbs(site, `/${locale}/`), links: homeLinks });
-  }
-
-  for (const page of STATIC_PAGES) {
-    const suffix = `${page}/`;
-    const links = localeLinks(site, suffix);
-    for (const locale of locales) {
-      entries.push({ url: toAbs(site, `/${locale}${suffix}`), links });
-    }
+  for (const path of ['/', ...STATIC_PAGES.map((p) => `${p}/`)]) {
+    const links = localeLinks(site, path);
+    for (const locale of locales) entries.push({ url: toAbs(site, getLocalizedPath(path, locale)), links });
   }
 
   return entries.sort((a, b) => a.url.localeCompare(b.url, 'en', { numeric: true }));
@@ -72,7 +56,7 @@ export const getBlogUrls = async (site: string): Promise<SitemapEntry[]> => {
       ...(alternates.en ? [{ lang: 'x-default', url: alternates.en }] : []),
     ];
     entries.push({
-      url: toAbs(site, `/${locale}/blog/${slug}/`),
+      url: toAbs(site, getLocalizedPath(`/blog/${slug}`, locale as Locale)),
       links,
     });
   }

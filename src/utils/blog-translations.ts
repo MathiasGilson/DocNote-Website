@@ -1,4 +1,4 @@
-import { locales, type Locale } from './i18n';
+import { getLocalizedPath, locales, type Locale } from './i18n';
 import { absoluteUrl } from './seo';
 
 type Cluster = Record<Locale, string>;
@@ -112,7 +112,7 @@ export const getBlogAlternateUrls = (
   const urls: Partial<Record<Locale, string>> = {};
   for (const loc of locales) {
     const s = cluster[loc];
-    if (s) urls[loc] = absoluteUrl(`/${loc}/blog/${s}`);
+    if (s) urls[loc] = absoluteUrl(getLocalizedPath(`/blog/${s}`, loc));
   }
   return urls;
 };

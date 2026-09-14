@@ -190,7 +190,7 @@ const softwareApplicationLd = {
     {locales.map((code) => (
       alternateUrls[code] && <link rel="alternate" hreflang={code} href={alternateUrls[code]} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={alternateUrls.en || absoluteUrl('/en/')} />
+    <link rel="alternate" hreflang="x-default" href={alternateUrls.en || absoluteUrl('/')} />
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="DocNote" />

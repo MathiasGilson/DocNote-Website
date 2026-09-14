@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects. Specific rules first.
+# English moved from /en/... to the root; keep old links and Google's index alive.
+/en /  301
+/en/* /:splat 301
