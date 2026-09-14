@@ -1,0 +1,15 @@
+---
+interface Props { headings: { depth: number; slug: string; text: string }[]; title: string }
+const { headings, title } = Astro.props;
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+{items.length >= 3 && (
+  <nav aria-label={title} class="mb-10 rounded-xl border border-gray-200 bg-gray-50 p-5">
+    <p class="text-sm font-semibold text-gray-900 mb-3">{title}</p>
+    <ol class="space-y-1.5 text-sm">
+      {items.map((h) => (
+        <li class={h.depth === 3 ? 'pl-4' : ''}><a href={`#${h.slug}`} class="text-gray-600 hover:text-violet-700">{h.text}</a></li>
+      ))}
+    </ol>
+  </nav>
+)}

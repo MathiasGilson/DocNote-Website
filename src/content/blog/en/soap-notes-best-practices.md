@@ -2,7 +2,8 @@
 title: "Physician perspectives on ambient AI scribes"
 translationKey: "soap-notes-best-practices"
 excerpt: "A new qualitative study published in JAMA Network Open explored how frontline physicians perceive the use of ambient artificial intelligence (AI) scribes."
-category: "ai-scribe"
+category: "guides"
+tags: ["soap-notes", "documentation", "guides"]
 author: "Dr. Julia Berger"
 authorRole: "Internal Medicine Specialist"
 authorImage: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"

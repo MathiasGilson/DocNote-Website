@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import { CATEGORIES } from '../content/categories';
+import { formatDate, getLocalizedPath, type Locale } from '../utils/i18n';
+import { estimateReadingTime, getPostSlug } from '../utils/blog';
+import type { BlogEntry } from '../utils/blog-collection';
+
+interface Props { post: BlogEntry; locale: Locale; headingLevel?: 'h2' | 'h3' }
+const { post, locale, headingLevel = 'h3' } = Astro.props;
+const t = (await getEntry('pages', locale)).data;
+const category = CATEGORIES[post.data.category];
+const href = getLocalizedPath(`/blog/${getPostSlug(post.id)}`, locale);
+const Heading = headingLevel;
+---
+
+<article class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group flex flex-col">
+  <a href={href} class="block">
+    <div class="relative h-48 overflow-hidden">
+      <Image src={post.data.image} alt={post.data.title} width={640} height={360} format="webp" loading="lazy"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        style={`object-position: ${post.data.imagePosition ?? 'center'};`} />
+    </div>
+  </a>
+  <div class="p-6 flex-1 flex flex-col">
+    <div class="flex items-center gap-3 text-sm text-gray-500 mb-3">
+      <a href={getLocalizedPath(`/blog/category/${category.slug}`, locale)} class={`px-2.5 py-0.5 rounded-full text-xs font-medium ${category.badge}`}>{category.label[locale]}</a>
+      <time datetime={post.data.date}>{formatDate(post.data.date, locale)}</time>
+      <span>{estimateReadingTime(post.body)} {t.blog.minRead}</span>
+    </div>
+    <Heading class="text-xl font-bold text-gray-900 group-hover:text-violet-600 transition-colors"><a href={href}>{post.data.title}</a></Heading>
+    <p class="mt-2 text-gray-600 line-clamp-3">{post.data.excerpt}</p>
+  </div>
+</article>

@@ -2,11 +2,12 @@
 title: "Nur 10 % der Arbeitszeit von Notärzten wird mit Patienten verbracht, zeigt eine Studie aus Bordeaux"
 translationKey: "hipaa-compliance-ai-tools"
 excerpt: "Man könnte annehmen, dass Ärzte in der Notaufnahme die meiste Zeit am Krankenbett verbringen. Eine Beobachtungsstudie am Universitätsklinikum Bordeaux zeichnet ein ganz anderes Bild."
-category: "ai-scribe"
+category: "compliance"
+tags: ["hipaa", "compliance", "ai-scribe"]
 author: "Thomas Weber"
 authorRole: "Compliance Officer"
 authorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-image: "../../../assets/blog/CHU Bordeaux.jpg"
+image: "../../../assets/blog/chu-bordeaux.jpg"
 date: "2025-05-15"
 ---
 

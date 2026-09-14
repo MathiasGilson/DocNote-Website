@@ -3,6 +3,7 @@ title: "Trois heures de paperasse pour chaque heure avec les patients"
 translationKey: "future-of-ai-medical-documentation"
 excerpt: "Combien de temps les résidents hospitaliers passent-ils réellement avec leurs patients ? Une étude publiée dans Annals of Internal Medicine y répond par l'observation objective."
 category: "ai-scribe"
+tags: ["ai-scribe", "future", "documentation"]
 author: "Dr. Elena Fischer"
 authorRole: "Chief Medical Officer"
 authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"

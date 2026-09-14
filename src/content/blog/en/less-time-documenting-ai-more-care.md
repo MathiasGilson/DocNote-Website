@@ -6,7 +6,7 @@ category: "ai-scribe"
 author: "Dr. Vincent Tan"
 authorRole: "Medical Director"
 authorImage: "/images/dr_vincent_tan.jpg"
-image: "../../../assets/blog/University of Pennsylvania.avif"
+image: "../../../assets/blog/university-of-pennsylvania.avif"
 date: "2026-02-01"
 ---
 

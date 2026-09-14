@@ -2,7 +2,8 @@
 title: "Perspectives des médecins sur les scribes IA ambiants"
 translationKey: "soap-notes-best-practices"
 excerpt: "Une nouvelle étude qualitative publiée dans JAMA Network Open a exploré la perception qu'ont les médecins de première ligne de l'utilisation des scribes à intelligence artificielle (IA) ambiante."
-category: "ai-scribe"
+category: "guides"
+tags: ["soap-notes", "documentation", "guides"]
 author: "Dr. Julia Berger"
 authorRole: "Internal Medicine Specialist"
 authorImage: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"

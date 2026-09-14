@@ -1,188 +1,131 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLocalizedPath, formatDate, type Locale } from '../../utils/i18n';
-import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import { getEntry, render } from 'astro:content';
-import { getBlogAlternateUrls } from '../../utils/blog-collection';
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../BlogCard.astro';
+import TableOfContents from '../TableOfContents.astro';
 import { CATEGORIES } from '../../content/categories';
-import { absoluteUrl, buildBreadcrumbLd, SITE_URL } from '../../utils/seo';
 import { pillarNavLabel } from '../../content/pillars';
+import { formatDate, getLocalizedPath, type Locale } from '../../utils/i18n';
+import { estimateReadingTime, getPostSlug, pickRelatedPosts } from '../../utils/blog';
+import { getBlogAlternateUrls, getPostsForLocale, type BlogEntry } from '../../utils/blog-collection';
+import { absoluteUrl, buildBreadcrumbLd, SITE_URL } from '../../utils/seo';
 
-interface Props { locale: Locale; post: CollectionEntry<'blog'> }
+interface Props { locale: Locale; post: BlogEntry }
 const { locale, post } = Astro.props;
-const slug = post.slug.split('/').slice(1).join('/');
-
-const entry = await getEntry('pages', locale as Locale);
-const t = entry.data;
-
-const { Content } = await render(post);
-
+const t = (await getEntry('pages', locale)).data;
+const { Content, headings } = await render(post);
 const category = CATEGORIES[post.data.category];
+const slug = getPostSlug(post.id);
+const postPath = getLocalizedPath(`/blog/${slug}`, locale);
+const postUrl = absoluteUrl(postPath);
+const modified = post.data.updatedDate ?? post.data.date;
+const words = post.body.split(/\s+/).filter(Boolean).length;
+const ogImage = `${SITE_URL}/og${postPath}og.png`;
 
+const all = await getPostsForLocale(locale);
+const asRelated = (p: BlogEntry) => ({ slug: getPostSlug(p.id), category: p.data.category, tags: p.data.tags, date: p.data.date, entry: p });
+const related = pickRelatedPosts(asRelated(post), all.map(asRelated), 3).map((r) => r.entry);
 const alternates = await getBlogAlternateUrls(post.data.translationKey);
-const postUrl = absoluteUrl(getLocalizedPath(`/blog/${slug}`, locale));
-const postImage = `${SITE_URL}${post.data.image.src}`;
+const faq = post.data.faq ?? [];
 
 const blogPostingLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: post.data.title,
   description: post.data.excerpt,
-  image: postImage,
+  image: `${SITE_URL}${post.data.image.src}`,
   datePublished: post.data.date,
-  dateModified: post.data.updatedDate ?? post.data.date,
+  dateModified: modified,
   inLanguage: locale,
-  author: {
-    '@type': 'Person',
-    name: post.data.author,
-    jobTitle: post.data.authorRole,
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'DocNote',
-    logo: {
-      '@type': 'ImageObject',
-      url: `${SITE_URL}/images/logo.png`,
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': postUrl,
-  },
+  wordCount: words,
+  articleSection: category.label.en,
+  keywords: post.data.tags.join(', '),
+  author: { '@type': 'Person', name: post.data.author, jobTitle: post.data.authorRole },
+  publisher: { '@type': 'Organization', name: 'DocNote', logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.png` } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
   url: postUrl,
 };
-
 const breadcrumbLd = buildBreadcrumbLd([
   { name: 'DocNote', url: absoluteUrl(getLocalizedPath('/', locale)) },
   { name: t.blog.title, url: absoluteUrl(getLocalizedPath('/blog', locale)) },
+  { name: category.label[locale], url: absoluteUrl(getLocalizedPath(`/blog/category/${category.slug}`, locale)) },
   { name: post.data.title, url: postUrl },
 ]);
-
-const related = {
-  en: {
-    title: 'Continue with DocNote',
-    pricing: 'See pricing',
-    tutorial: 'Watch the tutorial',
-    scribe: pillarNavLabel.en['ai-medical-scribe'],
-    hospital: pillarNavLabel.en['hospital-documentation'],
-    compliance: pillarNavLabel.en['clinical-compliance'],
-  },
-  fr: {
-    title: 'Aller plus loin avec DocNote',
-    pricing: 'Voir les tarifs',
-    tutorial: 'Voir le tutoriel',
-    scribe: pillarNavLabel.fr['ai-medical-scribe'],
-    hospital: pillarNavLabel.fr['hospital-documentation'],
-    compliance: pillarNavLabel.fr['clinical-compliance'],
-  },
-  de: {
-    title: 'Weiter mit DocNote',
-    pricing: 'Preise ansehen',
-    tutorial: 'Tutorial ansehen',
-    scribe: pillarNavLabel.de['ai-medical-scribe'],
-    hospital: pillarNavLabel.de['hospital-documentation'],
-    compliance: pillarNavLabel.de['clinical-compliance'],
-  },
-}[locale as Locale];
+const faqLd = faq.length
+  ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }
+  : null;
+const jsonLd = [blogPostingLd, breadcrumbLd, ...(faqLd ? [faqLd] : [])];
+const pillarHref = category.pillar ? getLocalizedPath(`/${category.pillar}`, locale) : getLocalizedPath('/team', locale);
+const pillarLabel = category.pillar ? pillarNavLabel[locale][category.pillar] : t.nav.team;
 ---
 
-<Layout
-  title={post.data.title}
-  description={post.data.excerpt}
-  alternates={alternates}
-  ogType="article"
-  ogImage={postImage}
-  jsonLd={[blogPostingLd, breadcrumbLd]}
->
+<Layout title={post.data.title} description={post.data.excerpt} alternates={alternates} ogType="article" ogImage={ogImage}
+  jsonLd={jsonLd} noindex={post.data.noindex} canonicalOverride={post.data.canonical} publishedTime={post.data.date} modifiedTime={modified}>
   <article class="pt-32 pb-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
-      <a
-        href={getLocalizedPath('/blog', locale as Locale)}
-        class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 mb-8"
-      >
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        {t.blog.backToBlog}
-      </a>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href={getLocalizedPath('/', locale)} class="hover:text-gray-900">DocNote</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href={getLocalizedPath('/blog', locale)} class="hover:text-gray-900">{t.blog.title}</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href={getLocalizedPath(`/blog/category/${category.slug}`, locale)} class="hover:text-gray-900">{category.label[locale]}</a></li>
+        </ol>
+      </nav>
 
-      <header class="mb-12">
-        {post.data.category !== 'news' && (
-          <span class={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 ${category.badge}`}>
-            {category.label[locale as Locale]}
+      <header class="mb-10">
+        <a href={getLocalizedPath(`/blog/category/${category.slug}`, locale)} class={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 ${category.badge}`}>{category.label[locale]}</a>
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight">{post.data.title}</h1>
+        <p class="mt-4 text-xl text-gray-600">{post.data.excerpt}</p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
+          <span class="flex items-center gap-2">
+            <img src={post.data.authorImage} alt="" width="32" height="32" class="w-8 h-8 rounded-full object-cover" loading="lazy" />
+            <span class="text-gray-800 font-medium">{post.data.author}</span><span>·</span><span>{post.data.authorRole}</span>
           </span>
-        )}
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-          {post.data.title}
-        </h1>
-        <div class="flex items-center gap-4 text-sm text-gray-500 pt-4 border-t border-gray-200">
-          <span>{formatDate(post.data.date, locale as Locale)}</span>
+          <time datetime={post.data.date}>{formatDate(post.data.date, locale)}</time>
+          {post.data.updatedDate && <span>{t.blog.updatedLabel} <time datetime={post.data.updatedDate}>{formatDate(post.data.updatedDate, locale)}</time></span>}
+          <span>{estimateReadingTime(post.body)} {t.blog.minRead}</span>
         </div>
       </header>
 
-      {post.data.fullImage ? (
-        <figure class="hero-image mb-12">
-          <img
-            src={post.data.image.src}
-            width={post.data.image.width}
-            height={post.data.image.height}
-            alt={post.data.title}
-            loading="eager"
-            decoding="async"
-          />
-        </figure>
-      ) : (
-        <div id="photo-gallery" class="flex gap-4 mb-10">
-          <div class="gallery-item relative rounded-xl overflow-hidden shadow-lg">
-            <img
-              src={post.data.image.src}
-              width={post.data.image.width}
-              height={post.data.image.height}
-              alt={post.data.title}
-              class="gallery-img"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
+      <Image src={post.data.image} alt={post.data.title} width={1280} height={720} format="webp" loading="eager" fetchpriority="high"
+        class={`w-full rounded-2xl mb-10 ${post.data.fullImage ? '' : 'aspect-video object-cover'}`}
+        style={`object-position: ${post.data.imagePosition ?? 'center'};`} />
+
+      <div id="photo-gallery" class="flex gap-4 mb-10 empty:hidden empty:mb-0"></div>
+
+      <TableOfContents headings={headings} title={t.blog.onThisPage} />
+
+      <div class="blog-content max-w-none"><Content /></div>
+
+      {faq.length > 0 && (
+        <section class="mt-14" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="text-2xl font-bold text-gray-900 mb-6">{t.blog.faqTitle}</h2>
+          <dl class="space-y-6">
+            {faq.map(({ q, a }) => (
+              <div><dt class="font-semibold text-gray-900">{q}</dt><dd class="mt-1 text-gray-600">{a}</dd></div>
+            ))}
+          </dl>
+        </section>
       )}
 
-      <div class="blog-content max-w-none">
-        <Content />
-      </div>
-
-      <aside class="mt-16 pt-10 border-t border-gray-200">
-        <h2 class="text-lg font-semibold text-gray-900 mb-4">{related.title}</h2>
-        <ul class="grid sm:grid-cols-2 gap-3 text-sm">
-          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/pricing', locale as Locale)}>{related.pricing}</a></li>
-          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/tutorial', locale as Locale)}>{related.tutorial}</a></li>
-          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/ai-medical-scribe', locale as Locale)}>{related.scribe}</a></li>
-          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/hospital-documentation', locale as Locale)}>{related.hospital}</a></li>
-          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/clinical-compliance', locale as Locale)}>{related.compliance}</a></li>
-          <li><a class="text-violet-700 hover:underline" href={getLocalizedPath('/privacy', locale as Locale)}>{t.footer.privacy}</a></li>
-        </ul>
+      <aside class="mt-14 rounded-2xl bg-gradient-to-br from-violet-50 to-indigo-50 p-8">
+        <p class="text-lg font-semibold text-gray-900">{pillarLabel}</p>
+        <a href={pillarHref} class="mt-3 inline-block text-violet-700 font-medium hover:underline">{t.blog.pillarCta} →</a>
       </aside>
-
     </div>
+
+    {related.length > 0 && (
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20" aria-labelledby="related-heading">
+        <h2 id="related-heading" class="text-2xl font-bold text-gray-900 mb-8">{t.blog.relatedTitle}</h2>
+        <div class="grid md:grid-cols-3 gap-8">{related.map((p) => <BlogCard post={p} locale={locale} />)}</div>
+      </section>
+    )}
   </article>
 </Layout>
 
 <style>
-  .hero-image {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    max-height: 520px;
-    width: auto;
-    height: auto;
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  }
-
   :global(.gallery-item) {
     flex: 1;
     min-width: 0;

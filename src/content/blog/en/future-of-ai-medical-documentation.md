@@ -3,6 +3,7 @@ title: "Three hours on paperwork for every hour with patients"
 translationKey: "future-of-ai-medical-documentation"
 excerpt: "How much time do hospital residents actually spend with patients? A time-and-motion study in Annals of Internal Medicine answered that question with objective observation."
 category: "ai-scribe"
+tags: ["ai-scribe", "future", "documentation"]
 author: "Dr. Elena Fischer"
 authorRole: "Chief Medical Officer"
 authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
