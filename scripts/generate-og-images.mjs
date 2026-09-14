@@ -19,15 +19,22 @@ async function* walk(dir) {
   }
 }
 
+const clamp = (text, max) => {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${cut.slice(0, lastSpace > 0 ? lastSpace : max)}…`;
+};
+
 const card = (title, description, lang) => ({
   type: 'div',
   props: {
-    style: { width: 1200, height: 630, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: 72, background: 'linear-gradient(135deg,#f5f3ff 0%,#eef2ff 100%)', fontFamily: 'Open Sans', color: '#111827' },
+    style: { width: 1200, height: 630, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: 72, background: 'linear-gradient(135deg,#f5f3ff 0%,#eef2ff 100%)', fontFamily: 'Open Sans', color: '#111827', overflow: 'hidden' },
     children: [
       { type: 'div', props: { style: { fontSize: 34, color: '#6d28d9' }, children: 'DocNote' } },
       { type: 'div', props: { style: { display: 'flex', flexDirection: 'column', gap: 24 }, children: [
-        { type: 'div', props: { style: { fontSize: title.length > 70 ? 52 : 64, lineHeight: 1.1 }, children: title } },
-        { type: 'div', props: { style: { fontSize: 28, color: '#4b5563', lineHeight: 1.35 }, children: description.slice(0, 160) } },
+        { type: 'div', props: { style: { fontSize: title.length > 100 ? 44 : title.length > 70 ? 52 : 64, lineHeight: 1.1 }, children: clamp(title, 110) } },
+        { type: 'div', props: { style: { fontSize: 28, color: '#4b5563', lineHeight: 1.35 }, children: clamp(description, 140) } },
       ] } },
       { type: 'div', props: { style: { fontSize: 24, color: '#6b7280' }, children: `docnote.care · ${lang.toUpperCase()}` } },
     ],
