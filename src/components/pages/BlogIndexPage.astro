@@ -44,7 +44,7 @@ const collectionLd = { '@context': 'https://schema.org', '@type': 'CollectionPag
       <nav class="mt-8 flex flex-wrap gap-2" aria-label="Categories">
         <a href={getLocalizedPath('/blog', locale)} class={`px-3 py-1 rounded-full text-sm font-medium border ${category ? 'bg-white text-gray-700 border-gray-200' : 'bg-gray-900 text-white border-gray-900'}`}>{t.blog.allPosts}</a>
         {CATEGORY_LIST.map((c) => (
-          <a href={getLocalizedPath(`/blog/category/${c.slug}`, locale)} class={`px-3 py-1 rounded-full text-sm font-medium border ${category?.slug === c.slug ? 'bg-gray-900 text-white border-gray-900' : `${c.badge} border-transparent`}`}>{c.label[locale]}</a>
+          <a href={getLocalizedPath(`/blog/category/${c.slug}`, locale)} class={`px-3 py-1 rounded-full text-sm font-medium border ${category?.slug === c.slug ? 'bg-gray-900 text-white border-gray-900' : `bg-white text-gray-700 border-gray-200`}`}>{c.label[locale]}</a>
         ))}
       </nav>
     </div>

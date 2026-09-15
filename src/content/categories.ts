@@ -16,7 +16,7 @@ export const CATEGORIES: Record<BlogCategory, CategoryDef> = {
   news: {
     slug: 'news',
     pillar: null,
-    badge: 'bg-purple-100 text-purple-700',
+    badge: 'bg-gray-100 text-gray-700',
     label: { en: 'News', fr: 'Actualités', de: 'News' },
     description: {
       en: 'Product releases, conferences, partnerships and press coverage of DocNote.',
@@ -27,7 +27,7 @@ export const CATEGORIES: Record<BlogCategory, CategoryDef> = {
   guides: {
     slug: 'guides',
     pillar: 'ai-medical-scribe',
-    badge: 'bg-green-100 text-green-700',
+    badge: 'bg-gray-100 text-gray-700',
     label: { en: 'Guides', fr: 'Guides', de: 'Anleitungen' },
     description: {
       en: 'Step by step guides to clinical documentation: SOAP notes, discharge letters, templates and dictation workflows.',
@@ -38,7 +38,7 @@ export const CATEGORIES: Record<BlogCategory, CategoryDef> = {
   compliance: {
     slug: 'compliance',
     pillar: 'clinical-compliance',
-    badge: 'bg-amber-100 text-amber-700',
+    badge: 'bg-gray-100 text-gray-700',
     label: { en: 'Compliance', fr: 'Conformité', de: 'Compliance' },
     description: {
       en: 'FADP, GDPR, HIPAA and ISO 27001 explained for doctors who want to use AI without risking patient data.',
@@ -49,7 +49,7 @@ export const CATEGORIES: Record<BlogCategory, CategoryDef> = {
   'ai-scribe': {
     slug: 'ai-scribe',
     pillar: 'ai-medical-scribe',
-    badge: 'bg-blue-100 text-blue-700',
+    badge: 'bg-gray-100 text-gray-700',
     label: { en: 'AI scribe', fr: 'Scribe IA', de: 'KI-Schreibassistent' },
     description: {
       en: 'How ambient AI scribes work, what they get wrong, and how to evaluate one for your practice.',
@@ -60,7 +60,7 @@ export const CATEGORIES: Record<BlogCategory, CategoryDef> = {
   'hospital-workflows': {
     slug: 'hospital-workflows',
     pillar: 'hospital-documentation',
-    badge: 'bg-orange-100 text-orange-700',
+    badge: 'bg-gray-100 text-gray-700',
     label: { en: 'Hospital workflows', fr: 'Flux hospitaliers', de: 'Spitalprozesse' },
     description: {
       en: 'Ward rounds, operative reports, EHR integration and physician burnout: documentation at hospital scale.',
@@ -71,7 +71,7 @@ export const CATEGORIES: Record<BlogCategory, CategoryDef> = {
   specialties: {
     slug: 'specialties',
     pillar: 'hospital-documentation',
-    badge: 'bg-teal-100 text-teal-700',
+    badge: 'bg-gray-100 text-gray-700',
     label: { en: 'Specialties', fr: 'Spécialités', de: 'Fachgebiete' },
     description: {
       en: 'Documentation practices by specialty: radiology, surgery, dentistry, general practice and more.',
