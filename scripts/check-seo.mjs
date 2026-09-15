@@ -12,6 +12,9 @@
  *  - no page emits a <meta name="keywords"> tag
  *  - the only generic contact address on the site is contact@docnote.ch
  *  - no page loads more than one stylesheet over 20 KB
+ *
+ * It also warns, without failing, about titles over 65 and descriptions over 160
+ * characters, which is where search results start truncating them.
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
@@ -20,6 +23,9 @@ import { parse } from 'node-html-parser';
 const DIST = process.argv[2] ?? 'dist';
 const SITE = 'https://docnote.care';
 const errors = [];
+const warnings = [];
+const TITLE_MAX = 65;
+const DESCRIPTION_MAX = 160;
 const pages = new Map(); // path -> { title, hreflangs: Map<lang, path> }
 
 async function* walk(dir) {
@@ -48,7 +54,9 @@ for await (const file of walk(DIST)) {
   if (canonicals.length !== 1) errors.push(`${path}: ${canonicals.length} canonical tags`);
   else if (canonicals[0].getAttribute('href') !== `${SITE}${path}`) errors.push(`${path}: canonical is ${canonicals[0].getAttribute('href')}`);
 
-  if (!doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim()) errors.push(`${path}: missing meta description`);
+  const descriptionContent = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim();
+  if (!descriptionContent) errors.push(`${path}: missing meta description`);
+  else if (descriptionContent.length > DESCRIPTION_MAX) warnings.push(`${path}: description is ${descriptionContent.length} chars (over ${DESCRIPTION_MAX})`);
 
   if (doc.querySelector('meta[name="keywords"]')) errors.push(`${path}: emits a <meta name="keywords"> tag`);
 
@@ -93,6 +101,7 @@ for (const [path, { title, hreflangs }] of pages) {
   if (!title) errors.push(`${path}: empty title`);
   else {
     if (titles.has(title)) errors.push(`${path}: duplicate title "${title}" (also ${titles.get(title)})`);
+    if (title.length > TITLE_MAX) warnings.push(`${path}: title is ${title.length} chars (over ${TITLE_MAX})`);
     titles.set(title, path);
   }
   for (const [lang, target] of hreflangs) {
@@ -102,6 +111,11 @@ for (const [path, { title, hreflangs }] of pages) {
     const back = pages.get(target)?.hreflangs;
     if (back && ![...back.values()].includes(path)) errors.push(`${path}: hreflang ${lang} -> ${target} is not reciprocal`);
   }
+}
+
+if (warnings.length) {
+  const longTitles = warnings.filter((w) => w.includes(': title is')).length;
+  console.warn(`check-seo: ${warnings.length} warning(s), ${longTitles} long title(s) and ${warnings.length - longTitles} long description(s)\n` + warnings.map((w) => `  ! ${w}`).join('\n'));
 }
 
 if (errors.length) {
