@@ -44,7 +44,7 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">Products</h4>
+                <p class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">Products</p>
                 <ul class="space-y-2.5">
                     <li>
                         <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer"
@@ -65,7 +65,7 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.company}</h4>
+                <p class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.company}</p>
                 <ul class="space-y-2.5">
                     <li>
                         <a href={getLocalizedPath("/team", locale)} class="text-sm text-white hover:text-white/70 transition-colors">{t.footer.about}</a
@@ -90,7 +90,7 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.nav.blog}</h4>
+                <p class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.nav.blog}</p>
                 <ul class="space-y-3">
                     {CATEGORY_LIST.map((c) => (
                         <li>
@@ -101,7 +101,7 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{resourcesLabel}</h4>
+                <p class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{resourcesLabel}</p>
                 <ul class="space-y-2.5">
                     {pillarSlugs.map((slug) => (
                         <li>
@@ -127,7 +127,7 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
             </div>
 
             <div>
-                <h4 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.legal}</h4>
+                <p class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{t.footer.legal}</p>
                 <ul class="space-y-2.5">
                     <li>
                         <a href={getLocalizedPath("/privacy", locale)} class="text-sm text-white hover:text-white/70 transition-colors"
