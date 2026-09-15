@@ -4,9 +4,9 @@ translationKey: "hipaa-compliance-ai-tools"
 excerpt: "One might assume that emergency physicians spend most of their time at the bedside. But a time-and-motion study at Bordeaux University Hospital paints a very different picture."
 category: "hospital-workflows"
 tags: ["emergency-medicine", "documentation-time", "hospital"]
-author: "Thomas Weber"
-authorRole: "Compliance Officer"
-authorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+author: "Dr. Alice Gilson"
+authorRole: "Doctor & Managing Director"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/chu-bordeaux.jpg"
 date: "2025-05-15"
 ---

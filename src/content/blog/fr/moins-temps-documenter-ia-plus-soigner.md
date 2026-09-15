@@ -3,9 +3,9 @@ title: "Moins de temps consacré à la documentation grâce à l'IA, plus de tem
 translationKey: "less-time-documenting-ai-more-care"
 excerpt: "En février 2025, une étude publiée dans JAMA Network Open a documenté le rôle croissant de l'intelligence artificielle contre l'épuisement des cliniciens et la surcharge documentaire."
 category: "ai-scribe"
-author: "Dr. Vincent Tan"
-authorRole: "Medical Director"
-authorImage: "/images/dr_vincent_tan.jpg"
+author: "Dre Alice Gilson"
+authorRole: "Médecin & Directrice générale"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/university-of-pennsylvania.avif"
 date: "2026-02-01"
 ---

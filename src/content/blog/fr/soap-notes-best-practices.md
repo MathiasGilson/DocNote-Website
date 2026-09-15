@@ -4,9 +4,9 @@ translationKey: "soap-notes-best-practices"
 excerpt: "Une nouvelle étude qualitative publiée dans JAMA Network Open a exploré la perception qu'ont les médecins de première ligne de l'utilisation des scribes à intelligence artificielle (IA) ambiante."
 category: "guides"
 tags: ["soap-notes", "documentation", "guides"]
-author: "Dr. Julia Berger"
-authorRole: "Internal Medicine Specialist"
-authorImage: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+author: "Dre Alice Gilson"
+authorRole: "Médecin & Directrice générale"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/visite-medicale.jpg"
 date: "2025-08-20"
 ---

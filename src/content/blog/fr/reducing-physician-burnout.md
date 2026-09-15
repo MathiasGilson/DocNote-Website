@@ -4,9 +4,9 @@ translationKey: "reducing-physician-burnout"
 excerpt: "Dans Stud Health Technol Inform., des chercheurs du Chi Mei Medical Center ont examiné l'impact d'un outil de documentation basé sur l'IA sur le flux de travail infirmier et la qualité des dossiers."
 category: "hospital-workflows"
 tags: ["burnout", "hospital", "documentation-time"]
-author: "Dr. Marc Schneider"
-authorRole: "Healthcare Consultant"
-authorImage: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+author: "Dre Alice Gilson"
+authorRole: "Médecin & Directrice générale"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/chinese-nurses.jpg"
 date: "2025-10-10"
 ---

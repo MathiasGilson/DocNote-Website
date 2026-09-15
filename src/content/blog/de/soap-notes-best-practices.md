@@ -4,9 +4,9 @@ translationKey: "soap-notes-best-practices"
 excerpt: "Eine neue qualitative Studie, veröffentlicht im JAMA Network Open, untersuchte, wie Ärzte an der Front die Nutzung von ambienten KI-Schreibassistenten wahrnehmen."
 category: "guides"
 tags: ["soap-notes", "documentation", "guides"]
-author: "Dr. Julia Berger"
-authorRole: "Internal Medicine Specialist"
-authorImage: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+author: "Dr. Alice Gilson"
+authorRole: "Ärztin & Geschäftsführerin"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/visite-medicale.jpg"
 date: "2025-08-20"
 ---

@@ -3,9 +3,9 @@ title: "Buzz E-santé: DocNote, der KI-Assistent für den realen Takt des Kranke
 translationKey: "buzz-esante-feature-april-2026"
 excerpt: "Das Digital-Health-Medium Buzz E-santé von Rémy Teston widmet DocNote einen Artikel und seinem fokussierten Ansatz: der erste KI-Assistent, der durchgängig für Krankenhaus-Workflows konzipiert ist."
 category: "news"
-author: "DocNote Team"
-authorRole: "Unternehmensnachrichten"
-authorImage: "/images/logo.png"
+author: "Dr. Alice Gilson"
+authorRole: "Ärztin & Geschäftsführerin"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/buzz_esante_04.26.jpg"
 fullImage: true
 date: "2026-04-15"

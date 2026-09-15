@@ -4,9 +4,9 @@ translationKey: "reducing-physician-burnout"
 excerpt: "In Stud Health Technol Inform. untersuchten Forscher des Chi Mei Medical Center die Auswirkungen eines KI-basierten Dokumentationstools auf den Pflegeworkflow und die Qualität der Dokumentation."
 category: "hospital-workflows"
 tags: ["burnout", "hospital", "documentation-time"]
-author: "Dr. Marc Schneider"
-authorRole: "Healthcare Consultant"
-authorImage: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+author: "Dr. Alice Gilson"
+authorRole: "Ärztin & Geschäftsführerin"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/chinese-nurses.jpg"
 date: "2025-10-10"
 ---

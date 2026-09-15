@@ -4,9 +4,9 @@ translationKey: "future-of-ai-medical-documentation"
 excerpt: "Wie viel Zeit verbringen Assistenzärzte tatsächlich mit ihren Patienten? Eine Zeit-und-Bewegungs-Studie in Annals of Internal Medicine versuchte, diese Frage mit objektiver Beobachtung zu beantworten."
 category: "ai-scribe"
 tags: ["ai-scribe", "future", "documentation"]
-author: "Dr. Elena Fischer"
-authorRole: "Chief Medical Officer"
-authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+author: "Dr. Alice Gilson"
+authorRole: "Ärztin & Geschäftsführerin"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/CHUV.webp"
 date: "2025-12-05"
 ---

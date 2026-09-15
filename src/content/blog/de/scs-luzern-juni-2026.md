@@ -3,9 +3,9 @@ title: "Dr. Alice Gilson spricht über die Zukunft der Chirurgie und KI am Kongr
 translationKey: "scs-lucerne-june-2026"
 excerpt: "Am SCS-Jahreskongress in Luzern beleuchtet DocNote-Mitgründerin Dr. Alice Gilson, wie künstliche Intelligenz die Rolle des Chirurgen verändert."
 category: "news"
-author: "DocNote Team"
-authorRole: "Unternehmensnachrichten"
-authorImage: "/images/logo.png"
+author: "Dr. Alice Gilson"
+authorRole: "Ärztin & Geschäftsführerin"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/scs_lucerne_06.26.jpg"
 date: "2026-06-15"
 ---

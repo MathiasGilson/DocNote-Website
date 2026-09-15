@@ -3,9 +3,9 @@ title: "Dr. Alice Gilson speaks on AI in documentation at Swiss College of Surge
 translationKey: "scs-lausanne-may-2025"
 excerpt: "DocNote participated in the prestigious SCS Annual Meeting at EPFL in Lausanne, connecting with Switzerland's leading surgical specialists."
 category: "news"
-author: "DocNote Team"
-authorRole: "Company News"
-authorImage: "/images/logo.png"
+author: "Dr. Alice Gilson"
+authorRole: "Doctor & Managing Director"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/scs_lausanne_05.25.jpg"
 date: "2025-05-21"
 ---

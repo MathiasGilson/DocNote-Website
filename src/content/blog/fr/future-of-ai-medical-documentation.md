@@ -4,9 +4,9 @@ translationKey: "future-of-ai-medical-documentation"
 excerpt: "Combien de temps les résidents hospitaliers passent-ils réellement avec leurs patients ? Une étude publiée dans Annals of Internal Medicine y répond par l'observation objective."
 category: "ai-scribe"
 tags: ["ai-scribe", "future", "documentation"]
-author: "Dr. Elena Fischer"
-authorRole: "Chief Medical Officer"
-authorImage: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+author: "Dre Alice Gilson"
+authorRole: "Médecin & Directrice générale"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/CHUV.webp"
 date: "2025-12-05"
 ---

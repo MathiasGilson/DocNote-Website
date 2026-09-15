@@ -3,9 +3,9 @@ title: "DocNote cité dans Les Echos parmi les principaux acteurs européens de 
 translationKey: "docnote-les-echos-european-ai-health"
 excerpt: "Le quotidien Les Echos a cartographié le marché européen des assistants IA en santé et place DocNote parmi les acteurs clés du scribe médical et de la génération de documents."
 category: "news"
-author: "Équipe DocNote"
-authorRole: "Actualités de l'entreprise"
-authorImage: "/images/logo.png"
+author: "Dre Alice Gilson"
+authorRole: "Médecin & Directrice générale"
+authorImage: "/images/dre_alice_gilson.jpg"
 image: "../../../assets/blog/lesechos_06.26.png"
 fullImage: true
 date: "2026-06-17"
