@@ -8,6 +8,7 @@
  *  - every hreflang href resolves to a page in dist, and that page links back (reciprocity)
  *  - og:image resolves to a file in dist
  *  - dist/404.html exists (Cloudflare Pages needs it to answer unknown URLs with a 404)
+ *  - every indexable page appears in one of the child sitemaps
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
@@ -55,6 +56,18 @@ for await (const file of walk(DIST)) {
   const hreflangs = new Map();
   for (const l of doc.querySelectorAll('link[rel="alternate"][hreflang]')) hreflangs.set(l.getAttribute('hreflang'), toPath(l.getAttribute('href')));
   pages.set(path, { title: doc.querySelector('title')?.text.trim() ?? '', hreflangs });
+}
+
+// Every indexable page must be discoverable through a sitemap.
+const sitemapUrls = new Set();
+for (const name of ['sitemap-landings.xml', 'sitemap-blog.xml', 'sitemap-categories.xml']) {
+  const file = join(DIST, name);
+  if (!(await exists(file))) { errors.push(`${name} missing from dist`); continue; }
+  const xml = await readFile(file, 'utf8');
+  for (const [, loc] of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) sitemapUrls.add(toPath(loc.trim()));
+}
+for (const path of pages.keys()) {
+  if (!sitemapUrls.has(path)) errors.push(`${path}: indexable but absent from every sitemap`);
 }
 
 const titles = new Map();

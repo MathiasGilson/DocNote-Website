@@ -10,6 +10,7 @@ export type SitemapEntry = { url: string; lastmod?: string; links?: { lang: stri
 const STATIC_PAGES = [
   '/contact',
   '/pricing',
+  '/order',
   '/team',
   '/tutorial',
   '/gtc',
