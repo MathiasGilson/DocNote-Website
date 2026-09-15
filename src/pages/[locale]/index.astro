@@ -12,6 +12,6 @@ const locale = Astro.params.locale as Locale;
 const meta = getPageMeta('home', locale);
 ---
 
-<Layout title={meta.title} description={meta.description}>
+<Layout title={meta.title} description={meta.description} productSchema>
   <Main locale={locale} variant="locale" />
 </Layout>

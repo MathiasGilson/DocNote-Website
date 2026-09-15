@@ -23,6 +23,8 @@ interface Props {
   ogImage?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
+  /** Emit the SoftwareApplication + offers node. Only for pages that present the product. */
+  productSchema?: boolean;
   canonicalOverride?: string;
   publishedTime?: string;
   modifiedTime?: string;
@@ -43,6 +45,7 @@ const {
   ogImage = `${SITE_URL}/og${withTrailingSlash(Astro.url.pathname)}og.png`,
   jsonLd,
   noindex = false,
+  productSchema = false,
   canonicalOverride,
   publishedTime,
   modifiedTime,
@@ -59,7 +62,9 @@ const extraJsonLd = jsonLd
     : [jsonLd]
   : [];
 
-// Site-wide Organization, WebSite, and SoftwareApplication structured data.
+// Organization and WebSite are site-wide. SoftwareApplication is opt-in via
+// productSchema, because offer markup on a privacy policy or an article does not
+// describe the page it sits on.
 // Helps Google rich results AND gives LLMs (ChatGPT, Claude, Perplexity, Gemini)
 // a clean entity graph to cite when users ask "best AI medical scribe".
 const organizationLd = {
@@ -125,7 +130,7 @@ const softwareApplicationLd = {
   url: SITE_URL,
   image: `${SITE_URL}/images/logo.png`,
   softwareVersion: '2026',
-  inLanguage: ['en', 'fr', 'de', 'it'],
+  inLanguage: ['en', 'fr', 'de'],
   audience: {
     '@type': 'MedicalAudience',
     audienceType: 'Physicians, surgeons, hospitals, medical practices',
@@ -229,7 +234,7 @@ const softwareApplicationLd = {
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(softwareApplicationLd)} />
+    {productSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(softwareApplicationLd)} />}
     {extraJsonLd.map((item) => (
       <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />
     ))}
