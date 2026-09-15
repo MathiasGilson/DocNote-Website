@@ -7,6 +7,7 @@ tags: ["burnout", "hospital", "documentation-time"]
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/chinese-nurses.jpg"
 date: "2025-10-10"
 ---

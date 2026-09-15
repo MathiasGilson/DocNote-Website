@@ -7,6 +7,7 @@ tags: ["radiology", "dictation", "ris"]
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/radiology_mode_02.26.jpg"
 date: "2026-02-15"
 ---

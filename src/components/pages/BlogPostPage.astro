@@ -41,7 +41,12 @@ const blogPostingLd = {
   wordCount: words,
   articleSection: category.label.en,
   ...(post.data.tags.length > 0 ? { keywords: post.data.tags.join(', ') } : {}),
-  author: { '@type': 'Person', name: post.data.author, jobTitle: post.data.authorRole },
+  author: {
+    '@type': 'Person',
+    name: post.data.author,
+    jobTitle: post.data.authorRole,
+    ...(post.data.authorUrl ? { url: post.data.authorUrl, sameAs: [post.data.authorUrl] } : {}),
+  },
   publisher: { '@type': 'Organization', name: 'DocNote', logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.png` } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
   url: postUrl,
@@ -81,7 +86,11 @@ const pillarLabel = category.pillar ? pillarNavLabel[locale][category.pillar] : 
         <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
           <span class="flex items-center gap-2">
             <img src={post.data.authorImage} alt="" width="32" height="32" class="w-8 h-8 rounded-full object-cover" loading="lazy" />
-            <span class="text-gray-800 font-medium">{post.data.author}</span><span>·</span><span>{post.data.authorRole}</span>
+            {post.data.authorUrl ? (
+              <a href={post.data.authorUrl} rel="author noopener" target="_blank" class="text-gray-800 font-medium hover:text-violet-700 hover:underline">{post.data.author}</a>
+            ) : (
+              <span class="text-gray-800 font-medium">{post.data.author}</span>
+            )}<span>·</span><span>{post.data.authorRole}</span>
           </span>
           <time datetime={post.data.date}>{formatDate(post.data.date, locale)}</time>
           {post.data.updatedDate && <span>{t.blog.updatedLabel} <time datetime={post.data.updatedDate}>{formatDate(post.data.updatedDate, locale)}</time></span>}

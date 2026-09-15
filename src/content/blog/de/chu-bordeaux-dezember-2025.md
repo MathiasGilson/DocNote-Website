@@ -6,6 +6,7 @@ category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Ärztin & Geschäftsführerin"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/bordeaux_12.25.jpg"
 date: "2025-12-08"
 ---

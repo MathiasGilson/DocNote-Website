@@ -6,6 +6,7 @@ category: "ai-scribe"
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/university-of-pennsylvania.avif"
 date: "2026-02-01"
 ---

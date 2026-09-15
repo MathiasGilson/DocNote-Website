@@ -6,6 +6,7 @@ category: "news"
 author: "Dre Alice Gilson"
 authorRole: "Médecin & Directrice générale"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/adopt_ai_11.25.jpg"
 date: "2025-11-26"
 ---

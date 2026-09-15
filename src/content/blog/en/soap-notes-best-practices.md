@@ -7,6 +7,7 @@ tags: ["soap-notes", "documentation", "guides"]
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/visite-medicale.jpg"
 date: "2025-08-20"
 ---

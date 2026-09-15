@@ -518,6 +518,7 @@ const blogCollection = defineCollection({
       author: z.string(),
       authorRole: z.string(),
       authorImage: z.string(),
+      authorUrl: z.string().url().optional(),
       image: image(),
       imagePosition: z.string().optional(),
       fullImage: z.boolean().optional(),

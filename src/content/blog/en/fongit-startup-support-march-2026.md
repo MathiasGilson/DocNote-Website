@@ -6,6 +6,7 @@ category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Doctor & Managing Director"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/fongit_03.26.jpg"
 date: "2026-03-15"
 ---

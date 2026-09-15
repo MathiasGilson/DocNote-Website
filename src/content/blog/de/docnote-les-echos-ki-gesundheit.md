@@ -6,6 +6,7 @@ category: "news"
 author: "Dr. Alice Gilson"
 authorRole: "Ärztin & Geschäftsführerin"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/lesechos_06.26.png"
 fullImage: true
 date: "2026-06-17"

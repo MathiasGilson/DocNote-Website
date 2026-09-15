@@ -6,6 +6,7 @@ category: "news"
 author: "Dre Alice Gilson"
 authorRole: "Médecin & Directrice générale"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/remise-prix-lumiere-2023.png"
 date: "2025-05-20"
 ---

@@ -7,6 +7,7 @@ tags: ["emergency-medicine", "documentation-time", "hospital"]
 author: "Dr. Alice Gilson"
 authorRole: "Ärztin & Geschäftsführerin"
 authorImage: "/images/dre_alice_gilson.jpg"
+authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/chu-bordeaux.jpg"
 date: "2025-05-15"
 ---
