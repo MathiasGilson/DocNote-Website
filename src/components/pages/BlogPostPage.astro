@@ -40,7 +40,7 @@ const blogPostingLd = {
   inLanguage: locale,
   wordCount: words,
   articleSection: category.label.en,
-  keywords: post.data.tags.join(', '),
+  ...(post.data.tags.length > 0 ? { keywords: post.data.tags.join(', ') } : {}),
   author: { '@type': 'Person', name: post.data.author, jobTitle: post.data.authorRole },
   publisher: { '@type': 'Organization', name: 'DocNote', logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.png` } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },

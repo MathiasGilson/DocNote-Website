@@ -1,5 +1,8 @@
 /**
- * HTML → Markdown conversion for "Markdown for Agents" content negotiation.
+ * HTML → Markdown conversion for the static markdown twins.
+ *
+ * Twins are plain static files at `<url>index.md`, served with
+ * `X-Robots-Tag: noindex`. `Accept` negotiation is not enabled (see CLAUDE.md).
  *
  * Mirrors the shape Cloudflare's zone-level converter emits:
  *   1. YAML frontmatter (title / description / image from <meta> tags)
