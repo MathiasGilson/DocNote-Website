@@ -12,10 +12,12 @@ fullImage: true
 date: "2026-06-17"
 ---
 
-DocNote est cité dans Les Echos, l'un des principaux quotidiens économiques français, au sein d'une analyse approfondie du marché en pleine effervescence des assistants IA en santé.
+DocNote est cité dans [Les Echos](https://www.lesechos.fr/start-up/ecosysteme/cest-la-guerre-le-deferlement-des-assistants-ia-dans-la-sante-2236827), l'un des principaux quotidiens économiques français, au sein d'une analyse approfondie du marché en pleine effervescence des assistants IA en santé.
 
 Dans son article, la journaliste Marion Simon-Rainaud cartographie les principaux acteurs européens qui transforment le secteur et positionne DocNote parmi les noms clés du segment « scribe médical et génération de documents ».
 
 Être cité parmi les acteurs majeurs de ce segment en pleine évolution est une belle reconnaissance du travail accompli par toute l'équipe DocNote.
 
 Au-delà de la compétition qui anime ce secteur, cet article illustre une conviction forte : l'IA a le potentiel de redonner du temps médical aux soignants en réduisant la charge administrative qui pèse sur eux au quotidien.
+
+Lire l'article original sur Les Echos : ["C'est la guerre" : le déferlement des assistants IA dans la santé](https://www.lesechos.fr/start-up/ecosysteme/cest-la-guerre-le-deferlement-des-assistants-ia-dans-la-sante-2236827).
