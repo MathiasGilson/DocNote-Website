@@ -1,3 +1,4 @@
+# CLAUDE.md
 
 Marketing site for DocNote, https://docnote.care. Astro 5 static build on Cloudflare Pages. Package manager: npm.
 
@@ -32,7 +33,3 @@ Marketing site for DocNote, https://docnote.care. Astro 5 static build on Cloudf
 ## Copy rules
 
 - No em dashes in user-facing copy. Contact email is contact@docnote.ch. Support site is https://support.docnote.care.
-
-## Deploy
-
-`npm run build`, then Cloudflare Pages deploys `dist/` per `wrangler.jsonc`; `public/_redirects` and `public/_headers` are applied by Pages.
