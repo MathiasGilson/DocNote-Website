@@ -5,10 +5,9 @@ const buildRobotsTxt = (site: string) => {
     .map((path) => `Sitemap: ${new URL(path, site).href}`)
     .join('\n');
 
-  return `Content-Signal: ai-train=yes, search=yes, ai-input=yes
-
-User-agent: *
+  return `User-agent: *
 Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 # Curated index for AI agents (not used by Google Search ranking)
 # https://docnote.care/llms.txt
