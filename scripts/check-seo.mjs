@@ -11,6 +11,7 @@
  *  - every indexable page appears in one of the child sitemaps
  *  - no page emits a <meta name="keywords"> tag
  *  - the only generic contact address on the site is contact@docnote.ch
+ *  - no page loads more than one stylesheet over 20 KB
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
@@ -52,6 +53,16 @@ for await (const file of walk(DIST)) {
   if (doc.querySelector('meta[name="keywords"]')) errors.push(`${path}: emits a <meta name="keywords"> tag`);
 
   for (const [stray] of html.matchAll(/contact@docnote\.(?!ch\b)[a-z]+/g)) errors.push(`${path}: stray contact address ${stray}`);
+
+  // Guards against per-route CSS chunking re-emitting near-identical Tailwind bundles.
+  let bigSheets = 0;
+  for (const link of doc.querySelectorAll('link[rel="stylesheet"][href]')) {
+    const href = link.getAttribute('href');
+    if (!href.startsWith('/')) continue;
+    const size = await stat(join(DIST, href)).then((s) => s.size, () => 0);
+    if (size > 20 * 1024) bigSheets++;
+  }
+  if (bigSheets > 1) errors.push(`${path}: ${bigSheets} stylesheets over 20 KB (expected at most 1)`);
 
   const h1s = doc.querySelectorAll('h1');
   if (h1s.length !== 1) errors.push(`${path}: ${h1s.length} h1 elements`);
