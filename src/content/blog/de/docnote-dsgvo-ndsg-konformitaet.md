@@ -2,7 +2,8 @@
 title: "DSGVO- und revDSG-Konformität von DocNote bestätigt"
 translationKey: "docnote-gdpr-nfadp-compliance"
 excerpt: "Nach einer eingehenden Prüfung durch die Datenschutzbehörde des Kantons Waadt wurde die Datenverwaltung von DocNote als konform mit der DSGVO, dem Schweizer revDSG und dem Waadtländer LPrD bestätigt."
-category: "news"
+category: "compliance"
+tags: ["gdpr", "fadp", "compliance"]
 author: "DocNote Team"
 authorRole: "Unternehmensnachrichten"
 authorImage: "/images/logo.png"

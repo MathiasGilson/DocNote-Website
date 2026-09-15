@@ -2,7 +2,8 @@
 title: "La conformité RGPD et nLPD de DocNote confirmée"
 translationKey: "docnote-gdpr-nfadp-compliance"
 excerpt: "Après une relecture approfondie du Bureau de la protection des données du canton de Vaud, la gestion des données de DocNote a été confirmée conforme au RGPD, à la nLPD et à la LPrD vaudoise."
-category: "news"
+category: "compliance"
+tags: ["gdpr", "fadp", "compliance"]
 author: "Équipe DocNote"
 authorRole: "Actualités de l'entreprise"
 authorImage: "/images/logo.png"
