@@ -10,6 +10,7 @@
  *  - dist/404.html exists (Cloudflare Pages needs it to answer unknown URLs with a 404)
  *  - every indexable page appears in one of the child sitemaps
  *  - no page emits a <meta name="keywords"> tag
+ *  - the only generic contact address on the site is contact@docnote.ch
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
@@ -37,7 +38,8 @@ if (!(await exists(join(DIST, '404.html')))) errors.push('dist/404.html missing:
 for await (const file of walk(DIST)) {
   const path = '/' + relative(DIST, file).replace(/index\.html$/, '');
   if (path === '/404/') continue;
-  const doc = parse(await readFile(file, 'utf8'));
+  const html = await readFile(file, 'utf8');
+  const doc = parse(html);
   const robots = doc.querySelector('meta[name="robots"]')?.getAttribute('content') ?? '';
   if (robots.includes('noindex')) continue;
 
@@ -48,6 +50,8 @@ for await (const file of walk(DIST)) {
   if (!doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim()) errors.push(`${path}: missing meta description`);
 
   if (doc.querySelector('meta[name="keywords"]')) errors.push(`${path}: emits a <meta name="keywords"> tag`);
+
+  for (const [stray] of html.matchAll(/contact@docnote\.(?!ch\b)[a-z]+/g)) errors.push(`${path}: stray contact address ${stray}`);
 
   const h1s = doc.querySelectorAll('h1');
   if (h1s.length !== 1) errors.push(`${path}: ${h1s.length} h1 elements`);
