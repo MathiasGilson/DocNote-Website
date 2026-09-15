@@ -9,6 +9,7 @@
  *  - og:image resolves to a file in dist
  *  - dist/404.html exists (Cloudflare Pages needs it to answer unknown URLs with a 404)
  *  - every indexable page appears in one of the child sitemaps
+ *  - no page emits a <meta name="keywords"> tag
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
@@ -45,6 +46,8 @@ for await (const file of walk(DIST)) {
   else if (canonicals[0].getAttribute('href') !== `${SITE}${path}`) errors.push(`${path}: canonical is ${canonicals[0].getAttribute('href')}`);
 
   if (!doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim()) errors.push(`${path}: missing meta description`);
+
+  if (doc.querySelector('meta[name="keywords"]')) errors.push(`${path}: emits a <meta name="keywords"> tag`);
 
   const h1s = doc.querySelectorAll('h1');
   if (h1s.length !== 1) errors.push(`${path}: ${h1s.length} h1 elements`);
