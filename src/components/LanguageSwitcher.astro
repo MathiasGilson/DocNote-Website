@@ -3,11 +3,25 @@ import { locales, localeNames, getLocalizedPath, getPathWithoutLocale, type Loca
 
 interface Props {
   locale: Locale;
+  alternates?: Partial<Record<Locale, string>>;
 }
 
-const { locale } = Astro.props;
+const { locale, alternates } = Astro.props;
 const pathname = Astro.url.pathname;
 const basePath = getPathWithoutLocale(pathname);
+
+// Blog slugs are translated, so the path cannot be recomputed from the current
+// one. Layout already resolves the real alternate URL per locale; fall back to
+// the path-based computation only when a locale is missing from that map.
+function hrefFor(code: Locale) {
+  const alternate = alternates?.[code];
+  if (!alternate) return getLocalizedPath(basePath, code);
+  try {
+    return new URL(alternate).pathname;
+  } catch {
+    return alternate;
+  }
+}
 ---
 
 <div class="relative" id="lang-switcher">
@@ -28,7 +42,7 @@ const basePath = getPathWithoutLocale(pathname);
   <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
     {locales.map((code) => (
       <a
-        href={getLocalizedPath(basePath, code)}
+        href={hrefFor(code)}
         class:list={[
           'block px-4 py-2 text-sm hover:bg-gray-50 transition-colors',
           code === locale ? 'text-primary-600 font-medium' : 'text-gray-700'

@@ -6,9 +6,10 @@ import { DEMO_BOOKING_URL } from '../utils/links';
 interface Props {
   locale: Locale;
   translations: any;
+  alternates?: Partial<Record<Locale, string>>;
 }
 
-const { locale, translations: t } = Astro.props;
+const { locale, translations: t, alternates } = Astro.props;
 const currentPath = Astro.url.pathname;
 const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://support.docnote.care/${locale}/`;
 
@@ -57,7 +58,7 @@ function isActive(path: string) {
       </div>
 
       <div class="flex items-center gap-1.5 2xl:gap-2 flex-shrink-0">
-        <LanguageSwitcher locale={locale} />
+        <LanguageSwitcher locale={locale} alternates={alternates} />
         <a
           href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR"
           target="_blank"
