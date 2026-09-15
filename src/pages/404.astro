@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page not found" description="This page does not exist. Head back to the DocNote home page or browse the blog." noindex>
+  <section class="pt-32 pb-20 bg-white min-h-screen">
+    <div class="max-w-2xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+      <p class="text-sm font-semibold text-violet-600 uppercase tracking-wider mb-4">Error 404</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Page not found</h1>
+      <p class="text-lg text-gray-600 mb-10">
+        The page you are looking for has moved or never existed. Try the home page or the blog instead.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/20"
+        >
+          Back to home
+        </a>
+        <a
+          href="/blog/"
+          class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-gray-900 bg-gray-100 rounded-full hover:bg-gray-200 transition-all"
+        >
+          Read the blog
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

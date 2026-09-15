@@ -7,6 +7,7 @@
  *  - unique <title> across the site
  *  - every hreflang href resolves to a page in dist, and that page links back (reciprocity)
  *  - og:image resolves to a file in dist
+ *  - dist/404.html exists (Cloudflare Pages needs it to answer unknown URLs with a 404)
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
@@ -21,6 +22,7 @@ async function* walk(dir) {
   for (const e of await readdir(dir, { withFileTypes: true })) {
     const full = join(dir, e.name);
     if (e.isDirectory() && !['og', '_astro'].includes(e.name)) yield* walk(full);
+    // Only index.html pages are validated, which already excludes the 404.html shell.
     else if (e.name === 'index.html') yield full;
   }
 }
@@ -28,6 +30,7 @@ const exists = async (p) => stat(p).then(() => true, () => false);
 const toPath = (url) => new URL(url).pathname;
 
 if (await exists(join(DIST, 'en'))) errors.push('dist/en/ exists: English must be built at the root');
+if (!(await exists(join(DIST, '404.html')))) errors.push('dist/404.html missing: unknown URLs would be served as soft 404s');
 
 for await (const file of walk(DIST)) {
   const path = '/' + relative(DIST, file).replace(/index\.html$/, '');
