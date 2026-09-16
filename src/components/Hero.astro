@@ -1,6 +1,6 @@
 ---
 import { getLocaleFromUrl, getLocalizedPath } from "../utils/i18n"
-import { DEMO_BOOKING_URL } from "../utils/links"
+import { APP_STORE_URL, DEMO_BOOKING_URL, PLAY_STORE_URL } from "../utils/links"
 
 interface Props {
     translations: any
@@ -80,6 +80,9 @@ const stats = [
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <a
                     href={getLocalizedPath("/tutorial", locale)}
+                    data-platform-cta
+                    data-ios-href={APP_STORE_URL}
+                    data-android-href={PLAY_STORE_URL}
                     class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-white bg-[#7951fb] hover:bg-[#5b3fd4] rounded-lg transition-colors shadow-lg shadow-violet-500/25"
                 >
                     {t.hero.cta}
@@ -884,5 +887,21 @@ const stats = [
             { threshold: 0.35 }
         )
         statCards.forEach((card) => observer.observe(card))
+    }
+</script>
+
+<script>
+    // "Start for free" sends phones straight to their store; desktop keeps the tutorial page.
+    const cta = document.querySelector<HTMLAnchorElement>("[data-platform-cta]")
+    if (cta) {
+        const ua = navigator.userAgent
+        const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+        const isAndroid = /Android/i.test(ua)
+        const target = isIOS ? cta.dataset.iosHref : isAndroid ? cta.dataset.androidHref : null
+        if (target) {
+            cta.href = target
+            cta.target = "_blank"
+            cta.rel = "noopener noreferrer"
+        }
     }
 </script>

@@ -4,6 +4,7 @@ import type { Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
 import { getPageMeta } from '../../utils/seo';
 import { DEMO_BOOKING_URL } from '../../utils/links';
+import StoreIcon from '../StoreIcons.astro';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -344,16 +345,18 @@ const step5MediwayGuide = locale === 'fr' ? '/docs/docnote-integration-mediway.p
               href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
+              class="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
             >
+              <StoreIcon store="apple" class="w-4 h-4" />
               {t.tutorial.cta.appStore}
             </a>
             <a
               href="https://play.google.com/store/apps/details?id=app.docnote&pli=1"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
+              class="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-md shadow-indigo-500/20"
             >
+              <StoreIcon store="google" class="w-4 h-4" />
               {t.tutorial.cta.googlePlay}
             </a>
             <a

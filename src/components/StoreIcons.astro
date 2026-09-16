@@ -1,4 +1,8 @@
 ---
+// Apple mark: official logo fetched from logo.dev (img.logo.dev/apple.com, greyscale) and
+// stored locally so the site does not depend on the API at runtime. It is applied as a CSS
+// mask so it takes the button text color. Google Play has no company domain on logo.dev
+// (every candidate resolves to the Google "G"), so its glyph is an inline monochrome SVG.
 interface Props {
   store: 'apple' | 'google';
   class?: string;
@@ -6,14 +10,13 @@ interface Props {
 const { store, class: className = 'w-4 h-4' } = Astro.props;
 ---
 {store === 'apple' ? (
-  <svg class={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M16.365 1.43c0 1.14-.468 2.24-1.253 3.052-.865.902-2.19 1.6-3.286 1.508a3.63 3.63 0 0 1-.03-.42c0-1.107.5-2.284 1.323-3.104.42-.42 1.02-.79 1.65-1.02.62-.23 1.19-.35 1.57-.36.02.11.026.22.026.344zM20.3 17.2c-.55 1.28-.82 1.85-1.53 2.98-.99 1.58-2.39 3.55-4.13 3.56-1.54.02-1.94-1.01-4.03-1-2.09.01-2.53 1.02-4.07 1.01-1.74-.02-3.07-1.79-4.06-3.37C-.29 16.03-.58 10.77 1.14 7.98c1.22-1.98 3.14-3.14 4.95-3.14 1.84 0 3 1.01 4.52 1.01 1.48 0 2.38-1.01 4.51-1.01 1.61 0 3.31.88 4.53 2.39-3.98 2.18-3.33 7.86.65 9.97z"/>
-  </svg>
+  <span
+    class:list={['inline-block bg-current', className]}
+    style="mask: url('/images/logo_apple.png') center / contain no-repeat; -webkit-mask: url('/images/logo_apple.png') center / contain no-repeat;"
+    aria-hidden="true"
+  ></span>
 ) : (
-  <svg class={className} viewBox="0 0 24 24" aria-hidden="true">
-    <path fill="#00D7FE" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l9.9-10.2L3.6 1.8z"/>
-    <path fill="#00F076" d="M3.6 1.8 13.5 12l3.3-3.4L5.4 1.9c-.7-.4-1.4-.4-1.8-.1z"/>
-    <path fill="#FF3A44" d="m3.6 22.2 9.9-10.2 3.3 3.4L5.4 22.1c-.7.4-1.4.4-1.8.1z"/>
-    <path fill="#FFD500" d="m16.8 8.6-3.3 3.4 3.3 3.4 3.8-2.1c1.1-.6 1.1-1.9 0-2.5l-3.8-2.2z"/>
+  <svg class={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l9.9-10.2L3.6 1.8zm1.8.1L13.5 12l3.3-3.4L5.4 1.9c-.7-.4-1.4-.4-1.8-.1zM3.6 22.2l9.9-10.2 3.3 3.4L5.4 22.1c-.7.4-1.4.4-1.8.1zm13.2-13.6-3.3 3.4 3.3 3.4 3.8-2.1c1.1-.6 1.1-1.9 0-2.5l-3.8-2.2z"/>
   </svg>
 )}
