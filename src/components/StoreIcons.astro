@@ -1,22 +1,30 @@
 ---
-// Apple mark: official logo fetched from logo.dev (img.logo.dev/apple.com, greyscale) and
-// stored locally so the site does not depend on the API at runtime. It is applied as a CSS
-// mask so it takes the button text color. Google Play has no company domain on logo.dev
-// (every candidate resolves to the Google "G"), so its glyph is an inline monochrome SVG.
+// Brand marks are copied verbatim from Simple Icons 16.31.0 (official brand glyphs):
+// https://unpkg.com/simple-icons@16.31.0/icons/apple.svg and .../googleplay.svg
+// UI icons come from Heroicons 2.1.5 outline (globe-alt, calendar-days). Do not hand-edit paths.
 interface Props {
-  store: 'apple' | 'google';
+  store: 'apple' | 'google' | 'web' | 'demo';
   class?: string;
 }
 const { store, class: className = 'w-4 h-4' } = Astro.props;
 ---
-{store === 'apple' ? (
-  <span
-    class:list={['inline-block bg-current', className]}
-    style="mask: url('/images/logo_apple.png') center / contain no-repeat; -webkit-mask: url('/images/logo_apple.png') center / contain no-repeat;"
-    aria-hidden="true"
-  ></span>
-) : (
+{store === 'apple' && (
   <svg class={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l9.9-10.2L3.6 1.8zm1.8.1L13.5 12l3.3-3.4L5.4 1.9c-.7-.4-1.4-.4-1.8-.1zM3.6 22.2l9.9-10.2 3.3 3.4L5.4 22.1c-.7.4-1.4.4-1.8.1zm13.2-13.6-3.3 3.4 3.3 3.4 3.8-2.1c1.1-.6 1.1-1.9 0-2.5l-3.8-2.2z"/>
+    <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+  </svg>
+)}
+{store === 'google' && (
+  <svg class={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/>
+  </svg>
+)}
+{store === 'web' && (
+  <svg class={className} fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/>
+  </svg>
+)}
+{store === 'demo' && (
+  <svg class={className} fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"/>
   </svg>
 )}
