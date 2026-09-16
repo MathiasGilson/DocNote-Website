@@ -155,6 +155,24 @@ const pillarLabel = category.pillar ? pillarNavLabel[locale][category.pillar] : 
     display: none;
   }
 
+  .blog-content :global(.video-embed) {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0 0 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #111827;
+  }
+
+  .blog-content :global(.video-embed iframe) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   .blog-content {
     font-family: 'Open Sans', system-ui, sans-serif;
     font-size: 1.125rem;
