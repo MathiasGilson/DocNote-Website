@@ -3,6 +3,7 @@ import { getLocalizedPath, type Locale } from "../utils/i18n"
 import { pillarSlugs, pillarNavLabel } from "../content/pillars"
 import { CATEGORY_LIST } from "../content/categories"
 import { SPECIALTY_SLUGS, specialtyNavLabel } from "../content/specialties"
+import StoreIcon from "./StoreIcons.astro"
 
 interface Props {
     locale: Locale
@@ -48,17 +49,17 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
                 <ul class="space-y-2.5">
                     <li>
                         <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer"
-                            class="text-sm text-white hover:text-white/70 transition-colors">iOS App</a
+                            class="inline-flex items-center gap-2 text-sm text-white hover:text-white/70 transition-colors"><StoreIcon store="apple" class="w-4 h-4" />iOS App</a
                         >
                     </li>
                     <li>
                         <a href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer"
-                            class="text-sm text-white hover:text-white/70 transition-colors">Android App</a
+                            class="inline-flex items-center gap-2 text-sm text-white hover:text-white/70 transition-colors"><StoreIcon store="google" class="w-4 h-4" />Android App</a
                         >
                     </li>
                     <li>
                         <a href="/app" target="_blank" rel="noopener noreferrer"
-                            class="text-sm text-white hover:text-white/70 transition-colors">Web App</a
+                            class="inline-flex items-center gap-2 text-sm text-white hover:text-white/70 transition-colors"><StoreIcon store="web" class="w-4 h-4" />Web App</a
                         >
                     </li>
                 </ul>
