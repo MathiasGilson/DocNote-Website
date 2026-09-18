@@ -417,11 +417,6 @@ const pagesCollection = defineCollection({
           role: z.string(),
           bio: z.string(),
         }),
-        valeryDemunck: z.object({
-          name: z.string(),
-          role: z.string(),
-          bio: z.string(),
-        }),
         julietteKristanek: z.object({
           name: z.string(),
           role: z.string(),

@@ -2,7 +2,7 @@
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import StoreIcon from './StoreIcons.astro';
 import { getLocalizedPath, type Locale } from '../utils/i18n';
-import { DEMO_BOOKING_URL } from '../utils/links';
+import { demoRequestPath } from '../utils/links';
 
 interface Props {
   locale: Locale;
@@ -87,9 +87,7 @@ function isActive(path: string) {
           {t.nav.webApp}
         </a>
         <a
-          href={DEMO_BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={demoRequestPath(locale)}
           class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-violet-700 bg-violet-50 border border-violet-200 rounded-full hover:bg-violet-100 transition-all whitespace-nowrap"
         >
           {t.nav.demo}
@@ -117,7 +115,7 @@ function isActive(path: string) {
           <a href="https://apps.apple.com/ch/app/docnote-for-doctors/id6741168204?l=fr-FR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 hover:bg-gray-200 transition-all"><StoreIcon store="apple" class="w-4 h-4" />{t.nav.appStore}</a>
           <a href="https://play.google.com/store/apps/details?id=app.docnote&pli=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-base font-medium text-gray-700 bg-gray-100 rounded-full px-6 py-2.5 hover:bg-gray-200 transition-all"><StoreIcon store="google" class="w-4 h-4" />{t.nav.googlePlay}</a>
           <a href="https://docnote.care/app/" class="text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full px-6 py-2.5 text-center">{t.nav.webApp}</a>
-          <a href={DEMO_BOOKING_URL} target="_blank" rel="noopener noreferrer" class="text-base font-medium text-violet-700 bg-violet-50 border border-violet-200 rounded-full px-6 py-2.5 text-center">{t.nav.demo}</a>
+          <a href={demoRequestPath(locale)} class="text-base font-medium text-violet-700 bg-violet-50 border border-violet-200 rounded-full px-6 py-2.5 text-center">{t.nav.demo}</a>
         </div>
       </div>
     </div>

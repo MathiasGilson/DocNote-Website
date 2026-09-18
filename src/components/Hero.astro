@@ -1,6 +1,6 @@
 ---
 import { getLocaleFromUrl, getLocalizedPath } from "../utils/i18n"
-import { APP_STORE_URL, DEMO_BOOKING_URL, PLAY_STORE_URL } from "../utils/links"
+import { APP_STORE_URL, PLAY_STORE_URL, demoRequestPath } from "../utils/links"
 
 interface Props {
     translations: any
@@ -88,9 +88,7 @@ const stats = [
                     {t.hero.cta}
                 </a>
                 <a
-                    href={DEMO_BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={demoRequestPath(locale)}
                     class="inline-flex items-center justify-center px-7 py-3 text-base font-medium text-[#5b3fd4] bg-white/80 border border-[#7951fb]/40 hover:border-[#7951fb] hover:bg-white rounded-lg transition-colors"
                 >
                     {t.contact.bookDemo}

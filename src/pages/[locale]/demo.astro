@@ -1,0 +1,10 @@
+---
+import DemoPage from '../../components/pages/DemoPage.astro';
+import { nonDefaultLocales, type Locale } from '../../utils/i18n';
+
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+---
+<DemoPage locale={locale} />

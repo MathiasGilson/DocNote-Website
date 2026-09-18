@@ -6,7 +6,7 @@ import { specialties, type SpecialtySlug } from '../../content/specialties';
 import { getLocalizedPath, type Locale } from '../../utils/i18n';
 import { getPostsForLocale } from '../../utils/blog-collection';
 import { absoluteUrl, buildBreadcrumbLd } from '../../utils/seo';
-import { DEMO_BOOKING_URL } from '../../utils/links';
+import { demoRequestPath } from '../../utils/links';
 
 interface Props { locale: Locale; specialty: SpecialtySlug }
 const { locale, specialty } = Astro.props;
@@ -28,7 +28,7 @@ const jsonLd = [
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight">{s.h1}</h1>
       <p class="mt-6 text-xl text-gray-600">{s.intro}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href={DEMO_BOOKING_URL} class="px-5 py-3 rounded-xl bg-violet-600 text-white font-medium hover:bg-violet-700">{t.contact.bookDemo}</a>
+        <a href={demoRequestPath(locale)} class="px-5 py-3 rounded-xl bg-violet-600 text-white font-medium hover:bg-violet-700">{t.contact.bookDemo}</a>
         <a href={getLocalizedPath('/pricing', locale)} class="px-5 py-3 rounded-xl border border-gray-300 text-gray-800 font-medium hover:bg-gray-50">{t.nav.pricing}</a>
       </div>
 

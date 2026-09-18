@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import type { Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
 import { getPageMeta } from '../../utils/seo';
-import { DEMO_BOOKING_URL } from '../../utils/links';
+import { demoRequestPath } from '../../utils/links';
 import StoreIcon from '../StoreIcons.astro';
 
 interface Props { locale: Locale }
@@ -367,9 +367,7 @@ const step5MediwayGuide = locale === 'fr' ? '/docs/docnote-integration-mediway.p
               {t.tutorial.cta.webApp}
             </a>
             <a
-              href={DEMO_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={demoRequestPath(locale)}
               class="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-[#7951fb] hover:bg-[#5b3fd4] rounded-full transition-colors"
             >
               <StoreIcon store="demo" class="w-4 h-4" />

@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import type { Locale } from '../../utils/i18n';
 import { getEntry } from 'astro:content';
 import { getPageMeta } from '../../utils/seo';
-import { DEMO_BOOKING_URL } from '../../utils/links';
+import { demoRequestPath } from '../../utils/links';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -24,9 +24,7 @@ const meta = getPageMeta('contact', locale as Locale);
           {t.contact.subtitle}
         </p>
         <a
-          href={DEMO_BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={demoRequestPath(locale)}
           class="inline-flex items-center justify-center mt-8 px-7 py-3 text-base font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full hover:from-violet-700 hover:to-indigo-700 transition-all shadow-lg shadow-indigo-500/20"
         >
           {t.contact.bookDemo}
