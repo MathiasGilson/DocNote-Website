@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import type { Locale } from '../../utils/i18n';
+import { getPageMeta } from '../../utils/seo';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -12,9 +13,6 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '0303b631-a251-46e
 
 const STRINGS = {
   fr: {
-    metaTitle: 'Demander une démo | DocNote',
-    metaDescription:
-      "Demandez une démonstration de DocNote. Laissez-nous vos coordonnées, nous vous recontactons pour convenir d'un créneau.",
     eyebrow: 'Démonstration',
     pageTitle: 'Demander une démo',
     pageSub:
@@ -29,7 +27,7 @@ const STRINGS = {
     facility: 'Établissement',
     facilityHint: 'Hôpital, clinique, cabinet…',
     message: 'Commentaire',
-    messageHint: 'Facultatif — dites-nous ce que vous aimeriez voir pendant la démonstration.',
+    messageHint: 'Facultatif : dites-nous ce que vous aimeriez voir pendant la démonstration.',
     selectPlaceholder: 'Sélectionnez…',
     roleDoctor: 'Médecin',
     roleSecretary: 'Secrétariat',
@@ -45,9 +43,6 @@ const STRINGS = {
     errConfig: 'Le formulaire n’est pas configuré. Écrivez-nous à contact@docnote.ch.',
   },
   en: {
-    metaTitle: 'Get a demo | DocNote',
-    metaDescription:
-      'Request a DocNote demo. Leave us your details and we will get back to you to arrange a time.',
     eyebrow: 'Demo',
     pageTitle: 'Get a demo',
     pageSub:
@@ -62,7 +57,7 @@ const STRINGS = {
     facility: 'Organisation',
     facilityHint: 'Hospital, clinic, private practice…',
     message: 'Comment',
-    messageHint: 'Optional — tell us what you would like to see during the demo.',
+    messageHint: 'Optional: tell us what you would like to see during the demo.',
     selectPlaceholder: 'Select…',
     roleDoctor: 'Doctor',
     roleSecretary: 'Administrative staff',
@@ -78,9 +73,6 @@ const STRINGS = {
     errConfig: 'This form is not configured. Please email us at contact@docnote.ch.',
   },
   de: {
-    metaTitle: 'Demo anfordern | DocNote',
-    metaDescription:
-      'Fordern Sie eine DocNote-Demo an. Hinterlassen Sie uns Ihre Kontaktdaten, wir melden uns für einen Termin.',
     eyebrow: 'Demo',
     pageTitle: 'Demo anfordern',
     pageSub:
@@ -95,7 +87,7 @@ const STRINGS = {
     facility: 'Einrichtung',
     facilityHint: 'Spital, Klinik, Praxis…',
     message: 'Kommentar',
-    messageHint: 'Optional — sagen Sie uns, was Sie in der Demo sehen möchten.',
+    messageHint: 'Optional: Sagen Sie uns, was Sie in der Demo sehen möchten.',
     selectPlaceholder: 'Bitte wählen…',
     roleDoctor: 'Ärztin / Arzt',
     roleSecretary: 'Sekretariat',
@@ -113,6 +105,7 @@ const STRINGS = {
 } as const;
 
 const t = STRINGS[lang];
+const meta = getPageMeta('demo', lang);
 
 // La valeur envoyée par e-mail reste en français : la boîte contact@ est traitée en français.
 const roleOptions = [
@@ -126,7 +119,7 @@ const inputClass =
   'mt-1.5 w-full rounded-lg border border-gray-300 px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent';
 ---
 
-<Layout title={t.metaTitle} description={t.metaDescription}>
+<Layout title={meta.title} description={meta.description}>
   <section class="pt-28 pb-8 bg-gradient-to-b from-violet-50 via-white to-white">
     <div class="max-w-3xl mx-auto px-6 sm:px-8">
       <p class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-3">{t.eyebrow}</p>
@@ -252,8 +245,8 @@ const inputClass =
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `🩺 Nouvelle demande de démo — ${fullName} (${facility})`,
-          from_name: 'Demande de démo — site DocNote',
+          subject: `🩺 Nouvelle demande de démo : ${fullName} (${facility})`,
+          from_name: 'Demande de démo (site DocNote)',
           replyto: String(data.email).trim(),
           botcheck: data.botcheck ? 'true' : '',
           Prénom: String(data.firstName).trim(),
@@ -262,7 +255,7 @@ const inputClass =
           Téléphone: String(data.phone).trim(),
           Rôle: String(data.role),
           Établissement: facility,
-          Commentaire: String(data.message || '').trim() || '—',
+          Commentaire: String(data.message || '').trim() || '(vide)',
           'Langue de la page': LANG.toUpperCase(),
           'Envoyé le': new Date().toISOString(),
         }),

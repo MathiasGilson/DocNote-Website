@@ -159,6 +159,23 @@ export const pageMeta: Record<
         'So nutzen Sie DocNote: Konsultationen aufnehmen, klinische Notizen erzeugen, Vorlagen anpassen und mit dem KIS synchronisieren.',
     },
   },
+  demo: {
+    en: {
+      title: 'Get a demo',
+      description:
+        'Request a DocNote demo. Leave us your details and our team will get back to you to arrange a time.',
+    },
+    fr: {
+      title: 'Demander une démo',
+      description:
+        'Demandez une démonstration de DocNote. Laissez-nous vos coordonnées, notre équipe vous recontacte pour convenir d\'un créneau.',
+    },
+    de: {
+      title: 'Demo anfordern',
+      description:
+        'Fordern Sie eine DocNote-Demo an. Hinterlassen Sie uns Ihre Kontaktdaten, unser Team meldet sich für einen Termin.',
+    },
+  },
   contact: {
     en: {
       title: 'Contact',
