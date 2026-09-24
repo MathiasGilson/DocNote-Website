@@ -100,16 +100,16 @@ const secondaryBtn =
           <p class="mt-2 text-sm text-gray-500">{o.practiceNote}</p>
 
           <div class="mt-5 grid grid-cols-2 gap-3">
-            <button type="button" id="bill-company" class="rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700">{o.billToCompany}</button>
-            <button type="button" id="bill-individual" class="rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700">{o.billToIndividual}</button>
+            <button type="button" id="bill-company" class="rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700">{o.billToCompany}</button>
+            <button type="button" id="bill-individual" class="rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700">{o.billToIndividual}</button>
           </div>
 
           <div class="mt-5 space-y-4">
             <div>
-              <label class={label} for="f-name"><span id="name-label">{o.nameOfCompany}</span></label>
+              <label class={label} for="f-name"><span id="name-label">{o.signatoryName}</span></label>
               <input id="f-name" type="text" class={input} />
             </div>
-            <div id="company-field">
+            <div id="company-field" class="hidden">
               <label class={label} for="f-company">{o.company} <span class="font-normal text-gray-400">· {o.optional}</span></label>
               <input id="f-company" type="text" class={input} />
             </div>
@@ -132,7 +132,7 @@ const secondaryBtn =
               <select id="f-country" class={input}></select>
             </div>
             <div class="grid grid-cols-2 gap-4">
-              <div id="vat-field">
+              <div id="vat-field" class="hidden">
                 <label class={label} for="f-vat">{o.vatId} <span class="font-normal text-gray-400">· {o.optional}</span></label>
                 <input id="f-vat" type="text" class={input} />
               </div>
@@ -144,10 +144,10 @@ const secondaryBtn =
           </div>
         </div>
 
-        {/* Only shown from two licences: with one, the seat is the buyer's own address. */}
+        {/* The address each licence signs in with. The first starts as the buyer's own, and stays editable. */}
         <div id="holders-card" class={card}>
-          <h2 class={stepTitle}>4. {o.step4}</h2>
-          <p class="mt-2 text-sm text-gray-500">{o.holdersNote}</p>
+          <h2 class={stepTitle}>4. <span id="holders-title">{o.step4}</span></h2>
+          <p id="holders-note" class="mt-2 text-sm text-gray-500">{o.holdersNote}</p>
           <div id="seats" class="mt-4 space-y-3" data-label={o.holderLabel}></div>
           <p id="seat-issues" class="mt-2 text-sm"></p>
         </div>
@@ -166,10 +166,6 @@ const secondaryBtn =
               </span>
             </label>
 
-            <div>
-              <label class={label} for="signer">{o.signAs}</label>
-              <input id="signer" type="text" class={input} />
-            </div>
             <p class="text-xs text-gray-500">{o.signatureNote}</p>
 
             <button type="button" id="sign" class={primaryBtn}>{o.sign}</button>
@@ -359,9 +355,26 @@ const secondaryBtn =
   // is not itself a holder.
   const seatValues: string[] = [];
 
+  /**
+   * The first licence starts as the address typed in step 2 — most buyers order for themselves — and
+   * follows it until the buyer types their own. Emptying the box hands it back to step 2.
+   */
+  let firstSeatByHand = false;
+
+  const followBuyerEmail = () => {
+    if (firstSeatByHand) return;
+    seatValues[0] = value('email').toLowerCase();
+    const field = document.getElementById('seat-0') as HTMLInputElement | null;
+    if (field) field.value = seatValues[0];
+    refreshSeatIssues();
+  };
+
   const renderSeats = () => {
     const container = $('seats');
     const label = container.dataset.label ?? 'Holder';
+    const plural = quantity > 1;
+    $('holders-title').textContent = plural ? copy.step4Plural : copy.step4;
+    $('holders-note').textContent = plural ? copy.holdersNotePlural : copy.holdersNote;
 
     while (seatValues.length < quantity) seatValues.push('');
     seatValues.length = quantity;
@@ -370,13 +383,14 @@ const secondaryBtn =
     seatValues.forEach((seat, index) => {
       const row = document.createElement('div');
       row.innerHTML = `
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="seat-${index}">${label} ${index + 1}</label>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="seat-${index}">${label}${plural ? ` ${index + 1}` : ''}</label>
         <input id="seat-${index}" type="email" autocomplete="off"
           class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />`;
       const field = row.querySelector('input') as HTMLInputElement;
       field.value = seat;
       field.addEventListener('input', () => {
         seatValues[index] = field.value.trim().toLowerCase();
+        if (index === 0) firstSeatByHand = Boolean(seatValues[0]);
         refreshSeatIssues();
         clearMarks();
       });
@@ -434,7 +448,8 @@ const secondaryBtn =
    * line where the organisation should be reads like an unfinished form — so the field is not merely
    * optional, it is absent.
    */
-  let billTo: 'company' | 'individual' = 'company';
+  // Most buyers are a doctor ordering for themselves.
+  let billTo: 'company' | 'individual' = 'individual';
 
   const setBillTo = (next: 'company' | 'individual') => {
     billTo = next;
@@ -511,7 +526,6 @@ const secondaryBtn =
   const missingForSignature = (): string[] => [
     ...missingForDocument(),
     ...(($('chk-terms') as HTMLInputElement).checked ? [] : ['row-terms']),
-    ...(value('signer') ? [] : ['signer']),
   ];
 
   const showMissing = (missing: string[], message: string) => {
@@ -557,7 +571,8 @@ const secondaryBtn =
       }
       const { email: _addressIsFixed, ...editable } = identity();
       await call('PATCH', `/orders/${orderId}`, { ...editable, quantity, period, seatEmails: filledSeats() });
-      await call('POST', `/orders/${orderId}/sign`, { signerName: value('signer'), termsAccepted: true });
+      // The signatory is the name given in step 3: asking for it a second time only made buyers hesitate.
+      await call('POST', `/orders/${orderId}/sign`, { signerName: value('f-name'), termsAccepted: true });
 
       signed = true;
       $('order-form').classList.add('hidden');
@@ -584,10 +599,11 @@ const secondaryBtn =
   });
 
   // Typing anywhere clears the red: the buyer should see the outline go as they fix it.
-  for (const id of ['email', 'email-confirm', 'signer', 'f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
+  for (const id of ['email', 'email-confirm', 'f-name', 'f-company', 'f-address', 'f-zip', 'f-city', 'f-country']) {
     $(id).addEventListener('input', clearMarks);
   }
   $('chk-terms').addEventListener('change', clearMarks);
+  $('email').addEventListener('input', followBuyerEmail);
 
   $('f-country').addEventListener('change', () => {
     countryChosenByHand = true;
