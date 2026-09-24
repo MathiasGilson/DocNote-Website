@@ -204,9 +204,11 @@ const secondaryBtn =
     toLocalAmount,
   } from '../../utils/pricing';
   import { seatIssues, isEmail } from '../../utils/order';
+  import { getLocaleFromUrl } from '../../utils/i18n';
 
   const API = import.meta.env.PUBLIC_API_URL || 'https://api.docnote.care';
-  const locale = window.location.pathname.split('/')[1] || 'en';
+  // English lives at the root: on /order/ the first path segment is "order", not a locale.
+  const locale = getLocaleFromUrl(new URL(window.location.href));
   const copy = JSON.parse(document.getElementById('order-copy')?.textContent || '{}');
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;

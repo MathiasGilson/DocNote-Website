@@ -127,6 +127,7 @@ const breadcrumbLd = buildBreadcrumbLd([
     isConverted,
     toLocalAmount,
   } from '../../utils/pricing';
+  import { getLocaleFromUrl, getLocalizedPath } from '../../utils/i18n';
 
   const monthlyBtn = document.getElementById('monthly-btn') as HTMLElement;
   const yearlyBtn = document.getElementById('yearly-btn') as HTMLElement;
@@ -139,8 +140,9 @@ const breadcrumbLd = buildBreadcrumbLd([
   let yearlyPrice = '';
   let monthlyPrice = '';
   // Where "Get Started" goes: the purchase order, carrying the period the visitor picked here.
-  const pageLocale = window.location.pathname.split('/')[1] || 'en';
-  const orderUrl = (chosen: 'yearly' | 'monthly') => `/${pageLocale}/order/?period=${chosen}`;
+  // English lives at the root, so the first path segment is not always a locale (/pricing/ → "pricing").
+  const pageLocale = getLocaleFromUrl(new URL(window.location.href));
+  const orderUrl = (chosen: 'yearly' | 'monthly') => `${getLocalizedPath('/order', pageLocale)}?period=${chosen}`;
 
   async function initializePricing() {
     const country = await detectUserCountry();
