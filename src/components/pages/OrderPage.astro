@@ -50,12 +50,29 @@ const secondaryBtn =
       <div id="order-form" class="space-y-6">
         <div class={card}>
           <h2 class={stepTitle}>1. {o.step1}</h2>
-          <div class="mt-5 flex items-center justify-between">
-            <span class="text-gray-700">{o.howMany}</span>
-            <div class="flex items-center gap-4">
-              <button type="button" id="qty-minus" aria-label="-" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">−</button>
-              <span id="qty" class="text-2xl font-bold text-gray-900 w-10 text-center">1</span>
-              <button type="button" id="qty-plus" aria-label="+" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">+</button>
+          {/* One row per licence type, each with the price of one licence for the period chosen below. */}
+          <div class="mt-5 space-y-4">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <span class="block text-gray-700">{o.doctorLicences}</span>
+                <span id="unit-price" class="block text-sm text-gray-500">—</span>
+              </div>
+              <div class="flex items-center gap-4 shrink-0">
+                <button type="button" id="qty-minus" aria-label="-" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">−</button>
+                <span id="qty" class="text-2xl font-bold text-gray-900 w-10 text-center">1</span>
+                <button type="button" id="qty-plus" aria-label="+" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">+</button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <span class="block text-gray-700">{o.secretaryLicences}</span>
+                <span id="sec-unit-price" class="block text-sm text-gray-500">—</span>
+              </div>
+              <div class="flex items-center gap-4 shrink-0">
+                <button type="button" id="sec-minus" aria-label="-" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">−</button>
+                <span id="sec-qty" class="text-2xl font-bold text-gray-900 w-10 text-center">0</span>
+                <button type="button" id="sec-plus" aria-label="+" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-xl leading-none">+</button>
+              </div>
             </div>
           </div>
 
@@ -65,11 +82,14 @@ const secondaryBtn =
           </div>
 
           <div class="mt-6 pt-5 border-t border-gray-100 space-y-1">
-            <div class="flex justify-between text-gray-600">
-              <span>{o.unitPrice}</span><span id="unit-price">—</span>
+            <div id="doctor-line" class="flex justify-between text-sm text-gray-600">
+              <span id="total-line"></span><span id="doctor-subtotal"></span>
             </div>
-            <div class="flex justify-between text-sm text-gray-500">
-              <span id="total-line"></span><span id="billed-period"></span>
+            <div id="sec-line" class="hidden flex justify-between text-sm text-gray-600">
+              <span id="sec-total-line"></span><span id="sec-subtotal"></span>
+            </div>
+            <div class="flex justify-end text-sm text-gray-500">
+              <span id="billed-period"></span>
             </div>
             <div class="flex justify-between text-lg font-bold text-gray-900 pt-1">
               <span>{o.total}</span><span id="total-price">—</span>
@@ -100,8 +120,8 @@ const secondaryBtn =
           <p class="mt-2 text-sm text-gray-500">{o.practiceNote}</p>
 
           <div class="mt-5 grid grid-cols-2 gap-3">
-            <button type="button" id="bill-company" class="rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700">{o.billToCompany}</button>
             <button type="button" id="bill-individual" class="rounded-lg py-2.5 border text-sm font-medium border-indigo-500 bg-indigo-50 text-indigo-700">{o.billToIndividual}</button>
+            <button type="button" id="bill-company" class="rounded-lg py-2.5 border text-sm font-medium border-gray-200 text-gray-700">{o.billToCompany}</button>
           </div>
 
           <div class="mt-5 space-y-4">
@@ -147,9 +167,18 @@ const secondaryBtn =
         {/* The address each licence signs in with. The first starts as the buyer's own, and stays editable. */}
         <div id="holders-card" class={card}>
           <h2 class={stepTitle}>4. <span id="holders-title">{o.step4}</span></h2>
-          <p id="holders-note" class="mt-2 text-sm text-gray-500">{o.holdersNote}</p>
-          <div id="seats" class="mt-4 space-y-3" data-label={o.holderLabel}></div>
-          <p id="seat-issues" class="mt-2 text-sm"></p>
+          <div id="doctor-seats-block">
+            <p id="holders-note" class="mt-2 text-sm text-gray-500">{o.holdersNote}</p>
+            <div id="seats" class="mt-4 space-y-3" data-label={o.holderLabel}></div>
+            <p id="seat-issues" class="mt-2 text-sm"></p>
+          </div>
+          {/* Secretaries sign in to their own account; which doctors they work for is linked by DocNote afterwards. */}
+          <div id="sec-seats-block" class="hidden">
+            <h3 id="sec-title" class="mt-6 font-semibold text-gray-900">{o.secretaryTitle}</h3>
+            <p id="sec-note" class="mt-2 text-sm text-gray-500">{o.secretaryNote}</p>
+            <div id="sec-seats" class="mt-4 space-y-3" data-label={o.secretaryLabel}></div>
+            <p id="sec-seat-issues" class="mt-2 text-sm"></p>
+          </div>
         </div>
 
         <div id="sign-card" class={card}>
@@ -211,6 +240,8 @@ const secondaryBtn =
   const value = (id: string) => ($(id) as HTMLInputElement).value.trim();
 
   let quantity = 1;
+  /** Secretary licences: a second line on the same order, zero until the buyer adds one. */
+  let secretaryQuantity = 0;
   let period: 'annual' | 'monthly' = 'annual';
   let currency = 'EUR';
   let orderId: string | null = null;
@@ -319,19 +350,31 @@ const secondaryBtn =
     priceTimer = setTimeout(async () => {
       const base = baseForCurrency(currency);
       try {
-        const quote = await call('POST', '/orders/quote', { quantity, period, region: base });
+        const quote = await call('POST', '/orders/quote', { quantity, secretaryQuantity, period, region: base });
 
         // The price for the period ordered: a yearly subscription is quoted for the year, which is
-        // what the purchase order itself says and what the card is charged. The line below spells out
-        // the multiplication, and the total is derived from this same figure so the arithmetic on
+        // what the purchase order itself says and what the card is charged. Each line spells out its
+        // multiplication, and the total is derived from these same figures so the arithmetic on
         // screen adds up whatever the currency rounds to.
         const perLicence = toLocalAmount(quote.unitAmount / 100, currency);
+        const perSecretary = toLocalAmount(quote.secretaryUnitAmount / 100, currency);
+        const perPeriod = (amount: number) =>
+          (period === 'annual' ? copy.perLicenceYear : copy.perLicenceMonth).replace('{price}', formatLocalPrice(amount, currency));
+        const lineText = (template: string, n: number, unit: number) =>
+          template.replace('{n}', String(n)).replace('{unit}', formatLocalPrice(unit, currency));
 
-        $('unit-price').textContent = formatLocalPrice(perLicence, currency);
-        $('total-price').textContent = formatLocalPrice(perLicence * quantity, currency);
-        $('total-line').textContent = (copy.totalLine ?? '')
-          .replace('{n}', String(quantity))
-          .replace('{unit}', formatLocalPrice(perLicence, currency));
+        $('unit-price').textContent = perPeriod(perLicence);
+        $('sec-unit-price').textContent = perPeriod(perSecretary);
+
+        $('doctor-line').classList.toggle('hidden', quantity === 0);
+        $('total-line').textContent = lineText(copy.totalLine ?? '', quantity, perLicence);
+        $('doctor-subtotal').textContent = formatLocalPrice(perLicence * quantity, currency);
+
+        $('sec-line').classList.toggle('hidden', secretaryQuantity === 0);
+        $('sec-total-line').textContent = lineText(copy.secretaryTotalLine ?? '', secretaryQuantity, perSecretary);
+        $('sec-subtotal').textContent = formatLocalPrice(perSecretary * secretaryQuantity, currency);
+
+        $('total-price').textContent = formatLocalPrice(perLicence * quantity + perSecretary * secretaryQuantity, currency);
         $('billed-period').textContent = period === 'annual' ? copy.billedYearly : copy.billedMonthly;
 
         // Shown in one currency, charged in another: say so rather than let checkout surprise anyone.
@@ -352,45 +395,54 @@ const secondaryBtn =
   //
   // A box each rather than one free-text field: a purchase order for four licences should look like
   // four licences. The first is as editable as the others — an IT department ordering for its doctors
-  // is not itself a holder.
-  const seatValues: string[] = [];
+  // is not itself a holder. Doctors and secretaries each get their own list: a secretary's account is
+  // linked to their doctors by DocNote afterwards, so the two must never be confused.
+  type SeatGroup = { values: string[]; prefix: string; container: string; issues: string; count: () => number };
+
+  const doctorSeats: SeatGroup = { values: [], prefix: 'seat', container: 'seats', issues: 'seat-issues', count: () => quantity };
+  const secretarySeats: SeatGroup = {
+    values: [],
+    prefix: 'sec-seat',
+    container: 'sec-seats',
+    issues: 'sec-seat-issues',
+    count: () => secretaryQuantity,
+  };
 
   /**
-   * The first licence starts as the address typed in step 2 — most buyers order for themselves — and
-   * follows it until the buyer types their own. Emptying the box hands it back to step 2.
+   * The first doctor licence starts as the address typed in step 2 — most buyers order for themselves —
+   * and follows it until the buyer types their own. Emptying the box hands it back to step 2.
    */
   let firstSeatByHand = false;
 
   const followBuyerEmail = () => {
-    if (firstSeatByHand) return;
-    seatValues[0] = value('email').toLowerCase();
+    if (firstSeatByHand || quantity === 0) return;
+    doctorSeats.values[0] = value('email').toLowerCase();
     const field = document.getElementById('seat-0') as HTMLInputElement | null;
-    if (field) field.value = seatValues[0];
+    if (field) field.value = doctorSeats.values[0];
     refreshSeatIssues();
   };
 
-  const renderSeats = () => {
-    const container = $('seats');
+  const renderGroup = (group: SeatGroup) => {
+    const container = $(group.container);
     const label = container.dataset.label ?? 'Holder';
-    const plural = quantity > 1;
-    $('holders-title').textContent = plural ? copy.step4Plural : copy.step4;
-    $('holders-note').textContent = plural ? copy.holdersNotePlural : copy.holdersNote;
+    const n = group.count();
+    const numbered = n > 1;
 
-    while (seatValues.length < quantity) seatValues.push('');
-    seatValues.length = quantity;
+    while (group.values.length < n) group.values.push('');
+    group.values.length = n;
 
     container.innerHTML = '';
-    seatValues.forEach((seat, index) => {
+    group.values.forEach((seat, index) => {
       const row = document.createElement('div');
       row.innerHTML = `
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="seat-${index}">${label}${plural ? ` ${index + 1}` : ''}</label>
-        <input id="seat-${index}" type="email" autocomplete="off"
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="${group.prefix}-${index}">${label}${numbered ? ` ${index + 1}` : ''}</label>
+        <input id="${group.prefix}-${index}" type="email" autocomplete="off"
           class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />`;
       const field = row.querySelector('input') as HTMLInputElement;
       field.value = seat;
       field.addEventListener('input', () => {
-        seatValues[index] = field.value.trim().toLowerCase();
-        if (index === 0) firstSeatByHand = Boolean(seatValues[0]);
+        group.values[index] = field.value.trim().toLowerCase();
+        if (group === doctorSeats && index === 0) firstSeatByHand = Boolean(group.values[0]);
         refreshSeatIssues();
         clearMarks();
       });
@@ -398,23 +450,66 @@ const secondaryBtn =
     });
   };
 
-  const filledSeats = () => seatValues.map((seat) => seat.trim().toLowerCase()).filter(Boolean);
+  const renderSeats = () => {
+    // The step is titled after whoever it asks for: doctors first, secretaries under their own heading —
+    // or alone, when the order has no doctor.
+    const doctors = quantity > 0;
+    $('holders-title').textContent = doctors
+      ? quantity > 1 ? copy.step4Plural : copy.step4
+      : secretaryQuantity > 1 ? copy.secretaryTitlePlural : copy.secretaryTitle;
+    $('holders-note').textContent = quantity > 1 ? copy.holdersNotePlural : copy.holdersNote;
+    $('doctor-seats-block').classList.toggle('hidden', !doctors);
 
-  const refreshSeatIssues = () => {
-    const issues = seatIssues(filledSeats(), quantity);
+    $('sec-seats-block').classList.toggle('hidden', secretaryQuantity === 0);
+    $('sec-title').classList.toggle('hidden', !doctors);
+    $('sec-title').textContent = secretaryQuantity > 1 ? copy.secretaryTitlePlural : copy.secretaryTitle;
+    $('sec-note').textContent = secretaryQuantity > 1 ? copy.secretaryNotePlural : copy.secretaryNote;
+
+    renderGroup(doctorSeats);
+    renderGroup(secretarySeats);
+    followBuyerEmail();
+  };
+
+  const filled = (group: SeatGroup) => group.values.map((seat) => seat.trim().toLowerCase()).filter(Boolean);
+  const filledSeats = () => filled(doctorSeats);
+
+  /** An address on both lists is reported on the secretaries': one licence per address, of one kind. */
+  const sharedSeats = () => {
+    const doctors = new Set(filled(doctorSeats));
+    return filled(secretarySeats).filter((email) => doctors.has(email));
+  };
+
+  const refreshGroupIssues = (group: SeatGroup, shared: string[]) => {
+    const issues = seatIssues(filled(group), group.count());
     const lines: string[] = [];
     if (issues.invalid.length) lines.push(`${copy.invalidAddresses} ${issues.invalid.join(', ')}`);
     if (issues.duplicates.length) lines.push(`${copy.duplicateAddresses} ${issues.duplicates.join(', ')}`);
+    if (shared.length) lines.push(`${copy.sharedAddresses} ${shared.join(', ')}`);
     if (issues.missing) lines.push(`${issues.missing} ${copy.missingAddresses}`);
 
-    const el = $('seat-issues');
+    const el = $(group.issues);
     el.textContent = lines.join(' · ');
-    el.className = `mt-2 text-sm ${issues.invalid.length || issues.duplicates.length ? 'text-red-600' : 'text-amber-600'}`;
+    el.className = `mt-2 text-sm ${issues.invalid.length || issues.duplicates.length || shared.length ? 'text-red-600' : 'text-amber-600'}`;
   };
 
+  const refreshSeatIssues = () => {
+    refreshGroupIssues(doctorSeats, []);
+    refreshGroupIssues(secretarySeats, sharedSeats());
+  };
+
+  // Either line may be zero — a practice can add secretaries to doctors already subscribed — but an
+  // order of nothing is not one, so the last licence cannot be taken away.
   const setQuantity = (next: number) => {
-    quantity = Math.max(1, next);
+    quantity = Math.max(secretaryQuantity > 0 ? 0 : 1, next);
     $('qty').textContent = String(quantity);
+    renderSeats();
+    refreshSeatIssues();
+    refreshPrice();
+  };
+
+  const setSecretaryQuantity = (next: number) => {
+    secretaryQuantity = Math.max(quantity > 0 ? 0 : 1, next);
+    $('sec-qty').textContent = String(secretaryQuantity);
     renderSeats();
     refreshSeatIssues();
     refreshPrice();
@@ -514,11 +609,15 @@ const secondaryBtn =
       if (!value(id)) missing.push(id);
     }
 
-    const issues = seatIssues(filledSeats(), quantity);
-    seatValues.forEach((seat, index) => {
-      const bad = !seat || !isEmail(seat) || (issues.duplicates.includes(seat) && seatValues.indexOf(seat) !== index);
-      if (bad) missing.push(`seat-${index}`);
-    });
+    const shared = sharedSeats();
+    for (const group of [doctorSeats, secretarySeats]) {
+      const issues = seatIssues(filled(group), group.count());
+      group.values.forEach((seat, index) => {
+        const duplicate = issues.duplicates.includes(seat) && group.values.indexOf(seat) !== index;
+        const bad = !seat || !isEmail(seat) || duplicate || (group === secretarySeats && shared.includes(seat));
+        if (bad) missing.push(`${group.prefix}-${index}`);
+      });
+    }
 
     return missing;
   };
@@ -565,12 +664,19 @@ const secondaryBtn =
     clearMarks();
     try {
       if (!orderId) {
-        const created = await call('POST', '/orders', { ...identity(), quantity, period });
+        const created = await call('POST', '/orders', { ...identity(), quantity, secretaryQuantity, period });
         orderId = created.id;
         accessToken = created.accessToken;
       }
       const { email: _addressIsFixed, ...editable } = identity();
-      await call('PATCH', `/orders/${orderId}`, { ...editable, quantity, period, seatEmails: filledSeats() });
+      await call('PATCH', `/orders/${orderId}`, {
+        ...editable,
+        quantity,
+        secretaryQuantity,
+        period,
+        seatEmails: filledSeats(),
+        secretarySeatEmails: filled(secretarySeats),
+      });
       // The signatory is the name given in step 3: asking for it a second time only made buyers hesitate.
       await call('POST', `/orders/${orderId}/sign`, { signerName: value('f-name'), termsAccepted: true });
 
@@ -616,6 +722,8 @@ const secondaryBtn =
 
   $('qty-minus').addEventListener('click', () => setQuantity(quantity - 1));
   $('qty-plus').addEventListener('click', () => setQuantity(quantity + 1));
+  $('sec-minus').addEventListener('click', () => setSecretaryQuantity(secretaryQuantity - 1));
+  $('sec-plus').addEventListener('click', () => setSecretaryQuantity(secretaryQuantity + 1));
   $('period-yearly').addEventListener('click', () => setPeriod('annual'));
   $('period-monthly').addEventListener('click', () => setPeriod('monthly'));
 
