@@ -391,6 +391,8 @@ const pagesCollection = defineCollection({
       aboutUs: z.string(),
       title: z.string(),
       subtitle: z.string(),
+      advisorsTitle: z.string(),
+      advisors: z.record(z.string(), z.object({ name: z.string(), role: z.string() })),
       members: z.object({
         vincentTan: z.object({
           name: z.string(),
