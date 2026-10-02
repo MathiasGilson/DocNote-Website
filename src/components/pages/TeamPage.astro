@@ -10,16 +10,6 @@ const { locale } = Astro.props
 const entry = await getEntry("pages", locale as Locale)
 const t = entry.data
 const meta = getPageMeta("team", locale as Locale)
-
-/** In the order they are presented; the copy (name, specialty) lives in the page content per locale. */
-const advisors = [
-    { key: "ugoMarchese", photo: "/images/ugo_marchese.jpg" },
-    { key: "davidFuks", photo: "/images/david_fuks.jpg" },
-    { key: "pierreFournier", photo: "/images/pierre_fournier.jpg" },
-    { key: "rodolfoMaduri", photo: "/images/rodolfo_maduri.jpg" },
-    { key: "yvanGasche", photo: "/images/yvan_gasche.jpg" },
-    { key: "leoBuhler", photo: "/images/leo_buhler.jpg" },
-].map((a) => ({ ...a, ...t.team.advisors[a.key] }))
 ---
 
 <Layout title={meta.title} description={meta.description}>
@@ -146,23 +136,6 @@ const advisors = [
                         <p class="text-base text-gray-500">{t.team.members.anthonyAnello.role}</p>
                     </div>
                 </div>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 text-center mt-20 mb-8">{t.team.advisorsTitle}</h2>
-            <div class="grid md:grid-cols-2 gap-x-16">
-                {advisors.map((advisor, index) => (
-                    <div class={`flex items-center gap-5 py-8 ${index > 1 ? "border-t border-gray-200" : ""}`}>
-                        <img
-                            src={advisor.photo}
-                            alt={advisor.name}
-                            class="w-28 h-28 rounded-lg object-cover object-center flex-shrink-0"
-                        />
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900">{advisor.name}</h3>
-                            <p class="text-base text-gray-500">{advisor.role}</p>
-                        </div>
-                    </div>
-                ))}
             </div>
         </div>
     </section>
