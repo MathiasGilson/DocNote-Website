@@ -1,0 +1,53 @@
+---
+interface Props {
+  appName: string;
+  prompt: string;
+  heading?: string;
+  askLabel?: string;
+  theme?: "light" | "dark";
+}
+
+const { appName, prompt, heading = `Ask AI about ${appName}`, askLabel = "Ask", theme = "light" } = Astro.props;
+const query = encodeURIComponent(prompt);
+const providers = [
+  { name: "ChatGPT", icon: "chatgpt", url: `https://chatgpt.com/?hints=search&q=${query}` },
+  { name: "Perplexity", icon: "perplexity", url: `https://www.perplexity.ai/search?q=${query}` },
+  { name: "Gemini", icon: "gemini", url: `https://gemini.google.com/app?q=${query}` },
+  { name: "Claude", icon: "claude", url: `https://claude.ai/new?q=${query}` },
+  { name: "Grok", icon: "grok", url: `https://grok.com/?q=${query}` },
+];
+---
+
+<section class="ask-ai-section" data-theme={theme} aria-labelledby="ask-ai-heading">
+  <div class="ask-ai-container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <h2 id="ask-ai-heading">{heading}</h2>
+    <div class="ask-ai-links">
+      {providers.map(({ name, icon, url }) => (
+        <a href={url} target="_blank" rel="noopener noreferrer" class="ask-ai-link">
+          <span>{askLabel} {name}</span>
+          <img src={`/images/ai-assistants/${icon}.svg`} alt="" width="20" height="20" loading="lazy" class:list={["ask-ai-icon", { "ask-ai-icon-monochrome": icon === "chatgpt" || icon === "grok" }]} />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .ask-ai-section { background: #fff; color: #111827; }
+  .ask-ai-container { padding-top: 40px; padding-bottom: 48px; }
+  .ask-ai-section h2 { margin: 0 0 20px; font-size: 18px; line-height: 1.5; font-weight: 600; letter-spacing: normal; }
+  .ask-ai-links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .ask-ai-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 10px 20px; border: 1px solid #d1d5db; border-radius: 9999px; color: #374151; background: transparent; font-size: 16px; font-weight: 500; line-height: 1.5; text-decoration: none; transition: background-color 150ms, border-color 150ms, color 150ms; }
+  .ask-ai-link:hover { color: #111827; border-color: #9ca3af; background: #f9fafb; }
+  .ask-ai-link:focus-visible { outline: 2px solid #2563eb; outline-offset: 4px; }
+  .ask-ai-icon { display: block; flex: 0 0 20px; width: 20px; height: 20px; object-fit: contain; }
+  .ask-ai-section[data-theme="dark"] { background: #030712; color: #f9fafb; }
+  .ask-ai-section[data-theme="dark"] .ask-ai-link { color: #d1d5db; border-color: #374151; }
+  .ask-ai-section[data-theme="dark"] .ask-ai-link:hover { color: #fff; border-color: #6b7280; background: #111827; }
+  .ask-ai-section[data-theme="dark"] .ask-ai-icon-monochrome { filter: invert(1); }
+  @media (max-width: 480px) {
+    .ask-ai-container { padding-top: 32px; padding-bottom: 40px; }
+    .ask-ai-links { gap: 10px; }
+    .ask-ai-link { padding: 10px 16px; font-size: 14px; }
+  }
+</style>
