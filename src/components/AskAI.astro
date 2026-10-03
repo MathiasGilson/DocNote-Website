@@ -19,7 +19,7 @@ const providers = [
 ---
 
 <section class="ask-ai-section" data-theme={theme} aria-labelledby="ask-ai-heading">
-  <div class="ask-ai-container">
+  <div class="ask-ai-container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <h2 id="ask-ai-heading">{heading}</h2>
     <div class="ask-ai-links">
       {providers.map(({ name, icon, url }) => (
@@ -34,7 +34,7 @@ const providers = [
 
 <style>
   .ask-ai-section { background: #fff; color: #111827; }
-  .ask-ai-container { max-width: 1200px; margin: 0 auto; padding: 40px 24px 48px; }
+  .ask-ai-container { padding-top: 40px; padding-bottom: 48px; }
   .ask-ai-section h2 { margin: 0 0 20px; font-size: 18px; line-height: 1.5; font-weight: 600; letter-spacing: normal; }
   .ask-ai-links { display: flex; flex-wrap: wrap; gap: 12px; }
   .ask-ai-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 10px 20px; border: 1px solid #d1d5db; border-radius: 9999px; color: #374151; background: transparent; font-size: 16px; font-weight: 500; line-height: 1.5; text-decoration: none; transition: background-color 150ms, border-color 150ms, color 150ms; }
@@ -46,7 +46,7 @@ const providers = [
   .ask-ai-section[data-theme="dark"] .ask-ai-link:hover { color: #fff; border-color: #6b7280; background: #111827; }
   .ask-ai-section[data-theme="dark"] .ask-ai-icon-monochrome { filter: invert(1); }
   @media (max-width: 480px) {
-    .ask-ai-container { padding: 32px 20px 40px; }
+    .ask-ai-container { padding-top: 32px; padding-bottom: 40px; }
     .ask-ai-links { gap: 10px; }
     .ask-ai-link { padding: 10px 16px; font-size: 14px; }
   }
