@@ -14,6 +14,15 @@ const { locale, translations: t } = Astro.props
 const currentYear = new Date().getFullYear()
 const resourcesLabel = locale === "fr" ? "Ressources" : locale === "de" ? "Ressourcen" : "Resources"
 const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://support.docnote.care/${locale}/`
+const otherProductsLabel = locale === "fr" ? "Autres produits" : locale === "de" ? "Weitere Produkte" : "Other Products"
+const otherProducts = [
+    { name: "GPT Workspace", href: "https://gpt.space/" },
+    { name: "TasksBoard", href: "https://tasksboard.com/" },
+    { name: "Mail Merge", href: "https://merge.email/" },
+    { name: "Mail Track", href: "https://mailtrack.email/" },
+    { name: "Record Meeting", href: "https://recordmeeting.com/" },
+    { name: "TeleClaw", href: "https://teleclaw.com/" },
+]
 ---
 
 <footer
@@ -166,6 +175,16 @@ const docsUrl = locale === "en" ? "https://support.docnote.care" : `https://supp
             </div>
 
         </div>
+        <nav class="mt-10 border-t border-white/10 pt-6" aria-label={otherProductsLabel}>
+            <p class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-4">{otherProductsLabel}</p>
+            <ul class="grid grid-cols-2 gap-x-8 gap-y-3 md:grid-cols-3 lg:grid-cols-6">
+                {otherProducts.map((product) => (
+                    <li>
+                        <a href={product.href} target="_blank" rel="noopener noreferrer" class="text-sm text-white hover:text-white/70 transition-colors">{product.name}</a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     </div>
     <div class="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none select-none overflow-hidden">
         <span
