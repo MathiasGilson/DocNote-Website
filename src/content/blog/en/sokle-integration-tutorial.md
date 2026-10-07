@@ -1,5 +1,6 @@
 ---
 title: "DocNote x Sokle: send your report straight into the patient file (video)"
+seoTitle: "DocNote x Sokle: send your report to the patient file (video)"
 translationKey: "sokle-integration-tutorial"
 excerpt: "Connect DocNote to the Sokle EHR, send a generated report to the right patient, and find it in the consultation without copy-paste. Video in French with English subtitles."
 category: "guides"

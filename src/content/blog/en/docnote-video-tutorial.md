@@ -1,5 +1,6 @@
 ---
 title: "DocNote video tutorial: from recording to finished report in two minutes"
+seoTitle: "DocNote video tutorial: from recording to report in two minutes"
 translationKey: "docnote-video-tutorial"
 excerpt: "A two-minute walkthrough of the DocNote app: create a consultation, record or dictate, add context, generate the report and share it. Video in French."
 category: "guides"

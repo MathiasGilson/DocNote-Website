@@ -11,10 +11,14 @@ const OG_LOCALES: Record<Locale, string> = {
   de: 'de_CH',
 };
 
+const TITLE_MAX = 70;
+
 export const formatPageTitle = (title: string) => {
   const cleaned = title.replace(/\s*[|—–-]\s*DocNote\s*$/i, '').trim();
   if (/docnote/i.test(cleaned)) return cleaned;
-  return `${cleaned} | DocNote`;
+  // Bing flags titles over 70 characters; the brand suffix is the first thing to go.
+  const branded = `${cleaned} | DocNote`;
+  return branded.length > TITLE_MAX ? cleaned : branded;
 };
 
 export const withTrailingSlash = (pathname: string) => {
@@ -163,7 +167,7 @@ export const pageMeta: Record<
     en: {
       title: 'Get a demo',
       description:
-        'Request a DocNote demo. Leave us your details and our team will get back to you to arrange a time.',
+        'Request a DocNote demo. Leave us your details and our team will get back to you to arrange a time that suits you.',
     },
     fr: {
       title: 'Demander une démo',
@@ -214,17 +218,17 @@ export const pageMeta: Record<
     en: {
       title: 'Terms and conditions',
       description:
-        'General terms and conditions for using the DocNote AI medical documentation platform.',
+        'General terms and conditions governing access to and use of the DocNote AI medical documentation service, provided by Gilson GmbH.',
     },
     fr: {
       title: 'Conditions générales',
       description:
-        "Conditions générales d'utilisation de la plateforme DocNote de documentation médicale par IA.",
+        "Conditions générales régissant l'accès et l'utilisation du service DocNote de documentation médicale par IA, fourni par Gilson GmbH.",
     },
     de: {
       title: 'Allgemeine Geschäftsbedingungen',
       description:
-        'Allgemeine Geschäftsbedingungen für die Nutzung der DocNote-Plattform zur KI-Dokumentation.',
+        'Allgemeine Geschäftsbedingungen für Zugang und Nutzung des DocNote-Dienstes zur medizinischen KI-Dokumentation, angeboten von Gilson GmbH.',
     },
   },
 };

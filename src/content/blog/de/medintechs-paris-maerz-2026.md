@@ -1,5 +1,6 @@
 ---
 title: "DocNote an der MedInTechs 2026 in Paris, Partner des Village des Innovations Chirurgicales"
+seoTitle: "DocNote an der MedInTechs 2026 in Paris"
 translationKey: "medintechs-paris-march-2026"
 excerpt: "DocNote nahm an der MedInTechs 2026 in Paris teil, präsentierte seinen Krankenhaus-KI-Assistenten im Village des Innovations Chirurgicales und tauschte sich mit Klinikern und Unternehmern aus."
 category: "news"

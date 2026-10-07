@@ -1,5 +1,6 @@
 ---
 title: "DocNote x Axenita: set up the connection and send reports to the patient file (video)"
+seoTitle: "DocNote x Axenita: send reports to the patient file (video)"
 translationKey: "axenita-integration-tutorial"
 excerpt: "Configure the Axenita web portal and FHIR API client, open DocNote from the patient file, generate a report and send it back into Axenita. Video in French."
 category: "guides"

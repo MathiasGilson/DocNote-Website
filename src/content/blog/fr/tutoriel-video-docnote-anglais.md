@@ -1,5 +1,6 @@
 ---
 title: "Tutoriel DocNote en anglais : enregistrer, contextualiser, générer, partager"
+seoTitle: "Tutoriel DocNote en anglais : enregistrer, générer, partager"
 translationKey: "docnote-video-tutorial-english"
 excerpt: "La version anglaise du tutoriel DocNote : choisir un type de rapport ou une dictée simple, enregistrer la consultation, joindre du contexte, générer le rapport et l'exporter."
 category: "guides"

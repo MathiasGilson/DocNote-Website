@@ -1,5 +1,6 @@
 ---
 title: "Dr. Alice Gilson speaks on the future of surgery and AI at the Swiss College of Surgeons Congress in Lucerne"
+seoTitle: "Dr. Alice Gilson on surgery and AI at SCS Lucerne 2026"
 translationKey: "scs-lucerne-june-2026"
 excerpt: "At the SCS Annual Congress in Lucerne, DocNote co-founder Dr. Alice Gilson explored how artificial intelligence is reshaping the surgeon's role."
 category: "news"

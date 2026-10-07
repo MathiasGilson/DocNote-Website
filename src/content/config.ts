@@ -521,7 +521,9 @@ const blogCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      excerpt: z.string().min(50).max(200),
+      // <title> override when `title` (still the visible H1) is too long for search results.
+      seoTitle: z.string().max(70).optional(),
+      excerpt: z.string().min(100).max(200),
       translationKey: z.string().regex(/^[a-z0-9-]+$/),
       category: z.enum(CATEGORY_SLUGS),
       tags: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),

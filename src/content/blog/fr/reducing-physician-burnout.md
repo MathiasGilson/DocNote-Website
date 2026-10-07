@@ -1,5 +1,6 @@
 ---
 title: "La documentation infirmière assistée par l'IA réduit le temps et améliore l'efficacité"
+seoTitle: "Documentation infirmière par IA : moins de temps, plus d'efficacité"
 translationKey: "reducing-physician-burnout"
 excerpt: "Dans Stud Health Technol Inform., des chercheurs du Chi Mei Medical Center ont examiné l'impact d'un outil de documentation basé sur l'IA sur le flux de travail infirmier et la qualité des dossiers."
 category: "hospital-workflows"

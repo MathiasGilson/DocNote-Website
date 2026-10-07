@@ -1,5 +1,6 @@
 ---
 title: "Moins de temps consacré à la documentation grâce à l'IA, plus de temps pour les soins : que disent les preuves scientifiques ?"
+seoTitle: "Moins de documentation grâce à l'IA : que disent les preuves ?"
 translationKey: "less-time-documenting-ai-more-care"
 excerpt: "En février 2025, une étude publiée dans JAMA Network Open a documenté le rôle croissant de l'intelligence artificielle contre l'épuisement des cliniciens et la surcharge documentaire."
 category: "ai-scribe"

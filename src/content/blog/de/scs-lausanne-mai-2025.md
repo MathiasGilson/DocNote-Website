@@ -1,5 +1,6 @@
 ---
 title: "Dr. Alice Gilson spricht über KI in der Dokumentation am Swiss College of Surgeons Kongress in Lausanne"
+seoTitle: "Dr. Alice Gilson über KI-Dokumentation am SCS-Kongress Lausanne"
 translationKey: "scs-lausanne-may-2025"
 excerpt: "DocNote nahm am prestigeträchtigen SCS-Jahreskongress an der EPFL in Lausanne teil und vernetzte sich mit den führenden Chirurgen der Schweiz."
 category: "news"

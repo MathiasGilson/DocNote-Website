@@ -65,7 +65,7 @@ const pillarHref = category.pillar ? getLocalizedPath(`/${category.pillar}`, loc
 const pillarLabel = category.pillar ? pillarNavLabel[locale][category.pillar] : t.nav.team;
 ---
 
-<Layout title={post.data.title} description={post.data.excerpt} alternates={alternates} ogType="article" ogImage={ogImage}
+<Layout title={post.data.seoTitle ?? post.data.title} description={post.data.excerpt} alternates={alternates} ogType="article" ogImage={ogImage}
   jsonLd={jsonLd} noindex={post.data.noindex} canonicalOverride={post.data.canonical} publishedTime={post.data.date} modifiedTime={modified}>
   <article class="pt-32 pb-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

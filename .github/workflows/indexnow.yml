@@ -1,0 +1,35 @@
+name: IndexNow
+
+# Production deploys run in Cloudflare Workers Builds, which reports back as a check run.
+# Once that check succeeds on main, rebuild the same commit and submit its sitemap URLs to IndexNow.
+# Runs outside the deploy and never fails: the script always exits 0 and the job is continue-on-error.
+on:
+  check_run:
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Submit every sitemap URL, not only recent ones
+        type: boolean
+        default: false
+
+jobs:
+  indexnow:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.check_run.app.slug == 'cloudflare-workers-and-pages' &&
+       github.event.check_run.conclusion == 'success' &&
+       github.event.check_run.check_suite.head_branch == 'main')
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.check_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/indexnow.mjs --dist dist --host docnote.care ${{ inputs.all && '--all' || '' }}

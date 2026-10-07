@@ -1,5 +1,6 @@
 ---
 title: "DocNote in Les Echos unter Europas führenden Akteuren der KI im Gesundheitswesen genannt"
+seoTitle: "DocNote in Les Echos: führende Akteure der KI im Gesundheitswesen"
 translationKey: "docnote-les-echos-european-ai-health"
 excerpt: "Die Wirtschaftszeitung Les Echos hat den europäischen Markt der KI-Gesundheitsassistenten kartiert und nennt DocNote unter den Schlüsselakteuren der medizinischen Transkription und Dokumentation."
 category: "news"

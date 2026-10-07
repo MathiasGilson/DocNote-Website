@@ -1,5 +1,6 @@
 ---
 title: "DocNote-Tutorial auf Englisch: aufnehmen, Kontext ergänzen, generieren, teilen"
+seoTitle: "DocNote-Tutorial auf Englisch: aufnehmen, generieren, teilen"
 translationKey: "docnote-video-tutorial-english"
 excerpt: "Die englische Version des DocNote-Tutorials: Berichtstyp oder einfaches Diktat wählen, Konsultation aufnehmen, Kontext und Dokumente anhängen, Bericht generieren und exportieren."
 category: "guides"

@@ -1,5 +1,6 @@
 ---
 title: "DocNote x Axenita: Verbindung einrichten und Berichte in die Patientenakte senden (Video)"
+seoTitle: "DocNote x Axenita: Berichte in die Patientenakte senden (Video)"
 translationKey: "axenita-integration-tutorial"
 excerpt: "Webportal und FHIR-API-Client in Axenita einrichten, DocNote aus der Patientenakte öffnen, einen Bericht generieren und ihn zurück nach Axenita senden. Video auf Französisch."
 category: "guides"
