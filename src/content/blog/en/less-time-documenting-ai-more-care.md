@@ -1,5 +1,6 @@
 ---
 title: "Less time spent on documentation thanks to AI, more time for patient care: what does the scientific evidence say?"
+seoTitle: "Less documentation time with AI: what does the evidence say?"
 translationKey: "less-time-documenting-ai-more-care"
 excerpt: "In February 2025, a study published in JAMA Network Open added compelling evidence to the growing role of artificial intelligence in addressing clinician burnout and documentation overload."
 category: "ai-scribe"

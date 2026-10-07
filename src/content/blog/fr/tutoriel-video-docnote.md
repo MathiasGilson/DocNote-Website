@@ -1,5 +1,6 @@
 ---
 title: "Tutoriel vidéo DocNote : de l'enregistrement au compte rendu en deux minutes"
+seoTitle: "Tutoriel vidéo DocNote : un compte rendu en deux minutes"
 translationKey: "docnote-video-tutorial"
 excerpt: "Une vidéo de deux minutes pour découvrir DocNote : créer une consultation, enregistrer ou dicter, ajouter du contexte, générer le compte rendu et le partager."
 category: "guides"

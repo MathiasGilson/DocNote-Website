@@ -22,7 +22,7 @@ Marketing site for DocNote, https://docnote.care. Astro 5 static build on Cloudf
 ## Blog
 
 - One markdown file per locale under `src/content/blog/{en,fr,de}/`. Slugs may be translated; the three files share the same `translationKey` (the EN slug). The build throws if a key has two files for one locale or no EN file.
-- Frontmatter schema: `src/content/config.ts`. `excerpt` is the meta description (50 to 200 chars). `category` must be one of `src/content/categories.ts`. Set `updatedDate` whenever you materially edit a post.
+- Frontmatter schema: `src/content/config.ts`. `excerpt` is the meta description (100 to 200 chars). `title` is the H1; when it is too long for search results add `seoTitle` (max 70 chars) for the `<title>`. Page titles get a ` | DocNote` suffix only when the result stays within 70 chars. `category` must be one of `src/content/categories.ts`. Set `updatedDate` whenever you materially edit a post.
 - Covers live in `src/assets/blog/` and are referenced relatively (`../../../assets/blog/x.jpg`).
 - Categories map to pillars in `src/content/categories.ts`; that mapping drives related articles, the pillar CTA, pillar page listings and the footer.
 - Specialty landings: `src/content/specialties.ts`, one entry with EN/FR/DE copy renders `/for/{slug}/` and `/{fr,de}/for/{slug}/`.
@@ -36,3 +36,5 @@ Marketing site for DocNote, https://docnote.care. Astro 5 static build on Cloudf
 ## Deploy
 
 `npm run build`, then Cloudflare Pages deploys `dist/` per `wrangler.jsonc`; `public/_redirects` and `public/_headers` are applied by Pages.
+
+After a successful production build on `main`, `.github/workflows/indexnow.yml` rebuilds the commit and submits recent sitemap URLs to IndexNow (Bing and others) using the key file `public/<key>.txt`. It never fails the deploy. After a manual deploy, run `npm run indexnow`; trigger the workflow by hand with `all` to resubmit every URL.

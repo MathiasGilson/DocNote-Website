@@ -1,5 +1,6 @@
 ---
 title: "Weniger Zeit für Dokumentation dank KI, mehr Zeit für die Patientenversorgung: Was sagen die wissenschaftlichen Belege?"
+seoTitle: "Weniger Dokumentationszeit dank KI: Was sagt die Evidenz?"
 translationKey: "less-time-documenting-ai-more-care"
 excerpt: "Im Februar 2025 veröffentlichte JAMA Network Open eine Studie mit überzeugenden Belegen für die wachsende Rolle der KI gegen Burnout und Dokumentationsüberlastung bei Klinikern."
 category: "ai-scribe"

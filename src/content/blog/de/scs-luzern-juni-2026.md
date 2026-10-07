@@ -1,5 +1,6 @@
 ---
 title: "Dr. Alice Gilson spricht über die Zukunft der Chirurgie und KI am Kongress des Swiss College of Surgeons in Luzern"
+seoTitle: "Dr. Alice Gilson über Chirurgie und KI am SCS-Kongress Luzern"
 translationKey: "scs-lucerne-june-2026"
 excerpt: "Am SCS-Jahreskongress in Luzern beleuchtet DocNote-Mitgründerin Dr. Alice Gilson, wie künstliche Intelligenz die Rolle des Chirurgen verändert."
 category: "news"

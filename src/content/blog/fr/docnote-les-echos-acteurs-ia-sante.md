@@ -1,5 +1,6 @@
 ---
 title: "DocNote cité dans Les Echos parmi les principaux acteurs européens de l'IA en santé"
+seoTitle: "DocNote dans Les Echos parmi les acteurs clés de l'IA en santé"
 translationKey: "docnote-les-echos-european-ai-health"
 excerpt: "Le quotidien Les Echos a cartographié le marché européen des assistants IA en santé et place DocNote parmi les acteurs clés du scribe médical et de la génération de documents."
 category: "news"

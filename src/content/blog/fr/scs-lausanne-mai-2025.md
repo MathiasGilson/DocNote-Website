@@ -1,5 +1,6 @@
 ---
 title: "Dre Alice Gilson parle de l'IA en documentation au Congrès du Swiss College of Surgeons à Lausanne"
+seoTitle: "Dre Alice Gilson : l'IA en documentation au congrès SCS de Lausanne"
 translationKey: "scs-lausanne-may-2025"
 excerpt: "DocNote a participé au prestigieux congrès annuel du SCS à l'EPFL de Lausanne, rencontrant les principaux spécialistes en chirurgie de Suisse."
 category: "news"

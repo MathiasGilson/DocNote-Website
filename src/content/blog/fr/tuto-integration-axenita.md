@@ -1,5 +1,6 @@
 ---
 title: "DocNote x Axenita : configurer la connexion et envoyer vos rapports dans le dossier patient (vidéo)"
+seoTitle: "DocNote x Axenita : envoyer vos rapports au dossier patient (vidéo)"
 translationKey: "axenita-integration-tutorial"
 excerpt: "Configurez le portail web et le client FHIR-API dans Axenita, ouvrez DocNote depuis le dossier patient, générez un rapport et renvoyez-le dans Axenita. Tutoriel vidéo complet."
 category: "guides"

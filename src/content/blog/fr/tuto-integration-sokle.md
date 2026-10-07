@@ -1,5 +1,6 @@
 ---
 title: "DocNote x Sokle : envoyer votre rapport directement dans le dossier patient (vidéo)"
+seoTitle: "DocNote x Sokle : votre rapport directement au dossier patient"
 translationKey: "sokle-integration-tutorial"
 excerpt: "Connectez DocNote au DPI Sokle, envoyez un rapport généré vers le bon patient et retrouvez-le dans la consultation, sans copier-coller. Tutoriel vidéo pas à pas."
 category: "guides"

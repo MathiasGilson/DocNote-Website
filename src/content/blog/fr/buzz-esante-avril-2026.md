@@ -1,5 +1,6 @@
 ---
 title: "Buzz E-santé : DocNote, l'assistant IA conçu pour le rythme réel de l'hôpital"
+seoTitle: "Buzz E-santé : DocNote, l'assistant IA pensé pour l'hôpital"
 translationKey: "buzz-esante-feature-april-2026"
 excerpt: "Le média e-santé Buzz E-santé, animé par Rémy Teston, consacre un article à DocNote et à son approche ciblée : le premier assistant IA pensé de bout en bout pour les workflows hospitaliers."
 category: "news"

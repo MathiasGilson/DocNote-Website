@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getDefaultAlternates } from './seo';
+import { formatPageTitle, getDefaultAlternates } from './seo';
 
 describe('getDefaultAlternates', () => {
   it('maps an English path to all locales', () => {
@@ -18,5 +18,15 @@ describe('getDefaultAlternates', () => {
       fr: 'https://docnote.care/fr/',
       de: 'https://docnote.care/de/',
     });
+  });
+});
+
+describe('formatPageTitle', () => {
+  it('appends the brand suffix', () => {
+    expect(formatPageTitle('Pricing')).toBe('Pricing | DocNote');
+  });
+  it('drops the suffix when it would push the title over 70 characters', () => {
+    const title = 'AI-Assisted Nursing Documentation Cuts Time and Boosts Efficiency';
+    expect(formatPageTitle(title)).toBe(title);
   });
 });

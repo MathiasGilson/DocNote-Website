@@ -1,5 +1,6 @@
 ---
 title: "Utiliser DocNote depuis EDL Xplore pour vos comptes rendus de radiologie (vidéo)"
+seoTitle: "DocNote depuis EDL Xplore pour vos comptes rendus de radiologie"
 translationKey: "edl-xplore-integration-tutorial"
 excerpt: "Ouvrez DocNote depuis le RIS EDL Xplore, dictez uniquement ce qui diffère de votre modèle habituel et récupérez le compte rendu de radiologie complet et structuré dans EDL."
 category: "guides"

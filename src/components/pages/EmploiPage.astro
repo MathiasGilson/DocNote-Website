@@ -15,6 +15,7 @@ const STRINGS = {
     metaTitle: 'Emploi - Stage Digital Marketing | DocNote',
     pageTitle: 'Emploi',
     pageSub: 'Rejoignez DocNote pour accélérer l’acquisition auprès des médecins indépendants.',
+    metaDescription: 'Stage Digital Marketing chez DocNote à Genève : construire et tester l’acquisition auprès des médecins indépendants, avec évolution possible en CDI.',
     openRoles: 'Poste ouvert',
     applyCta: 'Postuler',
     jobTitle: 'Stage Digital Marketing - Acquisition médecins indépendants',
@@ -135,6 +136,7 @@ Incubée à la FONGIT à Genève, DocNote travaille déjà avec des clients hosp
     metaTitle: 'Careers - Digital Marketing Internship | DocNote',
     pageTitle: 'Careers',
     pageSub: 'Join DocNote to build acquisition for independent physicians.',
+    metaDescription: 'Digital Marketing Internship at DocNote in Geneva: build and test acquisition for independent physicians, with potential full-time conversion.',
     openRoles: 'Open role',
     applyCta: 'Apply',
     jobTitle: 'Digital Marketing Internship - Independent physician acquisition',
@@ -255,6 +257,7 @@ Incubated at FONGIT in Geneva, DocNote already works with hospital and ambulator
     metaTitle: 'Karriere - Praktikum Digital Marketing | DocNote',
     pageTitle: 'Karriere',
     pageSub: 'Komm zu DocNote und baue die Akquise für niedergelassene Ärztinnen und Ärzte auf.',
+    metaDescription: 'Praktikum Digital Marketing bei DocNote in Genf: Akquise für niedergelassene Ärztinnen und Ärzte aufbauen und testen, Übernahme möglich.',
     openRoles: 'Offene Stelle',
     applyCta: 'Bewerben',
     jobTitle: 'Praktikum Digital Marketing - Akquise niedergelassener Ärzte',
@@ -388,7 +391,7 @@ const yesNoSomeOptions = [
 ] as const;
 ---
 
-<Layout title={t.metaTitle} description={t.pageSub}>
+<Layout title={t.metaTitle} description={t.metaDescription}>
   <section class="pt-28 pb-8 bg-gradient-to-b from-violet-50 via-white to-white">
     <div class="max-w-3xl mx-auto px-6 sm:px-8">
       <p class="text-sm font-semibold uppercase tracking-wider text-violet-600 mb-3">{t.openRoles}</p>

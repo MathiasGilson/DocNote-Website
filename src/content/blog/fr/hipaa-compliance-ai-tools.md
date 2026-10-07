@@ -1,5 +1,6 @@
 ---
 title: "Seulement 10 % du temps des urgentistes est consacré aux patients, révèle une étude bordelaise"
+seoTitle: "Urgentistes : seulement 10 % du temps auprès des patients"
 translationKey: "hipaa-compliance-ai-tools"
 excerpt: "On pourrait supposer que les urgentistes passent la majeure partie de leur temps au chevet des patients. Mais une étude menée au CHU de Bordeaux dresse un tout autre tableau."
 category: "hospital-workflows"

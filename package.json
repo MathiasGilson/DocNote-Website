@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/generate-blog-redirects.mjs dist && node scripts/generate-og-images.mjs && node scripts/generate-markdown.mjs dist && node scripts/check-seo.mjs",
     "preview": "astro preview",
+    "indexnow": "node scripts/indexnow.mjs --dist dist --host docnote.care",
     "astro": "astro",
     "test": "vitest run"
   },
