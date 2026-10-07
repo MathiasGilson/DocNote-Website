@@ -4,6 +4,11 @@ import { CATEGORY_SLUGS } from './categories';
 const pagesCollection = defineCollection({
   type: 'data',
   schema: z.object({
+    askAi: z.object({
+      heading: z.string(),
+      askLabel: z.string(),
+      prompt: z.string(),
+    }).optional(),
     nav: z.object({
       tutorial: z.string(),
       pricing: z.string(),

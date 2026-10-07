@@ -9,6 +9,8 @@ import Testimonials from "./Testimonials.astro"
 import FAQ from "./FAQ.astro"
 import CTA from "./CTA.astro"
 import SeoContent from "./SeoContent.astro"
+import AskAI from "./AskAI.astro"
+import englishCopy from "../content/pages/en.json"
 import { getEntry } from "astro:content"
 
 interface Props {
@@ -22,6 +24,7 @@ if (!entry) {
     throw new Error(`Missing pages content for locale "${locale}" (and fallback "en")`)
 }
 const t = entry
+const askAi = t.data.askAi ?? englishCopy.askAi
 ---
 
 <Hero translations={t.data} />
@@ -34,3 +37,4 @@ const t = entry
 <FAQ translations={t.data} />
 <CTA translations={t.data} />
 <SeoContent locale={(locale as "en" | "fr" | "de") || "en"} />
+<AskAI appName="DocNote" heading={askAi.heading} askLabel={askAi.askLabel} prompt={askAi.prompt} />
