@@ -17,7 +17,7 @@ Marketing site for DocNote, https://docnote.care. Astro 5 static build on Cloudf
 
 ## Markdown twins
 
-- Every page has a static markdown twin at `<url>index.md`, served with `X-Robots-Tag: noindex` via `public/_headers`.
+- Every page has a static markdown twin at `<url>index.md`, served with a `Link: rel="canonical"` header pointing at the HTML page via `public/_headers`.
 - `Accept: text/markdown` content negotiation is NOT enabled: it needs a Cloudflare Worker (`_worker.js`) which breaks the `/en/*` 301s in Pages advanced mode. A working Workers-mode version (worker plus `wrangler.jsonc` with `main`, `assets.binding: ASSETS`, `run_worker_first: true`) exists in git history at commit `303f4eb` and can be restored once the deploy mode is decided.
 
 ## Blog

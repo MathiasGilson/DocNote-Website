@@ -1,7 +1,7 @@
 /**
  * Build step: write a markdown twin (`index.md`) next to every built
  * `index.html` in dist/. The twins are plain static files at `<url>index.md`,
- * served with `X-Robots-Tag: noindex` via `public/_headers`. `Accept` content
+ * served with a canonical `Link` header to the HTML page via `public/_headers`. `Accept` content
  * negotiation is not enabled (see CLAUDE.md).
  *
  * Wired into `npm run build` as a standalone step:

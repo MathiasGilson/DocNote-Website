@@ -28,10 +28,12 @@
 /sitemap-categories.xml
   Content-Type: application/xml; charset=utf-8
 
+# Markdown twins name their HTML page as canonical: search ranks the HTML,
+# agents can still read the .md.
 /*/index.md
-  X-Robots-Tag: noindex
+  Link: <https://docnote.care/:splat/>; rel="canonical"
   Content-Type: text/markdown; charset=utf-8
 
 /index.md
-  X-Robots-Tag: noindex
+  Link: <https://docnote.care/>; rel="canonical"
   Content-Type: text/markdown; charset=utf-8
