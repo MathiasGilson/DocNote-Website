@@ -22,9 +22,11 @@ const tutorialVideoId = locale === 'fr' ? 'xnKpex2jtgs' : 'DdQ_POkaaPE';
 const step4VideoId = locale === 'fr' ? '2Qz-M7LPeAw' : null;
 const step5VideoId = locale === 'fr' ? 'TPkAZcxoqoI' : null;
 const step5VideoIdEdl = locale === 'fr' ? '8dA4j27XYPI' : null;
-const step5VideoIdAxenita = locale === 'fr' ? 'wpQYYmleWZg' : null;
+const step5VideoIdAxenita = locale === 'fr' ? 'PR38Go5YqDM' : null;
 // Mediway has no video: the integration ships as a one-page PDF walkthrough.
 const step5MediwayGuide = locale === 'fr' ? '/docs/docnote-integration-mediway.pdf' : null;
+// FR-only guide for secretaries working on behalf of linked doctors (step 6).
+const step6VideoId = locale === 'fr' ? 'oCizfEJbTkw' : null;
 ---
 
 <Layout title={meta.title} description={meta.description} productSchema>
@@ -325,6 +327,35 @@ const step5MediwayGuide = locale === 'fr' ? '/docs/docnote-integration-mediway.p
                     </a>
                   </>
                 )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {t.tutorial.step6 && step6VideoId && (
+          <div class="relative">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-indigo-500/30">
+                6
+              </div>
+              <div class="flex-1">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                  {t.tutorial.step6.title}
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                  {t.tutorial.step6.description}
+                </p>
+                <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${step6VideoId}`}
+                    title="DocNote : guide d'utilisation pour les secrétaires"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>

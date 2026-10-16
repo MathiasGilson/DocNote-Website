@@ -497,6 +497,10 @@ const pagesCollection = defineCollection({
         title: z.string(),
         description: z.string(),
       }).optional(),
+      step6: z.object({
+        title: z.string(),
+        description: z.string(),
+      }).optional(),
       cta: z.object({
         title: z.string(),
         subtitle: z.string(),

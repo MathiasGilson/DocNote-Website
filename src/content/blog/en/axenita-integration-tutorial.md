@@ -12,9 +12,10 @@ authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/yt-axenita-integration-tutorial.jpg"
 fullImage: true
 date: "2026-08-31"
+updatedDate: "2026-10-16"
 ---
 
-<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wpQYYmleWZg" title="DocNote x Axenita: set up the connection and send reports to the patient file (video)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/PR38Go5YqDM" title="DocNote x Axenita: set up the connection and send reports to the patient file (video)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 DocNote can now be used directly from the Axenita electronic patient record. You open DocNote from the patient file, generate your report, and send it straight back into Axenita, with no copy-paste and no change to your routine. This video (in French) covers the one-time configuration and then the daily workflow. Both are written out below, including the exact values to enter.
 

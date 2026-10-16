@@ -12,9 +12,10 @@ authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/yt-axenita-integration-tutorial.jpg"
 fullImage: true
 date: "2026-08-31"
+updatedDate: "2026-10-16"
 ---
 
-<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wpQYYmleWZg" title="DocNote x Axenita : configurer la connexion et envoyer vos rapports dans le dossier patient (vidéo)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/PR38Go5YqDM" title="DocNote x Axenita : configurer la connexion et envoyer vos rapports dans le dossier patient (vidéo)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 Vous pouvez désormais utiliser DocNote directement depuis votre DPI Axenita. Vous ouvrez DocNote depuis le dossier patient, générez votre compte rendu et l'envoyez directement dans Axenita, sans copier-coller et sans modifier vos habitudes. Cette vidéo couvre la configuration initiale puis le flux quotidien. Les deux sont détaillés ci-dessous, avec les valeurs exactes à saisir.
 

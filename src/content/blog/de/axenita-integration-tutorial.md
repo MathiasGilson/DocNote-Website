@@ -12,9 +12,10 @@ authorUrl: "https://www.linkedin.com/in/alice-gilson-816390251/"
 image: "../../../assets/blog/yt-axenita-integration-tutorial.jpg"
 fullImage: true
 date: "2026-08-31"
+updatedDate: "2026-10-16"
 ---
 
-<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wpQYYmleWZg" title="DocNote x Axenita: Verbindung einrichten und Berichte in die Patientenakte senden (Video)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/PR38Go5YqDM" title="DocNote x Axenita: Verbindung einrichten und Berichte in die Patientenakte senden (Video)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 DocNote lässt sich jetzt direkt aus der elektronischen Patientenakte Axenita nutzen. Sie öffnen DocNote aus der Patientenakte, generieren Ihren Bericht und senden ihn direkt zurück nach Axenita, ohne Copy-Paste und ohne Änderung Ihrer Abläufe. Dieses Video (auf Französisch) behandelt die einmalige Konfiguration und danach den täglichen Arbeitsablauf. Beides ist unten ausgeschrieben, inklusive der exakt einzutragenden Werte.
 
