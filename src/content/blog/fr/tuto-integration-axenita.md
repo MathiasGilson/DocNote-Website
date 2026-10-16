@@ -1,8 +1,8 @@
 ---
-title: "DocNote x Axenita : configurer la connexion et envoyer vos rapports dans le dossier patient (vidéo)"
+title: "Utiliser DocNote depuis Axenita : demander la connexion et envoyer vos rapports dans le dossier patient (vidéo)"
 seoTitle: "DocNote x Axenita : envoyer vos rapports au dossier patient (vidéo)"
 translationKey: "axenita-integration-tutorial"
-excerpt: "Configurez le portail web et le client FHIR-API dans Axenita, ouvrez DocNote depuis le dossier patient, générez un rapport et renvoyez-le dans Axenita. Tutoriel vidéo complet."
+excerpt: "Demandez la connexion à Axenita depuis les réglages de DocNote, ouvrez DocNote depuis le dossier patient, générez votre rapport et intégrez-le dans la consultation. Tutoriel vidéo."
 category: "guides"
 tags: ["tutorial", "video", "ehr-integration", "axenita"]
 author: "Dre Alice Gilson"
@@ -15,46 +15,28 @@ date: "2026-08-31"
 updatedDate: "2026-10-16"
 ---
 
-<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/PR38Go5YqDM" title="DocNote x Axenita : configurer la connexion et envoyer vos rapports dans le dossier patient (vidéo)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/PR38Go5YqDM" title="Utiliser DocNote depuis Axenita (vidéo)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
-Vous pouvez désormais utiliser DocNote directement depuis votre DPI Axenita. Vous ouvrez DocNote depuis le dossier patient, générez votre compte rendu et l'envoyez directement dans Axenita, sans copier-coller et sans modifier vos habitudes. Cette vidéo couvre la configuration initiale puis le flux quotidien. Les deux sont détaillés ci-dessous, avec les valeurs exactes à saisir.
+Vous pouvez désormais utiliser DocNote directement depuis votre DPI Axenita. Vous ouvrez DocNote depuis le dossier patient, générez votre compte rendu et l'envoyez directement dans Axenita, sans copier-coller et sans modifier vos habitudes. Cette vidéo montre comment demander la connexion, puis le flux quotidien. Les étapes sont détaillées ci-dessous.
 
-## Partie 1 : configuration initiale dans Axenita
+## Étape 1 : demander la connexion
 
-### Ajouter le portail web DocNote
+À votre première connexion à DocNote, ouvrez les **réglages**. Dans la rubrique consacrée à votre dossier patient informatisé, sélectionnez **Axenita**, puis cliquez sur **Demander la connexion**. Les équipes de DocNote et d'Axenita se chargent de l'activation et vous confirment quand elle est en place.
 
-Connectez-vous à Axenita, rendez-vous dans **Paramètres** puis **Base de données**. En bas de la page se trouve la rubrique **Portail web**. Ajoutez un nouveau portail, nommez-le `DocNote` et saisissez l'URL suivante. Aucun nom d'utilisateur n'est nécessaire.
+## Étape 2 : utiliser DocNote depuis le dossier patient
 
-```
-https://docnote.care/app/record?patientId={patientId}&patientIdSystem={patientIdOid}&firstName={patientFirstname}&lastName={patientLastname}&sex={patientGender}&birthday={patientBirthdate|dd.MM.yyyy}&language={patientCorrespondenceLanguage}
-```
+Une fois la connexion confirmée, reprenez votre fonctionnement habituel dans Axenita.
 
-Enregistrez le portail. Les paramètres entre accolades sont remplis par Axenita au lancement : c'est ainsi que DocNote sait pour quel patient il a été ouvert.
+1. **Ouvrir DocNote depuis Axenita.** Dans le dossier du patient, cliquez sur « Appel externe », l'icône située à droite de l'imprimante, puis sélectionnez DocNote. L'application s'ouvre automatiquement.
+2. **Créer la consultation.** Créez une nouvelle consultation : le nom, le prénom et la date de naissance du patient sont déjà préremplis dans le nouveau rapport.
+3. **Enregistrer ou dicter** votre consultation comme vous en avez l'habitude, puis générer le rapport.
+4. **L'envoyer dans le dossier patient.** Une fois le rapport terminé, transmettez-le directement dans le dossier du patient dans Axenita. Les rapports créés au cours des sept derniers jours peuvent être retrouvés et transmis de la même manière.
 
-### Créer le client FHIR-API
+## Étape 3 : intégrer le rapport dans la consultation
 
-Rendez-vous dans la rubrique **FHIR-API** et ajoutez un nouveau client, nommé lui aussi `DocNote` pour identifier facilement la connexion. Axenita génère un **identifiant client externe** et un **secret client**. Copiez ces deux informations et transmettez-les à l'équipe DocNote par e-mail : elles nous permettent de finaliser la connexion entre votre environnement Axenita et votre compte DocNote.
+Fermez DocNote et revenez dans Axenita. Dans le dossier du patient, cliquez sur l'icône en double flèche : le contenu transmis depuis DocNote y apparaît. Sélectionnez la consultation correspondante, cliquez sur **Remplacer** puis validez.
 
-### Attribuer les autorisations
-
-Sélectionnez le client DocNote que vous venez de créer, puis ajoutez successivement ces trois autorisations :
-
-- `system/Composition.c`
-- `system/Encounter.c`
-- `system/Patient.c`
-
-Veillez à bien sélectionner le client DocNote avant de les ajouter, afin qu'elles soient attribuées au bon client. En cas de difficulté, les équipes d'Axenita et de DocNote restent à disposition pour vous accompagner dans la configuration.
-
-## Partie 2 : utilisation quotidienne
-
-Une fois la connexion activée et confirmée par l'équipe DocNote, retournez dans le dossier du patient et reprenez votre fonctionnement habituel.
-
-1. **Ouvrir DocNote depuis Axenita.** Cliquez sur « Appel externe », l'icône située à droite de l'imprimante, puis sélectionnez DocNote. L'application s'ouvre automatiquement. À la première utilisation, vérifiez dans les paramètres de DocNote que la connexion avec Axenita est bien activée.
-2. **Enregistrer ou dicter, puis générer** votre rapport comme habituellement dans DocNote.
-3. **L'envoyer dans le dossier patient.** Cliquez sur l'option de partage puis « Envoyer vers le dossier du patient ». Comme DocNote a été ouvert depuis le dossier du patient dans Axenita, le patient concerné est automatiquement identifié. Confirmez : le rapport est envoyé.
-4. **L'intégrer dans Axenita.** Fermez DocNote, revenez dans le dossier du patient et cliquez sur l'icône en double flèche. Le contenu transmis depuis DocNote y apparaît. Sélectionnez la consultation correspondante, cliquez sur « Ajouter » puis validez.
-
-Le rapport fait désormais partie du dossier du patient. Il reste entièrement modifiable dans Axenita jusqu'à sa validation définitive.
+Le rapport fait désormais partie du dossier du patient dans Axenita.
 
 ## Pourquoi cette approche
 
