@@ -1,4 +1,7 @@
 # Cloudflare Pages redirects. Specific rules first.
+# The pricing page once built its order link with "pricing" as the locale; Google still crawls the result.
+/pricing/order /order/ 301
+/pricing/order/ /order/ 301
 # English moved from /en/... to the root; keep old links and Google's index alive.
 /en /  301
 /en/* /:splat 301
